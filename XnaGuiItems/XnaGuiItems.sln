@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XnaGuiItems", "XnaGuiItems\XnaGuiItems.csproj", "{F185DD7F-A86D-414B-9B44-AD71AC98710B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGame", "TestGame\TestGame\TestGame.csproj", "{2FC70884-A186-41D3-98C0-21152D882A4E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TestGameContent", "TestGame\TestGameContent\TestGameContent.contentproj", "{F4426B69-4021-4864-8FD3-6BC693AE616F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F185DD7F-A86D-414B-9B44-AD71AC98710B}.Debug|x86.ActiveCfg = Debug|x86
+		{F185DD7F-A86D-414B-9B44-AD71AC98710B}.Debug|x86.Build.0 = Debug|x86
+		{F185DD7F-A86D-414B-9B44-AD71AC98710B}.Release|x86.ActiveCfg = Release|x86
+		{F185DD7F-A86D-414B-9B44-AD71AC98710B}.Release|x86.Build.0 = Release|x86
+		{2FC70884-A186-41D3-98C0-21152D882A4E}.Debug|x86.ActiveCfg = Debug|x86
+		{2FC70884-A186-41D3-98C0-21152D882A4E}.Debug|x86.Build.0 = Debug|x86
+		{2FC70884-A186-41D3-98C0-21152D882A4E}.Release|x86.ActiveCfg = Release|x86
+		{2FC70884-A186-41D3-98C0-21152D882A4E}.Release|x86.Build.0 = Release|x86
+		{F4426B69-4021-4864-8FD3-6BC693AE616F}.Debug|x86.ActiveCfg = Debug|x86
+		{F4426B69-4021-4864-8FD3-6BC693AE616F}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
