@@ -94,11 +94,11 @@ namespace Mentula.GuiItems.Items
         /// <param name="parts"> The parts of the option, separated with a space. </param>
         public void AddOption(params string[] parts)
         {
-            KeyValuePair<string, Color>[] colorParts = new KeyValuePair<string, Color>[parts.Length];
+            KeyValuePair<string, Color?>[] colorParts = new KeyValuePair<string, Color?>[parts.Length];
 
             for (int i = 0; i < parts.Length; i++)
             {
-                colorParts[i] = new KeyValuePair<string, Color>(parts[i], ForeColor);
+                colorParts[i] = new KeyValuePair<string, Color?>(parts[i], ForeColor);
             }
 
             AddOption(colorParts);
@@ -108,11 +108,20 @@ namespace Mentula.GuiItems.Items
         /// Adds a option to the dropdown with a specified color.
         /// </summary>
         /// <param name="parts"> The parts of the option, with a specified colot and separated with a space. </param>
-        public void AddOption(params KeyValuePair<string, Color>[] parts)
+        public void AddOption(params KeyValuePair<string, Color?>[] parts)
         {
             int index = labels.Length;
             Array.Resize(ref labels, index + 1);
-            labels[index] = parts;
+
+            KeyValuePair<string, Color>[] fixedParts = new KeyValuePair<string, Color>[parts.Length];
+            for (int i = 0; i < parts.Length; i++)
+            {
+                KeyValuePair<string, Color?> cur = parts[i];
+                Color c = cur.Value == null ? ForeColor : cur.Value.Value;
+                fixedParts[i] = new KeyValuePair<string, Color>(cur.Key, c);
+            }
+
+            labels[index] = fixedParts;
         }
 
         /// <summary>

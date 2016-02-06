@@ -22,7 +22,7 @@ namespace Mentula.GuiItems.Items
           /// <summary>
           /// Gets or sets the maximum value of the slider.
           /// </summary>
-          public virtual int MaxiumValue { get { return data.Maximum; } set { data.Maximum = value; } }
+          public virtual int MaximumValue { get { return data.Maximum; } set { data.Maximum = value; } }
           /// <summary>
           /// Gets or sets the minimum value of the slider.
           /// </summary>
