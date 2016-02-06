@@ -11,6 +11,9 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Storage;
 using Mentula.GuiItems.Items;
 using Mentula.GuiItems.Core;
+using LABEL = System.Collections.Generic.KeyValuePair<string, Microsoft.Xna.Framework.Color>;
+using System.Diagnostics;
+using Mentula.Client;
 
 namespace TestGame
 {
@@ -20,19 +23,27 @@ namespace TestGame
         private SpriteBatch spriteBatch;
         private SpriteFont font;
 
-        private TextBox input;
+        private DropDown dd;
+        private FPS fps;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            fps = new FPS();
         }
 
         protected override void Initialize()
         {
             base.Initialize();
-            input = new TextBox(GraphicsDevice, font) { Focused = true, AutoSize = true };
+
+            dd = new DropDown(GraphicsDevice, new Rectangle(10, 10, 100, 50), font) { AutoSize = true };
+            dd.AddOption(new LABEL("Attack", dd.ForeColor), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
+            dd.AddOption("Walk here");
+            dd.AddOption(new LABEL("Examine", dd.ForeColor), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
+            dd.AddOption("Cancel");
+            dd.Refresh();
         }
 
         protected override void LoadContent()
@@ -46,15 +57,17 @@ namespace TestGame
             MouseState ms = Mouse.GetState();
             KeyboardState ks = Keyboard.GetState();
 
-            input.Update(ms, ks, (float)gameTime.ElapsedGameTime.TotalSeconds);
+            dd.Update(ms);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
+            fps.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             spriteBatch.Begin();
-            input.Draw(spriteBatch);
+            dd.Draw(spriteBatch);
+            spriteBatch.DrawString(font, fps.Avarage.ToString(), Vector2.Zero, Color.Red);
             spriteBatch.End();
 
             base.Draw(gameTime);

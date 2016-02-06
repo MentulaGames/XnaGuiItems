@@ -83,7 +83,7 @@ namespace Mentula.GuiItems
                             else data[x + y * texture.Width] = data[x + y * texture.Width].Change(0, -10, -10, -10);
                         }
                     }
-                    newTexture.SetData<Color>(data);
+                    newTexture.SetData(data);
                     return newTexture;
                 default:
                     return texture;
@@ -99,7 +99,7 @@ namespace Mentula.GuiItems
         internal static Color[] GetColorData(this Texture2D texture)
         {
             Color[] value = new Color[texture.Width * texture.Height];
-            texture.GetData<Color>(value);
+            texture.GetData(value);
             return value;
         }
 

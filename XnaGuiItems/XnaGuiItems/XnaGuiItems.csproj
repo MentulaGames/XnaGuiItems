@@ -64,6 +64,7 @@
     <Compile Include="Core\ProgresData.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Items\Button.cs" />
+    <Compile Include="Items\DropDown.cs" />
     <Compile Include="Items\Label.cs" />
     <Compile Include="Items\ProgresBar.cs" />
     <Compile Include="Items\Slider.cs" />

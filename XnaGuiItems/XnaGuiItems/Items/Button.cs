@@ -20,7 +20,7 @@ namespace Mentula.GuiItems.Items
           private float time;
 
           /// <summary>
-          /// Occurs when the XnaMentula.GuiItems.Items.Button is left cliked.
+          /// Occurs when the XnaMentula.GuiItems.Items.Button is left clicked.
           /// </summary>
           public event MouseEventHandler LeftClick;
           /// <summary>
