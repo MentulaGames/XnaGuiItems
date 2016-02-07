@@ -130,7 +130,7 @@ namespace Mentula.GuiItems.Items
             }
 
             foregroundRectangle = bounds;
-            backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
+            backColorImage = Drawing.FromColor(BackColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
             if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
             foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, device);
         }
@@ -152,6 +152,12 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnTextChanged(object sender, string newText) { text = newText; Refresh(); }
         protected virtual void OnFontChanged(object sender, SpriteFont newFont) { font = newFont; Refresh(); }
         protected override void OnForeColorChanged(object sender, Color newColor) { foreColor = newColor; if (font != null) Refresh(); }
+        protected override void OnMove(object sender, Vector2 newpos)
+        {
+            base.OnMove(sender, newpos);
+            foregroundRectangle.X = newpos.X();
+            foregroundRectangle.Y = newpos.Y();
+        }
 
         private void InitEvents()
         {

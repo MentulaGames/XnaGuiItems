@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Containers\Menu.cs" />
+    <Compile Include="Containers\TabContainer.cs" />
     <Compile Include="Core\Enums.cs" />
     <Compile Include="Core\Delegates.cs" />
     <Compile Include="Core\EmptyInput.cs" />

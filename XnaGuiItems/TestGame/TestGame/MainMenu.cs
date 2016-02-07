@@ -16,6 +16,7 @@ namespace TestGame
 
         public override void Initialize()
         {
+            /*
             const string DD_OPTIONS = "DD_Options";
             DropDown dd = AddDropDown(
                 Name: DD_OPTIONS,
@@ -32,11 +33,18 @@ namespace TestGame
                 Name: "TxTName",
                 AutoSize: true,
                 Position: new Vector2(10, 250));
+                                */
 
-            AddTextBox(
+            TextBox txt = AddTextBox(
                 Name: "TxtIp",
                 AutoSize: true,
                 Position: new Vector2(10, 350));
+
+            TabContainer tbC = AddTabContainer();
+            tbC.Position = new Vector2(100);
+            tbC.AddTab("Test");
+            tbC.AddTab("2");
+            tbC.AddToTab("Test", txt);
 
             base.Initialize();
         }

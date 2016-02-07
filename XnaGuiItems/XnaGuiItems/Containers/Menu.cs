@@ -9,12 +9,21 @@ using static Mentula.GuiItems.Core.GuiItem;
 
 namespace Mentula.GuiItems.Containers
 {
+    /// <summary>
+    /// A class for grouping GuiItems.
+    /// </summary>
     public class Menu : GameComponent, IUpdateable, IDrawable
     {
         public int DrawOrder { get; set; }
         public bool Visible { get; set; }
 
+        /// <summary>
+        /// The center width of the viewport.
+        /// </summary>
         public int ScreenWidthMiddle { get { return device.Viewport.Width >> 1; } }
+        /// <summary>
+        /// The center height of the viewport.
+        /// </summary>
         public int ScreenHeightMiddle { get { return device.Viewport.Height >> 1; } }
 
         public event EventHandler<EventArgs> DrawOrderChanged;
@@ -26,6 +35,10 @@ namespace Mentula.GuiItems.Containers
         private GraphicsDevice device;
         private SpriteBatch batch;
 
+        /// <summary>
+        /// Initializes a new instance of the Mentula.GuiItems.Containers.Menu class.
+        /// </summary>
+        /// <param name="game"></param>
         public Menu(Game game)
             : base(game)
         {
@@ -33,6 +46,9 @@ namespace Mentula.GuiItems.Containers
             controlls = new GuiItemCollection(null);
         }
 
+        /// <summary>
+        /// Initializes the spritebatch used for drawing.
+        /// </summary>
         public override void Initialize()
         {
             batch = new SpriteBatch(device);
@@ -347,29 +363,72 @@ namespace Mentula.GuiItems.Containers
             return txt;
         }
 
+        public TabContainer AddTabContainer(
+            bool? AllowDrop = null,
+            bool? Enabled = null,
+            string Name = null,
+            Vector2? Position = null,
+            GuiItem Parent = null,
+            bool? Visible = null,
+            Rectangle? TabRectangle = null,
+            int? SelectedTab = null)
+        {
+            TabContainer tbC = new TabContainer(device, font);
+
+            if (AllowDrop != null) tbC.AllowDrop = AllowDrop.Value;
+            if (Enabled != null) tbC.Enabled = Enabled.Value;
+            if (Name != null) tbC.Name = Name;
+            if (Position != null) tbC.Position = Position.Value;
+            if (Parent != null) tbC.Parent = Parent;
+            if (Visible != null) tbC.Visible = Visible.Value;
+            if (TabRectangle != null) tbC.TabRectangle = TabRectangle.Value;
+            if (SelectedTab != null) tbC.SelectedTab = SelectedTab.Value;
+
+            controlls.Add(tbC);
+            return tbC;
+        }
+
+        /// <summary>
+        /// Gets a control with a specified name as a specified GuiItem.
+        /// </summary>
+        /// <typeparam name="T"> The GuiItem to cast to. </typeparam>
+        /// <param name="name"> The specified name to search for. </param>
         public T FindControl<T>(string name)
             where T : GuiItem
         {
-            return FindControl(name) as T;
+            return (T)FindControl(name);
         }
 
+        /// <summary>
+        /// Gets a control with a specified name.
+        /// </summary>
+        /// <param name="name"> The specified name to search for. </param>
         public GuiItem FindControl(string name)
         {
             return controlls.FirstOrDefault(c => c.Name == name);
         }
 
+        /// <summary>
+        /// Disables and hides the menu.
+        /// </summary>
         public void Hide()
         {
             Enabled = false;
             Visible = false;
         }
 
+        /// <summary>
+        /// Enables and shows the menu.
+        /// </summary>
         public void Show()
         {
             Enabled = true;
             Visible = true;
         }
 
+        /// <summary>
+        /// Updates the menu and its controlls.
+        /// </summary>
         public override void Update(GameTime gameTime)
         {
             MouseState mState = Mouse.GetState();
@@ -379,24 +438,39 @@ namespace Mentula.GuiItems.Containers
             for (int i = 0; i < controlls.Count; i++)
             {
                 GuiItem control = controlls[i];
+                if (control.SuppressUpdate)
+                {
+                    control.SuppressUpdate = false;
+                    continue;
+                }
 
                 Button btn;
                 TextBox txt;
+                TabContainer tb;
 
                 if ((btn = control as Button) != null) btn.Update(mState, delta);
                 else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
+                else if ((tb = control as TabContainer) != null) tb.Update(mState, kState, delta);
                 else control.Update(mState);
             }
 
             base.Update(gameTime);
         }
 
+        /// <summary>
+        /// Draws the menu and its controlls.
+        /// </summary>
         public void Draw(GameTime gameTime)
         {
             batch.Begin();
 
             for (int i = 0; i < controlls.Count; i++)
             {
+                if (controlls[i].SuppressDraw)
+                {
+                    controlls[i].SuppressDraw = false;
+                    continue;
+                }
                 controlls[i].Draw(batch);
             }
 

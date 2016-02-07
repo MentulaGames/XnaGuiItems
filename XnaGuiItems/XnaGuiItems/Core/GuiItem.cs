@@ -90,6 +90,14 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public virtual GuiItem Parent { get { return parent; } set { ParentChanged(this, value); } }
         /// <summary>
+        /// Gets or sets a value indicating weather a menu should call the update method.
+        /// </summary>
+        public virtual bool SuppressUpdate { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating weather a menu should call the draw method.
+        /// </summary>
+        public virtual bool SuppressDraw { get; set; }
+        /// <summary>
         /// Gets or sets a value indicating whether the GuiItem and all its child Mentula.GuiItems are displayed.
         /// </summary>
         public virtual bool Visible { get { return visible; } set { VisibilityChanged(this, value); } }

@@ -8,6 +8,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Mentula.GuiItems.Items
 {
+    /// <summary>
+    /// A Dropdown with clickable childs.
+    /// </summary>
     public class DropDown : GuiItem
     {
         /// <summary>
