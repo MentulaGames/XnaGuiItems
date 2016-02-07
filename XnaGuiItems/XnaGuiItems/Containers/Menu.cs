@@ -49,7 +49,7 @@ namespace Mentula.GuiItems.Containers
             base.Dispose(disposing);
         }
 
-        public void AddGuiItem(
+        public GuiItem AddGuiItem(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -75,9 +75,10 @@ namespace Mentula.GuiItems.Containers
             if (Visible != null) gI.Visible = Visible.Value;
 
             controlls.Add(gI);
+            return gI;
         }
 
-        public void AddButton(
+        public Button AddButton(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -113,9 +114,10 @@ namespace Mentula.GuiItems.Containers
             if (ForegroundRectangle != null) btn.ForegroundRectangle = ForegroundRectangle.Value;
 
             controlls.Add(btn);
+            return btn;
         }
 
-        public void AddDropDown(
+        public DropDown AddDropDown(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -149,9 +151,10 @@ namespace Mentula.GuiItems.Containers
             if (HeaderBackgroundColor != null) dd.HeaderBackgroundColor = HeaderBackgroundColor.Value;
 
             controlls.Add(dd);
+            return dd;
         }
 
-        public void AddLabel(
+        public Label AddLabel(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -187,9 +190,10 @@ namespace Mentula.GuiItems.Containers
             if (ForegroundRectangle != null) lbl.ForegroundRectangle = ForegroundRectangle.Value;
 
             controlls.Add(lbl);
+            return lbl;
         }
 
-        public void AddprogresBar(
+        public ProgresBar AddprogresBar(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -221,9 +225,10 @@ namespace Mentula.GuiItems.Containers
             if (Value != null) prgBr.Value = Value.Value;
 
             controlls.Add(prgBr);
+            return prgBr;
         }
 
-        public void AddSlider(
+        public Slider AddSlider(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -259,9 +264,10 @@ namespace Mentula.GuiItems.Containers
             if (Value != null) sld.Value = Value.Value;
 
             controlls.Add(sld);
+            return sld;
         }
 
-        public void AddTextBox(
+        public TextBox AddTextBox(
             bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
@@ -310,6 +316,7 @@ namespace Mentula.GuiItems.Containers
 
             txt.Click += TextBox_Click;
             controlls.Add(txt);
+            return txt;
         }
 
         public T FindControl<T>(string name)

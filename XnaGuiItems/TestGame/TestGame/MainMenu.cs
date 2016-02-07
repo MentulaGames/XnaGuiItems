@@ -12,22 +12,21 @@ namespace TestGame
         public MainMenu(Game game)
             :base(game)
         {
-            Visible = true;
         }
 
         public override void Initialize()
         {
             const string DD_OPTIONS = "DD_Options";
-            AddDropDown(
+            DropDown dd = AddDropDown(
                 Name: DD_OPTIONS,
                 Position: new Vector2(10),
                 AutoSize: true);
 
-            FindControl<DropDown>(DD_OPTIONS).AddOption(new LABEL("Attack", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
-            FindControl<DropDown>(DD_OPTIONS).AddOption("Walk here");
-            FindControl<DropDown>(DD_OPTIONS).AddOption(new LABEL("Examine", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
-            FindControl<DropDown>(DD_OPTIONS).AddOption("Cancel");
-            FindControl<DropDown>(DD_OPTIONS).Refresh();
+            dd.AddOption(new LABEL("Attack", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
+            dd.AddOption("Walk here");
+            dd.AddOption(new LABEL("Examine", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
+            dd.AddOption("Cancel");
+            dd.Refresh();
 
             AddTextBox(
                 Name: "TxTName",

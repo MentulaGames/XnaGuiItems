@@ -8,7 +8,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Reflection;
-using LABEL = System.Collections.Generic.KeyValuePair<string, Microsoft.Xna.Framework.Color>;
 
 namespace TestGame
 {
@@ -28,6 +27,7 @@ namespace TestGame
         protected override void Initialize()
         {
             Components.Add(mm = new MainMenu(this));
+            mm.Show();
             mm.LoadFont(Content, "ConsoleFont");
             base.Initialize();
         }
