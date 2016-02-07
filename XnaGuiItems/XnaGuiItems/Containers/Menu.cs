@@ -56,10 +56,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
-            bool? Visible = null)
+            bool? Visible = null,
+            int? Width = null)
         {
             GuiItem gI = new GuiItem(device);
 
@@ -69,10 +71,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) gI.Bounds = Bounds.Value;
             if (Enabled != null) gI.Enabled = Enabled.Value;
             if (ForeColor != null) gI.ForeColor = ForeColor.Value;
+            if (Height != null) gI.Height = Height.Value;
             if (Name != null) gI.Name = Name;
             if (Position != null) gI.Position = Position.Value;
             if (Parent != null) gI.Parent = Parent;
             if (Visible != null) gI.Visible = Visible.Value;
+            if (Width != null) gI.Width = Width.Value;
 
             controlls.Add(gI);
             return gI;
@@ -85,10 +89,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             bool? AutoSize = null,
             BorderStyle? BorderStyle = null,
             string Text = null,
@@ -103,10 +109,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) btn.Bounds = Bounds.Value;
             if (Enabled != null) btn.Enabled = Enabled.Value;
             if (ForeColor != null) btn.ForeColor = ForeColor.Value;
+            if (Height != null) btn.Height = Height.Value;
             if (Name != null) btn.Name = Name;
             if (Position != null) btn.Position = Position.Value;
             if (Parent != null) btn.Parent = Parent;
             if (Visible != null) btn.Visible = Visible.Value;
+            if (Width != null) btn.Width = Width.Value;
             if (AutoSize != null) btn.AutoSize = AutoSize.Value;
             if (BorderStyle != null) btn.BorderStyle = BorderStyle.Value;
             if (Text != null) btn.Text = Text;
@@ -124,10 +132,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             bool? AutoSize = null,
             BorderStyle? BorderStyle = null,
             string HeaderText = null,
@@ -141,10 +151,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) dd.Bounds = Bounds.Value;
             if (Enabled != null) dd.Enabled = Enabled.Value;
             if (ForeColor != null) dd.ForeColor = ForeColor.Value;
+            if (Height != null) dd.Height = Height.Value;
             if (Name != null) dd.Name = Name;
             if (Position != null) dd.Position = Position.Value;
             if (Parent != null) dd.Parent = Parent;
             if (Visible != null) dd.Visible = Visible.Value;
+            if (Width != null) dd.Width = Width.Value;
             if (AutoSize != null) dd.AutoSize = AutoSize.Value;
             if (BorderStyle != null) dd.BorderStyle = BorderStyle.Value;
             if (HeaderText != null) dd.HeaderText = HeaderText;
@@ -161,10 +173,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             bool? AutoSize = null,
             BorderStyle? BorderStyle = null,
             string Text = null,
@@ -179,10 +193,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) lbl.Bounds = Bounds.Value;
             if (Enabled != null) lbl.Enabled = Enabled.Value;
             if (ForeColor != null) lbl.ForeColor = ForeColor.Value;
+            if (Height != null) lbl.Height = Height.Value;
             if (Name != null) lbl.Name = Name;
             if (Position != null) lbl.Position = Position.Value;
             if (Parent != null) lbl.Parent = Parent;
             if (Visible != null) lbl.Visible = Visible.Value;
+            if (Width != null) lbl.Width = Width.Value;
             if (AutoSize != null) lbl.AutoSize = AutoSize.Value;
             if (BorderStyle != null) lbl.BorderStyle = BorderStyle.Value;
             if (Text != null) lbl.Text = Text;
@@ -200,10 +216,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             bool? Inverted = null,
             BorderStyle? BorderStyle = null,
             int? Value = null)
@@ -216,10 +234,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) prgBr.Bounds = Bounds.Value;
             if (Enabled != null) prgBr.Enabled = Enabled.Value;
             if (ForeColor != null) prgBr.ForeColor = ForeColor.Value;
+            if (Height != null) prgBr.Height = Height.Value;
             if (Name != null) prgBr.Name = Name;
             if (Position != null) prgBr.Position = Position.Value;
             if (Parent != null) prgBr.Parent = Parent;
             if (Visible != null) prgBr.Visible = Visible.Value;
+            if (Width != null) prgBr.Width = Width.Value;
             if (Inverted != null) prgBr.Inverted = Inverted.Value;
             if (BorderStyle != null) prgBr.BorderStyle = BorderStyle.Value;
             if (Value != null) prgBr.Value = Value.Value;
@@ -235,10 +255,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             BorderStyle? BorderStyle = null,
             Rectangle? SliderBarDimentions = null,
             int? MaximumValue = null,
@@ -253,10 +275,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) sld.Bounds = Bounds.Value;
             if (Enabled != null) sld.Enabled = Enabled.Value;
             if (ForeColor != null) sld.ForeColor = ForeColor.Value;
+            if (Height != null) sld.Height = Height.Value;
             if (Name != null) sld.Name = Name;
             if (Position != null) sld.Position = Position.Value;
             if (Parent != null) sld.Parent = Parent;
             if (Visible != null) sld.Visible = Visible.Value;
+            if (Width != null) sld.Width = Width.Value;
             if (BorderStyle != null) sld.BorderStyle = BorderStyle.Value;
             if (SliderBarDimentions != null) sld.SlidBarDimentions = SliderBarDimentions.Value;
             if (MaximumValue != null) sld.MaximumValue = MaximumValue.Value;
@@ -274,10 +298,12 @@ namespace Mentula.GuiItems.Containers
             Rectangle? Bounds = null,
             bool? Enabled = null,
             Color? ForeColor = null,
+            int? Height = null,
             string Name = null,
             Vector2? Position = null,
             GuiItem Parent = null,
             bool? Visible = null,
+            int? Width = null,
             bool? AutoSize = null,
             BorderStyle? BorderStyle = null,
             string Text = null,
@@ -298,10 +324,12 @@ namespace Mentula.GuiItems.Containers
             if (Bounds != null) txt.Bounds = Bounds.Value;
             if (Enabled != null) txt.Enabled = Enabled.Value;
             if (ForeColor != null) txt.ForeColor = ForeColor.Value;
+            if (Height != null) txt.Height = Height.Value;
             if (Name != null) txt.Name = Name;
             if (Position != null) txt.Position = Position.Value;
             if (Parent != null) txt.Parent = Parent;
             if (Visible != null) txt.Visible = Visible.Value;
+            if (Width != null) txt.Width = Width.Value;
             if (AutoSize != null) txt.AutoSize = AutoSize.Value;
             if (BorderStyle != null) txt.BorderStyle = BorderStyle.Value;
             if (Text != null) txt.Text = Text;

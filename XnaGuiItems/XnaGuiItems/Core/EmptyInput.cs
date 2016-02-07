@@ -131,6 +131,18 @@ namespace Mentula.GuiItems.Core
                 return k;
             });
 
+            if (result) SetDown(Keys.LeftShift, KeyState.Down);
+            else
+            {
+                if (downs.ContainsKey(Keys.LeftShift))
+                {
+                    DateTime time = DateTime.UtcNow;
+                    result = (time - downs[Keys.LeftShift]).Milliseconds < 250;
+
+                    if (!result) SetDown(Keys.LeftShift, KeyState.Up);
+                }
+            }
+
             return result;
         }
 
@@ -152,7 +164,10 @@ namespace Mentula.GuiItems.Core
             if (downs.ContainsKey(key))
             {
                 DateTime time = DateTime.UtcNow;
-                return (time - downs[key]).Milliseconds > 500;
+                bool result = (time - downs[key]).Milliseconds > 250;
+
+                if (result) downs[key] = downs[key].AddMilliseconds(50);
+                return result;
             }
 
             return false;
