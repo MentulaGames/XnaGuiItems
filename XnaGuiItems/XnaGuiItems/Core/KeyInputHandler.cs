@@ -23,7 +23,7 @@ namespace Mentula.GuiItems.Core
             if (state.IsKeyDown(Keys.A))
             {
                 if (clsInput.A_KeyState == KeyState.Up) clsInput.A_KeyState = KeyState.Down;
-                else if(clsInput.RepeatKey(Keys.A)) keyboadString += shift ? 'A' : 'a';
+                else if (clsInput.RepeatKey(Keys.A)) keyboadString += shift ? 'A' : 'a';
             }
             else if (state.IsKeyUp(Keys.A))
             {
@@ -315,7 +315,14 @@ namespace Mentula.GuiItems.Core
 
             if (state.IsKeyDown(Keys.V))
             {
-                if (clsInput.V_KeyState == KeyState.Up) clsInput.V_KeyState = KeyState.Down;
+                if (ctrl)
+                {
+                    Utilities.RunInSTAThread(() =>
+                    {
+                        keyboadString += System.Windows.Forms.Clipboard.GetText(System.Windows.Forms.TextDataFormat.UnicodeText);
+                    });
+                }
+                else if (clsInput.V_KeyState == KeyState.Up) clsInput.V_KeyState = KeyState.Down;
                 else if (clsInput.RepeatKey(Keys.V)) keyboadString += shift ? 'V' : 'v';
             }
             else if (state.IsKeyUp(Keys.V))

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Mentula.GuiItems
@@ -24,6 +25,13 @@ namespace Mentula.GuiItems
             FormBorderStyle n = (FormBorderStyle)newType;
             Control window = Control.FromHandle(game.Window.Handle);
             window.FindForm().FormBorderStyle = n;
+        }
+
+        public static void RunInSTAThread(ThreadStart function)
+        {
+            Thread t = new Thread(function) { IsBackground = true };
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
     }
 }
