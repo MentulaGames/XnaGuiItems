@@ -20,11 +20,19 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// The center width of the viewport.
         /// </summary>
-        public int ScreenWidthMiddle { get { return device.Viewport.Width >> 1; } }
+        public int ScreenWidthMiddle { get { return ScreenWidth >> 1; } }
         /// <summary>
         /// The center height of the viewport.
         /// </summary>
-        public int ScreenHeightMiddle { get { return device.Viewport.Height >> 1; } }
+        public int ScreenHeightMiddle { get { return ScreenHeight >> 1; } }
+        /// <summary>
+        /// The width of the viewport.
+        /// </summary>
+        public int ScreenWidth { get { return device.Viewport.Width; } }
+        /// <summary>
+        /// The Height of the viewport.
+        /// </summary>
+        public int ScreenHeight { get { return device.Viewport.Height; } }
 
         public event EventHandler<EventArgs> DrawOrderChanged;
         public event EventHandler<EventArgs> VisibleChanged;
@@ -460,7 +468,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Draws the menu and its controlls.
         /// </summary>
-        public void Draw(GameTime gameTime)
+        public virtual void Draw(GameTime gameTime)
         {
             batch.Begin();
 
