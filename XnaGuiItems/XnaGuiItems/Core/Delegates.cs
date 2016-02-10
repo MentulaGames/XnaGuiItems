@@ -25,11 +25,6 @@ namespace Mentula.GuiItems.Core
     public delegate void MoveEventHandler(GuiItem sender, Vector2 newPosition);
 
     /// <summary>
-    /// Represents the method that will handle the XnaMentula.GuiItems.Core.Mentula.GuiItems.ParentChanged event of the XnaMentula.GuiItems.GuiItem class.
-    /// </summary>
-    public delegate void ParentChangeEventHandler(GuiItem sender, GuiItem newparent);
-
-    /// <summary>
     /// Represents the method that will handle the XnaMentula.GuiItems.Core.Mentula.GuiItems.Resize event of the XnaMentula.GuiItems.GuiItem class.
     /// </summary>
     public delegate void ReSizeEventhandler(GuiItem sender, Rectangle newSize);

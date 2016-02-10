@@ -1,6 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Mentula.GuiItems.Core;
 
 namespace Mentula.GuiItems.Items
 {
@@ -54,30 +54,8 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Label to. </param>
         /// <param name="font"> The font to use while drawing the text. </param>
         public Label(GraphicsDevice device, SpriteFont font)
-             : base(device)
-        {
-            InitEvents();
-            foregroundRectangle = Extentions.FromPosition(Position, 100, 50);
-            this.font = font;
-            text = "";
-            Refresh();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.Label class as a child.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Label to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the label. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public Label(GraphicsDevice device, GuiItem parent, SpriteFont font)
-             : base(device, parent)
-        {
-            InitEvents();
-            foregroundRectangle = Extentions.FromPosition(Position, 100, 50);
-            this.font = font;
-            text = "";
-            Refresh();
-        }
+             : this(device, new Rectangle(0, 0, 100, 50), font)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the XnaMentula.GuiItems.Items.Label class with a specific size.
@@ -89,26 +67,9 @@ namespace Mentula.GuiItems.Items
              : base(device, bounds)
         {
             InitEvents();
-            foregroundRectangle = foregroundRectangle = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+            foregroundRectangle = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
             this.font = font;
-            text = "";
-            Refresh();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.Label class as a child and with a specific size.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Label to. </param>
-        /// <param name="bounds"> The size of the label in pixels. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the label. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public Label(GraphicsDevice device, GuiItem parent, Rectangle bounds, SpriteFont font)
-             : base(device, parent, bounds)
-        {
-            InitEvents();
-            foregroundRectangle = foregroundRectangle = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-            this.font = font;
-            text = "";
+            text = string.Empty;
             Refresh();
         }
 
@@ -136,7 +97,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Draws the XnaMentula.GuiItems.Items.Label and its childs to the specified spritebatch.
+        /// Draws the XnaMentula.GuiItems.Items.Label to the specified spritebatch.
         /// </summary>
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -144,8 +105,7 @@ namespace Mentula.GuiItems.Items
 
             if (visible)
             {
-                if (parent != null) spriteBatch.Draw(foregoundTexture, foregroundRectangle.Add(parent.Position), null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
-                else spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 

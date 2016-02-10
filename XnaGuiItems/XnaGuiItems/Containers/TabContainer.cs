@@ -41,19 +41,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Containers.TabContainer class as a child.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Containers.TabContainer to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the TabContainer. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public TabContainer(GraphicsDevice device, GuiItem parent, SpriteFont font)
-            :base(device, parent)
-        {
-            this.font = font;
-            Init();
-        }
-
-        /// <summary>
         /// Adds a tab with a specified name to the TabContainer.
         /// </summary>
         /// <param name="name"> The name for the tab. </param>
@@ -141,7 +128,7 @@ namespace Mentula.GuiItems.Containers
         new public void Update(MouseState mState) { }
 
         /// <summary>
-        /// Updates the TabContainer and its childs.
+        /// Updates the TabContainer.
         /// </summary>
         /// <param name="mState"> The specified MouseState to use. </param>
         /// <param name="kState"> The specified KeyboardState to use. </param>

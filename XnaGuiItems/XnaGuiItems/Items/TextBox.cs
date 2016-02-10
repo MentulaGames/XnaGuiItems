@@ -1,9 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Linq;
-using Mentula.GuiItems.Core;
 
 namespace Mentula.GuiItems.Items
 {
@@ -59,21 +59,6 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.TextBox class as a child.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.TextBox to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the label. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public TextBox(GraphicsDevice device, GuiItem parent, SpriteFont font)
-            : base(device, parent, font)
-        {
-            inputHandler = new KeyInputHandler();
-            FlickerStyle = FlickerStyle.Normal;
-            MinimumSize = new Vector2(100, 50);
-            MaximumSize = device.Viewport.Bounds.Size();
-        }
-
-        /// <summary>
         /// Initializes a new instance of the XnaMentula.GuiItems.Items.TextBox class with a specific size.
         /// </summary>
         /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.TextBox to. </param>
@@ -89,22 +74,6 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.TextBox class as a child and with a specific size.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.TextBox to. </param>
-        /// <param name="bounds"> The size of the label in pixels. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the label. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public TextBox(GraphicsDevice device, GuiItem parent, Rectangle bounds, SpriteFont font)
-            : base(device, parent, bounds, font)
-        {
-            inputHandler = new KeyInputHandler();
-            FlickerStyle = FlickerStyle.Normal;
-            MinimumSize = new Vector2(100, 50);
-            MaximumSize = device.Viewport.Bounds.Size();
-        }
-
-        /// <summary>
         /// Updates the XnaMentula.GuiItems.Items.TextBox and its childs, checking if any mouse event are occuring.
         /// This should only be used when the textBox is out of focus!
         /// </summary>
@@ -112,17 +81,17 @@ namespace Mentula.GuiItems.Items
         public override void Update(MouseState state) { base.Update(state); }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.TextBox and its childs, checking if any mouse- or keyboard event are occuring.
+        /// Updates the XnaMentula.GuiItems.Items.TextBox, checking if any mouse- or keyboard event are occuring.
         /// Use like: myTextBox.Update(Mouse.GetState(), Keyboard.GetState(), (float)gameTime.ElapsedGameTime.TotalSeconds);
         /// </summary>
         /// <param name="mState"> The current state of the mouse. </param>
         /// <param name="kState"> The current state of the keyboard. </param>
         public void Update(MouseState mState, KeyboardState kState, float deltaTime)
         {
+            base.Update(mState);
+
             if (Enabled)
             {
-                base.Update(mState);
-
                 if (Focused)
                 {
                     string newText = inputHandler.GetInputString(kState, MultiLine);

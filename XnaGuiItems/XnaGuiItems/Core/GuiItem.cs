@@ -14,10 +14,6 @@ namespace Mentula.GuiItems.Core
     public class GuiItem : IDisposable
     {
         /// <summary>
-        /// Gets or sets a value indicating wether the guiItem can accept data that the user drags onto it.
-        /// </summary>
-        public virtual bool AllowDrop { get; set; }
-        /// <summary>
         /// Gets or sets the background color for the GuiItem.
         /// </summary>
         public virtual Color BackColor { get { return backColor; } set { BackColorChanged(this, value); } }
@@ -30,10 +26,6 @@ namespace Mentula.GuiItems.Core
         /// in pixels, relative to the parent guiItem.
         /// </summary>
         public virtual Rectangle Bounds { get { return bounds; } set { Resize(this, value); } }
-        /// <summary>
-        /// Gets the collection of Mentula.GuiItems contained within the guiItem.
-        /// </summary>
-        public virtual GuiItemCollection Controls { get; protected set; }
         /// <summary>
         /// Gets the default background color of the GuiItem.
         /// </summary>
@@ -55,20 +47,10 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public virtual Color ForeColor { get { return foreColor; } set { ForeColorChanged(this, value); } }
         /// <summary>
-        /// Gets a value indicating whether the GuiItem contains one or more child Mentula.GuiItems.
-        /// </summary>
-        public virtual bool HasChildren { get { return Controls.Count > 0 ? true : false; } }
-        /// <summary>
         /// Gets or sets the height of the guiItem including its nonclient elements,
         /// in pixels, relative to the parent guiItem.
         /// </summary>
         public virtual int Height { get { return Bounds.Height; } set { Bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, value); } }
-        /// <summary>
-        /// Gets a value indicating whether the caller must call an invoke method when
-        /// making method calls to the guiItem because the caller is on a diffrent thread
-        /// than the on the guiItem was created on.
-        /// </summary>
-        public virtual bool InvokeRequired { get { return false; } }
         /// <summary>
         /// Gets a value indicating whether the GuiItem has been disposed of.
         /// </summary>
@@ -85,10 +67,6 @@ namespace Mentula.GuiItems.Core
         /// Gets or sets the position of the GuiItem.
         /// </summary>
         public virtual Vector2 Position { get { return bounds.Position(); } set { Move(this, value); } }
-        /// <summary>
-        /// Gets or sets the parent container of the guiItem.
-        /// </summary>
-        public virtual GuiItem Parent { get { return parent; } set { ParentChanged(this, value); } }
         /// <summary>
         /// Gets or sets a value indicating weather a menu should call the update method.
         /// </summary>
@@ -115,7 +93,6 @@ namespace Mentula.GuiItems.Core
         protected Color foreColor;
         protected string name;
         protected float rotation;
-        protected GuiItem parent;
         protected Texture2D foregoundTexture;
         protected bool visible;
         protected bool leftClicked;
@@ -154,10 +131,6 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public event RotationChangedEventHandler Rotated;
         /// <summary>
-        /// Occurs when the XnaGuiItem.Core.GuiItem.Parent property changes.
-        /// </summary>
-        public event ParentChangeEventHandler ParentChanged;
-        /// <summary>
         /// Occurs when the GuiItem is resized.
         /// </summary>
         public event ReSizeEventhandler Resize;
@@ -176,26 +149,7 @@ namespace Mentula.GuiItems.Core
             this.device = device;
             bounds = new Rectangle(0, 0, 100, 50);
             BackColor = DefaultBackColor;
-            Controls = new GuiItemCollection(this);
             ForeColor = DefaultForeColor;
-            Enabled = true;
-            visible = true;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Core.GuiItem class as a child guiItem.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.GuiItem to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the guiItem. </param>
-        public GuiItem(GraphicsDevice device, GuiItem parent)
-        {
-            InitEvents();
-            this.device = device;
-            bounds = new Rectangle(0, 0, 100, 50);
-            BackColor = DefaultBackColor;
-            Controls = new GuiItemCollection(this);
-            ForeColor = DefaultForeColor;
-            parent.Controls.Add(this);
             Enabled = true;
             visible = true;
         }
@@ -206,38 +160,10 @@ namespace Mentula.GuiItems.Core
         /// <param name="device"> The device to display the XnaMentula.GuiItems.GuiItem to. </param>
         /// <param name="bounds"> The size of the GuiItem in pixels. </param>
         public GuiItem(GraphicsDevice device, Rectangle bounds)
+            : this(device)
         {
             if (bounds.Width <= 0 || bounds.Height <= 0) throw new ArgumentException("Bounds.Width and bounds.Height must be greater then zero");
-
-            InitEvents();
-            this.device = device;
             this.bounds = bounds;
-            BackColor = DefaultBackColor;
-            Controls = new GuiItemCollection(this);
-            ForeColor = DefaultForeColor;
-            Enabled = true;
-            visible = true;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Core.GuiItem class with specific size.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.GuiItem to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the guiItem. </param>
-        /// <param name="bounds"> The size of the GuiItem in pixels. </param>
-        public GuiItem(GraphicsDevice device, GuiItem parent, Rectangle bounds)
-        {
-            if (bounds.Width <= 0 || bounds.Height <= 0) throw new ArgumentException("Bounds.Width and bounds.Height must be greater then zero");
-
-            InitEvents();
-            this.device = device;
-            this.bounds = bounds;
-            BackColor = DefaultBackColor;
-            Controls = new GuiItemCollection(this);
-            ForeColor = DefaultForeColor;
-            parent.Controls.Add(this);
-            Enabled = true;
-            visible = true;
         }
 
         /// <summary>
@@ -253,43 +179,10 @@ namespace Mentula.GuiItems.Core
                 if (backgroundImage != null) backgroundImage.Dispose();
                 if (foregoundTexture != null) foregoundTexture.Dispose();
 
-                for (int i = 0; i < Controls.Count; i++)
-                {
-                    Controls[i].Dispose();
-                }
-
                 Enabled = false;
                 IsDisposed = true;
                 Disposing = false;
             }
-        }
-
-        /// <summary>
-        /// Retrieves the child guiItem that is located at the specified coordinates.
-        /// </summary>
-        /// <param name="vect"> 
-        /// A Microsoft.Xna.Framework.Vector2 that contains the coordinates where you want to look for a guiItem. 
-        /// Coordinates are expressed relative to upper-left corner of the Mentula.GuiItems client area.
-        /// </param>
-        public virtual GuiItem GetChildAtVector(Vector2 vect) { return Controls.FirstOrDefault(i => i.Position == vect); }
-
-        /// <summary>
-        /// Retrieves the child guiItem that is located at the specified coordinates,
-        /// specifying whether to ignore child Mentula.GuiItems of a certain types.
-        /// </summary>
-        /// <param name="vect"> 
-        /// A Microsoft.Xna.Framework.Vector2 that contains the coordinates where you want to look for a guiItem. 
-        /// Coordinates are expressed relative to upper-left corner of the Mentula.GuiItems client area.
-        /// </param>
-        /// <param name="skipValue">
-        /// One of the values of the XnaMentula.GuiItems.GetChildAtvectorSkip,
-        /// determening whether to ignore child Mentula.GuiItems of a certain type.
-        /// </param>
-        public virtual GuiItem GetChildAtvector(Vector2 vect, GetChildAtVectorSkip skipValue)
-        {
-            if (skipValue == GetChildAtVectorSkip.None) return Controls.FirstOrDefault(i => i.Position == vect);
-            else if (skipValue == GetChildAtVectorSkip.Disabled) return Controls.FirstOrDefault(i => i.Position == vect && i.Enabled);
-            else return Controls.First(i => i.Position == vect && i.visible);
         }
 
         /// <summary>
@@ -301,16 +194,14 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Core.GuiItem and its childs, checking if any mouse event are occuring.
+        /// Updates the XnaMentula.GuiItems.Core.GuiItem, checking if any mouse event are occuring.
         /// </summary>
         /// <param name="mState"> The current state of the mouse. </param>
         public virtual void Update(MouseState mState)
         {
             if (Enabled)
             {
-                bool over;
-                if (Parent != null) over = new Rectangle(Position.X() + Parent.Position.X(), Position.Y() + Parent.Position.Y(), bounds.Width, bounds.Height).Contains(mState.X, mState.Y);
-                else over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(mState.X, mState.Y);
+                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(mState.X, mState.Y);
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over && Hover != null) Hover.Invoke(this, mState);
@@ -327,11 +218,6 @@ namespace Mentula.GuiItems.Core
 
                 if (leftClicked && mState.LeftButton == ButtonState.Released) leftClicked = false;
                 if (rigthClicked && mState.RightButton == ButtonState.Released) rigthClicked = false;
-
-                for (int i = 0; i < Controls.Count; i++)
-                {
-                    Controls[i].Update(mState);
-                }
             }
         }
 
@@ -342,17 +228,25 @@ namespace Mentula.GuiItems.Core
         {
             if (visible)
             {
-                if (parent != null) spriteBatch.Draw(backColorImage, parent.Position + Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
-                else spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
 
                 if (backgroundImage != null)
                 {
-                    if (parent != null) spriteBatch.Draw(backgroundImage, parent.Position + Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
-                    else spriteBatch.Draw(backgroundImage, Position + bounds.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(backgroundImage, Position + bounds.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
                 }
-
-                Controls.ForEach(c => c.Draw(spriteBatch));
             }
+        }
+
+        public virtual void Show()
+        {
+            Enabled = true;
+            Visible = true;
+        }
+
+        public virtual void Hide()
+        {
+            Enabled = false;
+            Visible = false;
         }
 
         protected virtual void OnBackColorChanged(object sender, Color newColor) { backColor = newColor; backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device); }
@@ -361,7 +255,6 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnMove(object sender, Vector2 newpos) { bounds.X = newpos.X(); bounds.Y = newpos.Y(); }
         protected virtual void OnNameChange(object sender, string newName) { name = newName; }
         protected virtual void OnRotationChanged(object sender, float newRot) { rotation = newRot; }
-        protected virtual void OnParentChanged(object sender, GuiItem newParent) { parent = newParent; }
         protected virtual void OnResize(object sender, Rectangle newSize)
         {
             bounds = newSize;
@@ -378,7 +271,6 @@ namespace Mentula.GuiItems.Core
             Move += OnMove;
             NameChanged += OnNameChange;
             Rotated += OnRotationChanged;
-            ParentChanged += OnParentChanged;
             Resize += OnResize;
             VisibilityChanged += OnVisibilityChanged;
         }
@@ -428,7 +320,7 @@ namespace Mentula.GuiItems.Core
             /// </summary>
             /// <param name="index"> The index of the GuiItem used to insert the Item. </param>
             /// <param name="item"> The XnaMentula.GuiItems.GuiItem to add to the GuiItemCollection. </param>
-            public virtual void Insert(int index, GuiItem item) { item.Parent = Owner; Items.Insert(index, item); }
+            public virtual void Insert(int index, GuiItem item) { Items.Insert(index, item); }
             /// <summary>
             /// Removes a GuiItem from the GuiItemCollection at the specifed indexed location.
             /// </summary>
@@ -438,7 +330,7 @@ namespace Mentula.GuiItems.Core
             /// Adds the specified GuiItem to the GuiItemCollection.
             /// </summary>
             /// <param name="item"> The XnaMentula.GuiItems.GuiItem to add to the GuiItemCollection. </param>
-            public virtual void Add(GuiItem item) { item.Parent = Owner; Items.Add(item); }
+            public virtual void Add(GuiItem item) { Items.Add(item); }
             /// <summary>
             /// Removes all Mentula.GuiItems from the GuiItemCollection.
             /// </summary>
@@ -468,7 +360,7 @@ namespace Mentula.GuiItems.Core
             /// Removes the specified GuiItem from the GuiItemCollection.
             /// </summary>
             /// <param name="item"> The XnaMentula.GuiItems.GuiItem to remove from the GuiItemCollection. </param>
-            public virtual bool Remove(GuiItem item) { item.Parent = null; return Items.Remove(item); }
+            public virtual bool Remove(GuiItem item) { return Items.Remove(item); }
             /// <summary>
             /// Retrives a refrence to an enumerator object that is used to iterate over a XnaMentula.GuiItems.GuiItem.GuiItemCollection.
             /// </summary>

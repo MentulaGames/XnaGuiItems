@@ -1,10 +1,10 @@
 ﻿using Mentula.GuiItems.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xna.Framework.Input;
 
 namespace Mentula.GuiItems.Items
 {
@@ -30,6 +30,10 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the background color for the dropdown header.
         /// </summary>
         public virtual Color HeaderBackgroundColor { get; set; }
+        /// <summary>
+        /// Gets or sets the position of the GuiItem.
+        /// </summary>
+        public override Vector2 Position { get { return base.Position; } set { base.Position = value; foregroundRectangle.X = value.X(); foregroundRectangle.Y = value.Y(); } }
 
         /// <summary>
         /// Occurs when a XnaMentula.GuiItems.Items.DropDown option is clicked.
@@ -55,18 +59,6 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.DropDown class as a child.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.DropDown to. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the dropdown. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public DropDown(GraphicsDevice device, GuiItem parent, SpriteFont font)
-            : base(device, parent)
-        {
-            Init(font);
-        }
-
-        /// <summary>
         /// Initializes a new instance of the XnaMentula.GuiItems.Items.DropDown class with a specific size.
         /// </summary>
         /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.DropDown to. </param>
@@ -74,19 +66,6 @@ namespace Mentula.GuiItems.Items
         /// <param name="font"> The font to use while drawing the text. </param>
         public DropDown(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds)
-        {
-            Init(font);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.DropDown class as a child and with a specific size.
-        /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.DropDown to. </param>
-        /// <param name="bounds"> The size of the dropdown in pixels. </param>
-        /// <param name="parent"> The XnaMentula.GuiItems.Core.GuiItem to be the parent of the dropdown. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
-        public DropDown(GraphicsDevice device, GuiItem parent, Rectangle bounds, SpriteFont font)
-            : base(device, parent, bounds)
         {
             Init(font);
         }
@@ -210,9 +189,7 @@ namespace Mentula.GuiItems.Items
             if (visible)
             {
                 spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
-
-                if (parent != null) spriteBatch.Draw(foregoundTexture, foregroundRectangle.Add(parent.Position), null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
-                else spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
 
                 int fontHeight = font.MeasureString("a").Y();
                 for (int i = 0; i < itemTextures.Length; i++)

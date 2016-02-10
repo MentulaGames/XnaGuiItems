@@ -74,7 +74,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public GuiItem AddGuiItem(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -83,13 +82,11 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null)
         {
             GuiItem gI = new GuiItem(device);
 
-            if (AllowDrop != null) gI.AllowDrop = AllowDrop.Value;
             if (BackColor != null) gI.BackColor = BackColor.Value;
             if (BackgroundImage != null) gI.BackgroundImage = BackgroundImage;
             if (Bounds != null) gI.Bounds = Bounds.Value;
@@ -98,7 +95,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) gI.Height = Height.Value;
             if (Name != null) gI.Name = Name;
             if (Position != null) gI.Position = Position.Value;
-            if (Parent != null) gI.Parent = Parent;
             if (Visible != null) gI.Visible = Visible.Value;
             if (Width != null) gI.Width = Width.Value;
 
@@ -107,7 +103,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public Button AddButton(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -116,7 +111,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -127,7 +121,6 @@ namespace Mentula.GuiItems.Containers
         {
             Button btn = new Button(device, font);
 
-            if (AllowDrop != null) btn.AllowDrop = AllowDrop.Value;
             if (BackColor != null) btn.BackColor = BackColor.Value;
             if (BackgroundImage != null) btn.BackgroundImage = BackgroundImage;
             if (Bounds != null) btn.Bounds = Bounds.Value;
@@ -136,7 +129,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) btn.Height = Height.Value;
             if (Name != null) btn.Name = Name;
             if (Position != null) btn.Position = Position.Value;
-            if (Parent != null) btn.Parent = Parent;
             if (Visible != null) btn.Visible = Visible.Value;
             if (Width != null) btn.Width = Width.Value;
             if (AutoSize != null) btn.AutoSize = AutoSize.Value;
@@ -150,7 +142,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public DropDown AddDropDown(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -159,7 +150,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -169,7 +159,6 @@ namespace Mentula.GuiItems.Containers
         {
             DropDown dd = new DropDown(device, font);
 
-            if (AllowDrop != null) dd.AllowDrop = AllowDrop.Value;
             if (BackColor != null) dd.BackColor = BackColor.Value;
             if (BackgroundImage != null) dd.BackgroundImage = BackgroundImage;
             if (Bounds != null) dd.Bounds = Bounds.Value;
@@ -178,7 +167,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) dd.Height = Height.Value;
             if (Name != null) dd.Name = Name;
             if (Position != null) dd.Position = Position.Value;
-            if (Parent != null) dd.Parent = Parent;
             if (Visible != null) dd.Visible = Visible.Value;
             if (Width != null) dd.Width = Width.Value;
             if (AutoSize != null) dd.AutoSize = AutoSize.Value;
@@ -191,7 +179,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public Label AddLabel(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -200,7 +187,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -211,7 +197,6 @@ namespace Mentula.GuiItems.Containers
         {
             Label lbl = new Label(device, font);
 
-            if (AllowDrop != null) lbl.AllowDrop = AllowDrop.Value;
             if (BackColor != null) lbl.BackColor = BackColor.Value;
             if (BackgroundImage != null) lbl.BackgroundImage = BackgroundImage;
             if (Bounds != null) lbl.Bounds = Bounds.Value;
@@ -220,7 +205,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) lbl.Height = Height.Value;
             if (Name != null) lbl.Name = Name;
             if (Position != null) lbl.Position = Position.Value;
-            if (Parent != null) lbl.Parent = Parent;
             if (Visible != null) lbl.Visible = Visible.Value;
             if (Width != null) lbl.Width = Width.Value;
             if (AutoSize != null) lbl.AutoSize = AutoSize.Value;
@@ -234,7 +218,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public ProgresBar AddprogresBar(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -243,7 +226,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             bool? Inverted = null,
@@ -252,7 +234,6 @@ namespace Mentula.GuiItems.Containers
         {
             ProgresBar prgBr = new ProgresBar(device);
 
-            if (AllowDrop != null) prgBr.AllowDrop = AllowDrop.Value;
             if (BackColor != null) prgBr.BackColor = BackColor.Value;
             if (BackgroundImage != null) prgBr.BackgroundImage = BackgroundImage;
             if (Bounds != null) prgBr.Bounds = Bounds.Value;
@@ -261,7 +242,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) prgBr.Height = Height.Value;
             if (Name != null) prgBr.Name = Name;
             if (Position != null) prgBr.Position = Position.Value;
-            if (Parent != null) prgBr.Parent = Parent;
             if (Visible != null) prgBr.Visible = Visible.Value;
             if (Width != null) prgBr.Width = Width.Value;
             if (Inverted != null) prgBr.Inverted = Inverted.Value;
@@ -273,7 +253,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public Slider AddSlider(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -282,7 +261,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             BorderStyle? BorderStyle = null,
@@ -293,7 +271,6 @@ namespace Mentula.GuiItems.Containers
         {
             Slider sld = new Slider(device);
 
-            if (AllowDrop != null) sld.AllowDrop = AllowDrop.Value;
             if (BackColor != null) sld.BackColor = BackColor.Value;
             if (BackgroundImage != null) sld.BackgroundImage = BackgroundImage;
             if (Bounds != null) sld.Bounds = Bounds.Value;
@@ -302,7 +279,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) sld.Height = Height.Value;
             if (Name != null) sld.Name = Name;
             if (Position != null) sld.Position = Position.Value;
-            if (Parent != null) sld.Parent = Parent;
             if (Visible != null) sld.Visible = Visible.Value;
             if (Width != null) sld.Width = Width.Value;
             if (BorderStyle != null) sld.BorderStyle = BorderStyle.Value;
@@ -316,7 +292,6 @@ namespace Mentula.GuiItems.Containers
         }
 
         public TextBox AddTextBox(
-            bool? AllowDrop = null,
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -325,7 +300,6 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -342,7 +316,6 @@ namespace Mentula.GuiItems.Containers
         {
             TextBox txt = new TextBox(device, font);
 
-            if (AllowDrop != null) txt.AllowDrop = AllowDrop.Value;
             if (BackColor != null) txt.BackColor = BackColor.Value;
             if (BackgroundImage != null) txt.BackgroundImage = BackgroundImage;
             if (Bounds != null) txt.Bounds = Bounds.Value;
@@ -351,7 +324,6 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) txt.Height = Height.Value;
             if (Name != null) txt.Name = Name;
             if (Position != null) txt.Position = Position.Value;
-            if (Parent != null) txt.Parent = Parent;
             if (Visible != null) txt.Visible = Visible.Value;
             if (Width != null) txt.Width = Width.Value;
             if (AutoSize != null) txt.AutoSize = AutoSize.Value;
@@ -372,22 +344,18 @@ namespace Mentula.GuiItems.Containers
         }
 
         public TabContainer AddTabContainer(
-            bool? AllowDrop = null,
             bool? Enabled = null,
             string Name = null,
             Vector2? Position = null,
-            GuiItem Parent = null,
             bool? Visible = null,
             Rectangle? TabRectangle = null,
             int? SelectedTab = null)
         {
             TabContainer tbC = new TabContainer(device, font);
 
-            if (AllowDrop != null) tbC.AllowDrop = AllowDrop.Value;
             if (Enabled != null) tbC.Enabled = Enabled.Value;
             if (Name != null) tbC.Name = Name;
             if (Position != null) tbC.Position = Position.Value;
-            if (Parent != null) tbC.Parent = Parent;
             if (Visible != null) tbC.Visible = Visible.Value;
             if (TabRectangle != null) tbC.TabRectangle = TabRectangle.Value;
             if (SelectedTab != null) tbC.SelectedTab = SelectedTab.Value;
