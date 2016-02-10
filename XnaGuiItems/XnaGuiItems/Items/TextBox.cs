@@ -163,6 +163,11 @@ namespace Mentula.GuiItems.Items
             foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, device);
         }
 
+        public int GetLineCount()
+        {
+            return Text.Count(c => c == '\n') + 1;
+        }
+
         private Vector2 GetLongTextDimentions()
         {
             if (!MultiLine) return font.MeasureString(text);

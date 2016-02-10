@@ -10,28 +10,24 @@ namespace TestGame
     public class MainMenu : Menu
     {
         public MainMenu(Game game)
-            :base(game)
+            : base(game)
         {
         }
 
         public override void Initialize()
         {
-            const string DD_OPTIONS = "DD_Options";
-            DropDown dd = AddDropDown(
-                Name: DD_OPTIONS,
-                Position: new Vector2(10),
-                AutoSize: true);
-
-            dd.AddOption(new LABEL("Attack", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
-            dd.AddOption("Walk here");
-            dd.AddOption(new LABEL("Examine", null), new LABEL("Chaos dwarf hand cannoneer", Color.Yellow), new LABEL("(Level: 100)", Color.LimeGreen));
-            dd.AddOption("Cancel");
-            dd.Refresh();
-
             AddTextBox(
-                Name: "TxTName",
+                Name: "TxtName",
                 AutoSize: true,
-                Position: new Vector2(10, 250));
+                Multiline: true,
+                Position: new Vector2(25, 250),
+                Height: 150);
+
+            AddSlider(
+                Name: "SldName",
+                MaximumValue: 1,
+                Position: new Vector2(20, 250),
+                Rotation: 1.57f);
 
             base.Initialize();
         }
@@ -39,6 +35,17 @@ namespace TestGame
         public void LoadFont(ContentManager content, string name)
         {
             font = content.Load<SpriteFont>(name);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            Slider sld = FindControl<Slider>("SldName");
+            TextBox txt = FindControl<TextBox>("TxtName");
+
+            sld.MaximumValue = txt.GetLineCount();
+            txt.LineStart = sld.Value;
+
+            base.Update(gameTime);
         }
     }
 }

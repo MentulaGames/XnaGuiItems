@@ -82,6 +82,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null)
         {
@@ -95,6 +96,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) gI.Height = Height.Value;
             if (Name != null) gI.Name = Name;
             if (Position != null) gI.Position = Position.Value;
+            if (Rotation != null) gI.Rotation = Rotation.Value;
             if (Visible != null) gI.Visible = Visible.Value;
             if (Width != null) gI.Width = Width.Value;
 
@@ -111,6 +113,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -129,6 +132,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) btn.Height = Height.Value;
             if (Name != null) btn.Name = Name;
             if (Position != null) btn.Position = Position.Value;
+            if (Rotation != null) btn.Rotation = Rotation.Value;
             if (Visible != null) btn.Visible = Visible.Value;
             if (Width != null) btn.Width = Width.Value;
             if (AutoSize != null) btn.AutoSize = AutoSize.Value;
@@ -150,6 +154,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -167,6 +172,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) dd.Height = Height.Value;
             if (Name != null) dd.Name = Name;
             if (Position != null) dd.Position = Position.Value;
+            if (Rotation != null) dd.Rotation = Rotation.Value;
             if (Visible != null) dd.Visible = Visible.Value;
             if (Width != null) dd.Width = Width.Value;
             if (AutoSize != null) dd.AutoSize = AutoSize.Value;
@@ -187,6 +193,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -205,6 +212,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) lbl.Height = Height.Value;
             if (Name != null) lbl.Name = Name;
             if (Position != null) lbl.Position = Position.Value;
+            if (Rotation != null) lbl.Rotation = Rotation.Value;
             if (Visible != null) lbl.Visible = Visible.Value;
             if (Width != null) lbl.Width = Width.Value;
             if (AutoSize != null) lbl.AutoSize = AutoSize.Value;
@@ -226,6 +234,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             bool? Inverted = null,
@@ -242,6 +251,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) prgBr.Height = Height.Value;
             if (Name != null) prgBr.Name = Name;
             if (Position != null) prgBr.Position = Position.Value;
+            if (Rotation != null) prgBr.Rotation = Rotation.Value;
             if (Visible != null) prgBr.Visible = Visible.Value;
             if (Width != null) prgBr.Width = Width.Value;
             if (Inverted != null) prgBr.Inverted = Inverted.Value;
@@ -261,6 +271,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             BorderStyle? BorderStyle = null,
@@ -279,6 +290,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) sld.Height = Height.Value;
             if (Name != null) sld.Name = Name;
             if (Position != null) sld.Position = Position.Value;
+            if (Rotation != null) sld.Rotation = Rotation.Value;
             if (Visible != null) sld.Visible = Visible.Value;
             if (Width != null) sld.Width = Width.Value;
             if (BorderStyle != null) sld.BorderStyle = BorderStyle.Value;
@@ -300,6 +312,7 @@ namespace Mentula.GuiItems.Containers
             int? Height = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             int? Width = null,
             bool? AutoSize = null,
@@ -324,6 +337,7 @@ namespace Mentula.GuiItems.Containers
             if (Height != null) txt.Height = Height.Value;
             if (Name != null) txt.Name = Name;
             if (Position != null) txt.Position = Position.Value;
+            if (Rotation != null) txt.Rotation = Rotation.Value;
             if (Visible != null) txt.Visible = Visible.Value;
             if (Width != null) txt.Width = Width.Value;
             if (AutoSize != null) txt.AutoSize = AutoSize.Value;
@@ -347,6 +361,7 @@ namespace Mentula.GuiItems.Containers
             bool? Enabled = null,
             string Name = null,
             Vector2? Position = null,
+            float? Rotation = null,
             bool? Visible = null,
             Rectangle? TabRectangle = null,
             int? SelectedTab = null)
@@ -356,6 +371,7 @@ namespace Mentula.GuiItems.Containers
             if (Enabled != null) tbC.Enabled = Enabled.Value;
             if (Name != null) tbC.Name = Name;
             if (Position != null) tbC.Position = Position.Value;
+            if (Rotation != null) tbC.Rotation = Rotation.Value;
             if (Visible != null) tbC.Visible = Visible.Value;
             if (TabRectangle != null) tbC.TabRectangle = TabRectangle.Value;
             if (SelectedTab != null) tbC.SelectedTab = SelectedTab.Value;

@@ -94,7 +94,7 @@ namespace Mentula.GuiItems.Items
             {
                 if (over && state.LeftButton == ButtonState.Pressed)
                 {
-                    MouseDown.DynamicInvoke(this, state);
+                    MouseDown.Invoke(this, state);
                     Refresh();
                 }
                 else if (over && state.LeftButton == ButtonState.Released && !IsSliding(state.Position()))
@@ -128,11 +128,11 @@ namespace Mentula.GuiItems.Items
             backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
-        protected void OnClick(object sender, MouseState state) { if (IsSliding(state.Position())) over = true; }
+        protected void OnClick(object sender, MouseState state) { if (IsSliding(GetRotatedMouse(state))) over = true; }
         protected void OnValueChanged(object sender, int newValue) { data.Value = newValue; }
         protected void OnMouseDown(object sender, MouseState state)
         {
-            Vector2 offset = SlidBarDimentions.Position() + Position - state.Position();
+            Vector2 offset = SlidBarDimentions.Position() + Position - GetRotatedMouse(state);
             if (oldOffset == Vector2.Zero) oldOffset = offset;
             else if (offset != oldOffset)
             {
@@ -159,8 +159,7 @@ namespace Mentula.GuiItems.Items
 
         private bool IsSliding(Vector2 mousePosition)
         {
-            if (SlidBarDimentions.Add(Position).Contains(mousePosition.ToPoint())) return true;
-            return false;
+            return SlidBarDimentions.Add(Position).Contains(mousePosition.ToPoint());
         }
     }
 }

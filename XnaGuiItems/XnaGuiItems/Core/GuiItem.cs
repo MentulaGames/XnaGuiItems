@@ -201,18 +201,20 @@ namespace Mentula.GuiItems.Core
         {
             if (Enabled)
             {
-                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(mState.X, mState.Y);
+                Vector2 mPos = GetRotatedMouse(mState);
+
+                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(mPos.X(), mPos.Y());
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over && Hover != null) Hover.Invoke(this, mState);
                 else if (down && Click != null && !leftClicked)
                 {
-                    Click.DynamicInvoke(this, mState);
+                    Click.Invoke(this, mState);
                     leftClicked = true;
                 }
                 else if (down && Click != null && !rigthClicked)
                 {
-                    Click.DynamicInvoke(this, mState);
+                    Click.Invoke(this, mState);
                     rigthClicked = true;
                 }
 
@@ -247,6 +249,11 @@ namespace Mentula.GuiItems.Core
         {
             Enabled = false;
             Visible = false;
+        }
+
+        protected Vector2 GetRotatedMouse(MouseState state)
+        {
+            return Vector2.Transform(state.Position() - Position, Matrix.CreateRotationZ(-rotation)) + Position;
         }
 
         protected virtual void OnBackColorChanged(object sender, Color newColor) { backColor = newColor; backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device); }

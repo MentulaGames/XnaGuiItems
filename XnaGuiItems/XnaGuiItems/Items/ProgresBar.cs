@@ -1,7 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Mentula.GuiItems.Core;
 
 namespace Mentula.GuiItems.Items
 {

@@ -34,6 +34,10 @@ namespace Mentula.GuiItems.Items
         /// in pixels, relative to the parent guiItem.
         /// </summary>
         public override Rectangle Bounds { get { return base.Bounds; } set { base.Bounds = value; ForegroundRectangle = value; } }
+        /// <summary>
+        /// Gets or sets a value indicating from what line the label should be shown.
+        /// </summary>
+        public int LineStart { get; set; }
 
         protected string text;
         protected SpriteFont font;
@@ -105,7 +109,10 @@ namespace Mentula.GuiItems.Items
 
             if (visible)
             {
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                int y = font.MeasureString("a").Y();
+                Rectangle selection = new Rectangle(0, y * LineStart, foregroundRectangle.Width, foregroundRectangle.Height);
+
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, selection, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 
