@@ -43,18 +43,9 @@ namespace Mentula.GuiItems.Core
 
         public void ChangeValue(int percent)
         {
-            float newValue = (percent * OnePercent) + min;
+            int newValue = (int)(percent * OnePercent);
 
-            if (newValue < max && newValue > min) val = (int)newValue;
-            else if (newValue < max) val = min;
-            else val = max;
-        }
-
-        public void Addvalue(int percent)
-        {
-            float newValue = ((percent * OnePercent) + min) + val;
-
-            if (newValue < max && newValue > min) val = (int)newValue;
+            if (newValue < max && percent > min) val = newValue;
             else if (newValue < max) val = min;
             else val = max;
         }

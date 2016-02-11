@@ -17,16 +17,13 @@ namespace TestGame
         public override void Initialize()
         {
             Label lbl = AddLabel(
-                Position: new Vector2(10, 10),
-                Width: 200,
-                Height: 200);
+                Position: new Vector2(10));
 
-            for (int i = 0; i < 20; i++)
-            {
-                lbl.Text += i > 0 ? $"\n{i}" : i.ToString();
-            }
+            Slider sld = AddSlider(
+                Position: new Vector2(100),
+                MaximumValue: 10);
 
-            lbl.LineStart = 3;
+            sld.ValueChanged += (sender, args) => lbl.Text = args.ToString();
 
             base.Initialize();
         }

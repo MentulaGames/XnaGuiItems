@@ -31,7 +31,7 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the current value of the slider.
         /// Will not change the visuals of the slider!
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { ValueChanged.DynamicInvoke(this, value); } }
+        public virtual int Value { get { return data.Value; } set { ValueChanged.Invoke(this, value); } }
 
         protected ProgresData data;
         private bool over;
@@ -144,9 +144,12 @@ namespace Mentula.GuiItems.Items
 
                 oldOffset = offset;
 
-                float ppp = (float)(bounds.Width + SlidBarDimentions.Width) / 100;
+                float ppp = (bounds.Width + SlidBarDimentions.Width) / 100f;
                 float percent = SlidBarDimentions.X * ppp;
+
+                int old = Value;
                 data.ChangeValue(data.Value >= (data.Maximum - ppp) && percent >= 99 ? 100 : (int)percent);
+                if (ValueChanged != null && Value != old) ValueChanged.Invoke(this, Value);
             }
         }
 
