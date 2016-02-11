@@ -35,9 +35,9 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromText(string text, SpriteFont font, Color color, int width, int height, bool multiLine, GraphicsDevice device)
+        internal static Texture2D FromText(string text, SpriteFont font, Color color, int width, int height, bool multiLine, int lineStart, GraphicsDevice device)
         {
-            string[] drawAbleText = multiLine ? text.Split(new string[1] { "/n" }, StringSplitOptions.None) : new string[1] { text };
+            string[] drawAbleText = multiLine ? text.Split(new string[1] { "\n" }, StringSplitOptions.None) : new string[1] { text };
             RenderTarget2D target = new RenderTarget2D(device, width, height);
             SpriteBatch sb = new SpriteBatch(device);
 
@@ -45,9 +45,9 @@ namespace Mentula.GuiItems
             device.Clear(Color.Transparent);
 
             sb.Begin();
-            for (int i = 0; i < drawAbleText.Length; i++)
+            for (int i = lineStart; i < drawAbleText.Length; i++)
             {
-                float y = 1 + i * font.MeasureString("a").Y;
+                float y = 1 + (i - lineStart) * font.MeasureString("a").Y;
                 sb.DrawString(font, drawAbleText[i], new Vector2(1, y), color, 0f, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
             sb.End();

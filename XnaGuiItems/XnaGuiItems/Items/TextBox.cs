@@ -97,7 +97,7 @@ namespace Mentula.GuiItems.Items
                     string newText = inputHandler.GetInputString(kState, MultiLine);
                     if (Text != newText) Text = newText;
 
-                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, device);
+                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
 
                     if (FlickerStyle == FlickerStyle.None) return;
 
@@ -129,7 +129,7 @@ namespace Mentula.GuiItems.Items
                 }
                 else
                 {
-                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text), font, foreColor, bounds.Width, bounds.Height, MultiLine, device);
+                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text), font, foreColor, bounds.Width, bounds.Height, MultiLine, LineStart, device);
                 }
             }
         }
@@ -160,12 +160,7 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle = bounds;
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
             if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, device);
-        }
-
-        public int GetLineCount()
-        {
-            return Text.Count(c => c == '\n') + 1;
+            foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
         }
 
         private Vector2 GetLongTextDimentions()

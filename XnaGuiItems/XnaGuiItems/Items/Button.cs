@@ -145,7 +145,7 @@ namespace Mentula.GuiItems.Items
             clickTexture = backColorImage.ApplyBorderButton(ButtonStyle.Click);
 
             if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderButton(0);
-            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, device);
+            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
         }
 
         /// <summary>

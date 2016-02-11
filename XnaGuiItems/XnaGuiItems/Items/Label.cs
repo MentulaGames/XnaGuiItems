@@ -1,6 +1,7 @@
 ﻿using Mentula.GuiItems.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 
 namespace Mentula.GuiItems.Items
 {
@@ -20,11 +21,11 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the text of the label. 
         /// </summary>
-        public virtual string Text { get { return text; } set { TextChanged.DynamicInvoke(this, value); } }
+        public virtual string Text { get { return text; } set { TextChanged.Invoke(this, value); } }
         /// <summary>
         /// Gets or sets the font used by the label.
         /// </summary>
-        public virtual SpriteFont Font { get { return font; } set { FontChanged.DynamicInvoke(this, value); } }
+        public virtual SpriteFont Font { get { return font; } set { FontChanged.Invoke(this, value); } }
         /// <summary>
         /// Gets or sets the rectangle used to draw the text.
         /// </summary>
@@ -37,9 +38,10 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets a value indicating from what line the label should be shown.
         /// </summary>
-        public int LineStart { get; set; }
+        public int LineStart { get { return lineStart; } set { lineStart = value; Refresh(); } }
 
         protected string text;
+        protected int lineStart;
         protected SpriteFont font;
         protected Rectangle foregroundRectangle;
 
@@ -97,7 +99,7 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle = bounds;
             backColorImage = Drawing.FromColor(BackColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
             if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, device);
+            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, true, LineStart, device);
         }
 
         /// <summary>
@@ -109,11 +111,13 @@ namespace Mentula.GuiItems.Items
 
             if (visible)
             {
-                int y = font.MeasureString("a").Y();
-                Rectangle selection = new Rectangle(0, y * LineStart, foregroundRectangle.Width, foregroundRectangle.Height);
-
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, selection, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
+        }
+
+        public int GetLineCount()
+        {
+            return Text.Count(c => c == '\n') + 1;
         }
 
         protected virtual void OnTextChanged(object sender, string newText) { text = newText; Refresh(); }
