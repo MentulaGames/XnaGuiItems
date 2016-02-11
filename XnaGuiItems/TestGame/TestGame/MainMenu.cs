@@ -27,7 +27,8 @@ namespace TestGame
                 Name: "SldName",
                 MaximumValue: 1,
                 Position: new Vector2(20, 250),
-                Rotation: 1.57f);
+                Rotation: 1.57f,
+                Width: 100);
 
             base.Initialize();
         }

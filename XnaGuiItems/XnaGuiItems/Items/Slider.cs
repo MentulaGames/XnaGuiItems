@@ -155,6 +155,7 @@ namespace Mentula.GuiItems.Items
             ValueChanged += OnValueChanged;
             Click += OnClick;
             MouseDown += OnMouseDown;
+            Resize += (sender, args) => Refresh();
         }
 
         private bool IsSliding(Vector2 mousePosition)
