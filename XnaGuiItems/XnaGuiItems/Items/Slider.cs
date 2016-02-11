@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Mentula.GuiItems.Items
 {
@@ -144,11 +145,12 @@ namespace Mentula.GuiItems.Items
 
                 oldOffset = offset;
 
-                float ppp = (bounds.Width + SlidBarDimentions.Width) / 100f;
-                float percent = SlidBarDimentions.X * ppp;
+                float ppp = 100f / bounds.Width;
+                bool overCenter = SlidBarDimentions.X * ppp >= 50;
+                float percent = (SlidBarDimentions.X + (overCenter ? SlidBarDimentions.Width : 0)) * ppp;
 
                 int old = Value;
-                data.ChangeValue(data.Value >= (data.Maximum - ppp) && percent >= 99 ? 100 : (int)percent);
+                data.ChangeValue((int)percent);
                 if (ValueChanged != null && Value != old) ValueChanged.Invoke(this, Value);
             }
         }

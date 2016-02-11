@@ -21,7 +21,8 @@ namespace TestGame
 
             Slider sld = AddSlider(
                 Position: new Vector2(100),
-                MaximumValue: 10);
+                Width: 200,
+                MaximumValue: 25);
 
             sld.ValueChanged += (sender, args) => lbl.Text = args.ToString();
 
