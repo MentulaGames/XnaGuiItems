@@ -1,10 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Mentula.GuiItems.Core;
 
 namespace Mentula.GuiItems
 {
@@ -23,10 +20,12 @@ namespace Mentula.GuiItems
                         for (int x = 0; x < texture.Width; x++)
                         {
                             if (y == 0 || x == 0 || y == texture.Height - 1 || x == texture.Width - 1)
+                            {
                                 data[x + y * texture.Width] = Color.DimGray;
+                            }
                         }
                     }
-                    newTexture.SetData<Color>(data);
+                    newTexture.SetData(data);
                     return newTexture;
                 case (BorderStyle.Fixed3D):
                     for (int y = 0; y < texture.Height; y++)
@@ -37,7 +36,7 @@ namespace Mentula.GuiItems
                             else if (y == texture.Height - 1 || x == texture.Width - 1) data[x + y * texture.Width] = Color.White;
                         }
                     }
-                    newTexture.SetData<Color>(data);
+                    newTexture.SetData(data);
                     return newTexture;
                 default:
                     return texture;
@@ -57,10 +56,12 @@ namespace Mentula.GuiItems
                         for (int x = 0; x < texture.Width; x++)
                         {
                             if (y == 0 || x == 0 || y == texture.Height - 1 || x == texture.Width - 1)
+                            {
                                 data[x + y * texture.Width] = Color.CornflowerBlue;
+                            }
                         }
                     }
-                    newTexture.SetData<Color>(data);
+                    newTexture.SetData(data);
                     return newTexture;
                 case (ButtonStyle.Hover):
                     for (int y = 0; y < texture.Height; y++)
@@ -68,10 +69,12 @@ namespace Mentula.GuiItems
                         for (int x = 0; x < texture.Width; x++)
                         {
                             if (y == 0 || x == 0 || y == texture.Height - 1 || x == texture.Width - 1)
+                            {
                                 data[x + y * texture.Width] = Color.DimGray;
+                            }
                         }
                     }
-                    newTexture.SetData<Color>(data);
+                    newTexture.SetData(data);
                     return newTexture;
                 case (ButtonStyle.Click):
                     for (int y = 0; y < texture.Height; y++)
@@ -79,7 +82,9 @@ namespace Mentula.GuiItems
                         for (int x = 0; x < texture.Width; x++)
                         {
                             if (y == 0 || x == 0 || y == texture.Height - 1 || x == texture.Width - 1)
+                            {
                                 data[x + y * texture.Width] = Color.Black;
+                            }
                             else data[x + y * texture.Width] = data[x + y * texture.Width].Change(0, -10, -10, -10);
                         }
                     }
@@ -92,8 +97,7 @@ namespace Mentula.GuiItems
 
         internal static Color Change(this Color c, int a, int r, int b, int g)
         {
-            try { return new Color(c.R + r, c.G + g, c.B + b, c.A + a); }
-            catch (Exception) { return c; }
+            return new Color(c.R + r, c.G + g, c.B + b, c.A + a);
         }
 
         internal static Color[] GetColorData(this Texture2D texture)
@@ -118,110 +122,24 @@ namespace Mentula.GuiItems
             return new Vector2(rect.Width, rect.Height);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static int X(this Vector2 vect)
-        {
-            return (int)vect.X;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static int Y(this Vector2 vect)
-        {
-            return (int)vect.Y;
-        }
-
         internal static Point ToPoint(this Vector2 vect)
         {
-            return new Point(vect.X(), vect.Y());
+            return new Point((int)vect.X, (int)vect.Y);
         }
 
         internal static Rectangle Add(this Rectangle rect, Vector2 position)
         {
-            return new Rectangle(rect.X + position.X(), rect.Y + position.Y(), rect.Width, rect.Height);
+            return new Rectangle(rect.X + (int)position.X, rect.Y + (int)position.Y, rect.Width, rect.Height);
         }
 
         internal static Rectangle FromPosition(Vector2 position, int width, int height)
         {
-            return new Rectangle(position.X(), position.Y(), width, height);
+            return new Rectangle((int)position.X, (int)position.Y, width, height);
         }
 
         internal static string ToPassword(this string str, char passChar = '*')
         {
-            string val = "";
-            str.ToCharArray().ForEach(c => val += passChar);
-            return val;
-        }
-
-        internal static void ForEach<T>(this IList<T> value, Func<T, T> func)
-        {
-            if (value.GetType() == typeof(T[]))
-            {
-                for (int i = 0; i < (value as T[]).Length; i++)
-                {
-                    value[i] = func(value[i]);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < value.Count; i++)
-                {
-                    value[i] = func(value[i]);
-                }
-            }
-        }
-
-        internal static void ForEach<T>(this IList<T> value, Action<T> action)
-        {
-            if (value.GetType() == typeof(T[]))
-            {
-                for (int i = 0; i < (value as T[]).Length; i++)
-                {
-                    action(value[i]);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < value.Count; i++)
-                {
-                    action(value[i]);
-                }
-            }
-        }
-
-        internal static void For<T>(this IList<T> value, Func<int, T> func)
-        {
-            if (value.GetType() == typeof(T[]))
-            {
-                for (int i = 0; i < (value as T[]).Length; i++)
-                {
-                    value[i] = func(i);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < value.Count; i++)
-                {
-                    value[i] = func(i);
-                }
-            }
-        }
-
-        internal static void For<T>(this IList<T> value, Action<int> action)
-        {
-            if (value.GetType() == typeof(T[]))
-            {
-                for (int i = 0; i < (value as T[]).Length; i++)
-                {
-                    action(i);
-                }
-            }
-            else
-            {
-                for (int i = 0; i < value.Count; i++)
-                {
-                    action(i);
-                }
-            }
+            return new string(passChar, str.Length);
         }
     }
 }

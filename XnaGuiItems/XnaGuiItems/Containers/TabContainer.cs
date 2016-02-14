@@ -178,11 +178,19 @@ namespace Mentula.GuiItems.Containers
                     if (i == SelectedTab)
                     {
                         spriteBatch.Draw(tabtexture, Position + new Vector2(0, tab.Key.Height), null, tab.Key.BackColor, 0f, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
-                        tab.Value.ForEach(g => g.Draw(spriteBatch));
+
+                        for (int j = 0; j < tab.Value.Count; j++)
+                        {
+                            tab.Value[j].Draw(spriteBatch);
+                        }
                     }
 
                     tab.Key.Draw(spriteBatch);
-                    tab.Value.ForEach(g => g.SuppressDraw = true);
+
+                    for (int j = 0; j < tab.Value.Count; j++)
+                    {
+                        tab.Value[j].SuppressDraw = true;
+                    }
                 }
             }
         }

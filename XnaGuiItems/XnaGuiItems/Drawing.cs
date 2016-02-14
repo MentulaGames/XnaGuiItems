@@ -13,7 +13,12 @@ namespace Mentula.GuiItems
             Texture2D texture = new Texture2D(device, width, height);
 
             Color[] data = new Color[width * height];
-            data.ForEach(i => i = color);
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                data[i] = color;
+            }
+
             texture.SetData(data);
 
             return texture;
@@ -24,12 +29,12 @@ namespace Mentula.GuiItems
             Texture2D texture = new Texture2D(device, width, height);
             Color[] data = new Color[width * height];
 
-            data.For(delegate (int i)
+            for (int i = 0; i < data.Length; i++)
             {
                 Vector2 pos = new Vector2(i % width, (i - (i % width)) / width);
-                if (destinationRectangle.Contains(pos.ToPoint())) return color;
-                else return Color.Transparent;
-            });
+                if (destinationRectangle.Contains(pos.ToPoint())) data[i] = color;
+                else data[i] = Color.Transparent;
+            }
 
             texture.SetData(data);
             return texture;

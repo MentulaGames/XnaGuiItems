@@ -10,7 +10,7 @@ namespace Mentula.GuiItems.Core
 
         public KeyInputHandler()
         {
-            keyboadString = "";
+            keyboadString = string.Empty;
             clsInput = new EmptyInput();
         }
 

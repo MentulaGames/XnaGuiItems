@@ -125,11 +125,15 @@ namespace Mentula.GuiItems.Core
         {
             bool result = false;
 
-            keys.ForEach(delegate (Keys k)
+            for (int i = 0; i < keys.Length; i++)
             {
-                if (k == Keys.LeftShift || k == Keys.RightShift) result = true;
-                return k;
-            });
+                Keys k = keys[i];
+                if (k == Keys.LeftShift || k == Keys.RightShift)
+                {
+                    result = true;
+                    break;
+                }
+            }
 
             if (result) SetDown(Keys.LeftShift, KeyState.Down);
             else
@@ -150,11 +154,15 @@ namespace Mentula.GuiItems.Core
         {
             bool result = false;
 
-            keys.ForEach(delegate (Keys k)
+            for (int i = 0; i < keys.Length; i++)
             {
-                if (k == Keys.LeftControl || k == Keys.RightControl) result = true;
-                return k;
-            });
+                Keys k = keys[i];
+                if (k == Keys.LeftControl || k == Keys.RightControl)
+                {
+                    result = true;
+                    break;
+                }
+            }
 
             return result;
         }

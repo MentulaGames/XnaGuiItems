@@ -3,7 +3,7 @@
     /// <summary>
     /// Specifies the border style for a GuiItem.
     /// </summary>
-    public enum BorderStyle
+    public enum BorderStyle : byte
     {
         /// <summary>
         /// No Border.
@@ -22,7 +22,7 @@
     /// <summary>
     /// Specifies the flicker syle for a GuiItem.
     /// </summary>
-    public enum FlickerStyle
+    public enum FlickerStyle : byte
     {
         /// <summary>
         /// Flickers once every 2 seconds.
@@ -45,7 +45,7 @@
     /// <summary>
     /// Indicates a specific mouse click.
     /// </summary>
-    public enum MouseClick
+    public enum MouseClick : byte
     {
         /// <summary>
         /// A default click.
@@ -65,7 +65,7 @@
         Double
     }
 
-    internal enum ButtonStyle
+    internal enum ButtonStyle : byte
     {
         Default,
         Hover,

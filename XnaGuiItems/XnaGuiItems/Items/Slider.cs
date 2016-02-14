@@ -35,7 +35,7 @@ namespace Mentula.GuiItems.Items
         public virtual int Value { get { return data.Value; } set { ValueChanged.Invoke(this, value); } }
 
         protected ProgresData data;
-        private bool over;
+        private bool sliding;
         private Vector2 oldOffset;
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Mentula.GuiItems.Items
 
             SlidBarDimentions = new Rectangle(0, 0, Bounds.Width / 10, Bounds.Height);
             data = new ProgresData(0);
-            BorderStyle = Core.BorderStyle.FixedSingle;
+            BorderStyle = BorderStyle.FixedSingle;
             foreColor = Color.Gray;
 
             Refresh();
@@ -93,14 +93,14 @@ namespace Mentula.GuiItems.Items
 
             if (Enabled)
             {
-                if (over && state.LeftButton == ButtonState.Pressed)
+                if (sliding && state.LeftButton == ButtonState.Pressed)
                 {
                     MouseDown.Invoke(this, state);
                     Refresh();
                 }
-                else if (over && state.LeftButton == ButtonState.Released && !IsSliding(state.Position()))
+                else if (sliding && state.LeftButton == ButtonState.Released && !IsSliding(state.Position()))
                 {
-                    over = false;
+                    sliding = false;
                     oldOffset = Vector2.Zero;
                     Refresh();
                 }
@@ -123,13 +123,13 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Recalculates the background and the foreground.
         /// </summary>
-        public void Refresh()
+        public override void Refresh()
         {
             foregoundTexture = Drawing.FromColor(ForeColor, bounds.Width, bounds.Height, SlidBarDimentions, device);
             backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
-        protected void OnClick(object sender, MouseState state) { if (IsSliding(GetRotatedMouse(state))) over = true; }
+        protected void OnClick(object sender, MouseState state) { if (IsSliding(GetRotatedMouse(state))) sliding = true; }
         protected void OnValueChanged(object sender, int newValue) { data.Value = newValue; }
         protected void OnMouseDown(object sender, MouseState state)
         {

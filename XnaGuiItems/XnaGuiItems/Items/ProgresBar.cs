@@ -89,7 +89,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Recalculates the background and the foreground.
         /// </summary>
-        public void Refresh()
+        public override void Refresh()
         {
             float ppp = (float)bounds.Width / 100;
             int width = (int)(ppp * data.Value);

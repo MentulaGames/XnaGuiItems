@@ -152,9 +152,9 @@ namespace Mentula.GuiItems.Items
                 bool width = dim.X != bounds.Width ? true : false;
                 bool height = dim.Y != bounds.Height ? true : false;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), dim.Y());
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, dim.Y());
+                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
+                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
+                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y);
             }
 
             foregroundRectangle = bounds;

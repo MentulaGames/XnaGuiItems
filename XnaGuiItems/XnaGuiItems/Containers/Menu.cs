@@ -67,7 +67,10 @@ namespace Mentula.GuiItems.Containers
         {
             if (disposing)
             {
-                controlls.ForEach(i => i.Dispose());
+                for (int i = 0; i < controlls.Count; i++)
+                {
+                    controlls[i].Dispose();
+                }
             }
 
             base.Dispose(disposing);

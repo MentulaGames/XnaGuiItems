@@ -95,6 +95,7 @@ namespace Mentula.GuiItems.Core
         protected float rotation;
         protected Texture2D foregoundTexture;
         protected bool visible;
+        protected bool over;
         protected bool leftClicked;
         protected bool rigthClicked;
 
@@ -203,7 +204,7 @@ namespace Mentula.GuiItems.Core
             {
                 Vector2 mPos = GetRotatedMouse(mState);
 
-                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(mPos.X(), mPos.Y());
+                over = new Rectangle((int)Position.X, (int)Position.Y, bounds.Width, bounds.Height).Contains((int)mPos.X, (int)mPos.Y);
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over && Hover != null) Hover.Invoke(this, mState);
@@ -230,11 +231,13 @@ namespace Mentula.GuiItems.Core
         {
             if (visible)
             {
-                spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
-
                 if (backgroundImage != null)
                 {
-                    spriteBatch.Draw(backgroundImage, Position + bounds.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(backgroundImage, Position, null, BackColor, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                }
+                else
+                {
+                    spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
                 }
             }
         }
@@ -251,6 +254,8 @@ namespace Mentula.GuiItems.Core
             Visible = false;
         }
 
+        public virtual void Refresh() { }
+
         protected Vector2 GetRotatedMouse(MouseState state)
         {
             return Vector2.Transform(state.Position() - Position, Matrix.CreateRotationZ(-rotation)) + Position;
@@ -259,7 +264,7 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnBackColorChanged(object sender, Color newColor) { backColor = newColor; backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device); }
         protected virtual void OnBackgroundImageChaned(object sender, Texture2D newTexture) { backgroundImage = newTexture; }
         protected virtual void OnForeColorChanged(object sender, Color newColor) { foreColor = newColor; foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device); }
-        protected virtual void OnMove(object sender, Vector2 newpos) { bounds.X = newpos.X(); bounds.Y = newpos.Y(); }
+        protected virtual void OnMove(object sender, Vector2 newpos) { bounds.X = (int)newpos.X; bounds.Y = (int)newpos.Y; }
         protected virtual void OnNameChange(object sender, string newName) { name = newName; }
         protected virtual void OnRotationChanged(object sender, float newRot) { rotation = newRot; }
         protected virtual void OnResize(object sender, Rectangle newSize)

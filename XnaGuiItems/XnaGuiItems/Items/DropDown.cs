@@ -33,7 +33,19 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the position of the GuiItem.
         /// </summary>
-        public override Vector2 Position { get { return base.Position; } set { base.Position = value; foregroundRectangle.X = value.X(); foregroundRectangle.Y = value.Y(); } }
+        public override Vector2 Position
+        {
+            get
+            {
+                return base.Position;
+            }
+            set
+            {
+                base.Position = value;
+                foregroundRectangle.X = (int)value.X;
+                foregroundRectangle.Y = (int)value.Y;
+            }
+        }
 
         /// <summary>
         /// Occurs when a XnaMentula.GuiItems.Items.DropDown option is clicked.
@@ -112,9 +124,10 @@ namespace Mentula.GuiItems.Items
         /// <param name="state"> The current state of the mouse. </param>
         public override void Update(MouseState state)
         {
+            base.Update(state);
+
             if (Enabled)
             {
-                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(state.X, state.Y);
                 bool down = over && (state.LeftButton == ButtonState.Pressed || state.RightButton == ButtonState.Pressed);
 
                 for (int i = 0; i < itemTextures.Length; i++)
@@ -131,14 +144,12 @@ namespace Mentula.GuiItems.Items
                     }
                 }
             }
-
-            base.Update(state);
         }
 
         /// <summary>
         /// Recalculates the background and the foreground.
         /// </summary>
-        public void Refresh()
+        public override void Refresh()
         {
             if (AutoSize)
             {
@@ -151,16 +162,16 @@ namespace Mentula.GuiItems.Items
                     Vector2 newDim = font.MeasureString(full);
 
                     if (newDim.X > dim.X) dim.X = newDim.X;
-                    yAdder += newDim.Y();
+                    yAdder += (int)newDim.Y;
                 }
 
                 dim.X += 3;
                 bool width = dim.X != bounds.Width ? true : false;
                 bool height = dim.Y != bounds.Height ? true : false;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), dim.Y() + yAdder);
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, dim.Y() + yAdder);
+                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y + yAdder);
+                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
+                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y + yAdder);
             }
 
             foregroundRectangle = bounds;
@@ -168,7 +179,7 @@ namespace Mentula.GuiItems.Items
             if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
 
             foregoundTexture = Drawing.FromText(HeaderText, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
-            headerTexture = Drawing.FromColor(HeaderBackgroundColor, foregoundTexture.Width, font.MeasureString("a").Y(), device);
+            headerTexture = Drawing.FromColor(HeaderBackgroundColor, foregoundTexture.Width, (int)font.MeasureString("a").Y, device);
 
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
             for (int i = 0; i < labels.Length; i++)
@@ -191,7 +202,7 @@ namespace Mentula.GuiItems.Items
                 spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
                 spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
 
-                int fontHeight = font.MeasureString("a").Y();
+                float fontHeight = font.MeasureString("a").Y;
                 for (int i = 0; i < itemTextures.Length; i++)
                 {
                     Texture2D texture = itemTextures[i].Value == ButtonStyle.Default ? itemTextures[i].Key : itemTextures[i].Key.ApplyBorderButton(itemTextures[i].Value);
@@ -233,7 +244,7 @@ namespace Mentula.GuiItems.Items
 
         private int GetHoverIndex(MouseState state)
         {
-            int relativeY = state.Y - Position.Y() - headerTexture.Height;
+            int relativeY = state.Y - (int)Position.Y - headerTexture.Height;
             int lineHeight = headerTexture.Height;
 
             if (relativeY < 0) return -1;

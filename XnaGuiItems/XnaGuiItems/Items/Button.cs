@@ -64,9 +64,10 @@ namespace Mentula.GuiItems.Items
         /// <param name="state"> The current mouse state. </param>
         public void Update(MouseState state, float deltaTime)
         {
+            base.Update(state);
+
             if (Enabled)
             {
-                bool over = new Rectangle(Position.X(), Position.Y(), bounds.Width, bounds.Height).Contains(state.X, state.Y);
                 bool lDown = over && state.LeftButton == ButtonState.Pressed;
                 bool rDown = over && state.RightButton == ButtonState.Pressed;
 
@@ -101,8 +102,6 @@ namespace Mentula.GuiItems.Items
                     time = 0;
                 }
             }
-
-            base.Update(state);
         }
 
         /// <summary>
@@ -135,9 +134,9 @@ namespace Mentula.GuiItems.Items
                 bool width = dim.X != bounds.Width ? true : false;
                 bool height = dim.Y != bounds.Height ? true : false;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), dim.Y());
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, dim.X(), bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, dim.Y());
+                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
+                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
+                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y);
             }
 
             backColorImage = backColorImage.ApplyBorderButton(ButtonStyle.Default);
