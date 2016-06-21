@@ -37,11 +37,13 @@ namespace Mentula.GuiItems.Containers
         public event EventHandler<EventArgs> DrawOrderChanged;
         public event EventHandler<EventArgs> VisibleChanged;
 
+        protected bool autoFocus;
         protected GuiItemCollection controlls;
         protected SpriteFont font;
 
         private GraphicsDevice device;
         private SpriteBatch batch;
+        private static readonly InvalidOperationException noFont = new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
 
         /// <summary>
         /// Initializes a new instance of the Mentula.GuiItems.Containers.Menu class.
@@ -52,6 +54,7 @@ namespace Mentula.GuiItems.Containers
         {
             device = game.GraphicsDevice;
             controlls = new GuiItemCollection(null);
+            autoFocus = true;
         }
 
         /// <summary>
@@ -125,7 +128,8 @@ namespace Mentula.GuiItems.Containers
             SpriteFont Font = null,
             Rectangle? ForegroundRectangle = null)
         {
-            Button btn = new Button(device, font);
+            if (font == null && Font == null) throw noFont;
+            Button btn = new Button(device, Font ?? font);
 
             if (BackColor != null) btn.BackColor = BackColor.Value;
             if (BackgroundImage != null) btn.BackgroundImage = BackgroundImage;
@@ -141,7 +145,6 @@ namespace Mentula.GuiItems.Containers
             if (AutoSize != null) btn.AutoSize = AutoSize.Value;
             if (BorderStyle != null) btn.BorderStyle = BorderStyle.Value;
             if (Text != null) btn.Text = Text;
-            if (Font != null) btn.Font = font;
             if (ForegroundRectangle != null) btn.ForegroundRectangle = ForegroundRectangle.Value;
 
             controlls.Add(btn);
@@ -162,10 +165,12 @@ namespace Mentula.GuiItems.Containers
             int? Width = null,
             bool? AutoSize = null,
             BorderStyle? BorderStyle = null,
+            SpriteFont Font = null,
             string HeaderText = null,
             Color? HeaderBackgroundColor = null)
         {
-            DropDown dd = new DropDown(device, font);
+            if (font == null && Font == null) throw noFont;
+            DropDown dd = new DropDown(device, Font ?? font);
 
             if (BackColor != null) dd.BackColor = BackColor.Value;
             if (BackgroundImage != null) dd.BackgroundImage = BackgroundImage;
@@ -205,7 +210,8 @@ namespace Mentula.GuiItems.Containers
             SpriteFont Font = null,
             Rectangle? ForegroundRectangle = null)
         {
-            Label lbl = new Label(device, font);
+            if (font == null && Font == null) throw noFont;
+            Label lbl = new Label(device, Font ?? font);
 
             if (BackColor != null) lbl.BackColor = BackColor.Value;
             if (BackgroundImage != null) lbl.BackgroundImage = BackgroundImage;
@@ -330,7 +336,8 @@ namespace Mentula.GuiItems.Containers
             Vector2? MinimumSize = null,
             Vector2? MaximumSize = null)
         {
-            TextBox txt = new TextBox(device, font);
+            if (font == null && Font == null) throw noFont;
+            TextBox txt = new TextBox(device, Font ?? font);
 
             if (BackColor != null) txt.BackColor = BackColor.Value;
             if (BackgroundImage != null) txt.BackgroundImage = BackgroundImage;
@@ -367,9 +374,11 @@ namespace Mentula.GuiItems.Containers
             float? Rotation = null,
             bool? Visible = null,
             Rectangle? TabRectangle = null,
-            int? SelectedTab = null)
+            int? SelectedTab = null,
+            SpriteFont Font = null)
         {
-            TabContainer tbC = new TabContainer(device, font);
+            if (font == null && Font == null) throw noFont;
+            TabContainer tbC = new TabContainer(device, Font ?? font);
 
             if (Enabled != null) tbC.Enabled = Enabled.Value;
             if (Name != null) tbC.Name = Name;
@@ -474,13 +483,16 @@ namespace Mentula.GuiItems.Containers
 
         private void TextBox_Click(GuiItem sender, MouseState state)
         {
-            for (int i = 0; i < controlls.Count; i++)
+            if (autoFocus)
             {
-                TextBox txt;
-                if ((txt = controlls[i] as TextBox) != null)
+                for (int i = 0; i < controlls.Count; i++)
                 {
-                    txt.Focused = txt.Name == sender.Name ? true : false;
-                    txt.Refresh();
+                    TextBox txt;
+                    if ((txt = controlls[i] as TextBox) != null)
+                    {
+                        txt.Focused = txt.Name == sender.Name ? true : false;
+                        txt.Refresh();
+                    }
                 }
             }
         }

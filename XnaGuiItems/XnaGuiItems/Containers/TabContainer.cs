@@ -112,7 +112,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Refreshes the TabContainer recalculating the TabRectangle and the underlying texture.
         /// </summary>
-        public void Refresh()
+        public override void Refresh()
         {
             int length = 0;
             for (int i = 0; i < tabs.Length; i++)
