@@ -234,7 +234,7 @@ namespace Mentula.GuiItems.Containers
             return lbl;
         }
 
-        public ProgresBar AddprogresBar(
+        public ProgresBar AddProgresBar(
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -375,7 +375,8 @@ namespace Mentula.GuiItems.Containers
             bool? Visible = null,
             Rectangle? TabRectangle = null,
             int? SelectedTab = null,
-            SpriteFont Font = null)
+            SpriteFont Font = null,
+            bool? AutoFocus = null)
         {
             if (font == null && Font == null) throw noFont;
             TabContainer tbC = new TabContainer(device, Font ?? font);
@@ -387,6 +388,7 @@ namespace Mentula.GuiItems.Containers
             if (Visible != null) tbC.Visible = Visible.Value;
             if (TabRectangle != null) tbC.TabRectangle = TabRectangle.Value;
             if (SelectedTab != null) tbC.SelectedTab = SelectedTab.Value;
+            if (AutoFocus != null) tbC.AutoFocus = AutoFocus.Value;
 
             controlls.Add(tbC);
             return tbC;
@@ -490,7 +492,7 @@ namespace Mentula.GuiItems.Containers
                     TextBox txt;
                     if ((txt = controlls[i] as TextBox) != null)
                     {
-                        txt.Focused = txt.Name == sender.Name ? true : false;
+                        txt.Focused = txt.Name == sender.Name;
                         txt.Refresh();
                     }
                 }

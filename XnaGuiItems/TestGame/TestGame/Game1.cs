@@ -19,7 +19,6 @@ namespace TestGame
         {
             Components.Add(mm = new MainMenu(this));
             mm.Show();
-            mm.LoadFont(Content, "ConsoleFont");
             base.Initialize();
         }
     }

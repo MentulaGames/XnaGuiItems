@@ -21,6 +21,10 @@ namespace Mentula.GuiItems.Containers
         /// Gets or sets a selected tab.
         /// </summary>
         public virtual int SelectedTab { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating if the TabContainer should handle TextBox focusing.
+        /// </summary>
+        public virtual bool AutoFocus { get; set; }
 
         protected Rectangle tabRect;
 
@@ -103,6 +107,9 @@ namespace Mentula.GuiItems.Containers
                 {
                     for (int j = 0; j < items.Length; j++)
                     {
+                        TextBox txt;
+                        if ((txt = items[j] as TextBox) != null) txt.Click += TextBox_Click;
+
                         cur.Value.Add(items[j]);
                     }
                 }
@@ -200,6 +207,26 @@ namespace Mentula.GuiItems.Containers
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
             TabRectangle = new Rectangle(0, 0, 250, 150);
             tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
+        }
+
+        private void TextBox_Click(GuiItem sender, MouseState state)
+        {
+            if (AutoFocus)
+            {
+                for (int i = 0; i < tabs.Length; i++)
+                {
+                    GuiItemCollection controlls = tabs[i].Value;
+                    for (int j = 0; j < controlls.Count; j++)
+                    {
+                        TextBox txt;
+                        if ((txt = controlls[j] as TextBox) != null)
+                        {
+                            txt.Focused = txt.Name == sender.Name;
+                            txt.Refresh();
+                        }
+                    }
+                }
+            }
         }
     }
 }
