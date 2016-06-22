@@ -40,8 +40,8 @@ namespace Mentula.GuiItems.Containers
         protected bool autoFocus;
         protected GuiItemCollection controlls;
         protected SpriteFont font;
+        protected GraphicsDevice device;
 
-        private GraphicsDevice device;
         private SpriteBatch batch;
         private static readonly InvalidOperationException noFont = new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
 
@@ -376,7 +376,8 @@ namespace Mentula.GuiItems.Containers
             Rectangle? TabRectangle = null,
             int? SelectedTab = null,
             SpriteFont Font = null,
-            bool? AutoFocus = null)
+            bool? AutoFocus = null,
+            bool? UseAbsolutePosition = null)
         {
             if (font == null && Font == null) throw noFont;
             TabContainer tbC = new TabContainer(device, Font ?? font);
@@ -389,6 +390,7 @@ namespace Mentula.GuiItems.Containers
             if (TabRectangle != null) tbC.TabRectangle = TabRectangle.Value;
             if (SelectedTab != null) tbC.SelectedTab = SelectedTab.Value;
             if (AutoFocus != null) tbC.AutoFocus = AutoFocus.Value;
+            if (UseAbsolutePosition != null) tbC.UseAbsolutePosition = UseAbsolutePosition.Value;
 
             controlls.Add(tbC);
             return tbC;

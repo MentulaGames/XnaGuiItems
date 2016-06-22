@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mentula.GuiItems.Containers
 {
@@ -25,6 +26,10 @@ namespace Mentula.GuiItems.Containers
         /// Gets or sets a value indicating if the TabContainer should handle TextBox focusing.
         /// </summary>
         public virtual bool AutoFocus { get; set; }
+        /// <summary>
+        /// gets or sets a value indicating if the TabContainer should not atler the position of added tab items to the position of the TabContainer.
+        /// </summary>
+        public virtual bool UseAbsolutePosition { get; set; }
 
         protected Rectangle tabRect;
 
@@ -109,8 +114,11 @@ namespace Mentula.GuiItems.Containers
                     {
                         TextBox txt;
                         if ((txt = items[j] as TextBox) != null) txt.Click += TextBox_Click;
+                        items[j].Move += GuiItem_Move;
 
+                        items[j].Refresh();
                         cur.Value.Add(items[j]);
+                        GuiItem_Move(items[j], items[j].Position);
                     }
                 }
             }
@@ -226,6 +234,15 @@ namespace Mentula.GuiItems.Containers
                         }
                     }
                 }
+            }
+        }
+
+        private void GuiItem_Move(GuiItem sender, Vector2 newPos)
+        {
+            if (!UseAbsolutePosition)
+            {
+                Label tab = tabs.FirstOrDefault(t => t.Value.Contains(sender)).Key;
+                sender.Bounds = new Rectangle((int)sender.Position.X, (int)sender.Position.Y + tab.Height, sender.Width, sender.Height);
             }
         }
     }

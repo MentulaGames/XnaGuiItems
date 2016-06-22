@@ -739,6 +739,146 @@ namespace Mentula.GuiItems.Core
                 }
             }
 
+            if (state.IsKeyDown(Keys.NumPad0))
+            {
+                if (clsInput.Num0_KeyState == KeyState.Up) clsInput.Num0_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad0)) keyboadString += '0';
+            }
+            else if (state.IsKeyUp(Keys.NumPad0))
+            {
+                if (clsInput.Num0_KeyState == KeyState.Down)
+                {
+                    keyboadString += '0';
+                    clsInput.Num0_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad1))
+            {
+                if (clsInput.Num1_KeyState == KeyState.Up) clsInput.Num1_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad1)) keyboadString += '1';
+            }
+            else if (state.IsKeyUp(Keys.NumPad1))
+            {
+                if (clsInput.Num1_KeyState == KeyState.Down)
+                {
+                    keyboadString += '1';
+                    clsInput.Num1_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad2))
+            {
+                if (clsInput.Num2_KeyState == KeyState.Up) clsInput.Num2_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad2)) keyboadString += '2';
+            }
+            else if (state.IsKeyUp(Keys.NumPad2))
+            {
+                if (clsInput.Num2_KeyState == KeyState.Down)
+                {
+                    keyboadString += '2';
+                    clsInput.Num2_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad3))
+            {
+                if (clsInput.Num3_KeyState == KeyState.Up) clsInput.Num3_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad3)) keyboadString += '3';
+            }
+            else if (state.IsKeyUp(Keys.NumPad3))
+            {
+                if (clsInput.Num3_KeyState == KeyState.Down)
+                {
+                    keyboadString += '3';
+                    clsInput.Num3_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad4))
+            {
+                if (clsInput.Num4_KeyState == KeyState.Up) clsInput.Num4_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad4)) keyboadString += '4';
+            }
+            else if (state.IsKeyUp(Keys.NumPad4))
+            {
+                if (clsInput.Num4_KeyState == KeyState.Down)
+                {
+                    keyboadString += '4';
+                    clsInput.Num4_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad5))
+            {
+                if (clsInput.Num5_KeyState == KeyState.Up) clsInput.Num5_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad5)) keyboadString += '5';
+            }
+            else if (state.IsKeyUp(Keys.NumPad5))
+            {
+                if (clsInput.Num5_KeyState == KeyState.Down)
+                {
+                    keyboadString += '5';
+                    clsInput.Num5_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad6))
+            {
+                if (clsInput.Num6_KeyState == KeyState.Up) clsInput.Num6_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad6)) keyboadString += '6';
+            }
+            else if (state.IsKeyUp(Keys.NumPad6))
+            {
+                if (clsInput.Num6_KeyState == KeyState.Down)
+                {
+                    keyboadString += '6';
+                    clsInput.Num6_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad7))
+            {
+                if (clsInput.Num7_KeyState == KeyState.Up) clsInput.Num7_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad7)) keyboadString += '7';
+            }
+            else if (state.IsKeyUp(Keys.NumPad7))
+            {
+                if (clsInput.Num7_KeyState == KeyState.Down)
+                {
+                    keyboadString += '7';
+                    clsInput.Num7_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad8))
+            {
+                if (clsInput.Num8_KeyState == KeyState.Up) clsInput.Num8_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad8)) keyboadString += '8';
+            }
+            else if (state.IsKeyUp(Keys.NumPad8))
+            {
+                if (clsInput.Num8_KeyState == KeyState.Down)
+                {
+                    keyboadString += '8';
+                    clsInput.Num8_KeyState = KeyState.Up;
+                }
+            }
+
+            if (state.IsKeyDown(Keys.NumPad9))
+            {
+                if (clsInput.Num9_KeyState == KeyState.Up) clsInput.Num9_KeyState = KeyState.Down;
+                else if (clsInput.RepeatKey(Keys.NumPad9)) keyboadString += '9';
+            }
+            else if (state.IsKeyUp(Keys.NumPad9))
+            {
+                if (clsInput.Num9_KeyState == KeyState.Down)
+                {
+                    keyboadString += '9';
+                    clsInput.Num9_KeyState = KeyState.Up;
+                }
+            }
+
             return keyboadString;
         }
     }

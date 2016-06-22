@@ -151,8 +151,7 @@ namespace Mentula.GuiItems.Core
             bounds = new Rectangle(0, 0, 100, 50);
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
-            Enabled = true;
-            visible = true;
+            Show();
         }
 
         /// <summary>

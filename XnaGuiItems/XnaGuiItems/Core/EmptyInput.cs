@@ -64,6 +64,17 @@ namespace Mentula.GuiItems.Core
         public KeyState D8_KeyState { get { return D8; } set { SetDown(Keys.D8, value); D8 = value; } }
         public KeyState D9_KeyState { get { return D9; } set { SetDown(Keys.D9, value); D9 = value; } }
         public KeyState D0_KeyState { get { return D0; } set { SetDown(Keys.D0, value); D0 = value; } }
+        /// ////////////////////////////////////////////////
+        public KeyState Num0_KeyState { get { return Num0; } set { SetDown(Keys.NumPad0, value); Num0 = value; } }
+        public KeyState Num1_KeyState { get { return Num1; } set { SetDown(Keys.NumPad1, value); Num1 = value; } }
+        public KeyState Num2_KeyState { get { return Num2; } set { SetDown(Keys.NumPad2, value); Num2 = value; } }
+        public KeyState Num3_KeyState { get { return Num3; } set { SetDown(Keys.NumPad3, value); Num3 = value; } }
+        public KeyState Num4_KeyState { get { return Num4; } set { SetDown(Keys.NumPad4, value); Num4 = value; } }
+        public KeyState Num5_KeyState { get { return Num5; } set { SetDown(Keys.NumPad5, value); Num5 = value; } }
+        public KeyState Num6_KeyState { get { return Num6; } set { SetDown(Keys.NumPad6, value); Num6 = value; } }
+        public KeyState Num7_KeyState { get { return Num7; } set { SetDown(Keys.NumPad7, value); Num7 = value; } }
+        public KeyState Num8_KeyState { get { return Num8; } set { SetDown(Keys.NumPad8, value); Num8 = value; } }
+        public KeyState Num9_KeyState { get { return Num9; } set { SetDown(Keys.NumPad9, value); Num9 = value; } }
 
         private KeyState A;
         private KeyState B;
@@ -120,6 +131,17 @@ namespace Mentula.GuiItems.Core
         private KeyState D8;
         private KeyState D9;
         private KeyState D0;
+        /// ////////////////////////////////////////////////
+        private KeyState Num0;
+        private KeyState Num1;
+        private KeyState Num2;
+        private KeyState Num3;
+        private KeyState Num4;
+        private KeyState Num5;
+        private KeyState Num6;
+        private KeyState Num7;
+        private KeyState Num8;
+        private KeyState Num9;
 
         public bool IsShiftPressed(Keys[] keys)
         {

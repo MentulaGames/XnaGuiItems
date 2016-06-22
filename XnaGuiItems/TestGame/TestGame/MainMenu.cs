@@ -11,6 +11,10 @@ namespace TestGame
             : base(game)
         {
             font = game.Content.Load<SpriteFont>("ConsoleFont");
+
+            TabContainer tc = AddTabContainer();
+            tc.AddTab("tab");
+            tc.AddToTab("tab", new Label(device, font) { AutoSize = true, Text = "TEST", Position = new Vector2(0, 00) });
         }
 
         public override void Initialize()
