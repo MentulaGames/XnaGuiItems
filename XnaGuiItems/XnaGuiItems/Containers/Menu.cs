@@ -12,9 +12,17 @@ namespace Mentula.GuiItems.Containers
     /// <summary>
     /// A class for grouping GuiItems.
     /// </summary>
-    public class Menu : GameComponent, IUpdateable, IDrawable
+    public class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
+        where T : Game
     {
+        /// <summary>
+        /// The order in which to draw this object relative to other objects. Objects with
+        /// a lower value are drawn first.
+        /// </summary>
         public int DrawOrder { get; set; }
+        /// <summary>
+        /// Indicates whether IDrawable.Draw should be called in Game.Draw for this game component.
+        /// </summary>
         public bool Visible { get; set; }
 
         /// <summary>
@@ -49,7 +57,7 @@ namespace Mentula.GuiItems.Containers
         /// Initializes a new instance of the Mentula.GuiItems.Containers.Menu class.
         /// </summary>
         /// <param name="game"></param>
-        public Menu(Game game)
+        public Menu(T game)
             : base(game)
         {
             device = game.GraphicsDevice;
@@ -439,27 +447,30 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public override void Update(GameTime gameTime)
         {
-            MouseState mState = Mouse.GetState();
-            KeyboardState kState = Keyboard.GetState();
-            float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            for (int i = 0; i < controlls.Count; i++)
+            if (Enabled)
             {
-                GuiItem control = controlls[i];
-                if (control.SuppressUpdate)
+                MouseState mState = Mouse.GetState();
+                KeyboardState kState = Keyboard.GetState();
+                float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                for (int i = 0; i < controlls.Count; i++)
                 {
-                    control.SuppressUpdate = false;
-                    continue;
+                    GuiItem control = controlls[i];
+                    if (control.SuppressUpdate)
+                    {
+                        control.SuppressUpdate = false;
+                        continue;
+                    }
+
+                    Button btn;
+                    TextBox txt;
+                    TabContainer tb;
+
+                    if ((btn = control as Button) != null) btn.Update(mState, delta);
+                    else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
+                    else if ((tb = control as TabContainer) != null) tb.Update(mState, kState, delta);
+                    else control.Update(mState);
                 }
-
-                Button btn;
-                TextBox txt;
-                TabContainer tb;
-
-                if ((btn = control as Button) != null) btn.Update(mState, delta);
-                else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
-                else if ((tb = control as TabContainer) != null) tb.Update(mState, kState, delta);
-                else control.Update(mState);
             }
 
             base.Update(gameTime);
@@ -470,19 +481,22 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public virtual void Draw(GameTime gameTime)
         {
-            batch.Begin();
-
-            for (int i = 0; i < controlls.Count; i++)
+            if (Visible)
             {
-                if (controlls[i].SuppressDraw)
-                {
-                    controlls[i].SuppressDraw = false;
-                    continue;
-                }
-                controlls[i].Draw(batch);
-            }
+                batch.Begin();
 
-            batch.End();
+                for (int i = 0; i < controlls.Count; i++)
+                {
+                    if (controlls[i].SuppressDraw)
+                    {
+                        controlls[i].SuppressDraw = false;
+                        continue;
+                    }
+                    controlls[i].Draw(batch);
+                }
+
+                batch.End();
+            }
         }
 
         private void TextBox_Click(GuiItem sender, MouseState state)

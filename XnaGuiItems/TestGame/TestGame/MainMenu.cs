@@ -5,9 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TestGame
 {
-    public class MainMenu : Menu
+    public class MainMenu : Menu<Game1>
     {
-        public MainMenu(Game game)
+        public MainMenu(Game1 game)
             : base(game)
         {
             font = game.Content.Load<SpriteFont>("ConsoleFont");

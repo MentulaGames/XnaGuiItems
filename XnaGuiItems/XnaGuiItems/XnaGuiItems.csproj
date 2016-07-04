@@ -63,6 +63,7 @@
     <Compile Include="Core\EmptyInput.cs" />
     <Compile Include="Core\GuiItem.cs" />
     <Compile Include="Core\KeyInputHandler.cs" />
+    <Compile Include="Core\MentulaGameComponent.cs" />
     <Compile Include="Core\ProgresData.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Items\Button.cs" />

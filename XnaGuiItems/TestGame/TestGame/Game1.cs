@@ -4,9 +4,8 @@ namespace TestGame
 {
     public class Game1 : Game
     {
-        public MainMenu mm;
-
         private GraphicsDeviceManager graphics;
+        private MainMenu menu;
 
         public Game1()
         {
@@ -17,8 +16,7 @@ namespace TestGame
 
         protected override void Initialize()
         {
-            Components.Add(mm = new MainMenu(this));
-            mm.Show();
+            Components.Add(menu = new MainMenu(this));
             base.Initialize();
         }
     }
