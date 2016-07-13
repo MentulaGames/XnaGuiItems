@@ -34,7 +34,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual int Value { get { return data.Value; } set { ValueChanged.Invoke(this, value); } }
 
-        protected ProgresData data;
+        protected ProgressData data;
         private bool sliding;
         private Vector2 oldOffset;
 
@@ -58,7 +58,7 @@ namespace Mentula.GuiItems.Items
 
             Bounds = new Rectangle(0, 0, 100, 25);
             SlidBarDimentions = new Rectangle(0, 0, 10, 25);
-            data = new ProgresData(0);
+            data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             foreColor = Color.Gray;
 
@@ -76,7 +76,7 @@ namespace Mentula.GuiItems.Items
             InitEvents();
 
             SlidBarDimentions = new Rectangle(0, 0, Bounds.Width / 10, Bounds.Height);
-            data = new ProgresData(0);
+            data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             foreColor = Color.Gray;
 

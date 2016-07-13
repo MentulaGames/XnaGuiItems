@@ -122,8 +122,8 @@ namespace Mentula.GuiItems.Items
 
         protected virtual void OnTextChanged(object sender, string newText) { text = newText; Refresh(); }
         protected virtual void OnFontChanged(object sender, SpriteFont newFont) { font = newFont; Refresh(); }
-        protected override void OnForeColorChanged(object sender, Color newColor) { foreColor = newColor; if (font != null) Refresh(); }
-        protected override void OnMove(object sender, Vector2 newpos)
+        protected override void OnForeColorChanged(GuiItem sender, Color newColor) { foreColor = newColor; if (font != null) Refresh(); }
+        protected override void OnMove(GuiItem sender, Vector2 newpos)
         {
             base.OnMove(sender, newpos);
             foregroundRectangle.X = (int)newpos.X;

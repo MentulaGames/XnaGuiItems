@@ -32,7 +32,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual int Value { get { return data.Value; } set { ValueChanged.DynamicInvoke(this, value); } }
 
-        protected ProgresData data;
+        protected ProgressData data;
 
         /// <summary>
         /// Occurs when the value of the XnaGuiItem.Items.ProgresBar.Value propery is changed.
@@ -49,7 +49,7 @@ namespace Mentula.GuiItems.Items
             InitEvents();
 
             Bounds = new Rectangle(0, 0, 100, 25);
-            data = new ProgresData(0);
+            data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             foreColor = Color.LimeGreen;
 
@@ -66,7 +66,7 @@ namespace Mentula.GuiItems.Items
         {
             InitEvents();
 
-            data = new ProgresData(0);
+            data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = Color.LimeGreen;
 
