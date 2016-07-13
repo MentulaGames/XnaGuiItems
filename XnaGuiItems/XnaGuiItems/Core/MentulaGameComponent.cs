@@ -10,7 +10,7 @@ namespace Mentula.GuiItems.Core
         /// <summary> Gets the Game associated with this GameComponent. </summary>
         new public T Game { get { return (T)base.Game; } }
 
-        /// <summary> Initializes a new instance of the MentulaGameComponent class. </summary>
+        /// <summary> Initializes a new instance of the <see cref="MentulaGameComponent{T}"/> class. </summary>
         /// <param name="game"> The game associated with this component. </param>
         protected MentulaGameComponent(T game)
             : base(game)

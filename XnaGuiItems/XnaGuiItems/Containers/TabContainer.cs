@@ -10,12 +10,12 @@ using System.Linq;
 namespace Mentula.GuiItems.Containers
 {
     /// <summary>
-    /// A GuiItem container with tabs.
+    /// A <see cref="GuiItem"/> container with tabs.
     /// </summary>
     public class TabContainer : GuiItem
     {
         /// <summary>
-        /// Gets or sets a rectangle indicating the size of the tab.
+        /// Gets or sets a <see cref="Rectangle"/> indicating the size of the tab.
         /// </summary>
         public virtual Rectangle TabRectangle { get { return tabRect; } set { tabRect = value; Refresh(); } }
         /// <summary>
@@ -23,25 +23,26 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public virtual int SelectedTab { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating if the TabContainer should handle TextBox focusing.
+        /// Gets or sets a value indicating if the <see cref="TabContainer"/> should handle <see cref="TextBox"/> focusing.
         /// </summary>
         public virtual bool AutoFocus { get; set; }
         /// <summary>
-        /// gets or sets a value indicating if the TabContainer should not atler the position of added tab items to the position of the TabContainer.
+        /// Gets or sets a value indicating if the <see cref="TabContainer"/> should not atler the position of added tab items to the position of the <see cref="TabContainer"/>.
         /// </summary>
         public virtual bool UseAbsolutePosition { get; set; }
 
         protected Rectangle tabRect;
 
+        private const string TAB_PREFIX = "Lbl";
         private KeyValuePair<Label, GuiItemCollection>[] tabs;
         private Texture2D tabtexture;
         private SpriteFont font;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Containers.TabContainer class with default settings.
+        /// Initializes a new instance of the <see cref="TabContainer"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Containers.TabContainer to. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TabContainer"/> to. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public TabContainer(GraphicsDevice device, SpriteFont font)
             : base(device)
         {
@@ -50,7 +51,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Adds a tab with a specified name to the TabContainer.
+        /// Adds a tab with a specified name to the <see cref="TabContainer"/>.
         /// </summary>
         /// <param name="name"> The name for the tab. </param>
         /// <param name="color"> The background color for the tab. </param>
@@ -69,7 +70,7 @@ namespace Mentula.GuiItems.Containers
             {
                 AutoSize = true,
                 Text = $" {name} ",
-                Name = "Lbl" + name,
+                Name = $"{TAB_PREFIX}{name}",
                 Position = Position + new Vector2(prevL, 0),
                 Height = 25,
                 BorderStyle = BorderStyle.FixedSingle
@@ -99,7 +100,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Adds one or more GuiItems to a specified tab.
+        /// Adds one or more <see cref="GuiItem"/> to a specified tab.
         /// </summary>
         /// <param name="tab"> The tab name. </param>
         /// <param name="items"> The items to add to the tabs. </param>
@@ -108,7 +109,7 @@ namespace Mentula.GuiItems.Containers
             for (int i = 0; i < tabs.Length; i++)
             {
                 KeyValuePair<Label, GuiItemCollection> cur = tabs[i];
-                if (cur.Key.Name == "Lbl" + tab)
+                if (cur.Key.Name == $"{TAB_PREFIX}{tab}")
                 {
                     for (int j = 0; j < items.Length; j++)
                     {
@@ -125,7 +126,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Refreshes the TabContainer recalculating the TabRectangle and the underlying texture.
+        /// Refreshes the <see cref="TabContainer"/>, recalculating the <see cref="TabRectangle"/> and the underlying texture.
         /// </summary>
         public override void Refresh()
         {
@@ -139,14 +140,18 @@ namespace Mentula.GuiItems.Containers
             tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
         }
 
+        /// <summary>
+        /// This method cannot be used withing a <see cref="TabContainer"/>.
+        /// </summary>
+        /// <param name="mState"></param>
         [Obsolete("Use Update(MouseState, KeyboardState, float) instead", true)]
         new public void Update(MouseState mState) { }
 
         /// <summary>
-        /// Updates the TabContainer.
+        /// Updates the <see cref="TabContainer"/>.
         /// </summary>
-        /// <param name="mState"> The specified MouseState to use. </param>
-        /// <param name="kState"> The specified KeyboardState to use. </param>
+        /// <param name="mState"> The specified <see cref="MouseState"/> to use. </param>
+        /// <param name="kState"> The specified <see cref="KeyboardState"/> to use. </param>
         /// <param name="delta"> The deltaTime. </param>
         public void Update(MouseState mState, KeyboardState kState, float delta)
         {
@@ -181,8 +186,9 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Draws the TabContainer and its childs.
+        /// Draws the <see cref="TabContainer"/> and its childs.
         /// </summary>
+        /// <param name="spriteBatch"> The <see cref="SpriteBatch"/> to use. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (Visible)

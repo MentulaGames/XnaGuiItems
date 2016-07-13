@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
@@ -20,23 +21,23 @@ namespace Mentula.GuiItems.Items
         private float time;
 
         /// <summary>
-        /// Occurs when the XnaMentula.GuiItems.Items.Button is left clicked.
+        /// Occurs when the <see cref="Button"/> is left clicked.
         /// </summary>
         public event MouseEventHandler LeftClick;
         /// <summary>
-        /// Occurs when the XnaMentula.GuiItems.Items.Button is right clicked.
+        /// Occurs when the <see cref="Button"/> is right clicked.
         /// </summary>
         public event MouseEventHandler RightClick;
         /// <summary>
-        /// Occurs when the XnaMentula.GuiItems.Items.Button is clicked twice ina short period of time.
+        /// Occurs when the <see cref="Button"/> is clicked twice in a short period of time.
         /// </summary>
         public event MouseEventHandler DoubleClick;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.Button class with default settings.
+        /// Initializes a new instance of the <see cref="Button"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Button to. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Button"/> to. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public Button(GraphicsDevice device, SpriteFont font)
              : base(device, font)
         {
@@ -44,24 +45,29 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.Button class with a specified size.
+        /// Initializes a new instance of the <see cref="Button"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Button to. </param>
-        /// <param name="bounds"> The size of the button in pixels. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Button"/> to. </param>
+        /// <param name="bounds"> The size of the <see cref="Button"/> in pixels. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public Button(GraphicsDevice device, Rectangle bounds, SpriteFont font)
              : base(device, bounds, font)
         {
             drawTexture = backColorImage;
         }
 
+        /// <summary>
+        /// This method cannot be used withing a <see cref="Button"/>.
+        /// </summary>
+        /// <param name="mState"> The <see cref="MouseState"/> to use. </param>
         [Obsolete("Use Update(MouseState, float) instead", true)]
         new public void Update(MouseState mState) { }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.Button, checking if any mouse event are occuring.
+        /// Updates the <see cref="Button"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current mouse state. </param>
+        /// <param name="state"> The current <see cref="Mouse"/> state. </param>
+        /// <param name="deltaTime"> The deltatime </param>
         public void Update(MouseState state, float deltaTime)
         {
             base.Update(state);
@@ -76,16 +82,18 @@ namespace Mentula.GuiItems.Items
 
                 if (!leftClicked && lDown)
                 {
-                    if (LeftClick != null) LeftClick.DynamicInvoke(this, state);
-                    doubleLeftClicked++;
+                    Invoke(LeftClick, this, state);
                     leftClicked = true;
+
+                    doubleLeftClicked++;
                     drawTexture = clickTexture;
                 }
                 if (!rigthClicked && rDown)
                 {
-                    if (RightClick != null) RightClick.DynamicInvoke(this, state);
-                    doubleRightClicked++;
+                    Invoke(RightClick, this, state);
                     rigthClicked = true;
+
+                    doubleRightClicked++;
                     drawTexture = clickTexture;
                 }
 
@@ -98,15 +106,16 @@ namespace Mentula.GuiItems.Items
                 {
                     doubleLeftClicked = 0;
                     doubleRightClicked = 0;
-                    if (DoubleClick != null && time < 1) DoubleClick.DynamicInvoke(this, state);
+                    if (time < 1) Invoke(DoubleClick, this, state);
                     time = 0;
                 }
             }
         }
 
         /// <summary>
-        /// Draws the XnaMentula.GuiItems.Items.Button to the specified spritebatch.
+        /// Draws the <see cref="Button"/> to the specified <see cref="SpriteBatch"/>.
         /// </summary>
+        /// <param name="spriteBatch"> The <see cref="SpriteBatch"/> to use. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (visible)
@@ -159,13 +168,13 @@ namespace Mentula.GuiItems.Items
                     base.PerformClick();
                     return;
                 case MouseClick.Left:
-                    if (LeftClick != null) LeftClick.DynamicInvoke(this, Mouse.GetState());
+                    Invoke(LeftClick, this, Mouse.GetState());
                     return;
                 case MouseClick.Right:
-                    if (RightClick != null) RightClick.DynamicInvoke(this, Mouse.GetState());
+                    Invoke(RightClick, this, Mouse.GetState());
                     return;
                 case MouseClick.Double:
-                    if (DoubleClick != null) DoubleClick.DynamicInvoke(this, Mouse.GetState());
+                    Invoke(DoubleClick, this, Mouse.GetState());
                     return;
             }
         }

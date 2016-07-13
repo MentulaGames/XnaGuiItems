@@ -10,7 +10,7 @@ using static Mentula.GuiItems.Core.GuiItem;
 namespace Mentula.GuiItems.Containers
 {
     /// <summary>
-    /// A class for grouping GuiItems.
+    /// A class for grouping <see cref="GuiItems"/>.
     /// </summary>
     public class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
         where T : Game
@@ -21,7 +21,7 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public int DrawOrder { get; set; }
         /// <summary>
-        /// Indicates whether IDrawable.Draw should be called in Game.Draw for this game component.
+        /// Indicates whether <see cref="IDrawable.Draw(GameTime)"/> should be called for this game component.
         /// </summary>
         public bool Visible { get; set; }
 
@@ -42,7 +42,15 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public int ScreenHeight { get { return device.Viewport.Height; } }
 
+        /// <summary>
+        /// Occures when the value of <see cref="DrawOrder"/> is changed.
+        /// </summary>
+        [Obsolete("This event is currently not in use.", false)]
         public event EventHandler<EventArgs> DrawOrderChanged;
+        /// <summary>
+        /// Occures when the value of <see cref="Visible"/> is changed.
+        /// </summary>
+        [Obsolete("This event is currently not in use.", false)]
         public event EventHandler<EventArgs> VisibleChanged;
 
         protected bool autoFocus;
@@ -54,9 +62,9 @@ namespace Mentula.GuiItems.Containers
         private static readonly InvalidOperationException noFont = new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
 
         /// <summary>
-        /// Initializes a new instance of the Mentula.GuiItems.Containers.Menu class.
+        /// Initializes a new instance of the <see cref="Menu{T}"/> class.
         /// </summary>
-        /// <param name="game"></param>
+        /// <param name="game"> The game to associate with this menu. </param>
         public Menu(T game)
             : base(game)
         {
@@ -66,7 +74,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Initializes the spritebatch used for drawing.
+        /// Initializes the <see cref="SpriteBatch"/> used for drawing.
         /// </summary>
         public override void Initialize()
         {
@@ -74,6 +82,13 @@ namespace Mentula.GuiItems.Containers
             base.Initialize();
         }
 
+        /// <summary>
+        /// Release the unmanaged and managed resources used by the <see cref="Menu{T}"/>.
+        /// </summary>
+        /// <param name="disposing">
+        /// true to release both managed and unmanaged resources; false to release only unmanaged
+        /// resources.
+        /// </param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -242,7 +257,7 @@ namespace Mentula.GuiItems.Containers
             return lbl;
         }
 
-        public ProgresBar AddProgresBar(
+        public ProgressBar AddProgresBar(
             Color? BackColor = null,
             Texture2D BackgroundImage = null,
             Rectangle? Bounds = null,
@@ -258,7 +273,7 @@ namespace Mentula.GuiItems.Containers
             BorderStyle? BorderStyle = null,
             int? Value = null)
         {
-            ProgresBar prgBr = new ProgresBar(device);
+            ProgressBar prgBr = new ProgressBar(device);
 
             if (BackColor != null) prgBr.BackColor = BackColor.Value;
             if (BackgroundImage != null) prgBr.BackgroundImage = BackgroundImage;
@@ -405,27 +420,27 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Gets a control with a specified name as a specified GuiItem.
+        /// Gets a control with a specified <see cref="GuiItem.Name"/> as a specified <see cref="GuiItem"/>.
         /// </summary>
-        /// <typeparam name="T"> The GuiItem to cast to. </typeparam>
-        /// <param name="name"> The specified name to search for. </param>
-        public T FindControl<T>(string name)
-            where T : GuiItem
+        /// <typeparam name="TControll"> The <see cref="GuiItem"/> to cast to. </typeparam>
+        /// <param name="name"> The specified <see cref="GuiItem.Name"/> to search for. </param>
+        public TControll FindControl<TControll>(string name)
+            where TControll : GuiItem
         {
-            return (T)FindControl(name);
+            return (TControll)FindControl(name);
         }
 
         /// <summary>
         /// Gets a control with a specified name.
         /// </summary>
-        /// <param name="name"> The specified name to search for. </param>
+        /// <param name="name"> The specified <see cref="GuiItem.Name"/> to search for. </param>
         public GuiItem FindControl(string name)
         {
             return controlls.FirstOrDefault(c => c.Name == name);
         }
 
         /// <summary>
-        /// Disables and hides the menu.
+        /// Disables and hides the <see cref="Menu{T}"/>.
         /// </summary>
         public void Hide()
         {
@@ -434,7 +449,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Enables and shows the menu.
+        /// Enables and shows the <see cref="Menu{T}"/>.
         /// </summary>
         public void Show()
         {
@@ -443,7 +458,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Updates the menu and its controlls.
+        /// Updates the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
         public override void Update(GameTime gameTime)
         {
@@ -477,7 +492,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Draws the menu and its controlls.
+        /// Draws the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
         public virtual void Draw(GameTime gameTime)
         {

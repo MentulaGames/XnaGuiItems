@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
@@ -12,45 +12,45 @@ namespace Mentula.GuiItems.Items
     public class Slider : GuiItem
     {
         /// <summary>
-        /// Gets or sets the type of border given to the slider.
-        /// Refresh required after change!
+        /// Gets or sets the type of border given to the <see cref="Slider"/>.
+        /// <see cref="Refresh"/> required after change!
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
-        /// Gets or sets the dimentions of the slider object.
+        /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
         public virtual Rectangle SlidBarDimentions { get; set; }
         /// <summary>
-        /// Gets or sets the maximum value of the slider.
+        /// Gets or sets the maximum value of the <see cref="Slider"/>.
         /// </summary>
         public virtual int MaximumValue { get { return data.Maximum; } set { data.Maximum = value; } }
         /// <summary>
-        /// Gets or sets the minimum value of the slider.
+        /// Gets or sets the minimum value of the <see cref="Slider"/>.
         /// </summary>
         public virtual int MinimumValue { get { return data.Minimum; } set { data.Minimum = value; } }
         /// <summary>
-        /// Gets or sets the current value of the slider.
+        /// Gets or sets the current value of the <see cref="Slider"/>.
         /// Will not change the visuals of the slider!
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { ValueChanged.Invoke(this, value); } }
+        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
 
         protected ProgressData data;
         private bool sliding;
         private Vector2 oldOffset;
 
         /// <summary>
-        /// Occurs when the value of the XnaGuiItem.Items.Slider.Value propery is changed.
+        /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
         public event ValueChangedEventHandler<int> ValueChanged;
         /// <summary>
-        /// occurs when the mouse is pressed on the sliderbar.
+        /// Occurs when the mouse is pressed on the sliderbar.
         /// </summary>
         public event MouseEventHandler MouseDown;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.Slider class with default settings.
+        /// Initializes a new instance of the <see cref="Slider"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Slider to. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
         public Slider(GraphicsDevice device)
              : base(device)
         {
@@ -66,10 +66,10 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.SLider class with a specified size.
+        /// Initializes a new instance of the <see cref="Slider"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.Slider to. </param>
-        /// <param name="bounds"> The size of the XnaMentula.GuiItems.Items.Slider. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
+        /// <param name="bounds"> The size of the <see cref="Slider"/>. </param>
         public Slider(GraphicsDevice device, Rectangle bounds)
              : base(device, bounds)
         {
@@ -84,9 +84,9 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.Slider, checking if any mouse event are occuring.
+        /// Updates the <see cref="Slider"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current state of the mouse. </param>
+        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
         public override void Update(MouseState state)
         {
             base.Update(state);
@@ -95,7 +95,7 @@ namespace Mentula.GuiItems.Items
             {
                 if (sliding && state.LeftButton == ButtonState.Pressed)
                 {
-                    MouseDown.Invoke(this, state);
+                    Invoke(MouseDown, this, state);
                     Refresh();
                 }
                 else if (sliding && state.LeftButton == ButtonState.Released && !IsSliding(state.Position()))
@@ -108,8 +108,9 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Draws the XnaMentula.GuiItems.Items.Slider to the specified spritebatch.
+        /// Draws the <see cref="Slider"/> to the specified <see cref="SpriteBatch"/>.
         /// </summary>
+        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);

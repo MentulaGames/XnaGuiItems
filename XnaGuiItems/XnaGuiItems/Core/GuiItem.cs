@@ -18,15 +18,15 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the background color for the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Color BackColor { get { return backColor; } set { BackColorChanged(this, value); } }
+        public virtual Color BackColor { get { return backColor; } set { Invoke(BackColorChanged, this, value); } }
         /// <summary>
         /// Gets or sets the background image displayed in the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Texture2D BackgroundImage { get { return backgroundImage; } set { BackgroundImageChanged(this, value); } }
+        public virtual Texture2D BackgroundImage { get { return backgroundImage; } set { Invoke(BackgroundImageChanged, this, value); } }
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public virtual Rectangle Bounds { get { return bounds; } set { Resize(this, value); } }
+        public virtual Rectangle Bounds { get { return bounds; } set { Invoke(Resize, this, value); } }
         /// <summary>
         /// Gets the default background color of the <see cref="GuiItem"/>.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the foregound color for the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Color ForeColor { get { return foreColor; } set { ForeColorChanged(this, value); } }
+        public virtual Color ForeColor { get { return foreColor; } set { Invoke(ForeColorChanged, this, value); } }
         /// <summary>
         /// Gets or sets the height of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
@@ -58,15 +58,15 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the name of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual string Name { get { return name; } set { NameChanged(this, value); } }
+        public virtual string Name { get { return name; } set { Invoke(NameChanged, this, value); } }
         /// <summary>
         /// Gets or sets the client side rotation of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual float Rotation { get { return rotation; } set { Rotated(this, value); } }
+        public virtual float Rotation { get { return rotation; } set { Invoke(Rotated, this, value); } }
         /// <summary>
         /// Gets or sets the position of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Vector2 Position { get { return bounds.Position(); } set { Move(this, value); } }
+        public virtual Vector2 Position { get { return bounds.Position(); } set { Invoke(Move, this, value); } }
         /// <summary>
         /// Gets or sets a value indicating whether a <see cref="Menu{T}"/> should call the <see cref="Update(MouseState)"/> method.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="GuiItem"/> is displayed.
         /// </summary>
-        public virtual bool Visible { get { return visible; } set { VisibilityChanged(this, value); } }
+        public virtual bool Visible { get { return visible; } set { Invoke(VisibilityChanged, this, value); } }
         /// <summary>
         /// Gets or sets the width of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>

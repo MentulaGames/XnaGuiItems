@@ -1,49 +1,50 @@
 ﻿using Mentula.GuiItems.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
     /// <summary>
-    /// A progres bar used for displaying progres.
+    /// A progress bar used for displaying progress.
     /// </summary>
-    public class ProgresBar : GuiItem
+    public class ProgressBar : GuiItem
     {
         /// <summary>
         /// Gets or sets the direction of the bar.
-        /// Refresh required after change!
+        /// <see cref="Refresh"/> required after change!
         /// </summary>
         public virtual bool Inverted { get; set; }
         /// <summary>
-        /// Gets or sets the type of border given to the progressBar.
+        /// Gets or sets the type of border given to the <see cref="ProgressBar"/>.
         /// Refresh required after change!
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
-        /// Gets the maximum value of the progresBar.
+        /// Gets the maximum value of the <see cref="ProgressBar"/>.
         /// </summary>
         public virtual int MaxiumValue { get { return data.Maximum; } }
         /// <summary>
-        /// Gets the minimum value of the progresBar.
+        /// Gets the minimum value of the <see cref="ProgressBar"/>.
         /// </summary>
         public virtual int MinimumValue { get { return data.Minimum; } }
         /// <summary>
-        /// Gets or sets the current value of the progresBar.
+        /// Gets or sets the current value of the <see cref="ProgressBar"/>.
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { ValueChanged.DynamicInvoke(this, value); } }
+        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
 
         protected ProgressData data;
 
         /// <summary>
-        /// Occurs when the value of the XnaGuiItem.Items.ProgresBar.Value propery is changed.
+        /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
         public event ValueChangedEventHandler<int> ValueChanged;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.ProgresBar class with default settings.
+        /// Initializes a new instance of the <see cref="ProgressBar"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.ProgresBar to. </param>
-        public ProgresBar(GraphicsDevice device)
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
+        public ProgressBar(GraphicsDevice device)
              : base(device)
         {
             InitEvents();
@@ -57,11 +58,11 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.ProgresBar class with a specified size.
+        /// Initializes a new instance of the <see cref="ProgressBar"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.ProgresBar to. </param>
-        /// <param name="bounds"> The size of the progresBar in pixels. </param>
-        public ProgresBar(GraphicsDevice device, Rectangle bounds)
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
+        /// <param name="bounds"> The size of the <see cref="ProgressBar"/> in pixels. </param>
+        public ProgressBar(GraphicsDevice device, Rectangle bounds)
              : base(device, bounds)
         {
             InitEvents();
@@ -74,8 +75,9 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Draws the XnaMentula.GuiItems.Items.ProgresBar and its childs to the specified spritebatch.
+        /// Draws the <see cref="ProgressBar"/> and its childs to the specified <see cref="SpriteBatch"/>.
         /// </summary>
+        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);

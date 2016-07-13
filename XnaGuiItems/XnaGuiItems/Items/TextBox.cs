@@ -13,29 +13,29 @@ namespace Mentula.GuiItems.Items
     public class TextBox : Label
     {
         /// <summary>
-        /// Gets or sets a value indicating how the textBox should flicker.
+        /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
         public virtual FlickerStyle FlickerStyle { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating if the item is in focus.
+        /// Gets or sets a value indicating if the <see cref="TextBox"/> is in focus.
         /// </summary>
         public virtual bool Focused { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating of the textBox can be multiline.
+        /// Gets or sets a value indicating of the <see cref="TextBox"/> can be multiline.
         /// </summary>
         public virtual bool MultiLine { get; set; }
         /// <summary>
-        /// Gets or set a value indicating if the textBox is a password field and which char it should use.
+        /// Gets or set a value indicating if the <see cref="TextBox"/> is a password field and which char it should use.
         /// Default value = '\0' indicating that it is not a password field.
         /// </summary>
         public virtual char PasswordChar { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating the minimum size of the textBox.
+        /// Gets or sets a value indicating the minimum size of the <see cref="TextBox"/>.
         /// Default value = (X = 100, Y = 50)
         /// </summary>
         public virtual Vector2 MinimumSize { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating the maximum size of the textbox.
+        /// Gets or sets a value indicating the maximum size of the <see cref="TextBox"/>.
         /// Default value is the screen size.
         /// </summary>
         public virtual Vector2 MaximumSize { get; set; }
@@ -45,10 +45,10 @@ namespace Mentula.GuiItems.Items
         private bool showLine;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.TextBox class with default settings.
+        /// Initializes a new instance of the <see cref="TextBox"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.TextBox to. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public TextBox(GraphicsDevice device, SpriteFont font)
             : base(device, font)
         {
@@ -59,11 +59,11 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.TextBox class with a specific size.
+        /// Initializes a new instance of the <see cref="TextBox"/> class with a specific size.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.TextBox to. </param>
-        /// <param name="bounds"> The size of the label in pixels. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
+        /// <param name="bounds"> The size of the <see cref="TextBox"/> in pixels. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public TextBox(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds, font)
         {
@@ -74,18 +74,19 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.TextBox and its childs, checking if any mouse event are occuring.
-        /// This should only be used when the textBox is out of focus!
+        /// Updates the <see cref="TextBox"/>, checking if any mouse event are occuring.
+        /// This should only be used when the <see cref="TextBox"/> is out of focus!
         /// </summary>
-        /// <param name="state"> The current state of the mouse. </param>
+        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
         public override void Update(MouseState state) { base.Update(state); }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.TextBox, checking if any mouse- or keyboard event are occuring.
+        /// Updates the <see cref="TextBox"/>, checking if any mouse- or keyboard event are occuring.
         /// Use like: myTextBox.Update(Mouse.GetState(), Keyboard.GetState(), (float)gameTime.ElapsedGameTime.TotalSeconds);
         /// </summary>
-        /// <param name="mState"> The current state of the mouse. </param>
-        /// <param name="kState"> The current state of the keyboard. </param>
+        /// <param name="mState"> The current state of the <see cref="Mouse"/>. </param>
+        /// <param name="kState"> The current state of the <see cref="Keyboard"/>. </param>
+        /// <param name="deltaTime"> The specified deltatime. </param>
         public void Update(MouseState mState, KeyboardState kState, float deltaTime)
         {
             base.Update(mState);
@@ -163,18 +164,18 @@ namespace Mentula.GuiItems.Items
             foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
         }
 
+        protected override void OnTextChanged(GuiItem sender, string newText)
+        {
+            inputHandler.keyboadString = newText;
+            base.OnTextChanged(sender, newText);
+        }
+
         private Vector2 GetLongTextDimentions()
         {
             if (!MultiLine) return font.MeasureString(text);
 
             string longText = text.Split(new string[1] { "/n" }, StringSplitOptions.None).Max();
             return font.MeasureString(longText);
-        }
-
-        protected override void OnTextChanged(object sender, string newText)
-        {
-            inputHandler.keyboadString = newText;
-            base.OnTextChanged(sender, newText);
         }
     }
 }

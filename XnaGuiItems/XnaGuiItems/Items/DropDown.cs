@@ -14,24 +14,24 @@ namespace Mentula.GuiItems.Items
     public class DropDown : GuiItem
     {
         /// <summary>
-        /// Gets or sets a value indicating if the dropdown will adjust its size to the text.
+        /// Gets or sets a value indicating if the <see cref="DropDown"/> will adjust its size to the text.
         /// </summary>
         public virtual bool AutoSize { get; set; }
         /// <summary>
-        /// Gets or sets the type of border given to the dropdown.
+        /// Gets or sets the type of border given to the <see cref="DropDown"/>.
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
-        /// Gets or sets the text displayed in the dropdown header.
+        /// Gets or sets the text displayed in the <see cref="DropDown"/> header.
         /// Default: "Choose Option".
         /// </summary>
         public virtual string HeaderText { get; set; }
         /// <summary>
-        /// Gets or sets the background color for the dropdown header.
+        /// Gets or sets the background color for the <see cref="DropDown"/> header.
         /// </summary>
         public virtual Color HeaderBackgroundColor { get; set; }
         /// <summary>
-        /// Gets or sets the position of the GuiItem.
+        /// Gets or sets the position of the <see cref="GuiItem"/>.
         /// </summary>
         public override Vector2 Position
         {
@@ -48,7 +48,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Occurs when a XnaMentula.GuiItems.Items.DropDown option is clicked.
+        /// Occurs when a <see cref="DropDown"/> option is clicked.
         /// </summary>
         public event ValueChangedEventHandler<int> IndexClick;
 
@@ -60,10 +60,10 @@ namespace Mentula.GuiItems.Items
         private KeyValuePair<Texture2D, ButtonStyle>[] itemTextures;
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.DropDown class with default settings.
+        /// Initializes a new instance of the <see cref="DropDown"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.DropDown to. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public DropDown(GraphicsDevice device, SpriteFont font)
             : base(device)
         {
@@ -71,11 +71,11 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Initializes a new instance of the XnaMentula.GuiItems.Items.DropDown class with a specific size.
+        /// Initializes a new instance of the <see cref="DropDown"/> class with a specific size.
         /// </summary>
-        /// <param name="device"> The device to display the XnaMentula.GuiItems.Items.DropDown to. </param>
-        /// <param name="bounds"> The size of the dropdown in pixels. </param>
-        /// <param name="font"> The font to use while drawing the text. </param>
+        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
+        /// <param name="bounds"> The size of the <see cref="DropDown"/> in pixels. </param>
+        /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public DropDown(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds)
         {
@@ -83,7 +83,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Adds a option to the dropdown with the default color.
+        /// Adds a option to the <see cref="DropDown"/> with the default color.
         /// </summary>
         /// <param name="parts"> The parts of the option, separated with a space. </param>
         public void AddOption(params string[] parts)
@@ -99,7 +99,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Adds a option to the dropdown with a specified color.
+        /// Adds a option to the <see cref="DropDown"/> with a specified color.
         /// </summary>
         /// <param name="parts"> The parts of the option, with a specified colot and separated with a space. </param>
         public void AddOption(params KeyValuePair<string, Color?>[] parts)
@@ -119,9 +119,9 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Updates the XnaMentula.GuiItems.Items.DropDown, checking if any mouse event are occuring.
+        /// Updates the <see cref="DropDown"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current state of the mouse. </param>
+        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
         public override void Update(MouseState state)
         {
             base.Update(state);
@@ -191,8 +191,9 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Draws the XnaMentula.GuiItems.Items.DropDown to the specified spritebatch.
+        /// Draws the <see cref="DropDown"/> to the specified <see cref="SpriteBatch"/>.
         /// </summary>
+        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
