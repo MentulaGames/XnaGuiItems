@@ -17,6 +17,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
+        /// Gets the default size of the <see cref="Slider"/>
+        /// </summary>
+        new public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 25); } }
+        /// <summary>
         /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
         public virtual Rectangle SlidBarDimentions { get; set; }
@@ -52,18 +56,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
         public Slider(GraphicsDevice device)
-             : base(device)
-        {
-            InitEvents();
-
-            Bounds = new Rectangle(0, 0, 100, 25);
-            SlidBarDimentions = new Rectangle(0, 0, 10, 25);
-            data = new ProgressData(0);
-            BorderStyle = BorderStyle.FixedSingle;
-            foreColor = Color.Gray;
-
-            Refresh();
-        }
+             : this(device, DefaultSize)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Slider"/> class with a specified size.
@@ -75,7 +69,7 @@ namespace Mentula.GuiItems.Items
         {
             InitEvents();
 
-            SlidBarDimentions = new Rectangle(0, 0, Bounds.Width / 10, Bounds.Height);
+            SlidBarDimentions = new Rectangle(bounds.X, bounds.Y, Bounds.Width / 10, Bounds.Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             foreColor = Color.Gray;

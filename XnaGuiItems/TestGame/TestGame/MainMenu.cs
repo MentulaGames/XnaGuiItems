@@ -2,6 +2,7 @@
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Lbl = System.Collections.Generic.KeyValuePair<string, Microsoft.Xna.Framework.Color?>;
 
 namespace TestGame
 {
@@ -12,9 +13,9 @@ namespace TestGame
         {
             font = game.Content.Load<SpriteFont>("ConsoleFont");
 
-            TabContainer tc = AddTabContainer();
-            tc.AddTab("tab");
-            tc.AddToTab("tab", new Label(device, font) { AutoSize = true, Text = "TEST", Position = new Vector2(0, 00) });
+            DropDown dd = AddDropDown(AutoSize: true);
+            dd.AddOption(new Lbl("Pickup", null), new Lbl("Item", Color.Yellow));
+            dd.Refresh();
         }
 
         public override void Initialize()

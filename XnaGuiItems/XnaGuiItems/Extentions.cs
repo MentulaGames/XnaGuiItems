@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Runtime.CompilerServices;
 
 namespace Mentula.GuiItems
 {
@@ -85,7 +86,7 @@ namespace Mentula.GuiItems
                             {
                                 data[x + y * texture.Width] = Color.Black;
                             }
-                            else data[x + y * texture.Width] = data[x + y * texture.Width].Change(0, -10, -10, -10);
+                            else data[x + y * texture.Width] = data[x + y * texture.Width].Add(0, -10, -10, -10);
                         }
                     }
                     newTexture.SetData(data);
@@ -95,7 +96,7 @@ namespace Mentula.GuiItems
             }
         }
 
-        internal static Color Change(this Color c, int a, int r, int b, int g)
+        internal static Color Add(this Color c, int a, int r, int b, int g)
         {
             return new Color(c.R + r, c.G + g, c.B + b, c.A + a);
         }
@@ -107,21 +108,31 @@ namespace Mentula.GuiItems
             return value;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector2 Position(this MouseState state)
         {
             return new Vector2(state.X, state.Y);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static int Clamp(this int value, int max, int min)
+        {
+            return value > max ? max : (value < min ? min : value);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector2 Position(this Rectangle rect)
         {
             return new Vector2(rect.X, rect.Y);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector2 Size(this Rectangle rect)
         {
             return new Vector2(rect.Width, rect.Height);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Point ToPoint(this Vector2 vect)
         {
             return new Point((int)vect.X, (int)vect.Y);
@@ -130,11 +141,6 @@ namespace Mentula.GuiItems
         internal static Rectangle Add(this Rectangle rect, Vector2 position)
         {
             return new Rectangle(rect.X + (int)position.X, rect.Y + (int)position.Y, rect.Width, rect.Height);
-        }
-
-        internal static Rectangle FromPosition(Vector2 position, int width, int height)
-        {
-            return new Rectangle((int)position.X, (int)position.Y, width, height);
         }
 
         internal static string ToPassword(this string str, char passChar = '*')

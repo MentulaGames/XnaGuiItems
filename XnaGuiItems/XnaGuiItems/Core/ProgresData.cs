@@ -13,6 +13,10 @@ namespace Mentula.GuiItems.Core
         public int Maximum { get { return max; } set { if (value > min) max = value; else throw new ArgumentException("The maximum must be higher than the minimum!"); } }
         /// <summary> Gets or sets a value indicating the current progress position. Value will be clamped. </summary>
         public int Value { get { return val; } set { val = value.Clamp(max, min); } }
+        /// <summary> Gets the default maximum of the <see cref="ProgressData"/>. </summary>
+        public static int DefaultMaximum { get { return 100; } }
+        /// <summary> Gets the default minimum of the <see cref="ProgressData"/>. </summary>
+        public static int DefaultMinimum { get { return 0; } }
 
         internal float OnePercent { get { return (float)Distance / 100; } }
         internal int Distance { get { return max - min; } }
@@ -22,21 +26,15 @@ namespace Mentula.GuiItems.Core
         /// <summary> Initializes a new instance of the <see cref="ProgressData"/> struct with a specified starting value. </summary>
         /// <param name="value"> The starting value (clamped). </param>
         public ProgressData(int value)
-        {
-            min = 0;
-            max = 100;
-            val = value.Clamp(max, min);
-        }
+            : this(DefaultMinimum, DefaultMaximum, value)
+        { }
 
         /// <summary> Initializes a new instance of the <see cref="ProgressData"/> struct with a minimum and maximum specified. </summary>
         /// <param name="minimum"> The starting minimum. </param>
         /// <param name="maximum"> The starting maximum. </param>
         public ProgressData(int minimum, int maximum)
-        {
-            min = minimum;
-            max = maximum;
-            val = minimum;
-        }
+            : this(minimum, maximum, minimum)
+        { }
 
         /// <summary> Initializes a new instance of the <see cref="ProgressData"/> struct with a minimum, maximum and starting value specified. </summary>
         /// <param name="minimum"> The starting minimum. </param>

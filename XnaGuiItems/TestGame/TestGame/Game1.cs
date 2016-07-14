@@ -17,6 +17,7 @@ namespace TestGame
         protected override void Initialize()
         {
             Components.Add(menu = new MainMenu(this));
+            menu.Show();
             base.Initialize();
         }
     }

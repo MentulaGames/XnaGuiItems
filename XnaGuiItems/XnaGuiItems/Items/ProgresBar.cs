@@ -21,6 +21,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
+        /// Gets the default size of the <see cref="ProgressBar"/>
+        /// </summary>
+        new public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 25); } }
+        /// <summary>
         /// Gets the maximum value of the <see cref="ProgressBar"/>.
         /// </summary>
         public virtual int MaxiumValue { get { return data.Maximum; } }
@@ -45,17 +49,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
         public ProgressBar(GraphicsDevice device)
-             : base(device)
-        {
-            InitEvents();
-
-            Bounds = new Rectangle(0, 0, 100, 25);
-            data = new ProgressData(0);
-            BorderStyle = BorderStyle.FixedSingle;
-            foreColor = Color.LimeGreen;
-
-            Refresh();
-        }
+             : this(device, DefaultSize)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgressBar"/> class with a specified size.

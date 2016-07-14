@@ -59,7 +59,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Label"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public Label(GraphicsDevice device, SpriteFont font)
-             : this(device, new Rectangle(0, 0, 100, 50), font)
+             : this(device, DefaultSize, font)
         { }
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Mentula.GuiItems.Items
             {
                 Vector2 dim = font.MeasureString(text);
                 dim.X += 3;
-                bool width = dim.X != bounds.Width ? true : false;
-                bool height = dim.Y != bounds.Height ? true : false;
+                bool width = dim.X != bounds.Width;
+                bool height = dim.Y != bounds.Height;
 
                 if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
                 else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);

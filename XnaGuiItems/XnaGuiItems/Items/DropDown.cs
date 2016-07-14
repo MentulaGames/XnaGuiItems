@@ -22,6 +22,22 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
+        /// Gets the default background color of the <see cref="DropDown"/>.
+        /// </summary>
+        new public static Color DefaultBackColor { get { return Color.FromNonPremultiplied(42, 41, 27, 256); } }
+        /// <summary>
+        /// Gets the default foreground color of the <see cref="DropDown"/>.
+        /// </summary>
+        new public static Color DefaultForeColor { get { return Color.FromNonPremultiplied(198, 179, 148, 256); } }
+        /// <summary>
+        /// Gets the default background color of the <see cref="DropDown"/> header.
+        /// </summary>
+        public static Color DefaultHeaderBackgroundColor { get { return Color.FromNonPremultiplied(7, 8, 2, 256); } }
+        /// <summary>
+        /// Gets the default text the header will display.
+        /// </summary>
+        public static string DefaultHeaderText { get { return "Choose Option"; } }
+        /// <summary>
         /// Gets or sets the text displayed in the <see cref="DropDown"/> header.
         /// Default: "Choose Option".
         /// </summary>
@@ -65,10 +81,8 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public DropDown(GraphicsDevice device, SpriteFont font)
-            : base(device)
-        {
-            Init(font);
-        }
+            : this(device, DefaultSize, font)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DropDown"/> class with a specific size.
@@ -79,7 +93,8 @@ namespace Mentula.GuiItems.Items
         public DropDown(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds)
         {
-            Init(font);
+            this.font = font;
+            Init();
         }
 
         /// <summary>
@@ -221,17 +236,16 @@ namespace Mentula.GuiItems.Items
             }
         }
 
-        private void Init(SpriteFont font)
+        private void Init()
         {
-            HeaderText = "Choose Option";
-            this.font = font;
+            HeaderText = DefaultHeaderText;
             labels = new KeyValuePair<string, Color>[0][];
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
-            foregroundRectangle = Extentions.FromPosition(Position, 100, 50);
+            foregroundRectangle = DefaultSize;
 
-            BackColor = Color.FromNonPremultiplied(42, 41, 27, 256);
-            HeaderBackgroundColor = Color.FromNonPremultiplied(7, 8, 2, 256);
-            ForeColor = Color.FromNonPremultiplied(198, 179, 148, 256);
+            BackColor = DefaultBackColor;
+            ForeColor = DefaultForeColor;
+            HeaderBackgroundColor = DefaultHeaderBackgroundColor;
             Click += DropDown_Click;
         }
 

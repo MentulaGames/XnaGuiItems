@@ -36,6 +36,10 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public static Color DefaultForeColor { get { return Color.Black; } }
         /// <summary>
+        /// Gets the default size of the <see cref="GuiItem"/>
+        /// </summary>
+        public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 50); } }
+        /// <summary>
         /// Gets a value indicating wether the base <see cref="GuiItem"/> class is in the process of disposing.
         /// </summary>
         public virtual bool Disposing { get; protected set; }
@@ -147,7 +151,7 @@ namespace Mentula.GuiItems.Core
         {
             InitEvents();
             this.device = device;
-            bounds = new Rectangle(0, 0, 100, 50);
+            bounds = DefaultSize;
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             Show();
@@ -202,7 +206,7 @@ namespace Mentula.GuiItems.Core
             {
                 Vector2 mPos = GetRotatedMouse(mState);
 
-                over = new Rectangle((int)Position.X, (int)Position.Y, bounds.Width, bounds.Height).Contains((int)mPos.X, (int)mPos.Y);
+                over = bounds.Contains(mPos.ToPoint());
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over) Invoke(Hover, this, mState);

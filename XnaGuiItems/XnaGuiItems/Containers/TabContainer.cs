@@ -30,6 +30,10 @@ namespace Mentula.GuiItems.Containers
         /// Gets or sets a value indicating if the <see cref="TabContainer"/> should not atler the position of added tab items to the position of the <see cref="TabContainer"/>.
         /// </summary>
         public virtual bool UseAbsolutePosition { get; set; }
+        /// <summary>
+        /// Gets the default tab size of the <see cref="TabContainer"/>
+        /// </summary>
+        public static Rectangle DefaultTabSize { get { return new Rectangle(0, 0, 250, 150); } }
 
         protected Rectangle tabRect;
 
@@ -47,7 +51,9 @@ namespace Mentula.GuiItems.Containers
             : base(device)
         {
             this.font = font;
-            Init();
+            tabs = new KeyValuePair<Label, GuiItemCollection>[0];
+            TabRectangle = DefaultTabSize;
+            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
         }
 
         /// <summary>
@@ -162,22 +168,12 @@ namespace Mentula.GuiItems.Containers
                 for (int i = 0; i < tabs.Length; i++)
                 {
                     tabs[i].Key.Update(mState);
-
                     GuiItemCollection controlls = tabs[i].Value;
 
                     for (int j = 0; j < controlls.Count; j++)
                     {
                         GuiItem control = controlls[j];
-
-                        Button btn;
-                        TextBox txt;
-
-                        if (i == SelectedTab)
-                        {
-                            if ((btn = control as Button) != null) btn.Update(mState, delta);
-                            else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
-                            else control.Update(mState);
-                        }
+                        if (i == SelectedTab) control.Update_S(mState, kState, delta);
 
                         control.SuppressUpdate = true;
                     }
@@ -214,13 +210,6 @@ namespace Mentula.GuiItems.Containers
                     }
                 }
             }
-        }
-
-        private void Init()
-        {
-            tabs = new KeyValuePair<Label, GuiItemCollection>[0];
-            TabRectangle = new Rectangle(0, 0, 250, 150);
-            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
         }
 
         private void TextBox_Click(GuiItem sender, MouseState state)

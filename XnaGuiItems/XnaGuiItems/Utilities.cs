@@ -1,8 +1,13 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Windows.Forms;
+using Mentula.GuiItems.Items;
+using Control = System.Windows.Forms.Control;
+using FormBorderStyle = System.Windows.Forms.FormBorderStyle;
+using Microsoft.Xna.Framework.Input;
 
 namespace Mentula.GuiItems
 {
@@ -37,7 +42,7 @@ namespace Mentula.GuiItems
         /// <param name="function"> The specified function to run. </param>
         public static void RunInSTAThread(ThreadStart function)
         {
-            Thread t = new Thread(function) { IsBackground = true };
+            Thread t = CreateBackgroundThread(function);
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
@@ -46,18 +51,28 @@ namespace Mentula.GuiItems
         /// <param name="function"> The specified function to run. </param>
         public static void RunInBackground(ThreadStart function)
         {
-            Thread t = new Thread(function) { IsBackground = true };
-            t.Start();
-        }
-
-        internal static int Clamp(this int value, int max, int min)
-        {
-            return value > max ? max : (value < min ? min : value);
+            CreateBackgroundThread(function).Start();
         }
 
         internal static void Invoke(Delegate function, params object[] args)
         {
             if (function != null) function.DynamicInvoke(args);
+        }
+
+        internal static void Update_S(this GuiItem control, MouseState mState, KeyboardState kState, float delta)
+        {
+            Button btn;
+            TextBox txt;
+
+            if ((btn = control as Button) != null) btn.Update(mState, delta);
+            else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
+            else control.Update(mState);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static Thread CreateBackgroundThread(ThreadStart func)
+        {
+            return new Thread(func) { IsBackground = true };
         }
     }
 }
