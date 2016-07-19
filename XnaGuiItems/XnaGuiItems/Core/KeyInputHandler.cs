@@ -1,7 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Mentula.GuiItems.Core
 {
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal class KeyInputHandler
     {
         internal string keyboadString;
@@ -420,13 +424,13 @@ namespace Mentula.GuiItems.Core
             if (state.IsKeyDown(Keys.Back))
             {
                 if (clsInput.Back_KeyState == KeyState.Up) clsInput.Back_KeyState = KeyState.Down;
-                else if (clsInput.RepeatKey(Keys.Back) && (keyboadString != "")) keyboadString = keyboadString.Remove(keyboadString.Length - 1);
+                else if (clsInput.RepeatKey(Keys.Back) && !string.IsNullOrEmpty(keyboadString)) keyboadString = keyboadString.Remove(keyboadString.Length - 1);
             }
             else if (state.IsKeyUp(Keys.Back))
             {
                 if (clsInput.Back_KeyState == KeyState.Down)
                 {
-                    if (keyboadString != "") keyboadString = keyboadString.Remove(keyboadString.Length - 1);
+                    if (!string.IsNullOrEmpty(keyboadString)) keyboadString = keyboadString.Remove(keyboadString.Length - 1);
                     clsInput.Back_KeyState = KeyState.Up;
                 }
             }
@@ -434,13 +438,13 @@ namespace Mentula.GuiItems.Core
             if (state.IsKeyDown(Keys.Enter))
             {
                 if (clsInput.Return_KeyState == KeyState.Up) clsInput.Return_KeyState = KeyState.Down;
-                else if (clsInput.RepeatKey(Keys.Enter)) keyboadString += '\n';
+                else if (clsInput.RepeatKey(Keys.Enter)) keyboadString += Environment.NewLine;
             }
             else if (state.IsKeyUp(Keys.Enter))
             {
                 if (clsInput.Return_KeyState == KeyState.Down)
                 {
-                    if (allowReturn) keyboadString += '\n';
+                    if (allowReturn) keyboadString += Environment.NewLine;
                     clsInput.Return_KeyState = KeyState.Up;
                 }
             }

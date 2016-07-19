@@ -3,6 +3,9 @@
 namespace Mentula.GuiItems.Core
 {
     /// <summary> A container for progress data (100% base). </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public struct ProgressData
     {
         /// <summary> Gets or sets the minimum of the progress data, must be smaller than the <see cref="Maximum"/>. </summary>

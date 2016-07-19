@@ -10,12 +10,19 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A button base class.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class Button : Label
     {
+        /// <summary> The <see cref="Texture2D"/> used for drawing the hover style <see cref="Button"/>. </summary>
         protected Texture2D hoverTexture;
+        /// <summary> The <see cref="Texture2D"/> used for drawing the click style <see cref="Button"/>. </summary>
         protected Texture2D clickTexture;
 
         private Texture2D drawTexture;
+        private bool leftInvoked;
+        private bool rightInvoked;
         private int doubleLeftClicked;
         private int doubleRightClicked;
         private float time;
@@ -72,31 +79,25 @@ namespace Mentula.GuiItems.Items
 
             if (Enabled)
             {
-                bool lDown = over && state.LeftButton == ButtonState.Pressed;
-                bool rDown = over && state.RightButton == ButtonState.Pressed;
-
                 if (!over) drawTexture = backColorImage;
-                else if (over && !lDown && !rDown) drawTexture = hoverTexture;
+                else if (over && !leftDown && !rightDown) drawTexture = hoverTexture;
 
-                if (!leftClicked && lDown)
+                if (leftDown && !leftInvoked)
                 {
                     Invoke(LeftClick, this, state);
-                    leftClicked = true;
+                    leftInvoked = true;
 
                     doubleLeftClicked++;
                     drawTexture = clickTexture;
                 }
-                if (!rigthClicked && rDown)
+                if (rightDown && !rightInvoked)
                 {
                     Invoke(RightClick, this, state);
-                    rigthClicked = true;
+                    rightInvoked = true;
 
                     doubleRightClicked++;
                     drawTexture = clickTexture;
                 }
-
-                if (leftClicked && state.LeftButton == ButtonState.Released) leftClicked = false;
-                if (rigthClicked && state.RightButton == ButtonState.Released) rigthClicked = false;
 
                 time += deltaTime;
 
@@ -107,6 +108,9 @@ namespace Mentula.GuiItems.Items
                     if (time < 1) Invoke(DoubleClick, this, state);
                     time = 0;
                 }
+
+                if (leftInvoked && !leftDown) leftInvoked = false;
+                if (rightInvoked && !rightDown) rightInvoked = false;
             }
         }
 
@@ -116,16 +120,16 @@ namespace Mentula.GuiItems.Items
         /// <param name="spriteBatch"> The <see cref="SpriteBatch"/> to use. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(drawTexture, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(drawTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
 
-                if (backgroundImage != null)
+                if (BackgroundImage != null)
                 {
-                    spriteBatch.Draw(backgroundImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(BackgroundImage, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
                 }
 
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 
@@ -136,22 +140,22 @@ namespace Mentula.GuiItems.Items
         {
             if (AutoSize)
             {
-                Vector2 dim = font.MeasureString(text);
+                Vector2 dim = font.MeasureString(Text);
                 dim.X += 3;
-                bool width = dim.X != bounds.Width;
-                bool height = dim.Y != bounds.Height;
+                bool width = dim.X != Bounds.Width;
+                bool height = dim.Y != Bounds.Height;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y);
+                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
+                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
+                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
             backColorImage = backColorImage.ApplyBorderButton(ButtonStyle.Default);
             hoverTexture = backColorImage.ApplyBorderButton(ButtonStyle.Hover);
             clickTexture = backColorImage.ApplyBorderButton(ButtonStyle.Click);
 
-            if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderButton(ButtonStyle.Default);
-            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
+            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderButton(ButtonStyle.Default);
+            foregoundTexture = Drawing.FromText(Text, font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
         }
 
         /// <summary>

@@ -11,6 +11,9 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A Dropdown with clickable childs.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class DropDown : GuiItem
     {
         /// <summary>
@@ -68,8 +71,11 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public event ValueChangedEventHandler<int> IndexClick;
 
+        /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
+        /// <summary> The underlying labels for the <see cref="DropDown"/>. </summary>
         protected KeyValuePair<string, Color>[][] labels;
+        /// <summary> The rectangle used in the foreground. </summary>
         protected Rectangle foregroundRectangle;
 
         private Texture2D headerTexture;
@@ -181,19 +187,19 @@ namespace Mentula.GuiItems.Items
                 }
 
                 dim.X += 3;
-                bool width = dim.X != bounds.Width ? true : false;
-                bool height = dim.Y != bounds.Height ? true : false;
+                bool width = dim.X != Bounds.Width ? true : false;
+                bool height = dim.Y != Bounds.Height ? true : false;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y + yAdder);
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y + yAdder);
+                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y + yAdder);
+                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
+                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y + yAdder);
             }
 
-            foregroundRectangle = bounds;
+            foregroundRectangle = Bounds;
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
-            if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
+            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
 
-            foregoundTexture = Drawing.FromText(HeaderText, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
+            foregoundTexture = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
             headerTexture = Drawing.FromColor(HeaderBackgroundColor, foregoundTexture.Width, (int)font.MeasureString("a").Y, device);
 
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
@@ -213,10 +219,10 @@ namespace Mentula.GuiItems.Items
         {
             base.Draw(spriteBatch);
 
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
 
                 float fontHeight = font.MeasureString("a").Y;
                 for (int i = 0; i < itemTextures.Length; i++)
@@ -227,7 +233,7 @@ namespace Mentula.GuiItems.Items
                         new Vector2(Position.X, Position.Y + (fontHeight * (i + 1))),
                         null,
                         Color.White,
-                        rotation,
+                        Rotation,
                         Vector2.Zero,
                         1f,
                         SpriteEffects.None,

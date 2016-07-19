@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace Mentula.GuiItems.Core
 {
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal class EmptyInput
     {
         internal Dictionary<Keys, DateTime> downs = new Dictionary<Keys, DateTime>();

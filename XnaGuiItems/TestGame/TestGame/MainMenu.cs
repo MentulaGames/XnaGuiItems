@@ -12,10 +12,11 @@ namespace TestGame
             : base(game)
         {
             font = game.Content.Load<SpriteFont>("ConsoleFont");
+            Button btn = AddButton();
+            btn.AutoSize = true;
+            btn.Text = "Click me";
 
-            DropDown dd = AddDropDown(AutoSize: true);
-            dd.AddOption(new Lbl("Pickup", null), new Lbl("Item", Color.Yellow));
-            dd.Refresh();
+            btn.LeftClick += (s, e) => { btn.Text = "Left"; };
         }
 
         public override void Initialize()

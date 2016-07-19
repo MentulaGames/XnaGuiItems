@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Mentula.GuiItems
 {
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal static class Drawing
     {
         internal static Texture2D FromColor(Color color, int width, int height, GraphicsDevice device)

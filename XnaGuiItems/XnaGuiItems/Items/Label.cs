@@ -8,6 +8,9 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A label used for displaying text.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class Label : GuiItem
     {
         /// <summary>
@@ -39,10 +42,13 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public int LineStart { get { return lineStart; } set { lineStart = value; Refresh(); } }
 
-        protected string text;
-        protected int lineStart;
+        /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
+        /// <summary> The rectangle used in the foreground. </summary>
         protected Rectangle foregroundRectangle;
+
+        private int lineStart;
+        private string text;
 
         /// <summary>
         /// Occurs when the value of the <see cref="Text"/> propery is changed.
@@ -87,18 +93,18 @@ namespace Mentula.GuiItems.Items
             {
                 Vector2 dim = font.MeasureString(text);
                 dim.X += 3;
-                bool width = dim.X != bounds.Width;
-                bool height = dim.Y != bounds.Height;
+                bool width = dim.X != Bounds.Width && dim.X != 0;
+                bool height = dim.Y != Bounds.Height && dim.Y != 0;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y);
+                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
+                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
+                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
-            foregroundRectangle = bounds;
-            backColorImage = Drawing.FromColor(BackColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
-            if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(text, font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, true, LineStart, device);
+            foregroundRectangle = Bounds;
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, true, LineStart, device);
         }
 
         /// <summary>
@@ -109,9 +115,9 @@ namespace Mentula.GuiItems.Items
         {
             base.Draw(spriteBatch);
 
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 
@@ -125,7 +131,7 @@ namespace Mentula.GuiItems.Items
 
         protected virtual void OnTextChanged(GuiItem sender, string newText) { text = newText; Refresh(); }
         protected virtual void OnFontChanged(Label sender, SpriteFont newFont) { font = newFont; Refresh(); }
-        protected override void OnForeColorChanged(GuiItem sender, Color newColor) { foreColor = newColor; if (font != null) Refresh(); }
+        protected override void OnForeColorChanged(GuiItem sender, Color newColor) { base.OnForeColorChanged(sender, newColor); if (font != null) Refresh(); }
         protected override void OnMove(GuiItem sender, Vector2 newpos)
         {
             base.OnMove(sender, newpos);

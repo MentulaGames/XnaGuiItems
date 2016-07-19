@@ -8,13 +8,17 @@ using Mentula.GuiItems.Items;
 using Control = System.Windows.Forms.Control;
 using FormBorderStyle = System.Windows.Forms.FormBorderStyle;
 using Microsoft.Xna.Framework.Input;
+using Mentula.GuiItems.Containers;
+using System.Reflection;
 
 namespace Mentula.GuiItems
 {
     /// <summary>
     /// Contains utilitie functions for graphical use.
     /// </summary>
+#if !DEBUG
     [DebuggerStepThrough]
+#endif
     public static class Utilities
     {
         /// <summary>
@@ -56,16 +60,22 @@ namespace Mentula.GuiItems
 
         internal static void Invoke(Delegate function, params object[] args)
         {
-            if (function != null) function.DynamicInvoke(args);
+            if (function != null)
+            {
+                try { function.DynamicInvoke(args); }
+                catch (TargetInvocationException e) { throw new InvokeException(e); }
+            }
         }
 
         internal static void Update_S(this GuiItem control, MouseState mState, KeyboardState kState, float delta)
         {
             Button btn;
             TextBox txt;
+            TabContainer tb;
 
             if ((btn = control as Button) != null) btn.Update(mState, delta);
             else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
+            else if ((tb = control as TabContainer) != null) tb.Update(mState, kState, delta);
             else control.Update(mState);
         }
 

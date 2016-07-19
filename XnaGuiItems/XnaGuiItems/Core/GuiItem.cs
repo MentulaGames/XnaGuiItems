@@ -13,6 +13,9 @@ namespace Mentula.GuiItems.Core
     /// <summary>
     /// The absolute base class for all <see cref="GuiItems"/>.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class GuiItem : IDisposable
     {
         /// <summary>
@@ -88,19 +91,26 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public virtual int Width { get { return Bounds.Width; } set { Bounds = new Rectangle(bounds.X, bounds.Y, value, bounds.Height); } }
 
+        /// <summary> The specified <see cref="GraphicsDevice"/>. </summary>
         protected GraphicsDevice device;
-        protected Color backColor;
+        /// <summary> The <see cref="Texture2D"/> used for drawing the color background. </summary>
         protected Texture2D backColorImage;
-        protected Texture2D backgroundImage;
-        protected Rectangle bounds;
-        protected Color foreColor;
-        protected string name;
-        protected float rotation;
+        /// <summary> The <see cref="Texture2D"/> used for drawing the foreground. </summary>
         protected Texture2D foregoundTexture;
-        protected bool visible;
+        /// <summary> Whether the <see cref="Mouse"/> is hovering over the <see cref="GuiItem"/>. </summary>
         protected bool over;
-        protected bool leftClicked;
-        protected bool rigthClicked;
+        /// <summary> Whether the <see cref="GuiItem"/> is left clicked. </summary>
+        protected bool leftDown;
+        /// <summary> Whether the <see cref="GuiItem"/> is right clicked. </summary>
+        protected bool rightDown;
+
+        private Color backColor;
+        private Texture2D backgroundImage;
+        private Rectangle bounds;
+        private Color foreColor;
+        private string name;
+        private float rotation;
+        private bool visible;
 
         /// <summary>
         /// Occurs when the value of the <see cref="BackColor"/> property changes.
@@ -210,19 +220,19 @@ namespace Mentula.GuiItems.Core
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over) Invoke(Hover, this, mState);
-                else if (down && !leftClicked)
+                else if (down && !leftDown)
                 {
                     Invoke(Click, this, mState);
-                    leftClicked = true;
+                    leftDown = true;
                 }
-                else if (down && !rigthClicked)
+                else if (down && !rightDown)
                 {
                     Invoke(Click, this, mState);
-                    rigthClicked = true;
+                    rightDown = true;
                 }
 
-                if (leftClicked && mState.LeftButton == ButtonState.Released) leftClicked = false;
-                if (rigthClicked && mState.RightButton == ButtonState.Released) rigthClicked = false;
+                if (leftDown && mState.LeftButton == ButtonState.Released) leftDown = false;
+                if (rightDown && mState.RightButton == ButtonState.Released) rightDown = false;
             }
         }
 
@@ -285,6 +295,7 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnRotationChanged(GuiItem sender, float newRot) { rotation = newRot; }
         protected virtual void OnResize(GuiItem sender, Rectangle newSize)
         {
+            CheckBounds(newSize);
             bounds = newSize;
             backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device);
             foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device);
@@ -301,6 +312,14 @@ namespace Mentula.GuiItems.Core
             Rotated += OnRotationChanged;
             Resize += OnResize;
             VisibilityChanged += OnVisibilityChanged;
+        }
+
+        private void CheckBounds(Rectangle rect)
+        {
+            if (rect.Width <= 0 || rect.Height <= 0)
+            {
+                throw new ArgumentException("Rectangle width or height must be greater the zero!");
+            }
         }
 
         /// <summary>
@@ -341,7 +360,7 @@ namespace Mentula.GuiItems.Core
             /// Indicates a <see cref="GuiItem"/> with the specified key in the collection.
             /// </summary>
             /// <param name="key"> The <see cref="Name"/> of the <see cref="GuiItem"/> to retrieve from the <see cref="GuiItemCollection"/>. </param>
-            /// <returns> The XnaMentula.GuiItems.GuiItem with the specified key within the GuiItemCollection. </returns>
+            /// <returns> The <see cref="GuiItem"/> with the specified key within the collection. </returns>
             public virtual GuiItem this[string key] { get { return Items.First(i => i.Name == key); } set { Items[Items.FindIndex(i => i.Name == key)] = value; } }
             /// <summary>
             /// Retrieves the index of the specified <see cref="GuiItem"/> in the <see cref="GuiItemCollection"/>.

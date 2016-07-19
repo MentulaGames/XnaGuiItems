@@ -8,6 +8,9 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A progress bar used for displaying progress.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class ProgressBar : GuiItem
     {
         /// <summary>
@@ -37,6 +40,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
 
+        /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
 
         /// <summary>
@@ -77,9 +81,9 @@ namespace Mentula.GuiItems.Items
         {
             base.Draw(spriteBatch);
 
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -88,11 +92,11 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            float ppp = (float)bounds.Width / 100;
+            float ppp = (float)Bounds.Width / 100;
             int width = (int)(ppp * data.Value);
 
-            foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, Inverted ? new Rectangle(bounds.Width - width, 0, width, bounds.Height) : new Rectangle(0, 0, width, bounds.Height), device);
-            backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Width, Bounds.Height, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
         protected virtual void OnValueChanged(object sender, int newVal) { data.Value = newVal; Refresh(); }

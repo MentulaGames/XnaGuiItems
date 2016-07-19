@@ -6,6 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Mentula.GuiItems
 {
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal static class Extentions
     {
         internal static Texture2D ApplyBorderLabel(this Texture2D texture, BorderStyle style)

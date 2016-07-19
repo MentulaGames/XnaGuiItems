@@ -9,6 +9,9 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A slider used for setting rough values like volume.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class Slider : GuiItem
     {
         /// <summary>
@@ -38,7 +41,9 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
 
+        /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
+
         private bool sliding;
         private Vector2 oldOffset;
 
@@ -72,7 +77,7 @@ namespace Mentula.GuiItems.Items
             SlidBarDimentions = new Rectangle(bounds.X, bounds.Y, Bounds.Width / 10, Bounds.Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
-            foreColor = Color.Gray;
+            ForeColor = Color.Gray;
 
             Refresh();
         }
@@ -87,12 +92,12 @@ namespace Mentula.GuiItems.Items
 
             if (Enabled)
             {
-                if (sliding && state.LeftButton == ButtonState.Pressed)
+                if (sliding && leftDown)
                 {
                     Invoke(MouseDown, this, state);
                     Refresh();
                 }
-                else if (sliding && state.LeftButton == ButtonState.Released && !IsSliding(state.Position()))
+                else if (sliding && !leftDown && !IsSliding(state.Position()))
                 {
                     sliding = false;
                     oldOffset = Vector2.Zero;
@@ -109,9 +114,9 @@ namespace Mentula.GuiItems.Items
         {
             base.Draw(spriteBatch);
 
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -120,8 +125,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            foregoundTexture = Drawing.FromColor(ForeColor, bounds.Width, bounds.Height, SlidBarDimentions, device);
-            backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Width, Bounds.Height, SlidBarDimentions, device);
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
         protected void OnClick(object sender, MouseState state) { if (IsSliding(GetRotatedMouse(state))) sliding = true; }
@@ -134,13 +139,13 @@ namespace Mentula.GuiItems.Items
             {
                 Rectangle newDim = SlidBarDimentions.Add(new Vector2(-offset.X - (SlidBarDimentions.Width >> 1), 0));
 
-                if (newDim.X + Position.X > bounds.X && newDim.X + SlidBarDimentions.Width <= bounds.Width) SlidBarDimentions = newDim;
-                else if (newDim.X + Position.X > bounds.X) SlidBarDimentions = new Rectangle(bounds.Width - SlidBarDimentions.Width, 0, SlidBarDimentions.Width, SlidBarDimentions.Height);
+                if (newDim.X + Position.X > Bounds.X && newDim.X + SlidBarDimentions.Width <= Bounds.Width) SlidBarDimentions = newDim;
+                else if (newDim.X + Position.X > Bounds.X) SlidBarDimentions = new Rectangle(Bounds.Width - SlidBarDimentions.Width, 0, SlidBarDimentions.Width, SlidBarDimentions.Height);
                 else SlidBarDimentions = new Rectangle(0, 0, SlidBarDimentions.Width, SlidBarDimentions.Height);
 
                 oldOffset = offset;
 
-                float ppp = 100f / bounds.Width;
+                float ppp = 100f / Bounds.Width;
                 bool overCenter = SlidBarDimentions.X * ppp >= 50;
                 float percent = (SlidBarDimentions.X + (overCenter ? SlidBarDimentions.Width : 0)) * ppp;
 

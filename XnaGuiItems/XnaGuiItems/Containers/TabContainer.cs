@@ -12,6 +12,9 @@ namespace Mentula.GuiItems.Containers
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class TabContainer : GuiItem
     {
         /// <summary>
@@ -35,9 +38,8 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public static Rectangle DefaultTabSize { get { return new Rectangle(0, 0, 250, 150); } }
 
-        protected Rectangle tabRect;
-
         private const string TAB_PREFIX = "Lbl";
+        private Rectangle tabRect;
         private KeyValuePair<Label, GuiItemCollection>[] tabs;
         private Texture2D tabtexture;
         private SpriteFont font;

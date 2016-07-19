@@ -10,8 +10,15 @@ namespace Mentula.GuiItems.Items
     /// <summary>
     /// A textbox used for displaying and accepting text.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class TextBox : Label
     {
+        /// <summary>
+        /// Gets the default minimum size of the <see cref="TextBox"/>.
+        /// </summary>
+        public static Vector2 DefaultMinimumSize { get { return new Vector2(100, 50); } }
         /// <summary>
         /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
@@ -50,13 +57,8 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public TextBox(GraphicsDevice device, SpriteFont font)
-            : base(device, font)
-        {
-            inputHandler = new KeyInputHandler();
-            FlickerStyle = FlickerStyle.Normal;
-            MinimumSize = new Vector2(100, 50);
-            MaximumSize = device.Viewport.Bounds.Size();
-        }
+            : this(device, DefaultSize, font)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBox"/> class with a specific size.
@@ -69,7 +71,7 @@ namespace Mentula.GuiItems.Items
         {
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
-            MinimumSize = new Vector2(100, 50);
+            MinimumSize = DefaultMinimumSize;
             MaximumSize = device.Viewport.Bounds.Size();
         }
 
@@ -98,7 +100,7 @@ namespace Mentula.GuiItems.Items
                     string newText = inputHandler.GetInputString(kState, MultiLine);
                     if (Text != newText) Text = newText;
 
-                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
+                    foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : ""), font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
 
                     if (FlickerStyle == FlickerStyle.None) return;
 
@@ -130,7 +132,7 @@ namespace Mentula.GuiItems.Items
                 }
                 else
                 {
-                    foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text), font, foreColor, bounds.Width, bounds.Height, MultiLine, LineStart, device);
+                    foregoundTexture = Drawing.FromText(GetDrawableText(), font, ForeColor, Bounds.Width, Bounds.Height, MultiLine, LineStart, device);
                 }
             }
         }
@@ -150,18 +152,18 @@ namespace Mentula.GuiItems.Items
                 if (dim.X < MinimumSize.X) dim.X = MinimumSize.X;
                 else if (dim.X > MaximumSize.X) dim.X = MaximumSize.X;
 
-                bool width = dim.X != bounds.Width ? true : false;
-                bool height = dim.Y != bounds.Height ? true : false;
+                bool width = dim.X != Bounds.Width;
+                bool height = dim.Y != Bounds.Height;
 
-                if (width && height) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(bounds.X, bounds.Y, (int)dim.X, bounds.Height);
-                else if (height) bounds = new Rectangle(bounds.X, bounds.Y, bounds.Width, (int)dim.Y);
+                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
+                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
+                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
-            foregroundRectangle = bounds;
+            foregroundRectangle = Bounds;
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
-            if (backgroundImage != null) backgroundImage = backgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText((PasswordChar != '\0' ? text.ToPassword(PasswordChar) : text) + (showLine ? "|" : ""), font, foreColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
+            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : ""), font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
         }
 
         protected override void OnTextChanged(GuiItem sender, string newText)
@@ -172,10 +174,15 @@ namespace Mentula.GuiItems.Items
 
         private Vector2 GetLongTextDimentions()
         {
-            if (!MultiLine) return font.MeasureString(text);
+            if (!MultiLine) return font.MeasureString(Text);
 
-            string longText = text.Split(new string[1] { "/n" }, StringSplitOptions.None).Max();
+            string longText = Text.Split(new string[1] { "/n" }, StringSplitOptions.None).Max();
             return font.MeasureString(longText);
+        }
+
+        private string GetDrawableText()
+        {
+            return PasswordChar != '\0' ? Text.ToPassword(PasswordChar) : Text;
         }
     }
 }
