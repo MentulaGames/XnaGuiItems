@@ -38,7 +38,6 @@ namespace Mentula.GuiItems.Items
         public virtual char PasswordChar { get; set; }
         /// <summary>
         /// Gets or sets a value indicating the minimum size of the <see cref="TextBox"/>.
-        /// Default value = (X = 100, Y = 50)
         /// </summary>
         public virtual Vector2 MinimumSize { get; set; }
         /// <summary>

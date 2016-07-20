@@ -30,6 +30,18 @@
       <DocumentationSource sourceFile="..\XnaGuiItems\bin\x86\Release\XnaGuiItems.dll" xmlns="" />
       <DocumentationSource sourceFile="..\XnaGuiItems\bin\x86\Release\XnaGuiItems.xml" xmlns="" />
     </DocumentationSources>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CleanIntermediates>True</CleanIntermediates>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="Mentula.GuiItems" isDocumented="True" xmlns="">The Mentula.GuiItems namespace contains global functions to be used with XnaGuiItems.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Mentula.GuiItems.Containers" isDocumented="True" xmlns="">The Mentula.GuiItems.Containers namespace contains classes that define commonly-used containers in an user interface.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Mentula.GuiItems.Core" isDocumented="True" xmlns="">The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Mentula.GuiItems.Items" isDocumented="True" xmlns="">The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</NamespaceSummaryItem></NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->

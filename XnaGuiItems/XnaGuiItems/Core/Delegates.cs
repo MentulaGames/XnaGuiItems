@@ -53,5 +53,6 @@ namespace Mentula.GuiItems.Core
     /// <summary>
     /// Represent the method that will handle the <see cref="Slider.ValueChanged"/> event.
     /// </summary>
+    /// <typeparam name="T"> The type of the value. </typeparam>
     public delegate void ValueChangedEventHandler<T>(GuiItem sender, T newValue);
 }
