@@ -12,15 +12,23 @@ namespace TestGame
             : base(game)
         {
             font = game.Content.Load<SpriteFont>("ConsoleFont");
-            Button btn = AddButton();
-            btn.AutoSize = true;
-            btn.Text = "Click me";
-
-            btn.LeftClick += (s, e) => { btn.Text = "Left"; };
         }
 
         public override void Initialize()
         {
+            DropDown dd = AddDropDown();
+            dd.Name = "dd1";
+            dd.Position = new Vector2(10, 10);
+            dd.AddOption("Test");
+
+            DropDown dd2 = AddDropDown();
+            dd.Name = "dd2";
+            dd2.Position = new Vector2(100, 10);
+            dd2.AddOption("test");
+
+
+            dd2.Show();
+
             base.Initialize();
         }
     }

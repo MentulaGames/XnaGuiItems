@@ -12,8 +12,9 @@
   <HelpKINode Title="AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
   <HelpKINode Title="AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
   <HelpKINode Title="AddToTab method" Url="html/b6826ef7-1184-d5b6-caf2-93352e840cef.htm" />
-  <HelpKINode Title="autoFocus field" Url="html/60ccc678-75ab-37ad-8a2b-68fa10f9972a.htm" />
   <HelpKINode Title="AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
+  <HelpKINode Title="autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
+  <HelpKINode Title="autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
   <HelpKINode Title="AutoSize property">
     <HelpKINode Title="DropDown.AutoSize Property " Url="html/5797d0ce-1ad4-013d-5115-bf80c2c61977.htm" />
     <HelpKINode Title="Label.AutoSize Property " Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
@@ -381,7 +382,8 @@
   <HelpKINode Title="Menu(Of T).AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
   <HelpKINode Title="Menu(Of T).AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
   <HelpKINode Title="Menu(Of T).AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
-  <HelpKINode Title="Menu(Of T).autoFocus field" Url="html/60ccc678-75ab-37ad-8a2b-68fa10f9972a.htm" />
+  <HelpKINode Title="Menu(Of T).autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
+  <HelpKINode Title="Menu(Of T).autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
   <HelpKINode Title="Menu(Of T).controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="Menu(Of T).device field" Url="html/f362fc25-2d48-fee2-c9aa-eee19522dcbc.htm" />
   <HelpKINode Title="Menu(Of T).Dispose method" Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
@@ -418,7 +420,8 @@
   <HelpKINode Title="Menu&lt;T&gt;.AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
-  <HelpKINode Title="Menu&lt;T&gt;.autoFocus field" Url="html/60ccc678-75ab-37ad-8a2b-68fa10f9972a.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.device field" Url="html/f362fc25-2d48-fee2-c9aa-eee19522dcbc.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Dispose method" Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />

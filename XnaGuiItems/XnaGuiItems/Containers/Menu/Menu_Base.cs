@@ -60,7 +60,12 @@ namespace Mentula.GuiItems.Containers
         /// Indicates whether the <see cref="Menu{T}"/> should handle textbox focusing.
         /// Default value = true
         /// </summary>
-        protected bool autoFocus;
+        protected bool autoFocusTextbox;
+        /// <summary>
+        /// Indicates whether the <see cref="Menu{T}"/> should handle dropdown focusing.
+        /// Default value = true
+        /// </summary>
+        protected bool autoFocusDropDown;
         /// <summary>
         /// The underlying <see cref="GuiItems"/> of the <see cref="Menu{T}"/>
         /// </summary>
@@ -86,7 +91,8 @@ namespace Mentula.GuiItems.Containers
         {
             device = game.GraphicsDevice;
             controlls = new GuiItemCollection(null);
-            autoFocus = true;
+            autoFocusTextbox = true;
+            autoFocusDropDown = true;
         }
 
         /// <summary>
@@ -96,6 +102,12 @@ namespace Mentula.GuiItems.Containers
         public override void Initialize()
         {
             batch = new SpriteBatch(device);
+
+            for (int i = 0; i < controlls.Count; i++)
+            {
+                controlls[i].Refresh();
+            }
+
             base.Initialize();
         }
 
@@ -209,7 +221,7 @@ namespace Mentula.GuiItems.Containers
 
         private void TextBox_Click(GuiItem sender, MouseState state)
         {
-            if (autoFocus)
+            if (autoFocusTextbox)
             {
                 for (int i = 0; i < controlls.Count; i++)
                 {
@@ -218,6 +230,22 @@ namespace Mentula.GuiItems.Containers
                     {
                         txt.Focused = txt.Name == sender.Name;
                         txt.Refresh();
+                    }
+                }
+            }
+        }
+
+        private void DropDown_VisibilityChanged(GuiItem sender, bool visibility)
+        {
+            if (autoFocusDropDown && visibility)
+            {
+                for (int i = 0; i < controlls.Count; i++)
+                {
+                    DropDown dd;
+                    if ((dd = controlls[i] as DropDown) != null)
+                    {
+                        if (dd.Name != sender.Name) dd.Hide();
+                        dd.Refresh(); 
                     }
                 }
             }

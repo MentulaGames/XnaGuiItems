@@ -42,6 +42,7 @@ namespace Mentula.GuiItems.Containers
             if (font == null && Font == null) throw noFont;
             DropDown dd = new DropDown(device, Font ?? font);
             controlls.Add(dd);
+            dd.VisibilityChanged += DropDown_VisibilityChanged; ;
             return dd;
         }
 
