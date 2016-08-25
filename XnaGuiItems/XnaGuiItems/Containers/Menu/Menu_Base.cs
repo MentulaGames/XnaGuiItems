@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Linq;
 using static Mentula.GuiItems.Core.GuiItem;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Containers
 {
@@ -15,18 +16,18 @@ namespace Mentula.GuiItems.Containers
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public partial class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
+    public partial class Menu<T> : MentulaGameComponent<T>, IMenu
         where T : Game
     {
         /// <summary>
         /// The order in which to draw this object relative to other objects. Objects with
         /// a lower value are drawn first.
         /// </summary>
-        public int DrawOrder { get; set; }
+        public int DrawOrder { get { return drawOrder; } set { drawOrder = value; Invoke(DrawOrderChanged, this, EventArgs.Empty); } }
         /// <summary>
         /// Indicates whether <see cref="IDrawable.Draw(GameTime)"/> should be called for this game component.
         /// </summary>
-        public bool Visible { get; set; }
+        public bool Visible { get { return visible; } set { visible = value; Invoke(VisibleChanged, this, EventArgs.Empty); } }
 
         /// <summary>
         /// The center width of the viewport.
@@ -48,12 +49,10 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Occures when the value of <see cref="DrawOrder"/> is changed.
         /// </summary>
-        [Obsolete("This event is currently not in use.", false)]
         public event EventHandler<EventArgs> DrawOrderChanged;
         /// <summary>
         /// Occures when the value of <see cref="Visible"/> is changed.
         /// </summary>
-        [Obsolete("This event is currently not in use.", false)]
         public event EventHandler<EventArgs> VisibleChanged;
 
         /// <summary>
@@ -80,6 +79,8 @@ namespace Mentula.GuiItems.Containers
         protected GraphicsDevice device;
 
         private SpriteBatch batch;
+        private bool visible;
+        private int drawOrder;
         private static readonly InvalidOperationException noFont = new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
 
         /// <summary>

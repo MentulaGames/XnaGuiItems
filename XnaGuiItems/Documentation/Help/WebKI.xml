@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
   <HelpKINode Title="Add method" Url="html/0e162271-88a4-8d23-0ad9-7624c6346a31.htm" />
+  <HelpKINode Title="Add(Of TGame) method" Url="html/e5725ae0-01f1-5d30-73b1-f32711573380.htm" />
+  <HelpKINode Title="Add&lt;TGame&gt; method" Url="html/e5725ae0-01f1-5d30-73b1-f32711573380.htm" />
   <HelpKINode Title="AddButton method" Url="html/09abc327-de1b-1915-80f0-b4ee18f2fe7a.htm" />
   <HelpKINode Title="AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
   <HelpKINode Title="AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
@@ -104,12 +106,19 @@
     <HelpKINode Title="GuiItem.Draw Method " Url="html/64d04542-2bce-78e0-0f9c-ee192548b794.htm" />
     <HelpKINode Title="Label.Draw Method " Url="html/e3a6c11d-6672-9e4d-0218-31a22461f3e2.htm" />
     <HelpKINode Title="Menu(T).Draw Method " Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
+    <HelpKINode Title="MenuCollection.Draw Method " Url="html/5cf16a8b-0283-6918-4382-7b888098e1e0.htm" />
     <HelpKINode Title="ProgressBar.Draw Method " Url="html/143b4933-395e-916b-b550-df0cfeed2201.htm" />
     <HelpKINode Title="Slider.Draw Method " Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
     <HelpKINode Title="TabContainer.Draw Method " Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
   </HelpKINode>
-  <HelpKINode Title="DrawOrder property" Url="html/a0b3018a-93e3-ddc0-0a66-943b0b80bea4.htm" />
-  <HelpKINode Title="DrawOrderChanged event" Url="html/c19aee2d-77d5-9df3-f9e2-9e595487b47e.htm" />
+  <HelpKINode Title="DrawOrder property">
+    <HelpKINode Title="Menu(T).DrawOrder Property " Url="html/a0b3018a-93e3-ddc0-0a66-943b0b80bea4.htm" />
+    <HelpKINode Title="MenuCollection.DrawOrder Property " Url="html/50f2a097-5b4c-93a2-421d-5035d367dd93.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DrawOrderChanged event">
+    <HelpKINode Title="Menu(T).DrawOrderChanged Event" Url="html/c19aee2d-77d5-9df3-f9e2-9e595487b47e.htm" />
+    <HelpKINode Title="MenuCollection.DrawOrderChanged Event" Url="html/b082158d-3bd3-05f5-ae76-794fbc104f88.htm" />
+  </HelpKINode>
   <HelpKINode Title="DropDown class">
     <HelpKINode Title="DropDown Class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
     <HelpKINode Title="about DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
@@ -161,6 +170,7 @@
   </HelpKINode>
   <HelpKINode Title="ForegroundRectangle property" Url="html/446eeb4f-b3c3-8af8-6643-eb6e8d81ff23.htm" />
   <HelpKINode Title="Game property" Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
+  <HelpKINode Title="Get method" Url="html/0d78bf6e-23f9-605b-5c26-4b1305351fc3.htm" />
   <HelpKINode Title="GetEnumerator method" Url="html/2b5f230f-a3dd-724d-89dd-c2a9b8d41dd7.htm" />
   <HelpKINode Title="GetLineCount method" Url="html/478c4fb8-afa3-b38b-1102-04a38e8b4d76.htm" />
   <HelpKINode Title="GetRotatedMouse method" Url="html/4d09a082-c9dd-6544-75b3-bc3ac708a0e2.htm" />
@@ -253,13 +263,27 @@
   <HelpKINode Title="Height property" Url="html/ab9c9794-ed00-55ee-d0f6-996803237419.htm" />
   <HelpKINode Title="Hide method">
     <HelpKINode Title="GuiItem.Hide Method " Url="html/fd1eb988-1815-7ed7-9174-380a5c8b30a0.htm" />
+    <HelpKINode Title="IMenu.Hide Method " Url="html/16e4d670-b565-f4ed-c5d7-50f68a53e1a8.htm" />
     <HelpKINode Title="Menu(T).Hide Method " Url="html/b91555c4-de76-9618-a9dc-6a63dcf6802f.htm" />
+    <HelpKINode Title="MenuCollection.Hide Method " Url="html/91d237fc-c499-9b73-26c4-251100573748.htm" />
   </HelpKINode>
   <HelpKINode Title="Hover event" Url="html/280ccfb5-c240-aed8-7526-4b5fe93eba71.htm" />
   <HelpKINode Title="hoverTexture field" Url="html/1b5a1831-91ec-34fa-e7ca-4afbe56162c6.htm" />
+  <HelpKINode Title="IMenu interface">
+    <HelpKINode Title="IMenu Interface" Url="html/fcefde97-a111-9248-928f-ea2a8f10fac5.htm" />
+    <HelpKINode Title="about IMenu interface" Url="html/fcefde97-a111-9248-928f-ea2a8f10fac5.htm" />
+    <HelpKINode Title="events" Url="html/7e8ae659-5145-7d98-023e-bb7ae8922e5e.htm" />
+    <HelpKINode Title="methods" Url="html/c2ef0788-a7cd-20a0-69d9-0114e605702f.htm" />
+    <HelpKINode Title="properties" Url="html/d2ea2997-632a-dfb4-3445-349c97e0e8a5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IMenu.Hide method" Url="html/16e4d670-b565-f4ed-c5d7-50f68a53e1a8.htm" />
+  <HelpKINode Title="IMenu.Show method" Url="html/2b2b118c-4c73-a7d3-9a99-fb913318cf10.htm" />
   <HelpKINode Title="IndexClick event" Url="html/4ebdbdab-12c7-f9d1-38c6-6772fc51620b.htm" />
   <HelpKINode Title="IndexOf method" Url="html/d8a92b45-64ac-3eeb-b327-4b992772b49a.htm" />
-  <HelpKINode Title="Initialize method" Url="html/3ad3615c-efaf-b9a2-8e52-96e99c4099ef.htm" />
+  <HelpKINode Title="Initialize method">
+    <HelpKINode Title="Menu(T).Initialize Method " Url="html/3ad3615c-efaf-b9a2-8e52-96e99c4099ef.htm" />
+    <HelpKINode Title="MenuCollection.Initialize Method " Url="html/afec07fa-ef12-0a45-b28e-11be71c7338e.htm" />
+  </HelpKINode>
   <HelpKINode Title="Insert method" Url="html/9bba05e2-49cc-0ca5-a2a2-f25ec71858a2.htm" />
   <HelpKINode Title="Inverted property" Url="html/43ef686b-c9a0-3225-66b4-a02449eb7fd2.htm" />
   <HelpKINode Title="InvokeException class">
@@ -313,8 +337,11 @@
   <HelpKINode Title="MaxiumValue property" Url="html/1b1e405a-abc9-caf3-e1b5-18d59c6cb426.htm" />
   <HelpKINode Title="Mentula.GuiItems namespace" Url="html/cd1062cb-dfc3-5cb6-b44e-e25cb116611b.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers namespace" Url="html/c2f2672e-81ab-c5de-31b7-3400ad18ff87.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Containers.IMenu interface" Url="html/fcefde97-a111-9248-928f-ea2a8f10fac5.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Containers.Menu class" Url="html/254b4a81-2c27-ec50-3785-34e5df7d1822.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers.Menu(Of T) class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers.Menu&lt;T&gt; class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Containers.MenuCollection class" Url="html/83ed5906-ec7d-4dcc-5429-4039b9b67b8a.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers.TabContainer class" Url="html/0d785dc0-fe75-e326-4dbd-dd3ca9b8f406.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core namespace" Url="html/eb0543e3-bab8-348e-cda0-29f2e70219b4.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.BorderStyle enumeration" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
@@ -365,6 +392,15 @@
   </HelpKINode>
   <HelpKINode Title="MentulaGameComponent&lt;T&gt;.Game property" Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
   <HelpKINode Title="MentulaGameComponent&lt;T&gt;.MentulaGameComponent constructor" Url="html/495bd63b-2a98-d2cb-fe37-1edec354cdc1.htm" />
+  <HelpKINode Title="Menu class">
+    <HelpKINode Title="Menu Class" Url="html/254b4a81-2c27-ec50-3785-34e5df7d1822.htm" />
+    <HelpKINode Title="about Menu class" Url="html/254b4a81-2c27-ec50-3785-34e5df7d1822.htm" />
+    <HelpKINode Title="constructor" Url="html/bddd5ac2-6410-0461-a02e-790c97e694c9.htm" />
+    <HelpKINode Title="events" Url="html/c9f7b857-58fc-7448-553c-b4081150344f.htm" />
+    <HelpKINode Title="fields" Url="html/b09f87e2-f1d6-e76b-62bd-dd1a6a4e7594.htm" />
+    <HelpKINode Title="methods" Url="html/19aea374-32d9-ff1e-1527-1074e82cb519.htm" />
+    <HelpKINode Title="properties" Url="html/02d8fc7e-c01d-f6f6-4163-69337bf6f412.htm" />
+  </HelpKINode>
   <HelpKINode Title="Menu(Of T) class">
     <HelpKINode Title="Menu(T) Class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
     <HelpKINode Title="about Menu(Of T) class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
@@ -403,6 +439,7 @@
   <HelpKINode Title="Menu(Of T).Update method" Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
   <HelpKINode Title="Menu(Of T).Visible property" Url="html/5a991e18-555f-7f84-7b40-3dc6bc9cf900.htm" />
   <HelpKINode Title="Menu(Of T).VisibleChanged event" Url="html/f5aa9a88-58f7-a2e9-1ea9-069f6a185bf2.htm" />
+  <HelpKINode Title="Menu.Menu constructor" Url="html/bddd5ac2-6410-0461-a02e-790c97e694c9.htm" />
   <HelpKINode Title="Menu&lt;T&gt; class">
     <HelpKINode Title="Menu(T) Class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
     <HelpKINode Title="about Menu&lt;T&gt; class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
@@ -441,6 +478,27 @@
   <HelpKINode Title="Menu&lt;T&gt;.Update method" Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Visible property" Url="html/5a991e18-555f-7f84-7b40-3dc6bc9cf900.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.VisibleChanged event" Url="html/f5aa9a88-58f7-a2e9-1ea9-069f6a185bf2.htm" />
+  <HelpKINode Title="MenuCollection class">
+    <HelpKINode Title="MenuCollection Class" Url="html/83ed5906-ec7d-4dcc-5429-4039b9b67b8a.htm" />
+    <HelpKINode Title="about MenuCollection class" Url="html/83ed5906-ec7d-4dcc-5429-4039b9b67b8a.htm" />
+    <HelpKINode Title="constructor" Url="html/2cbbd378-de39-7ea6-277f-064ce80f2701.htm" />
+    <HelpKINode Title="events" Url="html/e410cb51-7f16-cc32-8b26-dcd8117828f9.htm" />
+    <HelpKINode Title="methods" Url="html/97933429-c095-7e03-d3b4-3faa46c5eb14.htm" />
+    <HelpKINode Title="properties" Url="html/3314c2a8-be66-335d-d283-da3c68907d0a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MenuCollection.Add(Of TGame) method" Url="html/e5725ae0-01f1-5d30-73b1-f32711573380.htm" />
+  <HelpKINode Title="MenuCollection.Add&lt;TGame&gt; method" Url="html/e5725ae0-01f1-5d30-73b1-f32711573380.htm" />
+  <HelpKINode Title="MenuCollection.Draw method" Url="html/5cf16a8b-0283-6918-4382-7b888098e1e0.htm" />
+  <HelpKINode Title="MenuCollection.DrawOrder property" Url="html/50f2a097-5b4c-93a2-421d-5035d367dd93.htm" />
+  <HelpKINode Title="MenuCollection.DrawOrderChanged event" Url="html/b082158d-3bd3-05f5-ae76-794fbc104f88.htm" />
+  <HelpKINode Title="MenuCollection.Get method" Url="html/0d78bf6e-23f9-605b-5c26-4b1305351fc3.htm" />
+  <HelpKINode Title="MenuCollection.Hide method" Url="html/91d237fc-c499-9b73-26c4-251100573748.htm" />
+  <HelpKINode Title="MenuCollection.Initialize method" Url="html/afec07fa-ef12-0a45-b28e-11be71c7338e.htm" />
+  <HelpKINode Title="MenuCollection.MenuCollection constructor" Url="html/2cbbd378-de39-7ea6-277f-064ce80f2701.htm" />
+  <HelpKINode Title="MenuCollection.Show method" Url="html/34aea476-53fa-49cd-2651-7e6f25a46905.htm" />
+  <HelpKINode Title="MenuCollection.Update method" Url="html/76da90eb-a75e-45c8-e300-1ebbbc379c48.htm" />
+  <HelpKINode Title="MenuCollection.Visible property" Url="html/1c46d2f8-596c-f943-8865-3a8f1310ddaa.htm" />
+  <HelpKINode Title="MenuCollection.VisibleChanged event" Url="html/6ff8c204-edf3-b5de-24b8-3f4385851b0e.htm" />
   <HelpKINode Title="Minimum property" Url="html/93389748-622f-c275-0366-e4dcc6bb0448.htm" />
   <HelpKINode Title="MinimumSize property" Url="html/66b62fe7-6120-ab22-0dd1-1384a5ff01c2.htm" />
   <HelpKINode Title="MinimumValue property">
@@ -563,7 +621,9 @@
   <HelpKINode Title="SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
   <HelpKINode Title="Show method">
     <HelpKINode Title="GuiItem.Show Method " Url="html/063225f4-2072-377c-46ad-e8e2a7a53ff3.htm" />
+    <HelpKINode Title="IMenu.Show Method " Url="html/2b2b118c-4c73-a7d3-9a99-fb913318cf10.htm" />
     <HelpKINode Title="Menu(T).Show Method " Url="html/d9929845-a149-ea95-4d5e-acc9ab38fd84.htm" />
+    <HelpKINode Title="MenuCollection.Show Method " Url="html/34aea476-53fa-49cd-2651-7e6f25a46905.htm" />
   </HelpKINode>
   <HelpKINode Title="SlidBarDimentions property" Url="html/c86f4e4b-a922-5054-78a4-cbef75d51830.htm" />
   <HelpKINode Title="Slider class">
@@ -644,6 +704,7 @@
     <HelpKINode Title="DropDown.Update Method " Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
     <HelpKINode Title="GuiItem.Update Method " Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
     <HelpKINode Title="Menu(T).Update Method " Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
+    <HelpKINode Title="MenuCollection.Update Method " Url="html/76da90eb-a75e-45c8-e300-1ebbbc379c48.htm" />
     <HelpKINode Title="Slider.Update Method " Url="html/89530faf-22c5-297b-a0ad-9284ab2f4a25.htm" />
     <HelpKINode Title="TabContainer.Update Method " Url="html/7e276812-94eb-169a-8111-5be0f692174e.htm" />
     <HelpKINode Title="TextBox.Update Method " Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
@@ -677,8 +738,12 @@
   <HelpKINode Title="Visible property">
     <HelpKINode Title="GuiItem.Visible Property " Url="html/a266c3fa-e088-547a-d2de-ca594b2d6e9f.htm" />
     <HelpKINode Title="Menu(T).Visible Property " Url="html/5a991e18-555f-7f84-7b40-3dc6bc9cf900.htm" />
+    <HelpKINode Title="MenuCollection.Visible Property " Url="html/1c46d2f8-596c-f943-8865-3a8f1310ddaa.htm" />
   </HelpKINode>
-  <HelpKINode Title="VisibleChanged event" Url="html/f5aa9a88-58f7-a2e9-1ea9-069f6a185bf2.htm" />
+  <HelpKINode Title="VisibleChanged event">
+    <HelpKINode Title="Menu(T).VisibleChanged Event" Url="html/f5aa9a88-58f7-a2e9-1ea9-069f6a185bf2.htm" />
+    <HelpKINode Title="MenuCollection.VisibleChanged Event" Url="html/6ff8c204-edf3-b5de-24b8-3f4385851b0e.htm" />
+  </HelpKINode>
   <HelpKINode Title="Welcome" Url="html/7a47457b-7aa6-4cd6-866a-7b4f91be8620.htm" />
   <HelpKINode Title="Width property" Url="html/96650789-2bd0-c038-b22c-2c211131776d.htm" />
 </HelpKI>
