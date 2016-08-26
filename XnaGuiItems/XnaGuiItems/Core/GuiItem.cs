@@ -282,17 +282,98 @@ namespace Mentula.GuiItems.Core
         /// Gets the position of the mouse in respect to the <see cref="GuiItem"/>.
         /// </summary>
         /// <param name="state"> The <see cref="MouseState"/> to use. </param>
+        /// <returns> The position of the <see cref="Mouse"/> rotated like the <see cref="GuiItem"/>. </returns>
+        /// <remarks>
+        /// This method is used internaly to determine whether the mouse is inside the client rectangle of the GuiItem.
+        /// </remarks>
+        /// <example>
+        /// This example show how the method is used internaly.
+        /// 
+        /// <code>
+        /// public virtual void Update(MouseState mState)
+        /// {
+        ///    if (Enabled)
+        ///    {
+        ///        Vector2 mPos = GetRotatedMouse(mState);
+        ///        over = bounds.Contains(mPos.ToPoint());
+        ///        <![CDATA[bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);]]>
+        ///     }
+        /// }
+        /// </code>
+        /// </example>
         protected Vector2 GetRotatedMouse(MouseState state)
         {
             return Vector2.Transform(state.Position() - Position, Matrix.CreateRotationZ(-rotation)) + Position;
         }
 
-        protected virtual void OnBackColorChanged(GuiItem sender, Color newColor) { backColor = newColor; backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device); }
-        protected virtual void OnBackgroundImageChaned(GuiItem sender, Texture2D newTexture) { backgroundImage = newTexture; }
-        protected virtual void OnForeColorChanged(GuiItem sender, Color newColor) { foreColor = newColor; foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device); }
-        protected virtual void OnMove(GuiItem sender, Vector2 newpos) { bounds.X = (int)newpos.X; bounds.Y = (int)newpos.Y; }
-        protected virtual void OnNameChange(GuiItem sender, string newName) { name = newName; }
-        protected virtual void OnRotationChanged(GuiItem sender, float newRot) { rotation = newRot; }
+        /// <summary>
+        /// This method is called when the <see cref="BackColorChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newColor"> The new <see cref="Color"/> for the background. </param>
+        protected virtual void OnBackColorChanged(GuiItem sender, Color newColor)
+        {
+            backColor = newColor;
+            backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device);
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="BackgroundImageChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newTexture"> The new <see cref="Texture2D"/> to use as background. </param>
+        protected virtual void OnBackgroundImageChaned(GuiItem sender, Texture2D newTexture)
+        {
+            backgroundImage = newTexture;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="ForeColorChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newColor"> The new <see cref="Color"/> for the foreground. </param>
+        protected virtual void OnForeColorChanged(GuiItem sender, Color newColor)
+        {
+            foreColor = newColor;
+            foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device);
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="Move"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newpos"> The new position of the <see cref="GuiItem"/>. </param>
+        protected virtual void OnMove(GuiItem sender, Vector2 newpos)
+        {
+            bounds.X = (int)newpos.X;
+            bounds.Y = (int)newpos.Y;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="NameChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newName"> The new name for the <see cref="GuiItem"/>. </param>
+        protected virtual void OnNameChange(GuiItem sender, string newName)
+        {
+            name = newName;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="Rotated"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newRot"> The new rotation (in radians). </param>
+        protected virtual void OnRotationChanged(GuiItem sender, float newRot)
+        {
+            rotation = newRot;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="Resize"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newSize"> The new size of the <see cref="GuiItem"/>. </param>
         protected virtual void OnResize(GuiItem sender, Rectangle newSize)
         {
             CheckBounds(newSize);
@@ -300,7 +381,16 @@ namespace Mentula.GuiItems.Core
             backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device);
             foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device);
         }
-        protected virtual void OnVisibilityChanged(GuiItem sender, bool visibility) { visible = visibility; }
+
+        /// <summary>
+        /// This method is called when the <see cref="VisibilityChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="visibility"> The new visibility of the <see cref="GuiItem"/>. </param>
+        protected virtual void OnVisibilityChanged(GuiItem sender, bool visibility)
+        {
+            visible = visibility;
+        }
 
         private void InitEvents()
         {
@@ -413,6 +503,9 @@ namespace Mentula.GuiItems.Core
             /// Removes the specified <see cref="GuiItem"/> from the <see cref="GuiItemCollection"/>.
             /// </summary>
             /// <param name="item"> The <see cref="GuiItem"/> to remove from the <see cref="GuiItemCollection"/>. </param>
+            /// <returns>
+            /// true if item is successfully removed; otherwise, false. This method also returns false if item was not found.
+            /// </returns>
             public virtual bool Remove(GuiItem item) { return Items.Remove(item); }
             /// <summary>
             /// Retrieves a refrence to an enumerator object that is used to iterate over a <see cref="GuiItemCollection"/>.

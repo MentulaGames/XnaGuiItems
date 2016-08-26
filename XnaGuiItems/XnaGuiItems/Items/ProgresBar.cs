@@ -99,7 +99,16 @@ namespace Mentula.GuiItems.Items
             backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
-        protected virtual void OnValueChanged(object sender, int newVal) { data.Value = newVal; Refresh(); }
+        /// <summary>
+        /// This method is called when the <see cref="ValueChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newVal"> The new value of the <see cref="ProgressBar"/>. </param>
+        protected virtual void OnValueChanged(object sender, int newVal)
+        {
+            data.Value = newVal;
+            Refresh();
+        }
 
         private void InitEvents()
         {

@@ -11,7 +11,7 @@ namespace Mentula.GuiItems.Containers
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public sealed class MenuCollection : GameComponent, IDrawable
+    public class MenuCollection : GameComponent, IDrawable
     {
         /// <summary>
         /// The order in which to draw this object relative to other objects. Objects with
@@ -32,6 +32,13 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         public event EventHandler<EventArgs> VisibleChanged;
 
+        /// <summary>
+        /// Gets a <see cref="IMenu"/> with a specified name.
+        /// </summary>
+        /// <param name="key"> The name of the <see cref="IMenu"/>. </param>
+        /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
+        public IMenu this[string key] { get { return Get(key); } }
+
         private KVP[] underlying;
         private bool visible;
         private int drawOrder;
@@ -47,15 +54,31 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Adds a <see cref="Menu{T}"/> to the collection.
+        /// Adds a <see cref="IMenu"/> to the collection.
         /// </summary>
-        /// <typeparam name="TGame"> The type of <see cref="Game"/> refrenced by the <see cref="Menu{T}"/>. </typeparam>
-        /// <param name="menu"> The <see cref="Menu{T}"/> to add. </param>
-        /// <param name="key"> The name of the <see cref="Menu{T}"/>. </param>
-        public void Add<TGame>(Menu<TGame> menu, string key)
-            where TGame : Game
+        /// <param name="menu"> The <see cref="IMenu"/> to add. </param>
+        /// <param name="key"> The name of the <see cref="IMenu"/>. </param>
+        public void Add(IMenu menu, string key)
         {
-            AddInternal(menu, key);
+            int i = underlying.Length;
+            Array.Resize(ref underlying, i + 1);
+            underlying[i] = new KVP(key.ToUpper(), menu);
+        }
+
+        /// <summary>
+        /// Adds multiple <see cref="IMenu"/> to the collection.
+        /// </summary>
+        /// <param name="menus"> The <see cref="IMenu"/> to add with there given names. </param>
+        public void AddRange(params KVP[] menus)
+        {
+            int i = underlying.Length;
+            Array.Resize(ref underlying, i + menus.Length);
+
+            for (int j = 0; i < underlying.Length; i++, j++)
+            {
+                KVP cur = menus[j];
+                underlying[i] = new KVP(cur.Key.ToUpper(), cur.Value);
+            }
         }
 
         /// <summary>
@@ -74,18 +97,24 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Updates the <see cref="MenuCollection"/> and its underlying <see cref="Menu{T}"/>'s.
         /// </summary>
+        /// <param name="gameTime"> Time elapsed since the last call to Update. </param>
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
-            for (int i = 0; i < underlying.Length; i++)
+            if (Enabled)
             {
-                underlying[i].Value.Update(gameTime);
+                for (int i = 0; i < underlying.Length; i++)
+                {
+                    underlying[i].Value.Update(gameTime);
+                }
             }
+
+            base.Update(gameTime);
         }
 
         /// <summary>
         /// Draws the <see cref="MenuCollection"/>'s <see cref="Menu{T}"/>'s.
         /// </summary>
+        /// <param name="gameTime"> Time elapsed since the last call to Draw. </param>
         public void Draw(GameTime gameTime)
         {
             if (Visible)
@@ -131,6 +160,8 @@ namespace Mentula.GuiItems.Containers
         /// Gets a <see cref="IMenu"/> with a specified name.
         /// </summary>
         /// <param name="name"> The name of the <see cref="IMenu"/>. </param>
+        /// <typeparam name="TMenu"> The type of <see cref="IMenu"/> to cast to. </typeparam>
+        /// <returns> The found menu casted to the specified type. </returns>
         /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
         /// <exception cref="InvalidCastException"> Cannot cast found menu to specified menu type. </exception>
         public TMenu Get<TMenu>(string name)
@@ -143,28 +174,19 @@ namespace Mentula.GuiItems.Containers
         /// Gets a <see cref="IMenu"/> with a specified name.
         /// </summary>
         /// <param name="name"> The name of the <see cref="IMenu"/>. </param>
+        /// <returns> The found menu. </returns>
         /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
         public IMenu Get(string name)
         {
-            return ThisGet(name.ToUpper());
-        }
+            name = name.ToUpper();
 
-        private void AddInternal(IMenu cmp, string key)
-        {
-            int i = underlying.Length;
-            Array.Resize(ref underlying, i + 1);
-            underlying[i] = new KVP(key.ToUpper(), cmp);
-        }
-
-        private IMenu ThisGet(string key)
-        {
             for (int i = 0; i < underlying.Length; i++)
             {
                 KVP cur = underlying[i];
-                if (cur.Key == key) return cur.Value;
+                if (cur.Key == name) return cur.Value;
             }
 
-            throw new ArgumentException($"Cannot find menu with key: {key}!");
+            throw new ArgumentException($"Cannot find menu with key: {name}!");
         }
     }
 }

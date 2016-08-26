@@ -52,7 +52,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public event ValueChangedEventHandler<int> ValueChanged;
         /// <summary>
-        /// Occurs when the mouse is pressed on the sliderbar.
+        /// Occurs when the mouse is pressed on the <see cref="Slider"/>.
         /// </summary>
         public event MouseEventHandler MouseDown;
 
@@ -129,8 +129,31 @@ namespace Mentula.GuiItems.Items
             backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
         }
 
-        protected void OnClick(object sender, MouseState state) { if (IsSliding(GetRotatedMouse(state))) sliding = true; }
-        protected void OnValueChanged(object sender, int newValue) { data.Value = newValue; }
+        /// <summary>
+        /// This method is called when the <see cref="GuiItem.Click"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="state"> The current <see cref="MouseState"/>. </param>
+        protected void OnClick(object sender, MouseState state)
+        {
+            if (IsSliding(GetRotatedMouse(state))) sliding = true;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="ValueChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newValue"> The new value of the slider. </param>
+        protected void OnValueChanged(object sender, int newValue)
+        {
+            data.Value = newValue;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="MouseDown"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="state"> The current <see cref="MouseState"/>. </param>
         protected void OnMouseDown(object sender, MouseState state)
         {
             Vector2 offset = SlidBarDimentions.Position() + Position - GetRotatedMouse(state);

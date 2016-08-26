@@ -8,11 +8,11 @@ namespace Mentula.GuiItems.Containers
     public interface IMenu : IGameComponent, IUpdateable, IDrawable
     {
         /// <summary>
-        /// Shows a specified menu and hides all others.
+        /// Shows the menu.
         /// </summary>
         void Show();
         /// <summary>
-        /// Hides all menu's.
+        /// Hides the menu.
         /// </summary>
         void Hide();
     }

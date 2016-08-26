@@ -13,6 +13,7 @@ namespace Mentula.GuiItems.Containers
     /// <summary>
     /// A class for grouping <see cref="GuiItems"/>.
     /// </summary>
+    /// <typeparam name="T"> The type of <see cref="Game"/> to refrence to. </typeparam>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
@@ -135,18 +136,20 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Gets a control with a specified <see cref="GuiItem.Name"/> as a specified <see cref="GuiItem"/>.
         /// </summary>
-        /// <typeparam name="TControll"> The <see cref="GuiItem"/> to cast to. </typeparam>
+        /// <typeparam name="TControl"> The <see cref="GuiItem"/> to cast to. </typeparam>
         /// <param name="name"> The specified <see cref="GuiItem.Name"/> to search for. </param>
-        public TControll FindControl<TControll>(string name)
-            where TControll : GuiItem
+        /// /// <returns> The <see cref="GuiItem"/> that was found as type TControl; otherwise null. </returns>
+        public TControl FindControl<TControl>(string name)
+            where TControl : GuiItem
         {
-            return (TControll)FindControl(name);
+            return (TControl)FindControl(name);
         }
 
         /// <summary>
         /// Gets a control with a specified name.
         /// </summary>
         /// <param name="name"> The specified <see cref="GuiItem.Name"/> to search for. </param>
+        /// <returns> The <see cref="GuiItem"/> that was found; otherwise null. </returns>
         public GuiItem FindControl(string name)
         {
             return controlls.FirstOrDefault(c => c.Name == name);
@@ -173,6 +176,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Updates the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
+        /// <param name="gameTime"> Time elapsed since the last call to Update. </param>
         public override void Update(GameTime gameTime)
         {
             if (Enabled)
@@ -200,6 +204,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Draws the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
+        /// <param name="gameTime"> Time elapsed since the last call to Draw. </param>
         public virtual void Draw(GameTime gameTime)
         {
             if (Visible)

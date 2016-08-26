@@ -124,14 +124,50 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Get the number of lines in this <see cref="Label"/>
         /// </summary>
+        /// <returns> The amount of lines in the <see cref="Label"/>. </returns>
         public int GetLineCount()
         {
             return Text.Count(c => c == '\n') + 1;
         }
 
-        protected virtual void OnTextChanged(GuiItem sender, string newText) { text = newText; Refresh(); }
-        protected virtual void OnFontChanged(Label sender, SpriteFont newFont) { font = newFont; Refresh(); }
-        protected override void OnForeColorChanged(GuiItem sender, Color newColor) { base.OnForeColorChanged(sender, newColor); if (font != null) Refresh(); }
+        /// <summary>
+        /// This method is called when the <see cref="TextChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newText"> The new text of the <see cref="Label"/>. </param>
+        protected virtual void OnTextChanged(GuiItem sender, string newText)
+        {
+            text = newText;
+            Refresh();
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="FontChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newFont"> The new <see cref="SpriteFont"/>. </param>
+        protected virtual void OnFontChanged(Label sender, SpriteFont newFont)
+        {
+            font = newFont;
+            Refresh();
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="GuiItem.ForeColorChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newColor"> The new <see cref="Color"/> for the foreground. </param>
+        protected override void OnForeColorChanged(GuiItem sender, Color newColor)
+        {
+            base.OnForeColorChanged(sender, newColor);
+            if (font != null) Refresh();
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newpos"> The new position for the <see cref="Label"/>. </param>
         protected override void OnMove(GuiItem sender, Vector2 newpos)
         {
             base.OnMove(sender, newpos);

@@ -165,6 +165,11 @@ namespace Mentula.GuiItems.Items
             foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : ""), font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
         }
 
+        /// <summary>
+        /// This method gets called when the <see cref="Label.TextChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="newText"> The new text for the sender. </param>
         protected override void OnTextChanged(GuiItem sender, string newText)
         {
             inputHandler.keyboadString = newText;
