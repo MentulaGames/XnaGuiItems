@@ -28,6 +28,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
         /// <summary>
+        /// Gets the default foreground color of the <see cref="ProgressBar"/>.
+        /// </summary>
+        new public static Color DefaultForeColor { get { return Color.LimeGreen; } }
+        /// <summary>
         /// Gets the maximum value of the <see cref="ProgressBar"/>.
         /// </summary>
         public virtual int MaxiumValue { get { return data.Maximum; } }
@@ -68,9 +72,7 @@ namespace Mentula.GuiItems.Items
 
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
-            ForeColor = Color.LimeGreen;
-
-            Refresh();
+            ForeColor = DefaultForeColor;
         }
 
         /// <summary>
@@ -95,8 +97,8 @@ namespace Mentula.GuiItems.Items
             float ppp = (float)Bounds.Width / 100;
             int width = (int)(ppp * data.Value);
 
-            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Width, Bounds.Height, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
         }
 
         /// <summary>

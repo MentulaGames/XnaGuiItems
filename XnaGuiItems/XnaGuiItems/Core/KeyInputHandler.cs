@@ -8,17 +8,17 @@ namespace Mentula.GuiItems.Core
 #endif
     internal class KeyInputHandler
     {
-        internal string keyboadString;
+        public string keyboadString;
         private EmptyInput clsInput;
         private bool caps;
 
-        internal KeyInputHandler()
+        public KeyInputHandler()
         {
             keyboadString = string.Empty;
             clsInput = new EmptyInput();
         }
 
-        internal string GetInputString(KeyboardState state, bool allowReturn)
+        public string GetInputString(KeyboardState state, bool allowReturn)
         {
             Keys[] keys = state.GetPressedKeys();
             bool shift = clsInput.IsShiftPressed(keys) || caps;

@@ -199,14 +199,14 @@ namespace Mentula.GuiItems.Items
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
 
-            foregoundTexture = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, false, 0, device);
-            headerTexture = Drawing.FromColor(HeaderBackgroundColor, foregoundTexture.Width, (int)font.MeasureString("a").Y, device);
+            foregoundTexture = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
+            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(foregoundTexture.Width, (int)font.MeasureString("a").Y), device);
 
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
             for (int i = 0; i < labels.Length; i++)
             {
                 itemTextures[i] = new KeyValuePair<Texture2D, ButtonStyle>(
-                    Drawing.FromLabels(labels[i], font, foregoundTexture.Width, foregroundRectangle.Height / (labels.Length + 1), device),
+                    Drawing.FromLabels(labels[i], font, new Size(foregoundTexture.Width, foregroundRectangle.Height / (labels.Length + 1)), device),
                     ButtonStyle.Default);
             }
         }

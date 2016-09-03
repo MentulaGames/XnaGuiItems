@@ -88,6 +88,7 @@
   <HelpKINode Title="DefaultForeColor property">
     <HelpKINode Title="DropDown.DefaultForeColor Property " Url="html/6c319c90-8dec-6a73-8f3b-966989de918d.htm" />
     <HelpKINode Title="GuiItem.DefaultForeColor Property " Url="html/7d21e206-b4ac-3b2a-f36c-3de6dceecc9b.htm" />
+    <HelpKINode Title="ProgressBar.DefaultForeColor Property " Url="html/5095cf6e-ef46-44b9-f4d3-ec27bb21a1c3.htm" />
   </HelpKINode>
   <HelpKINode Title="DefaultHeaderBackgroundColor property" Url="html/d9685edb-0939-687f-9a61-094236855619.htm" />
   <HelpKINode Title="DefaultHeaderText property" Url="html/a4ed8838-bbe2-fb75-6c9d-7d00695f9c9c.htm" />
@@ -609,6 +610,7 @@
   <HelpKINode Title="ProgressBar.BorderStyle property" Url="html/68fa1c2e-044d-1eb6-16ee-23b6006466fb.htm" />
   <HelpKINode Title="ProgressBar.data field" Url="html/3288bf01-28c8-3379-f52c-3491cdaa491f.htm" />
   <HelpKINode Title="ProgressBar.DefaultBounds property" Url="html/e052631e-0f3d-7593-efaf-9249562fc760.htm" />
+  <HelpKINode Title="ProgressBar.DefaultForeColor property" Url="html/5095cf6e-ef46-44b9-f4d3-ec27bb21a1c3.htm" />
   <HelpKINode Title="ProgressBar.Draw method" Url="html/143b4933-395e-916b-b550-df0cfeed2201.htm" />
   <HelpKINode Title="ProgressBar.Inverted property" Url="html/43ef686b-c9a0-3225-66b4-a02449eb7fd2.htm" />
   <HelpKINode Title="ProgressBar.MaxiumValue property" Url="html/1b1e405a-abc9-caf3-e1b5-18d59c6cb426.htm" />

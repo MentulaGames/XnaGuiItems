@@ -78,8 +78,6 @@ namespace Mentula.GuiItems.Items
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = Color.Gray;
-
-            Refresh();
         }
 
         /// <summary>
@@ -125,8 +123,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Width, Bounds.Height, SlidBarDimentions, device);
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SlidBarDimentions, device);
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
         }
 
         /// <summary>

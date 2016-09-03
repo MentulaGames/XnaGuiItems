@@ -56,7 +56,7 @@ namespace Mentula.GuiItems.Containers
             this.font = font;
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
             TabRectangle = DefaultTabSize;
-            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
+            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Size(), device);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Mentula.GuiItems.Containers
             }
 
             if (length > tabRect.Width) tabRect = new Rectangle(tabRect.X, tabRect.Y, length, tabRect.Height);
-            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Width, TabRectangle.Height, device);
+            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Size(), device);
         }
 
         /// <summary>

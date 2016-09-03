@@ -162,14 +162,8 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="GuiItem"/> to. </param>
         public GuiItem(GraphicsDevice device)
-        {
-            InitEvents();
-            this.device = device;
-            bounds = DefaultBounds;
-            BackColor = DefaultBackColor;
-            ForeColor = DefaultForeColor;
-            Show();
-        }
+            : this(device, DefaultBounds)
+        { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GuiItem"/> class with specific size.
@@ -177,10 +171,15 @@ namespace Mentula.GuiItems.Core
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="GuiItem"/> to. </param>
         /// <param name="bounds"> The size of the <see cref="GuiItem"/> in pixels. </param>
         public GuiItem(GraphicsDevice device, Rectangle bounds)
-            : this(device)
         {
             if (bounds.Width <= 0 || bounds.Height <= 0) throw new ArgumentException("bounds.Width and bounds.Height must be greater then zero");
             this.bounds = bounds;
+
+            InitEvents();
+            this.device = device;
+            BackColor = DefaultBackColor;
+            ForeColor = DefaultForeColor;
+            Show();
         }
 
         /// <summary>
@@ -341,7 +340,7 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnBackColorChanged(GuiItem sender, Color newColor)
         {
             backColor = newColor;
-            backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device);
+            backColorImage = Drawing.FromColor(backColor, bounds.Size(), device);
         }
 
         /// <summary>
@@ -362,7 +361,7 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnForeColorChanged(GuiItem sender, Color newColor)
         {
             foreColor = newColor;
-            foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device);
+            foregoundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
         }
 
         /// <summary>
@@ -405,8 +404,8 @@ namespace Mentula.GuiItems.Core
         {
             CheckBounds(newSize);
             bounds = newSize;
-            backColorImage = Drawing.FromColor(backColor, bounds.Width, bounds.Height, device);
-            foregoundTexture = Drawing.FromColor(foreColor, bounds.Width, bounds.Height, device);
+            backColorImage = Drawing.FromColor(backColor, bounds.Size(), device);
+            foregoundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Mentula.GuiItems.Core;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace Mentula.GuiItems
 #endif
     internal static class Drawing
     {
-        internal static Texture2D FromColor(Color color, int width, int height, GraphicsDevice device)
+        internal static Texture2D FromColor(Color color, Size size, GraphicsDevice device)
         {
-            Texture2D texture = new Texture2D(device, width, height);
+            Texture2D texture = new Texture2D(device, size.Width, size.Height);
 
-            Color[] data = new Color[width * height];
+            Color[] data = new Color[size.Width * size.Height];
 
             for (int i = 0; i < data.Length; i++)
             {
@@ -27,14 +28,14 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromColor(Color color, int width, int height, Rectangle destinationRectangle, GraphicsDevice device)
+        internal static Texture2D FromColor(Color color, Size size, Rectangle destinationRectangle, GraphicsDevice device)
         {
-            Texture2D texture = new Texture2D(device, width, height);
-            Color[] data = new Color[width * height];
+            Texture2D texture = new Texture2D(device, size.Width, size.Height);
+            Color[] data = new Color[size.Width * size.Height];
 
             for (int i = 0; i < data.Length; i++)
             {
-                Vector2 pos = new Vector2(i % width, (i - (i % width)) / width);
+                Vector2 pos = new Vector2(i % size.Width, (i - (i % size.Width)) / size.Width);
                 if (destinationRectangle.Contains(pos.ToPoint())) data[i] = color;
                 else data[i] = Color.Transparent;
             }
@@ -43,10 +44,10 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromText(string text, SpriteFont font, Color color, int width, int height, bool multiLine, int lineStart, GraphicsDevice device)
+        internal static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
         {
             string[] drawAbleText = multiLine ? text.Split(new string[1] { "\n" }, StringSplitOptions.None) : new string[1] { text };
-            RenderTarget2D target = new RenderTarget2D(device, width, height);
+            RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
             SpriteBatch sb = new SpriteBatch(device);
 
             device.SetRenderTarget(target);
@@ -62,7 +63,7 @@ namespace Mentula.GuiItems
 
             device.SetRenderTarget(null);
 
-            Texture2D texture = new Texture2D(device, width, height);
+            Texture2D texture = new Texture2D(device, size.Width, size.Height);
             Color[] colorData = target.GetColorData();
             texture.SetData(colorData);
 
@@ -71,9 +72,9 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, int width, int height, GraphicsDevice device)
+        internal static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, GraphicsDevice device)
         {
-            RenderTarget2D target = new RenderTarget2D(device, width, height);
+            RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
             SpriteBatch sb = new SpriteBatch(device);
 
             device.SetRenderTarget(target);
@@ -92,7 +93,7 @@ namespace Mentula.GuiItems
 
             device.SetRenderTarget(null);
 
-            Texture2D texture = new Texture2D(device, width, height);
+            Texture2D texture = new Texture2D(device, size.Width, size.Height);
             Color[] colorData = target.GetColorData();
             texture.SetData(colorData);
 

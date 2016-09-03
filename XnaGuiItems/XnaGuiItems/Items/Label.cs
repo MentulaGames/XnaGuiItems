@@ -78,10 +78,9 @@ namespace Mentula.GuiItems.Items
              : base(device, bounds)
         {
             InitEvents();
-            foregroundRectangle = new Rectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+            foregroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
-            Refresh();
         }
 
         /// <summary>
@@ -102,9 +101,9 @@ namespace Mentula.GuiItems.Items
             }
 
             foregroundRectangle = Bounds;
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Width, Bounds.Height, device).ApplyBorderLabel(BorderStyle);
+            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, true, LineStart, device);
+            foregoundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
         }
 
         /// <summary>

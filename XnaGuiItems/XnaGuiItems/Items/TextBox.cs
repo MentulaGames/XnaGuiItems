@@ -100,7 +100,7 @@ namespace Mentula.GuiItems.Items
                     string newText = inputHandler.GetInputString(kState, MultiLine);
                     if (Text != newText) Text = newText;
 
-                    foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : ""), font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
+                    foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : string.Empty), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
 
                     if (FlickerStyle == FlickerStyle.None) return;
 
@@ -132,7 +132,7 @@ namespace Mentula.GuiItems.Items
                 }
                 else
                 {
-                    foregoundTexture = Drawing.FromText(GetDrawableText(), font, ForeColor, Bounds.Width, Bounds.Height, MultiLine, LineStart, device);
+                    foregoundTexture = Drawing.FromText(GetDrawableText(), font, ForeColor, Bounds.Size(), MultiLine, LineStart, device);
                 }
             }
         }
@@ -163,7 +163,7 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle = Bounds;
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : ""), font, ForeColor, foregroundRectangle.Width, foregroundRectangle.Height, MultiLine, LineStart, device);
+            foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : string.Empty), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
         }
 
         /// <summary>
