@@ -2,12 +2,16 @@
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace Mentula.GuiItems.Containers
 {
     public partial class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
         where T : Game
     {
+        private static readonly InvalidOperationException noFont = 
+            new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
+
         /// <summary>
         /// Adds a standard <see cref="GuiItem"/> to the <see cref="Menu{T}"/>.
         /// </summary>

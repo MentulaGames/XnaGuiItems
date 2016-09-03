@@ -1,4 +1,5 @@
 ﻿using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,12 +14,12 @@ namespace Mentula.GuiItems.Items
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class TextBox : Label
+    public class TextBox : Label, IDeltaKeyboardUpdate
     {
         /// <summary>
         /// Gets the default minimum size of the <see cref="TextBox"/>.
         /// </summary>
-        public static Vector2 DefaultMinimumSize { get { return new Vector2(100, 50); } }
+        public static Size DefaultMinimumSize { get { return new Size(100, 50); } }
         /// <summary>
         /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
@@ -39,12 +40,12 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets a value indicating the minimum size of the <see cref="TextBox"/>.
         /// </summary>
-        public virtual Vector2 MinimumSize { get; set; }
+        public virtual Size MinimumSize { get; set; }
         /// <summary>
         /// Gets or sets a value indicating the maximum size of the <see cref="TextBox"/>.
         /// Default value is the screen size.
         /// </summary>
-        public virtual Vector2 MaximumSize { get; set; }
+        public virtual Size MaximumSize { get; set; }
 
         private KeyInputHandler inputHandler;
         private float time;
@@ -56,7 +57,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public TextBox(GraphicsDevice device, SpriteFont font)
-            : this(device, DefaultSize, font)
+            : this(device, DefaultBounds, font)
         { }
 
         /// <summary>
@@ -145,11 +146,11 @@ namespace Mentula.GuiItems.Items
             {
                 Vector2 dim = GetLongTextDimentions();
                 dim.X += 3;
-                if (dim.Y < MinimumSize.Y) dim.Y = MinimumSize.Y;
-                else if (dim.Y > MaximumSize.Y) dim.Y = MaximumSize.Y;
+                if (dim.Y < MinimumSize.Height) dim.Y = MinimumSize.Height;
+                else if (dim.Y > MaximumSize.Height) dim.Y = MaximumSize.Height;
 
-                if (dim.X < MinimumSize.X) dim.X = MinimumSize.X;
-                else if (dim.X > MaximumSize.X) dim.X = MaximumSize.X;
+                if (dim.X < MinimumSize.Width) dim.X = MinimumSize.Width;
+                else if (dim.X > MaximumSize.Width) dim.X = MaximumSize.Width;
 
                 bool width = dim.X != Bounds.Width;
                 bool height = dim.Y != Bounds.Height;

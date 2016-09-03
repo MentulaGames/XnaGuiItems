@@ -1,4 +1,5 @@
 ﻿using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -15,7 +16,7 @@ namespace Mentula.GuiItems.Containers
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class TabContainer : GuiItem
+    public class TabContainer : GuiItem, IDeltaKeyboardUpdate
     {
         /// <summary>
         /// Gets or sets a <see cref="Rectangle"/> indicating the size of the tab.

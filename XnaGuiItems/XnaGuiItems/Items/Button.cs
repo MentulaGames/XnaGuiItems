@@ -1,4 +1,5 @@
 ﻿using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,7 +14,7 @@ namespace Mentula.GuiItems.Items
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class Button : Label
+    public class Button : Label, IDeltaUpdate
     {
         /// <summary> The <see cref="Texture2D"/> used for drawing the hover style <see cref="Button"/>. </summary>
         protected Texture2D hoverTexture;
@@ -46,7 +47,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Button"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public Button(GraphicsDevice device, SpriteFont font)
-             : this(device, DefaultSize, font)
+             : this(device, DefaultBounds, font)
         { }
 
         /// <summary>

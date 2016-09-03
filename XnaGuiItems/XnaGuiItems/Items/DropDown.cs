@@ -87,7 +87,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public DropDown(GraphicsDevice device, SpriteFont font)
-            : this(device, DefaultSize, font)
+            : this(device, DefaultBounds, font)
         { }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Mentula.GuiItems.Items
             HeaderText = DefaultHeaderText;
             labels = new KeyValuePair<string, Color>[0][];
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
-            foregroundRectangle = DefaultSize;
+            foregroundRectangle = DefaultBounds;
 
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;

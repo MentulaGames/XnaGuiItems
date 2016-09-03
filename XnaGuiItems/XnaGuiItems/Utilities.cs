@@ -1,15 +1,13 @@
 ﻿using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using Mentula.GuiItems.Items;
-using Control = System.Windows.Forms.Control;
-using FormBorderStyle = System.Windows.Forms.FormBorderStyle;
-using Microsoft.Xna.Framework.Input;
-using Mentula.GuiItems.Containers;
-using System.Reflection;
+using System.Windows.Forms;
 
 namespace Mentula.GuiItems
 {
@@ -61,6 +59,10 @@ namespace Mentula.GuiItems
         ///     </list>
         /// </param>
         /// <param name="game"> The associated game window. </param>
+        /// <remarks>
+        /// A byte is used to represent the <see cref="FormBorderStyle"/> enumeraton 
+        /// as not to require a refrence to the <see cref="System.Windows.Forms"/> namespace.
+        /// </remarks>
         [DebuggerHidden]    // Secret code, nobody talks about it. SPOOKY
         public static void ChangeWindowBorder(Game game, byte newType)
         {
@@ -87,6 +89,9 @@ namespace Mentula.GuiItems
             CreateBackgroundThread(function).Start();
         }
 
+        /*
+            Safely invokes the delegate (is not null) and throws an InvokerException if the delegate throws an exception
+        */
         internal static void Invoke(Delegate function, params object[] args)
         {
             if (function != null)
@@ -96,16 +101,16 @@ namespace Mentula.GuiItems
             }
         }
 
+        /*
+            Updates the GuiItem with its desired update method.
+        */
         internal static void Update_S(this GuiItem control, MouseState mState, KeyboardState kState, float delta)
         {
-            Button btn;
-            TextBox txt;
-            TabContainer tb;
+            IDeltaUpdate dUpd;
+            IDeltaKeyboardUpdate dkUpd;
 
-            if ((btn = control as Button) != null) btn.Update(mState, delta);
-            else if ((txt = control as TextBox) != null) txt.Update(mState, kState, delta);
-            else if ((tb = control as TabContainer) != null) tb.Update(mState, kState, delta);
-            else control.Update(mState);
+            if ((dUpd = control as IDeltaUpdate) != null) dUpd.Update(mState, delta);
+            else if ((dkUpd = control as IDeltaKeyboardUpdate) != null) dkUpd.Update(mState, kState, delta);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

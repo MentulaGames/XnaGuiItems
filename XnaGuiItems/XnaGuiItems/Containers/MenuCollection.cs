@@ -2,16 +2,89 @@
 using System;
 using KVP = System.Collections.Generic.KeyValuePair<string, Mentula.GuiItems.Containers.IMenu>;
 using static Mentula.GuiItems.Utilities;
+using Mentula.GuiItems.Core;
 
 namespace Mentula.GuiItems.Containers
 {
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.
     /// </summary>
+    /// <typeparam name="TGame"> The specified game class. </typeparam>
+    /// <remarks>
+    /// This object is used to house a unspecified amount of IMenu's.
+    /// It supplies easy methods for adding menus to the collection and
+    /// methods for handeling menu switching.
+    /// </remarks>
+    /// <example>
+    /// This example will show how a MenuCollection should be used in your Xna project.
+    /// Here the Collection is used as a base class for an easier facade.
+    /// 
+    /// <code>
+    /// public sealed class ClientMenus : <![CDATA[MenuCollection<MainGame>]]>
+    /// {
+    ///     // Every menus has its own propertie to supply easy acces to them.
+    ///     public MainMenu MainMenu { get; private set; }
+    ///     public SingleplayerMenu SinglePlayer { get; private set; }
+    ///     public MultiplayerMenu MultiPlayer { get; private set; }
+    ///     public GuiMenu Gui { get; private set; }
+    ///     public LoadingMenu Loading { get; private set; }
+    ///     public OptionsMenu Options { get; private set; }
+    /// 
+    ///     // The underlying keys for getting a specified menus.
+    ///     // This should however be unnessesary because
+    ///     // the menus are more easely obtained by using the properties specified above.
+    ///     private const string MAIN = "Main";
+    ///     private const string SINGLE = "SinglePlayer";
+    ///     private const string MULTI = "MultiPlayer";
+    ///     private const string GUI = "Gui";
+    ///     private const string LOAD = "Loading";
+    ///     private const string OPT = "Options";
+    /// 
+    ///     public ClientMenus(MainGame game)
+    ///         : base(game)
+    ///     { }
+    /// 
+    ///     // Initializes the underlying menus with the specified game and name.
+    ///     public override void Initialize()
+    ///     {
+    ///         Add(MainMenu = new MainMenu(Game), MAIN);
+    ///         Add(SinglePlayer = new SingleplayerMenu(Game), SINGLE);
+    ///         Add(MultiPlayer = new MultiplayerMenu(Game), MULTI);
+    ///         Add(Gui = new GuiMenu(Game), GUI);
+    ///         Add(Loading = new LoadingMenu(Game), LOAD);
+    ///         Add(Options = new OptionsMenu(Game), OPT);
+    /// 
+    ///         base.Initialize();
+    ///     }
+    ///     
+    ///     // Shows a specified menu with a given GameState.
+    ///     public void Show(GameState state)
+    ///     {
+    ///         Show(FromGameState(state));
+    ///     }
+    /// 
+    ///     // Converts the GameState to the string key that represents the actual menu.
+    ///     private static string FromGameState(GameState state)
+    ///     {
+    ///         switch (state)
+    ///         {
+    ///             case GameState.MainMenu: return MAIN;
+    ///             case GameState.SingleplayerMenu: return SINGLE;
+    ///             case GameState.MultiplayerMenu: return MULTI;
+    ///             case GameState.OptionsMenu: return OPT;
+    ///             case GameState.Loading: return LOAD;
+    ///             case GameState.Game: return GUI;
+    ///             default: return string.Empty;
+    ///         }
+    ///     }
+    /// }
+    /// </code>
+    /// </example>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class MenuCollection : GameComponent, IDrawable
+    public class MenuCollection<TGame> : MentulaGameComponent<TGame>, IDrawable
+        where TGame : Game
     {
         /// <summary>
         /// The order in which to draw this object relative to other objects. Objects with
@@ -44,10 +117,10 @@ namespace Mentula.GuiItems.Containers
         private int drawOrder;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MenuCollection"/> class.
+        /// Initializes a new instance of the <see cref="MenuCollection{T}"/> class.
         /// </summary>
-        /// <param name="game"> The game to associate with this <see cref="MenuCollection"/>. </param>
-        public MenuCollection(Game game)
+        /// <param name="game"> The game to associate with this <see cref="MenuCollection{T}"/>. </param>
+        public MenuCollection(TGame game)
             : base(game)
         {
             underlying = new KVP[0];
@@ -82,7 +155,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Initializes the <see cref="MenuCollection"/> and its child <see cref="Menu{T}"/>'s.
+        /// Initializes the <see cref="MenuCollection{T}"/> and its child <see cref="Menu{T}"/>'s.
         /// </summary>
         public override void Initialize()
         {
@@ -95,7 +168,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Updates the <see cref="MenuCollection"/> and its underlying <see cref="Menu{T}"/>'s.
+        /// Updates the <see cref="MenuCollection{T}"/> and its underlying <see cref="Menu{T}"/>'s.
         /// </summary>
         /// <param name="gameTime"> Time elapsed since the last call to Update. </param>
         public override void Update(GameTime gameTime)
@@ -112,7 +185,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// Draws the <see cref="MenuCollection"/>'s <see cref="Menu{T}"/>'s.
+        /// Draws the <see cref="MenuCollection{T}"/>'s <see cref="Menu{T}"/>'s.
         /// </summary>
         /// <param name="gameTime"> Time elapsed since the last call to Draw. </param>
         public void Draw(GameTime gameTime)

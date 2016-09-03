@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace Mentula.GuiItems
@@ -99,6 +100,44 @@ namespace Mentula.GuiItems
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static bool RequiresWork(this Anchor rPos)
+        {
+            return rPos != Anchor.None && rPos.IsValid(); 
+        }
+
+        internal static bool IsValid(this Anchor rPos)
+        {
+            Anchor mask = Anchor.None;
+            Func<bool> check = () => ContainesValue(rPos, mask);
+
+            mask = Anchor.Bottom | Anchor.Top;
+            if (check()) return false;
+
+            mask = Anchor.Left | Anchor.Right;
+            if (check()) return false;
+
+            mask = Anchor.Left | Anchor.MiddleWidth;
+            if (check()) return false;
+
+            mask = Anchor.Right | Anchor.MiddleWidth;
+            if (check()) return false;
+
+            mask = Anchor.Top | Anchor.MiddelHeight;
+            if (check()) return false;
+
+            mask = Anchor.Bottom | Anchor.MiddelHeight;
+            if (check()) return false;
+
+            return true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static bool ContainesValue(this Anchor anchor, Anchor mask)
+        {
+            return (anchor & mask) == mask;
+        }
+
         internal static Color Add(this Color c, int a, int r, int b, int g)
         {
             return new Color(c.R + r, c.G + g, c.B + b, c.A + a);
@@ -130,9 +169,9 @@ namespace Mentula.GuiItems
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static Vector2 Size(this Rectangle rect)
+        internal static Size Size(this Rectangle rect)
         {
-            return new Vector2(rect.Width, rect.Height);
+            return new Size(rect.Width, rect.Height);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

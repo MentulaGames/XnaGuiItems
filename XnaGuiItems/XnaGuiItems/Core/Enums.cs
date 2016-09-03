@@ -65,6 +65,45 @@
         Double
     }
 
+    /// <summary>
+    /// Specified the relative position the <see cref="GuiItem"/> should take.
+    /// </summary>
+    public enum Anchor : byte
+    {
+        /// <summary>
+        /// The default value.
+        /// </summary>
+        None = 0,                               //00000000
+        /// <summary>
+        /// The center of the screen on width.
+        /// </summary>
+        MiddleWidth = 1,                        //00000001
+        /// <summary>
+        /// The center of the screen on height.
+        /// </summary>
+        MiddelHeight = 2,                       //00000010
+        /// <summary>
+        /// The absolute center of the screen (<see cref="MiddleWidth"/> | <see cref="MiddelHeight"/>).
+        /// </summary>
+        Middle = MiddleWidth | MiddelHeight,    //00000011
+        /// <summary>
+        /// The left of the screen.
+        /// </summary>
+        Left = 4,                               //00000100
+        /// <summary>
+        /// The right of the screen.
+        /// </summary>
+        Right = 8,                              //00001000
+        /// <summary>
+        /// The top of the screen.
+        /// </summary>
+        Top = 16,                               //00010000
+        /// <summary>
+        /// The bottom of the screen.
+        /// </summary>
+        Bottom = 32                             //00100000
+    }
+
     internal enum ButtonStyle : byte
     {
         Default,

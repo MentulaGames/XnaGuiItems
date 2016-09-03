@@ -26,7 +26,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default size of the <see cref="ProgressBar"/>
         /// </summary>
-        new public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 25); } }
+        new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
         /// <summary>
         /// Gets the maximum value of the <see cref="ProgressBar"/>.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
         public ProgressBar(GraphicsDevice device)
-             : this(device, DefaultSize)
+             : this(device, DefaultBounds)
         { }
 
         /// <summary>

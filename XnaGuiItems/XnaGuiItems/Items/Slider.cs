@@ -22,7 +22,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default size of the <see cref="Slider"/>
         /// </summary>
-        new public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 25); } }
+        new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
         /// <summary>
         /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
         public Slider(GraphicsDevice device)
-             : this(device, DefaultSize)
+             : this(device, DefaultBounds)
         { }
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets the default size of the <see cref="GuiItem"/>
         /// </summary>
-        public static Rectangle DefaultSize { get { return new Rectangle(0, 0, 100, 50); } }
+        public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 50); } }
         /// <summary>
         /// Gets a value indicating wether the base <see cref="GuiItem"/> class is in the process of disposing.
         /// </summary>
@@ -74,6 +74,10 @@ namespace Mentula.GuiItems.Core
         /// Gets or sets the position of the <see cref="GuiItem"/>.
         /// </summary>
         public virtual Vector2 Position { get { return bounds.Position(); } set { Invoke(Move, this, value); } }
+        /// <summary>
+        /// Gets or sets the size of the <see cref="GuiItem"/>.
+        /// </summary>
+        public virtual Size Size { get { return bounds.Size(); } set { Bounds = new Rectangle(bounds.X, bounds.Y, value.Width, value.Height); } }
         /// <summary>
         /// Gets or sets a value indicating whether a <see cref="Menu{T}"/> should call the <see cref="Update(MouseState)"/> method.
         /// </summary>
@@ -161,7 +165,7 @@ namespace Mentula.GuiItems.Core
         {
             InitEvents();
             this.device = device;
-            bounds = DefaultSize;
+            bounds = DefaultBounds;
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             Show();
@@ -253,6 +257,29 @@ namespace Mentula.GuiItems.Core
                     spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
                 }
             }
+        }
+
+        /// <summary>
+        /// Moves the <see cref="GuiItem"/> to a specified relative position.
+        /// </summary>
+        /// <param name="anchor"> A valid relative position. </param>
+        /// <exception cref="ArgumentException"> The anchor is invalid. </exception>
+        public void MoveRelative(Anchor anchor)
+        {
+            if (anchor.RequiresWork())
+            {
+                float x = Position.X, y = Position.Y;
+
+                if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (device.Viewport.Width >> 1) - (Width >> 1);
+                if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (device.Viewport.Height >> 1) - (Height >> 1);
+                if (anchor.ContainesValue(Anchor.Left)) x = 0;
+                if (anchor.ContainesValue(Anchor.Right)) x = device.Viewport.Width - Width;
+                if (anchor.ContainesValue(Anchor.Top)) y = 0;
+                if (anchor.ContainesValue(Anchor.Bottom)) y = device.Viewport.Height - Height;
+
+                if (x != Position.X || y != Position.Y) Position = new Vector2(x, y);
+            }
+            else if (!anchor.IsValid()) throw new ArgumentException("The anchor is invalid!");
         }
 
         /// <summary>

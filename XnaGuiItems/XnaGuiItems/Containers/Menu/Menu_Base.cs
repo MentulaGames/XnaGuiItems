@@ -82,7 +82,6 @@ namespace Mentula.GuiItems.Containers
         private SpriteBatch batch;
         private bool visible;
         private int drawOrder;
-        private static readonly InvalidOperationException noFont = new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Menu{T}"/> class.

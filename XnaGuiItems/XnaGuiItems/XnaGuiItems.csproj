@@ -62,16 +62,18 @@
     <Compile Include="Containers\Menu\IMenu.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Base.cs" />
-    <Compile Include="Containers\Menu\Menu_Simple.cs" />
     <Compile Include="Containers\TabContainer.cs" />
     <Compile Include="Core\Enums.cs" />
     <Compile Include="Core\Delegates.cs" />
     <Compile Include="Core\EmptyInput.cs" />
     <Compile Include="Core\GuiItem.cs" />
+    <Compile Include="Core\Interfaces\IDeltaKeyboardUpdate.cs" />
+    <Compile Include="Core\Interfaces\IDeltaUpdate.cs" />
     <Compile Include="Core\InvokeException.cs" />
     <Compile Include="Core\KeyInputHandler.cs" />
     <Compile Include="Core\MentulaGameComponent.cs" />
     <Compile Include="Core\ProgresData.cs" />
+    <Compile Include="Core\Size.cs" />
     <Compile Include="Design\BaseControl.cs">
       <SubType>Component</SubType>
     </Compile>

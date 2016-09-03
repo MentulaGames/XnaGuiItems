@@ -1,4 +1,5 @@
 ﻿using Mentula.GuiItems.Containers;
+using Mentula.GuiItems.Core;
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,18 +17,12 @@ namespace TestGame
 
         public override void Initialize()
         {
-            DropDown dd = AddDropDown();
-            dd.Name = "dd1";
-            dd.Position = new Vector2(10, 10);
-            dd.AddOption("Test");
-
-            DropDown dd2 = AddDropDown();
-            dd.Name = "dd2";
-            dd2.Position = new Vector2(100, 10);
-            dd2.AddOption("test");
-
-
-            dd2.Show();
+            TextBox txt = AddTextBox();
+            txt.Size = new Size(150, 25);
+            txt.Text = "UserName";
+            txt.MultiLine = true;
+            txt.Name = "TxtName";
+            txt.MoveRelative(Anchor.Bottom | Anchor.Left);
 
             base.Initialize();
         }
