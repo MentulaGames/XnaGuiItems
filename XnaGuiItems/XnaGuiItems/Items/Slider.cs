@@ -26,7 +26,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
-        public virtual Rectangle SlidBarDimentions { get; set; }
+        public virtual Rectangle SliderBarDimentions { get; set; }
         /// <summary>
         /// Gets or sets the maximum value of the <see cref="Slider"/>.
         /// </summary>
@@ -74,7 +74,7 @@ namespace Mentula.GuiItems.Items
         {
             InitEvents();
 
-            SlidBarDimentions = new Rectangle(bounds.X, bounds.Y, Bounds.Width / 10, Bounds.Height);
+            SliderBarDimentions = new Rectangle(bounds.X, bounds.Y, Bounds.Width / 10, Bounds.Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = Color.Gray;
@@ -123,7 +123,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SlidBarDimentions, device);
+            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SliderBarDimentions, device);
             backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
         }
 
@@ -154,21 +154,21 @@ namespace Mentula.GuiItems.Items
         /// <param name="state"> The current <see cref="MouseState"/>. </param>
         protected void OnMouseDown(object sender, MouseState state)
         {
-            Vector2 offset = SlidBarDimentions.Position() + Position - GetRotatedMouse(state);
+            Vector2 offset = SliderBarDimentions.Position() + Position - GetRotatedMouse(state);
             if (oldOffset == Vector2.Zero) oldOffset = offset;
             else if (offset != oldOffset)
             {
-                Rectangle newDim = SlidBarDimentions.Add(new Vector2(-offset.X - (SlidBarDimentions.Width >> 1), 0));
+                Rectangle newDim = SliderBarDimentions.Add(new Vector2(-offset.X - (SliderBarDimentions.Width >> 1), 0));
 
-                if (newDim.X + Position.X > Bounds.X && newDim.X + SlidBarDimentions.Width <= Bounds.Width) SlidBarDimentions = newDim;
-                else if (newDim.X + Position.X > Bounds.X) SlidBarDimentions = new Rectangle(Bounds.Width - SlidBarDimentions.Width, 0, SlidBarDimentions.Width, SlidBarDimentions.Height);
-                else SlidBarDimentions = new Rectangle(0, 0, SlidBarDimentions.Width, SlidBarDimentions.Height);
+                if (newDim.X + Position.X > Bounds.X && newDim.X + SliderBarDimentions.Width <= Bounds.Width) SliderBarDimentions = newDim;
+                else if (newDim.X + Position.X > Bounds.X) SliderBarDimentions = new Rectangle(Bounds.Width - SliderBarDimentions.Width, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
+                else SliderBarDimentions = new Rectangle(0, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
 
                 oldOffset = offset;
 
                 float ppp = 100f / Bounds.Width;
-                bool overCenter = SlidBarDimentions.X * ppp >= 50;
-                float percent = (SlidBarDimentions.X + (overCenter ? SlidBarDimentions.Width : 0)) * ppp;
+                bool overCenter = SliderBarDimentions.X * ppp >= 50;
+                float percent = (SliderBarDimentions.X + (overCenter ? SliderBarDimentions.Width : 0)) * ppp;
 
                 int old = Value;
                 data.ChangeValue((int)percent);
@@ -186,7 +186,7 @@ namespace Mentula.GuiItems.Items
 
         private bool IsSliding(Vector2 mousePosition)
         {
-            return SlidBarDimentions.Add(Position).Contains(mousePosition.ToPoint());
+            return SliderBarDimentions.Add(Position).Contains(mousePosition.ToPoint());
         }
     }
 }

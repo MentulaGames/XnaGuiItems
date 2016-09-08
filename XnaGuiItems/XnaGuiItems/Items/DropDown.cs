@@ -35,7 +35,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default background color of the <see cref="DropDown"/> header.
         /// </summary>
-        public static Color DefaultHeaderBackgroundColor { get { return Color.FromNonPremultiplied(7, 8, 2, 256); } }
+        public static Color DefaultHeaderBackColor { get { return Color.FromNonPremultiplied(7, 8, 2, 256); } }
         /// <summary>
         /// Gets the default text the header will display.
         /// </summary>
@@ -251,7 +251,7 @@ namespace Mentula.GuiItems.Items
 
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
-            HeaderBackgroundColor = DefaultHeaderBackgroundColor;
+            HeaderBackgroundColor = DefaultHeaderBackColor;
             Click += DropDown_Click;
         }
 

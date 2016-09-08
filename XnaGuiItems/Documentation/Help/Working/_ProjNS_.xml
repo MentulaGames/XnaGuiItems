@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>_ProjNS_</name>
+  </assembly>
+  <members>
+    <member name="N:Mentula.GuiItems">
+      <summary>The Mentula.GuiItems namespace contains global functions to be used with XnaGuiItems.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Containers">
+      <summary>The Mentula.GuiItems.Containers namespace contains classes that define commonly-used containers in an user interface.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core">
+      <summary>The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core.Interfaces">
+      <summary>The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the librarie.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Items">
+      <summary>The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="10daa5f5-5737-4544-92c6-37972633b5d3" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+        Version 1.0.0.0 was released on 05-02-2016.
+			</para>
+		</introduction>
+
+		<section>
+			<title>Changes in This Release</title>
+			<content>
+
+				<list class="bullet">
+					<listItem>
+            <para>
+              Added Delegates.
+            </para>
+					</listItem>
+          <listItem>
+            <para>
+              Added Enums.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added ProgressData.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added base GuiItem.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Label.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Button.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added ProgressBar.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Slider.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Textbox.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Utilities.
+            </para>
+          </listItem>
+				</list>
+        
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/1369883772b98fa0b1f26cebec0d29042fecb8d3</linkUri>
+      </externalLink>
+		</relatedTopics>
+    
+	</developerConceptualDocument>
+</topic>
