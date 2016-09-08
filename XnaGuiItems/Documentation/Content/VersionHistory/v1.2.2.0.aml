@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="8f7bba12-da5c-487d-a37a-fc2136a65a1e" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version 1.2.2.0 was released on 20-07-2016.
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Added InvokeException.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added DebuggerStepThrough.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Updated Xml documentation.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Moved unnecessary fields to private use.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Fixed atrocious menu controll adding methods.
+            </para>
+          </listItem>
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/4e59ec846a566ed70ac1a2b0b8850b7759d43011</linkUri>
+      </externalLink>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

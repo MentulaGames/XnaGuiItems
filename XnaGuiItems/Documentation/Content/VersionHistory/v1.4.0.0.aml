@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="50c9f057-7bcf-49a9-bdc9-6bf159f1e5c9" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version 1.4.0.0 was released on 26-08-2016.
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Added MenuCollection.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added IMenu interface.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Implemented VisibleChanged.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Implemented DrawOrderChanged.
+            </para>
+          </listItem>
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/ccea29b8549d1c4e9063cdbac79e65fe63f67e12</linkUri>
+      </externalLink>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

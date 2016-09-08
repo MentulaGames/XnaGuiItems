@@ -1,4 +1,5 @@
 using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

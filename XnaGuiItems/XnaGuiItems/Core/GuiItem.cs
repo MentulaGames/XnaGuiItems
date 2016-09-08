@@ -1,4 +1,5 @@
 ﻿using Mentula.GuiItems.Containers;
+using Mentula.GuiItems.Core.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -16,7 +17,7 @@ namespace Mentula.GuiItems.Core
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class GuiItem : IDisposable
+    public class GuiItem : IDisposable, IToggleable
     {
         /// <summary>
         /// Gets or sets the background color for the <see cref="GuiItem"/>.

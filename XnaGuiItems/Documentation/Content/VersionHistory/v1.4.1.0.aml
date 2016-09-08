@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="83f0e46d-2d8e-4a97-aa02-088e9bdcede8" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version 1.4.1.0 was released on 03-09-2016.
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Added code example to MenuCollection.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added Anchor enumeration.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added Size struct.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Renamed DefaultSize to DefaultBounds in GuiItem.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added Size to GuiItem.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Improved performance.
+            </para>
+          </listItem>
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/28d71e42ebf9ccd1b644ebb082410fc8757221bd</linkUri>
+      </externalLink>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

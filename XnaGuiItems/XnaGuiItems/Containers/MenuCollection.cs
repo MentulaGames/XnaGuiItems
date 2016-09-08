@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
-using KVP = System.Collections.Generic.KeyValuePair<string, Mentula.GuiItems.Containers.IMenu>;
+using KVP = System.Collections.Generic.KeyValuePair<string, Mentula.GuiItems.Core.Interfaces.IMenu>;
 using static Mentula.GuiItems.Utilities;
 using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Interfaces;
 
 namespace Mentula.GuiItems.Containers
 {

@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Containers\MenuCollection.cs" />
-    <Compile Include="Containers\Menu\IMenu.cs" />
+    <Compile Include="Core\Interfaces\IMenu.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Base.cs" />
     <Compile Include="Containers\TabContainer.cs" />
@@ -69,6 +69,7 @@
     <Compile Include="Core\GuiItem.cs" />
     <Compile Include="Core\Interfaces\IDeltaKeyboardUpdate.cs" />
     <Compile Include="Core\Interfaces\IDeltaUpdate.cs" />
+    <Compile Include="Core\Interfaces\IToggleable.cs" />
     <Compile Include="Core\InvokeException.cs" />
     <Compile Include="Core\KeyInputHandler.cs" />
     <Compile Include="Core\MentulaGameComponent.cs" />
