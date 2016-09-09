@@ -19,6 +19,9 @@ namespace Mentula.GuiItems
 #endif
     public static class Utilities
     {
+        /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
+        internal static bool suppressRefresh;
+
         /// <summary>
         /// Changes the borderstyle of the game window.
         /// </summary>

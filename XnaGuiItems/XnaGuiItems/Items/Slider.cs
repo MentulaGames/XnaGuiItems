@@ -114,7 +114,7 @@ namespace Mentula.GuiItems.Items
 
             if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -123,7 +123,9 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SliderBarDimentions, device);
+            if (suppressRefresh) return;
+
+            foregroundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SliderBarDimentions, device);
             backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
         }
 

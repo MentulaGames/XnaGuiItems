@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Linq;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
@@ -27,7 +28,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets a value indicating if the <see cref="TextBox"/> is in focus.
         /// </summary>
-        public virtual bool Focused { get; set; }
+        public virtual bool Focused { get { return focus; } set { Invoke(FocusChanged, this, value); } }
         /// <summary>
         /// Gets or sets a value indicating of the <see cref="TextBox"/> can be multiline.
         /// </summary>
@@ -47,9 +48,18 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual Size MaximumSize { get; set; }
 
+        /// <summary>
+        /// Occurs when the value of the <see cref="Focused"/> propery is changed.
+        /// </summary>
+        public event ValueChangedEventHandler<bool> FocusChanged;
+
+        /// <summary> The <see cref="Texture2D"/> used for drawing the foreground (with the focus indicator). </summary>
+        protected Texture2D foregoundTextureFocused;
+
         private KeyInputHandler inputHandler;
         private float time;
         private bool showLine;
+        private bool focus;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBox"/> class with default settings.
@@ -73,6 +83,7 @@ namespace Mentula.GuiItems.Items
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
             MaximumSize = device.Viewport.Bounds.Size();
+            FocusChanged += OnFocusChanged;
         }
 
         /// <summary>
@@ -100,41 +111,41 @@ namespace Mentula.GuiItems.Items
                     string newText = inputHandler.GetInputString(kState, MultiLine);
                     if (Text != newText) Text = newText;
 
-                    foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : string.Empty), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
-
                     if (FlickerStyle == FlickerStyle.None) return;
 
                     time += deltaTime;
                     switch (FlickerStyle)
                     {
                         case FlickerStyle.Slow:
-                            if (time > 2)
-                            {
-                                showLine = !showLine;
-                                time = 0;
-                            }
+                            if (time > 2) ToggleShowLine();
                             break;
                         case FlickerStyle.Normal:
-                            if (time > 1)
-                            {
-                                showLine = !showLine;
-                                time = 0;
-                            }
+                            if (time > 1) ToggleShowLine();
                             break;
                         case FlickerStyle.Fast:
-                            if (time > .5f)
-                            {
-                                showLine = !showLine;
-                                time = 0;
-                            }
+                            if (time > .5f) ToggleShowLine();
                             break;
                     }
                 }
-                else
-                {
-                    foregoundTexture = Drawing.FromText(GetDrawableText(), font, ForeColor, Bounds.Size(), MultiLine, LineStart, device);
-                }
             }
+        }
+
+        /// <summary>
+        /// Draws the <see cref="TextBox"/> to the specified <see cref="SpriteBatch"/>.
+        /// </summary>
+        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            Texture2D temp = null;
+            if (showLine)
+            {
+                temp = foregroundTexture;
+                foregroundTexture = foregoundTextureFocused;
+            }
+
+            base.Draw(spriteBatch);
+
+            if (temp != null) foregroundTexture = temp;
         }
 
         /// <summary>
@@ -142,6 +153,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (suppressRefresh) return;
+
             if (AutoSize)
             {
                 Vector2 dim = GetLongTextDimentions();
@@ -163,7 +176,7 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle = Bounds;
             backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(GetDrawableText() + (showLine ? "|" : string.Empty), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
+            CreateForegroundTextures();
         }
 
         /// <summary>
@@ -177,6 +190,30 @@ namespace Mentula.GuiItems.Items
             base.OnTextChanged(sender, newText);
         }
 
+        /// <summary>
+        /// This method gets called when the <see cref="TextBox.FocusChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="recievedFocus"> The new focus value for the sender. </param>
+        protected virtual void OnFocusChanged(GuiItem sender, bool recievedFocus)
+        {
+            focus = recievedFocus;
+            if (!recievedFocus)
+            {
+                CreateForegroundTextures();
+                showLine = false;
+            }
+        }
+
+        private void CreateForegroundTextures()
+        {
+            string text = GetDrawableText();
+            Size size = foregroundRectangle.Size();
+
+            foregroundTexture = Drawing.FromText(text, font, ForeColor, size, MultiLine, LineStart, device);
+            foregoundTextureFocused = Drawing.FromText(text + '|', font, ForeColor, size, MultiLine, LineStart, device);
+        }
+
         private Vector2 GetLongTextDimentions()
         {
             if (!MultiLine) return font.MeasureString(Text);
@@ -188,6 +225,12 @@ namespace Mentula.GuiItems.Items
         private string GetDrawableText()
         {
             return PasswordChar != '\0' ? Text.ToPassword(PasswordChar) : Text;
+        }
+
+        private void ToggleShowLine()
+        {
+            time = 0;
+            showLine = !showLine;
         }
     }
 }

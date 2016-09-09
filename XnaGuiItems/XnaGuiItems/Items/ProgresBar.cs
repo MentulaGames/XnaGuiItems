@@ -85,7 +85,7 @@ namespace Mentula.GuiItems.Items
 
             if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -94,10 +94,12 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (suppressRefresh) return;
+
             float ppp = (float)Bounds.Width / 100;
             int width = (int)(ppp * data.Value);
 
-            foregoundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
+            foregroundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
             backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
         }
 

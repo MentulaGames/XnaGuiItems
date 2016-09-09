@@ -88,6 +88,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (Utilities.suppressRefresh) return;
+
             if (AutoSize)
             {
                 Vector2 dim = font.MeasureString(text);
@@ -103,7 +105,7 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle = Bounds;
             backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
-            foregoundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
+            foregroundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
         }
 
         /// <summary>
@@ -116,7 +118,7 @@ namespace Mentula.GuiItems.Items
 
             if (Visible)
             {
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 

@@ -15,6 +15,77 @@ namespace Mentula.GuiItems.Containers
     /// A class for grouping <see cref="GuiItems"/>.
     /// </summary>
     /// <typeparam name="T"> The type of <see cref="Game"/> to refrence to. </typeparam>
+    /// <remarks>
+    /// This object is used to handle default operations when dealing with GuiItems.
+    /// Properties like <see cref="ScreenWidthMiddle"/> are also added for extra support when adding GuiItems.
+    /// As default the <see cref="Menu{T}"/> will also suppress refresh calls to controlls whilst they are being initialzes
+    /// making the process of initialization faster when using a <see cref="Menu{T}"/>.
+    /// </remarks>
+    /// <example>
+    /// In this example a main menu is created.
+    /// The two properties are public for use in other menu's.
+    /// Line 9 makes sure that when the menu becomes visible the mouse will be useable.
+    /// 
+    /// In initialize the default font option is used so we don't have to specify one every time we make a button.
+    /// A background is loaded and four buttons are made.
+    /// 
+    /// <code>
+    /// public sealed class MainMenu : <![CDATA[Menu<MainGame>]]>
+    /// {
+    ///     public static readonly Color ButtonBackColor = new Color(150, 150, 130, 150);
+    ///     public static readonly int TxtW = 150, TxtH = 25;
+    ///
+    ///     public MainMenu(MainGame game)
+    ///         : base(game)
+    ///     {
+    ///          VisibleChanged += (s, e) => { if (Visible) { Game.IsMouseVisible = true; } };
+    ///     }
+    ///
+    ///     public override void Initialize()
+    ///     {
+    ///         font = Game.vGraphics.fonts["MenuFont"];
+    ///         int txtHM = TxtH >> 1;
+    ///
+    ///         GuiItem bg = AddGuiItem();
+    ///         bg.Name = "Background";
+    ///         bg.BackgroundImage = <![CDATA[Game.Content.Load<Texture2D>("Utilities\\MainBackground");]]>
+    ///         bg.Enabled = false;
+    ///
+    ///         Button btnSingleplayer = AddDefButton();
+    ///         btnSingleplayer.MoveRelative(Anchor.MiddleWidth, y: ScreenHeightMiddle + txtHM * 4);
+    ///         btnSingleplayer.Text = "Singleplayer";
+    ///
+    ///         Button btnMultiplayer = AddDefButton();
+    ///         btnMultiplayer.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 8);
+    ///         btnMultiplayer.Text = "Multiplayer";
+    ///
+    ///         Button btnOptions = AddDefButton();
+    ///         btnOptions.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 12);
+    ///         btnOptions.Text = "Options";
+    ///
+    ///         Button btnQuit = AddButton();
+    ///         btnQuit.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 16);
+    ///         btnQuit.Text = "Quit";
+    ///
+    ///         btnSingleplayer.LeftClick += (sender, args) => Game.SetState(GameState.SingleplayerMenu);
+    ///         btnMultiplayer.LeftClick += (sender, args) => Game.SetState(GameState.MultiplayerMenu);
+    ///         btnOptions.LeftClick += (sender, args) => Game.SetState(GameState.OptionsMenu);
+    ///         btnQuit.LeftClick += (sender, args) => Game.Exit();
+    ///
+    ///         base.Initialize();
+    ///     }
+    /// 
+    ///     private Button AddDefButton()
+    ///     {
+    ///         Button result = AddButton();
+    ///         result.Width = TxtW;
+    ///         result.Height = TxtH;
+    ///         result.BackColor = ButtonBackColor;
+    ///         return result;
+    ///     }
+    /// }
+    /// </code>
+    /// </example>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
@@ -59,12 +130,12 @@ namespace Mentula.GuiItems.Containers
 
         /// <summary>
         /// Indicates whether the <see cref="Menu{T}"/> should handle textbox focusing.
-        /// Default value = true
+        /// Default value = <see langword="true"/>.
         /// </summary>
         protected bool autoFocusTextbox;
         /// <summary>
         /// Indicates whether the <see cref="Menu{T}"/> should handle dropdown focusing.
-        /// Default value = true
+        /// Default value = <see langword="true"/>.
         /// </summary>
         protected bool autoFocusDropDown;
         /// <summary>
@@ -89,12 +160,26 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         /// <param name="game"> The game to associate with this <see cref="Menu{T}"/>. </param>
         public Menu(T game)
+            : this(game, true)
+        { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Menu{T}"/> class.
+        /// </summary>
+        /// <param name="game"> The game to associate with this <see cref="Menu{T}"/>. </param>
+        /// <param name="allowRefreshSuppression"> 
+        /// Whether the <see cref="Menu{T}"/> is allowed to suppress refresh calls
+        /// when the controlls are being initialized.
+        ///  </param>
+        public Menu(T game, bool allowRefreshSuppression)
             : base(game)
         {
             device = game.GraphicsDevice;
             controlls = new GuiItemCollection(null);
+
             autoFocusTextbox = true;
             autoFocusDropDown = true;
+            if (allowRefreshSuppression) suppressRefresh = true;
         }
 
         /// <summary>
@@ -104,6 +189,7 @@ namespace Mentula.GuiItems.Containers
         public override void Initialize()
         {
             batch = new SpriteBatch(device);
+            suppressRefresh = false;
 
             for (int i = 0; i < controlls.Count; i++)
             {
@@ -251,7 +337,7 @@ namespace Mentula.GuiItems.Containers
                     if ((dd = controlls[i] as DropDown) != null)
                     {
                         if (dd.Name != sender.Name) dd.Hide();
-                        dd.Refresh(); 
+                        dd.Refresh();
                     }
                 }
             }

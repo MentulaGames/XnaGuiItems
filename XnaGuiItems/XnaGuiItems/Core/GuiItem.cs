@@ -101,7 +101,7 @@ namespace Mentula.GuiItems.Core
         /// <summary> The <see cref="Texture2D"/> used for drawing the color background. </summary>
         protected Texture2D backColorImage;
         /// <summary> The <see cref="Texture2D"/> used for drawing the foreground. </summary>
-        protected Texture2D foregoundTexture;
+        protected Texture2D foregroundTexture;
         /// <summary> Whether the <see cref="Mouse"/> is hovering over the <see cref="GuiItem"/>. </summary>
         protected bool over;
         /// <summary> Whether the <see cref="GuiItem"/> is left clicked. </summary>
@@ -194,7 +194,7 @@ namespace Mentula.GuiItems.Core
 
                 if (backColorImage != null) backColorImage.Dispose();
                 if (backgroundImage != null) backgroundImage.Dispose();
-                if (foregoundTexture != null) foregoundTexture.Dispose();
+                if (foregroundTexture != null) foregroundTexture.Dispose();
 
                 Hide();
                 IsDisposed = true;
@@ -266,18 +266,38 @@ namespace Mentula.GuiItems.Core
         /// <exception cref="ArgumentException"> The anchor is invalid. </exception>
         public void MoveRelative(Anchor anchor)
         {
+            MoveRelative(anchor, null, null);
+        }
+
+        /// <summary>
+        /// Moves the <see cref="GuiItem"/> to a specified relative position.
+        /// If x is set the horizontal component of the anchor will have no effect.
+        /// If y is set the vertical component of the anchor will have no effect.
+        /// </summary>
+        /// <param name="anchor"> A valid relative position. </param>
+        /// <param name="x"> The horizontal component of the new position. </param>
+        /// <param name="y"> The vertical component of the new position. </param>
+        /// <exception cref="ArgumentException"> The anchor is invalid. </exception>
+        public void MoveRelative(Anchor anchor, float? x = null, float? y = null)
+        {
             if (anchor.RequiresWork())
             {
-                float x = Position.X, y = Position.Y;
+                if (!x.HasValue)
+                {
+                    if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (device.Viewport.Width >> 1) - (Width >> 1);
+                    if (anchor.ContainesValue(Anchor.Left)) x = 0;
+                    if (anchor.ContainesValue(Anchor.Right)) x = device.Viewport.Width - Width;
+                    if (!x.HasValue) x = Position.X;
+                }
+                if (!y.HasValue)
+                {
+                    if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (device.Viewport.Height >> 1) - (Height >> 1);
+                    if (anchor.ContainesValue(Anchor.Top)) y = 0;
+                    if (anchor.ContainesValue(Anchor.Bottom)) y = device.Viewport.Height - Height;
+                    if (!y.HasValue) y = Position.Y;
+                }
 
-                if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (device.Viewport.Width >> 1) - (Width >> 1);
-                if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (device.Viewport.Height >> 1) - (Height >> 1);
-                if (anchor.ContainesValue(Anchor.Left)) x = 0;
-                if (anchor.ContainesValue(Anchor.Right)) x = device.Viewport.Width - Width;
-                if (anchor.ContainesValue(Anchor.Top)) y = 0;
-                if (anchor.ContainesValue(Anchor.Bottom)) y = device.Viewport.Height - Height;
-
-                if (x != Position.X || y != Position.Y) Position = new Vector2(x, y);
+                if (x != Position.X || y != Position.Y) Position = new Vector2(x.Value, y.Value);
             }
             else if (!anchor.IsValid()) throw new ArgumentException("The anchor is invalid!");
         }
@@ -303,7 +323,10 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// When overriden in a derived class, updates the textures used for drawing.
         /// </summary>
-        public virtual void Refresh() { }
+        public virtual void Refresh()
+        {
+            if (suppressRefresh) return;
+        }
 
         /// <summary>
         /// Gets the position of the mouse in respect to the <see cref="GuiItem"/>.
@@ -362,7 +385,7 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnForeColorChanged(GuiItem sender, Color newColor)
         {
             foreColor = newColor;
-            foregoundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
+            foregroundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
         }
 
         /// <summary>
@@ -406,7 +429,7 @@ namespace Mentula.GuiItems.Core
             CheckBounds(newSize);
             bounds = newSize;
             backColorImage = Drawing.FromColor(backColor, bounds.Size(), device);
-            foregoundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
+            foregroundTexture = Drawing.FromColor(foreColor, bounds.Size(), device);
         }
 
         /// <summary>

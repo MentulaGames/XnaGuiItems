@@ -130,7 +130,7 @@ namespace Mentula.GuiItems.Items
                     spriteBatch.Draw(BackgroundImage, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
                 }
 
-                spriteBatch.Draw(foregoundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
             }
         }
 
@@ -139,6 +139,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (suppressRefresh) return;
+
             if (AutoSize)
             {
                 Vector2 dim = font.MeasureString(Text);
@@ -156,7 +158,7 @@ namespace Mentula.GuiItems.Items
             clickTexture = backColorImage.ApplyBorderButton(ButtonStyle.Click);
 
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderButton(ButtonStyle.Default);
-            foregoundTexture = Drawing.FromText(Text, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
+            foregroundTexture = Drawing.FromText(Text, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
         }
 
         /// <summary>
