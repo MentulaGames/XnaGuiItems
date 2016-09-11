@@ -3,7 +3,7 @@
   <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
     <introduction>
       <para>
-        Version 1.4.3.0 was released on 09-09-2016.
+        Version 1.4.3.2 was released on 11-09-2016.
       </para>
     </introduction>
 
@@ -14,20 +14,19 @@
         <list class="bullet">
           <listItem>
             <para>
-              Added example to Menu
+              Redesigned EventHandlers according to Microsofts's C# conventions.
             </para>
           </listItem>
 
           <listItem>
             <para>
-              Added new overload to MoveRelative in GuiItem
+              Added X and Y properties to GuiItem
             </para>
           </listItem>
 
           <listItem>
             <para>
-              Added refresh suppressing in menu.
-              Refresh (GuiItem method) will no longer be called when initializing via menu's unless specified.
+              Show and Hide in GuiItem are now sealed.
             </para>
           </listItem>
         </list>
