@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="6d0de512-4496-483d-89ae-1eda746ff980" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version 1.1.0.2 was released on 07-02-2016.
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Added Height parameter to GuiItem adder in Menu.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Added Width parameter to GuiItem adder in Menu.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Imporved shift usage in Textbox.
+            </para>
+          </listItem>
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/8579c163a9def69608dc7a69d274a53b3b837406</linkUri>
+      </externalLink>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

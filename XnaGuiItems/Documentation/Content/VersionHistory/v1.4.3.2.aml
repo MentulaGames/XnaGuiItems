@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="9688d0d2-49ee-4cb8-b35a-f1824e9d83df" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        Version 1.4.3.0 was released on 09-09-2016.
+      </para>
+    </introduction>
+
+    <section>
+      <title>Changes in This Release</title>
+      <content>
+
+        <list class="bullet">
+          <listItem>
+            <para>
+              Added example to Menu
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added new overload to MoveRelative in GuiItem
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              Added refresh suppressing in menu.
+              Refresh (GuiItem method) will no longer be called when initializing via menu's unless specified.
+            </para>
+          </listItem>
+        </list>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" />
+      <externalLink>
+        <linkText>Commit</linkText>
+        <linkUri>https://github.com/MentulaGames/XnaGuiItems/commit/f59515463f7641ffed11fe091c79d55dd8547f98</linkUri>
+      </externalLink>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

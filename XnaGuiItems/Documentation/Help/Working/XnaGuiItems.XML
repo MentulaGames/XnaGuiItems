@@ -1,0 +1,2114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>XnaGuiItems</name>
+  </assembly>
+  <members>
+    <member name="T:Mentula.GuiItems.Containers.MenuCollection`1">
+      <summary>
+            A class for grouping <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <typeparam name="TGame"> The specified game class. </typeparam>
+      <remarks>
+            This object is used to house a unspecified amount of IMenu's.
+            It supplies easy methods for adding menus to the collection and
+            methods for handeling menu switching.
+            </remarks>
+      <example>
+            This example will show how a MenuCollection should be used in your Xna project.
+            Here the Collection is used as a base class for an easier facade.
+            
+            <code>
+            public sealed class ClientMenus : <![CDATA[MenuCollection<MainGame>]]>
+            {
+                // Every menus has its own propertie to supply easy acces to them.
+                public MainMenu MainMenu { get; private set; }
+                public SingleplayerMenu SinglePlayer { get; private set; }
+                public MultiplayerMenu MultiPlayer { get; private set; }
+                public GuiMenu Gui { get; private set; }
+                public LoadingMenu Loading { get; private set; }
+                public OptionsMenu Options { get; private set; }
+            
+                // The underlying keys for getting a specified menus.
+                // This should however be unnessesary because
+                // the menus are more easely obtained by using the properties specified above.
+                private const string MAIN = "Main";
+                private const string SINGLE = "SinglePlayer";
+                private const string MULTI = "MultiPlayer";
+                private const string GUI = "Gui";
+                private const string LOAD = "Loading";
+                private const string OPT = "Options";
+            
+                public ClientMenus(MainGame game)
+                    : base(game)
+                { }
+            
+                // Initializes the underlying menus with the specified game and name.
+                public override void Initialize()
+                {
+                    Add(MainMenu = new MainMenu(Game), MAIN);
+                    Add(SinglePlayer = new SingleplayerMenu(Game), SINGLE);
+                    Add(MultiPlayer = new MultiplayerMenu(Game), MULTI);
+                    Add(Gui = new GuiMenu(Game), GUI);
+                    Add(Loading = new LoadingMenu(Game), LOAD);
+                    Add(Options = new OptionsMenu(Game), OPT);
+            
+                    base.Initialize();
+                }
+                
+                // Shows a specified menu with a given GameState.
+                public void Show(GameState state)
+                {
+                    Show(FromGameState(state));
+                }
+            
+                // Converts the GameState to the string key that represents the actual menu.
+                private static string FromGameState(GameState state)
+                {
+                    switch (state)
+                    {
+                        case GameState.MainMenu: return MAIN;
+                        case GameState.SingleplayerMenu: return SINGLE;
+                        case GameState.MultiplayerMenu: return MULTI;
+                        case GameState.OptionsMenu: return OPT;
+                        case GameState.Loading: return LOAD;
+                        case GameState.Game: return GUI;
+                        default: return string.Empty;
+                    }
+                }
+            }
+            </code></example>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrder">
+      <summary>
+            The order in which to draw this object relative to other objects. Objects with
+            a lower value are drawn first.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.Visible">
+      <summary>
+            Indicates whether <see cref="M:Microsoft.Xna.Framework.IDrawable.Draw(Microsoft.Xna.Framework.GameTime)" /> should be called for this game component.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrderChanged">
+      <summary>
+            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrder" /> is changed.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Containers.MenuCollection`1.VisibleChanged">
+      <summary>
+            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.MenuCollection`1.Visible" /> is changed.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.Item(System.String)">
+      <summary>
+            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            </summary>
+      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.#ctor(`0)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" /> class.
+            </summary>
+      <param name="game"> The game to associate with this <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Add(Mentula.GuiItems.Core.Interfaces.IMenu,System.String)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to the collection.
+            </summary>
+      <param name="menu"> The <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to add. </param>
+      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.AddRange(System.Collections.Generic.KeyValuePair{System.String,Mentula.GuiItems.Core.Interfaces.IMenu}[])">
+      <summary>
+            Adds multiple <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to the collection.
+            </summary>
+      <param name="menus"> The <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to add with there given names. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Initialize">
+      <summary>
+            Initializes the <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" /> and its child <see cref="T:Mentula.GuiItems.Containers.Menu`1" />'s.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Update(Microsoft.Xna.Framework.GameTime)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" /> and its underlying <see cref="T:Mentula.GuiItems.Containers.Menu`1" />'s.
+            </summary>
+      <param name="gameTime"> Time elapsed since the last call to Update. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Draw(Microsoft.Xna.Framework.GameTime)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" />'s <see cref="T:Mentula.GuiItems.Containers.Menu`1" />'s.
+            </summary>
+      <param name="gameTime"> Time elapsed since the last call to Draw. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Show(System.String)">
+      <summary>
+            Shows a specified <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and hides all others.
+            </summary>
+      <param name="menu"> The name of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to show. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Hide">
+      <summary>
+            Hides all <see cref="T:Mentula.GuiItems.Containers.Menu`1" />'s.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Get``1(System.String)">
+      <summary>
+            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            </summary>
+      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+      <typeparam name="TMenu"> The type of <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to cast to. </typeparam>
+      <returns> The found menu casted to the specified type. </returns>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+      <exception cref="T:System.InvalidCastException"> Cannot cast found menu to specified menu type. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Get(System.String)">
+      <summary>
+            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            </summary>
+      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+      <returns> The found menu. </returns>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+    </member>
+    <member name="T:Mentula.GuiItems.Containers.Menu`1">
+      <summary>
+             A class for grouping <see cref="N:Mentula.GuiItems" />.
+             </summary>
+      <typeparam name="T"> The type of <see cref="T:Microsoft.Xna.Framework.Game" /> to refrence to. </typeparam>
+      <remarks>
+             This object is used to handle default operations when dealing with GuiItems.
+             Properties like <see cref="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle" /> are also added for extra support when adding GuiItems.
+             As default the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> will also suppress refresh calls to controlls whilst they are being initialzes
+             making the process of initialization faster when using a <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+             </remarks>
+      <example>
+             In this example a main menu is created.
+             The two properties are public for use in other menu's.
+             Line 9 makes sure that when the menu becomes visible the mouse will be useable.
+             
+             In initialize the default font option is used so we don't have to specify one every time we make a button.
+             A background is loaded and four buttons are made.
+             
+             <code>
+             public sealed class MainMenu : <![CDATA[Menu<MainGame>]]>
+             {
+                 public static readonly Color ButtonBackColor = new Color(150, 150, 130, 150);
+                 public static readonly int TxtW = 150, TxtH = 25;
+            
+                 public MainMenu(MainGame game)
+                     : base(game)
+                 {
+                      VisibleChanged += (s, e) =&gt; { if (Visible) { Game.IsMouseVisible = true; } };
+                 }
+            
+                 public override void Initialize()
+                 {
+                     font = Game.vGraphics.fonts["MenuFont"];
+                     int txtHM = TxtH &gt;&gt; 1;
+            
+                     GuiItem bg = AddGuiItem();
+                     bg.BackgroundImage = <![CDATA[Game.Content.Load<Texture2D>("Utilities\\MainBackground");]]>
+                     bg.Enabled = false;
+            
+                     Button btnSingleplayer = AddDefButton();
+                     btnSingleplayer.MoveRelative(Anchor.MiddleWidth, y: ScreenHeightMiddle + txtHM * 4);
+                     btnSingleplayer.Text = "Singleplayer";
+            
+                     Button btnMultiplayer = AddDefButton();
+                     btnMultiplayer.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 8);
+                     btnMultiplayer.Text = "Multiplayer";
+            
+                     Button btnOptions = AddDefButton();
+                     btnOptions.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 12);
+                     btnOptions.Text = "Options";
+            
+                     Button btnQuit = AddButton();
+                     btnQuit.MoveRelative(Anchor.MiddleWidth, y: ScreenheightMiddle + txtHM * 16);
+                     btnQuit.Text = "Quit";
+            
+                     btnSingleplayer.LeftClick += (sender, args) =&gt; Game.SetState(GameState.SingleplayerMenu);
+                     btnMultiplayer.LeftClick += (sender, args) =&gt; Game.SetState(GameState.MultiplayerMenu);
+                     btnOptions.LeftClick += (sender, args) =&gt; Game.SetState(GameState.OptionsMenu);
+                     btnQuit.LeftClick += (sender, args) =&gt; Game.Exit();
+            
+                     base.Initialize();
+                 }
+             
+                 private Button AddDefButton()
+                 {
+                     Button result = AddButton();
+                     result.Width = TxtW;
+                     result.Height = TxtH;
+                     result.BackColor = ButtonBackColor;
+                     return result;
+                 }
+             }
+             </code></example>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem">
+      <summary>
+            Adds a standard <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <returns> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.Button" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="Font"> A specified font for the control (Optional). </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.Button" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.DropDown" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="Font"> A specified font for the control (Optional). </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.DropDown" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.Label" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="Font"> A specified font for the control (Optional). </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.Label" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddProgresBar">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddSlider">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.Slider" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.Slider" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddTextBox(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Items.TextBox" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="Font"> A specified font for the control (Optional). </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Items.TextBox" /> created. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddTabContainer(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Adds a <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="Font"> A specified font for the control (Optional). </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> created. </returns>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder">
+      <summary>
+            The order in which to draw this object relative to other objects. Objects with
+            a lower value are drawn first.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.Visible">
+      <summary>
+            Indicates whether <see cref="M:Microsoft.Xna.Framework.IDrawable.Draw(Microsoft.Xna.Framework.GameTime)" /> should be called for this game component.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle">
+      <summary>
+            The center width of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle">
+      <summary>
+            The center height of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth">
+      <summary>
+            The width of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
+      <summary>
+            The Height of the viewport.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Containers.Menu`1.DrawOrderChanged">
+      <summary>
+            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" /> is changed.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Containers.Menu`1.VisibleChanged">
+      <summary>
+            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.Menu`1.Visible" /> is changed.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox">
+      <summary>
+            Indicates whether the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should handle textbox focusing.
+            Default value = <see langword="true" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown">
+      <summary>
+            Indicates whether the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should handle dropdown focusing.
+            Default value = <see langword="true" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.controlls">
+      <summary>
+            The underlying <see cref="N:Mentula.GuiItems" /> of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /></summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.font">
+      <summary>
+            The default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use if none is specified.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.device">
+      <summary>
+            The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> associated with this <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.#ctor(`0)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> class.
+            </summary>
+      <param name="game"> The game to associate with this <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.#ctor(`0,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> class.
+            </summary>
+      <param name="game"> The game to associate with this <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
+      <param name="allowRefreshSuppression"> 
+            Whether the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> is allowed to suppress refresh calls
+            when the controlls are being initialized.
+             </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Initialize">
+      <summary>
+            Initializes the <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for drawing.
+            Override to initialize <see cref="N:Mentula.GuiItems" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Dispose(System.Boolean)">
+      <summary>
+            Release the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+      <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged
+            resources.
+            </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)">
+      <summary>
+            Gets a control with a specified <see cref="P:Mentula.GuiItems.Core.GuiItem.Name" /> as a specified <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+      <typeparam name="TControl"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to cast to. </typeparam>
+      <param name="name"> The specified <see cref="P:Mentula.GuiItems.Core.GuiItem.Name" /> to search for. </param>
+            /// <returns> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that was found as type TControl; otherwise null. </returns></member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)">
+      <summary>
+            Gets a control with a specified name.
+            </summary>
+      <param name="name"> The specified <see cref="P:Mentula.GuiItems.Core.GuiItem.Name" /> to search for. </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that was found; otherwise null. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Hide">
+      <summary>
+            Disables and hides the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Show">
+      <summary>
+            Enables and shows the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and its controlls.
+            </summary>
+      <param name="gameTime"> Time elapsed since the last call to Update. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and its controlls.
+            </summary>
+      <param name="gameTime"> Time elapsed since the last call to Draw. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Containers.TabContainer">
+      <summary>
+            A <see cref="T:Mentula.GuiItems.Core.GuiItem" /> container with tabs.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle">
+      <summary>
+            Gets or sets a <see cref="T:Microsoft.Xna.Framework.Rectangle" /> indicating the size of the tab.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab">
+      <summary>
+            Gets or sets a selected tab.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> should handle <see cref="T:Mentula.GuiItems.Items.TextBox" /> focusing.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> should not atler the position of added tab items to the position of the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize">
+      <summary>
+            Gets the default tab size of the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /></summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> to. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})">
+      <summary>
+            Adds a tab with a specified name to the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
+            </summary>
+      <param name="name"> The name for the tab. </param>
+      <param name="color"> The background color for the tab. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])">
+      <summary>
+            Adds one or more <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to a specified tab.
+            </summary>
+      <param name="tab"> The tab name. </param>
+      <param name="items"> The items to add to the tabs. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Refresh">
+      <summary>
+            Refreshes the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />, recalculating the <see cref="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" /> and the underlying texture.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            This method cannot be used withing a <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
+            </summary>
+      <param name="mState">
+      </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
+            </summary>
+      <param name="mState"> The specified <see cref="T:Microsoft.Xna.Framework.Input.MouseState" /> to use. </param>
+      <param name="kState"> The specified <see cref="T:Microsoft.Xna.Framework.Input.KeyboardState" /> to use. </param>
+      <param name="delta"> The deltaTime. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> and its childs.
+            </summary>
+      <param name="spriteBatch"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1">
+      <summary>
+            Represents a class for classes that contain value changing event data.
+            </summary>
+      <typeparam name="TVal"> The specified value type to change. </typeparam>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.Empty">
+      <summary>
+            Provides a value to use with events that do not have event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.OldValue">
+      <summary>
+            The old value.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.NewValue">
+      <summary>
+            The new value.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ValueChangedEventArgs`1.#ctor(`0,`0)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" /> class with specified parameters.
+            </summary>
+      <param name="oldVal"> The old value of the field. </param>
+      <param name="newVal"> The new value of the field. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.MouseEventArgs">
+      <summary>
+            Represents a class for classes that contain mouse related event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseEventArgs.Empty">
+      <summary>
+            Provides a value to use with events that do not have event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseEventArgs.State">
+      <summary>
+            The current state of the mouse that was used for invoking the event.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.MouseEventArgs.#ctor(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.MouseEventArgs" /> class with a specified <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />.
+            </summary>
+      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.IndexedClickEventArgs">
+      <summary>
+            Represents a class for classes that contain indexed click related event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Empty">
+      <summary>
+            Provides a value to use with events that do not have event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Index">
+      <summary>
+            The index of the value clicked.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.IndexedClickEventArgs.#ctor(System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.IndexedClickEventArgs" /> class with a specified index.
+            </summary>
+      <param name="index"> The index of the value clicked. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Interfaces.IMenu">
+      <summary>
+            Defines an interface for menu's.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Interfaces.IToggleable">
+      <summary>
+            Defines an interface for components that can be shown or hiden.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show">
+      <summary>
+            Shows the component.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide">
+      <summary>
+            Hides the component.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.BorderStyle">
+      <summary>
+            Specifies the border style for a GuiItem.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.BorderStyle.None">
+      <summary>
+            No Border.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.BorderStyle.FixedSingle">
+      <summary>
+            A single-line border.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.BorderStyle.Fixed3D">
+      <summary>
+            A three-dimensional border.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.FlickerStyle">
+      <summary>
+            Specifies the flicker syle for a GuiItem.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.FlickerStyle.Slow">
+      <summary>
+            Flickers once every 2 seconds.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.FlickerStyle.Normal">
+      <summary>
+            Flickers once every second.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.FlickerStyle.Fast">
+      <summary>
+            Flickers twice every second.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.FlickerStyle.None">
+      <summary>
+            No flickering.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.MouseClick">
+      <summary>
+            Indicates a specific mouse click.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseClick.Default">
+      <summary>
+            A default click.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseClick.Left">
+      <summary>
+            A left click.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseClick.Right">
+      <summary>
+            A right click.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.MouseClick.Double">
+      <summary>
+            A double click.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Anchor">
+      <summary>
+            Specified the relative position the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> should take.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.None">
+      <summary>
+            The default value.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.MiddleWidth">
+      <summary>
+            The center of the screen on width.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.MiddelHeight">
+      <summary>
+            The center of the screen on height.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.Middle">
+      <summary>
+            The absolute center of the screen (<see cref="F:Mentula.GuiItems.Core.Anchor.MiddleWidth" /> | <see cref="F:Mentula.GuiItems.Core.Anchor.MiddelHeight" />).
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.Left">
+      <summary>
+            The left of the screen.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.Right">
+      <summary>
+            The right of the screen.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.Top">
+      <summary>
+            The top of the screen.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Anchor.Bottom">
+      <summary>
+            The bottom of the screen.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.IndexedClickEventHandler">
+      <summary>
+            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.MouseEventHandler">
+      <summary>
+            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1">
+      <summary>
+            Represent the method that will handle the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event.
+            </summary>
+      <typeparam name="T"> The type of the value. </typeparam>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.Caps_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_SemiColon_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_OpenBracket_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_Tilde_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.D1_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="P:Mentula.GuiItems.Core.EmptyInput.Num0_KeyState">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.Space">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_SemiColon">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_OpenBracket">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_Tilde">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.D1">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="F:Mentula.GuiItems.Core.EmptyInput.Num0">
+            ////////////////////////////////////////////////
+        </member>
+    <member name="T:Mentula.GuiItems.Core.GuiItem">
+      <summary>
+            The absolute base class for all <see cref="N:Mentula.GuiItems" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.BackColor">
+      <summary>
+            Gets or sets the background color for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage">
+      <summary>
+            Gets or sets the background image displayed in the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Bounds">
+      <summary>
+            Gets or sets the size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> including its nonclient elements in pixels.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.DefaultBackColor">
+      <summary>
+            Gets the default background color of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.DefaultForeColor">
+      <summary>
+            Gets the default foreground color of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.DefaultBounds">
+      <summary>
+            Gets the default size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /></summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Disposing">
+      <summary>
+            Gets a value indicating wether the base <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class is in the process of disposing.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Enabled">
+      <summary>
+            Gets or sets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> can respond to user interaction.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.ForeColor">
+      <summary>
+            Gets or sets the foregound color for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Height">
+      <summary>
+            Gets or sets the height of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> including its nonclient elements in pixels.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.IsDisposed">
+      <summary>
+            Gets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> has been disposed.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Name">
+      <summary>
+            Gets or sets the name of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Rotation">
+      <summary>
+            Gets or sets the client side rotation of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Position">
+      <summary>
+            Gets or sets the position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Size">
+      <summary>
+            Gets or sets the size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate">
+      <summary>
+            Gets or sets a value indicating whether a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should call the <see cref="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" /> method.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw">
+      <summary>
+            Gets or sets a value indicating whether a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should call the <see cref="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" /> method.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Visible">
+      <summary>
+            Gets or sets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is displayed.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Width">
+      <summary>
+            Gets or sets the width of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> including its nonclient elements in pixels.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.X">
+      <summary>
+            Gets or sets the horizontal component of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Y">
+      <summary>
+            Gets or sets the vertical component of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.device">
+      <summary> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.backColorImage">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the color background. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the foreground. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.over">
+      <summary> Whether the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" /> is hovering over the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.leftDown">
+      <summary> Whether the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is left clicked. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.rightDown">
+      <summary> Whether the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is right clicked. </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Core.GuiItem.BackColor" /> property changes.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" /> property changes.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Click">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is clicked.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged">
+      <summary>
+            Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.ForeColor" /> property changes.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Hover">
+      <summary>
+            Occurs when the mouse pointer rests on the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Move">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is moved.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.NameChanged">
+      <summary>
+            Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.Name" /> proprty changes.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Rotated">
+      <summary>
+            Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.Rotation" /> propery changes.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Resize">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is resized.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged">
+      <summary>
+            Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.Visible" /> property changes.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with specific size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in pixels. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Finalize">
+      <summary>
+            Disposes the unmanaged resources.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Dispose">
+      <summary>
+            Releases the managed and unmanaged resources used by the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)">
+      <summary>
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+      <param name="disposing"> Whether the managed resources should be disposed. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.PerformClick">
+      <summary>
+            Perform a mouse click.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Core.GuiItem" />, checking if any mouse event are occuring.
+            </summary>
+      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The spritebatch to use. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)">
+      <summary>
+            Moves the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to a specified relative position.
+            </summary>
+      <param name="anchor"> A valid relative position. </param>
+      <exception cref="T:System.ArgumentException"> The anchor is invalid. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})">
+      <summary>
+            Moves the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to a specified relative position.
+            If x is set the horizontal component of the anchor will have no effect.
+            If y is set the vertical component of the anchor will have no effect.
+            </summary>
+      <param name="anchor"> A valid relative position. </param>
+      <param name="x"> The horizontal component of the new position. </param>
+      <param name="y"> The vertical component of the new position. </param>
+      <exception cref="T:System.ArgumentException"> The anchor is invalid. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Show">
+      <summary>
+            Enables the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> and makes it visible.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Hide">
+      <summary>
+            Disables the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> and makes it hiden.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Refresh">
+      <summary>
+            When overriden in a derived class, updates the textures used for drawing.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Gets the position of the mouse in respect to the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+      <param name="state"> The <see cref="T:Microsoft.Xna.Framework.Input.MouseState" /> to use. </param>
+      <returns> The position of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" /> rotated like the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </returns>
+      <remarks>
+            This method is used internaly to determine whether the mouse is inside the client rectangle of the GuiItem.
+            </remarks>
+      <example>
+            This example show how the method is used internaly.
+            
+            <code>
+            public virtual void Update(MouseState mState)
+            {
+               if (Enabled)
+               {
+                   Vector2 mPos = GetRotatedMouse(mState);
+                   over = bounds.Contains(mPos.ToPoint());
+                   <![CDATA[bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);]]>
+                }
+            }
+            </code></example>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs">
+      <summary>
+            Gets the mouse state as a <see cref="T:Mentula.GuiItems.Core.MouseEventArgs" /> object.
+            </summary>
+      <returns> The current mouse state. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the background. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> to use as background. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the foreground. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.NameChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new name for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Rotated" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new rotation (in radians). </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Rectangle})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resize" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new visibility of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection">
+      <summary>
+            A collection for storing <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in a list with a specified owner.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Owner">
+      <summary>
+            Gets the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that owns this <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Items">
+      <summary>
+            Gets or sets the items in this <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Count">
+      <summary>
+            Get the number of elements actually contained in the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.IsReadOnly">
+      <summary>
+            Gets a value indicating whether the collection is read-only.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.#ctor(Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" /> class.
+            </summary>
+      <param name="owner"> A <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that owns the collection. </param>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Item(System.Int32)">
+      <summary>
+            Indicates the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> at the specified indexed location in the collection.
+            </summary>
+      <param name="index"> The index of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to retriece from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />. </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> located at the specified index location within the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />. </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException"> The index value is less than zero or is greater than or equal to the number of <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in the collection. </exception>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Item(System.String)">
+      <summary>
+            Indicates a <see cref="T:Mentula.GuiItems.Core.GuiItem" /> with the specified key in the collection.
+            </summary>
+      <param name="key"> The <see cref="P:Mentula.GuiItems.Core.GuiItem.Name" /> of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to retrieve from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />. </param>
+      <returns> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> with the specified key within the collection. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.IndexOf(Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Retrieves the index of the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+      <param name="item"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to locate in the collection. </param>
+      <returns> A zero-based index value that represents the position of the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Insert(System.Int32,Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Instert the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" /> at the specified index.
+            </summary>
+      <param name="index"> The index of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> used to insert the Item. </param>
+      <param name="item"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to add to the collection. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.RemoveAt(System.Int32)">
+      <summary>
+            Removes a <see cref="T:Mentula.GuiItems.Core.GuiItem" /> from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" /> at the specifed indexed location.
+            </summary>
+      <param name="index"> The index value of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to remove. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Add(Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Adds the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+      <param name="item"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to add to the collection. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Clear">
+      <summary>
+            Removes all <see cref="T:Mentula.GuiItems.Core.GuiItem" /> from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Contains(Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Determines whether the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is a member of the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+      <param name="item"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to locate in the collection. </param>
+      <returns> true if the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is a member of the collection; otherwise false. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.CopyTo(Mentula.GuiItems.Core.GuiItem[],System.Int32)">
+      <summary>
+            Copies the entire contents of this <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" /> to a compatible one-dimensional <see cref="T:Mentula.GuiItems.Core.GuiItem" />[],
+            starting at the specified index of the target array.
+            </summary>
+      <param name="array"> 
+            The one-dimensional <see cref="T:Mentula.GuiItems.Core.GuiItem" />[] that is the destination of the elements copied from the current collection.
+            The array must have zero-based indexing.
+            </param>
+      <param name="arrayIndex"> The zero-based index in array at which copying begins. </param>
+      <exception cref="T:System.ArgumentNullException"> Array is null. </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException"> index is less than 0. </exception>
+      <exception cref="T:System.ArgumentException"> 
+            Array is multidimensional. -or- 
+            The number of elements in the source collection is greater than the available space from index to the end of array. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Remove(Mentula.GuiItems.Core.GuiItem)">
+      <summary>
+            Removes the specified <see cref="T:Mentula.GuiItems.Core.GuiItem" /> from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+      <param name="item"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to remove from the <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />. </param>
+      <returns>
+            true if item is successfully removed; otherwise, false. This method also returns false if item was not found.
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.GetEnumerator">
+      <summary>
+            Retrieves a refrence to an enumerator object that is used to iterate over a <see cref="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />.
+            </summary>
+      <returns> An <see cref="T:System.Collections.Generic.IEnumerator`1" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.InvokeException">
+      <summary>
+            Represents errors that occur during event invoking.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.InvokeException.StackTrace">
+      <summary>
+            Gets a string representation of the immediate frames on the call stack.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <inheritdoc />
+    </member>
+    <member name="T:Mentula.GuiItems.Core.MentulaGameComponent`1">
+      <summary> Base class for all Mentula game components. </summary>
+      <typeparam name="TGame"> The specified game class. </typeparam>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.MentulaGameComponent`1.Game">
+      <summary> Gets the Game associated with this GameComponent. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.MentulaGameComponent`1.#ctor(`0)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.MentulaGameComponent`1" /> class. </summary>
+      <param name="game"> The game associated with this component. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.ProgressData">
+      <summary> A container for progress data (100% base). </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Minimum">
+      <summary> Gets or sets the minimum of the progress data, must be smaller than the <see cref="P:Mentula.GuiItems.Core.ProgressData.Maximum" />. </summary>
+      <exception cref="T:System.ArgumentException"> The minimum is greater than the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Maximum" />. </exception>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Maximum">
+      <summary> Gets or sets the maximum of the progress data, must be greater than the <see cref="P:Mentula.GuiItems.Core.ProgressData.Minimum" />. </summary>
+      <exception cref="T:System.ArgumentException"> The maximum is lesser than the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Minimum" />. </exception>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Value">
+      <summary> Gets or sets a value indicating the current progress position. Value will be clamped. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.DefaultMaximum">
+      <summary> Gets the default maximum of the <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.DefaultMinimum">
+      <summary> Gets the default minimum of the <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.op_Equality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structures are equal.
+            </summary>
+      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the left side of the equality operator. </param>
+      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if pgd1 and pgd2 have equal minimum, maximum and value; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.op_Inequality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structures are different.
+            </summary>
+      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the left side of the inequality operator. </param>
+      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the right side of the inequality operator. </param>
+      <returns>
+        <see langword="true" /> if pgd1 and pgd2 differ eather in minimum, maximum or value; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a specified starting value. </summary>
+      <param name="value"> The starting value (clamped). </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a minimum and maximum specified. </summary>
+      <param name="minimum"> The starting minimum. </param>
+      <param name="maximum"> The starting maximum. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a minimum, maximum and starting value specified. </summary>
+      <param name="minimum"> The starting minimum. </param>
+      <param name="maximum"> The starting maximum. </param>
+      <param name="value"> The starting value (clamped). </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.ChangeValue(System.Int32)">
+      <summary> Changes the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Value" /> to a specified percentage. Value will be clamped. </summary>
+      <param name="percent"> The percentage to change to. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.Equals(System.Object)">
+      <summary>
+            Tests to see whether the specified object is a <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure with the same dimentions as this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <param name="obj"> The Object to test. </param>
+      <returns>
+        <see langword="true" /> if obj is a <see cref="T:Mentula.GuiItems.Core.ProgressData" /> 
+            and has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.ProgressData" />; otherwise, <see langword="false" />. 
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.Equals(Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests to see whether the specified <see cref="T:Mentula.GuiItems.Core.ProgressData" /> has the same dimentions as this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <param name="obj"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> to test. </param>
+      <returns>
+        <see langword="true" /> if object has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.ProgressData" />; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.GetHashCode">
+      <summary>
+            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.ToString">
+      <summary>
+            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Size">
+      <summary>
+            Stores an ordered pair of integers, wich specify a Height and Width.
+            </summary>
+      <remarks>
+            This object is a copy of the <see cref="T:System.Drawing.Size" /> 
+            and is only present in this library so a refrence to <see cref="N:System.Drawing" /> is not required.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.Height">
+      <summary>
+            Gets or sets the vertical component of this Size structure.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.Width">
+      <summary>
+            Gets or sets the horizontal component of this Size structure.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.IsEmpty">
+      <summary>
+            Tests whether this Size structure has width and height of 0.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Size.Empty">
+      <summary>
+            Gets a Size structure that has a <see cref="P:Mentula.GuiItems.Core.Size.Height" /> and <see cref="P:Mentula.GuiItems.Core.Size.Width" /> value of 0.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Adds the width and height of one Size structure to the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to add. </param>
+      <param name="sz2"> The second Size to add. </param>
+      <returns> A Size structure that is the result of the addition operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Subtracts the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to subtract. </param>
+      <param name="sz2"> The second Size to subtract. </param>
+      <returns> A Size structure that is the result of the subtraction operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Size" /> structures are equal.
+            </summary>
+      <param name="sz1"> The Size structure on the left side of the equality operator. </param>
+      <param name="sz2"> The Size structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if sz1 and sz2 have equal width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Size" /> structures are different.
+            </summary>
+      <param name="sz1"> The Size structure on the left side of the inequality operator. </param>
+      <param name="sz2"> The Size structure on the right side of the inequality operator. </param>
+      <returns>
+        <see langword="true" /> if sz1 and sz2 differ either in width or height; <see langword="false" /> if sz1 and sz2 are equal. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Size" /> structure fomr the specified dimensions.
+            </summary>
+      <param name="width"> The width component of the new <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+      <param name="height"> The height component of the new <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Size" /> structure from the specifie <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure.
+            </summary>
+      <param name="vect"> The <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure from which to initialize this <see cref="T:Mentula.GuiItems.Core.Size" /> structure. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Adds the width and height of one Size structure to the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to add. </param>
+      <param name="size2"> The second Size to add. </param>
+      <returns> A Size structure that is the result of the addition operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Subtracts the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to subtract. </param>
+      <param name="size2"> The second Size to subtract. </param>
+      <returns> A Size structure that is the result of the subtraction operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Equals(System.Object)">
+      <summary>
+            Tests to see whether the specified object is a Size structure with the same dimentions as this Size structure.
+            </summary>
+      <param name="obj"> The Object to test. </param>
+      <returns>
+        <see langword="true" /> if obj is a Size and has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests to see whether the specified Size has the same dimentions as this Size structure.
+            </summary>
+      <param name="size"> The Size to test. </param>
+      <returns>
+        <see langword="true" /> if size has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.GetHashCode">
+      <summary>
+            Returns a hash code for this Size structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this Size structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.ToString">
+      <summary>
+            Creates a human-readable string that represents this Size structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Size" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.Button">
+      <summary>
+            A button base class.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.Button.hoverTexture">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the hover style <see cref="T:Mentula.GuiItems.Items.Button" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.Button.clickTexture">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the click style <see cref="T:Mentula.GuiItems.Items.Button" />. </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Button.LeftClick">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Items.Button" /> is left clicked.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Button.RightClick">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Items.Button" /> is right clicked.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Button.DoubleClick">
+      <summary>
+            Occurs when the <see cref="T:Mentula.GuiItems.Items.Button" /> is clicked twice in a short period of time.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Button" /> to. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with a specified size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Button" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Button" /> in pixels. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            This method cannot be used withing a <see cref="T:Mentula.GuiItems.Items.Button" />.
+            </summary>
+      <param name="mState"> The <see cref="T:Microsoft.Xna.Framework.Input.MouseState" /> to use. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Items.Button" />, checking if any mouse event are occuring.
+            </summary>
+      <param name="state"> The current <see cref="T:Microsoft.Xna.Framework.Input.Mouse" /> state. </param>
+      <param name="deltaTime"> The deltatime </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.Button" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)">
+      <summary>
+            Perfoms a specified button click.
+            </summary>
+      <param name="button"> The type of click event to invoke. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.DropDown">
+      <summary>
+            A Dropdown with clickable childs.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.AutoSize">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Items.DropDown" /> will adjust its size to the text.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.BorderStyle">
+      <summary>
+            Gets or sets the type of border given to the <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.DefaultBackColor">
+      <summary>
+            Gets the default background color of the <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.DefaultForeColor">
+      <summary>
+            Gets the default foreground color of the <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.DefaultHeaderBackColor">
+      <summary>
+            Gets the default background color of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> header.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.DefaultHeaderText">
+      <summary>
+            Gets the default text the header will display.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.HeaderText">
+      <summary>
+            Gets or sets the text displayed in the <see cref="T:Mentula.GuiItems.Items.DropDown" /> header.
+            Default: "Choose Option".
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.HeaderBackgroundColor">
+      <summary>
+            Gets or sets the background color for the <see cref="T:Mentula.GuiItems.Items.DropDown" /> header.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.Position">
+      <summary>
+            Gets or sets the position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.DropDown.IndexClick">
+      <summary>
+            Occurs when a <see cref="T:Mentula.GuiItems.Items.DropDown" /> option is clicked.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.DropDown.font">
+      <summary> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.DropDown.labels">
+      <summary> The underlying labels for the <see cref="T:Mentula.GuiItems.Items.DropDown" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.DropDown.foregroundRectangle">
+      <summary> The rectangle used in the foreground. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with a specific size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> in pixels. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(System.String[])">
+      <summary>
+            Adds a option to the <see cref="T:Mentula.GuiItems.Items.DropDown" /> with the default color.
+            </summary>
+      <param name="parts"> The parts of the option, separated with a space. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(System.Collections.Generic.KeyValuePair{System.String,System.Nullable{Microsoft.Xna.Framework.Color}}[])">
+      <summary>
+            Adds a option to the <see cref="T:Mentula.GuiItems.Items.DropDown" /> with a specified color.
+            </summary>
+      <param name="parts"> The parts of the option, with a specified colot and separated with a space. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Items.DropDown" />, checking if any mouse event are occuring.
+            </summary>
+      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.Label">
+      <summary>
+            A label used for displaying text.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.AutoSize">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Items.Label" /> will adjust its size to the text.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.BorderStyle">
+      <summary>
+            Gets or sets the type of border given to the <see cref="T:Mentula.GuiItems.Items.Label" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.Text">
+      <summary>
+            Gets or sets the text of the <see cref="T:Mentula.GuiItems.Items.Label" />. 
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.Font">
+      <summary>
+            Gets or sets the font used by the <see cref="T:Mentula.GuiItems.Items.Label" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.ForegroundRectangle">
+      <summary>
+            Gets or sets the <see cref="T:Microsoft.Xna.Framework.Rectangle" /> used to draw the text.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.Bounds">
+      <summary>
+            Gets or sets the size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> including its nonclient elements in pixels.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Label.LineStart">
+      <summary>
+            Gets or sets a value indicating from what line the <see cref="T:Mentula.GuiItems.Items.Label" /> should be shown.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.Label.font">
+      <summary> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.Label.foregroundRectangle">
+      <summary> The rectangle used in the foreground. </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Label.TextChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.Label.Text" /> propery is changed.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Label.FontChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.Label.Font" /> propery is changed.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Label" /> to. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with a specific size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Label" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Label" /> in pixels. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.Label" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.GetLineCount">
+      <summary>
+            Get the number of lines in this <see cref="T:Mentula.GuiItems.Items.Label" /></summary>
+      <returns> The amount of lines in the <see cref="T:Mentula.GuiItems.Items.Label" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new text of the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.FontChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the foreground. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.ProgressBar">
+      <summary>
+            A progress bar used for displaying progress.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.Inverted">
+      <summary>
+            Gets or sets the direction of the bar.
+            <see cref="M:Mentula.GuiItems.Items.ProgressBar.Refresh" /> required after change!
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle">
+      <summary>
+            Gets or sets the type of border given to the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            Refresh required after change!
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds">
+      <summary>
+            Gets the default size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /></summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.DefaultForeColor">
+      <summary>
+            Gets the default foreground color of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.MaxiumValue">
+      <summary>
+            Gets the maximum value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.MinimumValue">
+      <summary>
+            Gets the minimum value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.Value">
+      <summary>
+            Gets or sets the current value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.ProgressBar.data">
+      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.ProgressBar.Value" /> propery is changed.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with a specified size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> and its childs to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="args"> The new value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.Slider">
+      <summary>
+            A slider used for setting rough values like volume.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.BorderStyle">
+      <summary>
+            Gets or sets the type of border given to the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            <see cref="M:Mentula.GuiItems.Items.Slider.Refresh" /> required after change!
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.DefaultBounds">
+      <summary>
+            Gets the default size of the <see cref="T:Mentula.GuiItems.Items.Slider" /></summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.SliderBarDimentions">
+      <summary>
+            Gets or sets the dimentions of the <see cref="T:Mentula.GuiItems.Items.Slider" /> object.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.MaximumValue">
+      <summary>
+            Gets or sets the maximum value of the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.MinimumValue">
+      <summary>
+            Gets or sets the minimum value of the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.Value">
+      <summary>
+            Gets or sets the current value of the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            Will not change the visuals of the slider!
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.Slider.data">
+      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Slider.ValueChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.Slider.Value" /> propery is changed.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.Slider.MouseDown">
+      <summary>
+            Occurs when the mouse is pressed on the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Slider" /> to. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with a specified size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Slider" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Slider" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Items.Slider" />, checking if any mouse event are occuring.
+            </summary>
+      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.Slider" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.MouseEventArgs)">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new value of the slider. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.MouseEventArgs)">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.MouseDown" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Items.TextBox">
+      <summary>
+            A textbox used for displaying and accepting text.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize">
+      <summary>
+            Gets the default minimum size of the <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.FlickerStyle">
+      <summary>
+            Gets or sets a value indicating how the <see cref="T:Mentula.GuiItems.Items.TextBox" /> should flicker.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.Focused">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Items.TextBox" /> is in focus.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.MultiLine">
+      <summary>
+            Gets or sets a value indicating of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> can be multiline.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.PasswordChar">
+      <summary>
+            Gets or set a value indicating if the <see cref="T:Mentula.GuiItems.Items.TextBox" /> is a password field and which char it should use.
+            Default value = '\0' indicating that it is not a password field.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.MinimumSize">
+      <summary>
+            Gets or sets a value indicating the minimum size of the <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.MaximumSize">
+      <summary>
+            Gets or sets a value indicating the maximum size of the <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            Default value is the screen size.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.TextBox.FocusChanged">
+      <summary>
+            Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.TextBox.Focused" /> propery is changed.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the foreground (with the focus indicator). </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with default settings.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.TextBox" /> to. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with a specific size.
+            </summary>
+      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.TextBox" /> to. </param>
+      <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> in pixels. </param>
+      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Items.TextBox" />, checking if any mouse event are occuring.
+            This should only be used when the <see cref="T:Mentula.GuiItems.Items.TextBox" /> is out of focus!
+            </summary>
+      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
+      <summary>
+            Updates the <see cref="T:Mentula.GuiItems.Items.TextBox" />, checking if any mouse- or keyboard event are occuring.
+            Use like: myTextBox.Update(Mouse.GetState(), Keyboard.GetState(), (float)gameTime.ElapsedGameTime.TotalSeconds);
+            </summary>
+      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+      <param name="kState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard" />. </param>
+      <param name="deltaTime"> The specified deltatime. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Draws the <see cref="T:Mentula.GuiItems.Items.TextBox" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
+            </summary>
+      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.Refresh">
+      <summary>
+            Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+      <summary>
+            This method gets called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new text for the sender. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})">
+      <summary>
+            This method gets called when the <see cref="E:Mentula.GuiItems.Items.TextBox.FocusChanged" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new focus value for the sender. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Utilities">
+      <summary>
+            Contains utilitie functions for graphical use.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Utilities.ChangeWindowBorder(Microsoft.Xna.Framework.Game,System.Byte)">
+      <summary>
+            Changes the borderstyle of the game window.
+            </summary>
+      <param name="newType">
+        <list type="table">
+          <listheader>
+            <term>Code</term>
+            <description>Meaning</description>
+          </listheader>
+          <item>
+            <term>0</term>
+            <description>None</description>
+          </item>
+          <item>
+            <term>1</term>
+            <description>FixedSingle</description>
+          </item>
+          <item>
+            <term>2</term>
+            <description>Fixed3D</description>
+          </item>
+          <item>
+            <term>3</term>
+            <description>FixedDialog</description>
+          </item>
+          <item>
+            <term>4</term>
+            <description>Sizable</description>
+          </item>
+          <item>
+            <term>5</term>
+            <description>FixedToolWindow</description>
+          </item>
+          <item>
+            <term>6</term>
+            <description>SizableWindow</description>
+          </item>
+        </list>
+      </param>
+      <param name="game"> The associated game window. </param>
+      <remarks>
+            A byte is used to represent the <see cref="T:System.Windows.Forms.FormBorderStyle" /> enumeraton 
+            as not to require a refrence to the <see cref="N:System.Windows.Forms" /> namespace.
+            </remarks>
+    </member>
+    <member name="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)">
+      <summary> Runs a specified <see cref="T:System.Threading.ThreadStart" /> on a background STA thread. </summary>
+      <param name="function"> The specified function to run. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)">
+      <summary> Runs a specified <see cref="T:System.Threading.ThreadStart" /> on a background thread. </summary>
+      <param name="function"> The specified function to run. </param>
+    </member>
+    <member name="N:Mentula.GuiItems">
+      <summary>The Mentula.GuiItems namespace contains global functions to be used with XnaGuiItems.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Containers">
+      <summary>The Mentula.GuiItems.Containers namespace contains classes that define commonly-used containers in an user interface.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core">
+      <summary>The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core.Interfaces">
+      <summary>The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the librarie.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Items">
+      <summary>The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</summary>
+    </member>
+  </members>
+</doc>
