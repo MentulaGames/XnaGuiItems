@@ -47,7 +47,6 @@ namespace Mentula.GuiItems.Containers
     ///         int txtHM = TxtH >> 1;
     ///
     ///         GuiItem bg = AddGuiItem();
-    ///         bg.Name = "Background";
     ///         bg.BackgroundImage = <![CDATA[Game.Content.Load<Texture2D>("Utilities\\MainBackground");]]>
     ///         bg.Enabled = false;
     ///

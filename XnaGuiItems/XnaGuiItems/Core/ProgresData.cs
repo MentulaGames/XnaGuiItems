@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Core
 {
     /// <summary> A container for progress data (100% base). </summary>
 #if !DEBUG
-    [System.Diagnostics.DebuggerStepThrough]
+    [DebuggerStepThrough]
 #endif
-    public struct ProgressData
+    [DebuggerDisplay("{ToString()}")]
+    public struct ProgressData : IEquatable<ProgressData>
     {
         /// <summary> Gets or sets the minimum of the progress data, must be smaller than the <see cref="Maximum"/>. </summary>
         /// <exception cref="ArgumentException"> The minimum is greater than the current <see cref="Maximum"/>. </exception>
@@ -25,6 +28,21 @@ namespace Mentula.GuiItems.Core
         internal int Distance { get { return max - min; } }
 
         private int min, max, val;
+
+        /// <summary>
+        /// Tests whether two <see cref="ProgressData"/> structures are equal.
+        /// </summary>
+        /// <param name="pgd1"> The <see cref="ProgressData"/> structure on the left side of the equality operator. </param>
+        /// <param name="pgd2"> The <see cref="ProgressData"/> structure on the right side of the equality operator. </param>
+        /// <returns> <see langword="true"/> if pgd1 and pgd2 have equal minimum, maximum and value; otherwise <see langword="false"/>. </returns>
+        public static bool operator ==(ProgressData pgd1, ProgressData pgd2) { return pgd1.Equals(pgd2); }
+        /// <summary>
+        /// Tests whether two <see cref="ProgressData"/> structures are different.
+        /// </summary>
+        /// <param name="pgd1"> The <see cref="ProgressData"/> structure on the left side of the inequality operator. </param>
+        /// <param name="pgd2"> The <see cref="ProgressData"/> structure on the right side of the inequality operator. </param>
+        /// <returns> <see langword="true"/> if pgd1 and pgd2 differ eather in minimum, maximum or value; otherwise <see langword="false"/>. </returns>
+        public static bool operator !=(ProgressData pgd1, ProgressData pgd2) { return !pgd1.Equals(pgd2); }
 
         /// <summary> Initializes a new instance of the <see cref="ProgressData"/> struct with a specified starting value. </summary>
         /// <param name="value"> The starting value (clamped). </param>
@@ -56,6 +74,57 @@ namespace Mentula.GuiItems.Core
         {
             int newValue = (int)(percent * OnePercent);
             val = newValue.Clamp(max, min);
+        }
+
+        /// <summary>
+        /// Tests to see whether the specified object is a <see cref="ProgressData"/> structure with the same dimentions as this <see cref="ProgressData"/> structure.
+        /// </summary>
+        /// <param name="obj"> The Object to test. </param>
+        /// <returns> 
+        /// <see langword="true"/> if obj is a <see cref="ProgressData"/> 
+        /// and has the same minimum, maximum and value as this <see cref="ProgressData"/>; otherwise, <see langword="false"/>. 
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is ProgressData) return Equals((ProgressData)obj);
+            return false;
+        }
+
+        /// <summary>
+        /// Tests to see whether the specified <see cref="ProgressData"/> has the same dimentions as this <see cref="ProgressData"/> structure.
+        /// </summary>
+        /// <param name="obj"> The <see cref="ProgressData"/> to test. </param>
+        /// <returns> <see langword="true"/> if object has the same minimum, maximum and value as this <see cref="ProgressData"/>; otherwise, <see langword="false"/>. </returns>
+        public bool Equals(ProgressData obj)
+        {
+            return obj.min == min
+                && obj.max == max
+                && obj.val == val;
+        }
+
+        /// <summary>
+        /// Returns a hash code for this <see cref="ProgressData"/> structure.
+        /// </summary>
+        /// <returns> An integer value that specifies a hash value for this <see cref="ProgressData"/> structure. </returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = HASH_BASE;
+                hash += ComputeHash(hash, min);
+                hash += ComputeHash(hash, max);
+                hash += ComputeHash(hash, val);
+                return hash;
+            }
+        }
+
+        /// <summary>
+        /// Creates a human-readable string that represents this <see cref="ProgressData"/> structure.
+        /// </summary>
+        /// <returns> A string that represents this <see cref="ProgressData"/>. </returns>
+        public override string ToString()
+        {
+            return $"{min}[{val}]{max}";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Core
 {
@@ -129,7 +130,13 @@ namespace Mentula.GuiItems.Core
         /// <returns> An integer value that specifies a hash value for this Size structure. </returns>
         public override int GetHashCode()
         {
-            return Width ^ Height;
+            unchecked
+            {
+                int hash = HASH_BASE;
+                hash += ComputeHash(hash, Width);
+                hash += ComputeHash(hash, Height);
+                return hash;
+            }
         }
 
         /// <summary>

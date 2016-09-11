@@ -21,6 +21,8 @@ namespace Mentula.GuiItems
     {
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
+        internal const int HASH_BASE = unchecked((int)2166136261);
+        private const int HASH_MODIFIER = 16777619;
 
         /// <summary>
         /// Changes the borderstyle of the game window.
@@ -90,6 +92,13 @@ namespace Mentula.GuiItems
         public static void RunInBackground(ThreadStart function)
         {
             CreateBackgroundThread(function).Start();
+        }
+
+        /* Computes the hash value of a object's field. */
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static int ComputeHash<T>(int hash, T obj)
+        {
+            return hash * HASH_MODIFIER ^ obj.GetHashCode();
         }
 
         /*
