@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics.CodeAnalysis;
 using static Mentula.GuiItems.Utilities;
+using Args = Mentula.GuiItems.Core.ValueChangedEventArgs<int>;
 
 namespace Mentula.GuiItems.Items
 {
@@ -39,7 +41,7 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the current value of the <see cref="Slider"/>.
         /// Will not change the visuals of the slider!
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
+        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, new Args(data.Value, value)); } }
 
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
@@ -50,10 +52,12 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
         public event ValueChangedEventHandler<int> ValueChanged;
         /// <summary>
         /// Occurs when the mouse is pressed on the <see cref="Slider"/>.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler MouseDown;
 
         /// <summary>
@@ -69,6 +73,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
         /// <param name="bounds"> The size of the <see cref="Slider"/>. </param>
+        [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public Slider(GraphicsDevice device, Rectangle bounds)
              : base(device, bounds)
         {
@@ -92,7 +97,7 @@ namespace Mentula.GuiItems.Items
             {
                 if (sliding && leftDown)
                 {
-                    Invoke(MouseDown, this, state);
+                    Invoke(MouseDown, this, GetMouseEventArgs());
                     Refresh();
                 }
                 else if (sliding && !leftDown && !IsSliding(state.Position()))
@@ -133,30 +138,30 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="GuiItem.Click"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="state"> The current <see cref="MouseState"/>. </param>
-        protected void OnClick(object sender, MouseState state)
+        /// <param name="e"> The current <see cref="MouseState"/>. </param>
+        protected void OnClick(object sender, MouseEventArgs e)
         {
-            if (IsSliding(GetRotatedMouse(state))) sliding = true;
+            if (IsSliding(GetRotatedMouse(e.State))) sliding = true;
         }
 
         /// <summary>
         /// This method is called when the <see cref="ValueChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newValue"> The new value of the slider. </param>
-        protected void OnValueChanged(object sender, int newValue)
+        /// <param name="e"> The new value of the slider. </param>
+        protected void OnValueChanged(object sender, Args e)
         {
-            data.Value = newValue;
+            data.Value = e.NewValue;
         }
 
         /// <summary>
         /// This method is called when the <see cref="MouseDown"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="state"> The current <see cref="MouseState"/>. </param>
-        protected void OnMouseDown(object sender, MouseState state)
+        /// <param name="e"> The current <see cref="MouseState"/>. </param>
+        protected void OnMouseDown(object sender, MouseEventArgs e)
         {
-            Vector2 offset = SliderBarDimentions.Position() + Position - GetRotatedMouse(state);
+            Vector2 offset = SliderBarDimentions.Position() + Position - GetRotatedMouse(e.State);
             if (oldOffset == Vector2.Zero) oldOffset = offset;
             else if (offset != oldOffset)
             {
@@ -174,7 +179,7 @@ namespace Mentula.GuiItems.Items
 
                 int old = Value;
                 data.ChangeValue((int)percent);
-                if (ValueChanged != null && Value != old) ValueChanged.Invoke(this, Value);
+                if (Value != old) ValueChanged.Invoke(this, new Args(old, Value));
             }
         }
 

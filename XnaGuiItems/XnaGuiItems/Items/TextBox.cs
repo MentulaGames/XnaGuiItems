@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using static Mentula.GuiItems.Utilities;
+using Args = Mentula.GuiItems.Core.ValueChangedEventArgs<bool>;
 
 namespace Mentula.GuiItems.Items
 {
@@ -28,7 +30,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets a value indicating if the <see cref="TextBox"/> is in focus.
         /// </summary>
-        public virtual bool Focused { get { return focus; } set { Invoke(FocusChanged, this, value); } }
+        public virtual bool Focused { get { return focus; } set { Invoke(FocusChanged, this, new Args(focus, value)); } }
         /// <summary>
         /// Gets or sets a value indicating of the <see cref="TextBox"/> can be multiline.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when the value of the <see cref="Focused"/> propery is changed.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
         public event ValueChangedEventHandler<bool> FocusChanged;
 
         /// <summary> The <see cref="Texture2D"/> used for drawing the foreground (with the focus indicator). </summary>
@@ -76,6 +79,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
         /// <param name="bounds"> The size of the <see cref="TextBox"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
+        [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public TextBox(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds, font)
         {
@@ -183,22 +187,22 @@ namespace Mentula.GuiItems.Items
         /// This method gets called when the <see cref="Label.TextChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newText"> The new text for the sender. </param>
-        protected override void OnTextChanged(GuiItem sender, string newText)
+        /// <param name="e"> The new text for the sender. </param>
+        protected override void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
         {
-            inputHandler.keyboadString = newText;
-            base.OnTextChanged(sender, newText);
+            inputHandler.keyboadString = e.NewValue;
+            base.OnTextChanged(sender, e);
         }
 
         /// <summary>
         /// This method gets called when the <see cref="TextBox.FocusChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="recievedFocus"> The new focus value for the sender. </param>
-        protected virtual void OnFocusChanged(GuiItem sender, bool recievedFocus)
+        /// <param name="e"> The new focus value for the sender. </param>
+        protected virtual void OnFocusChanged(GuiItem sender, Args e)
         {
-            focus = recievedFocus;
-            if (!recievedFocus)
+            focus = e.NewValue;
+            if (!focus)
             {
                 CreateForegroundTextures();
                 showLine = false;

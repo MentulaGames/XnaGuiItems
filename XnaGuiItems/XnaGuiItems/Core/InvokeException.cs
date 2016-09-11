@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.Serialization;
 
 namespace Mentula.GuiItems.Core
 {
@@ -18,18 +19,27 @@ namespace Mentula.GuiItems.Core
         public override string StackTrace { get { return stackTrace + base.StackTrace; } }
 
         private string stackTrace;
+        private TargetInvocationException ex;
 
         internal InvokeException(TargetInvocationException e)
             :base(e.InnerException.Message, e.InnerException.InnerException)
         {
-            CreateStackTrace(e);
+            ex = e;
+            CreateStackTrace();
         }
 
-        private void CreateStackTrace(TargetInvocationException e)
+        /// <inheritdoc/>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            stackTrace = e.InnerException.StackTrace;
+            info.AddValue("Internal exception", ex);
+            base.GetObjectData(info, context);
+        }
+
+        private void CreateStackTrace()
+        {
+            stackTrace = ex.InnerException.StackTrace;
             stackTrace += Environment.NewLine;
-            stackTrace += e.StackTrace;
+            stackTrace += ex.StackTrace;
             stackTrace += Environment.NewLine;
         }
     }

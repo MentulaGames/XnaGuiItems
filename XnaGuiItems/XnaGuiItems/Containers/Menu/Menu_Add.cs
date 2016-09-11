@@ -9,9 +9,6 @@ namespace Mentula.GuiItems.Containers
     public partial class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
         where T : Game
     {
-        private static readonly InvalidOperationException noFont = 
-            new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
-
         /// <summary>
         /// Adds a standard <see cref="GuiItem"/> to the <see cref="Menu{T}"/>.
         /// </summary>
@@ -30,7 +27,7 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="Button"/> created. </returns>
         public Button AddButton(SpriteFont Font = null)
         {
-            if (font == null && Font == null) throw noFont;
+            if (font == null && Font == null) ThrowNoFont();
             Button btn = new Button(device, Font ?? font);
             controlls.Add(btn);
             return btn;
@@ -43,10 +40,10 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="DropDown"/> created. </returns>
         public DropDown AddDropDown(SpriteFont Font = null)
         {
-            if (font == null && Font == null) throw noFont;
+            if (font == null && Font == null) ThrowNoFont();
             DropDown dd = new DropDown(device, Font ?? font);
             controlls.Add(dd);
-            dd.VisibilityChanged += DropDown_VisibilityChanged; ;
+            dd.VisibilityChanged += DropDown_VisibilityChanged;
             return dd;
         }
 
@@ -57,7 +54,7 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="Label"/> created. </returns>
         public Label AddLabel(SpriteFont Font = null)
         {
-            if (font == null && Font == null) throw noFont;
+            if (font == null && Font == null) ThrowNoFont();
             Label lbl = new Label(device, Font ?? font);
             controlls.Add(lbl);
             return lbl;
@@ -92,7 +89,7 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="TextBox"/> created. </returns>
         public TextBox AddTextBox(SpriteFont Font = null)
         {
-            if (font == null && Font == null) throw noFont;
+            if (font == null && Font == null) ThrowNoFont();
             TextBox txt = new TextBox(device, Font ?? font);
             txt.Click += TextBox_Click;
             controlls.Add(txt);
@@ -106,10 +103,15 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="TabContainer"/> created. </returns>
         public TabContainer AddTabContainer(SpriteFont Font = null)
         {
-            if (font == null && Font == null) throw noFont;
+            if (font == null && Font == null) ThrowNoFont();
             TabContainer tbC = new TabContainer(device, Font ?? font);
             controlls.Add(tbC);
             return tbC;
+        }
+
+        private void ThrowNoFont()
+        {
+            throw new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");
         }
     }
 }

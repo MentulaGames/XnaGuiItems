@@ -1,7 +1,9 @@
 ﻿using Mentula.GuiItems.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics.CodeAnalysis;
 using static Mentula.GuiItems.Utilities;
+using Args = Mentula.GuiItems.Core.ValueChangedEventArgs<int>;
 
 namespace Mentula.GuiItems.Items
 {
@@ -42,7 +44,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the current value of the <see cref="ProgressBar"/>.
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, value); } }
+        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, new Args(data.Value, value)); } }
 
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
@@ -50,6 +52,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
         public event ValueChangedEventHandler<int> ValueChanged;
 
         /// <summary>
@@ -65,6 +68,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
         /// <param name="bounds"> The size of the <see cref="ProgressBar"/> in pixels. </param>
+        [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public ProgressBar(GraphicsDevice device, Rectangle bounds)
              : base(device, bounds)
         {
@@ -107,10 +111,10 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="ValueChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newVal"> The new value of the <see cref="ProgressBar"/>. </param>
-        protected virtual void OnValueChanged(object sender, int newVal)
+        /// <param name="args"> The new value of the <see cref="ProgressBar"/>. </param>
+        protected virtual void OnValueChanged(GuiItem sender, Args args)
         {
-            data.Value = newVal;
+            data.Value = args.NewValue;
             Refresh();
         }
 

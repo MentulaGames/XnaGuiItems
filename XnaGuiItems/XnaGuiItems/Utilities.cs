@@ -21,8 +21,18 @@ namespace Mentula.GuiItems
     {
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
+
         internal const int HASH_BASE = unchecked((int)2166136261);
         private const int HASH_MODIFIER = 16777619;
+
+        internal const string CAT_DESIGN = "Microsoft.Design",
+            CAT_USAGE = "Microsoft.Usage",
+            CHECKID_EVENT = "CA1009:DeclareEventHandlersCorrectly",
+            CHECKID_CALL = "CA2214:DoNotCallOverridableMethodsInConstructors",
+            JUST_VIRT_FINE = "Missing calls causes no harm in this instance.",
+            JUST_INDEX = "Using strong-typed IndexedClickEventHandler<GuiItem, IndexedClickEventArgs> event handler pattern.",
+            JUST_MOUSE = "Using strong-typed MouseEventHandler<GuiItem, MouseEventArgs> event handler pattern.",
+            JUST_VALUE = "Using strong-typed ValueChangedEventHandler<GuiItem, ValueChangedEventArgs> event handler pattern.";
 
         /// <summary>
         /// Changes the borderstyle of the game window.
@@ -104,11 +114,29 @@ namespace Mentula.GuiItems
         /*
             Safely invokes the delegate (is not null) and throws an InvokerException if the delegate throws an exception
         */
-        internal static void Invoke(Delegate function, params object[] args)
+        internal static void Invoke(Delegate function, object sender, EventArgs args)
         {
             if (function != null)
             {
-                try { function.DynamicInvoke(args); }
+                try { function.DynamicInvoke(new object[2] { sender, args }); }
+                catch (TargetInvocationException e) { throw new InvokeException(e); }
+            }
+        }
+
+        internal static void Invoke<T>(ValueChangedEventHandler<T> function, GuiItem sender, ValueChangedEventArgs<T> args)
+        {
+            if (function != null)
+            {
+                try { function.Invoke(sender, args); }
+                catch (TargetInvocationException e) { throw new InvokeException(e); }
+            }
+        }
+
+        internal static void Invoke(Core.MouseEventHandler function, GuiItem sender, Core.MouseEventArgs args)
+        {
+            if (function != null)
+            {
+                try { function.Invoke(sender, args); }
                 catch (TargetInvocationException e) { throw new InvokeException(e); }
             }
         }

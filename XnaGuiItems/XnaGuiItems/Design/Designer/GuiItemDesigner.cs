@@ -30,7 +30,7 @@ namespace Mentula.GuiItems.Design.Designer
             {
                 PresentationParameters presParams = new PresentationParameters
                 {
-                    DeviceWindowHandle = GetForegroundWindow(),
+                    DeviceWindowHandle = NativeMethods.GetForegroundWindow(),
                     IsFullScreen = false
                 };
 
@@ -52,9 +52,6 @@ namespace Mentula.GuiItems.Design.Designer
             if (view == null) view = new XnaWindowDesignerView(device);
             return view;
         }
-
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
 
         public bool GetToolSupported(ToolboxItem tool)
         {

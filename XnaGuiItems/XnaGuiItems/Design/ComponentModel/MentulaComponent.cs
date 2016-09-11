@@ -21,7 +21,7 @@ namespace Mentula.GuiItems.Design.ComponentModel
         {
             if (!IsDisposed)
             {
-                Utilities.Invoke(Disposed, EventArgs.Empty);
+                Utilities.Invoke(Disposed, this, EventArgs.Empty);
                 IsDisposed = true;
             }
         }

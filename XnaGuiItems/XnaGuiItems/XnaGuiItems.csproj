@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Containers\MenuCollection.cs" />
+    <Compile Include="Core\EventHandlers.cs" />
     <Compile Include="Core\Interfaces\IMenu.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Base.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Design\Designer\XnaWindowDesignerView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Design\NativeMethods.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Items\Button.cs" />
     <Compile Include="Items\DropDown.cs" />

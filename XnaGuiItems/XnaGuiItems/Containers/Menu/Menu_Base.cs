@@ -310,7 +310,7 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
-        private void TextBox_Click(GuiItem sender, MouseState state)
+        private void TextBox_Click(GuiItem sender, MouseEventArgs e)
         {
             if (autoFocusTextbox)
             {
@@ -326,9 +326,9 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
-        private void DropDown_VisibilityChanged(GuiItem sender, bool visibility)
+        private void DropDown_VisibilityChanged(GuiItem sender, ValueChangedEventArgs<bool> e)
         {
-            if (autoFocusDropDown && visibility)
+            if (autoFocusDropDown && e.NewValue)
             {
                 for (int i = 0; i < controlls.Count; i++)
                 {

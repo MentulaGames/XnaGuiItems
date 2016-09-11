@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
@@ -31,14 +32,17 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when the <see cref="Button"/> is left clicked.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler LeftClick;
         /// <summary>
         /// Occurs when the <see cref="Button"/> is right clicked.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler RightClick;
         /// <summary>
         /// Occurs when the <see cref="Button"/> is clicked twice in a short period of time.
         /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler DoubleClick;
 
         /// <summary>
@@ -85,7 +89,7 @@ namespace Mentula.GuiItems.Items
 
                 if (leftDown && !leftInvoked)
                 {
-                    Invoke(LeftClick, this, state);
+                    Invoke(LeftClick, this, GetMouseEventArgs());
                     leftInvoked = true;
 
                     doubleLeftClicked++;
@@ -93,7 +97,7 @@ namespace Mentula.GuiItems.Items
                 }
                 if (rightDown && !rightInvoked)
                 {
-                    Invoke(RightClick, this, state);
+                    Invoke(RightClick, this, GetMouseEventArgs());
                     rightInvoked = true;
 
                     doubleRightClicked++;
@@ -106,7 +110,7 @@ namespace Mentula.GuiItems.Items
                 {
                     doubleLeftClicked = 0;
                     doubleRightClicked = 0;
-                    if (time < 1) Invoke(DoubleClick, this, state);
+                    if (time < 1) Invoke(DoubleClick, this, GetMouseEventArgs());
                     time = 0;
                 }
 
@@ -173,13 +177,13 @@ namespace Mentula.GuiItems.Items
                     base.PerformClick();
                     return;
                 case MouseClick.Left:
-                    Invoke(LeftClick, this, Mouse.GetState());
+                    Invoke(LeftClick, this, GetMouseEventArgs());
                     return;
                 case MouseClick.Right:
-                    Invoke(RightClick, this, Mouse.GetState());
+                    Invoke(RightClick, this, GetMouseEventArgs());
                     return;
                 case MouseClick.Double:
-                    Invoke(DoubleClick, this, Mouse.GetState());
+                    Invoke(DoubleClick, this, GetMouseEventArgs());
                     return;
             }
         }

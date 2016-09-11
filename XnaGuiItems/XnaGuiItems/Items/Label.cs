@@ -1,7 +1,9 @@
 ﻿using Mentula.GuiItems.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
@@ -24,11 +26,11 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the text of the <see cref="Label"/>. 
         /// </summary>
-        public virtual string Text { get { return text; } set { TextChanged.Invoke(this, value); } }
+        public virtual string Text { get { return text; } set { TextChanged.Invoke(this, new ValueChangedEventArgs<string>(text, value)); } }
         /// <summary>
         /// Gets or sets the font used by the <see cref="Label"/>.
         /// </summary>
-        public virtual SpriteFont Font { get { return font; } set { FontChanged.Invoke(this, value); } }
+        public virtual SpriteFont Font { get { return font; } set { FontChanged.Invoke(this, new ValueChangedEventArgs<SpriteFont>(font, value)); } }
         /// <summary>
         /// Gets or sets the <see cref="Rectangle"/> used to draw the text.
         /// </summary>
@@ -53,11 +55,13 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when the value of the <see cref="Text"/> propery is changed.
         /// </summary>
-        public event TextChangedEventHandler TextChanged;
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
+        public event ValueChangedEventHandler<string> TextChanged;
         /// <summary>
         /// Occurs when the value of the <see cref="Font"/> propery is changed.
         /// </summary>
-        public event ReFontEventHandler FontChanged;
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
+        public event ValueChangedEventHandler<SpriteFont> FontChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Label"/> class with default settings.
@@ -135,10 +139,10 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="TextChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newText"> The new text of the <see cref="Label"/>. </param>
-        protected virtual void OnTextChanged(GuiItem sender, string newText)
+        /// <param name="e"> The new text of the <see cref="Label"/>. </param>
+        protected virtual void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
         {
-            text = newText;
+            text = e.NewValue;
             Refresh();
         }
 
@@ -146,10 +150,10 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="FontChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newFont"> The new <see cref="SpriteFont"/>. </param>
-        protected virtual void OnFontChanged(Label sender, SpriteFont newFont)
+        /// <param name="e"> The new <see cref="SpriteFont"/>. </param>
+        protected virtual void OnFontChanged(GuiItem sender, ValueChangedEventArgs<SpriteFont> e)
         {
-            font = newFont;
+            font = e.NewValue;
             Refresh();
         }
 
@@ -157,10 +161,10 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="GuiItem.ForeColorChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newColor"> The new <see cref="Color"/> for the foreground. </param>
-        protected override void OnForeColorChanged(GuiItem sender, Color newColor)
+        /// <param name="e"> The new <see cref="Color"/> for the foreground. </param>
+        protected override void OnForeColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
-            base.OnForeColorChanged(sender, newColor);
+            base.OnForeColorChanged(sender, e);
             if (font != null) Refresh();
         }
 
@@ -168,12 +172,12 @@ namespace Mentula.GuiItems.Items
         /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="newpos"> The new position for the <see cref="Label"/>. </param>
-        protected override void OnMove(GuiItem sender, Vector2 newpos)
+        /// <param name="e"> The new position for the <see cref="Label"/>. </param>
+        protected override void OnMove(GuiItem sender, ValueChangedEventArgs<Vector2> e)
         {
-            base.OnMove(sender, newpos);
-            foregroundRectangle.X = (int)newpos.X;
-            foregroundRectangle.Y = (int)newpos.Y;
+            base.OnMove(sender, e);
+            foregroundRectangle.X = (int)e.NewValue.X;
+            foregroundRectangle.Y = (int)e.NewValue.Y;
         }
 
         private void InitEvents()

@@ -4,7 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using static Mentula.GuiItems.Utilities;
 
 namespace Mentula.GuiItems.Items
 {
@@ -69,7 +71,8 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Occurs when a <see cref="DropDown"/> option is clicked.
         /// </summary>
-        public event ValueChangedEventHandler<int> IndexClick;
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_INDEX)]
+        public event IndexedClickEventHandler IndexClick;
 
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
@@ -96,6 +99,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
         /// <param name="bounds"> The size of the <see cref="DropDown"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
+        [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public DropDown(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds)
         {
@@ -257,12 +261,12 @@ namespace Mentula.GuiItems.Items
             Click += DropDown_Click;
         }
 
-        private void DropDown_Click(GuiItem sender, MouseState state)
+        private void DropDown_Click(GuiItem sender, MouseEventArgs e)
         {
-            int index = GetHoverIndex(state);
+            int index = GetHoverIndex(e.State);
             if (index == -1) return;
 
-            if (IndexClick != null) IndexClick(sender, index);
+            Invoke(IndexClick, this, new IndexedClickEventArgs(index));
         }
 
         private int GetHoverIndex(MouseState state)

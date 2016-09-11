@@ -55,8 +55,8 @@ namespace Mentula.GuiItems.Containers
         {
             this.font = font;
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
-            TabRectangle = DefaultTabSize;
-            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Size(), device);
+            tabRect = DefaultTabSize;
+            tabtexture = Drawing.FromColor(Color.White, tabRect.Size(), device);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Mentula.GuiItems.Containers
 
                         items[j].Refresh();
                         cur.Value.Add(items[j]);
-                        GuiItem_Move(items[j], items[j].Position);
+                        GuiItem_Move(items[j], ValueChangedEventArgs<Vector2>.Empty);
                     }
                 }
             }
@@ -215,7 +215,7 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
-        private void TextBox_Click(GuiItem sender, MouseState state)
+        private void TextBox_Click(GuiItem sender, MouseEventArgs e)
         {
             if (AutoFocus)
             {
@@ -235,7 +235,7 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
-        private void GuiItem_Move(GuiItem sender, Vector2 newPos)
+        private void GuiItem_Move(GuiItem sender, ValueChangedEventArgs<Vector2> e)
         {
             if (!UseAbsolutePosition)
             {
