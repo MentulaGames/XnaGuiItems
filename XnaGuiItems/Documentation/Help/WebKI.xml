@@ -127,6 +127,7 @@
     <HelpKINode Title="Menu(T).DrawOrderChanged Event" Url="html/c19aee2d-77d5-9df3-f9e2-9e595487b47e.htm" />
     <HelpKINode Title="MenuCollection(TGame).DrawOrderChanged Event" Url="html/36fe29ff-6029-04fc-a426-229ffc4f6334.htm" />
   </HelpKINode>
+  <HelpKINode Title="DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
   <HelpKINode Title="DropDown class">
     <HelpKINode Title="DropDown Class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
     <HelpKINode Title="about DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
@@ -487,6 +488,7 @@
   <HelpKINode Title="Menu(Of T).Draw method" Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
   <HelpKINode Title="Menu(Of T).DrawOrder property" Url="html/a0b3018a-93e3-ddc0-0a66-943b0b80bea4.htm" />
   <HelpKINode Title="Menu(Of T).DrawOrderChanged event" Url="html/c19aee2d-77d5-9df3-f9e2-9e595487b47e.htm" />
+  <HelpKINode Title="Menu(Of T).DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
   <HelpKINode Title="Menu(Of T).FindControl method" Url="html/77d1b10a-b777-c18f-7b03-5fe3dd7a737c.htm" />
   <HelpKINode Title="Menu(Of T).font field" Url="html/7df305d5-a274-4cb9-72c9-02b063a25a8d.htm" />
   <HelpKINode Title="Menu(Of T).Hide method" Url="html/b91555c4-de76-9618-a9dc-6a63dcf6802f.htm" />
@@ -525,6 +527,7 @@
   <HelpKINode Title="Menu&lt;T&gt;.Draw method" Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.DrawOrder property" Url="html/a0b3018a-93e3-ddc0-0a66-943b0b80bea4.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.DrawOrderChanged event" Url="html/c19aee2d-77d5-9df3-f9e2-9e595487b47e.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.FindControl method" Url="html/77d1b10a-b777-c18f-7b03-5fe3dd7a737c.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.font field" Url="html/7df305d5-a274-4cb9-72c9-02b063a25a8d.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Hide method" Url="html/b91555c4-de76-9618-a9dc-6a63dcf6802f.htm" />

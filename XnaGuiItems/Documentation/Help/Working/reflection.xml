@@ -509,6 +509,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" />
         <element api="E:Mentula.GuiItems.Containers.Menu`1.DrawOrderChanged" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" />
         <element api="Overload:Mentula.GuiItems.Containers.Menu`1.FindControl">
           <element api="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)" />
           <element api="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)" />
@@ -694,6 +695,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddTabContainer(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddTextBox(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" />
         <element api="Overload:Mentula.GuiItems.Containers.Menu`1.FindControl">
           <element api="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)" />
           <element api="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)" />
@@ -1387,6 +1389,32 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
       <file name="c19aee2d-77d5-9df3-f9e2-9e595487b47e" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+      <topicdata group="api" />
+      <apidata name="DrawString" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="text">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="position">
+          <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+        </parameter>
+        <parameter name="color">
+          <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+      <file name="3fd78035-1ac0-a0e2-3cfb-4b91e8a67187" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)">
       <topicdata group="api" />

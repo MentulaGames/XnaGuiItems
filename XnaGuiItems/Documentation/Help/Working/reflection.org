@@ -226,6 +226,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Show" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.Visible" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle" />
@@ -800,6 +801,27 @@
           <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
         </member>
       </implements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+      <apidata name="DrawString" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="text">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+        <parameter name="position">
+          <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+        </parameter>
+        <parameter name="color">
+          <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+        </parameter>
+      </parameters>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Containers" />

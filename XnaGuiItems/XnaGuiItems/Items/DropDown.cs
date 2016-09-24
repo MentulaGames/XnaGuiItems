@@ -176,7 +176,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            if (Utilities.suppressRefresh) return;
+            if (suppressRefresh) return;
 
             if (AutoSize)
             {
@@ -272,11 +272,7 @@ namespace Mentula.GuiItems.Items
         private int GetHoverIndex(MouseState state)
         {
             int relativeY = state.Y - (int)Position.Y - headerTexture.Height;
-            int lineHeight = headerTexture.Height;
-
-            if (relativeY < 0) return -1;
-            int remain = relativeY % lineHeight;
-            return relativeY / lineHeight;
+            return relativeY < 0 ? -1 : relativeY / headerTexture.Height;
         }
     }
 }

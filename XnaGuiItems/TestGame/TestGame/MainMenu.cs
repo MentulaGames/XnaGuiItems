@@ -3,12 +3,16 @@ using Mentula.GuiItems.Core;
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Lbl = System.Collections.Generic.KeyValuePair<string, Microsoft.Xna.Framework.Color?>;
 
 namespace TestGame
 {
     public class MainMenu : Menu<Game1>
     {
+        public static readonly Color ButtonBackColor = new Color(150, 150, 130, 150);
+        public static readonly int TxtW = 150, TxtH = 25;
+
         public MainMenu(Game1 game)
             : base(game)
         {
@@ -17,12 +21,15 @@ namespace TestGame
 
         public override void Initialize()
         {
-            TextBox txt = AddTextBox();
-            txt.Size = new Size(150, 25);
-            txt.Text = "UserName";
-            txt.MultiLine = true;
-            txt.Name = "TxtName";
-            txt.MoveRelative(Anchor.Bottom | Anchor.Left);
+            int txtHM = TxtH >> 1;
+
+            DropDown dd = AddDropDown();
+            dd.MoveRelative(Anchor.Middle);
+            dd.AutoSize = true;
+
+            dd.HeaderText = "Corpse";
+            dd.AddOption("Test1");
+            dd.AddOption("Test2");
 
             base.Initialize();
         }

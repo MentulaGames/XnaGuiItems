@@ -189,5 +189,10 @@ namespace Mentula.GuiItems
         {
             return new string(passChar, str.Length);
         }
+
+        internal static float GetHeight(this SpriteFont font)
+        {
+            return font.MeasureString("Y").Y;
+        }
     }
 }

@@ -310,6 +310,23 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
+        /// <summary>
+        /// Draws the specified string with the default font.
+        /// </summary>
+        /// <param name="text"> The string to be displayed. </param>
+        /// <param name="position"> The upper left corner of the strings position. </param>
+        /// <param name="color"> The color of the string. </param>
+        /// <remarks>
+        /// This method is used for drawing debug values.
+        /// Drawing with the underlying spritebatch in menu's is not recomended.
+        /// </remarks>
+        protected void DrawString(string text, Vector2 position, Color color)
+        {
+            batch.Begin();
+            batch.DrawString(font, text, position, color);
+            batch.End();
+        }
+
         private void TextBox_Click(GuiItem sender, MouseEventArgs e)
         {
             if (autoFocusTextbox)

@@ -434,6 +434,18 @@
             </summary>
       <param name="gameTime"> Time elapsed since the last call to Draw. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+      <summary>
+            Draws the specified string with the default font.
+            </summary>
+      <param name="text"> The string to be displayed. </param>
+      <param name="position"> The upper left corner of the strings position. </param>
+      <param name="color"> The color of the string. </param>
+      <remarks>
+            This method is used for drawing debug values.
+            Drawing with the underlying spritebatch in menu's is not recomended.
+            </remarks>
+    </member>
     <member name="T:Mentula.GuiItems.Containers.TabContainer">
       <summary>
             A <see cref="T:Mentula.GuiItems.Core.GuiItem" /> container with tabs.

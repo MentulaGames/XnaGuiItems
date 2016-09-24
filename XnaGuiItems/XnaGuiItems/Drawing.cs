@@ -56,7 +56,7 @@ namespace Mentula.GuiItems
             sb.Begin();
             for (int i = lineStart; i < drawAbleText.Length; i++)
             {
-                float y = 1 + (i - lineStart) * font.MeasureString("a").Y;
+                float y = 1 + (i - lineStart) * font.GetHeight();
                 sb.DrawString(font, drawAbleText[i], new Vector2(1, y), color, 0f, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
             }
             sb.End();
@@ -68,6 +68,7 @@ namespace Mentula.GuiItems
             texture.SetData(colorData);
 
             target.Dispose();
+            sb.Dispose();
 
             return texture;
         }

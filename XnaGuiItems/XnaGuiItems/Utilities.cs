@@ -151,6 +151,7 @@ namespace Mentula.GuiItems
 
             if ((dUpd = control as IDeltaUpdate) != null) dUpd.Update(mState, delta);
             else if ((dkUpd = control as IDeltaKeyboardUpdate) != null) dkUpd.Update(mState, kState, delta);
+            else control.Update(mState);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

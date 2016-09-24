@@ -36,6 +36,7 @@
           <topic id="M:Mentula.GuiItems.Containers.Menu`1.Dispose(System.Boolean)" project="XnaGuiItems" file="cc3c6aad-63d2-687e-61f6-2d215ae61892" />
         </topic>
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" project="XnaGuiItems" file="e95a641d-4388-93db-6e2f-abce4b8ed036" />
+        <topic id="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" project="XnaGuiItems" file="3fd78035-1ac0-a0e2-3cfb-4b91e8a67187" />
         <topic id="Overload:Mentula.GuiItems.Containers.Menu`1.FindControl" project="XnaGuiItems" file="77d1b10a-b777-c18f-7b03-5fe3dd7a737c">
           <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)" project="XnaGuiItems" file="76651ac5-9faf-d3b9-145c-34625a62d06c" />
           <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)" project="XnaGuiItems" file="57c8eae6-753a-5f08-8c55-e6751ea0d1b0" />

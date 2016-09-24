@@ -33,6 +33,7 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" type="API" />
   <topic id="E:Mentula.GuiItems.Containers.Menu`1.DrawOrderChanged" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)" type="API" />
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.font" type="API" />

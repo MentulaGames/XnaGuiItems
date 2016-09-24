@@ -20,5 +20,11 @@ namespace TestGame
             menu.Show();
             base.Initialize();
         }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.LimeGreen);
+            base.Draw(gameTime);
+        }
     }
 }
