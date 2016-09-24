@@ -18,11 +18,12 @@ namespace Mentula.GuiItems.Core
             clsInput = new EmptyInput();
         }
 
-        public string GetInputString(KeyboardState state, bool allowReturn)
+        public string GetInputString(KeyboardState state, bool allowReturn, out bool confirmed)
         {
             Keys[] keys = state.GetPressedKeys();
             bool shift = clsInput.IsShiftPressed(keys) || caps;
             bool ctrl = clsInput.IsControlPressed(keys);
+            confirmed = false;
 
             if (state.IsKeyDown(Keys.A))
             {
@@ -445,6 +446,7 @@ namespace Mentula.GuiItems.Core
                 if (clsInput.Return_KeyState == KeyState.Down)
                 {
                     if (allowReturn) keyboadString += Environment.NewLine;
+                    else confirmed = true;
                     clsInput.Return_KeyState = KeyState.Up;
                 }
             }

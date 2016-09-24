@@ -3481,6 +3481,7 @@
         <element api="T:Mentula.GuiItems.Core.FlickerStyle" />
         <element api="T:Mentula.GuiItems.Core.MouseClick" />
         <element api="T:Mentula.GuiItems.Core.Anchor" />
+        <element api="T:Mentula.GuiItems.Core.GuiItemEventHandler" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventHandler" />
         <element api="T:Mentula.GuiItems.Core.MouseEventHandler" />
         <element api="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" />
@@ -6343,6 +6344,26 @@
         </type>
       </containers>
       <file name="26eac6a4-b546-fea2-0dc8-373cefd23b3f" />
+    </api>
+    <api id="T:Mentula.GuiItems.Core.GuiItemEventHandler">
+      <topicdata group="api" />
+      <apidata name="GuiItemEventHandler" group="type" subgroup="delegate" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </parameter>
+        <parameter name="e">
+          <type api="T:System.EventArgs" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+      </containers>
+      <file name="2fd8a170-b016-ea2a-c435-82e286f13e3a" />
     </api>
     <api id="T:Mentula.GuiItems.Core.IndexedClickEventArgs">
       <topicdata group="api" />
@@ -14257,6 +14278,7 @@
           <element api="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
           <element api="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         </element>
+        <element api="E:Mentula.GuiItems.Items.TextBox.Confirmed" />
         <element api="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize" />
         <element api="M:Mentula.GuiItems.Items.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" />
@@ -14463,6 +14485,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.Label.FontChanged" />
         <element api="E:Mentula.GuiItems.Items.Label.TextChanged" />
+        <element api="E:Mentula.GuiItems.Items.TextBox.Confirmed" />
         <element api="E:Mentula.GuiItems.Items.TextBox.FocusChanged" />
       </elements>
       <containers>
@@ -14576,6 +14599,27 @@
         <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
       </containers>
       <file name="2b2b5b4f-416e-8e2c-3d22-9fe1a2251e90" />
+    </api>
+    <api id="E:Mentula.GuiItems.Items.TextBox.Confirmed">
+      <topicdata group="api" />
+      <apidata name="Confirmed" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Confirmed" />
+      <remover name="remove_Confirmed" />
+      <eventhandler>
+        <type api="T:Mentula.GuiItems.Core.GuiItemEventHandler" ref="true" />
+      </eventhandler>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
+      </containers>
+      <file name="7b9a3fb0-0972-c6a4-b424-de9a7fc88197" />
     </api>
     <api id="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize">
       <topicdata group="api" />

@@ -727,6 +727,15 @@
             The bottom of the screen.
             </summary>
     </member>
+    <member name="T:Mentula.GuiItems.Core.GuiItemEventHandler">
+      <summary>
+            Represents the method that will handle the default <see cref="T:Mentula.GuiItems.Core.GuiItem" /> events.
+            </summary>
+      <param name="sender">
+      </param>
+      <param name="e">
+      </param>
+    </member>
     <member name="T:Mentula.GuiItems.Core.IndexedClickEventHandler">
       <summary>
             Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
@@ -1987,6 +1996,11 @@
     <member name="E:Mentula.GuiItems.Items.TextBox.FocusChanged">
       <summary>
             Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.TextBox.Focused" /> propery is changed.
+            </summary>
+    </member>
+    <member name="E:Mentula.GuiItems.Items.TextBox.Confirmed">
+      <summary>
+            Occures when return is pressed on a non <see cref="P:Mentula.GuiItems.Items.TextBox.MultiLine" /><see cref="T:Mentula.GuiItems.Items.TextBox" />.
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused">

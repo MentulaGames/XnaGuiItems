@@ -56,6 +56,12 @@ namespace Mentula.GuiItems.Items
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
         public event ValueChangedEventHandler<bool> FocusChanged;
 
+        /// <summary>
+        /// Occures when return is pressed on a non <see cref="MultiLine"/> <see cref="TextBox"/>.
+        /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST)]
+        public event GuiItemEventHandler Confirmed;
+
         /// <summary> The <see cref="Texture2D"/> used for drawing the foreground (with the focus indicator). </summary>
         protected Texture2D foregoundTextureFocused;
 
@@ -112,9 +118,11 @@ namespace Mentula.GuiItems.Items
             {
                 if (Focused)
                 {
-                    string newText = inputHandler.GetInputString(kState, MultiLine);
-                    if (Text != newText) Text = newText;
+                    bool confirmed = false;
+                    string newText = inputHandler.GetInputString(kState, MultiLine, out confirmed);
 
+                    if (Text != newText) Text = newText;
+                    if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
                     if (FlickerStyle == FlickerStyle.None) return;
 
                     time += deltaTime;

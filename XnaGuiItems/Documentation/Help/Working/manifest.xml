@@ -211,6 +211,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Owner" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Remove(Mentula.GuiItems.Core.GuiItem)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.RemoveAt(System.Int32)" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.GuiItemEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.IndexedClickEventArgs" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.IndexedClickEventArgs" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.IndexedClickEventArgs" type="API" />
@@ -425,6 +426,7 @@
   <topic id="Overload:Mentula.GuiItems.Items.TextBox.Update" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" type="API" />

@@ -2086,6 +2086,7 @@
         <element api="T:Mentula.GuiItems.Core.FlickerStyle" />
         <element api="T:Mentula.GuiItems.Core.MouseClick" />
         <element api="T:Mentula.GuiItems.Core.Anchor" />
+        <element api="T:Mentula.GuiItems.Core.GuiItemEventHandler" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventHandler" />
         <element api="T:Mentula.GuiItems.Core.MouseEventHandler" />
         <element api="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" />
@@ -4078,6 +4079,22 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" ref="true">
           <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </type>
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.GuiItemEventHandler">
+      <apidata name="GuiItemEventHandler" group="type" subgroup="delegate" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </parameter>
+        <parameter name="e">
+          <type api="T:System.EventArgs" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
       </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.IndexedClickEventArgs">
@@ -8479,6 +8496,7 @@
         <element api="P:Mentula.GuiItems.Items.TextBox.MinimumSize" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MaximumSize" />
         <element api="E:Mentula.GuiItems.Items.TextBox.FocusChanged" />
+        <element api="E:Mentula.GuiItems.Items.TextBox.Confirmed" />
         <element api="F:Mentula.GuiItems.Items.Label.font" />
         <element api="F:Mentula.GuiItems.Items.Label.foregroundRectangle" />
         <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
@@ -8650,6 +8668,22 @@
           <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
         </parameter>
       </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
+      </containers>
+    </api>
+    <api id="E:Mentula.GuiItems.Items.TextBox.Confirmed">
+      <apidata name="Confirmed" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_Confirmed" />
+      <remover name="remove_Confirmed" />
+      <eventhandler>
+        <type api="T:Mentula.GuiItems.Core.GuiItemEventHandler" ref="true" />
+      </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Items" />

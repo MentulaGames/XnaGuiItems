@@ -1,7 +1,15 @@
 ﻿using Mentula.GuiItems.Items;
+using System;
 
 namespace Mentula.GuiItems.Core
 {
+    /// <summary>
+    /// Represents the method that will handle the default <see cref="GuiItem"/> events.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public delegate void GuiItemEventHandler(GuiItem sender, EventArgs e);
+
     /// <summary>
     /// Represents the method that will handle the <see cref="DropDown.IndexClick"/> event.
     /// </summary>

@@ -210,6 +210,7 @@
         <topic id="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.RemoveAt(System.Int32)" project="XnaGuiItems" file="26eac6a4-b546-fea2-0dc8-373cefd23b3f" />
       </topic>
     </topic>
+    <topic id="T:Mentula.GuiItems.Core.GuiItemEventHandler" project="XnaGuiItems" file="2fd8a170-b016-ea2a-c435-82e286f13e3a" />
     <topic id="T:Mentula.GuiItems.Core.IndexedClickEventArgs" project="XnaGuiItems" file="c9dcc97e-e7b7-d37c-0590-c9f7b84de52a">
       <topic id="M:Mentula.GuiItems.Core.IndexedClickEventArgs.#ctor(System.Int32)" project="XnaGuiItems" file="4991ae8f-001c-4adb-52a2-990dba536cb6" />
       <topic id="Methods.T:Mentula.GuiItems.Core.IndexedClickEventArgs" project="XnaGuiItems" file="45ca88fd-c9c2-0b42-fdce-0301192f1f65" />
@@ -501,6 +502,7 @@
         </topic>
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="00d77101-0c59-077c-8910-c258c5774f4a">
+        <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" project="XnaGuiItems" file="7b9a3fb0-0972-c6a4-b424-de9a7fc88197" />
         <topic id="E:Mentula.GuiItems.Items.TextBox.FocusChanged" project="XnaGuiItems" file="1b7b51e8-baaf-9764-5daf-fb79967c668f" />
       </topic>
       <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="ee23dc99-2728-f5cb-4f2a-5ae65b5801f9">

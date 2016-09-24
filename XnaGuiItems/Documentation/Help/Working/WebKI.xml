@@ -67,6 +67,7 @@
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
   <HelpKINode Title="Click event" Url="html/ca73ba8a-0f77-b762-0b1d-a9800c2b5a86.htm" />
   <HelpKINode Title="clickTexture field" Url="html/5d967f22-7307-7b0f-c4ff-99e2e02f0a7c.htm" />
+  <HelpKINode Title="Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
   <HelpKINode Title="Contains method" Url="html/1135fa93-fb5d-49a6-66a5-2bf3c4d2c56c.htm" />
   <HelpKINode Title="controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="CopyTo method" Url="html/1dec5d21-67ed-6b08-544b-9fc58c67422c.htm" />
@@ -296,6 +297,7 @@
     <HelpKINode Title="methods" Url="html/0b22c0f7-8144-d0ab-d500-a56b4565c6ed.htm" />
     <HelpKINode Title="properties" Url="html/3fa8dad7-5632-a7a4-f79e-671289152ab0.htm" />
   </HelpKINode>
+  <HelpKINode Title="GuiItemEventHandler delegate" Url="html/2fd8a170-b016-ea2a-c435-82e286f13e3a.htm" />
   <HelpKINode Title="HeaderBackgroundColor property" Url="html/5c83c3ba-16bd-b6f2-6e0c-3480f2f7ee74.htm" />
   <HelpKINode Title="HeaderText property" Url="html/c9a3e4e0-66f7-dd5c-9d10-51f67f01016d.htm" />
   <HelpKINode Title="Height property">
@@ -418,6 +420,7 @@
   <HelpKINode Title="Mentula.GuiItems.Core.FlickerStyle enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem class" Url="html/4288f473-0e01-8716-de8c-dec4dcd420a8.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem.GuiItemCollection class" Url="html/6d7b7706-c897-63d9-9f6e-55773706f532.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.GuiItemEventHandler delegate" Url="html/2fd8a170-b016-ea2a-c435-82e286f13e3a.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.IndexedClickEventArgs class" Url="html/c9dcc97e-e7b7-d37c-0590-c9f7b84de52a.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.IndexedClickEventHandler delegate" Url="html/e8ab361b-bd72-1793-dc13-d028129990d9.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Interfaces namespace" Url="html/95ec2fca-db98-81a3-5664-204677ac3caf.htm" />
@@ -821,6 +824,7 @@
     <HelpKINode Title="methods" Url="html/1d795d9e-538c-e985-2d00-0afc8d59cee0.htm" />
     <HelpKINode Title="properties" Url="html/e22c3ae1-9a95-3b98-a082-f79304a908f5.htm" />
   </HelpKINode>
+  <HelpKINode Title="TextBox.Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
   <HelpKINode Title="TextBox.DefaultMinimumSize property" Url="html/03f3a0a9-5c2b-a750-c55a-bb42fbff10e7.htm" />
   <HelpKINode Title="TextBox.Draw method" Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   <HelpKINode Title="TextBox.FlickerStyle property" Url="html/07818976-b10f-d8f2-5bdd-ae45cf7fa354.htm" />

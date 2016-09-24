@@ -30,6 +30,7 @@ namespace Mentula.GuiItems
             CHECKID_EVENT = "CA1009:DeclareEventHandlersCorrectly",
             CHECKID_CALL = "CA2214:DoNotCallOverridableMethodsInConstructors",
             JUST_VIRT_FINE = "Missing calls causes no harm in this instance.",
+            JUST = "Using strong-typed GuiItemEventHandler event handler pattern.",
             JUST_INDEX = "Using strong-typed IndexedClickEventHandler<GuiItem, IndexedClickEventArgs> event handler pattern.",
             JUST_MOUSE = "Using strong-typed MouseEventHandler<GuiItem, MouseEventArgs> event handler pattern.",
             JUST_VALUE = "Using strong-typed ValueChangedEventHandler<GuiItem, ValueChangedEventArgs> event handler pattern.";
