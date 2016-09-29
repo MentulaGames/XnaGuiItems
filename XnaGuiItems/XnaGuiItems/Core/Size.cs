@@ -1,9 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using static Mentula.GuiItems.Utilities;
-
-namespace Mentula.GuiItems.Core
+﻿namespace Mentula.GuiItems.Core
 {
+    using Microsoft.Xna.Framework;
+    using System;
+    using static Utilities;
+
     /// <summary>
     /// Stores an ordered pair of integers, wich specify a Height and Width.
     /// </summary>
@@ -46,6 +46,48 @@ namespace Mentula.GuiItems.Core
         /// <returns> A Size structure that is the result of the subtraction operation. </returns>
         public static Size operator -(Size sz1, Size sz2) { return Subtract(sz1, sz2); }
         /// <summary>
+        /// Divides the width and height from the Size structure to the specified value.
+        /// </summary>
+        /// <param name="sz"> The Size to divide. </param>
+        /// <param name="v"> The value to divide. </param>
+        /// <returns> A Size structure that is the result of the division operation. </returns>
+        public static Size operator /(Size sz, int v) { return Divide(sz, v); }
+        /// <summary>
+        /// Divides the width and height of one Size structure from the width and height of another Size structure.
+        /// </summary>
+        /// <param name="sz1"> The first Size to divide. </param>
+        /// <param name="sz2"> The second Size to divide. </param>
+        /// <returns> A Size structure that is the result of the division operation. </returns>
+        public static Size operator /(Size sz1, Size sz2) { return Divide(sz1, sz2); }
+        /// <summary>
+        /// Multiplies the width and height from the Size structure to the specified value.
+        /// </summary>
+        /// <param name="sz"> The Size to multiply. </param>
+        /// <param name="v"> The value to multiply. </param>
+        /// <returns> A Size structure that is the result of the multiplication operation. </returns>
+        public static Size operator *(Size sz, int v) { return Multiply(sz, v); }
+        /// <summary>
+        /// Multiplies the width and height of one Size structure from the width and height of another Size structure.
+        /// </summary>
+        /// <param name="sz1"> The first Size to multiply. </param>
+        /// <param name="sz2"> The second Size to multiply. </param>
+        /// <returns> A Size structure that is the result of the multiplication operation. </returns>
+        public static Size operator *(Size sz1, Size sz2) { return Multiply(sz1, sz2); }
+        /// <summary>
+        /// Bit shifts the width and height of the Size structure a specified value to the left.
+        /// </summary>
+        /// <param name="sz"> The Size to shift. </param>
+        /// <param name="v"> The value to shift by. </param>
+        /// <returns> A Size structure that is the result of the bitshift operation. </returns>
+        public static Size operator <<(Size sz, int v) { return new Size(sz.Width << v, sz.Height << v); }
+        /// <summary>
+        /// Bit shifts the width and height of the Size structure a specified value to the right.
+        /// </summary>
+        /// <param name="sz"> The Size to shift. </param>
+        /// <param name="v"> The value to shift by. </param>
+        /// <returns> A Size structure that is the result of the bitshift operation. </returns>
+        public static Size operator >>(Size sz, int v) { return new Size(sz.Width >> v, sz.Height >> v); }
+        /// <summary>
         /// Tests whether two <see cref="Size"/> structures are equal.
         /// </summary>
         /// <param name="sz1"> The Size structure on the left side of the equality operator. </param>
@@ -61,7 +103,17 @@ namespace Mentula.GuiItems.Core
         public static bool operator !=(Size sz1, Size sz2) { return !Equals(sz1, sz2); }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Size"/> structure fomr the specified dimensions.
+        /// Initializes a new instance of the <see cref="Size"/> structure the specified dimension.
+        /// </summary>
+        /// <param name="value"> The value used for initializing the <see cref="Size"/>. </param>
+        public Size(int value)
+        {
+            Height = value;
+            Width = value;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Size"/> structure from the specified dimensions.
         /// </summary>
         /// <param name="width"> The width component of the new <see cref="Size"/>. </param>
         /// <param name="height"> The height component of the new <see cref="Size"/>. </param>
@@ -93,14 +145,25 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
-        /// Subtracts the width and height of one Size structure from the width and height of another Size structure.
+        /// Divides the width and height from the Size structure to the specified value.
         /// </summary>
-        /// <param name="size1"> The first Size to subtract. </param>
-        /// <param name="size2"> The second Size to subtract. </param>
-        /// <returns> A Size structure that is the result of the subtraction operation. </returns>
-        public static Size Subtract(Size size1, Size size2)
+        /// <param name="size"> The Size to divide. </param>
+        /// <param name="value"> The value to divide. </param>
+        /// <returns> A Size structure that is the result of the division operation. </returns>
+        public static Size Divide(Size size, int value)
         {
-            return new Size(size1.Width - size2.Width, size1.Height - size2.Height);
+            return new Size(size.Width / value, size.Height / value);
+        }
+
+        /// <summary>
+        /// Divides the width and height of one Size structure from the width and height of another Size structure.
+        /// </summary>
+        /// <param name="size1"> The first Size to divide. </param>
+        /// <param name="size2"> The second Size to divide. </param>
+        /// <returns> A Size structure that is the result of the division operation. </returns>
+        public static Size Divide(Size size1, Size size2)
+        {
+            return new Size(size1.Width / size2.Width, size1.Height / size2.Height);
         }
 
         /// <summary>
@@ -125,6 +188,28 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
+        /// Multiplies the width and height from the Size structure to the specified value.
+        /// </summary>
+        /// <param name="size"> The Size to multiply. </param>
+        /// <param name="value"> The value to multiply. </param>
+        /// <returns> A Size structure that is the result of the multiplication operation. </returns>
+        public static Size Multiply(Size size, int value)
+        {
+            return new Size(size.Width * value, size.Height * value);
+        }
+
+        /// <summary>
+        /// Multiplies the width and height of one Size structure from the width and height of another Size structure.
+        /// </summary>
+        /// <param name="size1"> The first Size to multiply. </param>
+        /// <param name="size2"> The second Size to multiply. </param>
+        /// <returns> A Size structure that is the result of the multiplication operation. </returns>
+        public static Size Multiply(Size size1, Size size2)
+        {
+            return new Size(size1.Width * size2.Width, size1.Height * size2.Height);
+        }
+
+        /// <summary>
         /// Returns a hash code for this Size structure.
         /// </summary>
         /// <returns> An integer value that specifies a hash value for this Size structure. </returns>
@@ -140,12 +225,32 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
+        /// Subtracts the width and height of one Size structure from the width and height of another Size structure.
+        /// </summary>
+        /// <param name="size1"> The first Size to subtract. </param>
+        /// <param name="size2"> The second Size to subtract. </param>
+        /// <returns> A Size structure that is the result of the subtraction operation. </returns>
+        public static Size Subtract(Size size1, Size size2)
+        {
+            return new Size(size1.Width - size2.Width, size1.Height - size2.Height);
+        }
+
+        /// <summary>
         /// Creates a human-readable string that represents this Size structure.
         /// </summary>
         /// <returns> A string that represents this <see cref="Size"/>. </returns>
         public override string ToString()
         {
             return $"Width:{Width} Height:{Height}";
+        }
+
+        /// <summary>
+        /// Creates a 2 dimentional vector that represents this Size structure.
+        /// </summary>
+        /// <returns> A <see cref="Vector2"/> with the <see cref="Width"/> as <see cref="Vector2.X"/> and <see cref="Height"/> as <see cref="Vector2.Y"/>. </returns>
+        public Vector2 ToVector2()
+        {
+            return new Vector2(Width, Height);
         }
     }
 }

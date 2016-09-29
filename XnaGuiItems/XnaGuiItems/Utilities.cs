@@ -1,16 +1,16 @@
-﻿using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Windows.Forms;
-
-namespace Mentula.GuiItems
+﻿namespace Mentula.GuiItems
 {
+    using Core;
+    using Core.Interfaces;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Diagnostics;
+    using System.Reflection;
+    using System.Runtime.CompilerServices;
+    using System.Threading;
+    using System.Windows.Forms;
+
     /// <summary>
     /// Contains utilitie functions for graphical use.
     /// </summary>

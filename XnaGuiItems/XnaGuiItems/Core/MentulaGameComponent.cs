@@ -1,7 +1,7 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace Mentula.GuiItems.Core
+﻿namespace Mentula.GuiItems.Core
 {
+    using Microsoft.Xna.Framework;
+
     /// <summary> Base class for all Mentula game components. </summary>
     /// <typeparam name="TGame"> The specified game class. </typeparam>
 #if !DEBUG

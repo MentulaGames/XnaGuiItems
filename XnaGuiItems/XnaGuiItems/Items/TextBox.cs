@@ -1,16 +1,16 @@
-﻿using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using static Mentula.GuiItems.Utilities;
-using Args = Mentula.GuiItems.Core.ValueChangedEventArgs<bool>;
-
-namespace Mentula.GuiItems.Items
+﻿namespace Mentula.GuiItems.Items
 {
+    using Core;
+    using Core.Interfaces;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using static Utilities;
+    using Args = Core.ValueChangedEventArgs<bool>;
+
     /// <summary>
     /// A textbox used for displaying and accepting text.
     /// </summary>

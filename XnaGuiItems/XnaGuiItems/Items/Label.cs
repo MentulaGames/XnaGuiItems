@@ -1,12 +1,12 @@
-﻿using Mentula.GuiItems.Core;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using static Mentula.GuiItems.Utilities;
-
-namespace Mentula.GuiItems.Items
+﻿namespace Mentula.GuiItems.Items
 {
+    using Core;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using static Utilities;
+
     /// <summary>
     /// A label used for displaying text.
     /// </summary>
@@ -92,7 +92,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            if (Utilities.suppressRefresh) return;
+            if (suppressRefresh) return;
 
             if (AutoSize)
             {

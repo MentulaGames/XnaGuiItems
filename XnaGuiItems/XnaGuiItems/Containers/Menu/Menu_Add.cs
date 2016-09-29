@@ -1,11 +1,11 @@
-﻿using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Items;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-
-namespace Mentula.GuiItems.Containers
+﻿namespace Mentula.GuiItems.Containers
 {
+    using Core;
+    using Items;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using System;
+
     public partial class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
         where T : Game
     {
@@ -107,6 +107,17 @@ namespace Mentula.GuiItems.Containers
             TabContainer tbC = new TabContainer(device, Font ?? font);
             controlls.Add(tbC);
             return tbC;
+        }
+
+        /// <summary>
+        /// Adds a <see cref="PictureBox"/> to the <see cref="Menu{T}"/>.
+        /// </summary>
+        /// <returns> The <see cref="PictureBox"/> created. </returns>
+        public PictureBox AddPictureBox()
+        {
+            PictureBox picBox = new PictureBox(device);
+            controlls.Add(picBox);
+            return picBox;
         }
 
         private void ThrowNoFont()

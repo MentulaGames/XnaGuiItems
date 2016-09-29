@@ -1,9 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using static Mentula.GuiItems.Utilities;
-
-namespace Mentula.GuiItems.Core
+﻿namespace Mentula.GuiItems.Core
 {
+    using System;
+    using System.Diagnostics;
+    using static Utilities;
+
     /// <summary> A container for progress data (100% base). </summary>
 #if !DEBUG
     [DebuggerStepThrough]

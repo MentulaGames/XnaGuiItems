@@ -1,8 +1,8 @@
-﻿using Microsoft.Xna.Framework.Input;
-using System;
-
-namespace Mentula.GuiItems.Core
+﻿namespace Mentula.GuiItems.Core
 {
+    using Microsoft.Xna.Framework.Input;
+    using System;
+
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif

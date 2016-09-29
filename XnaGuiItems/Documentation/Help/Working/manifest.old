@@ -21,6 +21,7 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddProgresBar" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddSlider" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddTabContainer(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
@@ -226,28 +227,45 @@
   <topic id="M:Mentula.GuiItems.Core.ProgressData.op_Inequality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.ProgressData.ToString" type="API" />
   <topic id="P:Mentula.GuiItems.Core.ProgressData.Value" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.ResizeMode" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Size" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Size" type="API" />
   <topic id="Operators.T:Mentula.GuiItems.Core.Size" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.Size" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.Size" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.Size.#ctor" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.Divide" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.Size.Equals" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.Multiply" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.op_Division" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.op_Multiply" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.Size.Empty" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.GetHashCode" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Size.Height" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Size.IsEmpty" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.ToString" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.ToVector2" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Size.Width" type="API" />
   <topic id="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" type="API" />
@@ -340,6 +358,20 @@
   <topic id="M:Mentula.GuiItems.Items.Label.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Label.Text" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Label.TextChanged" type="API" />
+  <topic id="T:Mentula.GuiItems.Items.PictureBox" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Items.PictureBox" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Items.PictureBox" type="API" />
+  <topic id="Events.T:Mentula.GuiItems.Items.PictureBox" type="API" />
+  <topic id="Fields.T:Mentula.GuiItems.Items.PictureBox" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Items.PictureBox.#ctor" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.PictureBox.Image" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.Refresh" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.PictureBox.SizeMode" type="API" />
+  <topic id="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" type="API" />
   <topic id="T:Mentula.GuiItems.Items.ProgressBar" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Items.ProgressBar" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Items.ProgressBar" type="API" />

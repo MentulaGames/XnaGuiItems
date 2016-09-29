@@ -1,13 +1,13 @@
-﻿using Mentula.GuiItems.Core;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Diagnostics.CodeAnalysis;
-using static Mentula.GuiItems.Utilities;
-using Args = Mentula.GuiItems.Core.ValueChangedEventArgs<int>;
-
-namespace Mentula.GuiItems.Items
+﻿namespace Mentula.GuiItems.Items
 {
+    using Core;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System.Diagnostics.CodeAnalysis;
+    using static Utilities;
+    using Args = Core.ValueChangedEventArgs<int>;
+
     /// <summary>
     /// A slider used for setting rough values like volume.
     /// </summary>

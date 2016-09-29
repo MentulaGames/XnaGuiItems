@@ -1,18 +1,18 @@
-﻿using Mentula.GuiItems.Core;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Mentula.GuiItems
+﻿namespace Mentula.GuiItems
 {
+    using Core;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
     internal static class Drawing
     {
-        internal static Texture2D FromColor(Color color, Size size, GraphicsDevice device)
+        public static Texture2D FromColor(Color color, Size size, GraphicsDevice device)
         {
             Texture2D texture = new Texture2D(device, size.Width, size.Height);
 
@@ -28,7 +28,7 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromColor(Color color, Size size, Rectangle destinationRectangle, GraphicsDevice device)
+        public static Texture2D FromColor(Color color, Size size, Rectangle destinationRectangle, GraphicsDevice device)
         {
             Texture2D texture = new Texture2D(device, size.Width, size.Height);
             Color[] data = new Color[size.Width * size.Height];
@@ -44,7 +44,7 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
+        public static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
         {
             string[] drawAbleText = multiLine ? text.Split(new string[1] { "\n" }, StringSplitOptions.None) : new string[1] { text };
             RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
@@ -73,7 +73,7 @@ namespace Mentula.GuiItems
             return texture;
         }
 
-        internal static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, GraphicsDevice device)
+        public static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, GraphicsDevice device)
         {
             RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
             SpriteBatch sb = new SpriteBatch(device);

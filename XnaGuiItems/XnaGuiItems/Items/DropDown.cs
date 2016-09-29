@@ -1,15 +1,15 @@
-﻿using Mentula.GuiItems.Core;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using static Mentula.GuiItems.Utilities;
-
-namespace Mentula.GuiItems.Items
+﻿namespace Mentula.GuiItems.Items
 {
+    using Core;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using static Utilities;
+
     /// <summary>
     /// A Dropdown with clickable childs.
     /// </summary>

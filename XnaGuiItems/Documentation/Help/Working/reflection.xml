@@ -498,6 +498,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddProgresBar" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddSlider" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddTabContainer(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
@@ -690,6 +691,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddProgresBar" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddSlider" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddTabContainer(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
@@ -1116,6 +1118,24 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
       <file name="51e43f95-61c8-018e-0308-f36bf814e1c6" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox">
+      <topicdata group="api" />
+      <apidata name="AddPictureBox" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+      <file name="ccc28cb0-62b2-d441-bfd1-e6959aeefb90" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.Menu`1.AddProgresBar">
       <topicdata group="api" />
@@ -3477,16 +3497,17 @@
         <element api="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" />
         <element api="T:Mentula.GuiItems.Core.MouseEventArgs" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventArgs" />
+        <element api="T:Mentula.GuiItems.Core.GuiItem" />
+        <element api="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />
         <element api="T:Mentula.GuiItems.Core.BorderStyle" />
         <element api="T:Mentula.GuiItems.Core.FlickerStyle" />
         <element api="T:Mentula.GuiItems.Core.MouseClick" />
         <element api="T:Mentula.GuiItems.Core.Anchor" />
+        <element api="T:Mentula.GuiItems.Core.ResizeMode" />
         <element api="T:Mentula.GuiItems.Core.GuiItemEventHandler" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventHandler" />
         <element api="T:Mentula.GuiItems.Core.MouseEventHandler" />
         <element api="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" />
-        <element api="T:Mentula.GuiItems.Core.GuiItem" />
-        <element api="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" />
         <element api="T:Mentula.GuiItems.Core.InvokeException" />
         <element api="T:Mentula.GuiItems.Core.MentulaGameComponent`1" />
         <element api="T:Mentula.GuiItems.Core.ProgressData" />
@@ -3858,6 +3879,7 @@
           <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
           <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
           <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
+          <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
           <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
         </descendents>
       </family>
@@ -8885,6 +8907,123 @@
       </containers>
       <file name="7a19a5e2-8c97-2a5a-f568-3f69ec4eff72" />
     </api>
+    <api id="T:Mentula.GuiItems.Core.ResizeMode">
+      <topicdata group="api" />
+      <apidata name="ResizeMode" group="type" subgroup="enumeration" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <enumerationbase>
+        <type api="T:System.Byte" ref="false" />
+      </enumerationbase>
+      <elements>
+        <element api="F:Mentula.GuiItems.Core.ResizeMode.Normal" />
+        <element api="F:Mentula.GuiItems.Core.ResizeMode.AutoSize" />
+        <element api="F:Mentula.GuiItems.Core.ResizeMode.CenterImage" />
+        <element api="F:Mentula.GuiItems.Core.ResizeMode.StretchImage" />
+        <element api="F:Mentula.GuiItems.Core.ResizeMode.Zoom" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+      </containers>
+      <file name="bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc" />
+    </api>
+    <api id="F:Mentula.GuiItems.Core.ResizeMode.AutoSize">
+      <topicdata group="api" notopic="" />
+      <apidata name="AutoSize" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <value>1</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </containers>
+      <file name="d509705e-e6ee-cc70-85ba-8d4ea2e60200" />
+    </api>
+    <api id="F:Mentula.GuiItems.Core.ResizeMode.CenterImage">
+      <topicdata group="api" notopic="" />
+      <apidata name="CenterImage" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <value>2</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </containers>
+      <file name="7e44663d-accd-069e-907a-f650c70cfc3c" />
+    </api>
+    <api id="F:Mentula.GuiItems.Core.ResizeMode.Normal">
+      <topicdata group="api" notopic="" />
+      <apidata name="Normal" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <value>0</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </containers>
+      <file name="1c273a8e-9bf1-8d14-9f5c-4b29b5763433" />
+    </api>
+    <api id="F:Mentula.GuiItems.Core.ResizeMode.StretchImage">
+      <topicdata group="api" notopic="" />
+      <apidata name="StretchImage" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <value>3</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </containers>
+      <file name="65274293-c408-18e6-7e32-373a6d91e243" />
+    </api>
+    <api id="F:Mentula.GuiItems.Core.ResizeMode.Zoom">
+      <topicdata group="api" notopic="" />
+      <apidata name="Zoom" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <value>4</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </containers>
+      <file name="0a36ffd4-5d23-94ec-5d30-745fed4516da" />
+    </api>
     <api id="T:Mentula.GuiItems.Core.Size">
       <topicdata group="api" />
       <apidata name="Size" group="type" subgroup="structure" />
@@ -8912,9 +9051,14 @@
         </element>
         <element api="Overload:Mentula.GuiItems.Core.Size.#ctor">
           <element api="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" />
+          <element api="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" />
           <element api="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" />
         </element>
         <element api="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.Divide">
+          <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="F:Mentula.GuiItems.Core.Size.Empty" />
         <element api="Overload:Mentula.GuiItems.Core.Size.Equals">
           <element api="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" />
@@ -8923,12 +9067,27 @@
         <element api="M:Mentula.GuiItems.Core.Size.GetHashCode" />
         <element api="P:Mentula.GuiItems.Core.Size.Height" />
         <element api="P:Mentula.GuiItems.Core.Size.IsEmpty" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.Multiply">
+          <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.op_Division">
+          <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.op_Multiply">
+          <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)" />
         <element api="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.ToString" />
+        <element api="M:Mentula.GuiItems.Core.Size.ToVector2" />
         <element api="P:Mentula.GuiItems.Core.Size.Width" />
       </elements>
       <containers>
@@ -8958,13 +9117,22 @@
           </containers>
         </element>
         <element api="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.Divide">
+          <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="Overload:Mentula.GuiItems.Core.Size.Equals">
           <element api="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" />
           <element api="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)" />
         </element>
         <element api="M:Mentula.GuiItems.Core.Size.GetHashCode" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.Multiply">
+          <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.ToString" />
+        <element api="M:Mentula.GuiItems.Core.Size.ToVector2" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -8981,8 +9149,18 @@
       <typedata visibility="public" sealed="true" serializable="false" />
       <elements>
         <element api="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.op_Division">
+          <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
         <element api="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)" />
+        <element api="Overload:Mentula.GuiItems.Core.Size.op_Multiply">
+          <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+          <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)" />
         <element api="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
       </elements>
       <containers>
@@ -9033,6 +9211,7 @@
       <apidata name=".ctor" group="member" subgroup="constructor" />
       <elements>
         <element api="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" />
+        <element api="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" />
         <element api="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" />
       </elements>
       <containers>
@@ -9043,6 +9222,22 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="c1040fc8-4623-91c5-8f1b-6d28d3ebd4aa" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Core.Size.Divide">
+      <topicdata name="Divide" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Divide" group="member" subgroup="method" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="8d311e68-6924-3179-41d6-ba3215a572e5" />
     </api>
     <api id="Overload:Mentula.GuiItems.Core.Size.Equals">
       <topicdata name="Equals" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
@@ -9059,6 +9254,54 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="98d4a887-61bd-6cbe-462e-5e43fa246a44" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Core.Size.Multiply">
+      <topicdata name="Multiply" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Multiply" group="member" subgroup="method" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="78bda73a-ee99-a81f-4c7f-d6b1f17f09a0" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Core.Size.op_Division">
+      <topicdata name="Division" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Division" group="member" subgroup="method" subsubgroup="operator" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="b17826a7-4d84-039a-3362-4ee415bc6fbd" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Core.Size.op_Multiply">
+      <topicdata name="Multiply" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Multiply" group="member" subgroup="method" subsubgroup="operator" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="4d9a14aa-18de-2b8c-3a64-825be09dfe3f" />
     </api>
     <api id="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)">
       <topicdata group="api" />
@@ -9078,6 +9321,25 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="e9860afe-b210-462c-da78-f89d8fdefe96" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" overload="Overload:Mentula.GuiItems.Core.Size.#ctor" />
+      <parameters>
+        <parameter name="value">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="c9fa6185-e27d-c0a1-5c17-740bf9ae1da5" />
     </api>
     <api id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)">
       <topicdata group="api" />
@@ -9126,6 +9388,58 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="9270f661-16ef-620b-d897-3f522a0176d4" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <topicdata group="api" />
+      <apidata name="Divide" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" overload="Overload:Mentula.GuiItems.Core.Size.Divide" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="size1">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="size2">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="80bcb894-922c-cbc4-77ca-c11c3a3e810a" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="Divide" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" overload="Overload:Mentula.GuiItems.Core.Size.Divide" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="size">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="value">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="5cf4ffa4-deaf-d828-c1b4-a31b864af57e" />
     </api>
     <api id="F:Mentula.GuiItems.Core.Size.Empty">
       <topicdata group="api" />
@@ -9269,6 +9583,58 @@
       </containers>
       <file name="543906f5-9b2d-38a1-6fee-35c7f27f8441" />
     </api>
+    <api id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <topicdata group="api" />
+      <apidata name="Multiply" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" overload="Overload:Mentula.GuiItems.Core.Size.Multiply" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="size1">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="size2">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="e0321e12-d2a8-6dad-d317-31cc2eb6fda5" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="Multiply" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" overload="Overload:Mentula.GuiItems.Core.Size.Multiply" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="size">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="value">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="e20e2bcb-0da1-e9a5-d1d6-18b918a7feeb" />
+    </api>
     <api id="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
       <topicdata group="api" />
       <apidata name="Addition" group="member" subgroup="method" subsubgroup="operator" />
@@ -9294,6 +9660,58 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="be77aef0-b253-9ea2-00eb-9e0397f3c3db" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <topicdata group="api" />
+      <apidata name="Division" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" overload="Overload:Mentula.GuiItems.Core.Size.op_Division" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz1">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="sz2">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="9d1ab7cb-3921-67a1-262f-463c58e63c32" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="Division" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" overload="Overload:Mentula.GuiItems.Core.Size.op_Division" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="v">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="87fd10b4-a41a-86f5-2538-f5c347c4810d" />
     </api>
     <api id="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
       <topicdata group="api" />
@@ -9346,6 +9764,110 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="3ab9bacf-968e-d587-7934-66a27dc708be" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="LeftShift" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="v">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="d31a7068-2aac-25b3-7d01-d18c1a786ede" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <topicdata group="api" />
+      <apidata name="Multiply" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" overload="Overload:Mentula.GuiItems.Core.Size.op_Multiply" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz1">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="sz2">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="d277119d-3139-cf05-45f6-dfa5ddcf4839" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="Multiply" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" overload="Overload:Mentula.GuiItems.Core.Size.op_Multiply" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="v">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="874821c9-17c3-0589-edee-6ec4d7c6d178" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="RightShift" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sz">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="v">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="ee45010e-36d0-8b25-3a96-04860f97a3e3" />
     </api>
     <api id="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
       <topicdata group="api" />
@@ -9421,6 +9943,24 @@
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </containers>
       <file name="7526c131-cc98-3a07-22ed-012848e2adc9" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.ToVector2">
+      <topicdata group="api" />
+      <apidata name="ToVector2" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+      <file name="f40a49c5-8366-fa0a-b768-a29b67ed866b" />
     </api>
     <api id="P:Mentula.GuiItems.Core.Size.Width">
       <topicdata group="api" />
@@ -10273,6 +10813,7 @@
         <element api="T:Mentula.GuiItems.Items.ProgressBar" />
         <element api="T:Mentula.GuiItems.Items.Slider" />
         <element api="T:Mentula.GuiItems.Items.TextBox" />
+        <element api="T:Mentula.GuiItems.Items.PictureBox" />
       </elements>
       <file name="ffbe3cf9-9804-efbc-3f6a-895be5de3d4e" />
     </api>
@@ -12691,6 +13232,552 @@
         <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
       </containers>
       <file name="6632fb63-abbb-d9eb-67ce-c3015862d5cf" />
+    </api>
+    <api id="T:Mentula.GuiItems.Items.PictureBox">
+      <topicdata group="api" />
+      <apidata name="PictureBox" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
+        <element api="Overload:Mentula.GuiItems.Items.PictureBox.Dispose">
+          <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
+          <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
+        </element>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Disposing" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Enabled" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="Overload:Mentula.GuiItems.Items.PictureBox.MoveRelative">
+          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
+          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
+        </element>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Rectangle})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="Overload:Mentula.GuiItems.Items.PictureBox.#ctor">
+          <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" />
+          <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="P:Mentula.GuiItems.Items.PictureBox.Image" />
+        <element api="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" />
+        <element api="M:Mentula.GuiItems.Items.PictureBox.Refresh" />
+        <element api="P:Mentula.GuiItems.Items.PictureBox.SizeMode" />
+        <element api="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+      </containers>
+      <file name="ddcfa394-400d-7674-1e23-b03fec675540" />
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Items.PictureBox">
+      <topicdata name="PictureBox" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Items.PictureBox" />
+      <apidata name="PictureBox" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="Overload:Mentula.GuiItems.Items.PictureBox.Dispose">
+          <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
+          <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="Overload:Mentula.GuiItems.Items.PictureBox.MoveRelative">
+          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
+          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Rectangle})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" />
+        <element api="M:Mentula.GuiItems.Items.PictureBox.Refresh" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" />
+      </containers>
+      <file name="175fb347-4cfc-9b80-510a-e3a295f1cce0" />
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Items.PictureBox">
+      <topicdata name="PictureBox" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Items.PictureBox" />
+      <apidata name="PictureBox" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Disposing" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Enabled" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
+        <element api="P:Mentula.GuiItems.Items.PictureBox.Image" />
+        <element api="P:Mentula.GuiItems.Items.PictureBox.SizeMode" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" />
+      </containers>
+      <file name="1bb343da-9bdd-4bc9-ab9e-bb4f2265db0f" />
+    </api>
+    <api id="Events.T:Mentula.GuiItems.Items.PictureBox">
+      <topicdata name="PictureBox" group="list" subgroup="Events" typeTopicId="T:Mentula.GuiItems.Items.PictureBox" />
+      <apidata name="PictureBox" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
+        <element api="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" />
+      </containers>
+      <file name="b9b693d6-ef83-bab7-0029-06c8759d05ea" />
+    </api>
+    <api id="Fields.T:Mentula.GuiItems.Items.PictureBox">
+      <topicdata name="PictureBox" group="list" subgroup="Fields" typeTopicId="T:Mentula.GuiItems.Items.PictureBox" />
+      <apidata name="PictureBox" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" />
+      </containers>
+      <file name="62162150-68fd-4168-8267-6a85379bee69" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Items.PictureBox.#ctor">
+      <topicdata name=".ctor" group="list" subgroup="overload" memberSubgroup="constructor" pseudo="true" allMembersTopicId="" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" />
+        <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="d36e6e96-e357-a83e-c1de-b1a6cd6ae50f" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" overload="Overload:Mentula.GuiItems.Items.PictureBox.#ctor" />
+      <parameters>
+        <parameter name="device">
+          <type api="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="f7a9945b-e7e0-49ab-cf47-342b50492496" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" overload="Overload:Mentula.GuiItems.Items.PictureBox.#ctor" />
+      <parameters>
+        <parameter name="device">
+          <type api="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" ref="true" />
+        </parameter>
+        <parameter name="bounds">
+          <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="365871ac-27da-8d33-e681-fbff78c6d976" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Draw" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="spriteBatch">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="47766f6b-1abe-f4d1-e8b6-a2b1ded6db0f" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.PictureBox.Image">
+      <topicdata group="api" />
+      <apidata name="Image" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Image" />
+      <setter name="set_Image" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="14a90d93-5234-0377-a331-29b8ff36ada9" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
+      <topicdata group="api" />
+      <apidata name="OnSizeModeChanged" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </parameter>
+        <parameter name="e">
+          <type api="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" ref="true">
+            <specialization>
+              <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="83e1d109-062b-fb11-84ed-a2484ba41bf6" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.PictureBox.Refresh">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Refresh">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="6c18240f-1d44-d681-1895-bc586c90eb99" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.PictureBox.SizeMode">
+      <topicdata group="api" />
+      <apidata name="SizeMode" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_SizeMode" />
+      <setter name="set_SizeMode" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="6f81fdd3-5230-9285-5fd6-fbf06173b7a3" />
+    </api>
+    <api id="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged">
+      <topicdata group="api" />
+      <apidata name="SizeModeChanged" group="member" subgroup="event" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_SizeModeChanged" />
+      <remover name="remove_SizeModeChanged" />
+      <eventhandler>
+        <type api="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+          </specialization>
+        </type>
+      </eventhandler>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+      </containers>
+      <file name="29695302-e34c-c7e7-31a2-f3605bf245cd" />
     </api>
     <api id="T:Mentula.GuiItems.Items.ProgressBar">
       <topicdata group="api" />

@@ -1,16 +1,16 @@
-using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-using Mentula.GuiItems.Items;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Linq;
-using static Mentula.GuiItems.Core.GuiItem;
-using static Mentula.GuiItems.Utilities;
-
 namespace Mentula.GuiItems.Containers
 {
+    using Core;
+    using Core.Interfaces;
+    using Items;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Linq;
+    using static Core.GuiItem;
+    using static Utilities;
+
     /// <summary>
     /// A class for grouping <see cref="GuiItems"/>.
     /// </summary>

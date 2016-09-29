@@ -1,9 +1,9 @@
-﻿using System;
-using System.Reflection;
-using System.Runtime.Serialization;
-
-namespace Mentula.GuiItems.Core
+﻿namespace Mentula.GuiItems.Core
 {
+    using System;
+    using System.Reflection;
+    using System.Runtime.Serialization;
+
     /// <summary>
     /// Represents errors that occur during event invoking.
     /// </summary>

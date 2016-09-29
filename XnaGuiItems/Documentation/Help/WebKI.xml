@@ -11,6 +11,7 @@
   <HelpKINode Title="Addition operator" Url="html/be77aef0-b253-9ea2-00eb-9e0397f3c3db.htm" />
   <HelpKINode Title="AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
   <HelpKINode Title="AddOption method" Url="html/54f9c158-5013-bfe0-46f1-99fbf26fd9ac.htm" />
+  <HelpKINode Title="AddPictureBox method" Url="html/ccc28cb0-62b2-d441-bfd1-e6959aeefb90.htm" />
   <HelpKINode Title="AddProgresBar method" Url="html/a38ba627-40d4-60d3-385d-af5d80f6b7ae.htm" />
   <HelpKINode Title="AddRange method" Url="html/b5b74849-3d80-bc62-c4e9-ba0e71641d67.htm" />
   <HelpKINode Title="AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
@@ -22,6 +23,7 @@
   <HelpKINode Title="AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
   <HelpKINode Title="autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
   <HelpKINode Title="autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
+  <HelpKINode Title="AutoSize enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="AutoSize property">
     <HelpKINode Title="DropDown.AutoSize Property " Url="html/5797d0ce-1ad4-013d-5115-bf80c2c61977.htm" />
     <HelpKINode Title="Label.AutoSize Property " Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
@@ -62,6 +64,7 @@
   <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
   <HelpKINode Title="Button.Update method" Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
+  <HelpKINode Title="CenterImage enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="ChangeValue method" Url="html/3e1d26c0-8832-5d44-9d22-b173a44cb0ab.htm" />
   <HelpKINode Title="ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
@@ -106,6 +109,8 @@
     <HelpKINode Title="Menu(T).Dispose Method " Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
   </HelpKINode>
   <HelpKINode Title="Disposing property" Url="html/82e09595-8ae1-f4cd-0b1c-d07739f7feb2.htm" />
+  <HelpKINode Title="Divide method" Url="html/8d311e68-6924-3179-41d6-ba3215a572e5.htm" />
+  <HelpKINode Title="Division operator" Url="html/b17826a7-4d84-039a-3362-4ee415bc6fbd.htm" />
   <HelpKINode Title="Double enumeration member" Url="html/4c3c31ac-70d2-1278-4a4a-763ac1fa1695.htm" />
   <HelpKINode Title="DoubleClick event" Url="html/9951fda2-e00b-ae5e-2db4-19ff438896b4.htm" />
   <HelpKINode Title="Draw method">
@@ -115,6 +120,7 @@
     <HelpKINode Title="Label.Draw Method " Url="html/e3a6c11d-6672-9e4d-0218-31a22461f3e2.htm" />
     <HelpKINode Title="Menu(T).Draw Method " Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
     <HelpKINode Title="MenuCollection(TGame).Draw Method " Url="html/8a393eec-e783-18ba-5079-7abca3c648b1.htm" />
+    <HelpKINode Title="PictureBox.Draw Method " Url="html/47766f6b-1abe-f4d1-e8b6-a2b1ded6db0f.htm" />
     <HelpKINode Title="ProgressBar.Draw Method " Url="html/143b4933-395e-916b-b550-df0cfeed2201.htm" />
     <HelpKINode Title="Slider.Draw Method " Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
     <HelpKINode Title="TabContainer.Draw Method " Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
@@ -312,6 +318,7 @@
   </HelpKINode>
   <HelpKINode Title="Hover event" Url="html/280ccfb5-c240-aed8-7526-4b5fe93eba71.htm" />
   <HelpKINode Title="hoverTexture field" Url="html/1b5a1831-91ec-34fa-e7ca-4afbe56162c6.htm" />
+  <HelpKINode Title="Image property" Url="html/14a90d93-5234-0377-a331-29b8ff36ada9.htm" />
   <HelpKINode Title="IMenu interface">
     <HelpKINode Title="IMenu Interface" Url="html/6835b27c-ab29-a6e2-9ab0-33adba29ea05.htm" />
     <HelpKINode Title="about IMenu interface" Url="html/6835b27c-ab29-a6e2-9ab0-33adba29ea05.htm" />
@@ -402,6 +409,7 @@
   </HelpKINode>
   <HelpKINode Title="LeftClick event" Url="html/576538ba-a573-3f6c-b479-0746ba8e30d5.htm" />
   <HelpKINode Title="leftDown field" Url="html/02582668-d7e1-fc8e-e355-e78a3dc16869.htm" />
+  <HelpKINode Title="LeftShift operator" Url="html/d31a7068-2aac-25b3-7d01-d18c1a786ede.htm" />
   <HelpKINode Title="LineStart property" Url="html/a2d24c20-5196-fc3b-f6d4-cdb4ce86a897.htm" />
   <HelpKINode Title="Maximum property" Url="html/423ebf75-ac68-4565-dae8-359d84d127a7.htm" />
   <HelpKINode Title="MaximumSize property" Url="html/5efe00f9-e997-a973-6d54-769f723ece56.htm" />
@@ -433,6 +441,7 @@
   <HelpKINode Title="Mentula.GuiItems.Core.MouseEventArgs class" Url="html/42d13a70-a473-4355-7373-874261cfefe0.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.MouseEventHandler delegate" Url="html/6a794678-383e-1b76-f545-1ceca0c84d45.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.ProgressData structure" Url="html/d8cf97a3-b122-7016-289f-87e127842c37.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.ResizeMode enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Size structure" Url="html/2ab041ca-09c1-1651-8be0-760299e0ad2d.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.ValueChangedEventArgs(Of TVal) class" Url="html/4b251b07-7f70-c50a-b0a5-0b519acdedb8.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.ValueChangedEventArgs&lt;TVal&gt; class" Url="html/4b251b07-7f70-c50a-b0a5-0b519acdedb8.htm" />
@@ -442,6 +451,7 @@
   <HelpKINode Title="Mentula.GuiItems.Items.Button class" Url="html/4278b1d0-5a1a-7e6e-082a-a43a011135cc.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.Label class" Url="html/d53751b0-5ec8-c0d0-4297-55a765efc00d.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Items.PictureBox class" Url="html/ddcfa394-400d-7674-1e23-b03fec675540.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.ProgressBar class" Url="html/c45c8486-3492-6fe0-bb1b-ebdd51c88088.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.Slider class" Url="html/40bdda9b-8900-7e7a-f1ae-018f9465923f.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.TextBox class" Url="html/e2b73be8-64e0-cbc9-d324-cc605cdbf79f.htm" />
@@ -479,6 +489,7 @@
   <HelpKINode Title="Menu(Of T).AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
   <HelpKINode Title="Menu(Of T).AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Menu(Of T).AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
+  <HelpKINode Title="Menu(Of T).AddPictureBox method" Url="html/ccc28cb0-62b2-d441-bfd1-e6959aeefb90.htm" />
   <HelpKINode Title="Menu(Of T).AddProgresBar method" Url="html/a38ba627-40d4-60d3-385d-af5d80f6b7ae.htm" />
   <HelpKINode Title="Menu(Of T).AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
   <HelpKINode Title="Menu(Of T).AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
@@ -518,6 +529,7 @@
   <HelpKINode Title="Menu&lt;T&gt;.AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.AddPictureBox method" Url="html/ccc28cb0-62b2-d441-bfd1-e6959aeefb90.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddProgresBar method" Url="html/a38ba627-40d4-60d3-385d-af5d80f6b7ae.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
@@ -613,6 +625,8 @@
   <HelpKINode Title="Move event" Url="html/47afbda2-cde7-0fea-5c84-cbd844305cc6.htm" />
   <HelpKINode Title="MoveRelative method" Url="html/20236a33-b508-a343-8add-ea1a2d998bcf.htm" />
   <HelpKINode Title="MultiLine property" Url="html/78ac46b8-1400-a85d-38e9-cd2027b5c894.htm" />
+  <HelpKINode Title="Multiply method" Url="html/78bda73a-ee99-a81f-4c7f-d6b1f17f09a0.htm" />
+  <HelpKINode Title="Multiply operator" Url="html/4d9a14aa-18de-2b8c-3a64-825be09dfe3f.htm" />
   <HelpKINode Title="Name property" Url="html/a7bafef5-7820-1ca0-4805-dd323a9a0231.htm" />
   <HelpKINode Title="NameChanged event" Url="html/e1fc0daf-2200-8230-29b7-73492dca4f70.htm" />
   <HelpKINode Title="NewValue field" Url="html/19021c12-6268-99ae-281e-1daf493c1d34.htm" />
@@ -621,7 +635,10 @@
     <HelpKINode Title="BorderStyle Enumeration" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
     <HelpKINode Title="FlickerStyle Enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   </HelpKINode>
-  <HelpKINode Title="Normal enumeration member" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
+  <HelpKINode Title="Normal enumeration member">
+    <HelpKINode Title="FlickerStyle Enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
+    <HelpKINode Title="ResizeMode Enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
+  </HelpKINode>
   <HelpKINode Title="OldValue field" Url="html/8e2390f9-f3d7-ac07-2bdf-fd9e694a6b54.htm" />
   <HelpKINode Title="OnBackColorChanged method" Url="html/e4b60813-7315-3ce9-aa9a-edde918c2575.htm" />
   <HelpKINode Title="OnBackgroundImageChaned method" Url="html/ee440388-189e-cce9-4b32-a39dbe66088d.htm" />
@@ -640,6 +657,7 @@
   <HelpKINode Title="OnNameChange method" Url="html/0e22a1d0-7eff-4c75-e644-523affe5e81d.htm" />
   <HelpKINode Title="OnResize method" Url="html/d839c8d3-6421-b9b1-ae7e-6e67684227d7.htm" />
   <HelpKINode Title="OnRotationChanged method" Url="html/1cb141cc-b7b6-0b47-f3b0-e2178d813367.htm" />
+  <HelpKINode Title="OnSizeModeChanged method" Url="html/83e1d109-062b-fb11-84ed-a2484ba41bf6.htm" />
   <HelpKINode Title="OnTextChanged method">
     <HelpKINode Title="Label.OnTextChanged Method " Url="html/0c675399-c449-04ea-9fd1-3d996789111f.htm" />
     <HelpKINode Title="TextBox.OnTextChanged Method " Url="html/41fa811d-0e4d-ea65-2462-9629545f0c06.htm" />
@@ -656,6 +674,22 @@
     <HelpKINode Title="Button.PerformClick Method " Url="html/843bc224-c459-3ebf-608d-dfc8ca925989.htm" />
     <HelpKINode Title="GuiItem.PerformClick Method " Url="html/d71b5c5c-1422-1b9f-87a0-3f86e81eaf5f.htm" />
   </HelpKINode>
+  <HelpKINode Title="PictureBox class">
+    <HelpKINode Title="PictureBox Class" Url="html/ddcfa394-400d-7674-1e23-b03fec675540.htm" />
+    <HelpKINode Title="about PictureBox class" Url="html/ddcfa394-400d-7674-1e23-b03fec675540.htm" />
+    <HelpKINode Title="constructor" Url="html/d36e6e96-e357-a83e-c1de-b1a6cd6ae50f.htm" />
+    <HelpKINode Title="events" Url="html/b9b693d6-ef83-bab7-0029-06c8759d05ea.htm" />
+    <HelpKINode Title="fields" Url="html/62162150-68fd-4168-8267-6a85379bee69.htm" />
+    <HelpKINode Title="methods" Url="html/175fb347-4cfc-9b80-510a-e3a295f1cce0.htm" />
+    <HelpKINode Title="properties" Url="html/1bb343da-9bdd-4bc9-ab9e-bb4f2265db0f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PictureBox.Draw method" Url="html/47766f6b-1abe-f4d1-e8b6-a2b1ded6db0f.htm" />
+  <HelpKINode Title="PictureBox.Image property" Url="html/14a90d93-5234-0377-a331-29b8ff36ada9.htm" />
+  <HelpKINode Title="PictureBox.OnSizeModeChanged method" Url="html/83e1d109-062b-fb11-84ed-a2484ba41bf6.htm" />
+  <HelpKINode Title="PictureBox.PictureBox constructor" Url="html/d36e6e96-e357-a83e-c1de-b1a6cd6ae50f.htm" />
+  <HelpKINode Title="PictureBox.Refresh method" Url="html/6c18240f-1d44-d681-1895-bc586c90eb99.htm" />
+  <HelpKINode Title="PictureBox.SizeMode property" Url="html/6f81fdd3-5230-9285-5fd6-fbf06173b7a3.htm" />
+  <HelpKINode Title="PictureBox.SizeModeChanged event" Url="html/29695302-e34c-c7e7-31a2-f3605bf245cd.htm" />
   <HelpKINode Title="Position property">
     <HelpKINode Title="DropDown.Position Property " Url="html/b43ed6c3-65e8-90b7-960e-3b7cfd67d6d1.htm" />
     <HelpKINode Title="GuiItem.Position Property " Url="html/e4568516-1a67-980c-3eac-072ec298d967.htm" />
@@ -707,6 +741,7 @@
     <HelpKINode Title="DropDown.Refresh Method " Url="html/63782362-5c20-dfa5-66b1-08a0b783e255.htm" />
     <HelpKINode Title="GuiItem.Refresh Method " Url="html/7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2.htm" />
     <HelpKINode Title="Label.Refresh Method " Url="html/66ca4e66-4316-ca82-2b44-ec2f7a0a5de7.htm" />
+    <HelpKINode Title="PictureBox.Refresh Method " Url="html/6c18240f-1d44-d681-1895-bc586c90eb99.htm" />
     <HelpKINode Title="ProgressBar.Refresh Method " Url="html/44954f05-dd9a-9084-24c7-bb150cbfba12.htm" />
     <HelpKINode Title="Slider.Refresh Method " Url="html/e9d5a3b8-bcd6-b3aa-e027-66209c2be783.htm" />
     <HelpKINode Title="TabContainer.Refresh Method " Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
@@ -715,12 +750,14 @@
   <HelpKINode Title="Remove method" Url="html/e7023442-515b-9d44-a61b-f26e7346d088.htm" />
   <HelpKINode Title="RemoveAt method" Url="html/26eac6a4-b546-fea2-0dc8-373cefd23b3f.htm" />
   <HelpKINode Title="Resize event" Url="html/a22e64af-a516-390e-a567-2e0a79b99d43.htm" />
+  <HelpKINode Title="ResizeMode enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="Right enumeration member">
     <HelpKINode Title="Anchor Enumeration" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
     <HelpKINode Title="MouseClick Enumeration" Url="html/4c3c31ac-70d2-1278-4a4a-763ac1fa1695.htm" />
   </HelpKINode>
   <HelpKINode Title="RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
   <HelpKINode Title="rightDown field" Url="html/b3a05e42-1b18-3115-8c79-cb5fa3cdda84.htm" />
+  <HelpKINode Title="RightShift operator" Url="html/ee45010e-36d0-8b25-3a96-04860f97a3e3.htm" />
   <HelpKINode Title="Rotated event" Url="html/cf40cffe-979a-8615-8d62-717b1d7079e9.htm" />
   <HelpKINode Title="Rotation property" Url="html/486c2e0d-bac0-ec5a-99d8-236fa07dea81.htm" />
   <HelpKINode Title="RunInBackground method" Url="html/69fee82e-4340-4ff7-0ea9-070644325366.htm" />
@@ -748,6 +785,8 @@
   </HelpKINode>
   <HelpKINode Title="Size.Add method" Url="html/9270f661-16ef-620b-d897-3f522a0176d4.htm" />
   <HelpKINode Title="Size.Addition operator" Url="html/be77aef0-b253-9ea2-00eb-9e0397f3c3db.htm" />
+  <HelpKINode Title="Size.Divide method" Url="html/8d311e68-6924-3179-41d6-ba3215a572e5.htm" />
+  <HelpKINode Title="Size.Division operator" Url="html/b17826a7-4d84-039a-3362-4ee415bc6fbd.htm" />
   <HelpKINode Title="Size.Empty field" Url="html/9fb37c99-3736-b1ee-c153-eded6c292959.htm" />
   <HelpKINode Title="Size.Equality operator" Url="html/1858d90d-b25d-7d98-23de-49c6d8ffcc5f.htm" />
   <HelpKINode Title="Size.Equals method" Url="html/98d4a887-61bd-6cbe-462e-5e43fa246a44.htm" />
@@ -755,11 +794,18 @@
   <HelpKINode Title="Size.Height property" Url="html/a006b45c-d868-35d8-2c1a-12243cb52821.htm" />
   <HelpKINode Title="Size.Inequality operator" Url="html/3ab9bacf-968e-d587-7934-66a27dc708be.htm" />
   <HelpKINode Title="Size.IsEmpty property" Url="html/543906f5-9b2d-38a1-6fee-35c7f27f8441.htm" />
+  <HelpKINode Title="Size.LeftShift operator" Url="html/d31a7068-2aac-25b3-7d01-d18c1a786ede.htm" />
+  <HelpKINode Title="Size.Multiply method" Url="html/78bda73a-ee99-a81f-4c7f-d6b1f17f09a0.htm" />
+  <HelpKINode Title="Size.Multiply operator" Url="html/4d9a14aa-18de-2b8c-3a64-825be09dfe3f.htm" />
+  <HelpKINode Title="Size.RightShift operator" Url="html/ee45010e-36d0-8b25-3a96-04860f97a3e3.htm" />
   <HelpKINode Title="Size.Size constructor" Url="html/c1040fc8-4623-91c5-8f1b-6d28d3ebd4aa.htm" />
   <HelpKINode Title="Size.Subtract method" Url="html/62309a68-9673-fab0-56de-cf62edb70645.htm" />
   <HelpKINode Title="Size.Subtraction operator" Url="html/85bc3d11-9aa3-6ac9-f00b-8ce408eaf35a.htm" />
   <HelpKINode Title="Size.ToString method" Url="html/7526c131-cc98-3a07-22ed-012848e2adc9.htm" />
+  <HelpKINode Title="Size.ToVector2 method" Url="html/f40a49c5-8366-fa0a-b768-a29b67ed866b.htm" />
   <HelpKINode Title="Size.Width property" Url="html/c9a38c9f-bbb5-c8d7-7467-8b18b16af08e.htm" />
+  <HelpKINode Title="SizeMode property" Url="html/6f81fdd3-5230-9285-5fd6-fbf06173b7a3.htm" />
+  <HelpKINode Title="SizeModeChanged event" Url="html/29695302-e34c-c7e7-31a2-f3605bf245cd.htm" />
   <HelpKINode Title="Slider class">
     <HelpKINode Title="Slider Class" Url="html/40bdda9b-8900-7e7a-f1ae-018f9465923f.htm" />
     <HelpKINode Title="about Slider class" Url="html/40bdda9b-8900-7e7a-f1ae-018f9465923f.htm" />
@@ -789,6 +835,7 @@
   <HelpKINode Title="Slow enumeration member" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="StackTrace property" Url="html/d9f17d96-df21-af24-81ae-0a722a0ad6ff.htm" />
   <HelpKINode Title="State field" Url="html/4915fc47-f12c-b4a0-2148-d38250715eb6.htm" />
+  <HelpKINode Title="StretchImage enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="Subtract method" Url="html/62309a68-9673-fab0-56de-cf62edb70645.htm" />
   <HelpKINode Title="Subtraction operator" Url="html/85bc3d11-9aa3-6ac9-f00b-8ce408eaf35a.htm" />
   <HelpKINode Title="SuppressDraw property" Url="html/37dc41a3-7acd-eaf7-c449-006ef4de559e.htm" />
@@ -846,6 +893,7 @@
     <HelpKINode Title="ProgressData.ToString Method " Url="html/67127cc1-5cf5-aa8e-dcc3-d2c4c7ef8729.htm" />
     <HelpKINode Title="Size.ToString Method " Url="html/7526c131-cc98-3a07-22ed-012848e2adc9.htm" />
   </HelpKINode>
+  <HelpKINode Title="ToVector2 method" Url="html/f40a49c5-8366-fa0a-b768-a29b67ed866b.htm" />
   <HelpKINode Title="Update method">
     <HelpKINode Title="Button.Update Method " Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
     <HelpKINode Title="DropDown.Update Method " Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
@@ -950,4 +998,5 @@
   </HelpKINode>
   <HelpKINode Title="X property" Url="html/bdea4614-be86-db09-9c8f-a1d49b1fd3cd.htm" />
   <HelpKINode Title="Y property" Url="html/e73fd6cd-333b-4be6-8bea-67c5890ac81b.htm" />
+  <HelpKINode Title="Zoom enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
 </HelpKI>

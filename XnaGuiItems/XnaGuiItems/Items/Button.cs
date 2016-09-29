@@ -1,14 +1,14 @@
-﻿using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Diagnostics.CodeAnalysis;
-using static Mentula.GuiItems.Utilities;
-
-namespace Mentula.GuiItems.Items
+﻿namespace Mentula.GuiItems.Items
 {
+    using Core;
+    using Core.Interfaces;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using static Utilities;
+
     /// <summary>
     /// A button base class.
     /// </summary>

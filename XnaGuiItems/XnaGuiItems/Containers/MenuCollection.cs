@@ -1,12 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using KVP = System.Collections.Generic.KeyValuePair<string, Mentula.GuiItems.Core.Interfaces.IMenu>;
-using static Mentula.GuiItems.Utilities;
-using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-
-namespace Mentula.GuiItems.Containers
+﻿namespace Mentula.GuiItems.Containers
 {
+    using Core;
+    using Core.Interfaces;
+    using Microsoft.Xna.Framework;
+    using System;
+    using static Utilities;
+    using KVP = System.Collections.Generic.KeyValuePair<string, Core.Interfaces.IMenu>;
+
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.
     /// </summary>

@@ -21,15 +21,9 @@ namespace TestGame
 
         public override void Initialize()
         {
-            int txtHM = TxtH >> 1;
-
-            DropDown dd = AddDropDown();
-            dd.MoveRelative(Anchor.Middle);
-            dd.AutoSize = true;
-
-            dd.HeaderText = "Corpse";
-            dd.AddOption("Test1");
-            dd.AddOption("Test2");
+            PictureBox pic = AddPictureBox();
+            pic.SizeMode = ResizeMode.Zoom;
+            pic.Image = Game.Content.Load<Texture2D>("Tree_Stump");
 
             base.Initialize();
         }

@@ -1,15 +1,15 @@
-﻿using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Interfaces;
-using Mentula.GuiItems.Items;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Mentula.GuiItems.Containers
+﻿namespace Mentula.GuiItems.Containers
 {
+    using Core;
+    using Core.Interfaces;
+    using Items;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
     /// </summary>

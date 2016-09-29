@@ -104,6 +104,36 @@
         Bottom = 32                             //00100000
     }
 
+    /// <summary>
+    /// Specifies how an image is positioned or resized within a <see cref="Items.PictureBox"/>
+    /// </summary>
+    public enum ResizeMode : byte
+    {
+        /// <summary>
+        /// The image is placed in the upper-left corner of the <see cref="Items.PictureBox"/>.
+        /// The image is clipped if its larger than the <see cref="Items.PictureBox"/> it is contained in.
+        /// </summary>
+        Normal,
+        /// <summary>
+        /// The <see cref="Items.PictureBox"/> is sized equal to the size of the image it contains.
+        /// </summary>
+        AutoSize,
+        /// <summary>
+        /// The image is displayed in the center if the <see cref="Items.PictureBox"/> is larger than the image.
+        /// If the image is larger than the <see cref="Items.PictureBox"/>,
+        /// the picture is placed in the center of the <see cref="Items.PictureBox"/> and the outside edges are clipped.
+        /// </summary>
+        CenterImage,
+        /// <summary>
+        /// The image withing the <see cref="Items.PictureBox"/> is stretched or shrunk to fit the size of the <see cref="Items.PictureBox"/>.
+        /// </summary>
+        StretchImage,
+        /// <summary>
+        /// The size of the image is increased or decreased maintaining the size ratio.
+        /// </summary>
+        Zoom
+    }
+
     internal enum ButtonStyle : byte
     {
         Default,
