@@ -127,14 +127,14 @@
         {
             if (Visible)
             {
-                spriteBatch.Draw(drawTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(drawTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
 
                 if (BackgroundImage != null)
                 {
-                    spriteBatch.Draw(BackgroundImage, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(BackgroundImage, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 }
 
-                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
             }
         }
 

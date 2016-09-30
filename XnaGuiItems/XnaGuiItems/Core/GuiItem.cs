@@ -65,6 +65,10 @@
         /// </summary>
         public virtual string Name { get { return name; } set { Invoke(NameChanged, this, new ValueChangedEventArgs<string>(name, value)); } }
         /// <summary>
+        /// Gets or sets a value indicating the origin of rotation.
+        /// </summary>
+        public virtual Vector2 Origin { get; set; }
+        /// <summary>
         /// Gets or sets the client side rotation of the <see cref="GuiItem"/>.
         /// </summary>
         public virtual float Rotation { get { return rotation; } set { Invoke(Rotated, this, new ValueChangedEventArgs<float>(rotation, value)); } }
@@ -284,12 +288,14 @@
             {
                 if (backgroundImage != null)
                 {
-                    spriteBatch.Draw(backgroundImage, Position, null, BackColor, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(backgroundImage, Position, null, BackColor, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 }
                 else
                 {
-                    spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+                    spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 }
+
+                spriteBatch.Draw(foregroundTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 

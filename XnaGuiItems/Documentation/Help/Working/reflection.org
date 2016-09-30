@@ -1769,6 +1769,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -2439,6 +2440,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -3271,6 +3273,22 @@
           </type>
         </parameter>
       </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.GuiItem.Origin">
+      <apidata name="Origin" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Origin" />
+      <setter name="set_Origin" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Core" />
@@ -6662,6 +6680,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -6828,8 +6847,8 @@
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <overrides>
-        <member api="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </member>
       </overrides>
       <parameters>
@@ -7033,6 +7052,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
@@ -7490,7 +7510,6 @@
         <element api="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Items.Label.Refresh" />
-        <element api="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
         <element api="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" />
@@ -7516,6 +7535,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -7536,6 +7556,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -7715,26 +7736,6 @@
       <returns>
         <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
       </returns>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <apidata name="Draw" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </member>
-      </overrides>
-      <parameters>
-        <parameter name="spriteBatch">
-          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
-        </parameter>
-      </parameters>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Items" />
@@ -8010,7 +8011,6 @@
         <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" />
         <element api="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" />
         <element api="M:Mentula.GuiItems.Items.PictureBox.Refresh" />
-        <element api="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" />
         <element api="P:Mentula.GuiItems.Items.PictureBox.SizeMode" />
         <element api="P:Mentula.GuiItems.Items.PictureBox.Image" />
@@ -8026,6 +8026,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -8049,6 +8050,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -8175,26 +8177,6 @@
         <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <apidata name="Draw" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </member>
-      </overrides>
-      <parameters>
-        <parameter name="spriteBatch">
-          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
-      </containers>
-    </api>
     <api id="P:Mentula.GuiItems.Items.PictureBox.Image">
       <apidata name="Image" group="member" subgroup="property" />
       <memberdata visibility="public" />
@@ -8297,7 +8279,6 @@
         <element api="F:Mentula.GuiItems.Items.ProgressBar.data" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" />
-        <element api="M:Mentula.GuiItems.Items.ProgressBar.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.Refresh" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.Inverted" />
@@ -8319,6 +8300,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -8342,6 +8324,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -8527,26 +8510,6 @@
         <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.ProgressBar.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <apidata name="Draw" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </member>
-      </overrides>
-      <parameters>
-        <parameter name="spriteBatch">
-          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
-      </containers>
-    </api>
     <api id="P:Mentula.GuiItems.Items.ProgressBar.Inverted">
       <apidata name="Inverted" group="member" subgroup="property" />
       <memberdata visibility="public" />
@@ -8680,7 +8643,6 @@
         <element api="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" />
         <element api="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" />
         <element api="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:Mentula.GuiItems.Items.Slider.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.Slider.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.MouseEventArgs)" />
         <element api="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})" />
@@ -8703,6 +8665,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -8726,6 +8689,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -8890,26 +8854,6 @@
       <returns>
         <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
       </returns>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Items.Slider.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <apidata name="Draw" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </member>
-      </overrides>
-      <parameters>
-        <parameter name="spriteBatch">
-          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
-        </parameter>
-      </parameters>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Items" />
@@ -9183,6 +9127,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
@@ -9351,8 +9296,8 @@
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <overrides>
-        <member api="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-          <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </member>
       </overrides>
       <parameters>

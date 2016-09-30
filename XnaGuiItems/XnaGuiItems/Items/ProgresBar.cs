@@ -80,20 +80,6 @@
         }
 
         /// <summary>
-        /// Draws the <see cref="ProgressBar"/> and its childs to the specified <see cref="SpriteBatch"/>.
-        /// </summary>
-        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-
-            if (Visible)
-            {
-                spriteBatch.Draw(foregroundTexture, Position, null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
-            }
-        }
-
-        /// <summary>
         /// Recalculates the background and the foreground.
         /// </summary>
         public override void Refresh()

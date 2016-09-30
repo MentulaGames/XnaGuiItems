@@ -227,8 +227,8 @@
 
             if (Visible)
             {
-                spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 0f);
-                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
+                spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
 
                 float fontHeight = font.MeasureString("a").Y;
                 for (int i = 0; i < itemTextures.Length; i++)
@@ -240,7 +240,7 @@
                         null,
                         Color.White,
                         Rotation,
-                        Vector2.Zero,
+                        Origin,
                         1f,
                         SpriteEffects.None,
                         0f);

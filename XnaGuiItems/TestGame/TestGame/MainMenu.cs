@@ -21,11 +21,6 @@ namespace TestGame
 
         public override void Initialize()
         {
-            PictureBox pic = AddPictureBox();
-            pic.Position = new Vector2(20, 20);
-            pic.SizeMode = ResizeMode.Zoom;
-            pic.Image = Game.Content.Load<Texture2D>("Tree_Stump");
-
             base.Initialize();
         }
     }

@@ -113,20 +113,6 @@
         }
 
         /// <summary>
-        /// Draws the <see cref="Label"/> to the specified <see cref="SpriteBatch"/>.
-        /// </summary>
-        /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-
-            if (Visible)
-            {
-                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Vector2.Zero, SpriteEffects.None, 0f);
-            }
-        }
-
-        /// <summary>
         /// Get the number of lines in this <see cref="Label"/>
         /// </summary>
         /// <returns> The amount of lines in the <see cref="Label"/>. </returns>

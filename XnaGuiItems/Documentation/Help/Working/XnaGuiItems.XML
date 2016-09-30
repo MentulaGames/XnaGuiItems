@@ -777,6 +777,11 @@
             Gets or sets the name of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
+    <member name="P:Mentula.GuiItems.Core.GuiItem.Origin">
+      <summary>
+            Gets or sets a value indicating the origin of rotation.
+            </summary>
+    </member>
     <member name="P:Mentula.GuiItems.Core.GuiItem.Rotation">
       <summary>
             Gets or sets the client side rotation of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
@@ -1862,12 +1867,6 @@
             Recalculates the background and the foreground.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <summary>
-            Draws the <see cref="T:Mentula.GuiItems.Items.Label" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
-            </summary>
-      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
-    </member>
     <member name="M:Mentula.GuiItems.Items.Label.GetLineCount">
       <summary>
             Get the number of lines in this <see cref="T:Mentula.GuiItems.Items.Label" /></summary>
@@ -1963,12 +1962,6 @@
       <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <summary>
-            Draws the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> and its childs to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
-            </summary>
-      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
-    </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.Refresh">
       <summary>
             Recalculates the background and the foreground.
@@ -2048,12 +2041,6 @@
             Updates the <see cref="T:Mentula.GuiItems.Items.Slider" />, checking if any mouse event are occuring.
             </summary>
       <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <summary>
-            Draws the <see cref="T:Mentula.GuiItems.Items.Slider" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
-            </summary>
-      <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.Refresh">
       <summary>
@@ -2229,12 +2216,6 @@
       <summary>
             Recalculates the foreground.
             </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
-      <summary>
-            Draws the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
-            </summary>
-      <param name="spriteBatch"> The spritebatch to use. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
       <summary>

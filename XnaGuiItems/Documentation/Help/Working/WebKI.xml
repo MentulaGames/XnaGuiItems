@@ -117,12 +117,8 @@
     <HelpKINode Title="Button.Draw Method " Url="html/0d3a90b3-78df-d26d-91d9-fd6259dae344.htm" />
     <HelpKINode Title="DropDown.Draw Method " Url="html/83817f33-b3fb-6ecf-27ec-3581d2f9ebfb.htm" />
     <HelpKINode Title="GuiItem.Draw Method " Url="html/64d04542-2bce-78e0-0f9c-ee192548b794.htm" />
-    <HelpKINode Title="Label.Draw Method " Url="html/e3a6c11d-6672-9e4d-0218-31a22461f3e2.htm" />
     <HelpKINode Title="Menu(T).Draw Method " Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
     <HelpKINode Title="MenuCollection(TGame).Draw Method " Url="html/8a393eec-e783-18ba-5079-7abca3c648b1.htm" />
-    <HelpKINode Title="PictureBox.Draw Method " Url="html/47766f6b-1abe-f4d1-e8b6-a2b1ded6db0f.htm" />
-    <HelpKINode Title="ProgressBar.Draw Method " Url="html/143b4933-395e-916b-b550-df0cfeed2201.htm" />
-    <HelpKINode Title="Slider.Draw Method " Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
     <HelpKINode Title="TabContainer.Draw Method " Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
     <HelpKINode Title="TextBox.Draw Method " Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   </HelpKINode>
@@ -281,6 +277,7 @@
   <HelpKINode Title="GuiItem.OnResize method" Url="html/d839c8d3-6421-b9b1-ae7e-6e67684227d7.htm" />
   <HelpKINode Title="GuiItem.OnRotationChanged method" Url="html/1cb141cc-b7b6-0b47-f3b0-e2178d813367.htm" />
   <HelpKINode Title="GuiItem.OnVisibilityChanged method" Url="html/bf7caa3e-1b42-ca1e-2c85-333400c04a64.htm" />
+  <HelpKINode Title="GuiItem.Origin property" Url="html/23cbf224-32d8-5911-3de7-9f46c80a854d.htm" />
   <HelpKINode Title="GuiItem.over field" Url="html/f815b5f4-1bb3-90e5-2876-77e33443ab14.htm" />
   <HelpKINode Title="GuiItem.PerformClick method" Url="html/d71b5c5c-1422-1b9f-87a0-3f86e81eaf5f.htm" />
   <HelpKINode Title="GuiItem.Position property" Url="html/e4568516-1a67-980c-3eac-072ec298d967.htm" />
@@ -386,7 +383,6 @@
   <HelpKINode Title="Label.AutoSize property" Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
   <HelpKINode Title="Label.BorderStyle property" Url="html/943eb238-d188-ec04-3bcb-1946fb67c5ed.htm" />
   <HelpKINode Title="Label.Bounds property" Url="html/1e5387f8-768f-9fdc-30c3-69146536ddae.htm" />
-  <HelpKINode Title="Label.Draw method" Url="html/e3a6c11d-6672-9e4d-0218-31a22461f3e2.htm" />
   <HelpKINode Title="Label.font field" Url="html/ce37aea7-09e3-c1de-9e69-3a89ba2a281d.htm" />
   <HelpKINode Title="Label.Font property" Url="html/0500123a-4465-fd7e-489b-c62756879f80.htm" />
   <HelpKINode Title="Label.FontChanged event" Url="html/457b5dc9-9ea4-6196-4185-7ae61c5bbdc7.htm" />
@@ -667,6 +663,7 @@
     <HelpKINode Title="Slider.OnValueChanged Method " Url="html/9bf609ad-7eaf-599b-49fb-cf204fd94706.htm" />
   </HelpKINode>
   <HelpKINode Title="OnVisibilityChanged method" Url="html/bf7caa3e-1b42-ca1e-2c85-333400c04a64.htm" />
+  <HelpKINode Title="Origin property" Url="html/23cbf224-32d8-5911-3de7-9f46c80a854d.htm" />
   <HelpKINode Title="over field" Url="html/f815b5f4-1bb3-90e5-2876-77e33443ab14.htm" />
   <HelpKINode Title="Owner property" Url="html/0718c655-08ab-0eff-5fd3-1116010ce49f.htm" />
   <HelpKINode Title="PasswordChar property" Url="html/ef2a4cab-bf18-1a60-e2b4-9dde1c0d2d2c.htm" />
@@ -683,7 +680,6 @@
     <HelpKINode Title="methods" Url="html/175fb347-4cfc-9b80-510a-e3a295f1cce0.htm" />
     <HelpKINode Title="properties" Url="html/1bb343da-9bdd-4bc9-ab9e-bb4f2265db0f.htm" />
   </HelpKINode>
-  <HelpKINode Title="PictureBox.Draw method" Url="html/47766f6b-1abe-f4d1-e8b6-a2b1ded6db0f.htm" />
   <HelpKINode Title="PictureBox.Image property" Url="html/14a90d93-5234-0377-a331-29b8ff36ada9.htm" />
   <HelpKINode Title="PictureBox.OnSizeModeChanged method" Url="html/83e1d109-062b-fb11-84ed-a2484ba41bf6.htm" />
   <HelpKINode Title="PictureBox.PictureBox constructor" Url="html/d36e6e96-e357-a83e-c1de-b1a6cd6ae50f.htm" />
@@ -707,7 +703,6 @@
   <HelpKINode Title="ProgressBar.data field" Url="html/3288bf01-28c8-3379-f52c-3491cdaa491f.htm" />
   <HelpKINode Title="ProgressBar.DefaultBounds property" Url="html/e052631e-0f3d-7593-efaf-9249562fc760.htm" />
   <HelpKINode Title="ProgressBar.DefaultForeColor property" Url="html/5095cf6e-ef46-44b9-f4d3-ec27bb21a1c3.htm" />
-  <HelpKINode Title="ProgressBar.Draw method" Url="html/143b4933-395e-916b-b550-df0cfeed2201.htm" />
   <HelpKINode Title="ProgressBar.Inverted property" Url="html/43ef686b-c9a0-3225-66b4-a02449eb7fd2.htm" />
   <HelpKINode Title="ProgressBar.MaxiumValue property" Url="html/1b1e405a-abc9-caf3-e1b5-18d59c6cb426.htm" />
   <HelpKINode Title="ProgressBar.MinimumValue property" Url="html/097e6f2d-c7c5-84f1-ad0d-8878531ce5a9.htm" />
@@ -818,7 +813,6 @@
   <HelpKINode Title="Slider.BorderStyle property" Url="html/a2aac4be-589d-f70b-caad-ac0406ad44b8.htm" />
   <HelpKINode Title="Slider.data field" Url="html/b6432b3f-1ed4-cf0a-4b0b-8011c01f0e1e.htm" />
   <HelpKINode Title="Slider.DefaultBounds property" Url="html/c73b6f1f-29fa-0a38-3ffa-67bfdf8ed4e2.htm" />
-  <HelpKINode Title="Slider.Draw method" Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
   <HelpKINode Title="Slider.MaximumValue property" Url="html/735c264f-311e-bfcb-3b92-3f5b80e6e40c.htm" />
   <HelpKINode Title="Slider.MinimumValue property" Url="html/3556527e-b702-d6ea-c9b7-1f1be2db6657.htm" />
   <HelpKINode Title="Slider.MouseDown event" Url="html/3afcde40-f9e0-c4f8-83a6-e10646fd8240.htm" />

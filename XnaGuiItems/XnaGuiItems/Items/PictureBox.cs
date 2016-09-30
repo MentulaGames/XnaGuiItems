@@ -86,20 +86,6 @@
         }
 
         /// <summary>
-        /// Draws the <see cref="PictureBox"/> to the specified <see cref="SpriteBatch"/>.
-        /// </summary>
-        /// <param name="spriteBatch"> The spritebatch to use. </param>
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            base.Draw(spriteBatch);
-
-            if (Visible)
-            {
-                spriteBatch.Draw(foregroundTexture, Position, null, BackColor, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
-            }
-        }
-
-        /// <summary>
         /// This method is called when the <see cref="SizeModeChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
