@@ -70,9 +70,7 @@
                     break;
                 case ResizeMode.CenterImage:
                     Size offset = (Size >> 1) - (Image.Bounds.Size() >> 1);
-                    foregroundTexture = Image.RenderOnto(Size, 
-                        position: offset.ToVector2(),
-                        rotation: Rotation);
+                    foregroundTexture = Image.RenderOnto(Size, position: offset.ToVector2());
                     break;
                 case ResizeMode.Normal:
                     foregroundTexture = Image.Clip(new Rectangle(0, 0, Width, Height));
@@ -82,9 +80,7 @@
                     break;
                 case ResizeMode.Zoom:
                     Vector2 zoom = new Vector2(Width / (float)Image.Width, Height / (float)Image.Height);
-                    foregroundTexture = Image.RenderOnto(Size, 
-                        scale: new Vector2(Math.Min(zoom.X, zoom.Y)),
-                        rotation: Rotation);
+                    foregroundTexture = Image.RenderOnto(Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
                     break;
             }
         }
@@ -96,7 +92,11 @@
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            spriteBatch.Draw(foregroundTexture, Position, null, BackColor, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+
+            if (Visible)
+            {
+                spriteBatch.Draw(foregroundTexture, Position, null, BackColor, Rotation, Vector2.Zero, Vector2.One, SpriteEffects.None, 1f);
+            }
         }
 
         /// <summary>
