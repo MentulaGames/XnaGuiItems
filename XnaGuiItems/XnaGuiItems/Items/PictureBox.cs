@@ -57,7 +57,7 @@
         /// </summary>
         public override void Refresh()
         {
-            if (suppressRefresh) return;
+            if (suppressRefresh || Image == null) return;
 
             switch (SizeMode)
             {
