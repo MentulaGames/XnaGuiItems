@@ -57,7 +57,13 @@
         /// </summary>
         public override void Refresh()
         {
-            if (suppressRefresh || Image == null) return;
+            if (suppressRefresh) return;
+
+            if (Image == null)
+            {
+                foregroundTexture = Drawing.FromColor(Color.Transparent, Size, device);
+                return;
+            }
 
             switch (SizeMode)
             {
