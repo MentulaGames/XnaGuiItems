@@ -13,6 +13,10 @@
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
     /// </summary>
+    /// <remarks>
+    /// This object is usefull for interfaces like inventory and skills.
+    /// It will handle the updating and drawing of all its child controlls.
+    /// </remarks>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif

@@ -290,6 +290,7 @@
   <HelpKINode Title="GuiItem.Size property" Url="html/2cea4301-e90d-24c0-19f8-3ed304c9e3f4.htm" />
   <HelpKINode Title="GuiItem.SuppressDraw property" Url="html/37dc41a3-7acd-eaf7-c449-006ef4de559e.htm" />
   <HelpKINode Title="GuiItem.SuppressUpdate property" Url="html/2c63e27a-bdfb-a89f-fb55-1b349670695e.htm" />
+  <HelpKINode Title="GuiItem.ToString method" Url="html/b0281881-2439-a44a-456e-ea826a8cfa7e.htm" />
   <HelpKINode Title="GuiItem.Update method" Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
   <HelpKINode Title="GuiItem.VisibilityChanged event" Url="html/172fe70f-4b17-b4df-f958-cb778510a137.htm" />
   <HelpKINode Title="GuiItem.Visible property" Url="html/a266c3fa-e088-547a-d2de-ca594b2d6e9f.htm" />
@@ -884,6 +885,7 @@
   <HelpKINode Title="TextChanged event" Url="html/6632fb63-abbb-d9eb-67ce-c3015862d5cf.htm" />
   <HelpKINode Title="Top enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="ToString method">
+    <HelpKINode Title="GuiItem.ToString Method " Url="html/b0281881-2439-a44a-456e-ea826a8cfa7e.htm" />
     <HelpKINode Title="ProgressData.ToString Method " Url="html/67127cc1-5cf5-aa8e-dcc3-d2c4c7ef8729.htm" />
     <HelpKINode Title="Size.ToString Method " Url="html/7526c131-cc98-3a07-22ed-012848e2adc9.htm" />
   </HelpKINode>

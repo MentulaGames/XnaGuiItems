@@ -37,26 +37,26 @@
         public KeyState X_KeyState { get { return X; } set { SetDown(Keys.X, value); X = value; } }
         public KeyState Y_KeyState { get { return Y; } set { SetDown(Keys.Y, value); Y = value; } }
         public KeyState Z_KeyState { get { return Z; } set { SetDown(Keys.Z, value); Z = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState Caps_KeyState { get; set; }
         public KeyState Space_KeyState { get { return Space; } set { SetDown(Keys.Space, value); Space = value; } }
         public KeyState Back_KeyState { get { return Back; } set { SetDown(Keys.Back, value); Back = value; } }
         public KeyState Return_KeyState { get { return Return; } set { SetDown(Keys.Enter, value); Return = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState Oem_SemiColon_KeyState { get { return Oem_SemiColon; } set { SetDown(Keys.OemSemicolon, value); Oem_SemiColon = value; } }
         public KeyState Oem_Quotes_KeyState { get { return Oem_Quotes; } set { SetDown(Keys.OemQuotes, value); Oem_Quotes = value; } }
         public KeyState Oem_Comma_KeyState { get { return Oem_Comma; } set { SetDown(Keys.OemComma, value); Oem_Comma = value; } }
         public KeyState Oem_Period_KeyState { get { return Oem_Period; } set { SetDown(Keys.OemPeriod, value); Oem_Period = value; } }
         public KeyState Oem_Question_KeyState { get { return Oem_Question; } set { SetDown(Keys.OemQuestion, value); Oem_Question = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState Oem_OpenBracket_KeyState { get { return Oem_OpenBracket; } set { SetDown(Keys.OemOpenBrackets, value); Oem_OpenBracket = value; } }
         public KeyState Oem_CloseBracket_KeyState { get { return Oem_CloseBracket; } set { SetDown(Keys.OemCloseBrackets, value); Oem_CloseBracket = value; } }
         public KeyState Oem_Pipe_KeyState { get { return Oem_Pipe; } set { SetDown(Keys.OemPipe, value); Oem_Pipe = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState Oem_Tilde_KeyState { get { return Oem_Tilde; } set { SetDown(Keys.OemTilde, value); Oem_Tilde = value; } }
         public KeyState Oem_Minus_KeyState { get { return Oem_Minus; } set { SetDown(Keys.OemMinus, value); Oem_Minus = value; } }
         public KeyState Oem_Plus_KeyState { get { return Oem_Plus; } set { SetDown(Keys.OemPlus, value); Oem_Plus = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState D1_KeyState { get { return D1; } set { SetDown(Keys.D1, value); D1 = value; } }
         public KeyState D2_KeyState { get { return D2; } set { SetDown(Keys.D2, value); D2 = value; } }
         public KeyState D3_KeyState { get { return D3; } set { SetDown(Keys.D3, value); D3 = value; } }
@@ -67,7 +67,7 @@
         public KeyState D8_KeyState { get { return D8; } set { SetDown(Keys.D8, value); D8 = value; } }
         public KeyState D9_KeyState { get { return D9; } set { SetDown(Keys.D9, value); D9 = value; } }
         public KeyState D0_KeyState { get { return D0; } set { SetDown(Keys.D0, value); D0 = value; } }
-        /// ////////////////////////////////////////////////
+
         public KeyState Num0_KeyState { get { return Num0; } set { SetDown(Keys.NumPad0, value); Num0 = value; } }
         public KeyState Num1_KeyState { get { return Num1; } set { SetDown(Keys.NumPad1, value); Num1 = value; } }
         public KeyState Num2_KeyState { get { return Num2; } set { SetDown(Keys.NumPad2, value); Num2 = value; } }
@@ -105,25 +105,25 @@
         private KeyState X;
         private KeyState Y;
         private KeyState Z;
-        /// ////////////////////////////////////////////////
+
         private KeyState Space;
         private KeyState Back;
         private KeyState Return;
-        /// ////////////////////////////////////////////////
+
         private KeyState Oem_SemiColon;
         private KeyState Oem_Quotes;
         private KeyState Oem_Comma;
         private KeyState Oem_Period;
         private KeyState Oem_Question;
-        /// ////////////////////////////////////////////////
+
         private KeyState Oem_OpenBracket;
         private KeyState Oem_CloseBracket;
         private KeyState Oem_Pipe;
-        /// ////////////////////////////////////////////////
+
         private KeyState Oem_Tilde;
         private KeyState Oem_Minus;
         private KeyState Oem_Plus;
-        /// ////////////////////////////////////////////////
+
         private KeyState D1;
         private KeyState D2;
         private KeyState D3;
@@ -134,7 +134,7 @@
         private KeyState D8;
         private KeyState D9;
         private KeyState D0;
-        /// ////////////////////////////////////////////////
+
         private KeyState Num0;
         private KeyState Num1;
         private KeyState Num2;

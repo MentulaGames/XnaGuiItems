@@ -2840,19 +2840,6 @@
         </ancestors>
       </family>
       <elements>
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -2976,6 +2963,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
@@ -2995,19 +2983,6 @@
       <apidata name="TabContainer" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -3095,6 +3070,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -3890,19 +3866,6 @@
         <type api="T:Mentula.GuiItems.Core.Interfaces.IToggleable" ref="true" />
       </implements>
       <elements>
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -4021,6 +3984,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -4041,19 +4005,6 @@
       <apidata name="GuiItem" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -4135,6 +4086,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Refresh" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
       </elements>
       <containers>
@@ -5491,6 +5443,29 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
       <file name="2c63e27a-bdfb-a89f-fb55-1b349670695e" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.GuiItem.ToString">
+      <topicdata group="api" />
+      <apidata name="ToString" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.ToString">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <returns>
+        <type api="T:System.String" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+      </containers>
+      <file name="b0281881-2439-a44a-456e-ea826a8cfa7e" />
     </api>
     <api id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
       <topicdata group="api" />
@@ -10906,24 +10881,12 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -11049,19 +11012,7 @@
           <element api="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" />
         </element>
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -11618,24 +11569,12 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -11753,19 +11692,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -12473,25 +12400,13 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -12605,20 +12520,8 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -13303,25 +13206,13 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -13425,20 +13316,8 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -13826,25 +13705,13 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -13954,20 +13821,8 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -14480,24 +14335,12 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -14610,19 +14453,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -15209,6 +15040,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
@@ -15229,19 +15061,6 @@
         <element api="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="P:Mentula.GuiItems.Items.Label.Text" />
         <element api="E:Mentula.GuiItems.Items.Label.TextChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -15355,23 +15174,11 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
         <element api="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />

@@ -5,6 +5,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
     using System;
+    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
 
@@ -12,8 +13,9 @@
     /// The absolute base class for all <see cref="GuiItems"/>.
     /// </summary>
 #if !DEBUG
-    [System.Diagnostics.DebuggerStepThrough]
+    [DebuggerStepThrough]
 #endif
+    [DebuggerDisplay("{ToString()}")]
     public partial class GuiItem : IDisposable, IToggleable
     {
         /// <summary>
@@ -366,6 +368,15 @@
         public virtual void Refresh()
         {
             if (suppressRefresh) return;
+        }
+
+        /// <summary>
+        /// Returns a string that represents the current GuiItem.
+        /// </summary>
+        /// <returns> A string that represents the current GuiItem. </returns>
+        public override string ToString()
+        {
+            return $"{typeof(GuiItem).Name}: {Name}";
         }
 
         /// <summary>

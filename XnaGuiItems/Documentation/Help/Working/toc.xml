@@ -165,6 +165,7 @@
         <topic id="M:Mentula.GuiItems.Core.GuiItem.PerformClick" project="XnaGuiItems" file="d71b5c5c-1422-1b9f-87a0-3f86e81eaf5f" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Refresh" project="XnaGuiItems" file="7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Show" project="XnaGuiItems" file="063225f4-2072-377c-46ad-e8e2a7a53ff3" />
+        <topic id="M:Mentula.GuiItems.Core.GuiItem.ToString" project="XnaGuiItems" file="b0281881-2439-a44a-456e-ea826a8cfa7e" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="2f959bc3-a70a-04c2-0704-d667a709a3ec" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="473c1bfa-9f2c-0191-1728-2c63cee67a63">

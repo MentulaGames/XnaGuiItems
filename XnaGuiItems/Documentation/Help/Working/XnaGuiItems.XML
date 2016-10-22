@@ -456,6 +456,10 @@
       <summary>
             A <see cref="T:Mentula.GuiItems.Core.GuiItem" /> container with tabs.
             </summary>
+      <remarks>
+            This object is usefull for interfaces like inventory and skills.
+            It will handle the updating and drawing of all its child controlls.
+            </remarks>
     </member>
     <member name="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle">
       <summary>
@@ -974,6 +978,12 @@
             When overriden in a derived class, updates the textures used for drawing.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.ToString">
+      <summary>
+            Returns a string that represents the current GuiItem.
+            </summary>
+      <returns> A string that represents the current GuiItem. </returns>
+    </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)">
       <summary>
             Gets the position of the mouse in respect to the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
@@ -1069,6 +1079,10 @@
       <summary>
             Defines an interface for components that can be shown or hiden.
             </summary>
+      <remarks>
+            This interface adds usefull abstraction to functions that require only to be able to toggle the visible state of an object.
+            In this framework it is used for all <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </remarks>
     </member>
     <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show">
       <summary>
@@ -1102,7 +1116,7 @@
     </member>
     <member name="T:Mentula.GuiItems.Core.FlickerStyle">
       <summary>
-            Specifies the flicker syle for a GuiItem.
+            Specifies the flicker style for a GuiItem.
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Core.FlickerStyle.Slow">
@@ -1231,63 +1245,36 @@
       <summary>
             Represents the method that will handle the default <see cref="T:Mentula.GuiItems.Core.GuiItem" /> events.
             </summary>
-      <param name="sender">
-      </param>
-      <param name="e">
-      </param>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised. </param>
+      <remarks>
+            The <see cref="T:System.EventArgs" /> will almost always be empty if the call is internal.
+            The reason this parameter is required if for the option of extra data given by classes that modify functions in this framework.
+            This makes sure that modifications on this framework do not need to hack in additional data for events.
+            </remarks>
     </member>
     <member name="T:Mentula.GuiItems.Core.IndexedClickEventHandler">
       <summary>
             Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
             </summary>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this contains the index clicked. </param>
     </member>
     <member name="T:Mentula.GuiItems.Core.MouseEventHandler">
       <summary>
             Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
             </summary>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>
     </member>
     <member name="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1">
       <summary>
             Represent the method that will handle the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event.
             </summary>
       <typeparam name="T"> The type of the value. </typeparam>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this will contain the old and new value of the changed field. </param>
     </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.Caps_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_SemiColon_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_OpenBracket_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.Oem_Tilde_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.D1_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="P:Mentula.GuiItems.Core.EmptyInput.Num0_KeyState">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.Space">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_SemiColon">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_OpenBracket">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.Oem_Tilde">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.D1">
-            ////////////////////////////////////////////////
-        </member>
-    <member name="F:Mentula.GuiItems.Core.EmptyInput.Num0">
-            ////////////////////////////////////////////////
-        </member>
     <member name="T:Mentula.GuiItems.Core.InvokeException">
       <summary>
             Represents errors that occur during event invoking.

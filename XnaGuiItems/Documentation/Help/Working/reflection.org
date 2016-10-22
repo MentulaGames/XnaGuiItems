@@ -1750,6 +1750,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -1789,19 +1790,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -2418,6 +2406,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Refresh" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -2460,19 +2449,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -3469,6 +3445,24 @@
       <setter name="set_SuppressUpdate" />
       <returns>
         <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.GuiItem.ToString">
+      <apidata name="ToString" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.ToString">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <returns>
+        <type api="T:System.String" ref="true" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
@@ -6664,6 +6658,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -6700,19 +6695,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -7033,6 +7015,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -7071,19 +7054,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -7540,6 +7510,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -7576,19 +7547,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -8031,6 +7989,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -8070,19 +8029,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -8305,6 +8251,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -8344,19 +8291,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -8670,6 +8604,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -8709,19 +8644,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />
@@ -9111,6 +9033,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -9147,19 +9070,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
-        <element api="M:System.Object.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
         <element api="M:System.Object.Equals(System.Object)">
           <apidata name="Equals" group="member" subgroup="method" />
           <memberdata visibility="public" />

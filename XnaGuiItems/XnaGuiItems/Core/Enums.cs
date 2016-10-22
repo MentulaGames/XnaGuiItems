@@ -20,7 +20,7 @@
     }
 
     /// <summary>
-    /// Specifies the flicker syle for a GuiItem.
+    /// Specifies the flicker style for a GuiItem.
     /// </summary>
     public enum FlickerStyle : byte
     {

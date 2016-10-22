@@ -25,7 +25,8 @@
         internal const int HASH_BASE = unchecked((int)2166136261);
         private const int HASH_MODIFIER = 16777619;
 
-        internal const string CAT_DESIGN = "Microsoft.Design",
+        internal const string 
+            CAT_DESIGN = "Microsoft.Design",
             CAT_USAGE = "Microsoft.Usage",
             CHECKID_EVENT = "CA1009:DeclareEventHandlersCorrectly",
             CHECKID_CALL = "CA2214:DoNotCallOverridableMethodsInConstructors",

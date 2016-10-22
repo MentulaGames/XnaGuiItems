@@ -187,6 +187,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Size" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.ToString" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Visible" type="API" />
