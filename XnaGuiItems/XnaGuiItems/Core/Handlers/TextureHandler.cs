@@ -1,0 +1,70 @@
+﻿namespace Mentula.GuiItems.Core.Handlers
+{
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
+    /// <summary>
+    /// A class that handles texture settings.
+    /// </summary>
+    public class TextureHandler
+    {
+        /// <summary>
+        /// The background texture for a <see cref="GuiItem"/>.
+        /// </summary>
+        public Texture2D Background
+        {
+            get { return back; }
+            set
+            {
+                if (!internCall) userSet |= 1;
+                back = value;
+            }
+        }
+
+        /// <summary>
+        /// The foreground texture for a <see cref="GuiItem"/>.
+        /// </summary>
+        public Texture2D Foreground
+        {
+            get { return fore; }
+            set
+            {
+                if (!internCall) userSet |= 2;
+                fore = value;
+            }
+        }
+
+        internal bool internCall;
+
+        /// <summary>
+        /// A bitflag byte that contains if the user has set specified textures.
+        /// 1 if for the background,
+        /// 2 if for the foreground.
+        /// </summary>
+        protected byte userSet;
+        private Texture2D back, fore;
+
+        internal TextureHandler()
+        {
+            internCall = false;
+            userSet = 0;
+            back = null;
+            fore = null;
+        }
+
+        internal void SetFromClr(Color clr, Size size, GraphicsDevice device)
+        {
+            internCall = true;
+            if ((userSet & 1) == 0) Background = Drawing.FromColor(clr, size, device);
+            if ((userSet & 2) == 0) Foreground = Drawing.FromColor(clr, size, device);
+            internCall = false;
+        }
+
+        internal void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
+        {
+            internCall = true;
+            if ((userSet & 2) == 0) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, device);
+            internCall = false;
+        }
+    }
+}
