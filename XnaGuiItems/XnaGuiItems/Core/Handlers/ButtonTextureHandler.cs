@@ -63,6 +63,10 @@
             internCall = false;
         }
 
+        /// <summary>
+        /// Releases the unmanaged and managed resources used by the <see cref="ButtonTextureHandler"/>.
+        /// </summary>
+        /// <param name="disposing"> Whether the managed resources should be disposed. </param>
         protected override void Dispose(bool disposing)
         {
             if (!IsDisposed && disposing)

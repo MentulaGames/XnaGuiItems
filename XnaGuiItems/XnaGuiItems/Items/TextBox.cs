@@ -3,6 +3,7 @@
     using Core;
     using Core.Handlers;
     using Core.Interfaces;
+    using Core.Input;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -32,6 +33,12 @@
         /// Gets or sets a value indicating if the <see cref="TextBox"/> is in focus.
         /// </summary>
         public virtual bool Focused { get { return focus; } set { Invoke(FocusChanged, this, new Args(focus, value)); } }
+        /// <summary>
+        /// Gets or sets a value indicating the maximum length of the text input.
+        /// Negative values indicate no maximum length.
+        /// Default value = -1
+        /// </summary>
+        public virtual int MaxLength { get; set; }
         /// <summary>
         /// Gets or sets a value indicating of the <see cref="TextBox"/> can be multiline.
         /// </summary>
@@ -95,6 +102,7 @@
             MinimumSize = DefaultMinimumSize;
             MaximumSize = device.Viewport.Bounds.Size();
             FocusChanged += OnFocusChanged;
+            MaxLength = -1;
         }
 
         /// <summary>
@@ -120,7 +128,7 @@
                 if (Focused)
                 {
                     bool confirmed = false;
-                    string newText = inputHandler.GetInputString(kState, MultiLine, out confirmed);
+                    string newText = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
 
                     if (Text != newText) Text = newText;
                     if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
@@ -186,7 +194,6 @@
                 else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
-            foregroundRectangle = Bounds;
             textures.SetBackFromClr(BackColor, Size, device, BorderStyle);
             CreateForegroundTextures();
         }

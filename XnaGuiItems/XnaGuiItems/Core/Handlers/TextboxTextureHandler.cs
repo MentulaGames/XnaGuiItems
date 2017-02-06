@@ -57,9 +57,15 @@
         internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
         {
             SetBackFromClr(clr, size, device);
+            internCall = true;
             if ((userSet & 1) == 0) Background = Background.ApplyBorderLabel(style);
+            internCall = false;
         }
 
+        /// <summary>
+        /// Releases the unmanaged and managed resources used by the <see cref="TextboxTextureHandler"/>.
+        /// </summary>
+        /// <param name="disposing"> Whether the managed resources should be disposed. </param>
         protected override void Dispose(bool disposing)
         {
             if (!IsDisposed && disposing)

@@ -259,6 +259,19 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
+        /// Loads a specified <see cref="SpriteFont"/> from <see cref="Game.Content"/>.
+        /// </summary>
+        /// <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+        /// <returns> The specified <see cref="SpriteFont"/>. </returns>
+        public SpriteFont LoadFont(string assetName) => Game.Content.Load<SpriteFont>(assetName);
+
+        /// <summary>
+        /// Sets the default <see cref="SpriteFont"/>.
+        /// </summary>
+        /// <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+        public void SetDefaultFont(string assetName) => font = LoadFont(assetName);
+
+        /// <summary>
         /// Updates the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
         /// <param name="gameTime"> Time elapsed since the last call to Update. </param>

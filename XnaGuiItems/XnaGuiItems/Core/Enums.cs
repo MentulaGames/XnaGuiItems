@@ -134,6 +134,41 @@
         Zoom
     }
 
+    /// <summary>
+    /// Specifies which <see cref="char"/> the <see cref="Items.TextBox"/> should allow.
+    /// </summary>
+    public enum InputFlags : byte
+    {
+        /// <summary>
+        /// No flags are set; everything may be added.
+        /// </summary>
+        NO_FLAGS = 0,
+        /// <summary>
+        /// No characters can be added.
+        /// </summary>
+        NO_CHARS = 1,
+        /// <summary>
+        /// No numbers can be added.
+        /// </summary>
+        NO_NUMS = 2,
+        /// <summary>
+        /// No special chars may be added.
+        /// </summary>
+        NO_SPEC = 4,
+        /// <summary>
+        /// No space may be added.
+        /// </summary>
+        NO_SPACE = 8,
+        /// <summary>
+        /// Only characters may be added.
+        /// </summary>
+        TEXT = NO_NUMS | NO_SPEC,
+        /// <summary>
+        /// Only numbers may be added.
+        /// </summary>
+        NUMS = NO_CHARS | NO_SPEC | NO_SPACE
+    }
+
     internal enum ButtonStyle : byte
     {
         Default,

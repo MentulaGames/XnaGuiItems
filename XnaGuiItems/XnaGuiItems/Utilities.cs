@@ -5,6 +5,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Input;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Reflection;
     using System.Runtime.CompilerServices;
@@ -154,6 +155,17 @@
             if ((dUpd = control as IDeltaUpdate) != null) dUpd.Update(mState, delta);
             else if ((dkUpd = control as IDeltaKeyboardUpdate) != null) dkUpd.Update(mState, kState, delta);
             else control.Update(mState);
+        }
+
+        internal static void AddSet<Tkey, TVal>(this Dictionary<Tkey, TVal> dict, Tkey key, TVal val)
+        {
+            if (dict.ContainsKey(key)) dict[key] = val;
+            else dict.Add(key, val);
+        }
+
+        internal static bool IsNotEmpty(this string str)
+        {
+            return !string.IsNullOrEmpty(str);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

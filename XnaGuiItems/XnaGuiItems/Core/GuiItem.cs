@@ -110,6 +110,7 @@
 
         /// <summary> The specified <see cref="GraphicsDevice"/>. </summary>
         protected GraphicsDevice device;
+        /// <summary> Stores the <see cref="Texture2D"/> used for drawing. </summary>
         protected TextureHandler textures;
         /// <summary> Whether the <see cref="Mouse"/> is hovering over the <see cref="GuiItem"/>. </summary>
         protected bool over;
@@ -285,16 +286,6 @@
                 spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.Foreground, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
-        }
-
-        /// <summary>
-        /// Moves the <see cref="GuiItem"/> to a specified relative position.
-        /// </summary>
-        /// <param name="anchor"> A valid relative position. </param>
-        /// <exception cref="ArgumentException"> The anchor is invalid. </exception>
-        public void MoveRelative(Anchor anchor)
-        {
-            MoveRelative(anchor, null, null);
         }
 
         /// <summary>

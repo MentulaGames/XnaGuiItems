@@ -40,10 +40,12 @@
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.font" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Hide" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Initialize" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Show" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.Visible" type="API" />
@@ -97,12 +99,10 @@
   <topic id="Fields.T:Mentula.GuiItems.Core.GuiItem" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.GuiItem.#ctor" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.GuiItem.Dispose" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.BackColor" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.GuiItem.backColorImage" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Bounds" type="API" />
@@ -119,7 +119,6 @@
   <topic id="M:Mentula.GuiItems.Core.GuiItem.Finalize" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.ForeColor" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Height" type="API" />
@@ -128,7 +127,6 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.leftDown" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.Move" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Name" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.NameChanged" type="API" />
@@ -153,6 +151,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Size" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.GuiItem.textures" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.ToString" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" type="API" />
@@ -188,6 +187,7 @@
   <topic id="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Empty" type="API" />
   <topic id="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Index" type="API" />
   <topic id="T:Mentula.GuiItems.Core.IndexedClickEventHandler" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.InputFlags" type="API" />
   <topic id="T:Mentula.GuiItems.Core.InvokeException" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.InvokeException" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.InvokeException" type="API" />
@@ -277,6 +277,32 @@
   <topic id="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.NewValue" type="API" />
   <topic id="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.OldValue" type="API" />
   <topic id="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" type="API" />
+  <topic id="N:Mentula.GuiItems.Core.Handlers" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.LabelTextureHandler.#ctor" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Handlers.TextureHandler" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.TextureHandler" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.TextureHandler" type="API" />
+  <topic id="Fields.T:Mentula.GuiItems.Core.Handlers.TextureHandler" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" type="API" />
   <topic id="N:Mentula.GuiItems.Core.Interfaces" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
@@ -297,10 +323,8 @@
   <topic id="Overload:Mentula.GuiItems.Items.Button.Update" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
-  <topic id="F:Mentula.GuiItems.Items.Button.clickTexture" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.DoubleClick" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
-  <topic id="F:Mentula.GuiItems.Items.Button.hoverTexture" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.LeftClick" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.Refresh" type="API" />
@@ -428,8 +452,8 @@
   <topic id="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" type="API" />
   <topic id="E:Mentula.GuiItems.Items.TextBox.FocusChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.Focused" type="API" />
-  <topic id="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MaximumSize" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.TextBox.MaxLength" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MinimumSize" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MultiLine" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" type="API" />

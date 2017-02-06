@@ -511,10 +511,12 @@
         <element api="F:Mentula.GuiItems.Containers.Menu`1.font" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Hide" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Initialize" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Show" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.Visible" />
@@ -696,6 +698,8 @@
         </element>
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Hide" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Initialize" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Show" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" />
       </elements>
@@ -1515,6 +1519,28 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
     </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)">
+      <topicdata group="api" />
+      <apidata name="LoadFont" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="assetName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+    </api>
     <api id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
       <topicdata group="api" />
       <apidata name="ScreenHeight" group="member" subgroup="property" />
@@ -1582,6 +1608,25 @@
       <returns>
         <type api="T:System.Int32" ref="false" />
       </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)">
+      <topicdata group="api" />
+      <apidata name="SetDefaultFont" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="assetName">
+          <type api="T:System.String" ref="true" />
+        </parameter>
+      </parameters>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />
@@ -2845,7 +2890,6 @@
         <element api="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -2860,7 +2904,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -2869,10 +2912,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Containers.TabContainer.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -2895,6 +2935,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -2987,10 +3028,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Containers.TabContainer.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -3078,12 +3116,11 @@
       <apidata name="TabContainer" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -3396,6 +3433,7 @@
         <element api="T:Mentula.GuiItems.Core.MouseClick" />
         <element api="T:Mentula.GuiItems.Core.Anchor" />
         <element api="T:Mentula.GuiItems.Core.ResizeMode" />
+        <element api="T:Mentula.GuiItems.Core.InputFlags" />
         <element api="T:Mentula.GuiItems.Core.GuiItemEventHandler" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventHandler" />
         <element api="T:Mentula.GuiItems.Core.MouseEventHandler" />
@@ -3824,7 +3862,6 @@
         </element>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -3843,7 +3880,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -3852,10 +3888,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -3879,6 +3912,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
@@ -3965,10 +3999,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -4056,12 +4087,11 @@
       <apidata name="GuiItem" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -4092,21 +4122,6 @@
       <elements>
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
-      </elements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-      </containers>
-    </api>
-    <api id="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative">
-      <topicdata name="MoveRelative" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
-      <apidata name="MoveRelative" group="member" subgroup="method" />
-      <elements>
-        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -4190,23 +4205,6 @@
           </specialization>
         </type>
       </eventhandler>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-      </containers>
-    </api>
-    <api id="F:Mentula.GuiItems.Core.GuiItem.backColorImage">
-      <topicdata group="api" />
-      <apidata name="backColorImage" group="member" subgroup="field" />
-      <memberdata visibility="family" />
-      <fielddata literal="false" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
-      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />
@@ -4539,23 +4537,6 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture">
-      <topicdata group="api" />
-      <apidata name="foregroundTexture" group="member" subgroup="field" />
-      <memberdata visibility="family" />
-      <fielddata literal="false" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
-      </returns>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-      </containers>
-    </api>
     <api id="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs">
       <topicdata group="api" />
       <apidata name="GetMouseEventArgs" group="member" subgroup="method" />
@@ -4715,29 +4696,10 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)">
-      <topicdata group="api" />
-      <apidata name="MoveRelative" group="member" subgroup="method" />
-      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative" />
-      <proceduredata virtual="false" />
-      <parameters>
-        <parameter name="anchor">
-          <type api="T:Mentula.GuiItems.Core.Anchor" ref="false" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-      </containers>
-    </api>
     <api id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})">
       <topicdata group="api" />
       <apidata name="MoveRelative" group="member" subgroup="method" />
-      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative" />
+      <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <parameters>
         <parameter name="anchor">
@@ -5266,6 +5228,23 @@
       <setter name="set_SuppressUpdate" />
       <returns>
         <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.GuiItem.textures">
+      <topicdata group="api" />
+      <apidata name="textures" group="member" subgroup="field" />
+      <memberdata visibility="family" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -6426,6 +6405,155 @@
           <assemblydata version="1.0.0.0" />
         </library>
         <namespace api="N:Mentula.GuiItems.Core" />
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.InputFlags">
+      <topicdata group="api" />
+      <apidata name="InputFlags" group="type" subgroup="enumeration" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <enumerationbase>
+        <type api="T:System.Byte" ref="false" />
+      </enumerationbase>
+      <elements>
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NO_FLAGS" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NO_CHARS" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NO_NUMS" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NO_SPEC" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NO_SPACE" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.TEXT" />
+        <element api="F:Mentula.GuiItems.Core.InputFlags.NUMS" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NO_CHARS">
+      <topicdata group="api" notopic="" />
+      <apidata name="NO_CHARS" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>1</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NO_FLAGS">
+      <topicdata group="api" notopic="" />
+      <apidata name="NO_FLAGS" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>0</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NO_NUMS">
+      <topicdata group="api" notopic="" />
+      <apidata name="NO_NUMS" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>2</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NO_SPACE">
+      <topicdata group="api" notopic="" />
+      <apidata name="NO_SPACE" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>8</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NO_SPEC">
+      <topicdata group="api" notopic="" />
+      <apidata name="NO_SPEC" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>4</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.NUMS">
+      <topicdata group="api" notopic="" />
+      <apidata name="NUMS" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>13</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.InputFlags.TEXT">
+      <topicdata group="api" notopic="" />
+      <apidata name="TEXT" group="member" subgroup="field" />
+      <memberdata visibility="public" static="true" />
+      <fielddata literal="true" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
+      </returns>
+      <value>6</value>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
       </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.InvokeException">
@@ -9969,6 +10097,982 @@
         <namespace api="N:Mentula.GuiItems.Core" />
       </containers>
     </api>
+    <api id="N:Mentula.GuiItems.Core.Handlers">
+      <topicdata group="api" />
+      <apidata name="Mentula.GuiItems.Core.Handlers" group="namespace" />
+      <elements>
+        <element api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />
+        <element api="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" />
+        <element api="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />
+        <element api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      </elements>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
+      <topicdata group="api" />
+      <apidata name="ButtonTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+      </containers>
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
+      <topicdata name="ButtonTextureHandler" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />
+      <apidata name="ButtonTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />
+      </containers>
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
+      <topicdata name="ButtonTextureHandler" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />
+      <apidata name="ButtonTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click">
+      <topicdata group="api" />
+      <apidata name="Click" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Click" />
+      <setter name="set_Click" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover">
+      <topicdata group="api" />
+      <apidata name="Hover" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Hover" />
+      <setter name="set_Hover" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
+      <topicdata group="api" />
+      <apidata name="LabelTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.LabelTextureHandler.#ctor" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+      </containers>
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
+      <topicdata name="LabelTextureHandler" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" />
+      <apidata name="LabelTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" />
+      </containers>
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
+      <topicdata name="LabelTextureHandler" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" />
+      <apidata name="LabelTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.LabelTextureHandler.#ctor">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler">
+      <topicdata group="api" />
+      <apidata name="TextboxTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+      </containers>
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler">
+      <topicdata name="TextboxTextureHandler" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />
+      <apidata name="TextboxTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />
+      </containers>
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler">
+      <topicdata name="TextboxTextureHandler" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />
+      <apidata name="TextboxTextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused">
+      <topicdata group="api" />
+      <apidata name="Focused" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Focused" />
+      <setter name="set_Focused" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+      <topicdata group="api" />
+      <apidata name="TextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+        <descendents>
+          <type api="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" ref="true" />
+          <type api="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" ref="true" />
+          <type api="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" ref="true" />
+        </descendents>
+      </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+          <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+          <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+        <element api="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+      </containers>
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+      <topicdata name="TextureHandler" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      <apidata name="TextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+          <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+          <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      </containers>
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+      <topicdata name="TextureHandler" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      <apidata name="TextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" />
+        <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      </containers>
+    </api>
+    <api id="Fields.T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+      <topicdata name="TextureHandler" group="list" subgroup="Fields" typeTopicId="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      <apidata name="TextureHandler" group="type" subgroup="class" />
+      <typedata visibility="public" serializable="false" />
+      <elements>
+        <element api="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />
+      </containers>
+    </api>
+    <api id="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+      <topicdata name="Dispose" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background">
+      <topicdata group="api" />
+      <apidata name="Background" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Background" />
+      <setter name="set_Background" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+      <topicdata group="api" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)">
+      <topicdata group="api" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="family" overload="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
+      <proceduredata virtual="true" />
+      <parameters>
+        <parameter name="disposing">
+          <type api="T:System.Boolean" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize">
+      <topicdata group="api" />
+      <apidata name="Finalize" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </overrides>
+      <implements>
+        <member api="M:System.Object.Finalize">
+          <type api="T:System.Object" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground">
+      <topicdata group="api" />
+      <apidata name="Foreground" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_Foreground" />
+      <setter name="set_Foreground" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed">
+      <topicdata group="api" />
+      <apidata name="IsDisposed" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_IsDisposed" />
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet">
+      <topicdata group="api" />
+      <apidata name="userSet" group="member" subgroup="field" />
+      <memberdata visibility="family" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:System.Byte" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.TextureHandler" ref="true" />
+      </containers>
+    </api>
     <api id="N:Mentula.GuiItems.Core.Interfaces">
       <topicdata group="api" />
       <apidata name="Mentula.GuiItems.Core.Interfaces" group="namespace" />
@@ -10520,7 +11624,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
@@ -10534,7 +11637,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -10543,10 +11645,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.Button.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -10570,6 +11669,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -10637,10 +11737,8 @@
           <element api="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
           <element api="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         </element>
-        <element api="F:Mentula.GuiItems.Items.Button.clickTexture" />
         <element api="E:Mentula.GuiItems.Items.Button.DoubleClick" />
         <element api="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
-        <element api="F:Mentula.GuiItems.Items.Button.hoverTexture" />
         <element api="E:Mentula.GuiItems.Items.Button.LeftClick" />
         <element api="M:Mentula.GuiItems.Items.Button.Refresh" />
         <element api="E:Mentula.GuiItems.Items.Button.RightClick" />
@@ -10685,10 +11783,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.Button.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
@@ -10851,14 +11946,11 @@
       <apidata name="Button" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
-        <element api="F:Mentula.GuiItems.Items.Button.clickTexture" />
-        <element api="F:Mentula.GuiItems.Items.Button.hoverTexture" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.Label.font" />
         <element api="F:Mentula.GuiItems.Items.Label.foregroundRectangle" />
       </elements>
@@ -10960,23 +12052,6 @@
         <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
       </containers>
     </api>
-    <api id="F:Mentula.GuiItems.Items.Button.clickTexture">
-      <topicdata group="api" />
-      <apidata name="clickTexture" group="member" subgroup="field" />
-      <memberdata visibility="family" />
-      <fielddata literal="false" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
-      </returns>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
-      </containers>
-    </api>
     <api id="E:Mentula.GuiItems.Items.Button.DoubleClick">
       <topicdata group="api" />
       <apidata name="DoubleClick" group="member" subgroup="event" />
@@ -11012,23 +12087,6 @@
           <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
         </parameter>
       </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
-      </containers>
-    </api>
-    <api id="F:Mentula.GuiItems.Items.Button.hoverTexture">
-      <topicdata group="api" />
-      <apidata name="hoverTexture" group="member" subgroup="field" />
-      <memberdata visibility="family" />
-      <fielddata literal="false" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
-      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />
@@ -11189,7 +12247,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -11204,7 +12261,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -11213,10 +12269,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.DropDown.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -11238,6 +12291,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -11346,10 +12400,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.DropDown.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -11505,12 +12556,11 @@
       <apidata name="DropDown" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.DropDown.font" />
         <element api="F:Mentula.GuiItems.Items.DropDown.foregroundRectangle" />
         <element api="F:Mentula.GuiItems.Items.DropDown.labels" />
@@ -11994,7 +13044,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
@@ -12009,7 +13058,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -12018,10 +13066,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.Label.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -12042,6 +13087,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
@@ -12149,10 +13195,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.Label.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
@@ -12305,12 +13348,11 @@
       <apidata name="Label" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.Label.font" />
         <element api="F:Mentula.GuiItems.Items.Label.foregroundRectangle" />
       </elements>
@@ -12772,7 +13814,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -12788,7 +13829,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -12797,10 +13837,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.PictureBox.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -12823,6 +13860,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
@@ -12918,10 +13956,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.PictureBox.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -13067,12 +14102,11 @@
       <apidata name="PictureBox" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -13258,7 +14292,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -13274,7 +14307,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -13283,10 +14315,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.ProgressBar.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -13309,6 +14338,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
@@ -13410,10 +14440,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.ProgressBar.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -13564,12 +14591,11 @@
       <apidata name="ProgressBar" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.ProgressBar.data" />
       </elements>
       <containers>
@@ -13869,7 +14895,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
@@ -13885,7 +14910,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -13894,10 +14918,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.Slider.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -13920,6 +14941,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -14023,10 +15045,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.Slider.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -14179,12 +15198,11 @@
       <apidata name="Slider" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.Slider.data" />
       </elements>
       <containers>
@@ -14556,7 +15574,6 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
@@ -14570,7 +15587,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Finalize" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
@@ -14579,10 +15595,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
-        <element api="Overload:Mentula.GuiItems.Items.TextBox.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
@@ -14603,6 +15616,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
@@ -14691,8 +15705,8 @@
         <element api="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" />
         <element api="E:Mentula.GuiItems.Items.TextBox.FocusChanged" />
         <element api="P:Mentula.GuiItems.Items.TextBox.Focused" />
-        <element api="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MaximumSize" />
+        <element api="P:Mentula.GuiItems.Items.TextBox.MaxLength" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MinimumSize" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MultiLine" />
         <element api="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
@@ -14724,10 +15738,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="Overload:Mentula.GuiItems.Items.TextBox.MoveRelative">
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" />
-          <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
-        </element>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
@@ -14849,6 +15860,7 @@
         <element api="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" />
         <element api="P:Mentula.GuiItems.Items.TextBox.Focused" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MaximumSize" />
+        <element api="P:Mentula.GuiItems.Items.TextBox.MaxLength" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MinimumSize" />
         <element api="P:Mentula.GuiItems.Items.TextBox.MultiLine" />
         <element api="P:Mentula.GuiItems.Items.TextBox.PasswordChar" />
@@ -14894,15 +15906,13 @@
       <apidata name="TextBox" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
-        <element api="F:Mentula.GuiItems.Core.GuiItem.backColorImage" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.device" />
-        <element api="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
+        <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
         <element api="F:Mentula.GuiItems.Items.Label.font" />
         <element api="F:Mentula.GuiItems.Items.Label.foregroundRectangle" />
-        <element api="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -15114,23 +16124,6 @@
         <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
       </containers>
     </api>
-    <api id="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused">
-      <topicdata group="api" />
-      <apidata name="foregoundTextureFocused" group="member" subgroup="field" />
-      <memberdata visibility="family" />
-      <fielddata literal="false" initonly="false" serialized="true" />
-      <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
-      </returns>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
-      </containers>
-    </api>
     <api id="P:Mentula.GuiItems.Items.TextBox.MaximumSize">
       <topicdata group="api" />
       <apidata name="MaximumSize" group="member" subgroup="property" />
@@ -15141,6 +16134,26 @@
       <setter name="set_MaximumSize" />
       <returns>
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Items.TextBox.MaxLength">
+      <topicdata group="api" />
+      <apidata name="MaxLength" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_MaxLength" />
+      <setter name="set_MaxLength" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">

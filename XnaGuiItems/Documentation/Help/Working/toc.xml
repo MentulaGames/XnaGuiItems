@@ -44,6 +44,8 @@
         </topic>
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Hide" project="XnaGuiItems" file="b91555c4-de76-9618-a9dc-6a63dcf6802f" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Initialize" project="XnaGuiItems" file="3ad3615c-efaf-b9a2-8e52-96e99c4099ef" />
+        <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" project="XnaGuiItems" file="a4f530cb-fb02-8d2d-1a1d-163b7504f8ff" />
+        <topic id="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" project="XnaGuiItems" file="1a1fd36e-dc98-602d-a77a-3cc372310b14" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Show" project="XnaGuiItems" file="d9929845-a149-ea95-4d5e-acc9ab38fd84" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" project="XnaGuiItems" file="83d0d475-ebce-04b2-d779-447dfbca29d9" />
       </topic>
@@ -150,10 +152,7 @@
         <topic id="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" project="XnaGuiItems" file="c53cb8eb-ef00-8053-e6f8-7609bcec55b5" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="4d09a082-c9dd-6544-75b3-bc3ac708a0e2" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Hide" project="XnaGuiItems" file="fd1eb988-1815-7ed7-9174-380a5c8b30a0" />
-        <topic id="Overload:Mentula.GuiItems.Core.GuiItem.MoveRelative" project="XnaGuiItems" file="20236a33-b508-a343-8add-ea1a2d998bcf">
-          <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)" project="XnaGuiItems" file="a095edd4-209c-c4e6-42c5-b103cb0ce032" />
-          <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" project="XnaGuiItems" file="a4be0390-d937-7e41-9343-633e3315044e" />
-        </topic>
+        <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" project="XnaGuiItems" file="a4be0390-d937-7e41-9343-633e3315044e" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="e4b60813-7315-3ce9-aa9a-edde918c2575" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" project="XnaGuiItems" file="ee440388-189e-cce9-4b32-a39dbe66088d" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="9fbbe206-7ba8-4528-b151-20fac38cf972" />
@@ -181,12 +180,11 @@
         <topic id="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" project="XnaGuiItems" file="172fe70f-4b17-b4df-f958-cb778510a137" />
       </topic>
       <topic id="Fields.T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="cd3f45dd-a90f-44ef-b7e1-ec652930a33e">
-        <topic id="F:Mentula.GuiItems.Core.GuiItem.backColorImage" project="XnaGuiItems" file="74a344d9-1073-4b87-265e-a7eccee54068" />
         <topic id="F:Mentula.GuiItems.Core.GuiItem.device" project="XnaGuiItems" file="c6a5bed2-802b-0e32-6dfb-d9c1437ba6b9" />
-        <topic id="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture" project="XnaGuiItems" file="7627fd9a-fd03-c1e5-9f68-736cceb12f06" />
         <topic id="F:Mentula.GuiItems.Core.GuiItem.leftDown" project="XnaGuiItems" file="02582668-d7e1-fc8e-e355-e78a3dc16869" />
         <topic id="F:Mentula.GuiItems.Core.GuiItem.over" project="XnaGuiItems" file="f815b5f4-1bb3-90e5-2876-77e33443ab14" />
         <topic id="F:Mentula.GuiItems.Core.GuiItem.rightDown" project="XnaGuiItems" file="b3a05e42-1b18-3115-8c79-cb5fa3cdda84" />
+        <topic id="F:Mentula.GuiItems.Core.GuiItem.textures" project="XnaGuiItems" file="bd3bfbc6-3331-4bc6-37d3-69c9aa4d44f2" />
       </topic>
     </topic>
     <topic id="T:Mentula.GuiItems.Core.GuiItem.GuiItemCollection" project="XnaGuiItems" file="6d7b7706-c897-63d9-9f6e-55773706f532">
@@ -223,6 +221,7 @@
       </topic>
     </topic>
     <topic id="T:Mentula.GuiItems.Core.IndexedClickEventHandler" project="XnaGuiItems" file="e8ab361b-bd72-1793-dc13-d028129990d9" />
+    <topic id="T:Mentula.GuiItems.Core.InputFlags" project="XnaGuiItems" file="634487b4-4636-24ee-e510-aa6378485cdb" />
     <topic id="T:Mentula.GuiItems.Core.InvokeException" project="XnaGuiItems" file="b8da567a-e475-6739-a5f4-adb8430a2f22">
       <topic id="Properties.T:Mentula.GuiItems.Core.InvokeException" project="XnaGuiItems" file="15287d8a-db96-07fb-dcbe-ec33c389d1bb">
         <topic id="P:Mentula.GuiItems.Core.InvokeException.StackTrace" project="XnaGuiItems" file="d9f17d96-df21-af24-81ae-0a722a0ad6ff" />
@@ -339,6 +338,43 @@
     </topic>
     <topic id="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1" project="XnaGuiItems" file="bfef5d5a-de14-0a6c-c5df-65181ea1c9dd" />
   </topic>
+  <topic id="N:Mentula.GuiItems.Core.Handlers" project="_Namespaces" file="247fcf78-846b-0726-2208-488bf63d8b91">
+    <topic id="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" project="XnaGuiItems" file="e0559163-3a6e-5f1b-8acd-af9d38ccb1d9">
+      <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" project="XnaGuiItems" file="19c125d0-51e4-9908-fcea-3bb63d65224a">
+        <topic id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click" project="XnaGuiItems" file="68353b6c-4da3-51b0-539e-866e6a5c1bbc" />
+        <topic id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" project="XnaGuiItems" file="9856643a-fee9-0f68-b176-c07f9c781567" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" project="XnaGuiItems" file="747409f4-1b0a-ab8d-423a-45a7c81f46b6" />
+    </topic>
+    <topic id="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" project="XnaGuiItems" file="b5b4ef5d-1f45-740a-8883-6f52b19814a9">
+      <topic id="M:Mentula.GuiItems.Core.Handlers.LabelTextureHandler.#ctor" project="XnaGuiItems" file="d6da7b78-fbb2-9f54-6de0-a43dca81e183" />
+      <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" project="XnaGuiItems" file="e0853f72-120a-8928-7da5-8fd971860df7" />
+      <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler" project="XnaGuiItems" file="f7202114-7747-7fa0-6499-a2270e2c6cb0" />
+    </topic>
+    <topic id="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" project="XnaGuiItems" file="8496d0d1-f329-3706-316e-c82de049e293">
+      <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" project="XnaGuiItems" file="6a4e0673-d8c0-e0a6-366d-614d0db42421">
+        <topic id="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused" project="XnaGuiItems" file="4a71d453-777a-5303-0635-385579d014de" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" project="XnaGuiItems" file="eea14ac8-70be-ff19-c574-fa28ea08c8e0" />
+    </topic>
+    <topic id="T:Mentula.GuiItems.Core.Handlers.TextureHandler" project="XnaGuiItems" file="51b2881d-dde6-ad73-05fa-b77cc88a88d1">
+      <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.TextureHandler" project="XnaGuiItems" file="16cf8e18-541c-9e22-c5de-dadd6c7f63fd">
+        <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" project="XnaGuiItems" file="fa20b807-bf76-da7e-60ad-33eb0fdfb8ab" />
+        <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground" project="XnaGuiItems" file="48b30a89-fe74-74f6-0093-630b3908a5cb" />
+        <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" project="XnaGuiItems" file="afaa1cde-9a8d-ef5b-c497-a6b870f4d452" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.TextureHandler" project="XnaGuiItems" file="35f134ba-db99-a7a7-0ee3-901dab3b10ba">
+        <topic id="Overload:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" project="XnaGuiItems" file="57179139-f789-bdf2-13be-0df1e21c4918">
+          <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" project="XnaGuiItems" file="0e70df55-27f1-322d-d3da-0af646586629" />
+          <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)" project="XnaGuiItems" file="8d610d59-a4f9-3f4b-4eaa-4951174a29d9" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize" project="XnaGuiItems" file="eff7496e-c09f-b00e-b194-6b1318c6d9c4" />
+      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Core.Handlers.TextureHandler" project="XnaGuiItems" file="284ec16e-35eb-6f1f-0cd1-4cb3d726c72a">
+        <topic id="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" project="XnaGuiItems" file="249252de-26c6-e1dd-5b96-a2503b6ee286" />
+      </topic>
+    </topic>
+  </topic>
   <topic id="N:Mentula.GuiItems.Core.Interfaces" project="_Namespaces" file="95ec2fca-db98-81a3-5664-204677ac3caf">
     <topic id="T:Mentula.GuiItems.Core.Interfaces.IMenu" project="XnaGuiItems" file="6835b27c-ab29-a6e2-9ab0-33adba29ea05">
       <topic id="Properties.T:Mentula.GuiItems.Core.Interfaces.IMenu" project="XnaGuiItems" file="9c513f26-812a-260d-9793-cac01e49dc10" />
@@ -375,10 +411,7 @@
         <topic id="E:Mentula.GuiItems.Items.Button.LeftClick" project="XnaGuiItems" file="576538ba-a573-3f6c-b479-0746ba8e30d5" />
         <topic id="E:Mentula.GuiItems.Items.Button.RightClick" project="XnaGuiItems" file="84a7507e-0d22-41c9-f8f6-8c41861c9bd5" />
       </topic>
-      <topic id="Fields.T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="734febc2-6548-86ea-31e6-aee794946050">
-        <topic id="F:Mentula.GuiItems.Items.Button.clickTexture" project="XnaGuiItems" file="5d967f22-7307-7b0f-c4ff-99e2e02f0a7c" />
-        <topic id="F:Mentula.GuiItems.Items.Button.hoverTexture" project="XnaGuiItems" file="1b5a1831-91ec-34fa-e7ca-4afbe56162c6" />
-      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="734febc2-6548-86ea-31e6-aee794946050" />
     </topic>
     <topic id="T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="f32ac208-a428-2c46-bccb-48cc77db32ac">
       <topic id="Overload:Mentula.GuiItems.Items.DropDown.#ctor" project="XnaGuiItems" file="38e76727-787e-dab7-e0a5-111281a41c17">
@@ -526,6 +559,7 @@
         <topic id="P:Mentula.GuiItems.Items.TextBox.FlickerStyle" project="XnaGuiItems" file="07818976-b10f-d8f2-5bdd-ae45cf7fa354" />
         <topic id="P:Mentula.GuiItems.Items.TextBox.Focused" project="XnaGuiItems" file="53fc9d8e-da4a-0b24-7571-c32e16d1644e" />
         <topic id="P:Mentula.GuiItems.Items.TextBox.MaximumSize" project="XnaGuiItems" file="5efe00f9-e997-a973-6d54-769f723ece56" />
+        <topic id="P:Mentula.GuiItems.Items.TextBox.MaxLength" project="XnaGuiItems" file="38ad377b-953a-8c26-2214-35d88bbb519e" />
         <topic id="P:Mentula.GuiItems.Items.TextBox.MinimumSize" project="XnaGuiItems" file="66b62fe7-6120-ab22-0dd1-1384a5ff01c2" />
         <topic id="P:Mentula.GuiItems.Items.TextBox.MultiLine" project="XnaGuiItems" file="78ac46b8-1400-a85d-38e9-cd2027b5c894" />
         <topic id="P:Mentula.GuiItems.Items.TextBox.PasswordChar" project="XnaGuiItems" file="ef2a4cab-bf18-1a60-e2b4-9dde1c0d2d2c" />
@@ -544,12 +578,10 @@
         <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" project="XnaGuiItems" file="7b9a3fb0-0972-c6a4-b424-de9a7fc88197" />
         <topic id="E:Mentula.GuiItems.Items.TextBox.FocusChanged" project="XnaGuiItems" file="1b7b51e8-baaf-9764-5daf-fb79967c668f" />
       </topic>
-      <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="ee23dc99-2728-f5cb-4f2a-5ae65b5801f9">
-        <topic id="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused" project="XnaGuiItems" file="c2d5306b-17b7-49c9-83f8-9a18ce77516b" />
-      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="ee23dc99-2728-f5cb-4f2a-5ae65b5801f9" />
     </topic>
   </topic>
-  <topic id="7a47457b-7aa6-4cd6-866a-7b4f91be8620" file="7a47457b-7aa6-4cd6-866a-7b4f91be8620" sortOrder="5" />
+  <topic id="7a47457b-7aa6-4cd6-866a-7b4f91be8620" file="7a47457b-7aa6-4cd6-866a-7b4f91be8620" sortOrder="6" />
   <topic id="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" file="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2">
     <topic id="10daa5f5-5737-4544-92c6-37972633b5d3" file="10daa5f5-5737-4544-92c6-37972633b5d3" />
     <topic id="b5ce2217-55de-44b0-aa3a-bfe049f2df07" file="b5ce2217-55de-44b0-aa3a-bfe049f2df07" />

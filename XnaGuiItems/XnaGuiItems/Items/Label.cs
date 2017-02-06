@@ -45,6 +45,8 @@
         /// </summary>
         public int LineStart { get { return lineStart; } set { lineStart = value; Refresh(); } }
 
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
         /// <summary> The rectangle used in the foreground. </summary>
@@ -86,7 +88,7 @@
             foregroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
-            textures = new LabelTextureHandler();
+            base.textures = new LabelTextureHandler();
         }
 
         /// <summary>
@@ -108,8 +110,7 @@
                 else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
-            foregroundRectangle = Bounds;
-            ((LabelTextureHandler)textures).SetBackFromClr(BackColor, Size, device, BorderStyle);
+            textures.SetBackFromClr(BackColor, Size, device, BorderStyle);
             textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
         }
 

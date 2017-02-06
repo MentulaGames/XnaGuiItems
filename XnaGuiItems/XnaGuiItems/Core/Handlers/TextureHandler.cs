@@ -57,6 +57,14 @@
             fore = null;
         }
 
+        /// <summary>
+        /// Disposes the unmanaged resources.
+        /// </summary>
+        ~TextureHandler()
+        {
+            Dispose(false);
+        }
+
         internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
@@ -81,12 +89,19 @@
         internal bool BackgroundSet() { return (userSet & 1) != 0; }
         internal bool ForegroundSet() { return (userSet & 2) != 0; }
 
+        /// <summary>
+        /// Releases the managed and unmanaged resources used by the <see cref="GuiItem"/>.
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Releases the unmanaged and managed resources used by the <see cref="TextureHandler"/>.
+        /// </summary>
+        /// <param name="disposing"> Whether the managed resources should be disposed. </param>
         protected virtual void Dispose(bool disposing)
         {
             if (!IsDisposed & disposing)

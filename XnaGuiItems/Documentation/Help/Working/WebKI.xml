@@ -30,7 +30,7 @@
   </HelpKINode>
   <HelpKINode Title="BackColor property" Url="html/53fa52ee-eb1b-20f5-d279-2f4b9b21930c.htm" />
   <HelpKINode Title="BackColorChanged event" Url="html/75cd8a5b-3224-4ac0-1d4b-274beab996fd.htm" />
-  <HelpKINode Title="backColorImage field" Url="html/74a344d9-1073-4b87-265e-a7eccee54068.htm" />
+  <HelpKINode Title="Background property" Url="html/fa20b807-bf76-da7e-60ad-33eb0fdfb8ab.htm" />
   <HelpKINode Title="BackgroundImage property" Url="html/eaa81eb6-e8a5-37f0-5174-c81f42fd7b28.htm" />
   <HelpKINode Title="BackgroundImageChanged event" Url="html/3873ff1c-38d2-a2a1-0cb4-311d5bc932a8.htm" />
   <HelpKINode Title="BorderStyle enumeration" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
@@ -55,21 +55,27 @@
     <HelpKINode Title="properties" Url="html/5162094b-af93-e52c-14bd-6742f0088b9f.htm" />
   </HelpKINode>
   <HelpKINode Title="Button.Button constructor" Url="html/7babcc66-cb34-f31d-744b-ad4c5678df28.htm" />
-  <HelpKINode Title="Button.clickTexture field" Url="html/5d967f22-7307-7b0f-c4ff-99e2e02f0a7c.htm" />
   <HelpKINode Title="Button.DoubleClick event" Url="html/9951fda2-e00b-ae5e-2db4-19ff438896b4.htm" />
   <HelpKINode Title="Button.Draw method" Url="html/0d3a90b3-78df-d26d-91d9-fd6259dae344.htm" />
-  <HelpKINode Title="Button.hoverTexture field" Url="html/1b5a1831-91ec-34fa-e7ca-4afbe56162c6.htm" />
   <HelpKINode Title="Button.LeftClick event" Url="html/576538ba-a573-3f6c-b479-0746ba8e30d5.htm" />
   <HelpKINode Title="Button.PerformClick method" Url="html/843bc224-c459-3ebf-608d-dfc8ca925989.htm" />
   <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
   <HelpKINode Title="Button.Update method" Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
+  <HelpKINode Title="ButtonTextureHandler class">
+    <HelpKINode Title="ButtonTextureHandler Class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
+    <HelpKINode Title="about ButtonTextureHandler class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
+    <HelpKINode Title="methods" Url="html/747409f4-1b0a-ab8d-423a-45a7c81f46b6.htm" />
+    <HelpKINode Title="properties" Url="html/19c125d0-51e4-9908-fcea-3bb63d65224a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ButtonTextureHandler.Click property" Url="html/68353b6c-4da3-51b0-539e-866e6a5c1bbc.htm" />
+  <HelpKINode Title="ButtonTextureHandler.Hover property" Url="html/9856643a-fee9-0f68-b176-c07f9c781567.htm" />
   <HelpKINode Title="CenterImage enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="ChangeValue method" Url="html/3e1d26c0-8832-5d44-9d22-b173a44cb0ab.htm" />
   <HelpKINode Title="ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
   <HelpKINode Title="Click event" Url="html/ca73ba8a-0f77-b762-0b1d-a9800c2b5a86.htm" />
-  <HelpKINode Title="clickTexture field" Url="html/5d967f22-7307-7b0f-c4ff-99e2e02f0a7c.htm" />
+  <HelpKINode Title="Click property" Url="html/68353b6c-4da3-51b0-539e-866e6a5c1bbc.htm" />
   <HelpKINode Title="Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
   <HelpKINode Title="Contains method" Url="html/1135fa93-fb5d-49a6-66a5-2bf3c4d2c56c.htm" />
   <HelpKINode Title="controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
@@ -107,6 +113,7 @@
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="GuiItem.Dispose Method " Url="html/565d5482-c2b2-aa9a-89ae-896ffa6759cb.htm" />
     <HelpKINode Title="Menu(T).Dispose Method " Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
+    <HelpKINode Title="TextureHandler.Dispose Method " Url="html/57179139-f789-bdf2-13be-0df1e21c4918.htm" />
   </HelpKINode>
   <HelpKINode Title="Disposing property" Url="html/82e09595-8ae1-f4cd-0b1c-d07739f7feb2.htm" />
   <HelpKINode Title="Divide method" Url="html/8d311e68-6924-3179-41d6-ba3215a572e5.htm" />
@@ -174,14 +181,20 @@
     <HelpKINode Title="Size.Equals Method " Url="html/98d4a887-61bd-6cbe-462e-5e43fa246a44.htm" />
   </HelpKINode>
   <HelpKINode Title="Fast enumeration member" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
-  <HelpKINode Title="Finalize method" Url="html/e2c29a1c-9923-5a14-a107-b1e8884bc4d6.htm" />
+  <HelpKINode Title="Finalize method">
+    <HelpKINode Title="GuiItem.Finalize Method " Url="html/e2c29a1c-9923-5a14-a107-b1e8884bc4d6.htm" />
+    <HelpKINode Title="TextureHandler.Finalize Method " Url="html/eff7496e-c09f-b00e-b194-6b1318c6d9c4.htm" />
+  </HelpKINode>
   <HelpKINode Title="FindControl method" Url="html/77d1b10a-b777-c18f-7b03-5fe3dd7a737c.htm" />
   <HelpKINode Title="Fixed3D enumeration member" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
   <HelpKINode Title="FixedSingle enumeration member" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
   <HelpKINode Title="FlickerStyle enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="FlickerStyle property" Url="html/07818976-b10f-d8f2-5bdd-ae45cf7fa354.htm" />
   <HelpKINode Title="FocusChanged event" Url="html/1b7b51e8-baaf-9764-5daf-fb79967c668f.htm" />
-  <HelpKINode Title="Focused property" Url="html/53fc9d8e-da4a-0b24-7571-c32e16d1644e.htm" />
+  <HelpKINode Title="Focused property">
+    <HelpKINode Title="TextBox.Focused Property " Url="html/53fc9d8e-da4a-0b24-7571-c32e16d1644e.htm" />
+    <HelpKINode Title="TextboxTextureHandler.Focused Property " Url="html/4a71d453-777a-5303-0635-385579d014de.htm" />
+  </HelpKINode>
   <HelpKINode Title="font field">
     <HelpKINode Title="DropDown.font Field" Url="html/8666b2fc-c0a4-d241-143d-4d65ef35b9f4.htm" />
     <HelpKINode Title="Label.font Field" Url="html/ce37aea7-09e3-c1de-9e69-3a89ba2a281d.htm" />
@@ -191,13 +204,12 @@
   <HelpKINode Title="FontChanged event" Url="html/457b5dc9-9ea4-6196-4185-7ae61c5bbdc7.htm" />
   <HelpKINode Title="ForeColor property" Url="html/0a7ef79f-656c-4280-3e13-eaacd1f8ec22.htm" />
   <HelpKINode Title="ForeColorChanged event" Url="html/669c7c47-41ea-ce68-4582-3fa55081eb27.htm" />
-  <HelpKINode Title="foregoundTextureFocused field" Url="html/c2d5306b-17b7-49c9-83f8-9a18ce77516b.htm" />
+  <HelpKINode Title="Foreground property" Url="html/48b30a89-fe74-74f6-0093-630b3908a5cb.htm" />
   <HelpKINode Title="foregroundRectangle field">
     <HelpKINode Title="DropDown.foregroundRectangle Field" Url="html/767fa7ad-4622-2a4d-6230-ea49a4da9366.htm" />
     <HelpKINode Title="Label.foregroundRectangle Field" Url="html/345dc3cb-ebda-8a04-7a60-6d9088109f8b.htm" />
   </HelpKINode>
   <HelpKINode Title="ForegroundRectangle property" Url="html/446eeb4f-b3c3-8af8-6643-eb6e8d81ff23.htm" />
-  <HelpKINode Title="foregroundTexture field" Url="html/7627fd9a-fd03-c1e5-9f68-736cceb12f06.htm" />
   <HelpKINode Title="Game property" Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
   <HelpKINode Title="Get method" Url="html/92b55833-1dcc-10c8-5f94-c06ec5fe119c.htm" />
   <HelpKINode Title="GetEnumerator method" Url="html/2b5f230f-a3dd-724d-89dd-c2a9b8d41dd7.htm" />
@@ -220,7 +232,6 @@
   </HelpKINode>
   <HelpKINode Title="GuiItem.BackColor property" Url="html/53fa52ee-eb1b-20f5-d279-2f4b9b21930c.htm" />
   <HelpKINode Title="GuiItem.BackColorChanged event" Url="html/75cd8a5b-3224-4ac0-1d4b-274beab996fd.htm" />
-  <HelpKINode Title="GuiItem.backColorImage field" Url="html/74a344d9-1073-4b87-265e-a7eccee54068.htm" />
   <HelpKINode Title="GuiItem.BackgroundImage property" Url="html/eaa81eb6-e8a5-37f0-5174-c81f42fd7b28.htm" />
   <HelpKINode Title="GuiItem.BackgroundImageChanged event" Url="html/3873ff1c-38d2-a2a1-0cb4-311d5bc932a8.htm" />
   <HelpKINode Title="GuiItem.Bounds property" Url="html/5369e391-6953-b70d-6b62-98f98c5a34bf.htm" />
@@ -236,7 +247,6 @@
   <HelpKINode Title="GuiItem.Finalize method" Url="html/e2c29a1c-9923-5a14-a107-b1e8884bc4d6.htm" />
   <HelpKINode Title="GuiItem.ForeColor property" Url="html/0a7ef79f-656c-4280-3e13-eaacd1f8ec22.htm" />
   <HelpKINode Title="GuiItem.ForeColorChanged event" Url="html/669c7c47-41ea-ce68-4582-3fa55081eb27.htm" />
-  <HelpKINode Title="GuiItem.foregroundTexture field" Url="html/7627fd9a-fd03-c1e5-9f68-736cceb12f06.htm" />
   <HelpKINode Title="GuiItem.GetMouseEventArgs method" Url="html/c53cb8eb-ef00-8053-e6f8-7609bcec55b5.htm" />
   <HelpKINode Title="GuiItem.GetRotatedMouse method" Url="html/4d09a082-c9dd-6544-75b3-bc3ac708a0e2.htm" />
   <HelpKINode Title="GuiItem.GuiItem constructor" Url="html/b4e2c0af-27e0-5200-a9d5-194733d8a577.htm" />
@@ -266,7 +276,7 @@
   <HelpKINode Title="GuiItem.IsDisposed property" Url="html/15e46759-39bb-b307-9392-4eb08de9bc3c.htm" />
   <HelpKINode Title="GuiItem.leftDown field" Url="html/02582668-d7e1-fc8e-e355-e78a3dc16869.htm" />
   <HelpKINode Title="GuiItem.Move event" Url="html/47afbda2-cde7-0fea-5c84-cbd844305cc6.htm" />
-  <HelpKINode Title="GuiItem.MoveRelative method" Url="html/20236a33-b508-a343-8add-ea1a2d998bcf.htm" />
+  <HelpKINode Title="GuiItem.MoveRelative method" Url="html/a4be0390-d937-7e41-9343-633e3315044e.htm" />
   <HelpKINode Title="GuiItem.Name property" Url="html/a7bafef5-7820-1ca0-4805-dd323a9a0231.htm" />
   <HelpKINode Title="GuiItem.NameChanged event" Url="html/e1fc0daf-2200-8230-29b7-73492dca4f70.htm" />
   <HelpKINode Title="GuiItem.OnBackColorChanged method" Url="html/e4b60813-7315-3ce9-aa9a-edde918c2575.htm" />
@@ -290,6 +300,7 @@
   <HelpKINode Title="GuiItem.Size property" Url="html/2cea4301-e90d-24c0-19f8-3ed304c9e3f4.htm" />
   <HelpKINode Title="GuiItem.SuppressDraw property" Url="html/37dc41a3-7acd-eaf7-c449-006ef4de559e.htm" />
   <HelpKINode Title="GuiItem.SuppressUpdate property" Url="html/2c63e27a-bdfb-a89f-fb55-1b349670695e.htm" />
+  <HelpKINode Title="GuiItem.textures field" Url="html/bd3bfbc6-3331-4bc6-37d3-69c9aa4d44f2.htm" />
   <HelpKINode Title="GuiItem.ToString method" Url="html/b0281881-2439-a44a-456e-ea826a8cfa7e.htm" />
   <HelpKINode Title="GuiItem.Update method" Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
   <HelpKINode Title="GuiItem.VisibilityChanged event" Url="html/172fe70f-4b17-b4df-f958-cb778510a137.htm" />
@@ -315,7 +326,7 @@
     <HelpKINode Title="MenuCollection(TGame).Hide Method " Url="html/b602b534-7ccf-e5d8-c5ee-c9ed55d30cc6.htm" />
   </HelpKINode>
   <HelpKINode Title="Hover event" Url="html/280ccfb5-c240-aed8-7526-4b5fe93eba71.htm" />
-  <HelpKINode Title="hoverTexture field" Url="html/1b5a1831-91ec-34fa-e7ca-4afbe56162c6.htm" />
+  <HelpKINode Title="Hover property" Url="html/9856643a-fee9-0f68-b176-c07f9c781567.htm" />
   <HelpKINode Title="Image property" Url="html/14a90d93-5234-0377-a331-29b8ff36ada9.htm" />
   <HelpKINode Title="IMenu interface">
     <HelpKINode Title="IMenu Interface" Url="html/6835b27c-ab29-a6e2-9ab0-33adba29ea05.htm" />
@@ -346,6 +357,7 @@
     <HelpKINode Title="Menu(T).Initialize Method " Url="html/3ad3615c-efaf-b9a2-8e52-96e99c4099ef.htm" />
     <HelpKINode Title="MenuCollection(TGame).Initialize Method " Url="html/3439aba0-6478-2507-f39d-03de5b49e874.htm" />
   </HelpKINode>
+  <HelpKINode Title="InputFlags enumeration" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
   <HelpKINode Title="Insert method" Url="html/9bba05e2-49cc-0ca5-a2a2-f25ec71858a2.htm" />
   <HelpKINode Title="Inverted property" Url="html/43ef686b-c9a0-3225-66b4-a02449eb7fd2.htm" />
   <HelpKINode Title="InvokeException class">
@@ -357,7 +369,10 @@
   </HelpKINode>
   <HelpKINode Title="InvokeException.GetObjectData method" Url="html/1db013b8-55e8-d210-f129-739fff84a81e.htm" />
   <HelpKINode Title="InvokeException.StackTrace property" Url="html/d9f17d96-df21-af24-81ae-0a722a0ad6ff.htm" />
-  <HelpKINode Title="IsDisposed property" Url="html/15e46759-39bb-b307-9392-4eb08de9bc3c.htm" />
+  <HelpKINode Title="IsDisposed property">
+    <HelpKINode Title="GuiItem.IsDisposed Property " Url="html/15e46759-39bb-b307-9392-4eb08de9bc3c.htm" />
+    <HelpKINode Title="TextureHandler.IsDisposed Property " Url="html/afaa1cde-9a8d-ef5b-c497-a6b870f4d452.htm" />
+  </HelpKINode>
   <HelpKINode Title="IsEmpty property" Url="html/543906f5-9b2d-38a1-6fee-35c7f27f8441.htm" />
   <HelpKINode Title="IsReadOnly property" Url="html/ac9ecf04-77dc-8729-8de4-74d0a9b7c6fd.htm" />
   <HelpKINode Title="Item property">
@@ -400,6 +415,14 @@
   <HelpKINode Title="Label.Text property" Url="html/cf673006-bbc2-63ca-3c10-b0ddec1cff7a.htm" />
   <HelpKINode Title="Label.TextChanged event" Url="html/6632fb63-abbb-d9eb-67ce-c3015862d5cf.htm" />
   <HelpKINode Title="labels field" Url="html/daf98372-ab87-6d7b-4d29-7e0691405ec8.htm" />
+  <HelpKINode Title="LabelTextureHandler class">
+    <HelpKINode Title="LabelTextureHandler Class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
+    <HelpKINode Title="about LabelTextureHandler class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
+    <HelpKINode Title="constructor" Url="html/d6da7b78-fbb2-9f54-6de0-a43dca81e183.htm" />
+    <HelpKINode Title="methods" Url="html/f7202114-7747-7fa0-6499-a2270e2c6cb0.htm" />
+    <HelpKINode Title="properties" Url="html/e0853f72-120a-8928-7da5-8fd971860df7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LabelTextureHandler.LabelTextureHandler constructor" Url="html/d6da7b78-fbb2-9f54-6de0-a43dca81e183.htm" />
   <HelpKINode Title="Left enumeration member">
     <HelpKINode Title="Anchor Enumeration" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
     <HelpKINode Title="MouseClick Enumeration" Url="html/4c3c31ac-70d2-1278-4a4a-763ac1fa1695.htm" />
@@ -408,10 +431,12 @@
   <HelpKINode Title="leftDown field" Url="html/02582668-d7e1-fc8e-e355-e78a3dc16869.htm" />
   <HelpKINode Title="LeftShift operator" Url="html/d31a7068-2aac-25b3-7d01-d18c1a786ede.htm" />
   <HelpKINode Title="LineStart property" Url="html/a2d24c20-5196-fc3b-f6d4-cdb4ce86a897.htm" />
+  <HelpKINode Title="LoadFont method" Url="html/a4f530cb-fb02-8d2d-1a1d-163b7504f8ff.htm" />
   <HelpKINode Title="Maximum property" Url="html/423ebf75-ac68-4565-dae8-359d84d127a7.htm" />
   <HelpKINode Title="MaximumSize property" Url="html/5efe00f9-e997-a973-6d54-769f723ece56.htm" />
   <HelpKINode Title="MaximumValue property" Url="html/735c264f-311e-bfcb-3b92-3f5b80e6e40c.htm" />
   <HelpKINode Title="MaxiumValue property" Url="html/1b1e405a-abc9-caf3-e1b5-18d59c6cb426.htm" />
+  <HelpKINode Title="MaxLength property" Url="html/38ad377b-953a-8c26-2214-35d88bbb519e.htm" />
   <HelpKINode Title="Mentula.GuiItems namespace" Url="html/cd1062cb-dfc3-5cb6-b44e-e25cb116611b.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers namespace" Url="html/c2f2672e-81ab-c5de-31b7-3400ad18ff87.htm" />
   <HelpKINode Title="Mentula.GuiItems.Containers.Menu(Of T) class" Url="html/5db60d4d-ef40-ce62-80e6-3571e71617d4.htm" />
@@ -426,8 +451,14 @@
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem class" Url="html/4288f473-0e01-8716-de8c-dec4dcd420a8.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem.GuiItemCollection class" Url="html/6d7b7706-c897-63d9-9f6e-55773706f532.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItemEventHandler delegate" Url="html/2fd8a170-b016-ea2a-c435-82e286f13e3a.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers namespace" Url="html/247fcf78-846b-0726-2208-488bf63d8b91.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.ButtonTextureHandler class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.LabelTextureHandler class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.TextboxTextureHandler class" Url="html/8496d0d1-f329-3706-316e-c82de049e293.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.TextureHandler class" Url="html/51b2881d-dde6-ad73-05fa-b77cc88a88d1.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.IndexedClickEventArgs class" Url="html/c9dcc97e-e7b7-d37c-0590-c9f7b84de52a.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.IndexedClickEventHandler delegate" Url="html/e8ab361b-bd72-1793-dc13-d028129990d9.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.InputFlags enumeration" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Interfaces namespace" Url="html/95ec2fca-db98-81a3-5664-204677ac3caf.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Interfaces.IMenu interface" Url="html/6835b27c-ab29-a6e2-9ab0-33adba29ea05.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Interfaces.IToggleable interface" Url="html/b0f7ce89-8f28-e16e-4e99-3a9d2a04f351.htm" />
@@ -504,11 +535,13 @@
   <HelpKINode Title="Menu(Of T).font field" Url="html/7df305d5-a274-4cb9-72c9-02b063a25a8d.htm" />
   <HelpKINode Title="Menu(Of T).Hide method" Url="html/b91555c4-de76-9618-a9dc-6a63dcf6802f.htm" />
   <HelpKINode Title="Menu(Of T).Initialize method" Url="html/3ad3615c-efaf-b9a2-8e52-96e99c4099ef.htm" />
+  <HelpKINode Title="Menu(Of T).LoadFont method" Url="html/a4f530cb-fb02-8d2d-1a1d-163b7504f8ff.htm" />
   <HelpKINode Title="Menu(Of T).Menu constructor" Url="html/4b3c7dca-f948-b2f8-14d7-086ed8197d6f.htm" />
   <HelpKINode Title="Menu(Of T).ScreenHeight property" Url="html/de000655-eb11-d041-e65f-e20679d45c72.htm" />
   <HelpKINode Title="Menu(Of T).ScreenHeightMiddle property" Url="html/de11267f-88de-749d-4279-c0ef041034fb.htm" />
   <HelpKINode Title="Menu(Of T).ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
   <HelpKINode Title="Menu(Of T).ScreenWidthMiddle property" Url="html/34155669-8651-5a27-287c-8deedcb5e35b.htm" />
+  <HelpKINode Title="Menu(Of T).SetDefaultFont method" Url="html/1a1fd36e-dc98-602d-a77a-3cc372310b14.htm" />
   <HelpKINode Title="Menu(Of T).Show method" Url="html/d9929845-a149-ea95-4d5e-acc9ab38fd84.htm" />
   <HelpKINode Title="Menu(Of T).Update method" Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
   <HelpKINode Title="Menu(Of T).Visible property" Url="html/5a991e18-555f-7f84-7b40-3dc6bc9cf900.htm" />
@@ -544,11 +577,13 @@
   <HelpKINode Title="Menu&lt;T&gt;.font field" Url="html/7df305d5-a274-4cb9-72c9-02b063a25a8d.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Hide method" Url="html/b91555c4-de76-9618-a9dc-6a63dcf6802f.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Initialize method" Url="html/3ad3615c-efaf-b9a2-8e52-96e99c4099ef.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.LoadFont method" Url="html/a4f530cb-fb02-8d2d-1a1d-163b7504f8ff.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Menu constructor" Url="html/4b3c7dca-f948-b2f8-14d7-086ed8197d6f.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenHeight property" Url="html/de000655-eb11-d041-e65f-e20679d45c72.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenHeightMiddle property" Url="html/de11267f-88de-749d-4279-c0ef041034fb.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenWidthMiddle property" Url="html/34155669-8651-5a27-287c-8deedcb5e35b.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.SetDefaultFont method" Url="html/1a1fd36e-dc98-602d-a77a-3cc372310b14.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Show method" Url="html/d9929845-a149-ea95-4d5e-acc9ab38fd84.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Update method" Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Visible property" Url="html/5a991e18-555f-7f84-7b40-3dc6bc9cf900.htm" />
@@ -620,7 +655,7 @@
   <HelpKINode Title="MouseEventArgs.State field" Url="html/4915fc47-f12c-b4a0-2148-d38250715eb6.htm" />
   <HelpKINode Title="MouseEventHandler delegate" Url="html/6a794678-383e-1b76-f545-1ceca0c84d45.htm" />
   <HelpKINode Title="Move event" Url="html/47afbda2-cde7-0fea-5c84-cbd844305cc6.htm" />
-  <HelpKINode Title="MoveRelative method" Url="html/20236a33-b508-a343-8add-ea1a2d998bcf.htm" />
+  <HelpKINode Title="MoveRelative method" Url="html/a4be0390-d937-7e41-9343-633e3315044e.htm" />
   <HelpKINode Title="MultiLine property" Url="html/78ac46b8-1400-a85d-38e9-cd2027b5c894.htm" />
   <HelpKINode Title="Multiply method" Url="html/78bda73a-ee99-a81f-4c7f-d6b1f17f09a0.htm" />
   <HelpKINode Title="Multiply operator" Url="html/4d9a14aa-18de-2b8c-3a64-825be09dfe3f.htm" />
@@ -636,6 +671,12 @@
     <HelpKINode Title="FlickerStyle Enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
     <HelpKINode Title="ResizeMode Enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   </HelpKINode>
+  <HelpKINode Title="NO_CHARS enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
+  <HelpKINode Title="NO_FLAGS enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
+  <HelpKINode Title="NO_NUMS enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
+  <HelpKINode Title="NO_SPACE enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
+  <HelpKINode Title="NO_SPEC enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
+  <HelpKINode Title="NUMS enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
   <HelpKINode Title="OldValue field" Url="html/8e2390f9-f3d7-ac07-2bdf-fd9e694a6b54.htm" />
   <HelpKINode Title="OnBackColorChanged method" Url="html/e4b60813-7315-3ce9-aa9a-edde918c2575.htm" />
   <HelpKINode Title="OnBackgroundImageChaned method" Url="html/ee440388-189e-cce9-4b32-a39dbe66088d.htm" />
@@ -763,6 +804,7 @@
   <HelpKINode Title="ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
   <HelpKINode Title="ScreenWidthMiddle property" Url="html/34155669-8651-5a27-287c-8deedcb5e35b.htm" />
   <HelpKINode Title="SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
+  <HelpKINode Title="SetDefaultFont method" Url="html/1a1fd36e-dc98-602d-a77a-3cc372310b14.htm" />
   <HelpKINode Title="Show method">
     <HelpKINode Title="GuiItem.Show Method " Url="html/063225f4-2072-377c-46ad-e8e2a7a53ff3.htm" />
     <HelpKINode Title="IToggleable.Show Method " Url="html/d8671280-0f39-84c7-0030-61217a05dc22.htm" />
@@ -856,6 +898,7 @@
   <HelpKINode Title="TabContainer.Update method" Url="html/7e276812-94eb-169a-8111-5be0f692174e.htm" />
   <HelpKINode Title="TabContainer.UseAbsolutePosition property" Url="html/b837c955-0aa6-3135-0b6b-4e6859dbf965.htm" />
   <HelpKINode Title="TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
+  <HelpKINode Title="TEXT enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
   <HelpKINode Title="Text property" Url="html/cf673006-bbc2-63ca-3c10-b0ddec1cff7a.htm" />
   <HelpKINode Title="TextBox class">
     <HelpKINode Title="TextBox Class" Url="html/e2b73be8-64e0-cbc9-d324-cc605cdbf79f.htm" />
@@ -872,8 +915,8 @@
   <HelpKINode Title="TextBox.FlickerStyle property" Url="html/07818976-b10f-d8f2-5bdd-ae45cf7fa354.htm" />
   <HelpKINode Title="TextBox.FocusChanged event" Url="html/1b7b51e8-baaf-9764-5daf-fb79967c668f.htm" />
   <HelpKINode Title="TextBox.Focused property" Url="html/53fc9d8e-da4a-0b24-7571-c32e16d1644e.htm" />
-  <HelpKINode Title="TextBox.foregoundTextureFocused field" Url="html/c2d5306b-17b7-49c9-83f8-9a18ce77516b.htm" />
   <HelpKINode Title="TextBox.MaximumSize property" Url="html/5efe00f9-e997-a973-6d54-769f723ece56.htm" />
+  <HelpKINode Title="TextBox.MaxLength property" Url="html/38ad377b-953a-8c26-2214-35d88bbb519e.htm" />
   <HelpKINode Title="TextBox.MinimumSize property" Url="html/66b62fe7-6120-ab22-0dd1-1384a5ff01c2.htm" />
   <HelpKINode Title="TextBox.MultiLine property" Url="html/78ac46b8-1400-a85d-38e9-cd2027b5c894.htm" />
   <HelpKINode Title="TextBox.OnFocusChanged method" Url="html/d875062e-0fcc-01e3-150c-0469348cf2b1.htm" />
@@ -882,7 +925,28 @@
   <HelpKINode Title="TextBox.Refresh method" Url="html/68c386a9-e384-5662-8abf-00700071f6b2.htm" />
   <HelpKINode Title="TextBox.TextBox constructor" Url="html/6376d5d7-9eb4-336f-2b60-791bc8b5d931.htm" />
   <HelpKINode Title="TextBox.Update method" Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
+  <HelpKINode Title="TextboxTextureHandler class">
+    <HelpKINode Title="TextboxTextureHandler Class" Url="html/8496d0d1-f329-3706-316e-c82de049e293.htm" />
+    <HelpKINode Title="about TextboxTextureHandler class" Url="html/8496d0d1-f329-3706-316e-c82de049e293.htm" />
+    <HelpKINode Title="methods" Url="html/eea14ac8-70be-ff19-c574-fa28ea08c8e0.htm" />
+    <HelpKINode Title="properties" Url="html/6a4e0673-d8c0-e0a6-366d-614d0db42421.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextboxTextureHandler.Focused property" Url="html/4a71d453-777a-5303-0635-385579d014de.htm" />
   <HelpKINode Title="TextChanged event" Url="html/6632fb63-abbb-d9eb-67ce-c3015862d5cf.htm" />
+  <HelpKINode Title="TextureHandler class">
+    <HelpKINode Title="TextureHandler Class" Url="html/51b2881d-dde6-ad73-05fa-b77cc88a88d1.htm" />
+    <HelpKINode Title="about TextureHandler class" Url="html/51b2881d-dde6-ad73-05fa-b77cc88a88d1.htm" />
+    <HelpKINode Title="fields" Url="html/284ec16e-35eb-6f1f-0cd1-4cb3d726c72a.htm" />
+    <HelpKINode Title="methods" Url="html/35f134ba-db99-a7a7-0ee3-901dab3b10ba.htm" />
+    <HelpKINode Title="properties" Url="html/16cf8e18-541c-9e22-c5de-dadd6c7f63fd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TextureHandler.Background property" Url="html/fa20b807-bf76-da7e-60ad-33eb0fdfb8ab.htm" />
+  <HelpKINode Title="TextureHandler.Dispose method" Url="html/57179139-f789-bdf2-13be-0df1e21c4918.htm" />
+  <HelpKINode Title="TextureHandler.Finalize method" Url="html/eff7496e-c09f-b00e-b194-6b1318c6d9c4.htm" />
+  <HelpKINode Title="TextureHandler.Foreground property" Url="html/48b30a89-fe74-74f6-0093-630b3908a5cb.htm" />
+  <HelpKINode Title="TextureHandler.IsDisposed property" Url="html/afaa1cde-9a8d-ef5b-c497-a6b870f4d452.htm" />
+  <HelpKINode Title="TextureHandler.userSet field" Url="html/249252de-26c6-e1dd-5b96-a2503b6ee286.htm" />
+  <HelpKINode Title="textures field" Url="html/bd3bfbc6-3331-4bc6-37d3-69c9aa4d44f2.htm" />
   <HelpKINode Title="Top enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="ToString method">
     <HelpKINode Title="GuiItem.ToString Method " Url="html/b0281881-2439-a44a-456e-ea826a8cfa7e.htm" />
@@ -901,6 +965,7 @@
     <HelpKINode Title="TextBox.Update Method " Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
   </HelpKINode>
   <HelpKINode Title="UseAbsolutePosition property" Url="html/b837c955-0aa6-3135-0b6b-4e6859dbf965.htm" />
+  <HelpKINode Title="userSet field" Url="html/249252de-26c6-e1dd-5b96-a2503b6ee286.htm" />
   <HelpKINode Title="Utilities class">
     <HelpKINode Title="Utilities Class" Url="html/9c6fc0ec-6b24-9267-005a-e0b248b9d5fd.htm" />
     <HelpKINode Title="about Utilities class" Url="html/9c6fc0ec-6b24-9267-005a-e0b248b9d5fd.htm" />

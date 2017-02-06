@@ -428,6 +428,19 @@
             Enables and shows the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)">
+      <summary>
+            Loads a specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> from <see cref="P:Microsoft.Xna.Framework.Game.Content" />.
+            </summary>
+      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+      <returns> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)">
+      <summary>
+            Sets the default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />.
+            </summary>
+      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+    </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and its controlls.
@@ -834,11 +847,8 @@
     <member name="F:Mentula.GuiItems.Core.GuiItem.device">
       <summary> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" />. </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.GuiItem.backColorImage">
-      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the color background. </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.GuiItem.foregroundTexture">
-      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the foreground. </summary>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.textures">
+      <summary> Stores the <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing. </summary>
     </member>
     <member name="F:Mentula.GuiItems.Core.GuiItem.over">
       <summary> Whether the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" /> is hovering over the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </summary>
@@ -944,13 +954,6 @@
             Draws the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
             </summary>
       <param name="spriteBatch"> The spritebatch to use. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor)">
-      <summary>
-            Moves the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to a specified relative position.
-            </summary>
-      <param name="anchor"> A valid relative position. </param>
-      <exception cref="T:System.ArgumentException"> The anchor is invalid. </exception>
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})">
       <summary>
@@ -1069,6 +1072,97 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new visibility of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
+      <summary>
+            The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Button" />.
+            </summary>
+      <remarks>
+            The <see cref="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover">
+      <summary>
+            The button hover texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click">
+      <summary>
+            The button click texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Dispose(System.Boolean)">
+      <summary>
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />.
+            </summary>
+      <param name="disposing"> Whether the managed resources should be disposed. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
+      <summary>
+            The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Label" />.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler">
+      <summary>
+            The class that handles the textures of a <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            </summary>
+      <remarks>
+            The <see cref="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" /> flag for the focused texture is 4.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused">
+      <summary>
+            The textbox focused texture for a <see cref="T:Mentula.GuiItems.Items.TextBox" />. 
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Dispose(System.Boolean)">
+      <summary>
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />.
+            </summary>
+      <param name="disposing"> Whether the managed resources should be disposed. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+      <summary>
+            A class that handles texture settings.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed">
+      <summary>
+            Gets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" /> has been disposed.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background">
+      <summary>
+            The background texture for a <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground">
+      <summary>
+            The foreground texture for a <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet">
+      <summary>
+            A bitflag byte that contains if the user has set specified textures.
+            1 if for the background,
+            2 if for the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize">
+      <summary>
+            Disposes the unmanaged resources.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+      <summary>
+            Releases the managed and unmanaged resources used by the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)">
+      <summary>
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
+      <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
     <member name="T:Mentula.GuiItems.Core.Interfaces.IMenu">
       <summary>
@@ -1239,6 +1333,46 @@
     <member name="F:Mentula.GuiItems.Core.ResizeMode.Zoom">
       <summary>
             The size of the image is increased or decreased maintaining the size ratio.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.InputFlags">
+      <summary>
+            Specifies which <see cref="T:System.Char" /> the <see cref="T:Mentula.GuiItems.Items.TextBox" /> should allow.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NO_FLAGS">
+      <summary>
+            No flags are set; everything may be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NO_CHARS">
+      <summary>
+            No characters can be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NO_NUMS">
+      <summary>
+            No numbers can be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NO_SPEC">
+      <summary>
+            No special chars may be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NO_SPACE">
+      <summary>
+            No space may be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.TEXT">
+      <summary>
+            Only characters may be added.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.InputFlags.NUMS">
+      <summary>
+            Only numbers may be added.
             </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.GuiItemEventHandler">
@@ -1602,12 +1736,6 @@
       <summary>
             A button base class.
             </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Items.Button.hoverTexture">
-      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the hover style <see cref="T:Mentula.GuiItems.Items.Button" />. </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Items.Button.clickTexture">
-      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the click style <see cref="T:Mentula.GuiItems.Items.Button" />. </summary>
     </member>
     <member name="E:Mentula.GuiItems.Items.Button.LeftClick">
       <summary>
@@ -2075,6 +2203,13 @@
             Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Items.TextBox" /> is in focus.
             </summary>
     </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.MaxLength">
+      <summary>
+            Gets or sets a value indicating the maximum length of the text input.
+            Negative values indicate no maximum length.
+            Default value = -1
+            </summary>
+    </member>
     <member name="P:Mentula.GuiItems.Items.TextBox.MultiLine">
       <summary>
             Gets or sets a value indicating of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> can be multiline.
@@ -2106,9 +2241,6 @@
       <summary>
             Occures when return is pressed on a non <see cref="P:Mentula.GuiItems.Items.TextBox.MultiLine" /><see cref="T:Mentula.GuiItems.Items.TextBox" />.
             </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Items.TextBox.foregoundTextureFocused">
-      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing the foreground (with the focus indicator). </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
@@ -2278,6 +2410,9 @@
     </member>
     <member name="N:Mentula.GuiItems.Core">
       <summary>The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core.Handlers">
+      <summary>The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Core.Interfaces">
       <summary>The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the librarie.</summary>
