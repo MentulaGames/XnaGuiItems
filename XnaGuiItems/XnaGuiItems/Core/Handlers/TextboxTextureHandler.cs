@@ -20,6 +20,7 @@
             set
             {
                 if (!internCall) userSet |= 4;
+                focus = value;
             }
         }
 
@@ -30,6 +31,20 @@
             focus = null;
         }
 
+        internal void Swap()
+        {
+            internCall = true;
+            Foreground = Focused;
+            internCall = false;
+        }
+
+        internal void SetBack(Texture2D saved)
+        {
+            internCall = true;
+            Foreground = saved;
+            internCall = false;
+        }
+
         internal void SetFocusText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
         {
             SetText(text, font, color, size, multiLine, lineStart, device);
@@ -37,6 +52,22 @@
             internCall = true;
             if ((userSet & 4) == 0) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, device);
             internCall = false;
+        }
+
+        internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
+        {
+            SetBackFromClr(clr, size, device);
+            if ((userSet & 1) == 0) Background = Background.ApplyBorderLabel(style);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!IsDisposed && disposing)
+            {
+                if (focus != null) focus.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

@@ -89,8 +89,10 @@
             float ppp = (float)Bounds.Width / 100;
             int width = (int)(ppp * data.Value);
 
-            foregroundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
+            textures.internCall = true;
+            textures.Foreground = Drawing.FromColor(ForeColor, Size, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
+            textures.Background = Drawing.FromColor(BackColor, Size, device).ApplyBorderLabel(BorderStyle);
+            textures.internCall = false;
         }
 
         /// <summary>

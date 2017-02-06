@@ -116,8 +116,8 @@
         {
             if (suppressRefresh) return;
 
-            foregroundTexture = Drawing.FromColor(ForeColor, Bounds.Size(), SliderBarDimentions, device);
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
+            textures.Foreground = Drawing.FromColor(ForeColor, Size, SliderBarDimentions, device);
+            textures.Background = Drawing.FromColor(BackColor, Size, device).ApplyBorderLabel(BorderStyle);
         }
 
         /// <summary>

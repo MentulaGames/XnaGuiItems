@@ -1,6 +1,7 @@
 ﻿namespace Mentula.GuiItems.Items
 {
     using Core;
+    using Core.Handlers;
     using Core.Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -17,10 +18,7 @@
 #endif
     public class Button : Label, IDeltaUpdate
     {
-        /// <summary> The <see cref="Texture2D"/> used for drawing the hover style <see cref="Button"/>. </summary>
-        protected Texture2D hoverTexture;
-        /// <summary> The <see cref="Texture2D"/> used for drawing the click style <see cref="Button"/>. </summary>
-        protected Texture2D clickTexture;
+        new private ButtonTextureHandler textures { get { return (ButtonTextureHandler)base.textures; } }
 
         private Texture2D drawTexture;
         private bool leftInvoked;
@@ -63,7 +61,8 @@
         public Button(GraphicsDevice device, Rectangle bounds, SpriteFont font)
              : base(device, bounds, font)
         {
-            drawTexture = backColorImage;
+            base.textures = new ButtonTextureHandler();
+            drawTexture = textures.Background;
         }
 
         /// <summary>
@@ -84,8 +83,8 @@
 
             if (Enabled)
             {
-                if (!over) drawTexture = backColorImage;
-                else if (over && !leftDown && !rightDown) drawTexture = hoverTexture;
+                if (!over) drawTexture = textures.Background;
+                else if (over && !leftDown && !rightDown) drawTexture = textures.Hover;
 
                 if (leftDown && !leftInvoked)
                 {
@@ -93,7 +92,7 @@
                     leftInvoked = true;
 
                     doubleLeftClicked++;
-                    drawTexture = clickTexture;
+                    drawTexture = textures.Click;
                 }
                 if (rightDown && !rightInvoked)
                 {
@@ -101,7 +100,7 @@
                     rightInvoked = true;
 
                     doubleRightClicked++;
-                    drawTexture = clickTexture;
+                    drawTexture = textures.Click;
                 }
 
                 time += deltaTime;
@@ -128,13 +127,7 @@
             if (Visible)
             {
                 spriteBatch.Draw(drawTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-
-                if (BackgroundImage != null)
-                {
-                    spriteBatch.Draw(BackgroundImage, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                }
-
-                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.Foreground, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
             }
         }
 
@@ -157,12 +150,9 @@
                 else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
             }
 
-            backColorImage = backColorImage.ApplyBorderButton(ButtonStyle.Default);
-            hoverTexture = backColorImage.ApplyBorderButton(ButtonStyle.Hover);
-            clickTexture = backColorImage.ApplyBorderButton(ButtonStyle.Click);
-
-            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderButton(ButtonStyle.Default);
-            foregroundTexture = Drawing.FromText(Text, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
+            textures.SetBackFromClr(BackColor, Size, device);
+            textures.ApplyBorders();
+            textures.SetText(Text, font, ForeColor, foregroundRectangle.Size(), false, LineStart, device);
         }
 
         /// <summary>

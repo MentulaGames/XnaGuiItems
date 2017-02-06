@@ -1,6 +1,7 @@
 ﻿namespace Mentula.GuiItems.Items
 {
     using Core;
+    using Core.Handlers;
     using Core.Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -50,6 +51,8 @@
         /// </summary>
         public virtual Size MaximumSize { get; set; }
 
+        new private TextboxTextureHandler textures { get { return (TextboxTextureHandler)base.textures; } }
+
         /// <summary>
         /// Occurs when the value of the <see cref="Focused"/> propery is changed.
         /// </summary>
@@ -61,9 +64,6 @@
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST)]
         public event GuiItemEventHandler Confirmed;
-
-        /// <summary> The <see cref="Texture2D"/> used for drawing the foreground (with the focus indicator). </summary>
-        protected Texture2D foregoundTextureFocused;
 
         private KeyInputHandler inputHandler;
         private float time;
@@ -89,6 +89,7 @@
         public TextBox(GraphicsDevice device, Rectangle bounds, SpriteFont font)
             : base(device, bounds, font)
         {
+            base.textures = new TextboxTextureHandler();
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
@@ -151,13 +152,13 @@
             Texture2D temp = null;
             if (showLine)
             {
-                temp = foregroundTexture;
-                foregroundTexture = foregoundTextureFocused;
+                temp = textures.Foreground;
+                textures.Swap();
             }
 
             base.Draw(spriteBatch);
 
-            if (temp != null) foregroundTexture = temp;
+            if (temp != null) textures.SetBack(temp);
         }
 
         /// <summary>
@@ -186,8 +187,7 @@
             }
 
             foregroundRectangle = Bounds;
-            backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
-            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
+            textures.SetBackFromClr(BackColor, Size, device, BorderStyle);
             CreateForegroundTextures();
         }
 
@@ -219,11 +219,7 @@
 
         private void CreateForegroundTextures()
         {
-            string text = GetDrawableText();
-            Size size = foregroundRectangle.Size();
-
-            foregroundTexture = Drawing.FromText(text, font, ForeColor, size, MultiLine, LineStart, device);
-            foregoundTextureFocused = Drawing.FromText(text + '|', font, ForeColor, size, MultiLine, LineStart, device);
+            textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
         }
 
         private Vector2 GetLongTextDimentions()

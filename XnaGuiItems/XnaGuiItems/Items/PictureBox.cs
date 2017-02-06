@@ -61,7 +61,7 @@
 
             if (Image == null)
             {
-                foregroundTexture = Drawing.FromColor(Color.Transparent, Size, device);
+                textures.SetForeFromClr(Color.Transparent, Size, device);
                 return;
             }
 
@@ -72,21 +72,21 @@
                     bool height = Image.Height != Bounds.Height;
 
                     if (width || height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Image.Width, Image.Height);
-                    foregroundTexture = Image;
+                    textures.Foreground = Image;
                     break;
                 case ResizeMode.CenterImage:
                     Size offset = (Size >> 1) - (Image.Bounds.Size() >> 1);
-                    foregroundTexture = Image.RenderOnto(Size, position: offset.ToVector2());
+                    textures.Foreground = Image.RenderOnto(Size, position: offset.ToVector2());
                     break;
                 case ResizeMode.Normal:
-                    foregroundTexture = Image.Clip(new Rectangle(0, 0, Width, Height));
+                    textures.Foreground = Image.Clip(new Rectangle(0, 0, Width, Height));
                     break;
                 case ResizeMode.StretchImage:
-                    foregroundTexture = Image.Stretch(Size);
+                    textures.Foreground = Image.Stretch(Size);
                     break;
                 case ResizeMode.Zoom:
                     Vector2 zoom = new Vector2(Width / (float)Image.Width, Height / (float)Image.Height);
-                    foregroundTexture = Image.RenderOnto(Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
+                    textures.Foreground = Image.RenderOnto(Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
                     break;
             }
         }

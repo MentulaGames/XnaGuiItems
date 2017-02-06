@@ -61,6 +61,10 @@
     <Compile Include="Containers\MenuCollection.cs" />
     <Compile Include="Core\EventHandlers.cs" />
     <Compile Include="Core\GuiItemCollection.cs" />
+    <Compile Include="Core\Handlers\ButtonTextureHandler.cs" />
+    <Compile Include="Core\Handlers\LabelTextureHandler.cs" />
+    <Compile Include="Core\Handlers\TextboxTextureHandler.cs" />
+    <Compile Include="Core\Handlers\TextureHandler.cs" />
     <Compile Include="Core\Interfaces\IMenu.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Base.cs" />

@@ -1,5 +1,6 @@
 ﻿namespace Mentula.GuiItems.Core
 {
+    using Handlers;
     using Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -25,7 +26,7 @@
         /// <summary>
         /// Gets or sets the background image displayed in the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Texture2D BackgroundImage { get { return backgroundImage; } set { Invoke(BackgroundImageChanged, this, new ValueChangedEventArgs<Texture2D>(backColorImage, value)); } }
+        public virtual Texture2D BackgroundImage { get { return textures.Background; } set { Invoke(BackgroundImageChanged, this, new ValueChangedEventArgs<Texture2D>(textures.Background, value)); } }
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
@@ -109,10 +110,7 @@
 
         /// <summary> The specified <see cref="GraphicsDevice"/>. </summary>
         protected GraphicsDevice device;
-        /// <summary> The <see cref="Texture2D"/> used for drawing the color background. </summary>
-        protected Texture2D backColorImage;
-        /// <summary> The <see cref="Texture2D"/> used for drawing the foreground. </summary>
-        protected Texture2D foregroundTexture;
+        protected TextureHandler textures;
         /// <summary> Whether the <see cref="Mouse"/> is hovering over the <see cref="GuiItem"/>. </summary>
         protected bool over;
         /// <summary> Whether the <see cref="GuiItem"/> is left clicked. </summary>
@@ -121,7 +119,6 @@
         protected bool rightDown;
 
         private Color backColor;
-        private Texture2D backgroundImage;
         private Rectangle bounds;
         private Color foreColor;
         private string name;
@@ -200,6 +197,7 @@
 
             InitEvents();
             this.device = device;
+            textures = new TextureHandler();
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             Show();
@@ -231,11 +229,7 @@
             if (!IsDisposed && disposing)
             {
                 Disposing = true;
-
-                if (backColorImage != null) backColorImage.Dispose();
-                if (backgroundImage != null) backgroundImage.Dispose();
-                if (foregroundTexture != null) foregroundTexture.Dispose();
-
+                textures.Dispose();
                 Hide();
                 IsDisposed = true;
                 Disposing = false;
@@ -288,16 +282,8 @@
         {
             if (visible)
             {
-                if (backgroundImage != null)
-                {
-                    spriteBatch.Draw(backgroundImage, Position, null, BackColor, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                }
-                else
-                {
-                    spriteBatch.Draw(backColorImage, Position, null, Color.White, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                }
-
-                spriteBatch.Draw(foregroundTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.Foreground, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -424,7 +410,7 @@
         protected virtual void OnBackColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             backColor = e.NewValue;
-            backColorImage = Drawing.FromColor(backColor, Size, device);
+            textures.SetBackFromClr(backColor, Size, device);
         }
 
         /// <summary>
@@ -434,7 +420,7 @@
         /// <param name="e"> The new <see cref="Texture2D"/> to use as background. </param>
         protected virtual void OnBackgroundImageChaned(GuiItem sender, ValueChangedEventArgs<Texture2D> e)
         {
-            backgroundImage = e.NewValue;
+            textures.Background = e.NewValue;
         }
 
         /// <summary>
@@ -445,7 +431,7 @@
         protected virtual void OnForeColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             foreColor = e.NewValue;
-            foregroundTexture = Drawing.FromColor(foreColor, Size, device);
+            textures.SetForeFromClr(foreColor, Size, device);
         }
 
         /// <summary>
@@ -488,8 +474,8 @@
         {
             CheckBounds(e.NewValue);
             bounds = e.NewValue;
-            backColorImage = Drawing.FromColor(backColor, Size, device);
-            foregroundTexture = Drawing.FromColor(foreColor, Size, device);
+            textures.SetBackFromClr(backColor, Size, device);
+            textures.SetForeFromClr(foreColor, Size, device);
         }
 
         /// <summary>

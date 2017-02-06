@@ -202,17 +202,17 @@
             }
 
             foregroundRectangle = Bounds;
-            backColorImage = backColorImage.ApplyBorderLabel(BorderStyle);
+            textures.Background = textures.Background.ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
 
-            foregroundTexture = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
-            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(foregroundTexture.Width, (int)font.MeasureString("a").Y), device);
+            textures.Foreground = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
+            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(textures.Foreground.Width, (int)font.MeasureString("a").Y), device);
 
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
             for (int i = 0; i < labels.Length; i++)
             {
                 itemTextures[i] = new KeyValuePair<Texture2D, ButtonStyle>(
-                    Drawing.FromLabels(labels[i], font, new Size(foregroundTexture.Width, foregroundRectangle.Height / (labels.Length + 1)), device),
+                    Drawing.FromLabels(labels[i], font, new Size(textures.Foreground.Width, foregroundRectangle.Height / (labels.Length + 1)), device),
                     ButtonStyle.Default);
             }
         }
@@ -228,7 +228,7 @@
             if (Visible)
             {
                 spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
-                spriteBatch.Draw(foregroundTexture, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.Foreground, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
 
                 float fontHeight = font.MeasureString("a").Y;
                 for (int i = 0; i < itemTextures.Length; i++)

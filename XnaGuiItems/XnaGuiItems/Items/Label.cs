@@ -1,6 +1,7 @@
 ﻿namespace Mentula.GuiItems.Items
 {
     using Core;
+    using Core.Handlers;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using System.Diagnostics.CodeAnalysis;
@@ -85,6 +86,7 @@
             foregroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
+            textures = new LabelTextureHandler();
         }
 
         /// <summary>
@@ -107,9 +109,8 @@
             }
 
             foregroundRectangle = Bounds;
-            backColorImage = Drawing.FromColor(BackColor, Bounds.Size(), device).ApplyBorderLabel(BorderStyle);
-            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
-            foregroundTexture = Drawing.FromText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
+            ((LabelTextureHandler)textures).SetBackFromClr(BackColor, Size, device, BorderStyle);
+            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
         }
 
         /// <summary>

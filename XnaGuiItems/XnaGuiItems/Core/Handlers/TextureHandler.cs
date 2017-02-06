@@ -2,12 +2,17 @@
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
+    using System;
 
     /// <summary>
     /// A class that handles texture settings.
     /// </summary>
-    public class TextureHandler
+    public class TextureHandler : IDisposable
     {
+        /// <summary>
+        /// Gets a value indicating whether the <see cref="TextureHandler"/> has been disposed.
+        /// </summary>
+        public bool IsDisposed { get; private set; }
         /// <summary>
         /// The background texture for a <see cref="GuiItem"/>.
         /// </summary>
@@ -52,10 +57,16 @@
             fore = null;
         }
 
-        internal void SetFromClr(Color clr, Size size, GraphicsDevice device)
+        internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
             if ((userSet & 1) == 0) Background = Drawing.FromColor(clr, size, device);
+            internCall = false;
+        }
+
+        internal void SetForeFromClr(Color clr, Size size, GraphicsDevice device)
+        {
+            internCall = true;
             if ((userSet & 2) == 0) Foreground = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
@@ -65,6 +76,25 @@
             internCall = true;
             if ((userSet & 2) == 0) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, device);
             internCall = false;
+        }
+
+        internal bool BackgroundSet() { return (userSet & 1) != 0; }
+        internal bool ForegroundSet() { return (userSet & 2) != 0; }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!IsDisposed & disposing)
+            {
+                if (back != null) back.Dispose();
+                if (fore != null) fore.Dispose();
+                IsDisposed = true;
+            }
         }
     }
 }
