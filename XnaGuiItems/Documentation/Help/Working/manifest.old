@@ -91,6 +91,12 @@
   <topic id="N:Mentula.GuiItems.Core" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Anchor" type="API" />
   <topic id="T:Mentula.GuiItems.Core.BorderStyle" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
+  <topic id="Events.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.Game" type="API" />
   <topic id="T:Mentula.GuiItems.Core.FlickerStyle" type="API" />
   <topic id="T:Mentula.GuiItems.Core.GuiItem" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.GuiItem" type="API" />

@@ -545,6 +545,17 @@
             </summary>
       <param name="spriteBatch"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use. </param>
     </member>
+    <member name="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1">
+      <summary> Base class for all drawable Mentula game components. </summary>
+      <typeparam name="TGame"> The specified game class. </typeparam>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.Game">
+      <summary> Gets the Game associated with this GameComponent. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" /> class. </summary>
+      <param name="game"> The game associated with this component. </param>
+    </member>
     <member name="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1">
       <summary>
             Represents a class for classes that contain value changing event data.

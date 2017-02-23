@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Containers\MenuCollection.cs" />
+    <Compile Include="Core\DrawableMentulaGameComponent.cs" />
     <Compile Include="Core\EventHandlers.cs" />
     <Compile Include="Core\GuiItemCollection.cs" />
     <Compile Include="Core\Handlers\ButtonTextureHandler.cs" />

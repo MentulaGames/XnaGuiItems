@@ -2115,6 +2115,7 @@
     <api id="N:Mentula.GuiItems.Core">
       <apidata name="Mentula.GuiItems.Core" group="namespace" />
       <elements>
+        <element api="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" />
         <element api="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" />
         <element api="T:Mentula.GuiItems.Core.MouseEventArgs" />
         <element api="T:Mentula.GuiItems.Core.IndexedClickEventArgs" />
@@ -2325,6 +2326,567 @@
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Core" />
         <type api="T:Mentula.GuiItems.Core.BorderStyle" ref="false" />
+      </containers>
+    </api>
+    <api id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1">
+      <apidata name="DrawableMentulaGameComponent" group="type" subgroup="class" />
+      <typedata visibility="public" abstract="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <templates>
+        <template name="TGame">
+          <constrained>
+            <type api="T:Microsoft.Xna.Framework.Game" ref="true" />
+          </constrained>
+        </template>
+      </templates>
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)" />
+        <element api="P:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.Game" />
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.Initialize">
+          <apidata name="Initialize" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <overrides>
+            <member api="M:Microsoft.Xna.Framework.GameComponent.Initialize">
+              <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+            </member>
+          </overrides>
+          <implements>
+            <member api="M:Microsoft.Xna.Framework.IGameComponent.Initialize">
+              <type api="T:Microsoft.Xna.Framework.IGameComponent" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.Dispose(System.Boolean)">
+          <apidata name="Dispose" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <overrides>
+            <member api="M:Microsoft.Xna.Framework.GameComponent.Dispose(System.Boolean)">
+              <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+            </member>
+          </overrides>
+          <parameters>
+            <parameter name="disposing">
+              <type api="T:System.Boolean" ref="false" />
+            </parameter>
+          </parameters>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.GameComponent.Dispose">
+          <apidata name="Dispose" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <implements>
+            <member api="M:System.IDisposable.Dispose">
+              <type api="T:System.IDisposable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.Draw(Microsoft.Xna.Framework.GameTime)">
+          <apidata name="Draw" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="gameTime">
+              <type api="T:Microsoft.Xna.Framework.GameTime" ref="true" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:Microsoft.Xna.Framework.IDrawable.Draw(Microsoft.Xna.Framework.GameTime)">
+              <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.LoadContent">
+          <apidata name="LoadContent" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.UnloadContent">
+          <apidata name="UnloadContent" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.OnDrawOrderChanged(System.Object,System.EventArgs)">
+          <apidata name="OnDrawOrderChanged" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="args">
+              <type api="T:System.EventArgs" ref="true" />
+            </parameter>
+          </parameters>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.DrawableGameComponent.OnVisibleChanged(System.Object,System.EventArgs)">
+          <apidata name="OnVisibleChanged" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="args">
+              <type api="T:System.EventArgs" ref="true" />
+            </parameter>
+          </parameters>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Microsoft.Xna.Framework.DrawableGameComponent.Visible">
+          <apidata name="Visible" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_Visible" />
+          <setter name="set_Visible" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:Microsoft.Xna.Framework.IDrawable.Visible">
+              <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Microsoft.Xna.Framework.DrawableGameComponent.DrawOrder">
+          <apidata name="DrawOrder" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_DrawOrder" />
+          <setter name="set_DrawOrder" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:Microsoft.Xna.Framework.IDrawable.DrawOrder">
+              <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Microsoft.Xna.Framework.DrawableGameComponent.GraphicsDevice">
+          <apidata name="GraphicsDevice" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_GraphicsDevice" />
+          <returns>
+            <type api="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="E:Microsoft.Xna.Framework.DrawableGameComponent.VisibleChanged">
+          <apidata name="VisibleChanged" group="member" subgroup="event" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <eventdata add="true" remove="true" />
+          <adder name="add_VisibleChanged" />
+          <remover name="remove_VisibleChanged" />
+          <eventhandler>
+            <type api="T:System.EventHandler`1" ref="true">
+              <specialization>
+                <type api="T:System.EventArgs" ref="true" />
+              </specialization>
+            </type>
+          </eventhandler>
+          <eventargs>
+            <type api="T:System.EventArgs" ref="true" />
+          </eventargs>
+          <implements>
+            <member api="E:Microsoft.Xna.Framework.IDrawable.VisibleChanged">
+              <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="E:Microsoft.Xna.Framework.DrawableGameComponent.DrawOrderChanged">
+          <apidata name="DrawOrderChanged" group="member" subgroup="event" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <eventdata add="true" remove="true" />
+          <adder name="add_DrawOrderChanged" />
+          <remover name="remove_DrawOrderChanged" />
+          <eventhandler>
+            <type api="T:System.EventHandler`1" ref="true">
+              <specialization>
+                <type api="T:System.EventArgs" ref="true" />
+              </specialization>
+            </type>
+          </eventhandler>
+          <eventargs>
+            <type api="T:System.EventArgs" ref="true" />
+          </eventargs>
+          <implements>
+            <member api="E:Microsoft.Xna.Framework.IDrawable.DrawOrderChanged">
+              <type api="T:Microsoft.Xna.Framework.IDrawable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.DrawableGameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.GameComponent.Update(Microsoft.Xna.Framework.GameTime)">
+          <apidata name="Update" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="gameTime">
+              <type api="T:Microsoft.Xna.Framework.GameTime" ref="true" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:Microsoft.Xna.Framework.IUpdateable.Update(Microsoft.Xna.Framework.GameTime)">
+              <type api="T:Microsoft.Xna.Framework.IUpdateable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.GameComponent.Finalize">
+          <apidata name="Finalize" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <overrides>
+            <member api="M:System.Object.Finalize">
+              <type api="T:System.Object" ref="true" />
+            </member>
+          </overrides>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.GameComponent.OnUpdateOrderChanged(System.Object,System.EventArgs)">
+          <apidata name="OnUpdateOrderChanged" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="args">
+              <type api="T:System.EventArgs" ref="true" />
+            </parameter>
+          </parameters>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Microsoft.Xna.Framework.GameComponent.OnEnabledChanged(System.Object,System.EventArgs)">
+          <apidata name="OnEnabledChanged" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+            <parameter name="args">
+              <type api="T:System.EventArgs" ref="true" />
+            </parameter>
+          </parameters>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Microsoft.Xna.Framework.GameComponent.Enabled">
+          <apidata name="Enabled" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_Enabled" />
+          <setter name="set_Enabled" />
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:Microsoft.Xna.Framework.IUpdateable.Enabled">
+              <type api="T:Microsoft.Xna.Framework.IUpdateable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="P:Microsoft.Xna.Framework.GameComponent.UpdateOrder">
+          <apidata name="UpdateOrder" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_UpdateOrder" />
+          <setter name="set_UpdateOrder" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:Microsoft.Xna.Framework.IUpdateable.UpdateOrder">
+              <type api="T:Microsoft.Xna.Framework.IUpdateable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="E:Microsoft.Xna.Framework.GameComponent.EnabledChanged">
+          <apidata name="EnabledChanged" group="member" subgroup="event" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <eventdata add="true" remove="true" />
+          <adder name="add_EnabledChanged" />
+          <remover name="remove_EnabledChanged" />
+          <eventhandler>
+            <type api="T:System.EventHandler`1" ref="true">
+              <specialization>
+                <type api="T:System.EventArgs" ref="true" />
+              </specialization>
+            </type>
+          </eventhandler>
+          <eventargs>
+            <type api="T:System.EventArgs" ref="true" />
+          </eventargs>
+          <implements>
+            <member api="E:Microsoft.Xna.Framework.IUpdateable.EnabledChanged">
+              <type api="T:Microsoft.Xna.Framework.IUpdateable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="E:Microsoft.Xna.Framework.GameComponent.UpdateOrderChanged">
+          <apidata name="UpdateOrderChanged" group="member" subgroup="event" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <eventdata add="true" remove="true" />
+          <adder name="add_UpdateOrderChanged" />
+          <remover name="remove_UpdateOrderChanged" />
+          <eventhandler>
+            <type api="T:System.EventHandler`1" ref="true">
+              <specialization>
+                <type api="T:System.EventArgs" ref="true" />
+              </specialization>
+            </type>
+          </eventhandler>
+          <eventargs>
+            <type api="T:System.EventArgs" ref="true" />
+          </eventargs>
+          <implements>
+            <member api="E:Microsoft.Xna.Framework.IUpdateable.UpdateOrderChanged">
+              <type api="T:Microsoft.Xna.Framework.IUpdateable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="E:Microsoft.Xna.Framework.GameComponent.Disposed">
+          <apidata name="Disposed" group="member" subgroup="event" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <eventdata add="true" remove="true" />
+          <adder name="add_Disposed" />
+          <remover name="remove_Disposed" />
+          <eventhandler>
+            <type api="T:System.EventHandler`1" ref="true">
+              <specialization>
+                <type api="T:System.EventArgs" ref="true" />
+              </specialization>
+            </type>
+          </eventhandler>
+          <eventargs>
+            <type api="T:System.EventArgs" ref="true" />
+          </eventargs>
+          <containers>
+            <library assembly="Microsoft.Xna.Framework.Game" module="Microsoft.Xna.Framework.Game" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:Microsoft.Xna.Framework" />
+            <type api="T:Microsoft.Xna.Framework.GameComponent" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.MemberwiseClone">
+          <apidata name="MemberwiseClone" group="member" subgroup="method" />
+          <memberdata visibility="family" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Object" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)">
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="family" special="true" />
+      <parameters>
+        <parameter name="game">
+          <template name="TGame" index="0" api="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.Game">
+      <apidata name="Game" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_Game" />
+      <returns>
+        <template name="TGame" index="0" api="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" ref="true" />
       </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.FlickerStyle">

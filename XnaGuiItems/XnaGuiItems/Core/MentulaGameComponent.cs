@@ -13,7 +13,7 @@
         /// <summary> Gets the Game associated with this GameComponent. </summary>
         new public TGame Game { get { return (TGame)base.Game; } }
 
-        /// <summary> Initializes a new instance of the <see cref="MentulaGameComponent{T}"/> class. </summary>
+        /// <summary> Initializes a new instance of the <see cref="MentulaGameComponent{TGame}"/> class. </summary>
         /// <param name="game"> The game associated with this component. </param>
         protected MentulaGameComponent(TGame game)
             : base(game)

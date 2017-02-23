@@ -129,6 +129,26 @@
     <HelpKINode Title="TabContainer.Draw Method " Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
     <HelpKINode Title="TextBox.Draw Method " Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   </HelpKINode>
+  <HelpKINode Title="DrawableMentulaGameComponent(Of TGame) class">
+    <HelpKINode Title="DrawableMentulaGameComponent(TGame) Class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
+    <HelpKINode Title="about DrawableMentulaGameComponent(Of TGame) class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
+    <HelpKINode Title="constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
+    <HelpKINode Title="events" Url="html/529330bb-ca51-107a-0a9c-af853a90c395.htm" />
+    <HelpKINode Title="methods" Url="html/02b24bf6-a8f0-f0b3-45fc-dd5a93b37a4b.htm" />
+    <HelpKINode Title="properties" Url="html/30a74214-4a07-cf6e-8970-8079de6eb4a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DrawableMentulaGameComponent(Of TGame).DrawableMentulaGameComponent constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
+  <HelpKINode Title="DrawableMentulaGameComponent(Of TGame).Game property" Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
+  <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt; class">
+    <HelpKINode Title="DrawableMentulaGameComponent(TGame) Class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
+    <HelpKINode Title="about DrawableMentulaGameComponent&lt;TGame&gt; class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
+    <HelpKINode Title="constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
+    <HelpKINode Title="events" Url="html/529330bb-ca51-107a-0a9c-af853a90c395.htm" />
+    <HelpKINode Title="methods" Url="html/02b24bf6-a8f0-f0b3-45fc-dd5a93b37a4b.htm" />
+    <HelpKINode Title="properties" Url="html/30a74214-4a07-cf6e-8970-8079de6eb4a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.DrawableMentulaGameComponent constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
+  <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.Game property" Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
   <HelpKINode Title="DrawOrder property">
     <HelpKINode Title="Menu(T).DrawOrder Property " Url="html/a0b3018a-93e3-ddc0-0a66-943b0b80bea4.htm" />
     <HelpKINode Title="MenuCollection(TGame).DrawOrder Property " Url="html/715cf3c1-5c02-5e8e-394a-fc5e7a756ec6.htm" />
@@ -210,7 +230,10 @@
     <HelpKINode Title="Label.foregroundRectangle Field" Url="html/345dc3cb-ebda-8a04-7a60-6d9088109f8b.htm" />
   </HelpKINode>
   <HelpKINode Title="ForegroundRectangle property" Url="html/446eeb4f-b3c3-8af8-6643-eb6e8d81ff23.htm" />
-  <HelpKINode Title="Game property" Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
+  <HelpKINode Title="Game property">
+    <HelpKINode Title="DrawableMentulaGameComponent(TGame).Game Property " Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
+    <HelpKINode Title="MentulaGameComponent(TGame).Game Property " Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
+  </HelpKINode>
   <HelpKINode Title="Get method" Url="html/92b55833-1dcc-10c8-5f94-c06ec5fe119c.htm" />
   <HelpKINode Title="GetEnumerator method" Url="html/2b5f230f-a3dd-724d-89dd-c2a9b8d41dd7.htm" />
   <HelpKINode Title="GetHashCode method">
@@ -447,6 +470,8 @@
   <HelpKINode Title="Mentula.GuiItems.Core namespace" Url="html/eb0543e3-bab8-348e-cda0-29f2e70219b4.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Anchor enumeration" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.BorderStyle enumeration" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.DrawableMentulaGameComponent(Of TGame) class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.DrawableMentulaGameComponent&lt;TGame&gt; class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.FlickerStyle enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem class" Url="html/4288f473-0e01-8716-de8c-dec4dcd420a8.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem.GuiItemCollection class" Url="html/6d7b7706-c897-63d9-9f6e-55773706f532.htm" />

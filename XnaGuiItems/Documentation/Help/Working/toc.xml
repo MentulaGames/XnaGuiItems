@@ -112,6 +112,14 @@
   <topic id="N:Mentula.GuiItems.Core" project="_Namespaces" file="eb0543e3-bab8-348e-cda0-29f2e70219b4">
     <topic id="T:Mentula.GuiItems.Core.Anchor" project="XnaGuiItems" file="4365752c-5f67-a119-14f6-4560290a80a1" />
     <topic id="T:Mentula.GuiItems.Core.BorderStyle" project="XnaGuiItems" file="09d5090e-49b1-144f-af5e-1fa31c1dd7b1" />
+    <topic id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="e134ae0c-0cb7-9867-e990-58d9f8f2364c">
+      <topic id="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)" project="XnaGuiItems" file="01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d" />
+      <topic id="Properties.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="30a74214-4a07-cf6e-8970-8079de6eb4a9">
+        <topic id="P:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.Game" project="XnaGuiItems" file="9e548efe-a2b7-d891-16df-6796d16580c2" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="02b24bf6-a8f0-f0b3-45fc-dd5a93b37a4b" />
+      <topic id="Events.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="529330bb-ca51-107a-0a9c-af853a90c395" />
+    </topic>
     <topic id="T:Mentula.GuiItems.Core.FlickerStyle" project="XnaGuiItems" file="76fd9b0d-b4f3-bc98-5420-5ce998d1ad50" />
     <topic id="T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="4288f473-0e01-8716-de8c-dec4dcd420a8">
       <topic id="Overload:Mentula.GuiItems.Core.GuiItem.#ctor" project="XnaGuiItems" file="b4e2c0af-27e0-5200-a9d5-194733d8a577">
