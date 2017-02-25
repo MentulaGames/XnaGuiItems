@@ -1,12 +1,10 @@
 namespace Mentula.GuiItems.Containers
 {
     using Core;
-    using Core.Interfaces;
     using Items;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
-    using System;
     using System.Linq;
     using static Core.GuiItem;
     using static Utilities;
@@ -43,7 +41,7 @@ namespace Mentula.GuiItems.Containers
     ///
     ///     public override void Initialize()
     ///     {
-    ///         font = Game.vGraphics.fonts["MenuFont"];
+    ///         SetDefaultFont("MenuFont");
     ///         int txtHM = TxtH >> 1;
     ///
     ///         GuiItem bg = AddGuiItem();
@@ -88,19 +86,9 @@ namespace Mentula.GuiItems.Containers
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public partial class Menu<T> : MentulaGameComponent<T>, IMenu
+    public partial class Menu<T> : DrawableMentulaGameComponent<T>
         where T : Game
     {
-        /// <summary>
-        /// The order in which to draw this object relative to other objects. Objects with
-        /// a lower value are drawn first.
-        /// </summary>
-        public int DrawOrder { get { return drawOrder; } set { drawOrder = value; Invoke(DrawOrderChanged, this, EventArgs.Empty); } }
-        /// <summary>
-        /// Indicates whether <see cref="IDrawable.Draw(GameTime)"/> should be called for this game component.
-        /// </summary>
-        public bool Visible { get { return visible; } set { visible = value; Invoke(VisibleChanged, this, EventArgs.Empty); } }
-
         /// <summary>
         /// The center width of the viewport.
         /// </summary>
@@ -117,15 +105,6 @@ namespace Mentula.GuiItems.Containers
         /// The Height of the viewport.
         /// </summary>
         public int ScreenHeight { get { return device.Viewport.Height; } }
-
-        /// <summary>
-        /// Occures when the value of <see cref="DrawOrder"/> is changed.
-        /// </summary>
-        public event EventHandler<EventArgs> DrawOrderChanged;
-        /// <summary>
-        /// Occures when the value of <see cref="Visible"/> is changed.
-        /// </summary>
-        public event EventHandler<EventArgs> VisibleChanged;
 
         /// <summary>
         /// Indicates whether the <see cref="Menu{T}"/> should handle textbox focusing.
@@ -151,8 +130,6 @@ namespace Mentula.GuiItems.Containers
         protected GraphicsDevice device;
 
         private SpriteBatch batch;
-        private bool visible;
-        private int drawOrder;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Menu{T}"/> class.
@@ -214,6 +191,8 @@ namespace Mentula.GuiItems.Containers
                     controlls[i].Dispose();
                 }
             }
+
+            controlls.Clear();
 
             base.Dispose(disposing);
         }
@@ -303,7 +282,7 @@ namespace Mentula.GuiItems.Containers
         /// Draws the <see cref="Menu{T}"/> and its controlls.
         /// </summary>
         /// <param name="gameTime"> Time elapsed since the last call to Draw. </param>
-        public virtual void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             if (Visible)
             {
@@ -321,6 +300,8 @@ namespace Mentula.GuiItems.Containers
 
                 batch.End();
             }
+
+            base.Draw(gameTime);
         }
 
         /// <summary>

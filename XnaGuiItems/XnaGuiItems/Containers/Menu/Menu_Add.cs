@@ -6,7 +6,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using System;
 
-    public partial class Menu<T> : MentulaGameComponent<T>, IUpdateable, IDrawable
+    public partial class Menu<T> : DrawableMentulaGameComponent<T>
         where T : Game
     {
         /// <summary>

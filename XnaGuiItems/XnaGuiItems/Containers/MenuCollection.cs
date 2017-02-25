@@ -4,8 +4,8 @@
     using Core.Interfaces;
     using Microsoft.Xna.Framework;
     using System;
+    using System.Collections.Generic;
     using static Utilities;
-    using KVP = System.Collections.Generic.KeyValuePair<string, Core.Interfaces.IMenu>;
 
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.
@@ -84,38 +84,17 @@
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class MenuCollection<TGame> : MentulaGameComponent<TGame>, IDrawable
+    public class MenuCollection<TGame> : DrawableMentulaGameComponent<TGame>
         where TGame : Game
     {
         /// <summary>
-        /// The order in which to draw this object relative to other objects. Objects with
-        /// a lower value are drawn first.
+        /// Gets a <see cref="Menu{T}"/> with a specified name.
         /// </summary>
-        public int DrawOrder { get { return drawOrder; } set { drawOrder = value; Invoke(DrawOrderChanged, this, EventArgs.Empty); } }
-        /// <summary>
-        /// Indicates whether <see cref="IDrawable.Draw(GameTime)"/> should be called for this game component.
-        /// </summary>
-        public bool Visible { get { return visible; } set { visible = value; Invoke(VisibleChanged, this, EventArgs.Empty); } }
+        /// <param name="key"> The name of the <see cref="Menu{T}"/>. </param>
+        /// <exception cref="ArgumentException"> A <see cref="Menu{T}"/> with the specified name could not be found. </exception>
+        public Menu<TGame> this[string key] { get { return Get(key); } }
 
-        /// <summary>
-        /// Occures when the value of <see cref="DrawOrder"/> is changed.
-        /// </summary>
-        public event EventHandler<EventArgs> DrawOrderChanged;
-        /// <summary>
-        /// Occures when the value of <see cref="Visible"/> is changed.
-        /// </summary>
-        public event EventHandler<EventArgs> VisibleChanged;
-
-        /// <summary>
-        /// Gets a <see cref="IMenu"/> with a specified name.
-        /// </summary>
-        /// <param name="key"> The name of the <see cref="IMenu"/>. </param>
-        /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
-        public IMenu this[string key] { get { return Get(key); } }
-
-        private KVP[] underlying;
-        private bool visible;
-        private int drawOrder;
+        private KeyValuePair<string, Menu<TGame>>[] underlying;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuCollection{T}"/> class.
@@ -124,34 +103,34 @@
         public MenuCollection(TGame game)
             : base(game)
         {
-            underlying = new KVP[0];
+            underlying = new KeyValuePair<string, Menu<TGame>>[0];
         }
 
         /// <summary>
-        /// Adds a <see cref="IMenu"/> to the collection.
+        /// Adds a <see cref="Menu{T}"/> to the collection.
         /// </summary>
-        /// <param name="menu"> The <see cref="IMenu"/> to add. </param>
-        /// <param name="key"> The name of the <see cref="IMenu"/>. </param>
-        public void Add(IMenu menu, string key)
+        /// <param name="menu"> The <see cref="Menu{T}"/> to add. </param>
+        /// <param name="key"> The name of the <see cref="Menu{T}"/>. </param>
+        public void Add(Menu<TGame> menu, string key)
         {
             int i = underlying.Length;
             Array.Resize(ref underlying, i + 1);
-            underlying[i] = new KVP(key.ToUpper(), menu);
+            underlying[i] = new KeyValuePair<string, Menu<TGame>>(key.ToUpper(), menu);
         }
 
         /// <summary>
-        /// Adds multiple <see cref="IMenu"/> to the collection.
+        /// Adds multiple <see cref="Menu{T}"/> to the collection.
         /// </summary>
-        /// <param name="menus"> The <see cref="IMenu"/> to add with there given names. </param>
-        public void AddRange(params KVP[] menus)
+        /// <param name="menus"> The <see cref="Menu{T}"/> to add with there given names. </param>
+        public void AddRange(params KeyValuePair<string, Menu<TGame>>[] menus)
         {
             int i = underlying.Length;
             Array.Resize(ref underlying, i + menus.Length);
 
             for (int j = 0; i < underlying.Length; i++, j++)
             {
-                KVP cur = menus[j];
-                underlying[i] = new KVP(cur.Key.ToUpper(), cur.Value);
+                KeyValuePair<string, Menu<TGame>> cur = menus[j];
+                underlying[i] = new KeyValuePair<string, Menu<TGame>>(cur.Key.ToUpper(), cur.Value);
             }
         }
 
@@ -189,7 +168,7 @@
         /// Draws the <see cref="MenuCollection{T}"/>'s <see cref="Menu{T}"/>'s.
         /// </summary>
         /// <param name="gameTime"> Time elapsed since the last call to Draw. </param>
-        public void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             if (Visible)
             {
@@ -198,6 +177,8 @@
                     underlying[i].Value.Draw(gameTime);
                 }
             }
+
+            base.Draw(gameTime);
         }
 
         /// <summary>
@@ -211,7 +192,7 @@
 
             for (int i = 0; i < underlying.Length; i++)
             {
-                KVP cur = underlying[i];
+                KeyValuePair<string, Menu<TGame>> cur = underlying[i];
                 if (cur.Key == menu) cur.Value.Show();
                 else cur.Value.Hide();
             }
@@ -231,32 +212,32 @@
         }
 
         /// <summary>
-        /// Gets a <see cref="IMenu"/> with a specified name.
+        /// Gets a <see cref="Menu{T}"/> with a specified name.
         /// </summary>
-        /// <param name="name"> The name of the <see cref="IMenu"/>. </param>
-        /// <typeparam name="TMenu"> The type of <see cref="IMenu"/> to cast to. </typeparam>
+        /// <param name="name"> The name of the <see cref="Menu{T}"/>. </param>
+        /// <typeparam name="TMenu"> The type of <see cref="Menu{T}"/> to cast to. </typeparam>
         /// <returns> The found menu casted to the specified type. </returns>
-        /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
+        /// <exception cref="ArgumentException"> A <see cref="Menu{T}"/> with the specified name could not be found. </exception>
         /// <exception cref="InvalidCastException"> Cannot cast found menu to specified menu type. </exception>
         public TMenu Get<TMenu>(string name)
-            where TMenu : IMenu
+            where TMenu : Menu<TGame>
         {
             return (TMenu)Get(name);
         }
 
         /// <summary>
-        /// Gets a <see cref="IMenu"/> with a specified name.
+        /// Gets a <see cref="Menu{T}"/> with a specified name.
         /// </summary>
-        /// <param name="name"> The name of the <see cref="IMenu"/>. </param>
+        /// <param name="name"> The name of the <see cref="Menu{T}"/>. </param>
         /// <returns> The found menu. </returns>
-        /// <exception cref="ArgumentException"> A <see cref="IMenu"/> with the specified name could not be found. </exception>
-        public IMenu Get(string name)
+        /// <exception cref="ArgumentException"> A <see cref="Menu{T}"/> with the specified name could not be found. </exception>
+        public Menu<TGame> Get(string name)
         {
             name = name.ToUpper();
 
             for (int i = 0; i < underlying.Length; i++)
             {
-                KVP cur = underlying[i];
+                KeyValuePair<string, Menu<TGame>> cur = underlying[i];
                 if (cur.Key == name) return cur.Value;
             }
 

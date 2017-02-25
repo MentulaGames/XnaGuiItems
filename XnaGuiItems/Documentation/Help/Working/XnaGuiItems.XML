@@ -79,33 +79,12 @@
             }
             </code></example>
     </member>
-    <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrder">
-      <summary>
-            The order in which to draw this object relative to other objects. Objects with
-            a lower value are drawn first.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.Visible">
-      <summary>
-            Indicates whether <see cref="M:Microsoft.Xna.Framework.IDrawable.Draw(Microsoft.Xna.Framework.GameTime)" /> should be called for this game component.
-            </summary>
-    </member>
-    <member name="E:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrderChanged">
-      <summary>
-            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrder" /> is changed.
-            </summary>
-    </member>
-    <member name="E:Mentula.GuiItems.Containers.MenuCollection`1.VisibleChanged">
-      <summary>
-            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.MenuCollection`1.Visible" /> is changed.
-            </summary>
-    </member>
     <member name="P:Mentula.GuiItems.Containers.MenuCollection`1.Item(System.String)">
       <summary>
-            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            Gets a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with a specified name.
             </summary>
-      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
-      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with the specified name could not be found. </exception>
     </member>
     <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.#ctor(`0)">
       <summary>
@@ -113,18 +92,18 @@
             </summary>
       <param name="game"> The game to associate with this <see cref="T:Mentula.GuiItems.Containers.MenuCollection`1" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Add(Mentula.GuiItems.Core.Interfaces.IMenu,System.String)">
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Add(Mentula.GuiItems.Containers.Menu{`0},System.String)">
       <summary>
-            Adds a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to the collection.
+            Adds a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to the collection.
             </summary>
-      <param name="menu"> The <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to add. </param>
-      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+      <param name="menu"> The <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to add. </param>
+      <param name="key"> The name of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.AddRange(System.Collections.Generic.KeyValuePair{System.String,Mentula.GuiItems.Core.Interfaces.IMenu}[])">
+    <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.AddRange(System.Collections.Generic.KeyValuePair{System.String,Mentula.GuiItems.Containers.Menu{`0}}[])">
       <summary>
-            Adds multiple <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to the collection.
+            Adds multiple <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to the collection.
             </summary>
-      <param name="menus"> The <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to add with there given names. </param>
+      <param name="menus"> The <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to add with there given names. </param>
     </member>
     <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Initialize">
       <summary>
@@ -156,21 +135,21 @@
     </member>
     <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Get``1(System.String)">
       <summary>
-            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            Gets a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with a specified name.
             </summary>
-      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
-      <typeparam name="TMenu"> The type of <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> to cast to. </typeparam>
+      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
+      <typeparam name="TMenu"> The type of <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> to cast to. </typeparam>
       <returns> The found menu casted to the specified type. </returns>
-      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with the specified name could not be found. </exception>
       <exception cref="T:System.InvalidCastException"> Cannot cast found menu to specified menu type. </exception>
     </member>
     <member name="M:Mentula.GuiItems.Containers.MenuCollection`1.Get(System.String)">
       <summary>
-            Gets a <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with a specified name.
+            Gets a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with a specified name.
             </summary>
-      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" />. </param>
+      <param name="name"> The name of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />. </param>
       <returns> The found menu. </returns>
-      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Core.Interfaces.IMenu" /> with the specified name could not be found. </exception>
+      <exception cref="T:System.ArgumentException"> A <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> with the specified name could not be found. </exception>
     </member>
     <member name="T:Mentula.GuiItems.Containers.Menu`1">
       <summary>
@@ -205,7 +184,7 @@
             
                  public override void Initialize()
                  {
-                     font = Game.vGraphics.fonts["MenuFont"];
+                     SetDefaultFont("MenuFont");
                      int txtHM = TxtH &gt;&gt; 1;
             
                      GuiItem bg = AddGuiItem();
@@ -306,17 +285,6 @@
             </summary>
       <returns> The <see cref="T:Mentula.GuiItems.Items.PictureBox" /> created. </returns>
     </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder">
-      <summary>
-            The order in which to draw this object relative to other objects. Objects with
-            a lower value are drawn first.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.Visible">
-      <summary>
-            Indicates whether <see cref="M:Microsoft.Xna.Framework.IDrawable.Draw(Microsoft.Xna.Framework.GameTime)" /> should be called for this game component.
-            </summary>
-    </member>
     <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle">
       <summary>
             The center width of the viewport.
@@ -335,16 +303,6 @@
     <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
       <summary>
             The Height of the viewport.
-            </summary>
-    </member>
-    <member name="E:Mentula.GuiItems.Containers.Menu`1.DrawOrderChanged">
-      <summary>
-            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" /> is changed.
-            </summary>
-    </member>
-    <member name="E:Mentula.GuiItems.Containers.Menu`1.VisibleChanged">
-      <summary>
-            Occures when the value of <see cref="P:Mentula.GuiItems.Containers.Menu`1.Visible" /> is changed.
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox">
@@ -1175,30 +1133,6 @@
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Interfaces.IMenu">
-      <summary>
-            Defines an interface for menu's.
-            </summary>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.Interfaces.IToggleable">
-      <summary>
-            Defines an interface for components that can be shown or hiden.
-            </summary>
-      <remarks>
-            This interface adds usefull abstraction to functions that require only to be able to toggle the visible state of an object.
-            In this framework it is used for all <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
-            </remarks>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show">
-      <summary>
-            Shows the component.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide">
-      <summary>
-            Hides the component.
-            </summary>
-    </member>
     <member name="T:Mentula.GuiItems.Core.BorderStyle">
       <summary>
             Specifies the border style for a GuiItem.
@@ -1419,6 +1353,25 @@
       <typeparam name="T"> The type of the value. </typeparam>
       <param name="sender"> The GuiItem that raised the event. </param>
       <param name="e"> Additional information about the event raised, this will contain the old and new value of the changed field. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Interfaces.IToggleable">
+      <summary>
+            Defines an interface for components that can be shown or hiden.
+            </summary>
+      <remarks>
+            This interface adds usefull abstraction to functions that require only to be able to toggle the visible state of an object.
+            In this framework it is used for all <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </remarks>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show">
+      <summary>
+            Shows the component.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide">
+      <summary>
+            Hides the component.
+            </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.InvokeException">
       <summary>

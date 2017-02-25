@@ -68,7 +68,6 @@
     <Compile Include="Core\Handlers\TextureHandler.cs" />
     <Compile Include="Core\Input\MentulaKeyboardState.cs" />
     <Compile Include="Core\Input\NativeMethods.cs" />
-    <Compile Include="Core\Interfaces\IMenu.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Base.cs" />
     <Compile Include="Containers\TabContainer.cs" />
@@ -84,24 +83,6 @@
     <Compile Include="Core\MentulaGameComponent.cs" />
     <Compile Include="Core\ProgresData.cs" />
     <Compile Include="Core\Size.cs" />
-    <Compile Include="Design\BaseControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Design\ComponentModel\MentulaComponent.cs" />
-    <Compile Include="Design\DerivedControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Design\Designer\GuiItemDesigner.cs" />
-    <Compile Include="Design\ComponentModel\MentulaContainer.cs" />
-    <Compile Include="Design\ComponentModel\MentulaSite.cs" />
-    <Compile Include="Design\Designer\ImagedGuiItem.cs" />
-    <Compile Include="Design\Designer\XnaGuiControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Design\Designer\XnaWindowDesignerView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Design\NativeMethods.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Items\Button.cs" />
     <Compile Include="Items\DropDown.cs" />

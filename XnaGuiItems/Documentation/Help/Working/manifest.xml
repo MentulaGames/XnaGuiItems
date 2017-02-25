@@ -66,8 +66,6 @@
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.device" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Dispose(System.Boolean)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.Menu`1.DrawOrder" type="API" />
-  <topic id="E:Mentula.GuiItems.Containers.Menu`1.DrawOrderChanged" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl``1(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.FindControl(System.String)" type="API" />
@@ -82,19 +80,15 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Show" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.Menu`1.Visible" type="API" />
-  <topic id="E:Mentula.GuiItems.Containers.Menu`1.VisibleChanged" type="API" />
   <topic id="T:Mentula.GuiItems.Containers.MenuCollection`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Containers.MenuCollection`1" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Containers.MenuCollection`1" type="API" />
   <topic id="Events.T:Mentula.GuiItems.Containers.MenuCollection`1" type="API" />
   <topic id="Overload:Mentula.GuiItems.Containers.MenuCollection`1.Get" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.#ctor(`0)" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Add(Mentula.GuiItems.Core.Interfaces.IMenu,System.String)" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.AddRange(System.Collections.Generic.KeyValuePair{System.String,Mentula.GuiItems.Core.Interfaces.IMenu}[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Add(Mentula.GuiItems.Containers.Menu{`0},System.String)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.AddRange(System.Collections.Generic.KeyValuePair{System.String,Mentula.GuiItems.Containers.Menu{`0}}[])" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Draw(Microsoft.Xna.Framework.GameTime)" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrder" type="API" />
-  <topic id="E:Mentula.GuiItems.Containers.MenuCollection`1.DrawOrderChanged" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Get``1(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Get(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Hide" type="API" />
@@ -102,8 +96,6 @@
   <topic id="P:Mentula.GuiItems.Containers.MenuCollection`1.Item(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Show(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.MenuCollection`1.Update(Microsoft.Xna.Framework.GameTime)" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.MenuCollection`1.Visible" type="API" />
-  <topic id="E:Mentula.GuiItems.Containers.MenuCollection`1.VisibleChanged" type="API" />
   <topic id="T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
@@ -344,10 +336,6 @@
   <topic id="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed" type="API" />
   <topic id="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" type="API" />
   <topic id="N:Mentula.GuiItems.Core.Interfaces" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
-  <topic id="Events.T:Mentula.GuiItems.Core.Interfaces.IMenu" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Interfaces.IToggleable" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Interfaces.IToggleable" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide" type="API" />
