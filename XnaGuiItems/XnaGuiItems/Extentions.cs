@@ -220,7 +220,7 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Clamp(this int value, int max, int min)
         {
-            return value > max ? max : (value < min ? min : value);
+            return Math.Min(max, Math.Max(min, value));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
