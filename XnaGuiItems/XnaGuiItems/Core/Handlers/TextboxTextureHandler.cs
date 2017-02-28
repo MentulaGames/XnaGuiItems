@@ -1,7 +1,18 @@
-﻿namespace Mentula.GuiItems.Core.Handlers
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Core.Handlers
 {
-    using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Graphics;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+    using Mono.Microsoft.Xna.Framework.Graphics;
+#else
+    using Xna.Microsoft.Xna.Framework;
+    using Xna.Microsoft.Xna.Framework.Graphics;
+#endif
 
     /// <summary>
     /// The class that handles the textures of a <see cref="Items.TextBox"/>.

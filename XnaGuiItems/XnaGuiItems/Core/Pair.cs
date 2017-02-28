@@ -1,14 +1,30 @@
-﻿namespace Mentula.GuiItems.Core
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Core
 {
-    using Microsoft.Xna.Framework;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+#else
+    using Xna.Microsoft.Xna.Framework;
+#endif
     using System;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using static Utilities;
 
+#if MONO
     /// <summary>
-    /// Stores pairs of <see cref="string"/> and <see cref="Microsoft.Xna.Framework.Color"/>.
+    /// Stores pairs of <see cref="string"/> and <see cref="Mono.Microsoft.Xna.Framework.Color"/>.
     /// </summary>
+#else
+    /// <summary>
+    /// Stores pairs of <see cref="string"/> and <see cref="Xna.Microsoft.Xna.Framework.Color"/>.
+    /// </summary>
+#endif
 #if !DEBUG
     [DebuggerStepThrough]
 #endif

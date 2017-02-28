@@ -1,6 +1,16 @@
-﻿namespace Mentula.GuiItems.Core
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Core
 {
-    using Microsoft.Xna.Framework;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+#else
+    using Xna.Microsoft.Xna.Framework;
+#endif
     using System;
     using System.Diagnostics;
     using static Utilities;
@@ -9,8 +19,8 @@
     /// Stores an ordered pair of integers, wich specify a Height and Width.
     /// </summary>
     /// <remarks>
-    /// This object is a copy of the <see cref="System.Drawing.Size"/> 
-    /// and is only present in this library so a refrence to <see cref="System.Drawing"/> is not required.
+    /// This object is a copy of the System.Drawing.Size
+    /// and is only present in this library so a refrence to System.Drawing is not required.
     /// </remarks>
 #if !DEBUG
     [DebuggerStepThrough]  

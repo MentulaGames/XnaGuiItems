@@ -39,11 +39,12 @@
     <CleanIntermediates>False</CleanIntermediates>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="Mentula.GuiItems" isDocumented="True">The Mentula.GuiItems namespace contains global functions to be used with XnaGuiItems.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Containers" isDocumented="True">The Mentula.GuiItems.Containers namespace contains classes that define commonly-used containers in an user interface.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Core" isDocumented="True">The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Items" isDocumented="True">The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Core.Interfaces" isDocumented="True">The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the librarie.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Core.Handlers" isDocumented="True">The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="Mentula.GuiItems.Containers" isDocumented="True">The Mentula.GuiItems.Containers namespace contains classes that define commonly-used containers in an user interface.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Mentula.GuiItems.Core" isDocumented="True">The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Mentula.GuiItems.Items" isDocumented="True">The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Mentula.GuiItems.Core.Interfaces" isDocumented="True">The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the librarie.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Mentula.GuiItems.Core.Handlers" isDocumented="True">The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</NamespaceSummaryItem>
+    </NamespaceSummaries>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>
@@ -133,5 +134,8 @@
     <PostBuildEvent>
     </PostBuildEvent>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'MonoRelease' ">
+    <OutputPath>bin\MonoRelease\</OutputPath>
   </PropertyGroup>
 </Project>

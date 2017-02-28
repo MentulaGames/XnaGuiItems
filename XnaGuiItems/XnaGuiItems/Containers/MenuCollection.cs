@@ -1,8 +1,18 @@
-﻿namespace Mentula.GuiItems.Containers
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Containers
 {
-    using Core;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+#else
+    using Xna.Microsoft.Xna.Framework;
+#endif
     using Core.Interfaces;
-    using Microsoft.Xna.Framework;
+    using Core;
     using System;
     using System.Collections.Generic;
     using static Utilities;

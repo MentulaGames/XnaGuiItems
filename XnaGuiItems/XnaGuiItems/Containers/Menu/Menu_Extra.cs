@@ -1,8 +1,19 @@
-﻿namespace Mentula.GuiItems.Containers
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Containers
 {
-    using Mentula.GuiItems.Core;
-    using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Graphics;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+    using Mono.Microsoft.Xna.Framework.Graphics;
+#else
+    using Xna.Microsoft.Xna.Framework;
+    using Xna.Microsoft.Xna.Framework.Graphics;
+#endif
+    using Core;
     using System.Runtime.CompilerServices;
 
     public partial class Menu<T> : DrawableMentulaGameComponent<T>

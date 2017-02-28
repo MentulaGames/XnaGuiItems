@@ -1,11 +1,23 @@
-﻿namespace Mentula.GuiItems.Items
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Items
 {
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono.Microsoft.Xna.Framework.Input;
+#else
+    using Xna.Microsoft.Xna.Framework;
+    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna.Microsoft.Xna.Framework.Input;
+#endif
     using Core;
     using Core.Handlers;
     using Core.Interfaces;
-    using Microsoft.Xna.Framework;
-    using Microsoft.Xna.Framework.Graphics;
-    using Microsoft.Xna.Framework.Input;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;

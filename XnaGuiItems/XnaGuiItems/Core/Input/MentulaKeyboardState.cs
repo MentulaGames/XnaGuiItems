@@ -1,7 +1,17 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
 
 namespace Mentula.GuiItems.Core.Input
 {
+#if MONO
+    using Mono.Microsoft.Xna.Framework.Input;
+#else
+    using Xna.Microsoft.Xna.Framework.Input;
+#endif
+
     internal struct MentulaKeyboardState
     {
         public uint _0, _1, _2, _3, _4, _5, _6, _7;

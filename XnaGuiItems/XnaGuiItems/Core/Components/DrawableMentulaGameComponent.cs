@@ -1,6 +1,16 @@
-﻿namespace Mentula.GuiItems.Core
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Core
 {
-    using Microsoft.Xna.Framework;
+#if MONO
+    using Mono.Microsoft.Xna.Framework;
+#else
+    using Xna.Microsoft.Xna.Framework;
+#endif
 
     /// <summary> Base class for all drawable Mentula game components. </summary>
     /// <typeparam name="TGame"> The specified game class. </typeparam>
