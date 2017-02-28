@@ -681,6 +681,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle" />
         <element api="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth" />
@@ -925,6 +926,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Show" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" />
@@ -1854,7 +1856,7 @@
     <api id="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)">
       <topicdata group="api" />
       <apidata name="RGB" group="member" subgroup="method" />
-      <memberdata visibility="public" />
+      <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
         <parameter name="r">
@@ -1879,6 +1881,38 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
       <file name="56aca508-28f6-1b27-a334-7ea742caf130" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <topicdata group="api" />
+      <apidata name="RGBA" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="r">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="g">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="b">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="a">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+      <file name="7a0568fa-eb63-3ed0-aaf1-656589ccb9d3" />
     </api>
     <api id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
       <topicdata group="api" />

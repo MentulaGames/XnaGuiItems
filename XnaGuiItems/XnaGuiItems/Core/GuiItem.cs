@@ -495,7 +495,7 @@
         {
             if (rect.Width <= 0 || rect.Height <= 0)
             {
-                throw new ArgumentException("Rectangle width or height must be greater the zero!");
+                throw new ArgumentException($"Width or Height of {Name ?? GetType().Name} must be greater the zero!");
             }
         }
     }

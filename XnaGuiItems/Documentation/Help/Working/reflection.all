@@ -191,6 +191,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
@@ -1071,7 +1072,7 @@
     </api>
     <api id="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)">
       <apidata name="RGB" group="member" subgroup="method" />
-      <memberdata visibility="public" />
+      <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <parameters>
         <parameter name="r">
@@ -1081,6 +1082,33 @@
           <type api="T:System.Int32" ref="false" />
         </parameter>
         <parameter name="b">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <apidata name="RGBA" group="member" subgroup="method" />
+      <memberdata visibility="public" static="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="r">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="g">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="b">
+          <type api="T:System.Int32" ref="false" />
+        </parameter>
+        <parameter name="a">
           <type api="T:System.Int32" ref="false" />
         </parameter>
       </parameters>

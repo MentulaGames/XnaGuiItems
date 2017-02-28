@@ -73,6 +73,17 @@
         /// <param name="b"> The blue component of the <see cref="Color"/>. </param>
         /// <returns> The specified premultiplied <see cref="Color"/>. </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Color RGB(int r, int g, int b) => Color.FromNonPremultiplied(r, g, b, 255);
+        public static Color RGB(int r, int g, int b) => RGBA(r, g, b, 255);
+
+        /// <summary>
+        /// Gets a specific <see cref="Color"/> from red, green, blue and alpha values.
+        /// </summary>
+        /// <param name="r"> The red component of the <see cref="Color"/>. </param>
+        /// <param name="g"> The green component of the <see cref="Color"/>. </param>
+        /// <param name="b"> The blue component of the <see cref="Color"/>. </param>
+        /// <param name="a"> The alpha component of the <see cref="Color"/>. </param>
+        /// <returns> The specified premultiplied <see cref="Color"/>. </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Color RGBA(int r, int g, int b, int a) => Color.FromNonPremultiplied(r, g, b, a);
     }
 }

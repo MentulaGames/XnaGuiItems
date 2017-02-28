@@ -566,6 +566,7 @@
   <HelpKINode Title="Menu(Of T).LoadTexture method" Url="html/4b5ec675-6d5f-30ac-d187-59c2597da20c.htm" />
   <HelpKINode Title="Menu(Of T).Menu constructor" Url="html/4b3c7dca-f948-b2f8-14d7-086ed8197d6f.htm" />
   <HelpKINode Title="Menu(Of T).RGB method" Url="html/56aca508-28f6-1b27-a334-7ea742caf130.htm" />
+  <HelpKINode Title="Menu(Of T).RGBA method" Url="html/7a0568fa-eb63-3ed0-aaf1-656589ccb9d3.htm" />
   <HelpKINode Title="Menu(Of T).ScreenHeight property" Url="html/de000655-eb11-d041-e65f-e20679d45c72.htm" />
   <HelpKINode Title="Menu(Of T).ScreenHeightMiddle property" Url="html/de11267f-88de-749d-4279-c0ef041034fb.htm" />
   <HelpKINode Title="Menu(Of T).ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
@@ -605,6 +606,7 @@
   <HelpKINode Title="Menu&lt;T&gt;.LoadTexture method" Url="html/4b5ec675-6d5f-30ac-d187-59c2597da20c.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Menu constructor" Url="html/4b3c7dca-f948-b2f8-14d7-086ed8197d6f.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.RGB method" Url="html/56aca508-28f6-1b27-a334-7ea742caf130.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.RGBA method" Url="html/7a0568fa-eb63-3ed0-aaf1-656589ccb9d3.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenHeight property" Url="html/de000655-eb11-d041-e65f-e20679d45c72.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenHeightMiddle property" Url="html/de11267f-88de-749d-4279-c0ef041034fb.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
@@ -816,6 +818,7 @@
   <HelpKINode Title="Resize event" Url="html/a22e64af-a516-390e-a567-2e0a79b99d43.htm" />
   <HelpKINode Title="ResizeMode enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="RGB method" Url="html/56aca508-28f6-1b27-a334-7ea742caf130.htm" />
+  <HelpKINode Title="RGBA method" Url="html/7a0568fa-eb63-3ed0-aaf1-656589ccb9d3.htm" />
   <HelpKINode Title="Right enumeration member">
     <HelpKINode Title="Anchor Enumeration" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
     <HelpKINode Title="MouseClick Enumeration" Url="html/4c3c31ac-70d2-1278-4a4a-763ac1fa1695.htm" />

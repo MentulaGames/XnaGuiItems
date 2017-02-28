@@ -194,11 +194,8 @@
                 if (dim.X < MinimumSize.Width) dim.X = MinimumSize.Width;
                 else if (dim.X > MaximumSize.Width) dim.X = MaximumSize.Width;
 
-                if ((dim.X != Bounds.Width && dim.X != 0) ||
-                   (dim.Y != Bounds.Height && dim.Y != 0))
-                {
-                    Size = new Size(dim);
-                }
+                if (dim.X > 0 && dim.X != Bounds.Width) Width = (int)dim.X;
+                if (dim.Y > 0 && dim.Y != Bounds.Height) Height = (int)dim.Y;
             }
         }
 

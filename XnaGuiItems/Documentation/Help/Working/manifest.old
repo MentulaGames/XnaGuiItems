@@ -40,6 +40,7 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth" type="API" />

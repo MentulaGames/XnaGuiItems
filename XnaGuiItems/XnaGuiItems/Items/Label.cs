@@ -122,11 +122,8 @@
                 Vector2 dim = font.MeasureString(text);
                 dim.X += 3;
 
-                if ((dim.X != Bounds.Width && dim.X != 0) ||
-                   (dim.Y != Bounds.Height && dim.Y != 0))
-                {
-                    Size = new Size(dim);
-                }
+                if (dim.X > 0 && dim.X != Bounds.Width) Width = (int)dim.X;
+                if (dim.Y > 0 && dim.Y != Bounds.Height) Height = (int)dim.Y;
             }
         }
 

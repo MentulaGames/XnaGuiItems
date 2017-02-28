@@ -15,7 +15,7 @@
 #if !DEBUG
     [DebuggerStepThrough]  
 #endif
-    [DebuggerDisplay("{ToString}")]
+    [DebuggerDisplay("{ToString()}")]
     public struct Size : IEquatable<Size>
     {
         /// <summary>

@@ -287,6 +287,16 @@
       <param name="b"> The blue component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
       <returns> The specified premultiplied <see cref="T:Microsoft.Xna.Framework.Color" />. </returns>
     </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+            Gets a specific <see cref="T:Microsoft.Xna.Framework.Color" /> from red, green, blue and alpha values.
+            </summary>
+      <param name="r"> The red component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <param name="g"> The green component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <param name="b"> The blue component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <param name="a"> The alpha component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <returns> The specified premultiplied <see cref="T:Microsoft.Xna.Framework.Color" />. </returns>
+    </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem">
       <summary>
             Adds a standard <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.

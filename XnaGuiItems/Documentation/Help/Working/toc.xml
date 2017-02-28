@@ -45,6 +45,7 @@
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" project="XnaGuiItems" file="a4f530cb-fb02-8d2d-1a1d-163b7504f8ff" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" project="XnaGuiItems" file="4b5ec675-6d5f-30ac-d187-59c2597da20c" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)" project="XnaGuiItems" file="56aca508-28f6-1b27-a334-7ea742caf130" />
+        <topic id="M:Mentula.GuiItems.Containers.Menu`1.RGBA(System.Int32,System.Int32,System.Int32,System.Int32)" project="XnaGuiItems" file="7a0568fa-eb63-3ed0-aaf1-656589ccb9d3" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" project="XnaGuiItems" file="1a1fd36e-dc98-602d-a77a-3cc372310b14" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Show" project="XnaGuiItems" file="d9929845-a149-ea95-4d5e-acc9ab38fd84" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)" project="XnaGuiItems" file="83d0d475-ebce-04b2-d779-447dfbca29d9" />
