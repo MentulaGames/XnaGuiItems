@@ -36,18 +36,18 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="PictureBox"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="PictureBox"/> to. </param>
-        public PictureBox(GraphicsDevice device)
-            : this(device, DefaultBounds)
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
+        public PictureBox(ref SpriteBatch sb)
+            : this(ref sb, DefaultBounds)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PictureBox"/> class with specific size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="PictureBox"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="PictureBox"/> in pixels. </param>
-        public PictureBox(GraphicsDevice device, Rectangle bounds)
-            : base(device, bounds)
+        public PictureBox(ref SpriteBatch sb, Rectangle bounds)
+            : base(ref sb, bounds)
         {
             SizeModeChanged += OnSizeModeChanged;
         }
@@ -61,22 +61,19 @@
 
             if (Image == null)
             {
-                textures.SetForeFromClr(Color.Transparent, Size, device);
+                textures.SetForeFromClr(Color.Transparent, Size, batch.GraphicsDevice);
                 return;
             }
 
             switch (SizeMode)
             {
                 case ResizeMode.AutoSize:
-                    bool width = Image.Width != Bounds.Width;
-                    bool height = Image.Height != Bounds.Height;
-
-                    if (width || height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Image.Width, Image.Height);
+                    if (Image.Width != Bounds.Width || Image.Height != Bounds.Height) Size = new Size(Image.Width, Image.Height);
                     textures.Foreground = Image;
                     break;
                 case ResizeMode.CenterImage:
                     Size offset = (Size >> 1) - (Image.Bounds.Size() >> 1);
-                    textures.Foreground = Image.RenderOnto(Size, position: offset.ToVector2());
+                    textures.Foreground = Image.RenderOnto(batch, Size, position: offset.ToVector2());
                     break;
                 case ResizeMode.Normal:
                     textures.Foreground = Image.Clip(new Rectangle(0, 0, Width, Height));
@@ -86,7 +83,7 @@
                     break;
                 case ResizeMode.Zoom:
                     Vector2 zoom = new Vector2(Width / (float)Image.Width, Height / (float)Image.Height);
-                    textures.Foreground = Image.RenderOnto(Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
+                    textures.Foreground = Image.RenderOnto(batch, Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
                     break;
             }
         }

@@ -2,6 +2,7 @@
 {
     using Microsoft.Xna.Framework;
     using System;
+    using System.Diagnostics;
     using static Utilities;
 
     /// <summary>
@@ -11,6 +12,10 @@
     /// This object is a copy of the <see cref="System.Drawing.Size"/> 
     /// and is only present in this library so a refrence to <see cref="System.Drawing"/> is not required.
     /// </remarks>
+#if !DEBUG
+    [DebuggerStepThrough]  
+#endif
+    [DebuggerDisplay("{ToString}")]
     public struct Size : IEquatable<Size>
     {
         /// <summary>

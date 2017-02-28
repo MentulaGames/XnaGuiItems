@@ -51,22 +51,6 @@
         /// Gets or sets the background color for the <see cref="DropDown"/> header.
         /// </summary>
         public virtual Color HeaderBackgroundColor { get; set; }
-        /// <summary>
-        /// Gets or sets the position of the <see cref="GuiItem"/>.
-        /// </summary>
-        public override Vector2 Position
-        {
-            get
-            {
-                return base.Position;
-            }
-            set
-            {
-                base.Position = value;
-                foregroundRectangle.X = (int)value.X;
-                foregroundRectangle.Y = (int)value.Y;
-            }
-        }
 
         /// <summary>
         /// Occurs when a <see cref="DropDown"/> option is clicked.
@@ -87,24 +71,32 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="DropDown"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public DropDown(GraphicsDevice device, SpriteFont font)
-            : this(device, DefaultBounds, font)
+        public DropDown(ref SpriteBatch sb, SpriteFont font)
+            : this(ref sb, DefaultBounds, font)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DropDown"/> class with a specific size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="DropDown"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="DropDown"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public DropDown(GraphicsDevice device, Rectangle bounds, SpriteFont font)
-            : base(device, bounds)
+        public DropDown(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+            : base(ref sb, bounds)
         {
             this.font = font;
-            Init();
+            HeaderText = DefaultHeaderText;
+            labels = new KeyValuePair<string, Color>[0][];
+            itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
+            foregroundRectangle = DefaultBounds;
+
+            BackColor = DefaultBackColor;
+            ForeColor = DefaultForeColor;
+            HeaderBackgroundColor = DefaultHeaderBackColor;
+            Click += DropDown_Click;
         }
 
         /// <summary>
@@ -113,11 +105,11 @@
         /// <param name="parts"> The parts of the option, separated with a space. </param>
         public void AddOption(params string[] parts)
         {
-            KeyValuePair<string, Color?>[] colorParts = new KeyValuePair<string, Color?>[parts.Length];
+            Pair[] colorParts = new Pair[parts.Length];
 
             for (int i = 0; i < parts.Length; i++)
             {
-                colorParts[i] = new KeyValuePair<string, Color?>(parts[i], ForeColor);
+                colorParts[i] = new Pair(parts[i], ForeColor);
             }
 
             AddOption(colorParts);
@@ -127,7 +119,7 @@
         /// Adds a option to the <see cref="DropDown"/> with a specified color.
         /// </summary>
         /// <param name="parts"> The parts of the option, with a specified colot and separated with a space. </param>
-        public void AddOption(params KeyValuePair<string, Color?>[] parts)
+        public void AddOption(params Pair[] parts)
         {
             int index = labels.Length;
             Array.Resize(ref labels, index + 1);
@@ -135,9 +127,9 @@
             KeyValuePair<string, Color>[] fixedParts = new KeyValuePair<string, Color>[parts.Length];
             for (int i = 0; i < parts.Length; i++)
             {
-                KeyValuePair<string, Color?> cur = parts[i];
-                Color c = cur.Value == null ? ForeColor : cur.Value.Value;
-                fixedParts[i] = new KeyValuePair<string, Color>(cur.Key, c);
+                Pair cur = parts[i];
+                Color c = cur.Color.HasValue ? cur.Color.Value : ForeColor;
+                fixedParts[i] = new KeyValuePair<string, Color>(cur.Text, c);
             }
 
             labels[index] = fixedParts;
@@ -181,7 +173,6 @@
             if (AutoSize)
             {
                 Vector2 dim = font.MeasureString(HeaderText);
-                int yAdder = 0;
 
                 for (int i = 0; i < labels.Length; i++)
                 {
@@ -189,30 +180,29 @@
                     Vector2 newDim = font.MeasureString(full);
 
                     if (newDim.X > dim.X) dim.X = newDim.X;
-                    yAdder += (int)newDim.Y;
+                    dim.Y += newDim.Y;
                 }
 
                 dim.X += 3;
-                bool width = dim.X != Bounds.Width ? true : false;
-                bool height = dim.Y != Bounds.Height ? true : false;
-
-                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y + yAdder);
-                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
-                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y + yAdder);
+                if ((dim.X != Bounds.Width && dim.X != 0) ||
+                    (dim.Y != Bounds.Height && dim.Y != 0))
+                {
+                    Size = new Size(dim);
+                }
             }
 
             foregroundRectangle = Bounds;
             textures.Background = textures.Background.ApplyBorderLabel(BorderStyle);
             if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
 
-            textures.Foreground = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, device);
-            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(textures.Foreground.Width, (int)font.MeasureString("a").Y), device);
+            textures.Foreground = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, batch);
+            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(textures.Foreground.Width, (int)font.GetHeight()), batch.GraphicsDevice);
 
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
             for (int i = 0; i < labels.Length; i++)
             {
                 itemTextures[i] = new KeyValuePair<Texture2D, ButtonStyle>(
-                    Drawing.FromLabels(labels[i], font, new Size(textures.Foreground.Width, foregroundRectangle.Height / (labels.Length + 1)), device),
+                    Drawing.FromLabels(labels[i], font, new Size(textures.Foreground.Width, foregroundRectangle.Height / (labels.Length + 1)), batch),
                     ButtonStyle.Default);
             }
         }
@@ -230,7 +220,7 @@
                 spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
                 spriteBatch.Draw(textures.Foreground, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
 
-                float fontHeight = font.MeasureString("a").Y;
+                float fontHeight = font.GetHeight();
                 for (int i = 0; i < itemTextures.Length; i++)
                 {
                     Texture2D texture = itemTextures[i].Value == ButtonStyle.Default ? itemTextures[i].Key : itemTextures[i].Key.ApplyBorderButton(itemTextures[i].Value);
@@ -248,17 +238,16 @@
             }
         }
 
-        private void Init()
+        /// <summary>
+        /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="e"> The new position for the <see cref="Label"/>. </param>
+        protected override void OnMove(GuiItem sender, ValueChangedEventArgs<Vector2> e)
         {
-            HeaderText = DefaultHeaderText;
-            labels = new KeyValuePair<string, Color>[0][];
-            itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
-            foregroundRectangle = DefaultBounds;
-
-            BackColor = DefaultBackColor;
-            ForeColor = DefaultForeColor;
-            HeaderBackgroundColor = DefaultHeaderBackColor;
-            Click += DropDown_Click;
+            base.OnMove(sender, e);
+            foregroundRectangle.X = (int)e.NewValue.X;
+            foregroundRectangle.Y = (int)e.NewValue.Y;
         }
 
         private void DropDown_Click(GuiItem sender, MouseEventArgs e)

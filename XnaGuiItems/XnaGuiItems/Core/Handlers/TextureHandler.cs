@@ -21,7 +21,7 @@
             get { return back; }
             set
             {
-                if (!internCall) userSet |= 1;
+                if (!internCall) userSet[0] = true;
                 back = value;
             }
         }
@@ -34,7 +34,7 @@
             get { return fore; }
             set
             {
-                if (!internCall) userSet |= 2;
+                if (!internCall) userSet[1] = true;
                 fore = value;
             }
         }
@@ -42,17 +42,17 @@
         internal bool internCall;
 
         /// <summary>
-        /// A bitflag byte that contains if the user has set specified textures.
+        /// A <see cref="ByteFlags"/> that contains if the user has set specified textures.
         /// 1 if for the background,
         /// 2 if for the foreground.
         /// </summary>
-        protected byte userSet;
+        protected ByteFlags userSet;
         private Texture2D back, fore;
 
         internal TextureHandler()
         {
             internCall = false;
-            userSet = 0;
+            userSet = new ByteFlags();
             back = null;
             fore = null;
         }
@@ -68,26 +68,25 @@
         internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
-            if ((userSet & 1) == 0) Background = Drawing.FromColor(clr, size, device);
+            if (!userSet[0]) Background = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
         internal void SetForeFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
-            if ((userSet & 2) == 0) Foreground = Drawing.FromColor(clr, size, device);
+            if (!userSet[1]) Foreground = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
-        internal void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
+        internal void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             internCall = true;
-            if ((userSet & 2) == 0) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, device);
+            if (!userSet[1]) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, sb);
             internCall = false;
         }
 
-        internal bool BackgroundSet() { return (userSet & 1) != 0; }
-        internal bool ForegroundSet() { return (userSet & 2) != 0; }
+        internal bool BackgroundSet() => userSet[0];
 
         /// <summary>
         /// Releases the managed and unmanaged resources used by the <see cref="GuiItem"/>.

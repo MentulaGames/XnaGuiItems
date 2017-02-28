@@ -19,7 +19,7 @@
             get { return hover; }
             set
             {
-                if (!internCall) userSet |= 4;
+                if (!internCall) userSet[2] = true;
                 hover = value;
             }
         }
@@ -32,7 +32,7 @@
             get { return click; }
             set
             {
-                if (!internCall) userSet |= 8;
+                if (!internCall) userSet[3] = true;
                 click = value;
             }
         }
@@ -48,18 +48,19 @@
         new internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             base.SetBackFromClr(clr, size, device);
+
             internCall = true;
-            if ((userSet & 4) == 0) Hover = Drawing.FromColor(clr, size, device);
-            if ((userSet & 8) == 0) Click = Drawing.FromColor(clr, size, device);
+            if (!userSet[2]) Hover = Drawing.FromColor(clr, size, device);
+            if (!userSet[3]) Click = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
         internal void ApplyBorders()
         {
             internCall = true;
-            if ((userSet & 1) == 0) Background = Background.ApplyBorderButton(ButtonStyle.Default);
-            if ((userSet & 4) == 0) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover);
-            if ((userSet & 8) == 0) Click = Click.ApplyBorderButton(ButtonStyle.Click);
+            if (!userSet[0]) Background = Background.ApplyBorderButton(ButtonStyle.Default);
+            if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover);
+            if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click);
             internCall = false;
         }
 

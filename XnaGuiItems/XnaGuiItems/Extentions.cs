@@ -118,24 +118,21 @@
             return result;
         }
 
-        public static Texture2D RenderOnto(this Texture2D texture, Size size, Vector2 position = default(Vector2), float rotation = 0, Vector2 scale = default(Vector2))
+        public static Texture2D RenderOnto(this Texture2D texture, SpriteBatch sb, Size size, Vector2 position = default(Vector2), float rotation = 0, Vector2 scale = default(Vector2))
         {
-            RenderTarget2D target = new RenderTarget2D(texture.GraphicsDevice, size.Width, size.Height);
-            SpriteBatch sb = new SpriteBatch(texture.GraphicsDevice);
+            RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height);
 
-            texture.GraphicsDevice.SetRenderTarget(target);
-            texture.GraphicsDevice.Clear(Color.Transparent);
+            sb.GraphicsDevice.SetRenderTarget(target);
+            sb.GraphicsDevice.Clear(Color.Transparent);
             sb.Begin();
             sb.Draw(texture, position, null, Color.White, rotation, Vector2.Zero, scale == default(Vector2) ? Vector2.One : scale, SpriteEffects.None, 1f);
             sb.End();
 
-            texture.GraphicsDevice.SetRenderTarget(null);
-            Texture2D result = new Texture2D(texture.GraphicsDevice, size.Width, size.Height);
+            sb.GraphicsDevice.SetRenderTarget(null);
+            Texture2D result = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
             result.SetData(target.GetColorData());
 
             target.Dispose();
-            sb.Dispose();
-
 
             return result;
         }

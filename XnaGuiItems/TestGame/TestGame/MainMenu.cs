@@ -4,7 +4,6 @@ using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Lbl = System.Collections.Generic.KeyValuePair<string, Microsoft.Xna.Framework.Color?>;
 
 namespace TestGame
 {
@@ -19,6 +18,13 @@ namespace TestGame
         public override void Initialize()
         {
             SetDefaultFont("ConsoleFont");
+
+            DropDown dd = AddDropDown();
+            dd.AutoSize = true;
+            dd.AddOption(
+                new Pair("Take", RGB(172, 160, 130)),
+                new Pair("Iron bar", RGB(165, 193, 196)));
+
             base.Initialize(); 
         }
     }

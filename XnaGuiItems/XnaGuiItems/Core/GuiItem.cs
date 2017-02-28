@@ -108,8 +108,8 @@
         /// </summary>
         public virtual float Y { get { return Position.Y; } set { Position = new Vector2(X, value); } }
 
-        /// <summary> The specified <see cref="GraphicsDevice"/>. </summary>
-        protected GraphicsDevice device;
+        /// <summary> The <see cref="SpriteBatch"/> used for generating the underlying <see cref="Texture2D"/>. </summary>
+        protected SpriteBatch batch;
         /// <summary> Stores the <see cref="Texture2D"/> used for drawing. </summary>
         protected TextureHandler textures;
         /// <summary> Whether the <see cref="Mouse"/> is hovering over the <see cref="GuiItem"/>. </summary>
@@ -180,24 +180,24 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="GuiItem"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="GuiItem"/> to. </param>
-        public GuiItem(GraphicsDevice device)
-            : this(device, DefaultBounds)
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
+        public GuiItem(ref SpriteBatch sb)
+            : this(ref sb, DefaultBounds)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GuiItem"/> class with specific size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="GuiItem"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="GuiItem"/> in pixels. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public GuiItem(GraphicsDevice device, Rectangle bounds)
+        public GuiItem(ref SpriteBatch sb, Rectangle bounds)
         {
             if (bounds.Width <= 0 || bounds.Height <= 0) throw new ArgumentException("bounds.Width and bounds.Height must be greater then zero");
             this.bounds = bounds;
 
             InitEvents();
-            this.device = device;
+            batch = sb;
             textures = new TextureHandler();
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
@@ -258,7 +258,7 @@
                 over = bounds.Contains(mPos.ToPoint());
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
-                if (!down && over) Invoke(Hover, this, GetMouseEventArgs());
+                if (!down && over && !(leftDown || rightDown)) Invoke(Hover, this, GetMouseEventArgs());
                 else if (down && !leftDown)
                 {
                     Invoke(Click, this, GetMouseEventArgs());
@@ -303,16 +303,16 @@
             {
                 if (!x.HasValue)
                 {
-                    if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (device.Viewport.Width >> 1) - (Width >> 1);
+                    if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (batch.GraphicsDevice.Viewport.Width >> 1) - (Width >> 1);
                     if (anchor.ContainesValue(Anchor.Left)) x = 0;
-                    if (anchor.ContainesValue(Anchor.Right)) x = device.Viewport.Width - Width;
+                    if (anchor.ContainesValue(Anchor.Right)) x = batch.GraphicsDevice.Viewport.Width - Width;
                     if (!x.HasValue) x = Position.X;
                 }
                 if (!y.HasValue)
                 {
-                    if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (device.Viewport.Height >> 1) - (Height >> 1);
+                    if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (batch.GraphicsDevice.Viewport.Height >> 1) - (Height >> 1);
                     if (anchor.ContainesValue(Anchor.Top)) y = 0;
-                    if (anchor.ContainesValue(Anchor.Bottom)) y = device.Viewport.Height - Height;
+                    if (anchor.ContainesValue(Anchor.Bottom)) y = batch.GraphicsDevice.Viewport.Height - Height;
                     if (!y.HasValue) y = Position.Y;
                 }
 
@@ -401,7 +401,7 @@
         protected virtual void OnBackColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             backColor = e.NewValue;
-            textures.SetBackFromClr(backColor, Size, device);
+            textures.SetBackFromClr(backColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -422,7 +422,7 @@
         protected virtual void OnForeColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             foreColor = e.NewValue;
-            textures.SetForeFromClr(foreColor, Size, device);
+            textures.SetForeFromClr(foreColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -465,8 +465,8 @@
         {
             CheckBounds(e.NewValue);
             bounds = e.NewValue;
-            textures.SetBackFromClr(backColor, Size, device);
-            textures.SetForeFromClr(foreColor, Size, device);
+            textures.SetBackFromClr(backColor, Size, batch.GraphicsDevice);
+            textures.SetForeFromClr(foreColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>

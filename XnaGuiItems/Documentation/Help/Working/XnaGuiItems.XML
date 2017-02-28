@@ -226,6 +226,67 @@
              }
              </code></example>
     </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle">
+      <summary>
+            The center width of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle">
+      <summary>
+            The center height of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth">
+      <summary>
+            The width of the viewport.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
+      <summary>
+            The Height of the viewport.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)">
+      <summary>
+            Loads a specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> from <see cref="P:Microsoft.Xna.Framework.Game.Content" />.
+            </summary>
+      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+      <returns> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)">
+      <summary>
+            Sets the default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />.
+            </summary>
+      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)">
+      <summary>
+            Loads a specified <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> from <see cref="P:Microsoft.Xna.Framework.Game.Content" />.
+            </summary>
+      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
+      <returns> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
+      <summary>
+            Draws the specified string with the default font.
+            </summary>
+      <param name="text"> The string to be displayed. </param>
+      <param name="position"> The upper left corner of the strings position. </param>
+      <param name="color"> The color of the string. </param>
+      <remarks>
+            This method is used for drawing debug values.
+            Drawing with the underlying spritebatch in menu's is not recomended.
+            </remarks>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.Menu`1.RGB(System.Int32,System.Int32,System.Int32)">
+      <summary>
+            Gets a specific <see cref="T:Microsoft.Xna.Framework.Color" /> from red, green and blue values.
+            </summary>
+      <param name="r"> The red component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <param name="g"> The green component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <param name="b"> The blue component of the <see cref="T:Microsoft.Xna.Framework.Color" />. </param>
+      <returns> The specified premultiplied <see cref="T:Microsoft.Xna.Framework.Color" />. </returns>
+    </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem">
       <summary>
             Adds a standard <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
@@ -285,26 +346,6 @@
             </summary>
       <returns> The <see cref="T:Mentula.GuiItems.Items.PictureBox" /> created. </returns>
     </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidthMiddle">
-      <summary>
-            The center width of the viewport.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeightMiddle">
-      <summary>
-            The center height of the viewport.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenWidth">
-      <summary>
-            The width of the viewport.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Containers.Menu`1.ScreenHeight">
-      <summary>
-            The Height of the viewport.
-            </summary>
-    </member>
     <member name="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox">
       <summary>
             Indicates whether the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should handle textbox focusing.
@@ -324,11 +365,6 @@
     <member name="F:Mentula.GuiItems.Containers.Menu`1.font">
       <summary>
             The default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use if none is specified.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Containers.Menu`1.device">
-      <summary>
-            The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> associated with this <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.#ctor(`0)">
@@ -386,19 +422,6 @@
             Enables and shows the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)">
-      <summary>
-            Loads a specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> from <see cref="P:Microsoft.Xna.Framework.Game.Content" />.
-            </summary>
-      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
-      <returns> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)">
-      <summary>
-            Sets the default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />.
-            </summary>
-      <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
-    </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.Update(Microsoft.Xna.Framework.GameTime)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and its controlls.
@@ -410,18 +433,6 @@
             Draws the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> and its controlls.
             </summary>
       <param name="gameTime"> Time elapsed since the last call to Draw. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)">
-      <summary>
-            Draws the specified string with the default font.
-            </summary>
-      <param name="text"> The string to be displayed. </param>
-      <param name="position"> The upper left corner of the strings position. </param>
-      <param name="color"> The color of the string. </param>
-      <remarks>
-            This method is used for drawing debug values.
-            Drawing with the underlying spritebatch in menu's is not recomended.
-            </remarks>
     </member>
     <member name="T:Mentula.GuiItems.Containers.TabContainer">
       <summary>
@@ -456,11 +467,11 @@
       <summary>
             Gets the default tab size of the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /></summary>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
     <member name="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})">
@@ -813,8 +824,8 @@
             Gets or sets the vertical component of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.GuiItem.device">
-      <summary> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" />. </summary>
+    <member name="F:Mentula.GuiItems.Core.GuiItem.batch">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating the underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </summary>
     </member>
     <member name="F:Mentula.GuiItems.Core.GuiItem.textures">
       <summary> Stores the <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing. </summary>
@@ -878,17 +889,17 @@
             Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.Visible" /> property changes.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with specific size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> in pixels. </param>
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.Finalize">
@@ -1066,6 +1077,48 @@
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.ByteFlags">
+      <summary>
+            Contains 8 <see cref="T:System.Boolean" /> values stored as 1 <see cref="T:System.Byte" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.ByteFlags.Item(System.Int32)">
+      <summary>
+            Gets or sets the value at index i.
+            </summary>
+      <param name="i"> The specified index. </param>
+      <returns> The value of the bool. </returns>
+      <exception cref="T:System.IndexOutOfRangeException"> This exception is thrown if the index i if smaller than 0 or greater than 7. </exception>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.Equals(Mentula.GuiItems.Core.Handlers.ByteFlags)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> are equal.
+            </summary>
+      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.Equals(System.Object)">
+      <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+      <param name="obj"> The object to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.GetHashCode">
+      <summary>
+            Returns the hash code for this instance.
+            </summary>
+      <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.ToString">
+      <summary>
+            Returns a visual representation of the <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" />.
+            </summary>
+      <returns> A string version of the underlying byte. </returns>
+    </member>
     <member name="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Label" />.
@@ -1112,7 +1165,7 @@
     </member>
     <member name="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet">
       <summary>
-            A bitflag byte that contains if the user has set specified textures.
+            A <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> that contains if the user has set specified textures.
             1 if for the background,
             2 if for the foreground.
             </summary>
@@ -1396,6 +1449,65 @@
     <member name="M:Mentula.GuiItems.Core.MentulaGameComponent`1.#ctor(`0)">
       <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.MentulaGameComponent`1" /> class. </summary>
       <param name="game"> The game associated with this component. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Pair">
+      <summary>
+            Stores pairs of <see cref="T:System.String" /> and <see cref="T:Microsoft.Xna.Framework.Color" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Pair.Text">
+      <summary>
+            The text of the pair label.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Pair.Color">
+      <summary>
+            The color of the pair label.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Pair" /> struct with a specified text.
+            </summary>
+      <param name="txt"> The specified text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Pair" /> struct with 
+            a specified text and a specified color.
+            </summary>
+      <param name="txt"> The specified text. </param>
+      <param name="clr"> The specified color. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.Equals(Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are equal.
+            </summary>
+      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.Equals(System.Object)">
+      <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+      <param name="obj"> The object to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.GetHashCode">
+      <summary>
+            Returns the hash code for this instance.
+            </summary>
+      <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.ToString">
+      <summary>
+            Returns <see cref="F:Mentula.GuiItems.Core.Pair.Text" />.
+            </summary>
+      <returns>
+        <see cref="F:Mentula.GuiItems.Core.Pair.Text" />. </returns>
     </member>
     <member name="T:Mentula.GuiItems.Core.ProgressData">
       <summary> A container for progress data (100% base). </summary>
@@ -1716,18 +1828,18 @@
             Occurs when the <see cref="T:Mentula.GuiItems.Items.Button" /> is clicked twice in a short period of time.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Button" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with a specified size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Button" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Button" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
@@ -1807,11 +1919,6 @@
             Gets or sets the background color for the <see cref="T:Mentula.GuiItems.Items.DropDown" /> header.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Items.DropDown.Position">
-      <summary>
-            Gets or sets the position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
-            </summary>
-    </member>
     <member name="E:Mentula.GuiItems.Items.DropDown.IndexClick">
       <summary>
             Occurs when a <see cref="T:Mentula.GuiItems.Items.DropDown" /> option is clicked.
@@ -1826,18 +1933,18 @@
     <member name="F:Mentula.GuiItems.Items.DropDown.foregroundRectangle">
       <summary> The rectangle used in the foreground. </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with a specific size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
@@ -1847,7 +1954,7 @@
             </summary>
       <param name="parts"> The parts of the option, separated with a space. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(System.Collections.Generic.KeyValuePair{System.String,System.Nullable{Microsoft.Xna.Framework.Color}}[])">
+    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Pair[])">
       <summary>
             Adds a option to the <see cref="T:Mentula.GuiItems.Items.DropDown" /> with a specified color.
             </summary>
@@ -1869,6 +1976,13 @@
             Draws the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
             </summary>
       <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
     <member name="T:Mentula.GuiItems.Items.Label">
       <summary>
@@ -1926,18 +2040,18 @@
             Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.Label.Font" /> propery is changed.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Label" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with a specific size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Label" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Label" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
@@ -1950,6 +2064,11 @@
       <summary>
             Get the number of lines in this <see cref="T:Mentula.GuiItems.Items.Label" /></summary>
       <returns> The amount of lines in the <see cref="T:Mentula.GuiItems.Items.Label" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.HandleAutoSize">
+      <summary>
+            Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
+            </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
       <summary>
@@ -2028,17 +2147,17 @@
             Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.ProgressBar.Value" /> propery is changed.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with a specified size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.Refresh">
@@ -2102,17 +2221,17 @@
             Occurs when the mouse is pressed on the <see cref="T:Mentula.GuiItems.Items.Slider" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Slider" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with a specified size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.Slider" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Slider" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)">
@@ -2206,18 +2325,18 @@
             Occures when return is pressed on a non <see cref="P:Mentula.GuiItems.Items.TextBox.MultiLine" /><see cref="T:Mentula.GuiItems.Items.TextBox" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.TextBox" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with a specific size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.TextBox" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
@@ -2246,6 +2365,11 @@
     <member name="M:Mentula.GuiItems.Items.TextBox.Refresh">
       <summary>
             Recalculates the background and the foreground.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.HandleAutoSize">
+      <summary>
+            Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
@@ -2282,17 +2406,17 @@
             Occurs when the value of the <see cref="P:Mentula.GuiItems.Items.PictureBox.SizeMode" /> propery is changed.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> class with default settings.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> class with specific size.
             </summary>
-      <param name="device"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> to. </param>
+      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> in pixels. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.Refresh">

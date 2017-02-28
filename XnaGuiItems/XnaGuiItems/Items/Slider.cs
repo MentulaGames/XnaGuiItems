@@ -63,19 +63,19 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="Slider"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
-        public Slider(GraphicsDevice device)
-             : this(device, DefaultBounds)
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
+        public Slider(ref SpriteBatch sb)
+             : this(ref sb, DefaultBounds)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Slider"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Slider"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="Slider"/>. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public Slider(GraphicsDevice device, Rectangle bounds)
-             : base(device, bounds)
+        public Slider(ref SpriteBatch sb, Rectangle bounds)
+             : base(ref sb, bounds)
         {
             InitEvents();
 
@@ -116,8 +116,8 @@
         {
             if (suppressRefresh) return;
 
-            textures.Foreground = Drawing.FromColor(ForeColor, Size, SliderBarDimentions, device);
-            textures.Background = Drawing.FromColor(BackColor, Size, device).ApplyBorderLabel(BorderStyle);
+            textures.Foreground = Drawing.FromColor(ForeColor, Size, SliderBarDimentions, batch.GraphicsDevice);
+            textures.Background = Drawing.FromColor(BackColor, Size, batch.GraphicsDevice).ApplyBorderLabel(BorderStyle);
         }
 
         /// <summary>

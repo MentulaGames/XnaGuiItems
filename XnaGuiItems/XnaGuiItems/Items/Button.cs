@@ -46,20 +46,20 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="Button"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Button"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public Button(GraphicsDevice device, SpriteFont font)
-             : this(device, DefaultBounds, font)
+        public Button(ref SpriteBatch sb, SpriteFont font)
+             : this(ref sb, DefaultBounds, font)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Button"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Button"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="Button"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public Button(GraphicsDevice device, Rectangle bounds, SpriteFont font)
-             : base(device, bounds, font)
+        public Button(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+             : base(ref sb, bounds, font)
         {
             base.textures = new ButtonTextureHandler();
             drawTexture = textures.Background;
@@ -104,7 +104,6 @@
                 }
 
                 time += deltaTime;
-
                 if (doubleLeftClicked > 1 || doubleRightClicked > 1 || time > 1)
                 {
                     doubleLeftClicked = 0;
@@ -138,21 +137,10 @@
         {
             if (suppressRefresh) return;
 
-            if (AutoSize)
-            {
-                Vector2 dim = font.MeasureString(Text);
-                dim.X += 3;
-                bool width = dim.X != Bounds.Width;
-                bool height = dim.Y != Bounds.Height;
-
-                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
-                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
-            }
-
-            textures.SetBackFromClr(BackColor, Size, device);
+            HandleAutoSize();
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice);
             textures.ApplyBorders();
-            textures.SetText(Text, font, ForeColor, foregroundRectangle.Size(), false, LineStart, device);
+            textures.SetText(Text, font, ForeColor, foregroundRectangle.Size(), false, LineStart, batch);
         }
 
         /// <summary>

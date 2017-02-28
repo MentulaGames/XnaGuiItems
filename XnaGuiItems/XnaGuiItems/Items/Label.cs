@@ -69,20 +69,20 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="Label"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Label"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public Label(GraphicsDevice device, SpriteFont font)
-             : this(device, DefaultBounds, font)
+        public Label(ref SpriteBatch sb, SpriteFont font)
+             : this(ref sb, DefaultBounds, font)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Label"/> class with a specific size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="Label"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="Label"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public Label(GraphicsDevice device, Rectangle bounds, SpriteFont font)
-             : base(device, bounds)
+        public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+             : base(ref sb, bounds)
         {
             InitEvents();
             foregroundRectangle = bounds;
@@ -98,20 +98,9 @@
         {
             if (suppressRefresh) return;
 
-            if (AutoSize)
-            {
-                Vector2 dim = font.MeasureString(text);
-                dim.X += 3;
-                bool width = dim.X != Bounds.Width && dim.X != 0;
-                bool height = dim.Y != Bounds.Height && dim.Y != 0;
-
-                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
-                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
-            }
-
-            textures.SetBackFromClr(BackColor, Size, device, BorderStyle);
-            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, device);
+            HandleAutoSize();
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, batch);
         }
 
         /// <summary>
@@ -121,6 +110,24 @@
         public int GetLineCount()
         {
             return Text.Count(c => c == '\n') + 1;
+        }
+
+        /// <summary>
+        /// Handles the <see cref="AutoSize"/> functionality.
+        /// </summary>
+        protected virtual void HandleAutoSize()
+        {
+            if (AutoSize)
+            {
+                Vector2 dim = font.MeasureString(text);
+                dim.X += 3;
+
+                if ((dim.X != Bounds.Width && dim.X != 0) ||
+                   (dim.Y != Bounds.Height && dim.Y != 0))
+                {
+                    Size = new Size(dim);
+                }
+            }
         }
 
         /// <summary>

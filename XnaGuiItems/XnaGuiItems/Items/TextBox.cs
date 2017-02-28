@@ -2,8 +2,8 @@
 {
     using Core;
     using Core.Handlers;
-    using Core.Interfaces;
     using Core.Input;
+    using Core.Interfaces;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -80,27 +80,27 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBox"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public TextBox(GraphicsDevice device, SpriteFont font)
-            : this(device, DefaultBounds, font)
+        public TextBox(ref SpriteBatch sb, SpriteFont font)
+            : this(ref sb, DefaultBounds, font)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBox"/> class with a specific size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TextBox"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="TextBox"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public TextBox(GraphicsDevice device, Rectangle bounds, SpriteFont font)
-            : base(device, bounds, font)
+        public TextBox(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+            : base(ref sb, bounds, font)
         {
             base.textures = new TextboxTextureHandler();
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
-            MaximumSize = device.Viewport.Bounds.Size();
+            MaximumSize = batch.GraphicsDevice.Viewport.Bounds.Size();
             FocusChanged += OnFocusChanged;
             MaxLength = -1;
         }
@@ -123,30 +123,27 @@
         {
             base.Update(mState);
 
-            if (Enabled)
+            if (Enabled && Focused)
             {
-                if (Focused)
+                bool confirmed = false;
+                string newText = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
+
+                if (Text != newText) Text = newText;
+                if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
+                if (FlickerStyle == FlickerStyle.None) return;
+
+                time += deltaTime;
+                switch (FlickerStyle)
                 {
-                    bool confirmed = false;
-                    string newText = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
-
-                    if (Text != newText) Text = newText;
-                    if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
-                    if (FlickerStyle == FlickerStyle.None) return;
-
-                    time += deltaTime;
-                    switch (FlickerStyle)
-                    {
-                        case FlickerStyle.Slow:
-                            if (time > 2) ToggleShowLine();
-                            break;
-                        case FlickerStyle.Normal:
-                            if (time > 1) ToggleShowLine();
-                            break;
-                        case FlickerStyle.Fast:
-                            if (time > .5f) ToggleShowLine();
-                            break;
-                    }
+                    case FlickerStyle.Slow:
+                        if (time > 2) ToggleShowLine();
+                        break;
+                    case FlickerStyle.Normal:
+                        if (time > 1) ToggleShowLine();
+                        break;
+                    case FlickerStyle.Fast:
+                        if (time > .5f) ToggleShowLine();
+                        break;
                 }
             }
         }
@@ -176,26 +173,33 @@
         {
             if (suppressRefresh) return;
 
+            HandleAutoSize();
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+            CreateForegroundTextures();
+        }
+
+        /// <summary>
+        /// Handles the <see cref="Label.AutoSize"/> functionality.
+        /// </summary>
+        protected override void HandleAutoSize()
+        {
             if (AutoSize)
             {
                 Vector2 dim = GetLongTextDimentions();
                 dim.X += 3;
+
                 if (dim.Y < MinimumSize.Height) dim.Y = MinimumSize.Height;
                 else if (dim.Y > MaximumSize.Height) dim.Y = MaximumSize.Height;
 
                 if (dim.X < MinimumSize.Width) dim.X = MinimumSize.Width;
                 else if (dim.X > MaximumSize.Width) dim.X = MaximumSize.Width;
 
-                bool width = dim.X != Bounds.Width;
-                bool height = dim.Y != Bounds.Height;
-
-                if (width && height) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, (int)dim.Y);
-                else if (width) Bounds = new Rectangle(Bounds.X, Bounds.Y, (int)dim.X, Bounds.Height);
-                else if (height) Bounds = new Rectangle(Bounds.X, Bounds.Y, Bounds.Width, (int)dim.Y);
+                if ((dim.X != Bounds.Width && dim.X != 0) ||
+                   (dim.Y != Bounds.Height && dim.Y != 0))
+                {
+                    Size = new Size(dim);
+                }
             }
-
-            textures.SetBackFromClr(BackColor, Size, device, BorderStyle);
-            CreateForegroundTextures();
         }
 
         /// <summary>
@@ -226,7 +230,7 @@
 
         private void CreateForegroundTextures()
         {
-            textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, device);
+            textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
         }
 
         private Vector2 GetLongTextDimentions()

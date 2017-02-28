@@ -19,7 +19,7 @@
             get { return focus; }
             set
             {
-                if (!internCall) userSet |= 4;
+                if (!internCall) userSet[2] = true;
                 focus = value;
             }
         }
@@ -45,20 +45,21 @@
             internCall = false;
         }
 
-        internal void SetFocusText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
+        internal void SetFocusText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
-            SetText(text, font, color, size, multiLine, lineStart, device);
+            SetText(text, font, color, size, multiLine, lineStart, sb);
 
             internCall = true;
-            if ((userSet & 4) == 0) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, device);
+            if (!userSet[2]) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, sb);
             internCall = false;
         }
 
         internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
         {
             SetBackFromClr(clr, size, device);
+
             internCall = true;
-            if ((userSet & 1) == 0) Background = Background.ApplyBorderLabel(style);
+            if (!userSet[0]) Background = Background.ApplyBorderLabel(style);
             internCall = false;
         }
 

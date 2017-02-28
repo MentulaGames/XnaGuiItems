@@ -15,7 +15,7 @@
         /// <returns> The <see cref="GuiItem"/> created. </returns>
         public GuiItem AddGuiItem()
         {
-            GuiItem gI = new GuiItem(device);
+            GuiItem gI = new GuiItem(ref batch);
             controlls.Add(gI);
             return gI;
         }
@@ -28,7 +28,7 @@
         public Button AddButton(SpriteFont Font = null)
         {
             if (font == null && Font == null) ThrowNoFont();
-            Button btn = new Button(device, Font ?? font);
+            Button btn = new Button(ref batch, Font ?? font);
             controlls.Add(btn);
             return btn;
         }
@@ -41,7 +41,7 @@
         public DropDown AddDropDown(SpriteFont Font = null)
         {
             if (font == null && Font == null) ThrowNoFont();
-            DropDown dd = new DropDown(device, Font ?? font);
+            DropDown dd = new DropDown(ref batch, Font ?? font);
             controlls.Add(dd);
             dd.VisibilityChanged += DropDown_VisibilityChanged;
             return dd;
@@ -55,7 +55,7 @@
         public Label AddLabel(SpriteFont Font = null)
         {
             if (font == null && Font == null) ThrowNoFont();
-            Label lbl = new Label(device, Font ?? font);
+            Label lbl = new Label(ref batch, Font ?? font);
             controlls.Add(lbl);
             return lbl;
         }
@@ -66,7 +66,7 @@
         /// <returns> The <see cref="ProgressBar"/> created. </returns>
         public ProgressBar AddProgresBar()
         {
-            ProgressBar prgBr = new ProgressBar(device);
+            ProgressBar prgBr = new ProgressBar(ref batch);
             controlls.Add(prgBr);
             return prgBr;
         }
@@ -77,7 +77,7 @@
         /// <returns> The <see cref="Slider"/> created. </returns>
         public Slider AddSlider()
         {
-            Slider sld = new Slider(device);
+            Slider sld = new Slider(ref batch);
             controlls.Add(sld);
             return sld;
         }
@@ -90,7 +90,7 @@
         public TextBox AddTextBox(SpriteFont Font = null)
         {
             if (font == null && Font == null) ThrowNoFont();
-            TextBox txt = new TextBox(device, Font ?? font);
+            TextBox txt = new TextBox(ref batch, Font ?? font);
             txt.Click += TextBox_Click;
             controlls.Add(txt);
             return txt;
@@ -104,7 +104,7 @@
         public TabContainer AddTabContainer(SpriteFont Font = null)
         {
             if (font == null && Font == null) ThrowNoFont();
-            TabContainer tbC = new TabContainer(device, Font ?? font);
+            TabContainer tbC = new TabContainer(ref batch, Font ?? font);
             controlls.Add(tbC);
             return tbC;
         }
@@ -115,7 +115,7 @@
         /// <returns> The <see cref="PictureBox"/> created. </returns>
         public PictureBox AddPictureBox()
         {
-            PictureBox picBox = new PictureBox(device);
+            PictureBox picBox = new PictureBox(ref batch);
             controlls.Add(picBox);
             return picBox;
         }

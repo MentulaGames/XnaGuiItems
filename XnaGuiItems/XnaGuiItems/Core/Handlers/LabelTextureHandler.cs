@@ -13,7 +13,7 @@
             SetBackFromClr(clr, size, device);
 
             internCall = true;
-            if ((userSet & 1) == 0) Background = Background.ApplyBorderLabel(style);
+            if (!userSet[0]) Background = Background.ApplyBorderLabel(style);
             internCall = false;
         }
     }

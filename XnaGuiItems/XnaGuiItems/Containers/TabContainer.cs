@@ -52,15 +52,15 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="TabContainer"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="TabContainer"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
-        public TabContainer(GraphicsDevice device, SpriteFont font)
-            : base(device)
+        public TabContainer(ref SpriteBatch sb, SpriteFont font)
+            : base(ref sb)
         {
             this.font = font;
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
             tabRect = DefaultTabSize;
-            tabtexture = Drawing.FromColor(Color.White, tabRect.Size(), device);
+            tabtexture = Drawing.FromColor(Color.White, tabRect.Size(), sb.GraphicsDevice);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@
                 prevL += tabs[i].Key.Width;
             }
 
-            Label lbl = new Label(device, font)
+            Label lbl = new Label(ref batch, font)
             {
                 AutoSize = true,
                 Text = $" {name} ",
@@ -150,7 +150,7 @@
             }
 
             if (length > tabRect.Width) tabRect = new Rectangle(tabRect.X, tabRect.Y, length, tabRect.Height);
-            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Size(), device);
+            tabtexture = Drawing.FromColor(Color.White, TabRectangle.Size(), batch.GraphicsDevice);
         }
 
         /// <summary>

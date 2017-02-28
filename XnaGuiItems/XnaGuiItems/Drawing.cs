@@ -44,14 +44,13 @@
             return texture;
         }
 
-        public static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, GraphicsDevice device)
+        public static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             string[] drawAbleText = multiLine ? text.Split(new string[1] { "\n" }, StringSplitOptions.None) : new string[1] { text };
-            RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
-            SpriteBatch sb = new SpriteBatch(device);
+            RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height);
 
-            device.SetRenderTarget(target);
-            device.Clear(Color.Transparent);
+            sb.GraphicsDevice.SetRenderTarget(target);
+            sb.GraphicsDevice.Clear(Color.Transparent);
 
             sb.Begin();
             for (int i = lineStart; i < drawAbleText.Length; i++)
@@ -61,25 +60,23 @@
             }
             sb.End();
 
-            device.SetRenderTarget(null);
+            sb.GraphicsDevice.SetRenderTarget(null);
 
-            Texture2D texture = new Texture2D(device, size.Width, size.Height);
+            Texture2D texture = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
             Color[] colorData = target.GetColorData();
             texture.SetData(colorData);
 
             target.Dispose();
-            sb.Dispose();
 
             return texture;
         }
 
-        public static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, GraphicsDevice device)
+        public static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, SpriteBatch sb)
         {
-            RenderTarget2D target = new RenderTarget2D(device, size.Width, size.Height);
-            SpriteBatch sb = new SpriteBatch(device);
+            RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height);
 
-            device.SetRenderTarget(target);
-            device.Clear(Color.Transparent);
+            sb.GraphicsDevice.SetRenderTarget(target);
+            sb.GraphicsDevice.Clear(Color.Transparent);
 
             sb.Begin();
             for (int i = 0; i < labels.Length; i++)
@@ -92,9 +89,9 @@
             }
             sb.End();
 
-            device.SetRenderTarget(null);
+            sb.GraphicsDevice.SetRenderTarget(null);
 
-            Texture2D texture = new Texture2D(device, size.Width, size.Height);
+            Texture2D texture = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
             Color[] colorData = target.GetColorData();
             texture.SetData(colorData);
 

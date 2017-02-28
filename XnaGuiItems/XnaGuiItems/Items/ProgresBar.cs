@@ -58,19 +58,19 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgressBar"/> class with default settings.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
-        public ProgressBar(GraphicsDevice device)
-             : this(device, DefaultBounds)
+        /// <param name="sb"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
+        public ProgressBar(ref SpriteBatch sb)
+             : this(ref sb, DefaultBounds)
         { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgressBar"/> class with a specified size.
         /// </summary>
-        /// <param name="device"> The <see cref="GraphicsDevice"/> to display the <see cref="ProgressBar"/> to. </param>
+        /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="ProgressBar"/> in pixels. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public ProgressBar(GraphicsDevice device, Rectangle bounds)
-             : base(device, bounds)
+        public ProgressBar(ref SpriteBatch sb, Rectangle bounds)
+             : base(ref sb, bounds)
         {
             InitEvents();
 
@@ -90,8 +90,8 @@
             int width = (int)(ppp * data.Value);
 
             textures.internCall = true;
-            textures.Foreground = Drawing.FromColor(ForeColor, Size, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), device);
-            textures.Background = Drawing.FromColor(BackColor, Size, device).ApplyBorderLabel(BorderStyle);
+            textures.Foreground = Drawing.FromColor(ForeColor, Size, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), batch.GraphicsDevice);
+            textures.Background = Drawing.FromColor(BackColor, Size, batch.GraphicsDevice).ApplyBorderLabel(BorderStyle);
             textures.internCall = false;
         }
 
