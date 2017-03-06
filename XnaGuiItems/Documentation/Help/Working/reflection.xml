@@ -659,6 +659,7 @@
         </element>
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" />
@@ -908,6 +909,7 @@
         </element>
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
+        <element api="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" />
@@ -1405,6 +1407,33 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
       <file name="7f4aefa8-3968-8b17-98c2-33b17c9fd6de" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <topicdata group="api" />
+      <apidata name="AddFpsCounter" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="Font" optional="true">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
+          <argument>
+            <type api="T:System.Object" ref="true" />
+            <nullValue />
+          </argument>
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+      <file name="315a0840-34e2-e803-a55e-901247b015b3" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem">
       <topicdata group="api" />
@@ -13711,6 +13740,7 @@
       <elements>
         <element api="T:Mentula.GuiItems.Items.Button" />
         <element api="T:Mentula.GuiItems.Items.DropDown" />
+        <element api="T:Mentula.GuiItems.Items.FpsCounter" />
         <element api="T:Mentula.GuiItems.Items.Label" />
         <element api="T:Mentula.GuiItems.Items.ProgressBar" />
         <element api="T:Mentula.GuiItems.Items.Slider" />
@@ -15188,6 +15218,429 @@
       </containers>
       <file name="98beeeba-6195-f759-e539-d60f8d242165" />
     </api>
+    <api id="T:Mentula.GuiItems.Items.FpsCounter">
+      <topicdata group="api" />
+      <apidata name="FpsCounter" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Disposing" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Enabled" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Items.FpsCounter.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.Average" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.BufferSize" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.Current" />
+        <element api="Overload:Mentula.GuiItems.Items.FpsCounter.Update">
+          <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+          <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" />
+        </element>
+        <element api="P:Mentula.GuiItems.Items.Label.AutoSize" />
+        <element api="P:Mentula.GuiItems.Items.Label.BorderStyle" />
+        <element api="P:Mentula.GuiItems.Items.Label.Bounds" />
+        <element api="P:Mentula.GuiItems.Items.Label.Font" />
+        <element api="E:Mentula.GuiItems.Items.Label.FontChanged" />
+        <element api="P:Mentula.GuiItems.Items.Label.ForegroundRectangle" />
+        <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
+        <element api="P:Mentula.GuiItems.Items.Label.LineStart" />
+        <element api="M:Mentula.GuiItems.Items.Label.Refresh" />
+        <element api="P:Mentula.GuiItems.Items.Label.Text" />
+        <element api="E:Mentula.GuiItems.Items.Label.TextChanged" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+      </containers>
+      <file name="c1787c46-3c26-b3db-af86-f29f75f27f5b" />
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Items.FpsCounter">
+      <topicdata name="FpsCounter" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Items.FpsCounter" />
+      <apidata name="FpsCounter" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.ToString" />
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="Overload:Mentula.GuiItems.Items.FpsCounter.Update">
+          <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+          <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" />
+        </element>
+        <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
+        <element api="M:Mentula.GuiItems.Items.Label.Refresh" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" />
+      </containers>
+      <file name="792046bb-5698-0304-5ac8-26e604221fd7" />
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Items.FpsCounter">
+      <topicdata name="FpsCounter" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Items.FpsCounter" />
+      <apidata name="FpsCounter" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Disposing" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Enabled" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.ForeColor" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Height" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Origin" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Size" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Visible" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
+        <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.Average" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.BufferSize" />
+        <element api="P:Mentula.GuiItems.Items.FpsCounter.Current" />
+        <element api="P:Mentula.GuiItems.Items.Label.AutoSize" />
+        <element api="P:Mentula.GuiItems.Items.Label.BorderStyle" />
+        <element api="P:Mentula.GuiItems.Items.Label.Bounds" />
+        <element api="P:Mentula.GuiItems.Items.Label.Font" />
+        <element api="P:Mentula.GuiItems.Items.Label.ForegroundRectangle" />
+        <element api="P:Mentula.GuiItems.Items.Label.LineStart" />
+        <element api="P:Mentula.GuiItems.Items.Label.Text" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" />
+      </containers>
+      <file name="e7290772-0516-2b2f-6cff-71c52d3c0725" />
+    </api>
+    <api id="Events.T:Mentula.GuiItems.Items.FpsCounter">
+      <topicdata name="FpsCounter" group="list" subgroup="Events" typeTopicId="T:Mentula.GuiItems.Items.FpsCounter" />
+      <apidata name="FpsCounter" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
+        <element api="E:Mentula.GuiItems.Items.Label.FontChanged" />
+        <element api="E:Mentula.GuiItems.Items.Label.TextChanged" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" />
+      </containers>
+      <file name="ce2480a6-ceff-69a5-1558-b509ccb266b8" />
+    </api>
+    <api id="Overload:Mentula.GuiItems.Items.FpsCounter.Update">
+      <topicdata name="Update" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="Update" group="member" subgroup="method" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="13acdf8e-03e8-a129-ffb4-743ec3026121" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.FpsCounter.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <parameters>
+        <parameter name="sb">
+          <referenceTo>
+            <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+          </referenceTo>
+        </parameter>
+        <parameter name="font">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="4822b567-91bf-eb4b-d09a-00f07fd92619" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.FpsCounter.Average">
+      <topicdata group="api" />
+      <apidata name="Average" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_Average" />
+      <returns>
+        <type api="T:System.Single" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="dd8c6ae8-f5d6-fedc-dd65-c1115dea5e11" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.FpsCounter.BufferSize">
+      <topicdata group="api" />
+      <apidata name="BufferSize" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" />
+      <getter name="get_BufferSize" />
+      <setter name="set_BufferSize" />
+      <returns>
+        <type api="T:System.UInt32" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="a205c391-8f1d-4b54-65e4-bfca83dc4ff9" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.FpsCounter.Current">
+      <topicdata group="api" />
+      <apidata name="Current" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_Current" />
+      <returns>
+        <type api="T:System.Single" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="d12f718c-c87a-4f1a-dd59-51dd31bf7755" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)">
+      <topicdata group="api" />
+      <apidata name="Update" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Items.FpsCounter.Update" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="mState">
+          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <attributes>
+        <attribute>
+          <type api="T:System.ObsoleteAttribute" ref="true" />
+          <argument>
+            <type api="T:System.String" ref="true" />
+            <value>Use Update(MouseState, float) instead!</value>
+          </argument>
+          <argument>
+            <type api="T:System.Boolean" ref="false" />
+            <value>True</value>
+          </argument>
+        </attribute>
+      </attributes>
+      <file name="8f4427ad-1f15-f2a2-787d-4676e87bb288" />
+    </api>
+    <api id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)">
+      <topicdata group="api" />
+      <apidata name="Update" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Items.FpsCounter.Update" />
+      <proceduredata virtual="true" final="true" />
+      <parameters>
+        <parameter name="mState">
+          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
+        </parameter>
+        <parameter name="deltaTime">
+          <type api="T:System.Single" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
+      </containers>
+      <file name="42db9514-0ce5-7caf-d157-b9a4c37ea88e" />
+    </api>
     <api id="T:Mentula.GuiItems.Items.Label">
       <topicdata group="api" />
       <apidata name="Label" group="type" subgroup="class" />
@@ -15199,6 +15652,7 @@
         </ancestors>
         <descendents>
           <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
+          <type api="T:Mentula.GuiItems.Items.FpsCounter" ref="true" />
           <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
         </descendents>
       </family>

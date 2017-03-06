@@ -46,9 +46,7 @@ namespace Mentula.GuiItems
 
             for (int i = 0; i < data.Length; i++)
             {
-                Vector2 pos = new Vector2(i % size.Width, (i - (i % size.Width)) / size.Width);
-                if (destinationRectangle.Contains(pos.ToPoint())) data[i] = color;
-                else data[i] = Color.Transparent;
+                data[i] = destinationRectangle.Contains(i % size.Width, i / size.Width) ? color : Color.Transparent;
             }
 
             texture.SetData(data);

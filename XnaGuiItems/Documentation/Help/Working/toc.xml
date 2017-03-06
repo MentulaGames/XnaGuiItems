@@ -24,6 +24,7 @@
       <topic id="Methods.T:Mentula.GuiItems.Containers.Menu`1" project="XnaGuiItems" file="a8f3076d-9eb1-a6d8-0966-30e3e83aedb6">
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="09abc327-de1b-1915-80f0-b4ee18f2fe7a" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="7f4aefa8-3968-8b17-98c2-33b17c9fd6de" />
+        <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="315a0840-34e2-e803-a55e-901247b015b3" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" project="XnaGuiItems" file="21c0ecba-88b6-bb21-d1b1-0a3f9194c158" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="51e43f95-61c8-018e-0308-f36bf814e1c6" />
         <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" project="XnaGuiItems" file="ccc28cb0-62b2-d441-bfd1-e6959aeefb90" />
@@ -472,6 +473,21 @@
         <topic id="F:Mentula.GuiItems.Items.DropDown.foregroundRectangle" project="XnaGuiItems" file="767fa7ad-4622-2a4d-6230-ea49a4da9366" />
         <topic id="F:Mentula.GuiItems.Items.DropDown.labels" project="XnaGuiItems" file="daf98372-ab87-6d7b-4d29-7e0691405ec8" />
       </topic>
+    </topic>
+    <topic id="T:Mentula.GuiItems.Items.FpsCounter" project="XnaGuiItems" file="c1787c46-3c26-b3db-af86-f29f75f27f5b">
+      <topic id="M:Mentula.GuiItems.Items.FpsCounter.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="4822b567-91bf-eb4b-d09a-00f07fd92619" />
+      <topic id="Properties.T:Mentula.GuiItems.Items.FpsCounter" project="XnaGuiItems" file="e7290772-0516-2b2f-6cff-71c52d3c0725">
+        <topic id="P:Mentula.GuiItems.Items.FpsCounter.Average" project="XnaGuiItems" file="dd8c6ae8-f5d6-fedc-dd65-c1115dea5e11" />
+        <topic id="P:Mentula.GuiItems.Items.FpsCounter.BufferSize" project="XnaGuiItems" file="a205c391-8f1d-4b54-65e4-bfca83dc4ff9" />
+        <topic id="P:Mentula.GuiItems.Items.FpsCounter.Current" project="XnaGuiItems" file="d12f718c-c87a-4f1a-dd59-51dd31bf7755" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Items.FpsCounter" project="XnaGuiItems" file="792046bb-5698-0304-5ac8-26e604221fd7">
+        <topic id="Overload:Mentula.GuiItems.Items.FpsCounter.Update" project="XnaGuiItems" file="13acdf8e-03e8-a129-ffb4-743ec3026121">
+          <topic id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="8f4427ad-1f15-f2a2-787d-4676e87bb288" />
+          <topic id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" project="XnaGuiItems" file="42db9514-0ce5-7caf-d157-b9a4c37ea88e" />
+        </topic>
+      </topic>
+      <topic id="Events.T:Mentula.GuiItems.Items.FpsCounter" project="XnaGuiItems" file="ce2480a6-ceff-69a5-1558-b509ccb266b8" />
     </topic>
     <topic id="T:Mentula.GuiItems.Items.Label" project="XnaGuiItems" file="d53751b0-5ec8-c0d0-4297-55a765efc00d">
       <topic id="Overload:Mentula.GuiItems.Items.Label.#ctor" project="XnaGuiItems" file="7a2981cd-51d4-ed12-9488-133dd28ef49b">

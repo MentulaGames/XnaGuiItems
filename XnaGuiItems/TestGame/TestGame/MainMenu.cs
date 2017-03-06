@@ -19,11 +19,8 @@ namespace TestGame
         {
             SetDefaultFont("ConsoleFont");
 
-            Label lbl = AddLabel();
-            lbl.AutoSize = true;
-            lbl.BackColor = RGB(255, 0, 0);
-            lbl.Text = "TestLabel";
-            lbl.MoveRelative(Anchor.Middle);
+            FpsCounter fps = AddFpsCounter();
+            fps.MoveRelative(Anchor.Top | Anchor.Left);
 
             base.Initialize(); 
         }

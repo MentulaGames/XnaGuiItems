@@ -1,12 +1,12 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Generate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- Sandcastle Tools MSBuild Tasks.  https://GitHub.com/EWSoftware/SHFB -->
 	<UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.XslTransform"
-    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
+    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
 
 	<!-- Task properties -->
 	<PropertyGroup>
-		<WorkingFolder>D:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
-		<TocTransformation>D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl</TocTransformation>
+		<WorkingFolder>C:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
+		<TocTransformation>C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl</TocTransformation>
 		<TocTransformParameters></TocTransformParameters>
 	</PropertyGroup>
 

@@ -53,6 +53,7 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.#ctor(`0,System.Boolean)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddButton(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddDropDown(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddGuiItem" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddLabel(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddPictureBox" type="API" />
@@ -410,6 +411,17 @@
   <topic id="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.Refresh" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
+  <topic id="T:Mentula.GuiItems.Items.FpsCounter" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Items.FpsCounter" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Items.FpsCounter" type="API" />
+  <topic id="Events.T:Mentula.GuiItems.Items.FpsCounter" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Items.FpsCounter.Update" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.FpsCounter.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.FpsCounter.Average" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.FpsCounter.BufferSize" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.FpsCounter.Current" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" type="API" />
   <topic id="T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Items.Label" type="API" />
