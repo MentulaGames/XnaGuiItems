@@ -20,7 +20,7 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <remarks>
     /// The <see cref="TextureHandler.userSet"/> flag for the focused texture is 4.
     /// </remarks>
-    public sealed class TextboxTextureHandler : TextureHandler
+    public sealed class TextboxTextureHandler : LabelTextureHandler
     {
         /// <summary>
         /// The textbox focused texture for a <see cref="Items.TextBox"/>. 
@@ -62,15 +62,6 @@ namespace Mentula.GuiItems.Core.Handlers
 
             internCall = true;
             if (!userSet[2]) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, sb);
-            internCall = false;
-        }
-
-        internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
-        {
-            SetBackFromClr(clr, size, device);
-
-            internCall = true;
-            if (!userSet[0]) Background = Background.ApplyBorderLabel(style);
             internCall = false;
         }
 

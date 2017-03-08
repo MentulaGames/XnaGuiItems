@@ -187,16 +187,16 @@ namespace Mentula.GuiItems
             mask = Anchor.Left | Anchor.Right;
             if (check()) return false;
 
-            mask = Anchor.Left | Anchor.MiddleWidth;
+            mask = Anchor.Left | Anchor.CenterWidth;
             if (check()) return false;
 
-            mask = Anchor.Right | Anchor.MiddleWidth;
+            mask = Anchor.Right | Anchor.CenterWidth;
             if (check()) return false;
 
-            mask = Anchor.Top | Anchor.MiddelHeight;
+            mask = Anchor.Top | Anchor.CenterHeight;
             if (check()) return false;
 
-            mask = Anchor.Bottom | Anchor.MiddelHeight;
+            mask = Anchor.Bottom | Anchor.CenterHeight;
             if (check()) return false;
 
             return true;

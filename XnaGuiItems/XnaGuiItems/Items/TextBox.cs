@@ -138,9 +138,8 @@ namespace Mentula.GuiItems.Items
             if (Enabled && Focused)
             {
                 bool confirmed = false;
-                string newText = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
+                Text = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
 
-                if (Text != newText) Text = newText;
                 if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
                 if (FlickerStyle == FlickerStyle.None) return;
 
@@ -176,18 +175,6 @@ namespace Mentula.GuiItems.Items
             base.Draw(spriteBatch);
 
             if (temp != null) textures.SetBack(temp);
-        }
-
-        /// <summary>
-        /// Recalculates the background and the foreground.
-        /// </summary>
-        public override void Refresh()
-        {
-            if (suppressRefresh) return;
-
-            HandleAutoSize();
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
-            CreateForegroundTextures();
         }
 
         /// <summary>
@@ -232,12 +219,13 @@ namespace Mentula.GuiItems.Items
             focus = e.NewValue;
             if (!focus)
             {
-                CreateForegroundTextures();
+                CreateTextTexture();
                 showLine = false;
             }
+            else Refresh();
         }
 
-        private void CreateForegroundTextures()
+        protected override void CreateTextTexture()
         {
             textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
         }

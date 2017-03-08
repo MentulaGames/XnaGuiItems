@@ -3,17 +3,22 @@ using System;
 namespace TestGame
 {
 #if WINDOWS || XBOX
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Console.WindowWidth = Console.LargestWindowWidth;
+
             using (Game1 game = new Game1())
             {
                 game.Run();
             }
+
+            Console.WriteLine("Press any ket to exit.");
+            Console.ReadKey();
         }
     }
 #endif

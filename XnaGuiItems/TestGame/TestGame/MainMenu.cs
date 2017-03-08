@@ -22,6 +22,9 @@ namespace TestGame
             FpsCounter fps = AddFpsCounter();
             fps.MoveRelative(Anchor.Top | Anchor.Left);
 
+            TextBox txt = AddTextBox();
+            txt.MoveRelative(Anchor.Center);
+
             base.Initialize(); 
         }
     }

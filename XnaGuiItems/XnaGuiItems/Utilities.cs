@@ -132,6 +132,10 @@ namespace Mentula.GuiItems
         {
             if (function != null)
             {
+#if DEBUG
+                Console.WriteLine($"{sender.GetType().Name} called Invoke for {function.Method.Name}.");
+#endif
+
                 try { function.DynamicInvoke(new object[2] { sender, args }); }
                 catch (TargetInvocationException e) { throw new InvokeException(e); }
             }
@@ -141,6 +145,10 @@ namespace Mentula.GuiItems
         {
             if (function != null)
             {
+#if DEBUG
+                Console.WriteLine($"{sender} called Invoke for {function.Method.Name} ({args.OldValue} -> {args.NewValue}).");
+#endif
+
                 try { function.Invoke(sender, args); }
                 catch (TargetInvocationException e) { throw new InvokeException(e); }
             }
@@ -150,6 +158,10 @@ namespace Mentula.GuiItems
         {
             if (function != null)
             {
+#if DEBUG
+                Console.WriteLine($"{sender} called Invoke for {function.Method.Name}.");
+#endif
+
                 try { function.Invoke(sender, args); }
                 catch (TargetInvocationException e) { throw new InvokeException(e); }
             }

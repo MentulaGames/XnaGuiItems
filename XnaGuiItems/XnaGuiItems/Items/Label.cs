@@ -38,11 +38,18 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the text of the <see cref="Label"/>. 
         /// </summary>
-        public virtual string Text { get { return text; } set { TextChanged.Invoke(this, new ValueChangedEventArgs<string>(text, value)); } }
+        public virtual string Text
+        {
+            get { return text; }
+            set
+            {
+                if (value != text) Invoke(TextChanged, this, new ValueChangedEventArgs<string>(text, value));
+            }
+        }
         /// <summary>
         /// Gets or sets the font used by the <see cref="Label"/>.
         /// </summary>
-        public virtual SpriteFont Font { get { return font; } set { FontChanged.Invoke(this, new ValueChangedEventArgs<SpriteFont>(font, value)); } }
+        public virtual SpriteFont Font { get { return font; } set { Invoke(FontChanged, this, new ValueChangedEventArgs<SpriteFont>(font, value)); } }
         /// <summary>
         /// Gets or sets the <see cref="Rectangle"/> used to draw the text.
         /// </summary>
@@ -50,7 +57,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public override Rectangle Bounds { get { return base.Bounds; } set { base.Bounds = value; ForegroundRectangle = value; } }
+        public override Rectangle Bounds { get { return base.Bounds; } set { foregroundRectangle = value; base.Bounds = value; } }
         /// <summary>
         /// Gets or sets a value indicating from what line the <see cref="Label"/> should be shown.
         /// </summary>
@@ -107,11 +114,12 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            base.Refresh();
             if (suppressRefresh) return;
 
             HandleAutoSize();
             textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
-            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, batch);
+            CreateTextTexture();
         }
 
         /// <summary>
@@ -136,6 +144,15 @@ namespace Mentula.GuiItems.Items
                 if (dim.X > 0 && dim.X != Bounds.Width) Width = (int)dim.X;
                 if (dim.Y > 0 && dim.Y != Bounds.Height) Height = (int)dim.Y;
             }
+        }
+
+        /// <summary>
+        /// Handles the creation on the text texture.
+        /// Override for special text texture handling.
+        /// </summary>
+        protected virtual void CreateTextTexture()
+        {
+            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, batch);
         }
 
         /// <summary>

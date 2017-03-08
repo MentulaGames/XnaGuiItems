@@ -77,15 +77,15 @@
         /// <summary>
         /// The center of the screen on width.
         /// </summary>
-        MiddleWidth = 1,                        //00000001
+        CenterWidth = 1,                        //00000001
         /// <summary>
         /// The center of the screen on height.
         /// </summary>
-        MiddelHeight = 2,                       //00000010
+        CenterHeight = 2,                       //00000010
         /// <summary>
-        /// The absolute center of the screen (<see cref="MiddleWidth"/> | <see cref="MiddelHeight"/>).
+        /// The absolute center of the screen (<see cref="CenterWidth"/> | <see cref="CenterHeight"/>).
         /// </summary>
-        Middle = MiddleWidth | MiddelHeight,    //00000011
+        Center = CenterWidth | CenterHeight,    //00000011
         /// <summary>
         /// The left of the screen.
         /// </summary>

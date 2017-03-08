@@ -271,12 +271,12 @@ namespace Mentula.GuiItems.Core
                 bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 if (!down && over && !(leftDown || rightDown)) Invoke(Hover, this, GetMouseEventArgs());
-                else if (down && !leftDown)
+                else if (down && !(leftDown || rightDown))
                 {
                     Invoke(Click, this, GetMouseEventArgs());
                     leftDown = true;
                 }
-                else if (down && !rightDown)
+                else if (down && !(rightDown || leftDown))
                 {
                     Invoke(Click, this, GetMouseEventArgs());
                     rightDown = true;
@@ -315,14 +315,14 @@ namespace Mentula.GuiItems.Core
             {
                 if (!x.HasValue)
                 {
-                    if (anchor.ContainesValue(Anchor.MiddleWidth)) x = (batch.GraphicsDevice.Viewport.Width >> 1) - (Width >> 1);
+                    if (anchor.ContainesValue(Anchor.CenterWidth)) x = (batch.GraphicsDevice.Viewport.Width >> 1) - (Width >> 1);
                     if (anchor.ContainesValue(Anchor.Left)) x = 0;
                     if (anchor.ContainesValue(Anchor.Right)) x = batch.GraphicsDevice.Viewport.Width - Width;
                     if (!x.HasValue) x = Position.X;
                 }
                 if (!y.HasValue)
                 {
-                    if (anchor.ContainesValue(Anchor.MiddelHeight)) y = (batch.GraphicsDevice.Viewport.Height >> 1) - (Height >> 1);
+                    if (anchor.ContainesValue(Anchor.CenterHeight)) y = (batch.GraphicsDevice.Viewport.Height >> 1) - (Height >> 1);
                     if (anchor.ContainesValue(Anchor.Top)) y = 0;
                     if (anchor.ContainesValue(Anchor.Bottom)) y = batch.GraphicsDevice.Viewport.Height - Height;
                     if (!y.HasValue) y = Position.Y;
@@ -357,6 +357,10 @@ namespace Mentula.GuiItems.Core
         public virtual void Refresh()
         {
             if (suppressRefresh) return;
+
+#if DEBUG
+            Console.WriteLine($"{this} refreshed.");
+#endif
         }
 
         /// <summary>
@@ -365,7 +369,7 @@ namespace Mentula.GuiItems.Core
         /// <returns> A string that represents the current GuiItem. </returns>
         public override string ToString()
         {
-            return $"{typeof(GuiItem).Name}: {Name}";
+            return string.Format("{0}{1}", GetType().Name, string.IsNullOrEmpty(Name) ? ":" : $"({Name})");
         }
 
         /// <summary>
