@@ -1,6 +1,7 @@
 ﻿using Mentula.GuiItems.Containers;
 using Mentula.GuiItems.Core;
 using Mentula.GuiItems.Items;
+using Microsoft.Xna.Framework;
 
 namespace TestGame
 {
@@ -13,17 +14,17 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            DropDown dd = AddDropDown();
-            dd.MoveRelative(Anchor.Center);
-            dd.AutoSize = true;
-            dd.AddOption(Pair.RunescapeAction("Take"), Pair.RunescapeItem("Item0"));
-            dd.AddOption(Pair.RunescapeAction("Take"), Pair.RunescapeItem("Item1"));
-            dd.AddOption(Pair.RunescapeAction("Walk here"));
-            dd.AddOption(Pair.RunescapeAction("Examine"), Pair.RunescapeItem("Item0"));
-            dd.AddOption(Pair.RunescapeAction("Examine"), Pair.RunescapeItem("Item1"));
-            dd.AddOption(Pair.RunescapeAction("Cancel"));
-
             base.Initialize(); 
+        }
+
+        private void OnIndexClick(GuiItem sender, IndexedClickEventArgs e)
+        {
+            switch (e.Index)
+            {
+                case 5:
+                    sender.Hide();
+                    break;
+            }
         }
     }
 }

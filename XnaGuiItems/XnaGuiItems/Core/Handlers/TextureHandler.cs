@@ -90,6 +90,13 @@ namespace Mentula.GuiItems.Core.Handlers
             internCall = false;
         }
 
+        internal virtual void SetForeFromClr(Color clr, Size size, Rectangle destination, GraphicsDevice device)
+        {
+            internCall = true;
+            if (!userSet[1]) Foreground = Drawing.FromColor(clr, size, destination, device);
+            internCall = false;
+        }
+
         internal virtual void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             internCall = true;

@@ -59,9 +59,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="bounds"> The size of the <see cref="PictureBox"/> in pixels. </param>
         public PictureBox(ref SpriteBatch sb, Rectangle bounds)
             : base(ref sb, bounds)
-        {
-            SizeModeChanged += OnSizeModeChanged;
-        }
+        { }
 
         /// <summary>
         /// Recalculates the foreground.
@@ -107,6 +105,15 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnSizeModeChanged(GuiItem sender, Args e)
         {
             sizeMode = e.NewValue;
+        }
+
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
+        {
+            base.InitEvents();
+            SizeModeChanged += OnSizeModeChanged;
         }
     }
 }

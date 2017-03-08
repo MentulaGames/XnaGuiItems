@@ -201,7 +201,7 @@ namespace Mentula.GuiItems
 
 #if DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static void LogInvokeCall(string sender, string func)
+        internal static void LogInvokeCall(string sender, string func)
         {
             Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}] {sender} called Invoke for {func}.");
         }

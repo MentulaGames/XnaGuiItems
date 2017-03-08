@@ -102,7 +102,6 @@ namespace Mentula.GuiItems.Items
         public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
              : base(ref sb, bounds)
         {
-            InitEvents();
             foregroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
@@ -200,8 +199,12 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle.Y = (int)e.NewValue.Y;
         }
 
-        private void InitEvents()
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
         {
+            base.InitEvents();
             TextChanged += OnTextChanged;
             FontChanged += OnFontChanged;
         }

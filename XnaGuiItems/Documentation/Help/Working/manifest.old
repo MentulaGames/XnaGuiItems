@@ -124,6 +124,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Height" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.Hide" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.Hover" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.leftDown" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.Move" type="API" />
@@ -131,7 +132,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Name" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.NameChanged" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" type="API" />
@@ -373,6 +374,7 @@
   <topic id="P:Mentula.GuiItems.Items.DropDown.HeaderBackgroundColor" type="API" />
   <topic id="P:Mentula.GuiItems.Items.DropDown.HeaderText" type="API" />
   <topic id="E:Mentula.GuiItems.Items.DropDown.IndexClick" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.DropDown.InitEvents" type="API" />
   <topic id="F:Mentula.GuiItems.Items.DropDown.labels" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.Refresh" type="API" />
@@ -396,6 +398,7 @@
   <topic id="P:Mentula.GuiItems.Items.Label.ForegroundRectangle" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.GetLineCount" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.HandleAutoSize" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Label.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Label.LineStart" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
@@ -413,6 +416,7 @@
   <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.PictureBox.Image" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.InitEvents" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.PictureBox.SizeMode" type="API" />
@@ -429,6 +433,7 @@
   <topic id="F:Mentula.GuiItems.Items.ProgressBar.data" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.DefaultForeColor" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.ProgressBar.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.Inverted" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.MaxiumValue" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.MinimumValue" type="API" />
@@ -447,6 +452,8 @@
   <topic id="P:Mentula.GuiItems.Items.Slider.BorderStyle" type="API" />
   <topic id="F:Mentula.GuiItems.Items.Slider.data" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.DefaultBounds" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.Slider.DefaultForeColor" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Slider.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.MaximumValue" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.MinimumValue" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Slider.MouseDown" type="API" />
@@ -475,6 +482,7 @@
   <topic id="E:Mentula.GuiItems.Items.TextBox.FocusChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.Focused" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.HandleAutoSize" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.TextBox.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MaximumSize" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MaxLength" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MinimumSize" type="API" />
@@ -484,4 +492,5 @@
   <topic id="P:Mentula.GuiItems.Items.TextBox.PasswordChar" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.TextBox.VisisbleText" type="API" />
 </topics>

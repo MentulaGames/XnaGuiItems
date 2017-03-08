@@ -17,6 +17,7 @@ namespace Mentula.GuiItems.Items
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
     using Args = Core.ValueChangedEventArgs<int>;
+    using Core.Handlers;
 
     /// <summary>
     /// A progress bar used for displaying progress.
@@ -60,6 +61,8 @@ namespace Mentula.GuiItems.Items
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
 
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+
         /// <summary>
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
@@ -83,8 +86,7 @@ namespace Mentula.GuiItems.Items
         public ProgressBar(ref SpriteBatch sb, Rectangle bounds)
              : base(ref sb, bounds)
         {
-            InitEvents();
-
+            base.textures = new LabelTextureHandler();
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
@@ -95,15 +97,14 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            base.Refresh();
             if (suppressRefresh) return;
 
             float ppp = (float)Bounds.Width / 100;
             int width = (int)(ppp * data.Value);
 
-            textures.internCall = true;
-            textures.Foreground = Drawing.FromColor(ForeColor, Size, Inverted ? new Rectangle(Bounds.Width - width, 0, width, Bounds.Height) : new Rectangle(0, 0, width, Bounds.Height), batch.GraphicsDevice);
-            textures.Background = Drawing.FromColor(BackColor, Size, batch.GraphicsDevice).ApplyBorderLabel(BorderStyle);
-            textures.internCall = false;
+            textures.SetForeFromClr(ForeColor, Size, Inverted ? new Rectangle(Width - width, 0, width, Height) : new Rectangle(0, 0, width, Height), batch.GraphicsDevice);
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
         }
 
         /// <summary>
@@ -117,8 +118,12 @@ namespace Mentula.GuiItems.Items
             Refresh();
         }
 
-        private void InitEvents()
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
         {
+            base.InitEvents();
             ValueChanged += OnValueChanged;
         }
     }

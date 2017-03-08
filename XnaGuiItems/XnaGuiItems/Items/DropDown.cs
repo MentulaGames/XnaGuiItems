@@ -21,6 +21,7 @@ namespace Mentula.GuiItems.Items
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using static Utilities;
+    using Core.Handlers;
 
     /// <summary>
     /// A Dropdown with clickable childs.
@@ -77,6 +78,8 @@ namespace Mentula.GuiItems.Items
         /// <summary> The rectangle used in the foreground. </summary>
         protected Rectangle foregroundRectangle;
 
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+
         private Texture2D headerTexture;
         private KeyValuePair<Texture2D, ButtonStyle>[] itemTextures;
 
@@ -100,6 +103,7 @@ namespace Mentula.GuiItems.Items
             : base(ref sb, bounds)
         {
             this.font = font;
+            base.textures = new LabelTextureHandler();
             HeaderText = DefaultHeaderText;
             labels = new KeyValuePair<string, Color>[0][];
             itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
@@ -108,7 +112,6 @@ namespace Mentula.GuiItems.Items
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             HeaderBackgroundColor = DefaultHeaderBackColor;
-            Click += DropDown_Click;
         }
 
         /// <summary>
@@ -205,8 +208,7 @@ namespace Mentula.GuiItems.Items
             }
 
             foregroundRectangle = Bounds;
-            textures.Background = textures.Background.ApplyBorderLabel(BorderStyle);
-            if (BackgroundImage != null) BackgroundImage = BackgroundImage.ApplyBorderLabel(BorderStyle);
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
 
             textures.Foreground = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, batch);
             headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(textures.Foreground.Width, (int)font.GetHeight()), batch.GraphicsDevice);
@@ -263,7 +265,16 @@ namespace Mentula.GuiItems.Items
             foregroundRectangle.Y = (int)e.NewValue.Y;
         }
 
-        private void DropDown_Click(GuiItem sender, MouseEventArgs e)
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
+        {
+            base.InitEvents();
+            Click += OnClick;
+        }
+
+        private void OnClick(GuiItem sender, MouseEventArgs e)
         {
             int index = GetHoverIndex(e.State);
             if (index == -1) return;

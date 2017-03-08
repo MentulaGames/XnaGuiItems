@@ -1014,7 +1014,7 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the background. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChaned(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" /> event is raised.
             </summary>
@@ -1062,6 +1062,11 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new visibility of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
       <summary>
@@ -1994,6 +1999,11 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.Label">
       <summary>
             A label used for displaying text.
@@ -2114,6 +2124,11 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.Label.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.ProgressBar">
       <summary>
             A progress bar used for displaying progress.
@@ -2188,6 +2203,11 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="args"> The new value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.Slider">
       <summary>
             A slider used for setting rough values like volume.
@@ -2202,6 +2222,11 @@
     <member name="P:Mentula.GuiItems.Items.Slider.DefaultBounds">
       <summary>
             Gets the default size of the <see cref="T:Mentula.GuiItems.Items.Slider" /></summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.Slider.DefaultForeColor">
+      <summary>
+            Gets the default foreground color of the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
     </member>
     <member name="P:Mentula.GuiItems.Items.Slider.SliderBarDimentions">
       <summary>
@@ -2282,6 +2307,11 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.TextBox">
       <summary>
             A textbox used for displaying and accepting text.
@@ -2290,6 +2320,11 @@
     <member name="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize">
       <summary>
             Gets the default minimum size of the <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Items.TextBox.VisisbleText">
+      <summary>
+            Gets the visible text of the <see cref="T:Mentula.GuiItems.Items.TextBox" />. 
             </summary>
     </member>
     <member name="P:Mentula.GuiItems.Items.TextBox.FlickerStyle">
@@ -2403,6 +2438,11 @@
             Override for special text texture handling.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.PictureBox">
       <summary>
             A Image displayer base class.
@@ -2447,6 +2487,11 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Mentula.GuiItems.Core.ResizeMode" /> for the foreground. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.PictureBox.InitEvents">
+      <summary>
+            Handles the initializing of the events.
+            </summary>
     </member>
     <member name="T:Mentula.GuiItems.Utilities">
       <summary>

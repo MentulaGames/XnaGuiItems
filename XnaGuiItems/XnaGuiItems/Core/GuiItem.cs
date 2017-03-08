@@ -106,7 +106,14 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="GuiItem"/> is displayed.
         /// </summary>
-        public virtual bool Visible { get { return visible; } set { Invoke(VisibilityChanged, this, new ValueChangedEventArgs<bool>(visible, value)); } }
+        public virtual bool Visible
+        {
+            get { return visible; }
+            set
+            {
+                if (value != visible) Invoke(VisibilityChanged, this, new ValueChangedEventArgs<bool>(visible, value));
+            }
+        }
         /// <summary>
         /// Gets or sets the width of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
@@ -425,7 +432,7 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new <see cref="Texture2D"/> to use as background. </param>
-        protected virtual void OnBackgroundImageChaned(GuiItem sender, ValueChangedEventArgs<Texture2D> e)
+        protected virtual void OnBackgroundImageChanged(GuiItem sender, ValueChangedEventArgs<Texture2D> e)
         {
             textures.Background = e.NewValue;
         }
@@ -495,10 +502,13 @@ namespace Mentula.GuiItems.Core
             visible = e.NewValue;
         }
 
-        private void InitEvents()
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected virtual void InitEvents()
         {
             BackColorChanged += OnBackColorChanged;
-            BackgroundImageChanged += OnBackgroundImageChaned;
+            BackgroundImageChanged += OnBackgroundImageChanged;
             ForeColorChanged += OnForeColorChanged;
             Move += OnMove;
             NameChanged += OnNameChange;

@@ -19,6 +19,7 @@ namespace Mentula.GuiItems.Items
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
     using Args = Core.ValueChangedEventArgs<int>;
+    using Core.Handlers;
 
     /// <summary>
     /// A slider used for setting rough values like volume.
@@ -38,6 +39,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
         /// <summary>
+        /// Gets the default foreground color of the <see cref="Slider"/>.
+        /// </summary>
+        new public static Color DefaultForeColor { get { return Color.Gray; } }
+        /// <summary>
         /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
         public virtual Rectangle SliderBarDimentions { get; set; }
@@ -53,10 +58,19 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the current value of the <see cref="Slider"/>.
         /// Will not change the visuals of the slider!
         /// </summary>
-        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, new Args(data.Value, value)); } }
+        public virtual int Value
+        {
+            get { return data.Value; }
+            set
+            {
+                if (value != Value) Invoke(ValueChanged, this, new Args(data.Value, value));
+            }
+        }
 
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
+
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
 
         private bool sliding;
         private Vector2 oldOffset;
@@ -89,12 +103,11 @@ namespace Mentula.GuiItems.Items
         public Slider(ref SpriteBatch sb, Rectangle bounds)
              : base(ref sb, bounds)
         {
-            InitEvents();
-
-            SliderBarDimentions = new Rectangle(bounds.X, bounds.Y, Bounds.Width / 10, Bounds.Height);
+            base.textures = new LabelTextureHandler();
+            SliderBarDimentions = new Rectangle(bounds.X, bounds.Y, Width / 10, Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
-            ForeColor = Color.Gray;
+            ForeColor = DefaultForeColor;
         }
 
         /// <summary>
@@ -126,10 +139,11 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            base.Refresh();
             if (suppressRefresh) return;
 
-            textures.Foreground = Drawing.FromColor(ForeColor, Size, SliderBarDimentions, batch.GraphicsDevice);
-            textures.Background = Drawing.FromColor(BackColor, Size, batch.GraphicsDevice).ApplyBorderLabel(BorderStyle);
+            textures.SetForeFromClr(ForeColor, Size, SliderBarDimentions, batch.GraphicsDevice);
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
         }
 
         /// <summary>
@@ -177,12 +191,16 @@ namespace Mentula.GuiItems.Items
 
                 int old = Value;
                 data.ChangeValue((int)percent);
-                if (Value != old) ValueChanged.Invoke(this, new Args(old, Value));
+                if (Value != old) Invoke(ValueChanged, this, new Args(old, Value));
             }
         }
 
-        private void InitEvents()
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
         {
+            base.InitEvents();
             ValueChanged += OnValueChanged;
             Click += OnClick;
             MouseDown += OnMouseDown;

@@ -38,6 +38,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public static Size DefaultMinimumSize { get { return new Size(100, 50); } }
         /// <summary>
+        /// Gets the visible text of the <see cref="TextBox"/>. 
+        /// </summary>
+        public virtual string VisisbleText { get { return PasswordChar != '\0' ? Text.ToPassword(PasswordChar) : Text; } }
+        /// <summary>
         /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
         public virtual FlickerStyle FlickerStyle { get; set; }
@@ -113,7 +117,6 @@ namespace Mentula.GuiItems.Items
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
             MaximumSize = batch.GraphicsDevice.Viewport.Bounds.Size();
-            FocusChanged += OnFocusChanged;
             MaxLength = -1;
         }
 
@@ -231,7 +234,16 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         protected override void CreateTextTexture()
         {
-            textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
+            textures.SetFocusText(VisisbleText, font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
+        }
+
+        /// <summary>
+        /// Handles the initializing of the events.
+        /// </summary>
+        protected override void InitEvents()
+        {
+            base.InitEvents();
+            FocusChanged += OnFocusChanged;
         }
 
         private Vector2 GetLongTextDimentions()
@@ -240,11 +252,6 @@ namespace Mentula.GuiItems.Items
 
             string longText = Text.Split(new string[1] { "/n" }, StringSplitOptions.None).Max();
             return font.MeasureString(longText);
-        }
-
-        private string GetDrawableText()
-        {
-            return PasswordChar != '\0' ? Text.ToPassword(PasswordChar) : Text;
         }
 
         private void ToggleShowLine()
