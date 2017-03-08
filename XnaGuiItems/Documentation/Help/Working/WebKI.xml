@@ -7,7 +7,6 @@
   </HelpKINode>
   <HelpKINode Title="AddButton method" Url="html/09abc327-de1b-1915-80f0-b4ee18f2fe7a.htm" />
   <HelpKINode Title="AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
-  <HelpKINode Title="AddFpsCounter method" Url="html/315a0840-34e2-e803-a55e-901247b015b3.htm" />
   <HelpKINode Title="AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Addition operator" Url="html/be77aef0-b253-9ea2-00eb-9e0397f3c3db.htm" />
   <HelpKINode Title="AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
@@ -29,7 +28,6 @@
     <HelpKINode Title="DropDown.AutoSize Property " Url="html/5797d0ce-1ad4-013d-5115-bf80c2c61977.htm" />
     <HelpKINode Title="Label.AutoSize Property " Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
   </HelpKINode>
-  <HelpKINode Title="Average property" Url="html/dd8c6ae8-f5d6-fedc-dd65-c1115dea5e11.htm" />
   <HelpKINode Title="BackColor property" Url="html/53fa52ee-eb1b-20f5-d279-2f4b9b21930c.htm" />
   <HelpKINode Title="BackColorChanged event" Url="html/75cd8a5b-3224-4ac0-1d4b-274beab996fd.htm" />
   <HelpKINode Title="Background property" Url="html/fa20b807-bf76-da7e-60ad-33eb0fdfb8ab.htm" />
@@ -48,7 +46,6 @@
     <HelpKINode Title="GuiItem.Bounds Property " Url="html/5369e391-6953-b70d-6b62-98f98c5a34bf.htm" />
     <HelpKINode Title="Label.Bounds Property " Url="html/1e5387f8-768f-9fdc-30c3-69146536ddae.htm" />
   </HelpKINode>
-  <HelpKINode Title="BufferSize property" Url="html/a205c391-8f1d-4b54-65e4-bfca83dc4ff9.htm" />
   <HelpKINode Title="Button class">
     <HelpKINode Title="Button Class" Url="html/4278b1d0-5a1a-7e6e-082a-a43a011135cc.htm" />
     <HelpKINode Title="about Button class" Url="html/4278b1d0-5a1a-7e6e-082a-a43a011135cc.htm" />
@@ -84,7 +81,10 @@
   <HelpKINode Title="ByteFlags.GetHashCode method" Url="html/f6a039e1-489d-bbf0-523b-63e61c1cef0f.htm" />
   <HelpKINode Title="ByteFlags.Item property" Url="html/54f50e26-7fd2-aa98-ee69-62426e3a804e.htm" />
   <HelpKINode Title="ByteFlags.ToString method" Url="html/5cd661ba-ada4-0cdb-3c17-2d134004cddd.htm" />
+  <HelpKINode Title="Center enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
+  <HelpKINode Title="CenterHeight enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="CenterImage enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
+  <HelpKINode Title="CenterWidth enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="ChangeValue method" Url="html/3e1d26c0-8832-5d44-9d22-b173a44cb0ab.htm" />
   <HelpKINode Title="ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
@@ -96,7 +96,10 @@
   <HelpKINode Title="controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="CopyTo method" Url="html/1dec5d21-67ed-6b08-544b-9fc58c67422c.htm" />
   <HelpKINode Title="Count property" Url="html/946ce79b-5cdc-abb2-4b92-29100640e175.htm" />
-  <HelpKINode Title="Current property" Url="html/d12f718c-c87a-4f1a-dd59-51dd31bf7755.htm" />
+  <HelpKINode Title="CreateTextTexture method">
+    <HelpKINode Title="Label.CreateTextTexture Method " Url="html/4c24fa54-e912-3c77-dfe9-cfcffe2af788.htm" />
+    <HelpKINode Title="TextBox.CreateTextTexture Method " Url="html/476b8de1-1db0-6f0c-30a1-d13ac6d2e478.htm" />
+  </HelpKINode>
   <HelpKINode Title="data field">
     <HelpKINode Title="ProgressBar.data Field" Url="html/3288bf01-28c8-3379-f52c-3491cdaa491f.htm" />
     <HelpKINode Title="Slider.data Field" Url="html/b6432b3f-1ed4-cf0a-4b0b-8011c01f0e1e.htm" />
@@ -236,19 +239,6 @@
     <HelpKINode Title="Label.foregroundRectangle Field" Url="html/345dc3cb-ebda-8a04-7a60-6d9088109f8b.htm" />
   </HelpKINode>
   <HelpKINode Title="ForegroundRectangle property" Url="html/446eeb4f-b3c3-8af8-6643-eb6e8d81ff23.htm" />
-  <HelpKINode Title="FpsCounter class">
-    <HelpKINode Title="FpsCounter Class" Url="html/c1787c46-3c26-b3db-af86-f29f75f27f5b.htm" />
-    <HelpKINode Title="about FpsCounter class" Url="html/c1787c46-3c26-b3db-af86-f29f75f27f5b.htm" />
-    <HelpKINode Title="constructor" Url="html/4822b567-91bf-eb4b-d09a-00f07fd92619.htm" />
-    <HelpKINode Title="events" Url="html/ce2480a6-ceff-69a5-1558-b509ccb266b8.htm" />
-    <HelpKINode Title="methods" Url="html/792046bb-5698-0304-5ac8-26e604221fd7.htm" />
-    <HelpKINode Title="properties" Url="html/e7290772-0516-2b2f-6cff-71c52d3c0725.htm" />
-  </HelpKINode>
-  <HelpKINode Title="FpsCounter.Average property" Url="html/dd8c6ae8-f5d6-fedc-dd65-c1115dea5e11.htm" />
-  <HelpKINode Title="FpsCounter.BufferSize property" Url="html/a205c391-8f1d-4b54-65e4-bfca83dc4ff9.htm" />
-  <HelpKINode Title="FpsCounter.Current property" Url="html/d12f718c-c87a-4f1a-dd59-51dd31bf7755.htm" />
-  <HelpKINode Title="FpsCounter.FpsCounter constructor" Url="html/4822b567-91bf-eb4b-d09a-00f07fd92619.htm" />
-  <HelpKINode Title="FpsCounter.Update method" Url="html/13acdf8e-03e8-a129-ffb4-743ec3026121.htm" />
   <HelpKINode Title="Game property">
     <HelpKINode Title="DrawableMentulaGameComponent(TGame).Game Property " Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
     <HelpKINode Title="MentulaGameComponent(TGame).Game Property " Url="html/9761d507-9bbe-0811-9e78-6afa2fd177d4.htm" />
@@ -441,6 +431,7 @@
   <HelpKINode Title="Label.AutoSize property" Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
   <HelpKINode Title="Label.BorderStyle property" Url="html/943eb238-d188-ec04-3bcb-1946fb67c5ed.htm" />
   <HelpKINode Title="Label.Bounds property" Url="html/1e5387f8-768f-9fdc-30c3-69146536ddae.htm" />
+  <HelpKINode Title="Label.CreateTextTexture method" Url="html/4c24fa54-e912-3c77-dfe9-cfcffe2af788.htm" />
   <HelpKINode Title="Label.font field" Url="html/ce37aea7-09e3-c1de-9e69-3a89ba2a281d.htm" />
   <HelpKINode Title="Label.Font property" Url="html/0500123a-4465-fd7e-489b-c62756879f80.htm" />
   <HelpKINode Title="Label.FontChanged event" Url="html/457b5dc9-9ea4-6196-4185-7ae61c5bbdc7.htm" />
@@ -462,6 +453,7 @@
     <HelpKINode Title="LabelTextureHandler Class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
     <HelpKINode Title="about LabelTextureHandler class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
     <HelpKINode Title="constructor" Url="html/d6da7b78-fbb2-9f54-6de0-a43dca81e183.htm" />
+    <HelpKINode Title="fields" Url="html/0943908c-6ddf-73d9-a8b7-be92e4c45420.htm" />
     <HelpKINode Title="methods" Url="html/f7202114-7747-7fa0-6499-a2270e2c6cb0.htm" />
     <HelpKINode Title="properties" Url="html/e0853f72-120a-8928-7da5-8fd971860df7.htm" />
   </HelpKINode>
@@ -525,7 +517,6 @@
   <HelpKINode Title="Mentula.GuiItems.Items namespace" Url="html/ffbe3cf9-9804-efbc-3f6a-895be5de3d4e.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.Button class" Url="html/4278b1d0-5a1a-7e6e-082a-a43a011135cc.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Items.FpsCounter class" Url="html/c1787c46-3c26-b3db-af86-f29f75f27f5b.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.Label class" Url="html/d53751b0-5ec8-c0d0-4297-55a765efc00d.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.PictureBox class" Url="html/ddcfa394-400d-7674-1e23-b03fec675540.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items.ProgressBar class" Url="html/c45c8486-3492-6fe0-bb1b-ebdd51c88088.htm" />
@@ -563,7 +554,6 @@
   </HelpKINode>
   <HelpKINode Title="Menu(Of T).AddButton method" Url="html/09abc327-de1b-1915-80f0-b4ee18f2fe7a.htm" />
   <HelpKINode Title="Menu(Of T).AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
-  <HelpKINode Title="Menu(Of T).AddFpsCounter method" Url="html/315a0840-34e2-e803-a55e-901247b015b3.htm" />
   <HelpKINode Title="Menu(Of T).AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Menu(Of T).AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
   <HelpKINode Title="Menu(Of T).AddPictureBox method" Url="html/ccc28cb0-62b2-d441-bfd1-e6959aeefb90.htm" />
@@ -604,7 +594,6 @@
   </HelpKINode>
   <HelpKINode Title="Menu&lt;T&gt;.AddButton method" Url="html/09abc327-de1b-1915-80f0-b4ee18f2fe7a.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
-  <HelpKINode Title="Menu&lt;T&gt;.AddFpsCounter method" Url="html/315a0840-34e2-e803-a55e-901247b015b3.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddLabel method" Url="html/51e43f95-61c8-018e-0308-f36bf814e1c6.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.AddPictureBox method" Url="html/ccc28cb0-62b2-d441-bfd1-e6959aeefb90.htm" />
@@ -670,9 +659,6 @@
   <HelpKINode Title="MenuCollection&lt;TGame&gt;.MenuCollection constructor" Url="html/e18375b2-e8cd-2a6b-ac5a-4e8db5dce454.htm" />
   <HelpKINode Title="MenuCollection&lt;TGame&gt;.Show method" Url="html/d077a72f-d3c2-9f8d-01db-f58ef80589a5.htm" />
   <HelpKINode Title="MenuCollection&lt;TGame&gt;.Update method" Url="html/b0c50924-1fae-cdc2-92e9-ae15a65e94ca.htm" />
-  <HelpKINode Title="MiddelHeight enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
-  <HelpKINode Title="Middle enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
-  <HelpKINode Title="MiddleWidth enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="Minimum property" Url="html/93389748-622f-c275-0366-e4dcc6bb0448.htm" />
   <HelpKINode Title="MinimumSize property" Url="html/66b62fe7-6120-ab22-0dd1-1384a5ff01c2.htm" />
   <HelpKINode Title="MinimumValue property">
@@ -831,7 +817,6 @@
     <HelpKINode Title="ProgressBar.Refresh Method " Url="html/44954f05-dd9a-9084-24c7-bb150cbfba12.htm" />
     <HelpKINode Title="Slider.Refresh Method " Url="html/e9d5a3b8-bcd6-b3aa-e027-66209c2be783.htm" />
     <HelpKINode Title="TabContainer.Refresh Method " Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
-    <HelpKINode Title="TextBox.Refresh Method " Url="html/68c386a9-e384-5662-8abf-00700071f6b2.htm" />
   </HelpKINode>
   <HelpKINode Title="Remove method" Url="html/e7023442-515b-9d44-a61b-f26e7346d088.htm" />
   <HelpKINode Title="RemoveAt method" Url="html/26eac6a4-b546-fea2-0dc8-373cefd23b3f.htm" />
@@ -962,6 +947,7 @@
     <HelpKINode Title="properties" Url="html/e22c3ae1-9a95-3b98-a082-f79304a908f5.htm" />
   </HelpKINode>
   <HelpKINode Title="TextBox.Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
+  <HelpKINode Title="TextBox.CreateTextTexture method" Url="html/476b8de1-1db0-6f0c-30a1-d13ac6d2e478.htm" />
   <HelpKINode Title="TextBox.DefaultMinimumSize property" Url="html/03f3a0a9-5c2b-a750-c55a-bb42fbff10e7.htm" />
   <HelpKINode Title="TextBox.Draw method" Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   <HelpKINode Title="TextBox.FlickerStyle property" Url="html/07818976-b10f-d8f2-5bdd-ae45cf7fa354.htm" />
@@ -975,7 +961,6 @@
   <HelpKINode Title="TextBox.OnFocusChanged method" Url="html/d875062e-0fcc-01e3-150c-0469348cf2b1.htm" />
   <HelpKINode Title="TextBox.OnTextChanged method" Url="html/41fa811d-0e4d-ea65-2462-9629545f0c06.htm" />
   <HelpKINode Title="TextBox.PasswordChar property" Url="html/ef2a4cab-bf18-1a60-e2b4-9dde1c0d2d2c.htm" />
-  <HelpKINode Title="TextBox.Refresh method" Url="html/68c386a9-e384-5662-8abf-00700071f6b2.htm" />
   <HelpKINode Title="TextBox.TextBox constructor" Url="html/6376d5d7-9eb4-336f-2b60-791bc8b5d931.htm" />
   <HelpKINode Title="TextBox.Update method" Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
   <HelpKINode Title="TextboxTextureHandler class">
@@ -1012,7 +997,6 @@
   <HelpKINode Title="Update method">
     <HelpKINode Title="Button.Update Method " Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
     <HelpKINode Title="DropDown.Update Method " Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
-    <HelpKINode Title="FpsCounter.Update Method " Url="html/13acdf8e-03e8-a129-ffb4-743ec3026121.htm" />
     <HelpKINode Title="GuiItem.Update Method " Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
     <HelpKINode Title="Menu(T).Update Method " Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
     <HelpKINode Title="MenuCollection(TGame).Update Method " Url="html/b0c50924-1fae-cdc2-92e9-ae15a65e94ca.htm" />

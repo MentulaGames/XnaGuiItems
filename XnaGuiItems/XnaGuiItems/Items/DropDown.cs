@@ -41,7 +41,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default background color of the <see cref="DropDown"/>.
         /// </summary>
-        new public static Color DefaultBackColor { get { return Color.FromNonPremultiplied(42, 41, 27, 256); } }
+        new public static Color DefaultBackColor { get { return Color.FromNonPremultiplied(93, 84, 71, 256); } }
         /// <summary>
         /// Gets the default foreground color of the <see cref="DropDown"/>.
         /// </summary>
@@ -180,6 +180,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            base.Refresh();
             if (suppressRefresh) return;
 
             if (AutoSize)

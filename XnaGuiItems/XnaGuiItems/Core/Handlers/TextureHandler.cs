@@ -76,21 +76,21 @@ namespace Mentula.GuiItems.Core.Handlers
             Dispose(false);
         }
 
-        internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
+        internal virtual void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
             if (!userSet[0]) Background = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
-        internal void SetForeFromClr(Color clr, Size size, GraphicsDevice device)
+        internal virtual void SetForeFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
             if (!userSet[1]) Foreground = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
-        internal void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
+        internal virtual void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             internCall = true;
             if (!userSet[1]) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, sb);

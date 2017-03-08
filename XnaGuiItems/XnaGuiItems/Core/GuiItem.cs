@@ -265,21 +265,21 @@ namespace Mentula.GuiItems.Core
         {
             if (Enabled)
             {
-                Vector2 mPos = GetRotatedMouse(mState);
-
-                over = bounds.Contains(mPos.ToPoint());
-                bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
-
-                if (!down && over && !(leftDown || rightDown)) Invoke(Hover, this, GetMouseEventArgs());
-                else if (down && !(leftDown || rightDown))
+                if (over = bounds.Contains(GetRotatedMouse(mState).ToPoint()))
                 {
-                    Invoke(Click, this, GetMouseEventArgs());
-                    leftDown = true;
-                }
-                else if (down && !(rightDown || leftDown))
-                {
-                    Invoke(Click, this, GetMouseEventArgs());
-                    rightDown = true;
+                    bool down = mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed;
+
+                    if (!down && !(leftDown || rightDown)) Invoke(Hover, this, GetMouseEventArgs());
+                    else if (mState.LeftButton == ButtonState.Pressed && !(leftDown || rightDown))
+                    {
+                        Invoke(Click, this, GetMouseEventArgs());
+                        leftDown = true;
+                    }
+                    else if (mState.RightButton == ButtonState.Pressed && !(rightDown || leftDown))
+                    {
+                        Invoke(Click, this, GetMouseEventArgs());
+                        rightDown = true;
+                    }
                 }
 
                 if (leftDown && mState.LeftButton == ButtonState.Released) leftDown = false;
@@ -359,7 +359,7 @@ namespace Mentula.GuiItems.Core
             if (suppressRefresh) return;
 
 #if DEBUG
-            Console.WriteLine($"{this} refreshed.");
+            Console.WriteLine($"{TimeStamp} {this} refreshed.");
 #endif
         }
 

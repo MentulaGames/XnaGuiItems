@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Generate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Sandcastle Tools MSBuild Tasks.  https://GitHub.com/EWSoftware/SHFB -->
-  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.MRefBuilder" AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\MRefBuilder.exe" />
-  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.XslTransform" AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
+  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.MRefBuilder" AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\MRefBuilder.exe" />
+  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.XslTransform" AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
   <!-- Task properties -->
   <PropertyGroup>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AddXamlSyntaxData>
     </AddXamlSyntaxData>
-    <WorkingFolder>C:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
+    <WorkingFolder>D:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
     <ReferencePath Condition=" '$(ReferencePath)' == '' ">
     </ReferencePath>
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
@@ -31,7 +31,7 @@
 		</GenerateDependsOn>
   </PropertyGroup>
   <ItemGroup>
-    <Assembly Include="C:\Git\XnaGuiItems\XnaGuiItems\XnaGuiItems\bin\x86\Release\XnaGuiItems.dll" />
+    <Assembly Include="D:\Git\XnaGuiItems\XnaGuiItems\XnaGuiItems\bin\x86\Release\XnaGuiItems.dll" />
   </ItemGroup>
   <Target Name="Generate" DependsOnTargets="$(GenerateDependsOn)" />
   <!-- The Generate Ref Info target -->

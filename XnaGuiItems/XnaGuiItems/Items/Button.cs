@@ -147,12 +147,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            base.Refresh();
             if (suppressRefresh) return;
 
-            HandleAutoSize();
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice);
             textures.ApplyBorders();
-            textures.SetText(Text, font, ForeColor, foregroundRectangle.Size(), false, LineStart, batch);
         }
 
         /// <summary>

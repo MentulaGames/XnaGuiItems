@@ -131,19 +131,6 @@ namespace Mentula.GuiItems.Containers
             return picBox;
         }
 
-        /// <summary>
-        /// Adds a <see cref="FpsCounter"/> to the <see cref="Menu{T}"/>.
-        /// </summary>
-        /// <param name="Font"> A specified font for the control (Optional). </param>
-        /// <returns> The <see cref="FpsCounter"/> created. </returns>
-        public FpsCounter AddFpsCounter(SpriteFont Font = null)
-        {
-            if (font == null && Font == null) ThrowNoFont();
-            FpsCounter fps = new FpsCounter(ref batch, Font ?? font);
-            controlls.Add(fps);
-            return fps;
-        }
-
         private void ThrowNoFont()
         {
             throw new InvalidOperationException("Menu.font must be set before calling this method or a font must be specified!");

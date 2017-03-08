@@ -20,7 +20,7 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <remarks>
     /// The <see cref="TextureHandler.userSet"/> flag for hover is 4 and click is 8.
     /// </remarks>
-    public sealed class ButtonTextureHandler : TextureHandler
+    public sealed class ButtonTextureHandler : LabelTextureHandler
     {
         /// <summary>
         /// The button hover texture for a <see cref="Items.Button"/>.
@@ -56,7 +56,7 @@ namespace Mentula.GuiItems.Core.Handlers
 
         private Texture2D hover, click;
 
-        new internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
+        internal override void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             base.SetBackFromClr(clr, size, device);
 

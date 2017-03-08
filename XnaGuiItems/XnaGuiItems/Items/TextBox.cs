@@ -225,6 +225,10 @@ namespace Mentula.GuiItems.Items
             else Refresh();
         }
 
+        /// <summary>
+        /// Handles the creation on the text texture.
+        /// Override for special text texture handling.
+        /// </summary>
         protected override void CreateTextTexture()
         {
             textures.SetFocusText(GetDrawableText(), font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);

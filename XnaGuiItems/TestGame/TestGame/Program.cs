@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using System;
 
 namespace TestGame
@@ -17,7 +18,7 @@ namespace TestGame
                 game.Run();
             }
 
-            Console.WriteLine("Press any ket to exit.");
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }

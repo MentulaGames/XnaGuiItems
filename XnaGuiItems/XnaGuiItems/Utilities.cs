@@ -31,6 +31,8 @@ namespace Mentula.GuiItems
 #endif
     public static class Utilities
     {
+        internal static string TimeStamp { get { return $"[{DateTime.Now.ToString("yyyy-MM-dd H:mm:ss")}]"; } }
+
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
 
@@ -133,7 +135,7 @@ namespace Mentula.GuiItems
             if (function != null)
             {
 #if DEBUG
-                Console.WriteLine($"{sender.GetType().Name} called Invoke for {function.Method.Name}.");
+                LogInvokeCall(sender.ToString(), function.Method.Name);
 #endif
 
                 try { function.DynamicInvoke(new object[2] { sender, args }); }
@@ -146,7 +148,7 @@ namespace Mentula.GuiItems
             if (function != null)
             {
 #if DEBUG
-                Console.WriteLine($"{sender} called Invoke for {function.Method.Name} ({args.OldValue} -> {args.NewValue}).");
+                LogInvokeCall(sender.ToString(), $"{function.Method.Name} ({args.OldValue} -> {args.NewValue})");
 #endif
 
                 try { function.Invoke(sender, args); }
@@ -159,7 +161,7 @@ namespace Mentula.GuiItems
             if (function != null)
             {
 #if DEBUG
-                Console.WriteLine($"{sender} called Invoke for {function.Method.Name}.");
+                LogInvokeCall(sender.ToString(), function.Method.Name);
 #endif
 
                 try { function.Invoke(sender, args); }
@@ -196,5 +198,13 @@ namespace Mentula.GuiItems
         {
             return new Thread(func) { IsBackground = true };
         }
+
+#if DEBUG
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static void LogInvokeCall(string sender, string func)
+        {
+            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}] {sender} called Invoke for {func}.");
+        }
+#endif
     }
 }

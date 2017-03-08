@@ -356,13 +356,6 @@
             </summary>
       <returns> The <see cref="T:Mentula.GuiItems.Items.PictureBox" /> created. </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.Menu`1.AddFpsCounter(Microsoft.Xna.Framework.Graphics.SpriteFont)">
-      <summary>
-            Adds a <see cref="T:Mentula.GuiItems.Items.FpsCounter" /> to the <see cref="T:Mentula.GuiItems.Containers.Menu`1" />.
-            </summary>
-      <param name="Font"> A specified font for the control (Optional). </param>
-      <returns> The <see cref="T:Mentula.GuiItems.Items.FpsCounter" /> created. </returns>
-    </member>
     <member name="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox">
       <summary>
             Indicates whether the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should handle textbox focusing.
@@ -1283,19 +1276,19 @@
             The default value.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.Anchor.MiddleWidth">
+    <member name="F:Mentula.GuiItems.Core.Anchor.CenterWidth">
       <summary>
             The center of the screen on width.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.Anchor.MiddelHeight">
+    <member name="F:Mentula.GuiItems.Core.Anchor.CenterHeight">
       <summary>
             The center of the screen on height.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.Anchor.Middle">
+    <member name="F:Mentula.GuiItems.Core.Anchor.Center">
       <summary>
-            The absolute center of the screen (<see cref="F:Mentula.GuiItems.Core.Anchor.MiddleWidth" /> | <see cref="F:Mentula.GuiItems.Core.Anchor.MiddelHeight" />).
+            The absolute center of the screen (<see cref="F:Mentula.GuiItems.Core.Anchor.CenterWidth" /> | <see cref="F:Mentula.GuiItems.Core.Anchor.CenterHeight" />).
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Core.Anchor.Left">
@@ -2001,41 +1994,6 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Items.FpsCounter">
-      <summary>
-            A default fps counter label for debugging.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Items.FpsCounter.BufferSize">
-      <summary> The size of the frame buffer. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Items.FpsCounter.Current">
-      <summary> The current fps. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Items.FpsCounter.Average">
-      <summary> The average fps of the buffer. </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.FpsCounter.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.FpsCounter" /> class.
-            </summary>
-      <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
-      <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState)">
-      <summary>
-            Updates the <see cref="T:Mentula.GuiItems.Items.FpsCounter" />, checking if any mouse events are occuring.
-            This should not be used.
-            </summary>
-      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.FpsCounter.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)">
-      <summary>
-            Updates the <see cref="T:Mentula.GuiItems.Items.FpsCounter" />, checking if any mouse events are occuring and updates the fram buffer.
-            </summary>
-      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-      <param name="deltaTime"> The specified deltatime. </param>
-    </member>
     <member name="T:Mentula.GuiItems.Items.Label">
       <summary>
             A label used for displaying text.
@@ -2120,6 +2078,12 @@
     <member name="M:Mentula.GuiItems.Items.Label.HandleAutoSize">
       <summary>
             Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.CreateTextTexture">
+      <summary>
+            Handles the creation on the text texture.
+            Override for special text texture handling.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
@@ -2414,11 +2378,6 @@
             </summary>
       <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.Refresh">
-      <summary>
-            Recalculates the background and the foreground.
-            </summary>
-    </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.HandleAutoSize">
       <summary>
             Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
@@ -2437,6 +2396,12 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new focus value for the sender. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.CreateTextTexture">
+      <summary>
+            Handles the creation on the text texture.
+            Override for special text texture handling.
+            </summary>
     </member>
     <member name="T:Mentula.GuiItems.Items.PictureBox">
       <summary>

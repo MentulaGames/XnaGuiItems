@@ -19,7 +19,7 @@ namespace Mentula.GuiItems.Core.Handlers
     /// </summary>
     public class LabelTextureHandler : TextureHandler
     {
-        internal void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
+        internal virtual void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)
         {
             SetBackFromClr(clr, size, device);
 
