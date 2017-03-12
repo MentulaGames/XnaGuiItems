@@ -19,9 +19,8 @@ namespace Mentula.GuiItems.Items
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
-    using static Utilities;
     using Core.Handlers;
+    using static Utilities;
 
     /// <summary>
     /// A Dropdown with clickable childs.
@@ -74,14 +73,11 @@ namespace Mentula.GuiItems.Items
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
         /// <summary> The underlying labels for the <see cref="DropDown"/>. </summary>
-        protected KeyValuePair<string, Color>[][] labels;
+        protected Pair[][] labels;
         /// <summary> The rectangle used in the foreground. </summary>
         protected Rectangle foregroundRectangle;
 
-        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
-
-        private Texture2D headerTexture;
-        private KeyValuePair<Texture2D, ButtonStyle>[] itemTextures;
+        new private DropDownTextureHandler textures { get { return (DropDownTextureHandler)base.textures; } }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DropDown"/> class with default settings.
@@ -103,10 +99,9 @@ namespace Mentula.GuiItems.Items
             : base(ref sb, bounds)
         {
             this.font = font;
-            base.textures = new LabelTextureHandler();
+            base.textures = new DropDownTextureHandler();
             HeaderText = DefaultHeaderText;
-            labels = new KeyValuePair<string, Color>[0][];
-            itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[0];
+            labels = new Pair[0][];
             foregroundRectangle = DefaultBounds;
 
             BackColor = DefaultBackColor;
@@ -139,15 +134,13 @@ namespace Mentula.GuiItems.Items
             int index = labels.Length;
             Array.Resize(ref labels, index + 1);
 
-            KeyValuePair<string, Color>[] fixedParts = new KeyValuePair<string, Color>[parts.Length];
             for (int i = 0; i < parts.Length; i++)
             {
-                Pair cur = parts[i];
-                Color c = cur.Color.HasValue ? cur.Color.Value : ForeColor;
-                fixedParts[i] = new KeyValuePair<string, Color>(cur.Text, c);
+                Color c = parts[i].Color.HasValue ? parts[i].Color.Value : ForeColor;
+                parts[i] = new Pair(parts[i].Text, c);
             }
 
-            labels[index] = fixedParts;
+            labels[index] = parts;
         }
 
         /// <summary>
@@ -158,22 +151,14 @@ namespace Mentula.GuiItems.Items
         {
             base.Update(state);
 
-            if (Enabled)
+            if (Enabled && over)
             {
-                bool down = over && (state.LeftButton == ButtonState.Pressed || state.RightButton == ButtonState.Pressed);
+                bool down = (state.LeftButton == ButtonState.Pressed || state.RightButton == ButtonState.Pressed);
 
-                for (int i = 0; i < itemTextures.Length; i++)
+                for (int i = 0, hover = GetHoverIndex(state); i < textures.Buttons.Length; i++)
                 {
-                    itemTextures[i] = new KeyValuePair<Texture2D, ButtonStyle>(itemTextures[i].Key, ButtonStyle.Default);
-                }
-
-                if (over)
-                {
-                    int index = GetHoverIndex(state);
-                    if (index != -1)
-                    {
-                        itemTextures[index] = new KeyValuePair<Texture2D, ButtonStyle>(itemTextures[index].Key, down ? ButtonStyle.Click : ButtonStyle.Hover);
-                    }
+                    if (i == hover) textures.Buttons[i].SetState(down ? ButtonStyle.Click : ButtonStyle.Hover);
+                    else textures.Buttons[i].SetState(ButtonStyle.Default);
                 }
             }
         }
@@ -186,40 +171,12 @@ namespace Mentula.GuiItems.Items
             base.Refresh();
             if (suppressRefresh) return;
 
-            if (AutoSize)
-            {
-                Vector2 dim = font.MeasureString(HeaderText);
-
-                for (int i = 0; i < labels.Length; i++)
-                {
-                    string full = string.Join(" ", labels[i].Select(l => l.Key));
-                    Vector2 newDim = font.MeasureString(full);
-
-                    if (newDim.X > dim.X) dim.X = newDim.X;
-                    dim.Y += newDim.Y;
-                }
-
-                dim.X += 3;
-                if ((dim.X != Bounds.Width && dim.X != 0) ||
-                    (dim.Y != Bounds.Height && dim.Y != 0))
-                {
-                    Size = new Size(dim);
-                }
-            }
-
+            HandleAutoSize();
             foregroundRectangle = Bounds;
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
 
-            textures.Foreground = Drawing.FromText(HeaderText, font, ForeColor, foregroundRectangle.Size(), false, 0, batch);
-            headerTexture = Drawing.FromColor(HeaderBackgroundColor, new Size(textures.Foreground.Width, (int)font.GetHeight()), batch.GraphicsDevice);
-
-            itemTextures = new KeyValuePair<Texture2D, ButtonStyle>[labels.Length];
-            for (int i = 0; i < labels.Length; i++)
-            {
-                itemTextures[i] = new KeyValuePair<Texture2D, ButtonStyle>(
-                    Drawing.FromLabels(labels[i], font, new Size(textures.Foreground.Width, foregroundRectangle.Height / (labels.Length + 1)), batch),
-                    ButtonStyle.Default);
-            }
+            textures.SetText(HeaderText, font, ForeColor, new Size(font.MeasureString(HeaderText)), false, 0, batch);
+            textures.SetBackFromClr(BackColor, HeaderBackgroundColor, Size, new Size(Width, (int)font.GetHeight()), batch, BorderStyle);
+            textures.SetButtons(labels, new Size(Width, Height / (labels.Length + 1)), font, batch);
         }
 
         /// <summary>
@@ -232,15 +189,11 @@ namespace Mentula.GuiItems.Items
 
             if (Visible)
             {
-                spriteBatch.Draw(headerTexture, foregroundRectangle.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
-                spriteBatch.Draw(textures.Foreground, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
-
                 float fontHeight = font.GetHeight();
-                for (int i = 0; i < itemTextures.Length; i++)
+                for (int i = 0; i < textures.Buttons.Length; i++)
                 {
-                    Texture2D texture = itemTextures[i].Value == ButtonStyle.Default ? itemTextures[i].Key : itemTextures[i].Key.ApplyBorderButton(itemTextures[i].Value);
                     spriteBatch.Draw(
-                        texture,
+                        textures.Buttons[i].DrawTexture,
                         new Vector2(Position.X, Position.Y + (fontHeight * (i + 1))),
                         null,
                         Color.White,
@@ -250,6 +203,29 @@ namespace Mentula.GuiItems.Items
                         SpriteEffects.None,
                         0f);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Handles the <see cref="AutoSize"/> functionality.
+        /// </summary>
+        protected virtual void HandleAutoSize()
+        {
+            if (AutoSize)
+            {
+                Vector2 dim = font.MeasureString(HeaderText);
+
+                for (int i = 0; i < labels.Length; i++)
+                {
+                    string full = string.Join(" ", Pair.GetKeys(labels[i]));
+                    Vector2 newDim = font.MeasureString(full);
+
+                    if (newDim.X > dim.X) dim.X = newDim.X;
+                    dim.Y += newDim.Y;
+                }
+
+                dim.X += 3;
+                if (dim.X != Width || dim.Y != Height) Size = new Size(dim);
             }
         }
 
@@ -284,8 +260,8 @@ namespace Mentula.GuiItems.Items
 
         private int GetHoverIndex(MouseState state)
         {
-            int relativeY = state.Y - (int)Position.Y - headerTexture.Height;
-            return relativeY < 0 ? -1 : relativeY / headerTexture.Height;
+            int relativeY = state.Y - (int)Position.Y - textures.Foreground.Height;
+            return relativeY < 0 ? -1 : relativeY / textures.Foreground.Height;
         }
     }
 }

@@ -366,7 +366,7 @@ namespace Mentula.GuiItems.Core
             if (suppressRefresh) return;
 
 #if DEBUG
-            Console.WriteLine($"{TimeStamp} {this} refreshed.");
+            LogBase(ToString(), "refreshed");
 #endif
         }
 

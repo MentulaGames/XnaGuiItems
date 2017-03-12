@@ -15,6 +15,7 @@ namespace Mentula.GuiItems
 #endif
     using Core;
     using System.Collections.Generic;
+    using System;
 
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
@@ -45,6 +46,31 @@ namespace Mentula.GuiItems
                 for (int x = 0; x < size.Width; x++)
                 {
                     data[y * size.Width + x] = destinationRectangle.Contains(x, y) ? color : Color.Transparent;
+                }
+            }
+
+            result.SetData(data);
+            return result;
+        }
+
+        public static Texture2D FromMultiColor(Color color0, Color color1, Rectangle destination0, Rectangle destination1, GraphicsDevice device)
+        {
+            Texture2D result = new Texture2D(device, Math.Max(destination0.Width, destination1.Width), Math.Max(destination0.Height, destination1.Height));
+            Color[] data = new Color[result.Width * result.Height];
+
+            for (int y = destination0.Y; y < destination0.Height; y++)
+            {
+                for (int x = destination0.X; x < destination0.Width; x++)
+                {
+                    data[y * result.Width + x] = color0;
+                }
+            }
+
+            for (int y = destination1.Y; y < destination1.Height; y++)
+            {
+                for (int x = destination1.X; x < destination1.Width; x++)
+                {
+                    data[y * result.Width + x] = color1;
                 }
             }
 
@@ -83,7 +109,7 @@ namespace Mentula.GuiItems
             return result;
         }
 
-        public static Texture2D FromLabels(KeyValuePair<string, Color>[] labels, SpriteFont font, Size size, SpriteBatch sb)
+        public static Texture2D FromLabels(Pair[] labels, SpriteFont font, Size size, SpriteBatch sb)
         {
             Texture2D result = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
 
@@ -92,14 +118,16 @@ namespace Mentula.GuiItems
                 sb.GraphicsDevice.SetRenderTarget(target);
                 sb.GraphicsDevice.Clear(Color.Transparent);
 
+                string[] labelText = Pair.GetKeys(labels);
+
                 sb.Begin();
                 for (int i = 0; i < labels.Length; i++)
                 {
-                    string prevString = string.Join(" ", labels.GetKeys(), 0, i);
+                    string prevString = string.Join(" ", labelText, 0, i);
                     if (i > 0) prevString += ' ';
                     float x = 1 + font.MeasureString(prevString).X;
 
-                    sb.DrawString(font, labels[i].Key, new Vector2(x, 1), labels[i].Value);
+                    sb.DrawString(font, labels[i].Text, new Vector2(x, 1), labels[i].Color.Value);
                 }
                 sb.End();
 

@@ -61,7 +61,7 @@ namespace Mentula.GuiItems
             return result;
         }
 
-        public static Texture2D ApplyBorderButton(this Texture2D texture, ButtonStyle type)
+        public static Texture2D ApplyBorderButton(this Texture2D texture, ButtonStyle type, bool darkenOnClick)
         {
             Texture2D result = new Texture2D(texture.GraphicsDevice, texture.Width, texture.Height);
             Color[] data = texture.GetColorData();
@@ -78,14 +78,17 @@ namespace Mentula.GuiItems
                 case ButtonStyle.Click:
                     bc = Color.Black;
 
-                    for (int y = 1; y < texture.Height - 1; y++)
+                    if (darkenOnClick)
                     {
-                        for (int x = 1; x < texture.Width - 1; x++)
+                        for (int y = 1; y < texture.Height - 1; y++)
                         {
-                            int i = y * texture.Width + x;
-                            data[i].R -= 10;
-                            data[i].B -= 10;
-                            data[i].G -= 10;
+                            for (int x = 1; x < texture.Width - 1; x++)
+                            {
+                                int i = y * texture.Width + x;
+                                data[i].R -= 10;
+                                data[i].B -= 10;
+                                data[i].G -= 10;
+                            }
                         }
                     }
                     break;

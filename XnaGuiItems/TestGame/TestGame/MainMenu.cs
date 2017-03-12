@@ -14,12 +14,25 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            Button btn = AddButton();
-            btn.Text = "Click Me";
-            btn.MoveRelative(Anchor.Center);
-            btn.AutoSize = true;
+            DropDown dd = AddDropDown();
+            dd.AutoSize = true;
+            dd.IndexClick += OnIndexClick;
+            dd.MoveRelative(Anchor.Center);
+            dd.AddOption("Pickup", "Item");
+            dd.AddOption("Examine", "Item");
+            dd.AddOption("Cancel");
 
             base.Initialize(); 
+        }
+
+        private void OnIndexClick(GuiItem sender, IndexedClickEventArgs e)
+        {
+            switch (e.Index)
+            {
+                case (2):
+                    sender.Hide();
+                    break;
+            }
         }
     }
 }

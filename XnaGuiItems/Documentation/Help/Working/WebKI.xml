@@ -63,13 +63,16 @@
   <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
   <HelpKINode Title="Button.Update method" Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
+  <HelpKINode Title="Buttons property" Url="html/8285602a-b796-8e12-31b0-d15acd287b85.htm" />
   <HelpKINode Title="ButtonTextureHandler class">
     <HelpKINode Title="ButtonTextureHandler Class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
     <HelpKINode Title="about ButtonTextureHandler class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
+    <HelpKINode Title="fields" Url="html/d568cde7-76fc-2b92-86cd-0cd3be9409ab.htm" />
     <HelpKINode Title="methods" Url="html/747409f4-1b0a-ab8d-423a-45a7c81f46b6.htm" />
     <HelpKINode Title="properties" Url="html/19c125d0-51e4-9908-fcea-3bb63d65224a.htm" />
   </HelpKINode>
   <HelpKINode Title="ButtonTextureHandler.Click property" Url="html/68353b6c-4da3-51b0-539e-866e6a5c1bbc.htm" />
+  <HelpKINode Title="ButtonTextureHandler.Dispose method" Url="html/a228c7f3-b64c-c9a9-6416-0afee7032a13.htm" />
   <HelpKINode Title="ButtonTextureHandler.Hover property" Url="html/9856643a-fee9-0f68-b176-c07f9c781567.htm" />
   <HelpKINode Title="ByteFlags structure">
     <HelpKINode Title="ByteFlags Structure" Url="html/a4ebe7ab-a6b4-d752-27de-46abdcf37fd5.htm" />
@@ -128,6 +131,7 @@
   <HelpKINode Title="DefaultMinimumSize property" Url="html/03f3a0a9-5c2b-a750-c55a-bb42fbff10e7.htm" />
   <HelpKINode Title="DefaultTabSize property" Url="html/042159c9-8677-b62b-e79b-cda803bcc10d.htm" />
   <HelpKINode Title="Dispose method">
+    <HelpKINode Title="ButtonTextureHandler.Dispose Method " Url="html/a228c7f3-b64c-c9a9-6416-0afee7032a13.htm" />
     <HelpKINode Title="GuiItem.Dispose Method " Url="html/565d5482-c2b2-aa9a-89ae-896ffa6759cb.htm" />
     <HelpKINode Title="Menu(T).Dispose Method " Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
     <HelpKINode Title="TextureHandler.Dispose Method " Url="html/57179139-f789-bdf2-13be-0df1e21c4918.htm" />
@@ -167,6 +171,7 @@
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.DrawableMentulaGameComponent constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.Game property" Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
   <HelpKINode Title="DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
+  <HelpKINode Title="DrawTexture property" Url="html/b5d3d8fe-3326-0fbf-4163-24ee6a6398e2.htm" />
   <HelpKINode Title="DropDown class">
     <HelpKINode Title="DropDown Class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
     <HelpKINode Title="about DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
@@ -187,6 +192,7 @@
   <HelpKINode Title="DropDown.DropDown constructor" Url="html/38e76727-787e-dab7-e0a5-111281a41c17.htm" />
   <HelpKINode Title="DropDown.font field" Url="html/8666b2fc-c0a4-d241-143d-4d65ef35b9f4.htm" />
   <HelpKINode Title="DropDown.foregroundRectangle field" Url="html/767fa7ad-4622-2a4d-6230-ea49a4da9366.htm" />
+  <HelpKINode Title="DropDown.HandleAutoSize method" Url="html/ce0d30f1-ea8a-58fd-5ccd-73a64193fb11.htm" />
   <HelpKINode Title="DropDown.HeaderBackgroundColor property" Url="html/5c83c3ba-16bd-b6f2-6e0c-3480f2f7ee74.htm" />
   <HelpKINode Title="DropDown.HeaderText property" Url="html/c9a3e4e0-66f7-dd5c-9d10-51f67f01016d.htm" />
   <HelpKINode Title="DropDown.IndexClick event" Url="html/4ebdbdab-12c7-f9d1-38c6-6772fc51620b.htm" />
@@ -195,6 +201,22 @@
   <HelpKINode Title="DropDown.OnMove method" Url="html/79728fb6-57c5-2224-3ce8-041a393bea5e.htm" />
   <HelpKINode Title="DropDown.Refresh method" Url="html/63782362-5c20-dfa5-66b1-08a0b783e255.htm" />
   <HelpKINode Title="DropDown.Update method" Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
+  <HelpKINode Title="DropDownButtonTextureHandler class">
+    <HelpKINode Title="DropDownButtonTextureHandler Class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
+    <HelpKINode Title="about DropDownButtonTextureHandler class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
+    <HelpKINode Title="constructor" Url="html/e0e3dc70-d5a0-7da4-aad4-00c797d84e3a.htm" />
+    <HelpKINode Title="methods" Url="html/6f5bac57-41a5-212f-10fd-e8d5759066a3.htm" />
+    <HelpKINode Title="properties" Url="html/61a8abe9-58ac-3a50-597f-36d21fc9c650.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DropDownButtonTextureHandler.DrawTexture property" Url="html/b5d3d8fe-3326-0fbf-4163-24ee6a6398e2.htm" />
+  <HelpKINode Title="DropDownButtonTextureHandler.DropDownButtonTextureHandler constructor" Url="html/e0e3dc70-d5a0-7da4-aad4-00c797d84e3a.htm" />
+  <HelpKINode Title="DropDownTextureHandler class">
+    <HelpKINode Title="DropDownTextureHandler Class" Url="html/d590ca51-acb3-84a4-0887-6a61ac585e64.htm" />
+    <HelpKINode Title="about DropDownTextureHandler class" Url="html/d590ca51-acb3-84a4-0887-6a61ac585e64.htm" />
+    <HelpKINode Title="methods" Url="html/4a177541-1ea9-9eeb-23ba-560f1308c8d4.htm" />
+    <HelpKINode Title="properties" Url="html/9fefef68-d0f8-7d2e-258f-b11ee13c2efe.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DropDownTextureHandler.Buttons property" Url="html/8285602a-b796-8e12-31b0-d15acd287b85.htm" />
   <HelpKINode Title="Empty field">
     <HelpKINode Title="IndexedClickEventArgs.Empty Field" Url="html/2425c7da-0b23-5e07-fabe-53b430b11bcd.htm" />
     <HelpKINode Title="MouseEventArgs.Empty Field" Url="html/9d5252fb-74b4-a08e-dbfe-24ea0018f0d5.htm" />
@@ -254,6 +276,7 @@
     <HelpKINode Title="ProgressData.GetHashCode Method " Url="html/3d9f4e5c-8c1b-84e1-1d5f-efc69163970d.htm" />
     <HelpKINode Title="Size.GetHashCode Method " Url="html/d2116685-8893-0bbf-4c86-410da74a802d.htm" />
   </HelpKINode>
+  <HelpKINode Title="GetKeys method" Url="html/178e54a4-db90-0977-ed1d-6d18b1a5207f.htm" />
   <HelpKINode Title="GetLineCount method" Url="html/478c4fb8-afa3-b38b-1102-04a38e8b4d76.htm" />
   <HelpKINode Title="GetMouseEventArgs method" Url="html/c53cb8eb-ef00-8053-e6f8-7609bcec55b5.htm" />
   <HelpKINode Title="GetObjectData method" Url="html/1db013b8-55e8-d210-f129-739fff84a81e.htm" />
@@ -352,6 +375,7 @@
   </HelpKINode>
   <HelpKINode Title="GuiItemEventHandler delegate" Url="html/2fd8a170-b016-ea2a-c435-82e286f13e3a.htm" />
   <HelpKINode Title="HandleAutoSize method">
+    <HelpKINode Title="DropDown.HandleAutoSize Method " Url="html/ce0d30f1-ea8a-58fd-5ccd-73a64193fb11.htm" />
     <HelpKINode Title="Label.HandleAutoSize Method " Url="html/8fb4ad40-3546-e757-63eb-f3bdb3979d9c.htm" />
     <HelpKINode Title="TextBox.HandleAutoSize Method " Url="html/e6f37c8b-da37-6e9d-5b3b-0036aeafa173.htm" />
   </HelpKINode>
@@ -506,6 +530,8 @@
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers namespace" Url="html/247fcf78-846b-0726-2208-488bf63d8b91.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers.ButtonTextureHandler class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers.ByteFlags structure" Url="html/a4ebe7ab-a6b4-d752-27de-46abdcf37fd5.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.Handlers.DropDownTextureHandler class" Url="html/d590ca51-acb3-84a4-0887-6a61ac585e64.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers.LabelTextureHandler class" Url="html/b5b4ef5d-1f45-740a-8883-6f52b19814a9.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers.TextboxTextureHandler class" Url="html/8496d0d1-f329-3706-316e-c82de049e293.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.Handlers.TextureHandler class" Url="html/51b2881d-dde6-ad73-05fa-b77cc88a88d1.htm" />
@@ -757,6 +783,7 @@
   <HelpKINode Title="Pair.Color field" Url="html/275e01ab-4756-7d95-0947-2f79276affa0.htm" />
   <HelpKINode Title="Pair.Equals method" Url="html/a61dc468-3103-9bd7-cf59-88df01179aa6.htm" />
   <HelpKINode Title="Pair.GetHashCode method" Url="html/68ca8d30-3a7f-b319-54ee-3903e933aab1.htm" />
+  <HelpKINode Title="Pair.GetKeys method" Url="html/178e54a4-db90-0977-ed1d-6d18b1a5207f.htm" />
   <HelpKINode Title="Pair.Pair constructor" Url="html/ff43c91f-9011-fc9d-ba4a-e1cb3f982216.htm" />
   <HelpKINode Title="Pair.Text field" Url="html/93d2ddbb-3d7b-e8f1-dca6-e35f57c03994.htm" />
   <HelpKINode Title="Pair.ToString method" Url="html/7581f803-9b41-c920-de91-949e2aaa1d67.htm" />

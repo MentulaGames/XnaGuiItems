@@ -1511,6 +1511,13 @@
         <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
             </returns>
     </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])">
+      <summary>
+            Gets the text from multiple <see cref="T:Mentula.GuiItems.Core.Pair" />.
+            </summary>
+      <param name="labels"> The pairs to get the text from. </param>
+      <returns> An <see cref="T:System.String" /> array with the text from all <see cref="T:Mentula.GuiItems.Core.Pair" />. </returns>
+    </member>
     <member name="M:Mentula.GuiItems.Core.Pair.GetHashCode">
       <summary>
             Returns the hash code for this instance.
@@ -1998,6 +2005,11 @@
             Draws the <see cref="T:Mentula.GuiItems.Items.DropDown" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
             </summary>
       <param name="spriteBatch"> The specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.HandleAutoSize">
+      <summary>
+            Handles the <see cref="P:Mentula.GuiItems.Items.DropDown.AutoSize" /> functionality.
+            </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>

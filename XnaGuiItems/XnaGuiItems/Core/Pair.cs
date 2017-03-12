@@ -8,10 +8,8 @@ namespace Mentula.GuiItems.Core
 {
 #if MONO
     using Mono.Microsoft.Xna.Framework;
-    using Clr = Mono.Microsoft.Xna.Framework.Color;
 #else
     using Xna.Microsoft.Xna.Framework;
-    using Clr = Xna.Microsoft.Xna.Framework.Color;
 #endif
     using System;
     using System.Diagnostics;
@@ -33,11 +31,6 @@ namespace Mentula.GuiItems.Core
     [DebuggerDisplay("{Text}")]
     public struct Pair : IEquatable<Pair>
     {
-#if DEBUG
-        public static Pair RunescapeAction(string text) => new Pair(text, Clr.FromNonPremultiplied(236, 236, 200, 256));
-        public static Pair RunescapeItem(string text) => new Pair(text, Clr.FromNonPremultiplied(231, 157, 122, 256));
-#endif
-
         /// <summary>
         /// The text of the pair label.
         /// </summary>
@@ -87,6 +80,21 @@ namespace Mentula.GuiItems.Core
         public override bool Equals(object obj)
         {
             return obj.GetType() == typeof(Pair) ? Equals((Pair)obj) : false;
+        }
+
+        /// <summary>
+        /// Gets the text from multiple <see cref="Pair"/>.
+        /// </summary>
+        /// <param name="labels"> The pairs to get the text from. </param>
+        /// <returns> An <see cref="string"/> array with the text from all <see cref="Pair"/>. </returns>
+        public static string[] GetKeys(Pair[] labels)
+        {
+            string[] keys = new string[labels.Length];
+            for (int i = 0; i < labels.Length; i++)
+            {
+                keys[i] = labels[i].Text;
+            }
+            return keys;
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <remarks>
     /// The <see cref="TextureHandler.userSet"/> flag for hover is 4 and click is 8.
     /// </remarks>
-    public sealed class ButtonTextureHandler : LabelTextureHandler
+    public class ButtonTextureHandler : LabelTextureHandler
     {
         /// <summary>
         /// The button hover texture for a <see cref="Items.Button"/>.
@@ -66,12 +66,12 @@ namespace Mentula.GuiItems.Core.Handlers
             internCall = false;
         }
 
-        internal void ApplyBorders()
+        internal virtual void ApplyBorders()
         {
             internCall = true;
-            if (!userSet[0]) Background = Background.ApplyBorderButton(ButtonStyle.Default);
-            if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover);
-            if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click);
+            if (!userSet[0]) Background = Background.ApplyBorderButton(ButtonStyle.Default, true);
+            if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover, true);
+            if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click, true);
             internCall = false;
         }
 

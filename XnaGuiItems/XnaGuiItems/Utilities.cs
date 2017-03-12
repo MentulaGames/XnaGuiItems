@@ -31,8 +31,6 @@ namespace Mentula.GuiItems
 #endif
     public static class Utilities
     {
-        internal static string TimeStamp { get { return $"[{DateTime.Now.ToString("yyyy-MM-dd H:mm:ss")}]"; } }
-
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
 
@@ -192,7 +190,13 @@ namespace Mentula.GuiItems
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogInvokeCall(string sender, string func)
         {
-            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}] {sender} called Invoke for {func}.");
+            LogBase(sender, $"called Invoke for {func}");
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static void LogBase(string sender, string msg)
+        {
+            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems] {sender} {msg}.");
         }
 #endif
     }

@@ -87,6 +87,8 @@
     <Compile Include="Core\GuiItemCollection.cs" />
     <Compile Include="Core\Handlers\ButtonTextureHandler.cs" />
     <Compile Include="Core\Handlers\ByteFlags.cs" />
+    <Compile Include="Core\Handlers\DropDownButtonTextureHandler.cs" />
+    <Compile Include="Core\Handlers\DropDownTextureHandler.cs" />
     <Compile Include="Core\Handlers\LabelTextureHandler.cs" />
     <Compile Include="Core\Handlers\TextboxTextureHandler.cs" />
     <Compile Include="Core\Handlers\TextureHandler.cs" />
