@@ -62,6 +62,7 @@
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.AddTextBox(Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown" type="API" />
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox" type="API" />
+  <topic id="F:Mentula.GuiItems.Containers.Menu`1.batch" type="API" />
   <topic id="F:Mentula.GuiItems.Containers.Menu`1.controlls" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Dispose(System.Boolean)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" type="API" />

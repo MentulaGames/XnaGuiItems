@@ -119,8 +119,10 @@ namespace Mentula.GuiItems.Containers
         /// The default <see cref="SpriteFont"/> to use if none is specified.
         /// </summary>
         protected SpriteFont font;
-
-        private SpriteBatch batch;
+        /// <summary>
+        /// The default <see cref="SpriteBatch"/> to use while drawing the controlls.
+        /// </summary>
+        protected SpriteBatch batch;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Menu{T}"/> class.

@@ -14,25 +14,16 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            DropDown dd = AddDropDown();
-            dd.AutoSize = true;
-            dd.IndexClick += OnIndexClick;
-            dd.MoveRelative(Anchor.Center);
-            dd.AddOption("Pickup", "Item");
-            dd.AddOption("Examine", "Item");
-            dd.AddOption("Cancel");
+            Label lblError = AddLabel();
+            lblError.Name = "LblError";
+            lblError.Width = 150;
+            lblError.Height = 25;
+            lblError.AutoSize = true;
+            lblError.BackColor = Color.Transparent;
+            lblError.ForeColor = Color.Red;
+            lblError.MoveRelative(Anchor.CenterWidth, y: ScreenHeightMiddle + (25 >> 1));
 
             base.Initialize(); 
-        }
-
-        private void OnIndexClick(GuiItem sender, IndexedClickEventArgs e)
-        {
-            switch (e.Index)
-            {
-                case (2):
-                    sender.Hide();
-                    break;
-            }
         }
     }
 }

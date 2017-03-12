@@ -377,6 +377,11 @@
             The default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use if none is specified.
             </summary>
     </member>
+    <member name="F:Mentula.GuiItems.Containers.Menu`1.batch">
+      <summary>
+            The default <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use while drawing the controlls.
+            </summary>
+    </member>
     <member name="M:Mentula.GuiItems.Containers.Menu`1.#ctor(`0)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> class.

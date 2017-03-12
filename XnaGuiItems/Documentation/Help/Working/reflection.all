@@ -181,6 +181,7 @@
         <element api="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.controlls" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.font" />
+        <element api="F:Mentula.GuiItems.Containers.Menu`1.batch" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.SetDefaultFont(System.String)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.LoadTexture(System.String)" />
@@ -855,6 +856,19 @@
       <fielddata literal="false" initonly="false" serialized="true" />
       <returns>
         <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+    </api>
+    <api id="F:Mentula.GuiItems.Containers.Menu`1.batch">
+      <apidata name="batch" group="member" subgroup="field" />
+      <memberdata visibility="family" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />

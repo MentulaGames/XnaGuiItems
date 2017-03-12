@@ -663,6 +663,7 @@
         <element api="M:Mentula.GuiItems.Containers.Menu`1.AddTextBox(Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox" />
+        <element api="F:Mentula.GuiItems.Containers.Menu`1.batch" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.controlls" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.Draw(Microsoft.Xna.Framework.GameTime)" />
         <element api="M:Mentula.GuiItems.Containers.Menu`1.DrawString(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)" />
@@ -1232,6 +1233,7 @@
       <elements>
         <element api="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox" />
+        <element api="F:Mentula.GuiItems.Containers.Menu`1.batch" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.controlls" />
         <element api="F:Mentula.GuiItems.Containers.Menu`1.font" />
       </elements>
@@ -1589,6 +1591,24 @@
         <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
       </containers>
       <file name="d1bddaff-2ae9-4599-23bc-81038a69fd6e" />
+    </api>
+    <api id="F:Mentula.GuiItems.Containers.Menu`1.batch">
+      <topicdata group="api" />
+      <apidata name="batch" group="member" subgroup="field" />
+      <memberdata visibility="family" />
+      <fielddata literal="false" initonly="false" serialized="true" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.Menu`1" ref="true" />
+      </containers>
+      <file name="d0d47c34-8d3f-d30e-605f-8f58381cc649" />
     </api>
     <api id="F:Mentula.GuiItems.Containers.Menu`1.controlls">
       <topicdata group="api" />

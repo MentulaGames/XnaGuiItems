@@ -33,7 +33,10 @@
   <HelpKINode Title="Background property" Url="html/fa20b807-bf76-da7e-60ad-33eb0fdfb8ab.htm" />
   <HelpKINode Title="BackgroundImage property" Url="html/eaa81eb6-e8a5-37f0-5174-c81f42fd7b28.htm" />
   <HelpKINode Title="BackgroundImageChanged event" Url="html/3873ff1c-38d2-a2a1-0cb4-311d5bc932a8.htm" />
-  <HelpKINode Title="batch field" Url="html/cad82e85-9799-45ab-448f-42361287d113.htm" />
+  <HelpKINode Title="batch field">
+    <HelpKINode Title="GuiItem.batch Field" Url="html/cad82e85-9799-45ab-448f-42361287d113.htm" />
+    <HelpKINode Title="Menu(T).batch Field" Url="html/d0d47c34-8d3f-d30e-605f-8f58381cc649.htm" />
+  </HelpKINode>
   <HelpKINode Title="BorderStyle enumeration" Url="html/09d5090e-49b1-144f-af5e-1fa31c1dd7b1.htm" />
   <HelpKINode Title="BorderStyle property">
     <HelpKINode Title="DropDown.BorderStyle Property " Url="html/510e0b04-965b-742e-8843-5bf5b0d8ea32.htm" />
@@ -601,6 +604,7 @@
   <HelpKINode Title="Menu(Of T).AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
   <HelpKINode Title="Menu(Of T).autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
   <HelpKINode Title="Menu(Of T).autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
+  <HelpKINode Title="Menu(Of T).batch field" Url="html/d0d47c34-8d3f-d30e-605f-8f58381cc649.htm" />
   <HelpKINode Title="Menu(Of T).controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="Menu(Of T).Dispose method" Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
   <HelpKINode Title="Menu(Of T).Draw method" Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
@@ -641,6 +645,7 @@
   <HelpKINode Title="Menu&lt;T&gt;.AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
+  <HelpKINode Title="Menu&lt;T&gt;.batch field" Url="html/d0d47c34-8d3f-d30e-605f-8f58381cc649.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Dispose method" Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
   <HelpKINode Title="Menu&lt;T&gt;.Draw method" Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />

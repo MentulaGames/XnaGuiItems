@@ -54,6 +54,7 @@
       <topic id="Fields.T:Mentula.GuiItems.Containers.Menu`1" project="XnaGuiItems" file="a72bed15-a2cc-6ec1-4e47-19f83cd72aec">
         <topic id="F:Mentula.GuiItems.Containers.Menu`1.autoFocusDropDown" project="XnaGuiItems" file="a3237412-965a-ae68-e0d2-b6e639f50241" />
         <topic id="F:Mentula.GuiItems.Containers.Menu`1.autoFocusTextbox" project="XnaGuiItems" file="d1bddaff-2ae9-4599-23bc-81038a69fd6e" />
+        <topic id="F:Mentula.GuiItems.Containers.Menu`1.batch" project="XnaGuiItems" file="d0d47c34-8d3f-d30e-605f-8f58381cc649" />
         <topic id="F:Mentula.GuiItems.Containers.Menu`1.controlls" project="XnaGuiItems" file="0267d4cc-1d82-66ef-7d4c-09dc6bb43cec" />
         <topic id="F:Mentula.GuiItems.Containers.Menu`1.font" project="XnaGuiItems" file="7df305d5-a274-4cb9-72c9-02b063a25a8d" />
       </topic>

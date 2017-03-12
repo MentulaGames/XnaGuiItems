@@ -151,11 +151,11 @@ namespace Mentula.GuiItems.Items
         {
             base.Update(deltaTime);
 
-            if (Enabled && over)
+            if (Enabled)
             {
                 MouseState mState = Mouse.GetState();
 
-                bool down = (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
+                bool down = over && (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
 
                 for (int i = 0, hover = GetHoverIndex(mState); i < textures.Buttons.Length; i++)
                 {
