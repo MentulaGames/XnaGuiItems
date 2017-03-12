@@ -32,7 +32,7 @@ namespace Mentula.GuiItems.Containers
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class TabContainer : GuiItem, IDeltaKeyboardUpdate
+    public class TabContainer : GuiItem
     {
         /// <summary>
         /// Gets or sets a <see cref="Rectangle"/> indicating the size of the tab.
@@ -166,33 +166,27 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// This method cannot be used withing a <see cref="TabContainer"/>.
-        /// </summary>
-        /// <param name="mState"></param>
-        [Obsolete("Use Update(MouseState, KeyboardState, float) instead", true)]
-        new public void Update(MouseState mState) { }
-
-        /// <summary>
         /// Updates the <see cref="TabContainer"/>.
         /// </summary>
-        /// <param name="mState"> The specified <see cref="MouseState"/> to use. </param>
-        /// <param name="kState"> The specified <see cref="KeyboardState"/> to use. </param>
         /// <param name="delta"> The deltaTime. </param>
-        public void Update(MouseState mState, KeyboardState kState, float delta)
+        public override void Update(float delta)
         {
-            base.Update(mState);
+            base.Update(delta);
 
             if (Enabled)
             {
+                MouseState mState = Mouse.GetState();
+                KeyboardState kState = Keyboard.GetState();
+
                 for (int i = 0; i < tabs.Length; i++)
                 {
-                    tabs[i].Key.Update(mState);
+                    tabs[i].Key.Update(delta);
                     GuiItemCollection controlls = tabs[i].Value;
 
                     for (int j = 0; j < controlls.Count; j++)
                     {
                         GuiItem control = controlls[j];
-                        if (i == SelectedTab) control.Update_S(mState, kState, delta);
+                        if (i == SelectedTab) control.Update(delta);
 
                         control.SuppressUpdate = true;
                     }

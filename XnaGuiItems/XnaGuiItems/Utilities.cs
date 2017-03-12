@@ -167,19 +167,6 @@ namespace Mentula.GuiItems
             }
         }
 
-        /*
-            Updates the GuiItem with its desired update method.
-        */
-        internal static void Update_S(this GuiItem control, MouseState mState, KeyboardState kState, float delta)
-        {
-            IDeltaUpdate dUpd;
-            IDeltaKeyboardUpdate dkUpd;
-
-            if ((dUpd = control as IDeltaUpdate) != null) dUpd.Update(mState, delta);
-            else if ((dkUpd = control as IDeltaKeyboardUpdate) != null) dkUpd.Update(mState, kState, delta);
-            else control.Update(mState);
-        }
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Thread CreateBackgroundThread(ThreadStart func)
         {

@@ -97,11 +97,6 @@
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems" />
       </containers>
-      <attributes>
-        <attribute>
-          <type api="T:System.Runtime.CompilerServices.ExtensionAttribute" ref="true" />
-        </attribute>
-      </attributes>
     </api>
     <api id="M:Mentula.GuiItems.Utilities.ChangeWindowBorder(Microsoft.Xna.Framework.Game,System.Byte)">
       <apidata name="ChangeWindowBorder" group="member" subgroup="method" />
@@ -1964,8 +1959,7 @@
         <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Refresh" />
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" />
@@ -2251,45 +2245,16 @@
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
       <parameters>
-        <parameter name="mState">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Containers" />
-        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
-      </containers>
-      <attributes>
-        <attribute>
-          <type api="T:System.ObsoleteAttribute" ref="true" />
-          <argument>
-            <type api="T:System.String" ref="true" />
-            <value>Use Update(MouseState, KeyboardState, float) instead</value>
-          </argument>
-          <argument>
-            <type api="T:System.Boolean" ref="false" />
-            <value>True</value>
-          </argument>
-        </attribute>
-      </attributes>
-    </api>
-    <api id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
-      <apidata name="Update" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" final="true" />
-      <parameters>
-        <parameter name="mState">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
-        <parameter name="kState">
-          <type api="T:Microsoft.Xna.Framework.Input.KeyboardState" ref="false" />
-        </parameter>
         <parameter name="delta">
           <type api="T:System.Single" ref="false" />
         </parameter>
@@ -3203,7 +3168,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -4260,13 +4225,13 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <parameters>
-        <parameter name="mState">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
+        <parameter name="deltaTime">
+          <type api="T:System.Single" ref="false" />
         </parameter>
       </parameters>
       <containers>
@@ -8442,8 +8407,7 @@
       <elements>
         <element api="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
-        <element api="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" />
+        <element api="M:Mentula.GuiItems.Items.Button.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.Button.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" />
@@ -8726,42 +8690,16 @@
         <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Items.Button.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
-      <proceduredata virtual="false" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
       <parameters>
-        <parameter name="mState">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
-      </containers>
-      <attributes>
-        <attribute>
-          <type api="T:System.ObsoleteAttribute" ref="true" />
-          <argument>
-            <type api="T:System.String" ref="true" />
-            <value>Use Update(MouseState, float) instead</value>
-          </argument>
-          <argument>
-            <type api="T:System.Boolean" ref="false" />
-            <value>True</value>
-          </argument>
-        </attribute>
-      </attributes>
-    </api>
-    <api id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)">
-      <apidata name="Update" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" final="true" />
-      <parameters>
-        <parameter name="state">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
         <parameter name="deltaTime">
           <type api="T:System.Single" ref="false" />
         </parameter>
@@ -8789,7 +8727,7 @@
         <element api="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Items.DropDown.AddOption(System.String[])" />
         <element api="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Pair[])" />
-        <element api="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Items.DropDown.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Items.DropDown.Refresh" />
         <element api="M:Mentula.GuiItems.Items.DropDown.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.DropDown.HandleAutoSize" />
@@ -9263,18 +9201,18 @@
         <type api="T:Mentula.GuiItems.Items.DropDown" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Items.DropDown.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
           <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </member>
       </overrides>
       <parameters>
-        <parameter name="state">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
+        <parameter name="deltaTime">
+          <type api="T:System.Single" ref="false" />
         </parameter>
       </parameters>
       <containers>
@@ -9328,7 +9266,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -9845,7 +9783,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -10125,7 +10063,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -10474,7 +10412,7 @@
         <element api="F:Mentula.GuiItems.Items.Slider.data" />
         <element api="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" />
         <element api="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)" />
-        <element api="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)" />
+        <element api="M:Mentula.GuiItems.Items.Slider.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Items.Slider.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.MouseEventArgs)" />
         <element api="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})" />
@@ -10851,18 +10789,18 @@
         <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Items.Slider.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
           <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </member>
       </overrides>
       <parameters>
-        <parameter name="state">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
+        <parameter name="deltaTime">
+          <type api="T:System.Single" ref="false" />
         </parameter>
       </parameters>
       <containers>
@@ -10920,8 +10858,7 @@
       <elements>
         <element api="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
         <element api="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
-        <element api="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)" />
-        <element api="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" />
+        <element api="M:Mentula.GuiItems.Items.TextBox.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Items.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Items.TextBox.HandleAutoSize" />
         <element api="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
@@ -11385,37 +11322,16 @@
         <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
       </containers>
     </api>
-    <api id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <api id="M:Mentula.GuiItems.Items.TextBox.Update(System.Single)">
       <apidata name="Update" group="member" subgroup="method" />
       <memberdata visibility="public" />
       <proceduredata virtual="true" />
       <overrides>
-        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+        <member api="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
           <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
         </member>
       </overrides>
       <parameters>
-        <parameter name="state">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
-      <apidata name="Update" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" final="true" />
-      <parameters>
-        <parameter name="mState">
-          <type api="T:Microsoft.Xna.Framework.Input.MouseState" ref="false" />
-        </parameter>
-        <parameter name="kState">
-          <type api="T:Microsoft.Xna.Framework.Input.KeyboardState" ref="false" />
-        </parameter>
         <parameter name="deltaTime">
           <type api="T:System.Single" ref="false" />
         </parameter>

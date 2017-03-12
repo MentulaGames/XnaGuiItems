@@ -28,7 +28,7 @@ namespace Mentula.GuiItems.Items
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class Button : Label, IDeltaUpdate
+    public class Button : Label
     {
         new private ButtonTextureHandler textures { get { return (ButtonTextureHandler)base.textures; } }
 
@@ -78,20 +78,12 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// This method cannot be used withing a <see cref="Button"/>.
-        /// </summary>
-        /// <param name="mState"> The <see cref="MouseState"/> to use. </param>
-        [Obsolete("Use Update(MouseState, float) instead", true)]
-        new public void Update(MouseState mState) { }
-
-        /// <summary>
         /// Updates the <see cref="Button"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current <see cref="Mouse"/> state. </param>
         /// <param name="deltaTime"> The deltatime </param>
-        public void Update(MouseState state, float deltaTime)
+        public override void Update(float deltaTime)
         {
-            base.Update(state);
+            base.Update(deltaTime);
 
             if (Enabled)
             {

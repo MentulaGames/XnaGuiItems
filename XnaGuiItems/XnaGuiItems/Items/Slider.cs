@@ -113,19 +113,21 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Updates the <see cref="Slider"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
-        public override void Update(MouseState state)
+        /// <param name="deltaTime"> The specified deltatime. </param>
+        public override void Update(float deltaTime)
         {
-            base.Update(state);
+            base.Update(deltaTime);
 
             if (Enabled)
             {
+                MouseState mState = Mouse.GetState();
+
                 if (sliding && leftDown)
                 {
                     Invoke(MouseDown, this, GetMouseEventArgs());
                     Refresh();
                 }
-                else if (sliding && !leftDown && !IsSliding(state.Position()))
+                else if (sliding && !leftDown && !IsSliding(mState.Position()))
                 {
                     sliding = false;
                     oldOffset = Vector2.Zero;

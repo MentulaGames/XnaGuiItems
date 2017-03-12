@@ -96,7 +96,7 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public virtual Size Size { get { return bounds.Size(); } set { Bounds = new Rectangle(bounds.X, bounds.Y, value.Width, value.Height); } }
         /// <summary>
-        /// Gets or sets a value indicating whether a <see cref="Containers.Menu{T}"/> should call the <see cref="Update(MouseState)"/> method.
+        /// Gets or sets a value indicating whether a <see cref="Containers.Menu{T}"/> should call the <see cref="Update(float)"/> method.
         /// </summary>
         public virtual bool SuppressUpdate { get; set; }
         /// <summary>
@@ -267,11 +267,13 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Updates the <see cref="GuiItem"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="mState"> The current state of the <see cref="Mouse"/>. </param>
-        public virtual void Update(MouseState mState)
+        /// <param name="deltaTime"> The specified deltatime. </param>
+        public virtual void Update(float deltaTime)
         {
             if (Enabled)
             {
+                MouseState mState = Mouse.GetState();
+
                 if (over = bounds.Contains(GetRotatedMouse(mState).ToPoint()))
                 {
                     bool down = mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed;

@@ -92,10 +92,7 @@
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="b6826ef7-1184-d5b6-caf2-93352e840cef" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" project="XnaGuiItems" file="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" project="XnaGuiItems" file="9ca9e1d6-fe43-5685-b909-f4642b89d964" />
-        <topic id="Overload:Mentula.GuiItems.Containers.TabContainer.Update" project="XnaGuiItems" file="7e276812-94eb-169a-8111-5be0f692174e">
-          <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="3d797069-121c-7241-5515-749201e957c0" />
-          <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" project="XnaGuiItems" file="68d491e4-b833-0124-0a45-74034a3606e3" />
-        </topic>
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" project="XnaGuiItems" file="48208074-23af-fc20-eff2-abc1491fa9e5" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="38b19270-620e-21d5-ecb0-161799a951fd" />
       <topic id="Fields.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="4a31df45-89a9-16bf-f18e-376394cece8d" />
@@ -166,7 +163,7 @@
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Refresh" project="XnaGuiItems" file="7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.Show" project="XnaGuiItems" file="063225f4-2072-377c-46ad-e8e2a7a53ff3" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.ToString" project="XnaGuiItems" file="b0281881-2439-a44a-456e-ea826a8cfa7e" />
-        <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="2f959bc3-a70a-04c2-0704-d667a709a3ec" />
+        <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" project="XnaGuiItems" file="910b54f9-9861-5496-3436-3616421da1dc" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="473c1bfa-9f2c-0191-1728-2c63cee67a63">
         <topic id="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" project="XnaGuiItems" file="75cd8a5b-3224-4ac0-1d4b-274beab996fd" />
@@ -448,10 +445,7 @@
           <topic id="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" project="XnaGuiItems" file="e7078551-f554-d260-0406-cc2a2b09a53a" />
         </topic>
         <topic id="M:Mentula.GuiItems.Items.Button.Refresh" project="XnaGuiItems" file="b43f913d-c500-d3bb-dd81-ad5483965721" />
-        <topic id="Overload:Mentula.GuiItems.Items.Button.Update" project="XnaGuiItems" file="8c8a669f-5802-07d8-ff7c-68a944db221e">
-          <topic id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="e40dcb3f-951e-5293-1131-83fbf0224105" />
-          <topic id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" project="XnaGuiItems" file="270cf7bc-acf5-2e5b-a213-c4befad295e3" />
-        </topic>
+        <topic id="M:Mentula.GuiItems.Items.Button.Update(System.Single)" project="XnaGuiItems" file="ea0ae772-ee20-6b79-497a-9e47788a515b" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="3e8b1a0d-6e4e-57b8-8205-133fe543b347">
         <topic id="E:Mentula.GuiItems.Items.Button.DoubleClick" project="XnaGuiItems" file="9951fda2-e00b-ae5e-2db4-19ff438896b4" />
@@ -485,7 +479,7 @@
         <topic id="M:Mentula.GuiItems.Items.DropDown.InitEvents" project="XnaGuiItems" file="2a362eaa-d9f3-af5d-c1b4-3576e606ea28" />
         <topic id="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="79728fb6-57c5-2224-3ce8-041a393bea5e" />
         <topic id="M:Mentula.GuiItems.Items.DropDown.Refresh" project="XnaGuiItems" file="63782362-5c20-dfa5-66b1-08a0b783e255" />
-        <topic id="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="98beeeba-6195-f759-e539-d60f8d242165" />
+        <topic id="M:Mentula.GuiItems.Items.DropDown.Update(System.Single)" project="XnaGuiItems" file="e80f1676-ce32-6835-f1b4-a567a0fb8b03" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="9a60e3fd-6b9a-a671-ca48-53056edc6a02">
         <topic id="E:Mentula.GuiItems.Items.DropDown.IndexClick" project="XnaGuiItems" file="4ebdbdab-12c7-f9d1-38c6-6772fc51620b" />
@@ -595,7 +589,7 @@
         <topic id="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.MouseEventArgs)" project="XnaGuiItems" file="cc159729-042f-c7de-39a2-01be7e47455f" />
         <topic id="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})" project="XnaGuiItems" file="9bf609ad-7eaf-599b-49fb-cf204fd94706" />
         <topic id="M:Mentula.GuiItems.Items.Slider.Refresh" project="XnaGuiItems" file="e9d5a3b8-bcd6-b3aa-e027-66209c2be783" />
-        <topic id="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="89530faf-22c5-297b-a0ad-9284ab2f4a25" />
+        <topic id="M:Mentula.GuiItems.Items.Slider.Update(System.Single)" project="XnaGuiItems" file="bd762395-092b-3f69-a1f0-a534bb82fa66" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Items.Slider" project="XnaGuiItems" file="ff6ac7d4-0662-f3b1-c3b0-0899951080de">
         <topic id="E:Mentula.GuiItems.Items.Slider.MouseDown" project="XnaGuiItems" file="3afcde40-f9e0-c4f8-83a6-e10646fd8240" />
@@ -628,10 +622,7 @@
         <topic id="M:Mentula.GuiItems.Items.TextBox.InitEvents" project="XnaGuiItems" file="38661b8b-cd66-542c-f779-605ed2aff18c" />
         <topic id="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" project="XnaGuiItems" file="d875062e-0fcc-01e3-150c-0469348cf2b1" />
         <topic id="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" project="XnaGuiItems" file="41fa811d-0e4d-ea65-2462-9629545f0c06" />
-        <topic id="Overload:Mentula.GuiItems.Items.TextBox.Update" project="XnaGuiItems" file="4b501547-657b-f1a2-cb3e-93fffa5bbcb0">
-          <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)" project="XnaGuiItems" file="2997b8ec-9c9d-d48e-b2ad-d75c9498271a" />
-          <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" project="XnaGuiItems" file="61c72df4-84e8-3775-4945-3e4b174c553e" />
-        </topic>
+        <topic id="M:Mentula.GuiItems.Items.TextBox.Update(System.Single)" project="XnaGuiItems" file="12ddb37a-c317-7f8c-7356-e66080e0781a" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="00d77101-0c59-077c-8910-c258c5774f4a">
         <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" project="XnaGuiItems" file="7b9a3fb0-0972-c6a4-b424-de9a7fc88197" />

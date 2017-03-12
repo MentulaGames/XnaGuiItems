@@ -146,16 +146,18 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Updates the <see cref="DropDown"/>, checking if any mouse event are occuring.
         /// </summary>
-        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
-        public override void Update(MouseState state)
+        /// <param name="deltaTime"> The specified deltatime. </param>
+        public override void Update(float deltaTime)
         {
-            base.Update(state);
+            base.Update(deltaTime);
 
             if (Enabled && over)
             {
-                bool down = (state.LeftButton == ButtonState.Pressed || state.RightButton == ButtonState.Pressed);
+                MouseState mState = Mouse.GetState();
 
-                for (int i = 0, hover = GetHoverIndex(state); i < textures.Buttons.Length; i++)
+                bool down = (mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed);
+
+                for (int i = 0, hover = GetHoverIndex(mState); i < textures.Buttons.Length; i++)
                 {
                     if (i == hover) textures.Buttons[i].state = down ? ButtonStyle.Click : ButtonStyle.Hover;
                     else textures.Buttons[i].state = ButtonStyle.Default;

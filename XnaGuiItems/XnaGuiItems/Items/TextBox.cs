@@ -31,7 +31,7 @@ namespace Mentula.GuiItems.Items
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
-    public class TextBox : Label, IDeltaKeyboardUpdate
+    public class TextBox : Label
     {
         /// <summary>
         /// Gets the default minimum size of the <see cref="TextBox"/>.
@@ -121,25 +121,18 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Updates the <see cref="TextBox"/>, checking if any mouse event are occuring.
-        /// This should only be used when the <see cref="TextBox"/> is out of focus!
-        /// </summary>
-        /// <param name="state"> The current state of the <see cref="Mouse"/>. </param>
-        public override void Update(MouseState state) { base.Update(state); }
-
-        /// <summary>
         /// Updates the <see cref="TextBox"/>, checking if any mouse- or keyboard event are occuring.
         /// Use like: myTextBox.Update(Mouse.GetState(), Keyboard.GetState(), (float)gameTime.ElapsedGameTime.TotalSeconds);
         /// </summary>
-        /// <param name="mState"> The current state of the <see cref="Mouse"/>. </param>
-        /// <param name="kState"> The current state of the <see cref="Keyboard"/>. </param>
         /// <param name="deltaTime"> The specified deltatime. </param>
-        public void Update(MouseState mState, KeyboardState kState, float deltaTime)
+        public override void Update(float deltaTime)
         {
-            base.Update(mState);
+            base.Update(deltaTime);
 
             if (Enabled && Focused)
             {
+                KeyboardState kState = Keyboard.GetState();
+
                 bool confirmed = false;
                 Text = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
 

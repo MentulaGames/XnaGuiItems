@@ -101,8 +101,6 @@
     <Compile Include="Core\Delegates.cs" />
     <Compile Include="Core\Input\EmptyInput.cs" />
     <Compile Include="Core\GuiItem.cs" />
-    <Compile Include="Core\Interfaces\IDeltaKeyboardUpdate.cs" />
-    <Compile Include="Core\Interfaces\IDeltaUpdate.cs" />
     <Compile Include="Core\Interfaces\IToggleable.cs" />
     <Compile Include="Core\InvokeException.cs" />
     <Compile Include="Core\Input\KeyInputHandler.cs" />

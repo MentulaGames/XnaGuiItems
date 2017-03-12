@@ -62,7 +62,7 @@
   <HelpKINode Title="Button.PerformClick method" Url="html/843bc224-c459-3ebf-608d-dfc8ca925989.htm" />
   <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
-  <HelpKINode Title="Button.Update method" Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
+  <HelpKINode Title="Button.Update method" Url="html/ea0ae772-ee20-6b79-497a-9e47788a515b.htm" />
   <HelpKINode Title="Buttons property" Url="html/8285602a-b796-8e12-31b0-d15acd287b85.htm" />
   <HelpKINode Title="ButtonTextureHandler class">
     <HelpKINode Title="ButtonTextureHandler Class" Url="html/e0559163-3a6e-5f1b-8acd-af9d38ccb1d9.htm" />
@@ -200,7 +200,7 @@
   <HelpKINode Title="DropDown.labels field" Url="html/daf98372-ab87-6d7b-4d29-7e0691405ec8.htm" />
   <HelpKINode Title="DropDown.OnMove method" Url="html/79728fb6-57c5-2224-3ce8-041a393bea5e.htm" />
   <HelpKINode Title="DropDown.Refresh method" Url="html/63782362-5c20-dfa5-66b1-08a0b783e255.htm" />
-  <HelpKINode Title="DropDown.Update method" Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
+  <HelpKINode Title="DropDown.Update method" Url="html/e80f1676-ce32-6835-f1b4-a567a0fb8b03.htm" />
   <HelpKINode Title="DropDownButtonTextureHandler class">
     <HelpKINode Title="DropDownButtonTextureHandler Class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
     <HelpKINode Title="about DropDownButtonTextureHandler class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
@@ -361,7 +361,7 @@
   <HelpKINode Title="GuiItem.SuppressUpdate property" Url="html/2c63e27a-bdfb-a89f-fb55-1b349670695e.htm" />
   <HelpKINode Title="GuiItem.textures field" Url="html/bd3bfbc6-3331-4bc6-37d3-69c9aa4d44f2.htm" />
   <HelpKINode Title="GuiItem.ToString method" Url="html/b0281881-2439-a44a-456e-ea826a8cfa7e.htm" />
-  <HelpKINode Title="GuiItem.Update method" Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
+  <HelpKINode Title="GuiItem.Update method" Url="html/910b54f9-9861-5496-3436-3616421da1dc.htm" />
   <HelpKINode Title="GuiItem.VisibilityChanged event" Url="html/172fe70f-4b17-b4df-f958-cb778510a137.htm" />
   <HelpKINode Title="GuiItem.Visible property" Url="html/a266c3fa-e088-547a-d2de-ca594b2d6e9f.htm" />
   <HelpKINode Title="GuiItem.Width property" Url="html/96650789-2bd0-c038-b22c-2c211131776d.htm" />
@@ -945,7 +945,7 @@
   <HelpKINode Title="Slider.Refresh method" Url="html/e9d5a3b8-bcd6-b3aa-e027-66209c2be783.htm" />
   <HelpKINode Title="Slider.Slider constructor" Url="html/db74ba78-39cd-460e-a9ef-7fb852ddb1e4.htm" />
   <HelpKINode Title="Slider.SliderBarDimentions property" Url="html/4a0c8d6e-f98b-41fc-404f-f39ec4c3aa85.htm" />
-  <HelpKINode Title="Slider.Update method" Url="html/89530faf-22c5-297b-a0ad-9284ab2f4a25.htm" />
+  <HelpKINode Title="Slider.Update method" Url="html/bd762395-092b-3f69-a1f0-a534bb82fa66.htm" />
   <HelpKINode Title="Slider.Value property" Url="html/14740fec-46c5-e6da-476c-21fa0012341f.htm" />
   <HelpKINode Title="Slider.ValueChanged event" Url="html/9de4f2f6-88d8-69c4-6714-032bf0045cd6.htm" />
   <HelpKINode Title="SliderBarDimentions property" Url="html/4a0c8d6e-f98b-41fc-404f-f39ec4c3aa85.htm" />
@@ -975,7 +975,7 @@
   <HelpKINode Title="TabContainer.SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
   <HelpKINode Title="TabContainer.TabContainer constructor" Url="html/2ac504ab-fc0d-69ba-cd65-f4602150c4a0.htm" />
   <HelpKINode Title="TabContainer.TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
-  <HelpKINode Title="TabContainer.Update method" Url="html/7e276812-94eb-169a-8111-5be0f692174e.htm" />
+  <HelpKINode Title="TabContainer.Update method" Url="html/48208074-23af-fc20-eff2-abc1491fa9e5.htm" />
   <HelpKINode Title="TabContainer.UseAbsolutePosition property" Url="html/b837c955-0aa6-3135-0b6b-4e6859dbf965.htm" />
   <HelpKINode Title="TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
   <HelpKINode Title="TEXT enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
@@ -1007,7 +1007,7 @@
   <HelpKINode Title="TextBox.OnTextChanged method" Url="html/41fa811d-0e4d-ea65-2462-9629545f0c06.htm" />
   <HelpKINode Title="TextBox.PasswordChar property" Url="html/ef2a4cab-bf18-1a60-e2b4-9dde1c0d2d2c.htm" />
   <HelpKINode Title="TextBox.TextBox constructor" Url="html/6376d5d7-9eb4-336f-2b60-791bc8b5d931.htm" />
-  <HelpKINode Title="TextBox.Update method" Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
+  <HelpKINode Title="TextBox.Update method" Url="html/12ddb37a-c317-7f8c-7356-e66080e0781a.htm" />
   <HelpKINode Title="TextBox.VisisbleText property" Url="html/880221ef-331e-ba18-8fa5-539afe9ae86c.htm" />
   <HelpKINode Title="TextboxTextureHandler class">
     <HelpKINode Title="TextboxTextureHandler Class" Url="html/8496d0d1-f329-3706-316e-c82de049e293.htm" />
@@ -1041,14 +1041,14 @@
   </HelpKINode>
   <HelpKINode Title="ToVector2 method" Url="html/f40a49c5-8366-fa0a-b768-a29b67ed866b.htm" />
   <HelpKINode Title="Update method">
-    <HelpKINode Title="Button.Update Method " Url="html/8c8a669f-5802-07d8-ff7c-68a944db221e.htm" />
-    <HelpKINode Title="DropDown.Update Method " Url="html/98beeeba-6195-f759-e539-d60f8d242165.htm" />
-    <HelpKINode Title="GuiItem.Update Method " Url="html/2f959bc3-a70a-04c2-0704-d667a709a3ec.htm" />
+    <HelpKINode Title="Button.Update Method " Url="html/ea0ae772-ee20-6b79-497a-9e47788a515b.htm" />
+    <HelpKINode Title="DropDown.Update Method " Url="html/e80f1676-ce32-6835-f1b4-a567a0fb8b03.htm" />
+    <HelpKINode Title="GuiItem.Update Method " Url="html/910b54f9-9861-5496-3436-3616421da1dc.htm" />
     <HelpKINode Title="Menu(T).Update Method " Url="html/83d0d475-ebce-04b2-d779-447dfbca29d9.htm" />
     <HelpKINode Title="MenuCollection(TGame).Update Method " Url="html/b0c50924-1fae-cdc2-92e9-ae15a65e94ca.htm" />
-    <HelpKINode Title="Slider.Update Method " Url="html/89530faf-22c5-297b-a0ad-9284ab2f4a25.htm" />
-    <HelpKINode Title="TabContainer.Update Method " Url="html/7e276812-94eb-169a-8111-5be0f692174e.htm" />
-    <HelpKINode Title="TextBox.Update Method " Url="html/4b501547-657b-f1a2-cb3e-93fffa5bbcb0.htm" />
+    <HelpKINode Title="Slider.Update Method " Url="html/bd762395-092b-3f69-a1f0-a534bb82fa66.htm" />
+    <HelpKINode Title="TabContainer.Update Method " Url="html/48208074-23af-fc20-eff2-abc1491fa9e5.htm" />
+    <HelpKINode Title="TextBox.Update Method " Url="html/12ddb37a-c317-7f8c-7356-e66080e0781a.htm" />
   </HelpKINode>
   <HelpKINode Title="UseAbsolutePosition property" Url="html/b837c955-0aa6-3135-0b6b-4e6859dbf965.htm" />
   <HelpKINode Title="userSet field" Url="html/249252de-26c6-e1dd-5b96-a2503b6ee286.htm" />

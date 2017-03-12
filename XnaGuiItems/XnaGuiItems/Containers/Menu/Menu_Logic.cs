@@ -248,7 +248,7 @@ namespace Mentula.GuiItems.Containers
                         continue;
                     }
 
-                    control.Update_S(mState, kState, delta);
+                    control.Update(delta);
                 }
             }
 

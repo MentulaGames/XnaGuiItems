@@ -69,7 +69,6 @@
   <topic id="Properties.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Containers.TabContainer.Update" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" type="API" />
@@ -79,8 +78,7 @@
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" type="API" />
   <topic id="N:Mentula.GuiItems.Core" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Anchor" type="API" />
@@ -154,7 +152,7 @@
   <topic id="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.textures" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.ToString" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Visible" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Width" type="API" />
@@ -353,7 +351,6 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.Button" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Button.PerformClick" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Button.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Items.Button.Update" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.DoubleClick" type="API" />
@@ -362,8 +359,7 @@
   <topic id="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.Refresh" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.RightClick" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Button.Update(System.Single)" type="API" />
   <topic id="T:Mentula.GuiItems.Items.DropDown" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Items.DropDown" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Items.DropDown" type="API" />
@@ -392,7 +388,7 @@
   <topic id="F:Mentula.GuiItems.Items.DropDown.labels" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.Refresh" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.DropDown.Update(System.Single)" type="API" />
   <topic id="T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Items.Label" type="API" />
@@ -476,7 +472,7 @@
   <topic id="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.SliderBarDimentions" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Slider.Update(System.Single)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.Value" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Slider.ValueChanged" type="API" />
   <topic id="T:Mentula.GuiItems.Items.TextBox" type="API" />
@@ -485,7 +481,6 @@
   <topic id="Events.T:Mentula.GuiItems.Items.TextBox" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.TextBox.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Items.TextBox.Update" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" type="API" />
@@ -504,7 +499,6 @@
   <topic id="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.PasswordChar" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.TextBox.Update(System.Single)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.VisisbleText" type="API" />
 </topics>

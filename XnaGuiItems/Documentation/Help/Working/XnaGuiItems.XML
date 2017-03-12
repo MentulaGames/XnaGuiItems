@@ -503,19 +503,10 @@
             Refreshes the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />, recalculating the <see cref="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" /> and the underlying texture.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState)">
-      <summary>
-            This method cannot be used withing a <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
-            </summary>
-      <param name="mState">
-      </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
             </summary>
-      <param name="mState"> The specified <see cref="T:Microsoft.Xna.Framework.Input.MouseState" /> to use. </param>
-      <param name="kState"> The specified <see cref="T:Microsoft.Xna.Framework.Input.KeyboardState" /> to use. </param>
       <param name="delta"> The deltaTime. </param>
     </member>
     <member name="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
@@ -806,7 +797,7 @@
     </member>
     <member name="P:Mentula.GuiItems.Core.GuiItem.SuppressUpdate">
       <summary>
-            Gets or sets a value indicating whether a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should call the <see cref="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)" /> method.
+            Gets or sets a value indicating whether a <see cref="T:Mentula.GuiItems.Containers.Menu`1" /> should call the <see cref="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)" /> method.
             </summary>
     </member>
     <member name="P:Mentula.GuiItems.Core.GuiItem.SuppressDraw">
@@ -933,11 +924,11 @@
             Perform a mouse click.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Core.GuiItem" />, checking if any mouse event are occuring.
             </summary>
-      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+      <param name="deltaTime"> The specified deltatime. </param>
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
       <summary>
@@ -1892,17 +1883,10 @@
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Button" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState)">
-      <summary>
-            This method cannot be used withing a <see cref="T:Mentula.GuiItems.Items.Button" />.
-            </summary>
-      <param name="mState"> The <see cref="T:Microsoft.Xna.Framework.Input.MouseState" /> to use. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.Button.Update(Microsoft.Xna.Framework.Input.MouseState,System.Single)">
+    <member name="M:Mentula.GuiItems.Items.Button.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Items.Button" />, checking if any mouse event are occuring.
             </summary>
-      <param name="state"> The current <see cref="T:Microsoft.Xna.Framework.Input.Mouse" /> state. </param>
       <param name="deltaTime"> The deltatime </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
@@ -2009,11 +1993,11 @@
             </summary>
       <param name="parts"> The parts of the option, with a specified colot and separated with a space. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <member name="M:Mentula.GuiItems.Items.DropDown.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Items.DropDown" />, checking if any mouse event are occuring.
             </summary>
-      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+      <param name="deltaTime"> The specified deltatime. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.DropDown.Refresh">
       <summary>
@@ -2314,11 +2298,11 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.Slider" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.Update(Microsoft.Xna.Framework.Input.MouseState)">
+    <member name="M:Mentula.GuiItems.Items.Slider.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Items.Slider" />, checking if any mouse event are occuring.
             </summary>
-      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+      <param name="deltaTime"> The specified deltatime. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.Refresh">
       <summary>
@@ -2430,20 +2414,11 @@
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> in pixels. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState)">
-      <summary>
-            Updates the <see cref="T:Mentula.GuiItems.Items.TextBox" />, checking if any mouse event are occuring.
-            This should only be used when the <see cref="T:Mentula.GuiItems.Items.TextBox" /> is out of focus!
-            </summary>
-      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.Update(Microsoft.Xna.Framework.Input.MouseState,Microsoft.Xna.Framework.Input.KeyboardState,System.Single)">
+    <member name="M:Mentula.GuiItems.Items.TextBox.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Items.TextBox" />, checking if any mouse- or keyboard event are occuring.
             Use like: myTextBox.Update(Mouse.GetState(), Keyboard.GetState(), (float)gameTime.ElapsedGameTime.TotalSeconds);
             </summary>
-      <param name="mState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-      <param name="kState"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Keyboard" />. </param>
       <param name="deltaTime"> The specified deltatime. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
