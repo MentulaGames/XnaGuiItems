@@ -348,7 +348,6 @@
   <topic id="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.#ctor" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler" type="API" />

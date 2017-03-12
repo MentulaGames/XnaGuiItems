@@ -14,8 +14,14 @@ namespace Mentula.GuiItems.Core.Handlers
     using Xna.Microsoft.Xna.Framework.Graphics;
 #endif
 
+    /// <summary>
+    /// The class that handles the textures for a <see cref="Items.DropDown"/>.
+    /// </summary>
     public sealed class DropDownTextureHandler : TextureHandler
     {
+        /// <summary>
+        /// The textures for the underlying buttons.
+        /// </summary>
         public DropDownButtonTextureHandler[] Buttons { get; set; }
 
         internal DropDownTextureHandler()
@@ -43,7 +49,6 @@ namespace Mentula.GuiItems.Core.Handlers
                 Buttons[i] = new DropDownButtonTextureHandler();
                 Buttons[i].SetBackFromLabels(labels[i], size, font, sb);
                 Buttons[i].ApplyBorders();
-                Buttons[i].SetState(ButtonStyle.Default);
             }
         }
     }

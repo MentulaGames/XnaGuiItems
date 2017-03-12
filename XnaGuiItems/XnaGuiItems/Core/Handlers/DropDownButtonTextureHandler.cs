@@ -12,24 +12,27 @@ namespace Mentula.GuiItems.Core.Handlers
     using Xna.Microsoft.Xna.Framework.Graphics;
 #endif
 
+    /// <summary>
+    /// The class that handles the textures for a <see cref="Items.DropDown"/> buttons.
+    /// </summary>
     public sealed class DropDownButtonTextureHandler : ButtonTextureHandler
     {
-        public Texture2D DrawTexture { get; private set; }
-
-        internal void SetState(ButtonStyle state)
+        /// <summary>
+        /// The texture that needs to be drawn in the current state.
+        /// </summary>
+        public Texture2D DrawTexture
         {
-            switch (state)
+            get
             {
-                case ButtonStyle.Default:
-                    DrawTexture = Background;
-                    break;
-                case ButtonStyle.Hover:
-                    DrawTexture = Hover;
-                    break;
-                case ButtonStyle.Click:
-                    DrawTexture = Click;
-                    break;
-            }   
+                return state == ButtonStyle.Default ? Background : (state == ButtonStyle.Hover ? Hover : Click);
+            }
+        }
+
+        internal ButtonStyle state;
+
+        internal DropDownButtonTextureHandler()
+        {
+            state = ButtonStyle.Default;
         }
 
         internal void SetBackFromLabels(Pair[] labels, Size size, SpriteFont font, SpriteBatch sb)

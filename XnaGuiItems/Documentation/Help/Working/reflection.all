@@ -7784,7 +7784,6 @@
         </ancestors>
       </family>
       <elements>
-        <element api="M:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.#ctor" />
         <element api="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" />
         <element api="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click" />
@@ -7853,15 +7852,6 @@
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Core.Handlers" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.#ctor">
-      <apidata name=".ctor" group="member" subgroup="constructor" />
-      <memberdata visibility="public" special="true" />
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
-        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
-        <type api="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" ref="true" />
       </containers>
     </api>
     <api id="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture">

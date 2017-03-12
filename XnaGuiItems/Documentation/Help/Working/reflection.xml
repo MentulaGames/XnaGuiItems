@@ -13101,7 +13101,6 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
-        <element api="M:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.#ctor" />
         <element api="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background" />
         <element api="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose" />
@@ -13209,20 +13208,6 @@
         <type api="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" />
       </containers>
       <file name="61a8abe9-58ac-3a50-597f-36d21fc9c650" />
-    </api>
-    <api id="M:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.#ctor">
-      <topicdata group="api" />
-      <apidata name=".ctor" group="member" subgroup="constructor" />
-      <memberdata visibility="public" special="true" />
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
-        <type api="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" ref="true" />
-      </containers>
-      <file name="e0e3dc70-d5a0-7da4-aad4-00c797d84e3a" />
     </api>
     <api id="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture">
       <topicdata group="api" />

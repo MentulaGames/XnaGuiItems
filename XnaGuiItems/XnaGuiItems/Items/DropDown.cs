@@ -157,8 +157,8 @@ namespace Mentula.GuiItems.Items
 
                 for (int i = 0, hover = GetHoverIndex(state); i < textures.Buttons.Length; i++)
                 {
-                    if (i == hover) textures.Buttons[i].SetState(down ? ButtonStyle.Click : ButtonStyle.Hover);
-                    else textures.Buttons[i].SetState(ButtonStyle.Default);
+                    if (i == hover) textures.Buttons[i].state = down ? ButtonStyle.Click : ButtonStyle.Hover;
+                    else textures.Buttons[i].state = ButtonStyle.Default;
                 }
             }
         }

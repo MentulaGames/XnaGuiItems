@@ -1134,6 +1134,26 @@
             </summary>
       <returns> A string version of the underlying byte. </returns>
     </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler">
+      <summary>
+            The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" /> buttons.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture">
+      <summary>
+            The texture that needs to be drawn in the current state.
+            </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler">
+      <summary>
+            The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler.Buttons">
+      <summary>
+            The textures for the underlying buttons.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Label" />.
