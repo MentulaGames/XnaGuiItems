@@ -182,17 +182,6 @@ namespace Mentula.GuiItems
             else control.Update(mState);
         }
 
-        internal static void AddSet<Tkey, TVal>(this Dictionary<Tkey, TVal> dict, Tkey key, TVal val)
-        {
-            if (dict.ContainsKey(key)) dict[key] = val;
-            else dict.Add(key, val);
-        }
-
-        internal static bool IsNotEmpty(this string str)
-        {
-            return !string.IsNullOrEmpty(str);
-        }
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static Thread CreateBackgroundThread(ThreadStart func)
         {

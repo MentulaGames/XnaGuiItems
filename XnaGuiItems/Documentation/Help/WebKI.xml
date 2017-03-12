@@ -87,6 +87,7 @@
   <HelpKINode Title="CenterWidth enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="ChangeValue method" Url="html/3e1d26c0-8832-5d44-9d22-b173a44cb0ab.htm" />
   <HelpKINode Title="ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
+  <HelpKINode Title="Clamp method" Url="html/ef34d72f-d695-9693-ac9f-5b7be75909cd.htm" />
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
   <HelpKINode Title="Click event" Url="html/ca73ba8a-0f77-b762-0b1d-a9800c2b5a86.htm" />
   <HelpKINode Title="Click property" Url="html/68353b6c-4da3-51b0-539e-866e6a5c1bbc.htm" />
@@ -874,6 +875,7 @@
   </HelpKINode>
   <HelpKINode Title="Size.Add method" Url="html/9270f661-16ef-620b-d897-3f522a0176d4.htm" />
   <HelpKINode Title="Size.Addition operator" Url="html/be77aef0-b253-9ea2-00eb-9e0397f3c3db.htm" />
+  <HelpKINode Title="Size.Clamp method" Url="html/ef34d72f-d695-9693-ac9f-5b7be75909cd.htm" />
   <HelpKINode Title="Size.Divide method" Url="html/8d311e68-6924-3179-41d6-ba3215a572e5.htm" />
   <HelpKINode Title="Size.Division operator" Url="html/b17826a7-4d84-039a-3362-4ee415bc6fbd.htm" />
   <HelpKINode Title="Size.Empty field" Url="html/9fb37c99-3736-b1ee-c153-eded6c292959.htm" />

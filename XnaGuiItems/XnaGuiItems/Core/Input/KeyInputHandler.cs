@@ -129,9 +129,9 @@ namespace Mentula.GuiItems.Core.Input
                 if (clsInput.IsUp(Keys.Back))
                 {
                     clsInput.SetWait(Keys.Back, KeyState.Down);
-                    if (keyboadString.IsNotEmpty()) RemoveLastChar();
+                    if (!string.IsNullOrEmpty(keyboadString)) RemoveLastChar();
                 }
-                else if (clsInput.RepeatKey(Keys.Back) && keyboadString.IsNotEmpty()) RemoveLastChar();
+                else if (clsInput.RepeatKey(Keys.Back) && !string.IsNullOrEmpty(keyboadString)) RemoveLastChar();
             }
             else if (clsInput.IsDown(Keys.Back)) clsInput.SetWait(Keys.Back, KeyState.Up);
 

@@ -309,6 +309,7 @@
       </topic>
       <topic id="Methods.T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="a4c75425-4b3f-4990-a581-089315520e9c">
         <topic id="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="9270f661-16ef-620b-d897-3f522a0176d4" />
+        <topic id="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="ef34d72f-d695-9693-ac9f-5b7be75909cd" />
         <topic id="Overload:Mentula.GuiItems.Core.Size.Divide" project="XnaGuiItems" file="8d311e68-6924-3179-41d6-ba3215a572e5">
           <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="80bcb894-922c-cbc4-77ca-c11c3a3e810a" />
           <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="5cf4ffa4-deaf-d828-c1b4-a31b864af57e" />

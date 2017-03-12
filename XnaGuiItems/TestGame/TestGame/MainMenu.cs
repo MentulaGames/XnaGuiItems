@@ -14,17 +14,12 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            base.Initialize(); 
-        }
+            Button btn = AddButton();
+            btn.Text = "Click Me";
+            btn.MoveRelative(Anchor.Center);
+            btn.AutoSize = true;
 
-        private void OnIndexClick(GuiItem sender, IndexedClickEventArgs e)
-        {
-            switch (e.Index)
-            {
-                case 5:
-                    sender.Hide();
-                    break;
-            }
+            base.Initialize(); 
         }
     }
 }

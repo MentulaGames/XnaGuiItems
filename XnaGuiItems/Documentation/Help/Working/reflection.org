@@ -6690,6 +6690,7 @@
         <element api="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" />
         <element api="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" />
         <element api="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
+        <element api="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" />
         <element api="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" />
         <element api="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" />
@@ -6782,6 +6783,24 @@
       <returns>
         <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
       </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <apidata name="Clamp" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="min">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+        <parameter name="max">
+          <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+        </parameter>
+      </parameters>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Core" />

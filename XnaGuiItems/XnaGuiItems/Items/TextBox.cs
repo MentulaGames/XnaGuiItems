@@ -36,11 +36,11 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default minimum size of the <see cref="TextBox"/>.
         /// </summary>
-        public static Size DefaultMinimumSize { get { return new Size(100, 50); } }
+        public static Size DefaultMinimumSize { get { return new Size(100, 25); } }
         /// <summary>
         /// Gets the visible text of the <see cref="TextBox"/>. 
         /// </summary>
-        public virtual string VisisbleText { get { return PasswordChar != '\0' ? Text.ToPassword(PasswordChar) : Text; } }
+        public virtual string VisisbleText { get { return PasswordChar != '\0' ? new string(PasswordChar, Text.Length) : Text; } }
         /// <summary>
         /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
@@ -187,17 +187,11 @@ namespace Mentula.GuiItems.Items
         {
             if (AutoSize)
             {
-                Vector2 dim = GetLongTextDimentions();
-                dim.X += 3;
+                Size dim = new Size(GetLongTextDimentions());
+                dim.Width += 3;
 
-                if (dim.Y < MinimumSize.Height) dim.Y = MinimumSize.Height;
-                else if (dim.Y > MaximumSize.Height) dim.Y = MaximumSize.Height;
-
-                if (dim.X < MinimumSize.Width) dim.X = MinimumSize.Width;
-                else if (dim.X > MaximumSize.Width) dim.X = MaximumSize.Width;
-
-                if (dim.X > 0 && dim.X != Bounds.Width) Width = (int)dim.X;
-                if (dim.Y > 0 && dim.Y != Bounds.Height) Height = (int)dim.Y;
+                dim.Clamp(MinimumSize, MaximumSize);
+                if (dim.Width != Width || dim.Height != Height) Size = dim;
             }
         }
 

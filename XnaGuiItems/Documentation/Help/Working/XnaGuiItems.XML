@@ -1749,6 +1749,13 @@
       <param name="size2"> The second Size to add. </param>
       <returns> A Size structure that is the result of the addition operation. </returns>
     </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Clamps the <see cref="T:Mentula.GuiItems.Core.Size" /> between a minimum and a maximum.
+            </summary>
+      <param name="min"> The minimum <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+      <param name="max"> The maximum <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+    </member>
     <member name="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)">
       <summary>
             Divides the width and height from the Size structure to the specified value.

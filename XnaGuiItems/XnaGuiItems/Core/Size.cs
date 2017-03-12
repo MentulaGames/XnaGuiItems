@@ -160,6 +160,17 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
+        /// Clamps the <see cref="Size"/> between a minimum and a maximum.
+        /// </summary>
+        /// <param name="min"> The minimum <see cref="Size"/>. </param>
+        /// <param name="max"> The maximum <see cref="Size"/>. </param>
+        public void Clamp(Size min, Size max)
+        {
+            Width = Math.Max(min.Width, Math.Min(max.Width, Width));
+            Height = Math.Max(min.Height, Math.Min(max.Height, Height));
+        }
+
+        /// <summary>
         /// Divides the width and height from the Size structure to the specified value.
         /// </summary>
         /// <param name="size"> The Size to divide. </param>

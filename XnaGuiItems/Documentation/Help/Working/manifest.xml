@@ -293,6 +293,7 @@
   <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.Size.Empty" type="API" />

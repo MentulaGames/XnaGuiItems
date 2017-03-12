@@ -88,7 +88,7 @@ namespace Mentula.GuiItems.Items
                     textures.Foreground = Image.Clip(new Rectangle(0, 0, Width, Height));
                     break;
                 case ResizeMode.StretchImage:
-                    textures.Foreground = Image.Stretch(Size);
+                    textures.Foreground = Image.Stretch(batch, Size);
                     break;
                 case ResizeMode.Zoom:
                     Vector2 zoom = new Vector2(Width / (float)Image.Width, Height / (float)Image.Height);

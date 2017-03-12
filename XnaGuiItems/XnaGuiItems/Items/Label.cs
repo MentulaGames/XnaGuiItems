@@ -137,11 +137,10 @@ namespace Mentula.GuiItems.Items
         {
             if (AutoSize)
             {
-                Vector2 dim = font.MeasureString(text);
-                dim.X += 3;
+                Size dim = new Size(font.MeasureString(text));
+                dim.Width += 3;
 
-                if (dim.X > 0 && dim.X != Bounds.Width) Width = (int)dim.X;
-                if (dim.Y > 0 && dim.Y != Bounds.Height) Height = (int)dim.Y;
+                if (dim.Width != Width || dim.Width != Height) Size = dim;
             }
         }
 
