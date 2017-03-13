@@ -17,6 +17,9 @@ namespace Mentula.GuiItems.Core
     /// Represents a class for classes that contain value changing event data.
     /// </summary>
     /// <typeparam name="TVal"> The specified value type to change. </typeparam>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public sealed class ValueChangedEventArgs<TVal> : EventArgs
     {
         /// <summary>
@@ -54,6 +57,9 @@ namespace Mentula.GuiItems.Core
     /// <summary>
     /// Represents a class for classes that contain mouse related event data.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public sealed class MouseEventArgs : EventArgs
     {
         /// <summary>
@@ -84,6 +90,9 @@ namespace Mentula.GuiItems.Core
     /// <summary>
     /// Represents a class for classes that contain indexed click related event data.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public sealed class IndexedClickEventArgs : EventArgs
     {
         /// <summary>

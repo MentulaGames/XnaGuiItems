@@ -2,6 +2,9 @@
 {
     using System.Runtime.InteropServices;
 
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal static class NativeMethods
     {
         public static bool CapsLockState() => (GetKeyState(0x14) & 0xFFFF) != 0;

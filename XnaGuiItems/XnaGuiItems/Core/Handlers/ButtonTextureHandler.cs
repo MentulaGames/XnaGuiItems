@@ -20,6 +20,9 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <remarks>
     /// The <see cref="TextureHandler.userSet"/> flag for hover is 4 and click is 8.
     /// </remarks>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class ButtonTextureHandler : LabelTextureHandler
     {
         /// <summary>

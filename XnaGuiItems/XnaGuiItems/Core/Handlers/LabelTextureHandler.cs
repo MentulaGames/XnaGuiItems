@@ -17,6 +17,9 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.Label"/>.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class LabelTextureHandler : TextureHandler
     {
         internal virtual void SetBackFromClr(Color clr, Size size, GraphicsDevice device, BorderStyle style)

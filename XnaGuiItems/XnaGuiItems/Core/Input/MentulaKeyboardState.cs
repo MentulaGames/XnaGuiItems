@@ -12,6 +12,9 @@ namespace Mentula.GuiItems.Core.Input
     using Xna.Microsoft.Xna.Framework.Input;
 #endif
 
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     internal struct MentulaKeyboardState
     {
         public uint _0, _1, _2, _3, _4, _5, _6, _7;

@@ -18,6 +18,9 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <summary>
     /// A class that handles texture settings.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public class TextureHandler : IDisposable
     {
         /// <summary>

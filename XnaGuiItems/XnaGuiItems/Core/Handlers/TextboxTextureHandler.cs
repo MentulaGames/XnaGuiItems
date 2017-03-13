@@ -20,6 +20,9 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <remarks>
     /// The <see cref="TextureHandler.userSet"/> flag for the focused texture is 4.
     /// </remarks>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public sealed class TextboxTextureHandler : LabelTextureHandler
     {
         /// <summary>

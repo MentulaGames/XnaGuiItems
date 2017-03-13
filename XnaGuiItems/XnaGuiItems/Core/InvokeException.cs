@@ -22,7 +22,7 @@
         private TargetInvocationException ex;
 
         internal InvokeException(TargetInvocationException e)
-            :base(e.InnerException.Message, e.InnerException.InnerException)
+            : base(e.InnerException.Message, e.InnerException.InnerException)
         {
             ex = e;
             CreateStackTrace();

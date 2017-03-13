@@ -15,6 +15,9 @@ namespace Mentula.GuiItems.Core.Handlers
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.DropDown"/> buttons.
     /// </summary>
+#if !DEBUG
+    [System.Diagnostics.DebuggerStepThrough]
+#endif
     public sealed class DropDownButtonTextureHandler : ButtonTextureHandler
     {
         /// <summary>
