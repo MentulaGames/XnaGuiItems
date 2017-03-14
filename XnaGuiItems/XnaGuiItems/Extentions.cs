@@ -16,6 +16,7 @@ namespace Mentula.GuiItems
     using Xna.Microsoft.Xna.Framework.Input;
 #endif
     using Core;
+    using Core.Structs;
     using System;
     using System.Runtime.CompilerServices;
     using System.Collections.Generic;

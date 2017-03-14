@@ -17,6 +17,7 @@ namespace Mentula.GuiItems.Core
 #endif
     using Handlers;
     using Interfaces;
+    using Structs;
     using System;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
@@ -42,7 +43,18 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public virtual Rectangle Bounds { get { return bounds; } set { Invoke(Resize, this, new ValueChangedEventArgs<Rectangle>(bounds, value)); } }
+        public virtual Rectangle Bounds
+        {
+            get
+            {
+                return new Rectangle((int)position.X, (int)position.Y, size.Width, size.Height);
+            }
+            set
+            {
+                Size = new Size(value.Width, value.Height);
+                Position = new Vector2(value.X, value.Y);
+            }
+        }
         /// <summary>
         /// Gets the default background color of the <see cref="GuiItem"/>.
         /// </summary>
@@ -62,7 +74,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="GuiItem"/> can respond to user interaction.
         /// </summary>
-        public virtual bool Enabled { get; set; }
+        public virtual bool Enabled { get { return enabled; } set { Invoke(EnabledChanged, this, new ValueChangedEventArgs<bool>(Enabled, value)); } }
         /// <summary>
         /// Gets or sets the foregound color for the <see cref="GuiItem"/>.
         /// </summary>
@@ -70,7 +82,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the height of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public virtual int Height { get { return Bounds.Height; } set { Size = new Size(Width, value); } }
+        public virtual int Height { get { return Size.Height; } set { Size = new Size(Width, value); } }
         /// <summary>
         /// Gets a value indicating whether the <see cref="GuiItem"/> has been disposed.
         /// </summary>
@@ -90,11 +102,11 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the position of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Vector2 Position { get { return bounds.Position(); } set { Invoke(Move, this, new ValueChangedEventArgs<Vector2>(Position, value)); } }
+        public virtual Vector2 Position { get { return position; } set { Invoke(Move, this, new ValueChangedEventArgs<Vector2>(Position, value)); } }
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Size Size { get { return bounds.Size(); } set { Bounds = new Rectangle(bounds.X, bounds.Y, value.Width, value.Height); } }
+        public virtual Size Size { get { return size; } set { Invoke(Resize, this, new ValueChangedEventArgs<Size>(Size, value)); } }
         /// <summary>
         /// Gets or sets a value indicating whether a <see cref="Containers.Menu{T}"/> should call the <see cref="Update(float)"/> method.
         /// </summary>
@@ -110,7 +122,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the width of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public virtual int Width { get { return Bounds.Width; } set { Size = new Size(value, Height); } }
+        public virtual int Width { get { return Size.Width; } set { Size = new Size(value, Height); } }
         /// <summary>
         /// Gets or sets the horizontal component of the <see cref="GuiItem"/>.
         /// </summary>
@@ -132,11 +144,13 @@ namespace Mentula.GuiItems.Core
         protected bool rightDown;
 
         private Color backColor;
-        private Rectangle bounds;
+        private Size size;
+        private Vector2 position;
         private Color foreColor;
         private string name;
         private float rotation;
         private bool visible;
+        private bool enabled;
 
         /// <summary>
         /// Occurs when the value of the <see cref="BackColor"/> property changes.
@@ -154,6 +168,11 @@ namespace Mentula.GuiItems.Core
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler Click;
         /// <summary>
+        /// Occurs when the <see cref="Enabled"/> property changes.
+        /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
+        public event ValueChangedEventHandler<bool> EnabledChanged;
+        /// <summary>
         /// Occurs when the <see cref="ForeColor"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
@@ -163,6 +182,16 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
         public event MouseEventHandler Hover;
+        /// <summary>
+        /// Occurs when the mouse pointer enters the <see cref="GuiItem"/>.
+        /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
+        public event MouseEventHandler HoverEnter;
+        /// <summary>
+        /// Occurs when the mouse pointer leaves the <see cref="GuiItem"/>.
+        /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
+        public event MouseEventHandler HoverLeave;
         /// <summary>
         /// Occurs when the <see cref="GuiItem"/> is moved.
         /// </summary>
@@ -182,7 +211,7 @@ namespace Mentula.GuiItems.Core
         /// Occurs when the <see cref="GuiItem"/> is resized.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Rectangle> Resize;
+        public event ValueChangedEventHandler<Size> Resize;
         /// <summary>
         /// Occurs when the <see cref="Visible"/> property changes.
         /// </summary>
@@ -208,7 +237,7 @@ namespace Mentula.GuiItems.Core
 #if DEBUG
             ctorCall = true;
 #endif
-            CheckBounds(bounds);
+            CheckBounds(bounds.Size());
 
             InitEvents();
             SetTextureHandler();
@@ -276,7 +305,11 @@ namespace Mentula.GuiItems.Core
             {
                 MouseState mState = Mouse.GetState();
 
-                if (over = bounds.Contains(GetRotatedMouse(mState).ToPoint()))
+                bool newOver = Bounds.Contains(GetRotatedMouse(mState).ToPoint());
+                if (!over && newOver) Invoke(HoverEnter, this, GetMouseEventArgs());
+                else if (over && !newOver) Invoke(HoverLeave, this, GetMouseEventArgs());
+
+                if (over = newOver)
                 {
                     bool down = mState.LeftButton == ButtonState.Pressed || mState.RightButton == ButtonState.Pressed;
 
@@ -444,6 +477,16 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
+        /// This method is called when the <see cref="EnabledChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="e"> The new enabled value of the <see cref="GuiItem"/>. </param>
+        protected virtual void OnEnabledChanged(GuiItem sender, ValueChangedEventArgs<bool> e)
+        {
+            enabled = e.NewValue;
+        }
+
+        /// <summary>
         /// This method is called when the <see cref="ForeColorChanged"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
@@ -460,8 +503,7 @@ namespace Mentula.GuiItems.Core
         /// <param name="e"> The new position of the <see cref="GuiItem"/>. </param>
         protected virtual void OnMove(GuiItem sender, ValueChangedEventArgs<Vector2> e)
         {
-            bounds.X = (int)e.NewValue.X;
-            bounds.Y = (int)e.NewValue.Y;
+            position = e.NewValue;
         }
 
         /// <summary>
@@ -489,10 +531,10 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new size of the <see cref="GuiItem"/>. </param>
-        protected virtual void OnResize(GuiItem sender, ValueChangedEventArgs<Rectangle> e)
+        protected virtual void OnResize(GuiItem sender, ValueChangedEventArgs<Size> e)
         {
             CheckBounds(e.NewValue);
-            bounds = e.NewValue;
+            size = e.NewValue;
         }
 
         /// <summary>
@@ -536,6 +578,7 @@ namespace Mentula.GuiItems.Core
         {
             BackColorChanged += OnBackColorChanged;
             BackgroundImageChanged += OnBackgroundImageChanged;
+            EnabledChanged += OnEnabledChanged;
             ForeColorChanged += OnForeColorChanged;
             Move += OnMove;
             NameChanged += OnNameChange;
@@ -544,11 +587,13 @@ namespace Mentula.GuiItems.Core
             VisibilityChanged += OnVisibilityChanged;
         }
 
-        private void CheckBounds(Rectangle rect)
+        private void CheckBounds(Size size)
         {
-            if (rect.Width <= 0 || rect.Height <= 0)
+            if (size.Width <= 0 || size.Height <= 0)
             {
-                throw new ArgumentException($"Width or Height of {Name ?? GetType().Name} must be greater the zero!");
+                ArgumentException e = new ArgumentException($"Width or Height of {Name ?? GetType().Name} must be greater the zero!");
+                e.Data.Add("Size", size);
+                throw e;
             }
         }
     }

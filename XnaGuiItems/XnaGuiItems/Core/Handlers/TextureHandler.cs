@@ -14,6 +14,7 @@ namespace Mentula.GuiItems.Core.Handlers
     using Xna.Microsoft.Xna.Framework.Graphics;
 #endif
     using System;
+    using Structs;
 
     /// <summary>
     /// A class that handles texture settings.

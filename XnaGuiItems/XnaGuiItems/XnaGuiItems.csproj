@@ -86,7 +86,7 @@
     <Compile Include="Core\EventHandlers.cs" />
     <Compile Include="Core\GuiItemCollection.cs" />
     <Compile Include="Core\Handlers\ButtonTextureHandler.cs" />
-    <Compile Include="Core\Handlers\ByteFlags.cs" />
+    <Compile Include="Core\Structs\ByteFlags.cs" />
     <Compile Include="Core\Handlers\DropDownButtonTextureHandler.cs" />
     <Compile Include="Core\Handlers\DropDownTextureHandler.cs" />
     <Compile Include="Core\Handlers\LabelTextureHandler.cs" />
@@ -105,9 +105,9 @@
     <Compile Include="Core\InvokeException.cs" />
     <Compile Include="Core\Input\KeyInputHandler.cs" />
     <Compile Include="Core\Components\MentulaGameComponent.cs" />
-    <Compile Include="Core\Pair.cs" />
-    <Compile Include="Core\ProgresData.cs" />
-    <Compile Include="Core\Size.cs" />
+    <Compile Include="Core\Structs\Pair.cs" />
+    <Compile Include="Core\Structs\ProgresData.cs" />
+    <Compile Include="Core\Structs\Size.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Items\Button.cs" />
     <Compile Include="Items\DropDown.cs" />

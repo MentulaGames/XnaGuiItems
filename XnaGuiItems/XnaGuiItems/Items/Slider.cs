@@ -20,6 +20,7 @@ namespace Mentula.GuiItems.Items
     using static Utilities;
     using Args = Core.ValueChangedEventArgs<int>;
     using Core.Handlers;
+    using Core.Structs;
 
     /// <summary>
     /// A slider used for setting rough values like volume.

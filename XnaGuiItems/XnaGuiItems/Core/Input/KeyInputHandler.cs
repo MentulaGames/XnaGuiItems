@@ -32,7 +32,7 @@ namespace Mentula.GuiItems.Core.Input
             shift = false;
         }
 
-        public string GetInputString(KeyboardState kstate, bool allowReturn, int maxLength, out bool confirmed, InputFlags flags = InputFlags.NO_FLAGS)
+        public string GetInputString(KeyboardState kstate, bool allowReturn, int maxLength, out bool confirmed, InputFlags flags)
         {
             clsInput.SetShift(kstate[Keys.LeftShift] | kstate[Keys.RightShift]);
             clsInput.SetCaps(kstate[Keys.CapsLock]);

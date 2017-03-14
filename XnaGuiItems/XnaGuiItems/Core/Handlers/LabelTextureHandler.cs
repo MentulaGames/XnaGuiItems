@@ -13,6 +13,7 @@ namespace Mentula.GuiItems.Core.Handlers
     using Xna.Microsoft.Xna.Framework;
     using Xna.Microsoft.Xna.Framework.Graphics;
 #endif
+    using Structs;
 
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.Label"/>.

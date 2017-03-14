@@ -18,6 +18,7 @@ namespace Mentula.GuiItems.Items
     using Core;
     using Core.Handlers;
     using Core.Input;
+    using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -37,10 +38,6 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public static Size DefaultMinimumSize { get { return new Size(100, 25); } }
         /// <summary>
-        /// Gets the visible text of the <see cref="TextBox"/>. 
-        /// </summary>
-        public virtual string VisisbleText { get { return PasswordChar != '\0' ? new string(PasswordChar, Text.Length) : Text; } }
-        /// <summary>
         /// Gets or sets a value indicating how the <see cref="TextBox"/> should flicker.
         /// </summary>
         public virtual FlickerStyle FlickerStyle { get; set; }
@@ -49,11 +46,24 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual bool Focused { get { return focus; } set { Invoke(FocusChanged, this, new Args(focus, value)); } }
         /// <summary>
+        /// Gets or sets a value indicating the types of input allowed in this <see cref="TextBox"/>.
+        /// </summary>
+        public virtual InputFlags InputType { get; set; }
+        /// <summary>
         /// Gets or sets a value indicating the maximum length of the text input.
         /// Negative values indicate no maximum length.
         /// Default value = -1
         /// </summary>
         public virtual int MaxLength { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating the maximum size of the <see cref="TextBox"/>.
+        /// Default value is the screen size.
+        /// </summary>
+        public virtual Size MaximumSize { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating the minimum size of the <see cref="TextBox"/>.
+        /// </summary>
+        public virtual Size MinimumSize { get; set; }
         /// <summary>
         /// Gets or sets a value indicating of the <see cref="TextBox"/> can be multiline.
         /// </summary>
@@ -64,14 +74,9 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual char PasswordChar { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating the minimum size of the <see cref="TextBox"/>.
+        /// Gets the visible text of the <see cref="TextBox"/>. 
         /// </summary>
-        public virtual Size MinimumSize { get; set; }
-        /// <summary>
-        /// Gets or sets a value indicating the maximum size of the <see cref="TextBox"/>.
-        /// Default value is the screen size.
-        /// </summary>
-        public virtual Size MaximumSize { get; set; }
+        public virtual string VisisbleText { get { return PasswordChar != '\0' ? new string(PasswordChar, Text.Length) : Text; } }
 
         new private TextboxTextureHandler textures { get { return (TextboxTextureHandler)base.textures; } set { base.textures = value; } }
 
@@ -120,6 +125,7 @@ namespace Mentula.GuiItems.Items
             MinimumSize = DefaultMinimumSize;
             MaximumSize = batch.GraphicsDevice.Viewport.Bounds.Size();
             MaxLength = -1;
+            AutoRefresh = true;
 
 #if DEBUG
             ctorCall = false;
@@ -140,7 +146,7 @@ namespace Mentula.GuiItems.Items
                 KeyboardState kState = Keyboard.GetState();
 
                 bool confirmed = false;
-                Text = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed);
+                Text = inputHandler.GetInputString(kState, MultiLine, MaxLength, out confirmed, InputType);
 
                 if (confirmed) Invoke(Confirmed, this, EventArgs.Empty);
                 if (FlickerStyle == FlickerStyle.None) return;

@@ -15,6 +15,7 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using Core.Handlers;
+    using Core.Structs;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using static Utilities;
@@ -32,6 +33,10 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual bool AutoSize { get; set; }
         /// <summary>
+        /// Gets or sets a value indicating if the <see cref="Label"/> will call <see cref="Refresh"/> on a <see cref="TextChanged"/> event.
+        /// </summary>
+        public virtual bool AutoRefresh { get; set; }
+        /// <summary>
         /// Gets or sets the type of border given to the <see cref="Label"/>.
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
@@ -47,10 +52,6 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the <see cref="Rectangle"/> used to draw the text.
         /// </summary>
         public virtual Rectangle ForegroundRectangle { get { return foregroundRectangle; } set { foregroundRectangle = value; } }
-        /// <summary>
-        /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
-        /// </summary>
-        public override Rectangle Bounds { get { return base.Bounds; } set { foregroundRectangle = value; base.Bounds = value; } }
         /// <summary>
         /// Gets or sets a value indicating from what line the <see cref="Label"/> should be shown.
         /// </summary>
@@ -165,6 +166,7 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
         {
             text = e.NewValue;
+            if (AutoRefresh) Refresh();
         }
 
         /// <summary>
@@ -197,6 +199,17 @@ namespace Mentula.GuiItems.Items
             base.OnMove(sender, e);
             foregroundRectangle.X = (int)e.NewValue.X;
             foregroundRectangle.Y = (int)e.NewValue.Y;
+        }
+
+        /// <summary>
+        /// This method is called when the <see cref="GuiItem.Resize"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="e"> The new size of the <see cref="GuiItem"/>. </param>
+        protected override void OnResize(GuiItem sender, ValueChangedEventArgs<Size> e)
+        {
+            base.OnResize(sender, e);
+            ForegroundRectangle = new Rectangle(ForegroundRectangle.X, ForegroundRectangle.Y, e.NewValue.Width, e.NewValue.Height);
         }
 
         /// <summary>

@@ -11,6 +11,7 @@ namespace Mentula.GuiItems.Core.Handlers
 #else
     using Xna.Microsoft.Xna.Framework.Graphics;
 #endif
+    using Structs;
 
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.DropDown"/> buttons.
