@@ -41,6 +41,23 @@ namespace Mentula.GuiItems.Core
         public readonly Color? Color;
 
         /// <summary>
+        /// Indicates whether this instance and a specified <see cref="Pair"/> are equal.
+        /// </summary>
+        /// <param name="left"> The current instance of <see cref="Pair"/>. </param>
+        /// <param name="right"> The <see cref="Pair"/> to compare with the current instance. </param>
+        /// <returns> <see langword="true"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false"/>. </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator ==(Pair left, Pair right) { return left.Equals(right); }
+        /// <summary>
+        /// Indicates whether this instance and a specified <see cref="Pair"/> are not equal.
+        /// </summary>
+        /// <param name="left"> The current instance of <see cref="Pair"/>. </param>
+        /// <param name="right"> The <see cref="Pair"/> to compare with the current instance. </param>
+        /// <returns> <see langword="false"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true"/>. </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator !=(Pair left, Pair right) { return !left.Equals(right); }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Pair"/> struct with a specified text.
         /// </summary>
         /// <param name="txt"> The specified text. </param>

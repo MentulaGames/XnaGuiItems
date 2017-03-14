@@ -83,10 +83,13 @@
     <HelpKINode Title="ByteFlags Structure" Url="html/a4ebe7ab-a6b4-d752-27de-46abdcf37fd5.htm" />
     <HelpKINode Title="about ByteFlags structure" Url="html/a4ebe7ab-a6b4-d752-27de-46abdcf37fd5.htm" />
     <HelpKINode Title="methods" Url="html/b75b131a-aba2-e679-c16d-0e77b11e4955.htm" />
+    <HelpKINode Title="operators" Url="html/692ceadd-4e7e-6ec9-545f-b422e93c034b.htm" />
     <HelpKINode Title="properties" Url="html/6b838999-d0a7-b60a-e59f-923cffd8e1a9.htm" />
   </HelpKINode>
+  <HelpKINode Title="ByteFlags.Equality operator" Url="html/5a90b8f2-a073-166b-ec38-34305bd2906a.htm" />
   <HelpKINode Title="ByteFlags.Equals method" Url="html/ba9a0944-aaed-18aa-a347-a0c87d4af119.htm" />
   <HelpKINode Title="ByteFlags.GetHashCode method" Url="html/f6a039e1-489d-bbf0-523b-63e61c1cef0f.htm" />
+  <HelpKINode Title="ByteFlags.Inequality operator" Url="html/062f4e01-c833-150e-bccd-8e7602bf9c15.htm" />
   <HelpKINode Title="ByteFlags.Item property" Url="html/54f50e26-7fd2-aa98-ee69-62426e3a804e.htm" />
   <HelpKINode Title="ByteFlags.ToString method" Url="html/5cd661ba-ada4-0cdb-3c17-2d134004cddd.htm" />
   <HelpKINode Title="Center enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
@@ -227,6 +230,8 @@
   </HelpKINode>
   <HelpKINode Title="Enabled property" Url="html/ef7a0e6b-54f1-74c2-0e82-121614b59295.htm" />
   <HelpKINode Title="Equality operator">
+    <HelpKINode Title="ByteFlags.Equality Operator " Url="html/5a90b8f2-a073-166b-ec38-34305bd2906a.htm" />
+    <HelpKINode Title="Pair.Equality Operator " Url="html/67fb4dbe-5fe5-a3dc-2ded-9efe7d55cf8f.htm" />
     <HelpKINode Title="ProgressData.Equality Operator " Url="html/44aaaf9c-de87-5a55-79c2-df0600716e84.htm" />
     <HelpKINode Title="Size.Equality Operator " Url="html/1858d90d-b25d-7d98-23de-49c6d8ffcc5f.htm" />
   </HelpKINode>
@@ -414,6 +419,8 @@
   <HelpKINode Title="IndexedClickEventHandler delegate" Url="html/e8ab361b-bd72-1793-dc13-d028129990d9.htm" />
   <HelpKINode Title="IndexOf method" Url="html/d8a92b45-64ac-3eeb-b327-4b992772b49a.htm" />
   <HelpKINode Title="Inequality operator">
+    <HelpKINode Title="ByteFlags.Inequality Operator " Url="html/062f4e01-c833-150e-bccd-8e7602bf9c15.htm" />
+    <HelpKINode Title="Pair.Inequality Operator " Url="html/d753da4d-b475-6d8b-44c0-74e26a4a25df.htm" />
     <HelpKINode Title="ProgressData.Inequality Operator " Url="html/169d509f-c4d7-62c2-4d69-516e4826cd85.htm" />
     <HelpKINode Title="Size.Inequality Operator " Url="html/3ab9bacf-968e-d587-7934-66a27dc708be.htm" />
   </HelpKINode>
@@ -789,11 +796,14 @@
     <HelpKINode Title="constructor" Url="html/ff43c91f-9011-fc9d-ba4a-e1cb3f982216.htm" />
     <HelpKINode Title="fields" Url="html/e90760ce-610e-ddc3-5d80-fa6416fe6832.htm" />
     <HelpKINode Title="methods" Url="html/db2adbd8-8303-0cc6-8b20-6eed6b01124f.htm" />
+    <HelpKINode Title="operators" Url="html/d0c88ea9-a481-0a82-08d3-5e34734b247e.htm" />
   </HelpKINode>
   <HelpKINode Title="Pair.Color field" Url="html/275e01ab-4756-7d95-0947-2f79276affa0.htm" />
+  <HelpKINode Title="Pair.Equality operator" Url="html/67fb4dbe-5fe5-a3dc-2ded-9efe7d55cf8f.htm" />
   <HelpKINode Title="Pair.Equals method" Url="html/a61dc468-3103-9bd7-cf59-88df01179aa6.htm" />
   <HelpKINode Title="Pair.GetHashCode method" Url="html/68ca8d30-3a7f-b319-54ee-3903e933aab1.htm" />
   <HelpKINode Title="Pair.GetKeys method" Url="html/178e54a4-db90-0977-ed1d-6d18b1a5207f.htm" />
+  <HelpKINode Title="Pair.Inequality operator" Url="html/d753da4d-b475-6d8b-44c0-74e26a4a25df.htm" />
   <HelpKINode Title="Pair.Pair constructor" Url="html/ff43c91f-9011-fc9d-ba4a-e1cb3f982216.htm" />
   <HelpKINode Title="Pair.Text field" Url="html/93d2ddbb-3d7b-e8f1-dca6-e35f57c03994.htm" />
   <HelpKINode Title="Pair.ToString method" Url="html/7581f803-9b41-c920-de91-949e2aaa1d67.htm" />

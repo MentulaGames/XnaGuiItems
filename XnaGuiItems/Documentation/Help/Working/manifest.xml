@@ -249,6 +249,7 @@
   <topic id="T:Mentula.GuiItems.Core.MouseEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Pair" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Pair" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.Pair" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.Pair" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.Pair.#ctor" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.Pair.Equals" type="API" />
@@ -259,6 +260,8 @@
   <topic id="M:Mentula.GuiItems.Core.Pair.Equals(System.Object)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Pair.GetHashCode" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.Pair.Text" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Pair.ToString" type="API" />
   <topic id="T:Mentula.GuiItems.Core.ProgressData" type="API" />
@@ -343,12 +346,15 @@
   <topic id="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Handlers.ByteFlags" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.ByteFlags" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.Handlers.ByteFlags" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.Handlers.ByteFlags" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.Handlers.ByteFlags.Equals" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.Equals(Mentula.GuiItems.Core.Handlers.ByteFlags)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.Equals(System.Object)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.GetHashCode" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Handlers.ByteFlags.Item(System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.ToString" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" type="API" />

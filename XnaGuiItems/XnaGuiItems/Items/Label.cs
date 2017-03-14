@@ -92,6 +92,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="Label"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
+        [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
              : base(ref sb, bounds)
         {

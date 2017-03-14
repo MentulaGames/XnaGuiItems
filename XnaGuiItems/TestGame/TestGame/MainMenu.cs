@@ -14,15 +14,7 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            TabContainer tbc = AddTabContainer();
-            tbc.AddTab("Tab0", Color.Blue);
-            tbc.AddTab("Tab1", Color.Red);
-            tbc.MoveRelative(Anchor.Center);
 
-            Label lbl = AddLabel();
-            lbl.AutoSize = true;
-            lbl.Text = "Test Label";
-            tbc.AddToTab("Tab1", lbl);
 
             base.Initialize(); 
         }

@@ -1125,6 +1125,24 @@
             Contains 8 <see cref="T:System.Boolean" /> values stored as 1 <see cref="T:System.Byte" />.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> are equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> are not equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Handlers.ByteFlags" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
+    </member>
     <member name="P:Mentula.GuiItems.Core.Handlers.ByteFlags.Item(System.Int32)">
       <summary>
             Gets or sets the value at index i.
@@ -1522,6 +1540,24 @@
       <summary>
             The color of the pair label.
             </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Pair" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are not equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Pair" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
     </member>
     <member name="M:Mentula.GuiItems.Core.Pair.#ctor(System.String)">
       <summary>

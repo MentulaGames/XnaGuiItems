@@ -19,6 +19,23 @@
         private byte underlying;
 
         /// <summary>
+        /// Indicates whether this instance and a specified <see cref="ByteFlags"/> are equal.
+        /// </summary>
+        /// <param name="left"> The current instance of <see cref="ByteFlags"/>. </param>
+        /// <param name="right"> The <see cref="ByteFlags"/> to compare with the current instance. </param>
+        /// <returns> <see langword="true"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false"/>. </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator ==(ByteFlags left, ByteFlags right) { return left.Equals(right); }
+        /// <summary>
+        /// Indicates whether this instance and a specified <see cref="ByteFlags"/> are not equal.
+        /// </summary>
+        /// <param name="left"> The current instance of <see cref="ByteFlags"/>. </param>
+        /// <param name="right"> The <see cref="ByteFlags"/> to compare with the current instance. </param>
+        /// <returns> <see langword="false"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true"/>. </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool operator !=(ByteFlags left, ByteFlags right) { return !left.Equals(right); }
+
+        /// <summary>
         /// Gets or sets the value at index i.
         /// </summary>
         /// <param name="i"> The specified index. </param>

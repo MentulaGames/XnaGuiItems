@@ -10089,6 +10089,8 @@
         </element>
         <element api="M:Mentula.GuiItems.Core.Pair.GetHashCode" />
         <element api="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" />
+        <element api="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" />
+        <element api="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" />
         <element api="F:Mentula.GuiItems.Core.Pair.Text" />
         <element api="M:Mentula.GuiItems.Core.Pair.ToString" />
       </elements>
@@ -10124,6 +10126,22 @@
         <element api="M:Mentula.GuiItems.Core.Pair.GetHashCode" />
         <element api="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" />
         <element api="M:Mentula.GuiItems.Core.Pair.ToString" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Pair" />
+      </containers>
+    </api>
+    <api id="Operators.T:Mentula.GuiItems.Core.Pair">
+      <topicdata name="Pair" group="list" subgroup="Operators" subsubgroup="Operators" typeTopicId="T:Mentula.GuiItems.Core.Pair" />
+      <apidata name="Pair" group="type" subgroup="structure" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" />
+        <element api="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -10335,6 +10353,56 @@
         <arrayOf rank="1">
           <type api="T:System.String" ref="true" />
         </arrayOf>
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <topicdata group="api" />
+      <apidata name="Equality" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="left">
+          <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+        </parameter>
+        <parameter name="right">
+          <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core" />
+        <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <topicdata group="api" />
+      <apidata name="Inequality" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="left">
+          <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+        </parameter>
+        <parameter name="right">
+          <type api="T:Mentula.GuiItems.Core.Pair" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -12573,6 +12641,8 @@
         </element>
         <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.GetHashCode" />
         <element api="P:Mentula.GuiItems.Core.Handlers.ByteFlags.Item(System.Int32)" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" />
         <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.ToString" />
       </elements>
       <containers>
@@ -12606,6 +12676,22 @@
         </element>
         <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.GetHashCode" />
         <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.ToString" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" />
+      </containers>
+    </api>
+    <api id="Operators.T:Mentula.GuiItems.Core.Handlers.ByteFlags">
+      <topicdata name="ByteFlags" group="list" subgroup="Operators" subsubgroup="Operators" typeTopicId="T:Mentula.GuiItems.Core.Handlers.ByteFlags" />
+      <apidata name="ByteFlags" group="type" subgroup="structure" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" />
+        <element api="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -12736,6 +12822,56 @@
       <parameters>
         <parameter name="i">
           <type api="T:System.Int32" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)">
+      <topicdata group="api" />
+      <apidata name="Equality" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="left">
+          <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
+        </parameter>
+        <parameter name="right">
+          <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
+        </parameter>
+      </parameters>
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.Handlers" />
+        <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
+      </containers>
+    </api>
+    <api id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)">
+      <topicdata group="api" />
+      <apidata name="Inequality" group="member" subgroup="method" subsubgroup="operator" />
+      <memberdata visibility="public" static="true" special="true" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="left">
+          <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
+        </parameter>
+        <parameter name="right">
+          <type api="T:Mentula.GuiItems.Core.Handlers.ByteFlags" ref="false" />
         </parameter>
       </parameters>
       <returns>

@@ -267,6 +267,10 @@
         <topic id="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" project="XnaGuiItems" file="178e54a4-db90-0977-ed1d-6d18b1a5207f" />
         <topic id="M:Mentula.GuiItems.Core.Pair.ToString" project="XnaGuiItems" file="7581f803-9b41-c920-de91-949e2aaa1d67" />
       </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="d0c88ea9-a481-0a82-08d3-5e34734b247e">
+        <topic id="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="67fb4dbe-5fe5-a3dc-2ded-9efe7d55cf8f" />
+        <topic id="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="d753da4d-b475-6d8b-44c0-74e26a4a25df" />
+      </topic>
       <topic id="Fields.T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="e90760ce-610e-ddc3-5d80-fa6416fe6832">
         <topic id="F:Mentula.GuiItems.Core.Pair.Color" project="XnaGuiItems" file="275e01ab-4756-7d95-0947-2f79276affa0" />
         <topic id="F:Mentula.GuiItems.Core.Pair.Text" project="XnaGuiItems" file="93d2ddbb-3d7b-e8f1-dca6-e35f57c03994" />
@@ -387,6 +391,10 @@
         </topic>
         <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.GetHashCode" project="XnaGuiItems" file="f6a039e1-489d-bbf0-523b-63e61c1cef0f" />
         <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.ToString" project="XnaGuiItems" file="5cd661ba-ada4-0cdb-3c17-2d134004cddd" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.Handlers.ByteFlags" project="XnaGuiItems" file="692ceadd-4e7e-6ec9-545f-b422e93c034b">
+        <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Equality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" project="XnaGuiItems" file="5a90b8f2-a073-166b-ec38-34305bd2906a" />
+        <topic id="M:Mentula.GuiItems.Core.Handlers.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Handlers.ByteFlags,Mentula.GuiItems.Core.Handlers.ByteFlags)" project="XnaGuiItems" file="062f4e01-c833-150e-bccd-8e7602bf9c15" />
       </topic>
     </topic>
     <topic id="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler" project="XnaGuiItems" file="6eaaf672-53ee-f27f-2395-7e8a3141e589">
