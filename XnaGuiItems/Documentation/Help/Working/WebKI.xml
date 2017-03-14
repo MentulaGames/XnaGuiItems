@@ -65,6 +65,7 @@
   <HelpKINode Title="Button.PerformClick method" Url="html/843bc224-c459-3ebf-608d-dfc8ca925989.htm" />
   <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
+  <HelpKINode Title="Button.SetTextureHandler method" Url="html/c75f9b3c-eeb9-a3a9-1dfe-aa95a9136ccd.htm" />
   <HelpKINode Title="Button.Update method" Url="html/ea0ae772-ee20-6b79-497a-9e47788a515b.htm" />
   <HelpKINode Title="Buttons property" Url="html/8285602a-b796-8e12-31b0-d15acd287b85.htm" />
   <HelpKINode Title="ButtonTextureHandler class">
@@ -76,6 +77,7 @@
   </HelpKINode>
   <HelpKINode Title="ButtonTextureHandler.Click property" Url="html/68353b6c-4da3-51b0-539e-866e6a5c1bbc.htm" />
   <HelpKINode Title="ButtonTextureHandler.Dispose method" Url="html/a228c7f3-b64c-c9a9-6416-0afee7032a13.htm" />
+  <HelpKINode Title="ButtonTextureHandler.DrawTexture property" Url="html/23fcfd7c-b6ca-1d2e-e5db-34cce7a8384d.htm" />
   <HelpKINode Title="ButtonTextureHandler.Hover property" Url="html/9856643a-fee9-0f68-b176-c07f9c781567.htm" />
   <HelpKINode Title="ByteFlags structure">
     <HelpKINode Title="ByteFlags Structure" Url="html/a4ebe7ab-a6b4-d752-27de-46abdcf37fd5.htm" />
@@ -103,10 +105,6 @@
   <HelpKINode Title="controlls field" Url="html/0267d4cc-1d82-66ef-7d4c-09dc6bb43cec.htm" />
   <HelpKINode Title="CopyTo method" Url="html/1dec5d21-67ed-6b08-544b-9fc58c67422c.htm" />
   <HelpKINode Title="Count property" Url="html/946ce79b-5cdc-abb2-4b92-29100640e175.htm" />
-  <HelpKINode Title="CreateTextTexture method">
-    <HelpKINode Title="Label.CreateTextTexture Method " Url="html/4c24fa54-e912-3c77-dfe9-cfcffe2af788.htm" />
-    <HelpKINode Title="TextBox.CreateTextTexture Method " Url="html/476b8de1-1db0-6f0c-30a1-d13ac6d2e478.htm" />
-  </HelpKINode>
   <HelpKINode Title="data field">
     <HelpKINode Title="ProgressBar.data Field" Url="html/3288bf01-28c8-3379-f52c-3491cdaa491f.htm" />
     <HelpKINode Title="Slider.data Field" Url="html/b6432b3f-1ed4-cf0a-4b0b-8011c01f0e1e.htm" />
@@ -150,6 +148,7 @@
     <HelpKINode Title="GuiItem.Draw Method " Url="html/64d04542-2bce-78e0-0f9c-ee192548b794.htm" />
     <HelpKINode Title="Menu(T).Draw Method " Url="html/e95a641d-4388-93db-6e2f-abce4b8ed036.htm" />
     <HelpKINode Title="MenuCollection(TGame).Draw Method " Url="html/8a393eec-e783-18ba-5079-7abca3c648b1.htm" />
+    <HelpKINode Title="Slider.Draw Method " Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
     <HelpKINode Title="TabContainer.Draw Method " Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
     <HelpKINode Title="TextBox.Draw Method " Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   </HelpKINode>
@@ -174,7 +173,7 @@
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.DrawableMentulaGameComponent constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.Game property" Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
   <HelpKINode Title="DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
-  <HelpKINode Title="DrawTexture property" Url="html/b5d3d8fe-3326-0fbf-4163-24ee6a6398e2.htm" />
+  <HelpKINode Title="DrawTexture property" Url="html/23fcfd7c-b6ca-1d2e-e5db-34cce7a8384d.htm" />
   <HelpKINode Title="DropDown class">
     <HelpKINode Title="DropDown Class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
     <HelpKINode Title="about DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
@@ -203,6 +202,9 @@
   <HelpKINode Title="DropDown.labels field" Url="html/daf98372-ab87-6d7b-4d29-7e0691405ec8.htm" />
   <HelpKINode Title="DropDown.OnMove method" Url="html/79728fb6-57c5-2224-3ce8-041a393bea5e.htm" />
   <HelpKINode Title="DropDown.Refresh method" Url="html/63782362-5c20-dfa5-66b1-08a0b783e255.htm" />
+  <HelpKINode Title="DropDown.SetBackgroundTexture method" Url="html/6cb0338f-534a-0928-be14-9e014a97c448.htm" />
+  <HelpKINode Title="DropDown.SetForegroundTexture method" Url="html/30becfe3-6dee-3eb8-8add-64e39d8282bd.htm" />
+  <HelpKINode Title="DropDown.SetTextureHandler method" Url="html/890d9797-710d-6f0d-4a08-c3d25e1fd9b3.htm" />
   <HelpKINode Title="DropDown.Update method" Url="html/e80f1676-ce32-6835-f1b4-a567a0fb8b03.htm" />
   <HelpKINode Title="DropDownButtonTextureHandler class">
     <HelpKINode Title="DropDownButtonTextureHandler Class" Url="html/6eaaf672-53ee-f27f-2395-7e8a3141e589.htm" />
@@ -210,7 +212,6 @@
     <HelpKINode Title="methods" Url="html/6f5bac57-41a5-212f-10fd-e8d5759066a3.htm" />
     <HelpKINode Title="properties" Url="html/61a8abe9-58ac-3a50-597f-36d21fc9c650.htm" />
   </HelpKINode>
-  <HelpKINode Title="DropDownButtonTextureHandler.DrawTexture property" Url="html/b5d3d8fe-3326-0fbf-4163-24ee6a6398e2.htm" />
   <HelpKINode Title="DropDownTextureHandler class">
     <HelpKINode Title="DropDownTextureHandler Class" Url="html/d590ca51-acb3-84a4-0887-6a61ac585e64.htm" />
     <HelpKINode Title="about DropDownTextureHandler class" Url="html/d590ca51-acb3-84a4-0887-6a61ac585e64.htm" />
@@ -358,6 +359,9 @@
   <HelpKINode Title="GuiItem.rightDown field" Url="html/b3a05e42-1b18-3115-8c79-cb5fa3cdda84.htm" />
   <HelpKINode Title="GuiItem.Rotated event" Url="html/cf40cffe-979a-8615-8d62-717b1d7079e9.htm" />
   <HelpKINode Title="GuiItem.Rotation property" Url="html/486c2e0d-bac0-ec5a-99d8-236fa07dea81.htm" />
+  <HelpKINode Title="GuiItem.SetBackgroundTexture method" Url="html/0196b74c-2dbf-ee42-fa98-6aa3ec973650.htm" />
+  <HelpKINode Title="GuiItem.SetForegroundTexture method" Url="html/a53337ea-97d5-615d-3c99-0e18ef2bc1a0.htm" />
+  <HelpKINode Title="GuiItem.SetTextureHandler method" Url="html/44a0fb38-2634-84b0-8526-4d71bed029fb.htm" />
   <HelpKINode Title="GuiItem.Show method" Url="html/063225f4-2072-377c-46ad-e8e2a7a53ff3.htm" />
   <HelpKINode Title="GuiItem.Size property" Url="html/2cea4301-e90d-24c0-19f8-3ed304c9e3f4.htm" />
   <HelpKINode Title="GuiItem.SuppressDraw property" Url="html/37dc41a3-7acd-eaf7-c449-006ef4de559e.htm" />
@@ -469,7 +473,6 @@
   <HelpKINode Title="Label.AutoSize property" Url="html/54844abf-f796-8231-2c28-ee0f319d1848.htm" />
   <HelpKINode Title="Label.BorderStyle property" Url="html/943eb238-d188-ec04-3bcb-1946fb67c5ed.htm" />
   <HelpKINode Title="Label.Bounds property" Url="html/1e5387f8-768f-9fdc-30c3-69146536ddae.htm" />
-  <HelpKINode Title="Label.CreateTextTexture method" Url="html/4c24fa54-e912-3c77-dfe9-cfcffe2af788.htm" />
   <HelpKINode Title="Label.font field" Url="html/ce37aea7-09e3-c1de-9e69-3a89ba2a281d.htm" />
   <HelpKINode Title="Label.Font property" Url="html/0500123a-4465-fd7e-489b-c62756879f80.htm" />
   <HelpKINode Title="Label.FontChanged event" Url="html/457b5dc9-9ea4-6196-4185-7ae61c5bbdc7.htm" />
@@ -485,6 +488,9 @@
   <HelpKINode Title="Label.OnMove method" Url="html/7c686fa8-f8f3-c36f-26a8-50056746eb35.htm" />
   <HelpKINode Title="Label.OnTextChanged method" Url="html/0c675399-c449-04ea-9fd1-3d996789111f.htm" />
   <HelpKINode Title="Label.Refresh method" Url="html/66ca4e66-4316-ca82-2b44-ec2f7a0a5de7.htm" />
+  <HelpKINode Title="Label.SetBackgroundTexture method" Url="html/812998c9-f3b8-878c-7b9c-5309da7cea35.htm" />
+  <HelpKINode Title="Label.SetForegroundTexture method" Url="html/48020953-4e6f-765c-1145-9eebfe20212a.htm" />
+  <HelpKINode Title="Label.SetTextureHandler method" Url="html/8525d0ae-68a5-9771-6e0f-2a5c300fea7d.htm" />
   <HelpKINode Title="Label.Text property" Url="html/cf673006-bbc2-63ca-3c10-b0ddec1cff7a.htm" />
   <HelpKINode Title="Label.TextChanged event" Url="html/6632fb63-abbb-d9eb-67ce-c3015862d5cf.htm" />
   <HelpKINode Title="labels field" Url="html/daf98372-ab87-6d7b-4d29-7e0691405ec8.htm" />
@@ -809,6 +815,7 @@
   <HelpKINode Title="PictureBox.OnSizeModeChanged method" Url="html/83e1d109-062b-fb11-84ed-a2484ba41bf6.htm" />
   <HelpKINode Title="PictureBox.PictureBox constructor" Url="html/d36e6e96-e357-a83e-c1de-b1a6cd6ae50f.htm" />
   <HelpKINode Title="PictureBox.Refresh method" Url="html/6c18240f-1d44-d681-1895-bc586c90eb99.htm" />
+  <HelpKINode Title="PictureBox.SetForegroundTexture method" Url="html/b2a16d52-73e8-8090-ebde-91a67abed5fb.htm" />
   <HelpKINode Title="PictureBox.SizeMode property" Url="html/6f81fdd3-5230-9285-5fd6-fbf06173b7a3.htm" />
   <HelpKINode Title="PictureBox.SizeModeChanged event" Url="html/29695302-e34c-c7e7-31a2-f3605bf245cd.htm" />
   <HelpKINode Title="Position property" Url="html/e4568516-1a67-980c-3eac-072ec298d967.htm" />
@@ -831,7 +838,9 @@
   <HelpKINode Title="ProgressBar.MinimumValue property" Url="html/097e6f2d-c7c5-84f1-ad0d-8878531ce5a9.htm" />
   <HelpKINode Title="ProgressBar.OnValueChanged method" Url="html/e8faccd7-8d8e-3419-6220-498d07e46fb0.htm" />
   <HelpKINode Title="ProgressBar.ProgressBar constructor" Url="html/eb7d5030-b888-a3ec-d305-f40dc1d08984.htm" />
-  <HelpKINode Title="ProgressBar.Refresh method" Url="html/44954f05-dd9a-9084-24c7-bb150cbfba12.htm" />
+  <HelpKINode Title="ProgressBar.SetBackgroundTexture method" Url="html/c9997e52-9abd-06bc-b4d6-04e607bea8a2.htm" />
+  <HelpKINode Title="ProgressBar.SetForegroundTexture method" Url="html/8334d167-d5d4-11c1-e41c-b943e2c629d0.htm" />
+  <HelpKINode Title="ProgressBar.SetTextureHandler method" Url="html/05d07d73-2cea-f371-f617-864e7391e435.htm" />
   <HelpKINode Title="ProgressBar.Value property" Url="html/504cf434-a956-b537-45b7-2302e7e7d550.htm" />
   <HelpKINode Title="ProgressBar.ValueChanged event" Url="html/20035b1f-5329-2f51-5789-394ae53b7885.htm" />
   <HelpKINode Title="ProgressData structure">
@@ -860,8 +869,6 @@
     <HelpKINode Title="GuiItem.Refresh Method " Url="html/7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2.htm" />
     <HelpKINode Title="Label.Refresh Method " Url="html/66ca4e66-4316-ca82-2b44-ec2f7a0a5de7.htm" />
     <HelpKINode Title="PictureBox.Refresh Method " Url="html/6c18240f-1d44-d681-1895-bc586c90eb99.htm" />
-    <HelpKINode Title="ProgressBar.Refresh Method " Url="html/44954f05-dd9a-9084-24c7-bb150cbfba12.htm" />
-    <HelpKINode Title="Slider.Refresh Method " Url="html/e9d5a3b8-bcd6-b3aa-e027-66209c2be783.htm" />
     <HelpKINode Title="TabContainer.Refresh Method " Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
   </HelpKINode>
   <HelpKINode Title="Remove method" Url="html/e7023442-515b-9d44-a61b-f26e7346d088.htm" />
@@ -886,7 +893,32 @@
   <HelpKINode Title="ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
   <HelpKINode Title="ScreenWidthMiddle property" Url="html/34155669-8651-5a27-287c-8deedcb5e35b.htm" />
   <HelpKINode Title="SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
+  <HelpKINode Title="SetBackgroundTexture method">
+    <HelpKINode Title="DropDown.SetBackgroundTexture Method " Url="html/6cb0338f-534a-0928-be14-9e014a97c448.htm" />
+    <HelpKINode Title="GuiItem.SetBackgroundTexture Method " Url="html/0196b74c-2dbf-ee42-fa98-6aa3ec973650.htm" />
+    <HelpKINode Title="Label.SetBackgroundTexture Method " Url="html/812998c9-f3b8-878c-7b9c-5309da7cea35.htm" />
+    <HelpKINode Title="ProgressBar.SetBackgroundTexture Method " Url="html/c9997e52-9abd-06bc-b4d6-04e607bea8a2.htm" />
+    <HelpKINode Title="Slider.SetBackgroundTexture Method " Url="html/e7f5f639-eb2f-4712-5d77-175e95ce6ce1.htm" />
+  </HelpKINode>
   <HelpKINode Title="SetDefaultFont method" Url="html/1a1fd36e-dc98-602d-a77a-3cc372310b14.htm" />
+  <HelpKINode Title="SetForegroundTexture method">
+    <HelpKINode Title="DropDown.SetForegroundTexture Method " Url="html/30becfe3-6dee-3eb8-8add-64e39d8282bd.htm" />
+    <HelpKINode Title="GuiItem.SetForegroundTexture Method " Url="html/a53337ea-97d5-615d-3c99-0e18ef2bc1a0.htm" />
+    <HelpKINode Title="Label.SetForegroundTexture Method " Url="html/48020953-4e6f-765c-1145-9eebfe20212a.htm" />
+    <HelpKINode Title="PictureBox.SetForegroundTexture Method " Url="html/b2a16d52-73e8-8090-ebde-91a67abed5fb.htm" />
+    <HelpKINode Title="ProgressBar.SetForegroundTexture Method " Url="html/8334d167-d5d4-11c1-e41c-b943e2c629d0.htm" />
+    <HelpKINode Title="Slider.SetForegroundTexture Method " Url="html/599754cc-0dd7-0c73-06bd-391cc692bb40.htm" />
+    <HelpKINode Title="TextBox.SetForegroundTexture Method " Url="html/76a1d798-da0c-5eb7-ac0e-97bc6344ee3b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SetTextureHandler method">
+    <HelpKINode Title="Button.SetTextureHandler Method " Url="html/c75f9b3c-eeb9-a3a9-1dfe-aa95a9136ccd.htm" />
+    <HelpKINode Title="DropDown.SetTextureHandler Method " Url="html/890d9797-710d-6f0d-4a08-c3d25e1fd9b3.htm" />
+    <HelpKINode Title="GuiItem.SetTextureHandler Method " Url="html/44a0fb38-2634-84b0-8526-4d71bed029fb.htm" />
+    <HelpKINode Title="Label.SetTextureHandler Method " Url="html/8525d0ae-68a5-9771-6e0f-2a5c300fea7d.htm" />
+    <HelpKINode Title="ProgressBar.SetTextureHandler Method " Url="html/05d07d73-2cea-f371-f617-864e7391e435.htm" />
+    <HelpKINode Title="Slider.SetTextureHandler Method " Url="html/2b757242-478b-8c6e-eb9b-d8735e6e1f04.htm" />
+    <HelpKINode Title="TextBox.SetTextureHandler Method " Url="html/5e13da6a-33bd-c7dd-442d-515375eac2d1.htm" />
+  </HelpKINode>
   <HelpKINode Title="Show method">
     <HelpKINode Title="GuiItem.Show Method " Url="html/063225f4-2072-377c-46ad-e8e2a7a53ff3.htm" />
     <HelpKINode Title="IToggleable.Show Method " Url="html/d8671280-0f39-84c7-0030-61217a05dc22.htm" />
@@ -940,6 +972,7 @@
   <HelpKINode Title="Slider.data field" Url="html/b6432b3f-1ed4-cf0a-4b0b-8011c01f0e1e.htm" />
   <HelpKINode Title="Slider.DefaultBounds property" Url="html/c73b6f1f-29fa-0a38-3ffa-67bfdf8ed4e2.htm" />
   <HelpKINode Title="Slider.DefaultForeColor property" Url="html/f35599c2-ed82-3d88-5460-bf21c8eab6d8.htm" />
+  <HelpKINode Title="Slider.Draw method" Url="html/491ec62f-08b7-8fc4-701d-43764859d139.htm" />
   <HelpKINode Title="Slider.InitEvents method" Url="html/67bfe112-a2f1-a026-bf3b-70415f5766eb.htm" />
   <HelpKINode Title="Slider.MaximumValue property" Url="html/735c264f-311e-bfcb-3b92-3f5b80e6e40c.htm" />
   <HelpKINode Title="Slider.MinimumValue property" Url="html/3556527e-b702-d6ea-c9b7-1f1be2db6657.htm" />
@@ -947,7 +980,9 @@
   <HelpKINode Title="Slider.OnClick method" Url="html/21c2a926-24df-5c63-3a41-0af4b48edbad.htm" />
   <HelpKINode Title="Slider.OnMouseDown method" Url="html/cc159729-042f-c7de-39a2-01be7e47455f.htm" />
   <HelpKINode Title="Slider.OnValueChanged method" Url="html/9bf609ad-7eaf-599b-49fb-cf204fd94706.htm" />
-  <HelpKINode Title="Slider.Refresh method" Url="html/e9d5a3b8-bcd6-b3aa-e027-66209c2be783.htm" />
+  <HelpKINode Title="Slider.SetBackgroundTexture method" Url="html/e7f5f639-eb2f-4712-5d77-175e95ce6ce1.htm" />
+  <HelpKINode Title="Slider.SetForegroundTexture method" Url="html/599754cc-0dd7-0c73-06bd-391cc692bb40.htm" />
+  <HelpKINode Title="Slider.SetTextureHandler method" Url="html/2b757242-478b-8c6e-eb9b-d8735e6e1f04.htm" />
   <HelpKINode Title="Slider.Slider constructor" Url="html/db74ba78-39cd-460e-a9ef-7fb852ddb1e4.htm" />
   <HelpKINode Title="Slider.SliderBarDimentions property" Url="html/4a0c8d6e-f98b-41fc-404f-f39ec4c3aa85.htm" />
   <HelpKINode Title="Slider.Update method" Url="html/bd762395-092b-3f69-a1f0-a534bb82fa66.htm" />
@@ -996,7 +1031,6 @@
     <HelpKINode Title="properties" Url="html/e22c3ae1-9a95-3b98-a082-f79304a908f5.htm" />
   </HelpKINode>
   <HelpKINode Title="TextBox.Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
-  <HelpKINode Title="TextBox.CreateTextTexture method" Url="html/476b8de1-1db0-6f0c-30a1-d13ac6d2e478.htm" />
   <HelpKINode Title="TextBox.DefaultMinimumSize property" Url="html/03f3a0a9-5c2b-a750-c55a-bb42fbff10e7.htm" />
   <HelpKINode Title="TextBox.Draw method" Url="html/9e9ce7b2-6994-f300-9566-92879206d9d6.htm" />
   <HelpKINode Title="TextBox.FlickerStyle property" Url="html/07818976-b10f-d8f2-5bdd-ae45cf7fa354.htm" />
@@ -1011,6 +1045,8 @@
   <HelpKINode Title="TextBox.OnFocusChanged method" Url="html/d875062e-0fcc-01e3-150c-0469348cf2b1.htm" />
   <HelpKINode Title="TextBox.OnTextChanged method" Url="html/41fa811d-0e4d-ea65-2462-9629545f0c06.htm" />
   <HelpKINode Title="TextBox.PasswordChar property" Url="html/ef2a4cab-bf18-1a60-e2b4-9dde1c0d2d2c.htm" />
+  <HelpKINode Title="TextBox.SetForegroundTexture method" Url="html/76a1d798-da0c-5eb7-ac0e-97bc6344ee3b.htm" />
+  <HelpKINode Title="TextBox.SetTextureHandler method" Url="html/5e13da6a-33bd-c7dd-442d-515375eac2d1.htm" />
   <HelpKINode Title="TextBox.TextBox constructor" Url="html/6376d5d7-9eb4-336f-2b60-791bc8b5d931.htm" />
   <HelpKINode Title="TextBox.Update method" Url="html/12ddb37a-c317-7f8c-7356-e66080e0781a.htm" />
   <HelpKINode Title="TextBox.VisisbleText property" Url="html/880221ef-331e-ba18-8fa5-539afe9ae86c.htm" />

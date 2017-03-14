@@ -26,6 +26,19 @@ namespace Mentula.GuiItems.Core.Handlers
     public class ButtonTextureHandler : LabelTextureHandler
     {
         /// <summary>
+        /// The texture that needs to be drawn in the current state.
+        /// </summary>
+        public Texture2D DrawTexture
+        {
+            get
+            {
+                return state == ButtonStyle.Default ? Background : (state == ButtonStyle.Hover ? Hover : Click);
+            }
+        }
+
+        internal ButtonStyle state;
+
+        /// <summary>
         /// The button hover texture for a <see cref="Items.Button"/>.
         /// </summary>
         public Texture2D Hover

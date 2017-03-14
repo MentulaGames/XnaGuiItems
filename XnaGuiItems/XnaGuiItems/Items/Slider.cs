@@ -31,7 +31,7 @@ namespace Mentula.GuiItems.Items
     {
         /// <summary>
         /// Gets or sets the type of border given to the <see cref="Slider"/>.
-        /// <see cref="Refresh"/> required after change!
+        /// <see cref="GuiItem.Refresh"/> required after change!
         /// </summary>
         public virtual BorderStyle BorderStyle { get; set; }
         /// <summary>
@@ -58,19 +58,12 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the current value of the <see cref="Slider"/>.
         /// Will not change the visuals of the slider!
         /// </summary>
-        public virtual int Value
-        {
-            get { return data.Value; }
-            set
-            {
-                if (value != Value) Invoke(ValueChanged, this, new Args(data.Value, value));
-            }
-        }
+        public virtual int Value { get { return data.Value; } set { Invoke(ValueChanged, this, new Args(data.Value, value)); } }
 
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
 
-        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } set { base.textures = value; } }
 
         private bool sliding;
         private Vector2 oldOffset;
@@ -103,7 +96,6 @@ namespace Mentula.GuiItems.Items
         public Slider(ref SpriteBatch sb, Rectangle bounds)
              : base(ref sb, bounds)
         {
-            base.textures = new LabelTextureHandler();
             SliderBarDimentions = new Rectangle(bounds.X, bounds.Y, Width / 10, Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
@@ -125,27 +117,26 @@ namespace Mentula.GuiItems.Items
                 if (sliding && leftDown)
                 {
                     Invoke(MouseDown, this, GetMouseEventArgs());
-                    Refresh();
                 }
                 else if (sliding && !leftDown && !IsSliding(mState.Position()))
                 {
                     sliding = false;
                     oldOffset = Vector2.Zero;
-                    Refresh();
                 }
             }
         }
 
         /// <summary>
-        /// Recalculates the background and the foreground.
+        /// Draws the <see cref="Slider"/> to the specified <see cref="SpriteBatch"/>.
         /// </summary>
-        public override void Refresh()
+        /// <param name="spriteBatch"> The spritebatch to use. </param>
+        public override void Draw(SpriteBatch spriteBatch)
         {
-            base.Refresh();
-            if (suppressRefresh) return;
-
-            textures.SetForeFromClr(ForeColor, Size, SliderBarDimentions, batch.GraphicsDevice);
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+            if (Visible)
+            {
+                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.Foreground, Position + SliderBarDimentions.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+            }
         }
 
         /// <summary>
@@ -198,6 +189,30 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
+        /// Sets the background texture for the <see cref="Slider"/>.
+        /// </summary>
+        protected override void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="Slider"/>.
+        /// </summary>
+        protected override void SetForegroundTexture()
+        {
+            textures.SetForeFromClr(ForeColor, Size, SliderBarDimentions, batch.GraphicsDevice);
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new LabelTextureHandler();
+        }
+
+        /// <summary>
         /// Handles the initializing of the events.
         /// </summary>
         protected override void InitEvents()
@@ -206,7 +221,6 @@ namespace Mentula.GuiItems.Items
             ValueChanged += OnValueChanged;
             Click += OnClick;
             MouseDown += OnMouseDown;
-            Resize += (sender, args) => Refresh();
         }
 
         private bool IsSliding(Vector2 mousePosition)

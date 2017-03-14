@@ -20,19 +20,6 @@ namespace Mentula.GuiItems.Core.Handlers
 #endif
     public sealed class DropDownButtonTextureHandler : ButtonTextureHandler
     {
-        /// <summary>
-        /// The texture that needs to be drawn in the current state.
-        /// </summary>
-        public Texture2D DrawTexture
-        {
-            get
-            {
-                return state == ButtonStyle.Default ? Background : (state == ButtonStyle.Hover ? Hover : Click);
-            }
-        }
-
-        internal ButtonStyle state;
-
         internal DropDownButtonTextureHandler()
         {
             state = ButtonStyle.Default;

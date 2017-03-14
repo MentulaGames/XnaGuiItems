@@ -964,7 +964,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.Refresh">
       <summary>
-            When overriden in a derived class, updates the textures used for drawing.
+            Updates the textures used for drawing.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.ToString">
@@ -1059,6 +1059,21 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new visibility of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.SetBackgroundTexture">
+      <summary>
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.GuiItem.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
+    </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.InitEvents">
       <summary>
             Handles the initializing of the events.
@@ -1071,6 +1086,11 @@
       <remarks>
             The <see cref="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
             </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.DrawTexture">
+      <summary>
+            The texture that needs to be drawn in the current state.
+            </summary>
     </member>
     <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover">
       <summary>
@@ -1133,11 +1153,6 @@
     <member name="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" /> buttons.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler.DrawTexture">
-      <summary>
-            The texture that needs to be drawn in the current state.
             </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler">
@@ -1911,6 +1926,11 @@
             </summary>
       <param name="button"> The type of click event to invoke. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.Button.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
+    </member>
     <member name="T:Mentula.GuiItems.Items.DropDown">
       <summary>
             A Dropdown with clickable childs.
@@ -2027,6 +2047,21 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.SetBackgroundTexture">
+      <summary>
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.DropDown.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Items.DropDown" />.
+            </summary>
+    </member>
     <member name="M:Mentula.GuiItems.Items.DropDown.InitEvents">
       <summary>
             Handles the initializing of the events.
@@ -2118,10 +2153,14 @@
             Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.CreateTextTexture">
+    <member name="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture">
       <summary>
-            Handles the creation on the text texture.
-            Override for special text texture handling.
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Items.Label" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Label.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.Label" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
@@ -2152,6 +2191,11 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
+    <member name="M:Mentula.GuiItems.Items.Label.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
+    </member>
     <member name="M:Mentula.GuiItems.Items.Label.InitEvents">
       <summary>
             Handles the initializing of the events.
@@ -2165,7 +2209,7 @@
     <member name="P:Mentula.GuiItems.Items.ProgressBar.Inverted">
       <summary>
             Gets or sets the direction of the bar.
-            <see cref="M:Mentula.GuiItems.Items.ProgressBar.Refresh" /> required after change!
+            <see cref="M:Mentula.GuiItems.Core.GuiItem.Refresh" /> required after change!
             </summary>
     </member>
     <member name="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle">
@@ -2219,17 +2263,27 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.Refresh">
-      <summary>
-            Recalculates the background and the foreground.
-            </summary>
-    </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="args"> The new value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.SetBackgroundTexture">
+      <summary>
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.InitEvents">
       <summary>
@@ -2244,7 +2298,7 @@
     <member name="P:Mentula.GuiItems.Items.Slider.BorderStyle">
       <summary>
             Gets or sets the type of border given to the <see cref="T:Mentula.GuiItems.Items.Slider" />.
-            <see cref="M:Mentula.GuiItems.Items.Slider.Refresh" /> required after change!
+            <see cref="M:Mentula.GuiItems.Core.GuiItem.Refresh" /> required after change!
             </summary>
     </member>
     <member name="P:Mentula.GuiItems.Items.Slider.DefaultBounds">
@@ -2309,10 +2363,11 @@
             </summary>
       <param name="deltaTime"> The specified deltatime. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.Refresh">
+    <member name="M:Mentula.GuiItems.Items.Slider.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
       <summary>
-            Recalculates the background and the foreground.
+            Draws the <see cref="T:Mentula.GuiItems.Items.Slider" /> to the specified <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" />.
             </summary>
+      <param name="spriteBatch"> The spritebatch to use. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.MouseEventArgs)">
       <summary>
@@ -2334,6 +2389,21 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.SetBackgroundTexture">
+      <summary>
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.Slider" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.Slider.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.InitEvents">
       <summary>
@@ -2451,10 +2521,14 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new focus value for the sender. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.CreateTextTexture">
+    <member name="M:Mentula.GuiItems.Items.TextBox.SetForegroundTexture">
       <summary>
-            Handles the creation on the text texture.
-            Override for special text texture handling.
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.TextBox" />.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.TextBox.SetTextureHandler">
+      <summary>
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.InitEvents">
@@ -2497,7 +2571,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.Refresh">
       <summary>
-            Recalculates the foreground.
+            Refreshes the image display size.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
@@ -2506,6 +2580,11 @@
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Mentula.GuiItems.Core.ResizeMode" /> for the foreground. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Items.PictureBox.SetForegroundTexture">
+      <summary>
+            Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.PictureBox" />.
+            </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.InitEvents">
       <summary>

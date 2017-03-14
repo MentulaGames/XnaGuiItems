@@ -17,7 +17,6 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using Core.Handlers;
     using static Utilities;
@@ -77,7 +76,7 @@ namespace Mentula.GuiItems.Items
         /// <summary> The rectangle used in the foreground. </summary>
         protected Rectangle foregroundRectangle;
 
-        new private DropDownTextureHandler textures { get { return (DropDownTextureHandler)base.textures; } }
+        new private DropDownTextureHandler textures { get { return (DropDownTextureHandler)base.textures; } set { base.textures = value; } }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DropDown"/> class with default settings.
@@ -99,10 +98,9 @@ namespace Mentula.GuiItems.Items
             : base(ref sb, bounds)
         {
             this.font = font;
-            base.textures = new DropDownTextureHandler();
             HeaderText = DefaultHeaderText;
             labels = new Pair[0][];
-            foregroundRectangle = DefaultBounds;
+            foregroundRectangle = bounds;
 
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
@@ -170,15 +168,13 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (!suppressRefresh)
+            {
+                HandleAutoSize();
+                foregroundRectangle = Bounds;
+            }
+
             base.Refresh();
-            if (suppressRefresh) return;
-
-            HandleAutoSize();
-            foregroundRectangle = Bounds;
-
-            textures.SetText(HeaderText, font, ForeColor, new Size(font.MeasureString(HeaderText)), false, 0, batch);
-            textures.SetBackFromClr(BackColor, HeaderBackgroundColor, Size, new Size(Width, (int)font.GetHeight()), batch, BorderStyle);
-            textures.SetButtons(labels, new Size(Width, Height / (labels.Length + 1)), font, batch);
         }
 
         /// <summary>
@@ -241,6 +237,31 @@ namespace Mentula.GuiItems.Items
             base.OnMove(sender, e);
             foregroundRectangle.X = (int)e.NewValue.X;
             foregroundRectangle.Y = (int)e.NewValue.Y;
+        }
+
+        /// <summary>
+        /// Sets the background texture for the <see cref="DropDown"/>.
+        /// </summary>
+        protected override void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, HeaderBackgroundColor, Size, new Size(Width, (int)font.GetHeight()), batch, BorderStyle);
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="DropDown"/>.
+        /// </summary>
+        protected override void SetForegroundTexture()
+        {
+            textures.SetText(HeaderText, font, ForeColor, new Size(font.MeasureString(HeaderText)), false, 0, batch);
+            textures.SetButtons(labels, new Size(Width, Height / (labels.Length + 1)), font, batch);
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="DropDown"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new DropDownTextureHandler();
         }
 
         /// <summary>

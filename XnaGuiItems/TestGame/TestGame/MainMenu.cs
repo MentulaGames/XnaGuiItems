@@ -14,6 +14,9 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
+            Slider sld = AddSlider();
+            sld.MoveRelative(Anchor.Center);
+
             base.Initialize(); 
         }
     }

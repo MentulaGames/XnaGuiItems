@@ -166,8 +166,8 @@ namespace Mentula.GuiItems.Core
         /// <param name="max"> The maximum <see cref="Size"/>. </param>
         public void Clamp(Size min, Size max)
         {
-            Width = Extentions.Clamp(Width, min.Width, max.Width);
-            Height = Extentions.Clamp(Height, min.Height, max.Height);
+            Width = Width.Clamp(max.Width, min.Width);
+            Height = Height.Clamp(max.Height, min.Height);
         }
 
         /// <summary>

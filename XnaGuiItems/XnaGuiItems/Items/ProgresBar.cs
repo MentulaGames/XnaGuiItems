@@ -29,7 +29,7 @@ namespace Mentula.GuiItems.Items
     {
         /// <summary>
         /// Gets or sets the direction of the bar.
-        /// <see cref="Refresh"/> required after change!
+        /// <see cref="GuiItem.Refresh"/> required after change!
         /// </summary>
         public virtual bool Inverted { get; set; }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Mentula.GuiItems.Items
         /// <summary> The underlying <see cref="ProgressData"/>. </summary>
         protected ProgressData data;
 
-        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } set { base.textures = value; } }
 
         /// <summary>
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
@@ -86,25 +86,9 @@ namespace Mentula.GuiItems.Items
         public ProgressBar(ref SpriteBatch sb, Rectangle bounds)
              : base(ref sb, bounds)
         {
-            base.textures = new LabelTextureHandler();
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
-        }
-
-        /// <summary>
-        /// Recalculates the background and the foreground.
-        /// </summary>
-        public override void Refresh()
-        {
-            base.Refresh();
-            if (suppressRefresh) return;
-
-            float ppp = (float)Bounds.Width / 100;
-            int width = (int)(ppp * data.Value);
-
-            textures.SetForeFromClr(ForeColor, Size, Inverted ? new Rectangle(Width - width, 0, width, Height) : new Rectangle(0, 0, width, Height), batch.GraphicsDevice);
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
         }
 
         /// <summary>
@@ -115,7 +99,33 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnValueChanged(GuiItem sender, Args args)
         {
             data.Value = args.NewValue;
-            Refresh();
+        }
+
+        /// <summary>
+        /// Sets the background texture for the <see cref="ProgressBar"/>.
+        /// </summary>
+        protected override void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="ProgressBar"/>.
+        /// </summary>
+        protected override void SetForegroundTexture()
+        {
+            int width = (int)(Bounds.Width / 100.0f * data.Value);
+            Rectangle destination = Inverted ? new Rectangle(Width - width - 1, 1, width - 1, Height - 2) : new Rectangle(1, 1, width - 2, Height - 2);
+
+            textures.SetForeFromClr(ForeColor, Size, destination, batch.GraphicsDevice);
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new LabelTextureHandler();
         }
 
         /// <summary>

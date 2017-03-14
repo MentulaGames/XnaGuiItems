@@ -62,12 +62,32 @@ namespace Mentula.GuiItems.Items
         { }
 
         /// <summary>
-        /// Recalculates the foreground.
+        /// Refreshes the image display size.
         /// </summary>
         public override void Refresh()
         {
-            if (suppressRefresh) return;
+            if (!suppressRefresh && SizeMode == ResizeMode.AutoSize)
+            {
+                if (Image.Width != Bounds.Width || Image.Height != Bounds.Height) Size = new Size(Image.Width, Image.Height);
+            }
+            base.Refresh();
+        }
 
+        /// <summary>
+        /// This method is called when the <see cref="SizeModeChanged"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="e"> The new <see cref="ResizeMode"/> for the foreground. </param>
+        protected virtual void OnSizeModeChanged(GuiItem sender, Args e)
+        {
+            sizeMode = e.NewValue;
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="PictureBox"/>.
+        /// </summary>
+        protected override void SetForegroundTexture()
+        {
             if (Image == null)
             {
                 textures.SetForeFromClr(Color.Transparent, Size, batch.GraphicsDevice);
@@ -77,7 +97,6 @@ namespace Mentula.GuiItems.Items
             switch (SizeMode)
             {
                 case ResizeMode.AutoSize:
-                    if (Image.Width != Bounds.Width || Image.Height != Bounds.Height) Size = new Size(Image.Width, Image.Height);
                     textures.Foreground = Image;
                     break;
                 case ResizeMode.CenterImage:
@@ -95,16 +114,6 @@ namespace Mentula.GuiItems.Items
                     textures.Foreground = Image.RenderOnto(batch, Size, scale: new Vector2(Math.Min(zoom.X, zoom.Y)));
                     break;
             }
-        }
-
-        /// <summary>
-        /// This method is called when the <see cref="SizeModeChanged"/> event is raised.
-        /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
-        /// <param name="e"> The new <see cref="ResizeMode"/> for the foreground. </param>
-        protected virtual void OnSizeModeChanged(GuiItem sender, Args e)
-        {
-            sizeMode = e.NewValue;
         }
 
         /// <summary>

@@ -38,14 +38,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the text of the <see cref="Label"/>. 
         /// </summary>
-        public virtual string Text
-        {
-            get { return text; }
-            set
-            {
-                if (value != text) Invoke(TextChanged, this, new ValueChangedEventArgs<string>(text, value));
-            }
-        }
+        public virtual string Text { get { return text; } set { Invoke(TextChanged, this, new ValueChangedEventArgs<string>(text, value)); } }
         /// <summary>
         /// Gets or sets the font used by the <see cref="Label"/>.
         /// </summary>
@@ -53,7 +46,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the <see cref="Rectangle"/> used to draw the text.
         /// </summary>
-        public virtual Rectangle ForegroundRectangle { get { return foregroundRectangle; } set { foregroundRectangle = value; Refresh(); } }
+        public virtual Rectangle ForegroundRectangle { get { return foregroundRectangle; } set { foregroundRectangle = value; } }
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
@@ -61,9 +54,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets a value indicating from what line the <see cref="Label"/> should be shown.
         /// </summary>
-        public int LineStart { get { return lineStart; } set { lineStart = value; Refresh(); } }
+        public int LineStart { get { return lineStart; } set { lineStart = value; } }
 
-        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } }
+        new private LabelTextureHandler textures { get { return (LabelTextureHandler)base.textures; } set { base.textures = value; } }
 
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
@@ -102,10 +95,9 @@ namespace Mentula.GuiItems.Items
         public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
              : base(ref sb, bounds)
         {
-            foregroundRectangle = bounds;
+            ForegroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
-            base.textures = new LabelTextureHandler();
         }
 
         /// <summary>
@@ -113,12 +105,8 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
+            if (!suppressRefresh) HandleAutoSize();
             base.Refresh();
-            if (suppressRefresh) return;
-
-            HandleAutoSize();
-            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
-            CreateTextTexture();
         }
 
         /// <summary>
@@ -145,10 +133,17 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// Handles the creation on the text texture.
-        /// Override for special text texture handling.
+        /// Sets the background texture for the <see cref="Label"/>.
         /// </summary>
-        protected virtual void CreateTextTexture()
+        protected override void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice, BorderStyle);
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="Label"/>.
+        /// </summary>
+        protected override void SetForegroundTexture()
         {
             textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, batch);
         }
@@ -161,7 +156,6 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
         {
             text = e.NewValue;
-            Refresh();
         }
 
         /// <summary>
@@ -172,7 +166,6 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnFontChanged(GuiItem sender, ValueChangedEventArgs<SpriteFont> e)
         {
             font = e.NewValue;
-            Refresh();
         }
 
         /// <summary>
@@ -183,7 +176,6 @@ namespace Mentula.GuiItems.Items
         protected override void OnForeColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             base.OnForeColorChanged(sender, e);
-            if (font != null) Refresh();
         }
 
         /// <summary>
@@ -196,6 +188,14 @@ namespace Mentula.GuiItems.Items
             base.OnMove(sender, e);
             foregroundRectangle.X = (int)e.NewValue.X;
             foregroundRectangle.Y = (int)e.NewValue.Y;
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new LabelTextureHandler();
         }
 
         /// <summary>

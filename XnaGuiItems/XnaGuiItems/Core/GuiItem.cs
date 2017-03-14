@@ -106,14 +106,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="GuiItem"/> is displayed.
         /// </summary>
-        public virtual bool Visible
-        {
-            get { return visible; }
-            set
-            {
-                if (value != visible) Invoke(VisibilityChanged, this, new ValueChangedEventArgs<bool>(visible, value));
-            }
-        }
+        public virtual bool Visible { get { return visible; } set { Invoke(VisibilityChanged, this, new ValueChangedEventArgs<bool>(visible, value)); } }
         /// <summary>
         /// Gets or sets the width of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
@@ -212,14 +205,16 @@ namespace Mentula.GuiItems.Core
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public GuiItem(ref SpriteBatch sb, Rectangle bounds)
         {
-            if (bounds.Width <= 0 || bounds.Height <= 0) throw new ArgumentException("bounds.Width and bounds.Height must be greater then zero");
-            this.bounds = bounds;
+            CheckBounds(bounds);
 
             InitEvents();
+            SetTextureHandler();
             batch = sb;
-            textures = new TextureHandler();
+
+            Bounds = bounds;
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
+
             Show();
         }
 
@@ -304,7 +299,7 @@ namespace Mentula.GuiItems.Core
         {
             if (visible)
             {
-                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.Foreground, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
@@ -361,11 +356,14 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
-        /// When overriden in a derived class, updates the textures used for drawing.
+        /// Updates the textures used for drawing.
         /// </summary>
         public virtual void Refresh()
         {
             if (suppressRefresh) return;
+
+            SetBackgroundTexture();
+            SetForegroundTexture();
 
 #if DEBUG
             LogBase(ToString(), "refreshed");
@@ -378,7 +376,7 @@ namespace Mentula.GuiItems.Core
         /// <returns> A string that represents the current GuiItem. </returns>
         public override string ToString()
         {
-            return string.Format("{0}{1}", GetType().Name, string.IsNullOrEmpty(Name) ? ":" : $"({Name})");
+            return string.Format("{0}{1}", GetType().Name, string.IsNullOrEmpty(Name) ? ":" : $"({Name}):");
         }
 
         /// <summary>
@@ -426,7 +424,6 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnBackColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             backColor = e.NewValue;
-            textures.SetBackFromClr(backColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -447,7 +444,6 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnForeColorChanged(GuiItem sender, ValueChangedEventArgs<Color> e)
         {
             foreColor = e.NewValue;
-            textures.SetForeFromClr(foreColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -490,8 +486,6 @@ namespace Mentula.GuiItems.Core
         {
             CheckBounds(e.NewValue);
             bounds = e.NewValue;
-            textures.SetBackFromClr(backColor, Size, batch.GraphicsDevice);
-            textures.SetForeFromClr(foreColor, Size, batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -502,6 +496,30 @@ namespace Mentula.GuiItems.Core
         protected virtual void OnVisibilityChanged(GuiItem sender, ValueChangedEventArgs<bool> e)
         {
             visible = e.NewValue;
+        }
+
+        /// <summary>
+        /// Sets the background texture for the <see cref="GuiItem"/>.
+        /// </summary>
+        protected virtual void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, Size, batch.GraphicsDevice);
+        }
+
+        /// <summary>
+        /// Sets the foreground texture for the <see cref="GuiItem"/>.
+        /// </summary>
+        protected virtual void SetForegroundTexture()
+        {
+            textures.SetForeFromClr(ForeColor, Size, batch.GraphicsDevice);
+        }
+        
+        /// <summary>
+        /// Sets <see cref="textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected virtual void SetTextureHandler()
+        {
+            textures = new TextureHandler();
         }
 
         /// <summary>

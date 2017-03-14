@@ -145,6 +145,7 @@ namespace Mentula.GuiItems
         {
             if (function != null)
             {
+                if (args.NoChange) return;
 #if DEBUG
                 LogInvokeCall(sender.ToString(), $"{function.Method.Name} ({args.OldValue} -> {args.NewValue})");
 #endif

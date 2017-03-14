@@ -18,7 +18,6 @@ namespace Mentula.GuiItems.Items
     using Core;
     using Core.Handlers;
     using Core.Input;
-    using Core.Interfaces;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -74,7 +73,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public virtual Size MaximumSize { get; set; }
 
-        new private TextboxTextureHandler textures { get { return (TextboxTextureHandler)base.textures; } }
+        new private TextboxTextureHandler textures { get { return (TextboxTextureHandler)base.textures; } set { base.textures = value; } }
 
         /// <summary>
         /// Occurs when the value of the <see cref="Focused"/> propery is changed.
@@ -112,7 +111,6 @@ namespace Mentula.GuiItems.Items
         public TextBox(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
             : base(ref sb, bounds, font)
         {
-            base.textures = new TextboxTextureHandler();
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
@@ -197,6 +195,7 @@ namespace Mentula.GuiItems.Items
         {
             inputHandler.keyboadString = e.NewValue;
             base.OnTextChanged(sender, e);
+            Refresh();
         }
 
         /// <summary>
@@ -207,21 +206,23 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnFocusChanged(GuiItem sender, Args e)
         {
             focus = e.NewValue;
-            if (!focus)
-            {
-                CreateTextTexture();
-                showLine = false;
-            }
-            else Refresh();
+            if (!focus) showLine = false;
         }
 
         /// <summary>
-        /// Handles the creation on the text texture.
-        /// Override for special text texture handling.
+        /// Sets the foreground texture for the <see cref="TextBox"/>.
         /// </summary>
-        protected override void CreateTextTexture()
+        protected override void SetForegroundTexture()
         {
             textures.SetFocusText(VisisbleText, font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new TextboxTextureHandler();
         }
 
         /// <summary>

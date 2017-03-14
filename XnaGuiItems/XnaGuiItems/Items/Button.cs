@@ -9,16 +9,12 @@ namespace Mentula.GuiItems.Items
 #if MONO
     using Mono.Microsoft.Xna.Framework;
     using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
 #else
     using Xna.Microsoft.Xna.Framework;
     using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
 #endif
     using Core;
     using Core.Handlers;
-    using Core.Interfaces;
-    using System;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
 
@@ -30,9 +26,8 @@ namespace Mentula.GuiItems.Items
 #endif
     public class Button : Label
     {
-        new private ButtonTextureHandler textures { get { return (ButtonTextureHandler)base.textures; } }
+        new private ButtonTextureHandler textures { get { return (ButtonTextureHandler)base.textures; } set { base.textures = value; } }
 
-        private Texture2D drawTexture;
         private bool leftInvoked;
         private bool rightInvoked;
         private int doubleLeftClicked;
@@ -72,10 +67,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         public Button(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
              : base(ref sb, bounds, font)
-        {
-            base.textures = new ButtonTextureHandler();
-            drawTexture = textures.Background;
-        }
+        { }
 
         /// <summary>
         /// Updates the <see cref="Button"/>, checking if any mouse event are occuring.
@@ -87,8 +79,8 @@ namespace Mentula.GuiItems.Items
 
             if (Enabled)
             {
-                if (!over) drawTexture = textures.Background;
-                else if (over && !leftDown && !rightDown) drawTexture = textures.Hover;
+                if (!over) textures.state = ButtonStyle.Default;
+                else if (over && !leftDown && !rightDown) textures.state = ButtonStyle.Hover;
 
                 if (leftDown && !leftInvoked)
                 {
@@ -96,7 +88,7 @@ namespace Mentula.GuiItems.Items
                     leftInvoked = true;
 
                     doubleLeftClicked++;
-                    drawTexture = textures.Click;
+                    textures.state = ButtonStyle.Click;
                 }
                 if (rightDown && !rightInvoked)
                 {
@@ -104,7 +96,7 @@ namespace Mentula.GuiItems.Items
                     rightInvoked = true;
 
                     doubleRightClicked++;
-                    drawTexture = textures.Click;
+                    textures.state = ButtonStyle.Click;
                 }
 
                 time += deltaTime;
@@ -129,7 +121,7 @@ namespace Mentula.GuiItems.Items
         {
             if (Visible)
             {
-                spriteBatch.Draw(drawTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.Foreground, foregroundRectangle, null, Color.White, Rotation, Origin, SpriteEffects.None, 0f);
             }
         }
@@ -166,6 +158,14 @@ namespace Mentula.GuiItems.Items
                     Invoke(DoubleClick, this, GetMouseEventArgs());
                     return;
             }
+        }
+
+        /// <summary>
+        /// Sets <see cref="GuiItem.textures"/> to the required <see cref="TextureHandler"/>.
+        /// </summary>
+        protected override void SetTextureHandler()
+        {
+            textures = new ButtonTextureHandler();
         }
     }
 }

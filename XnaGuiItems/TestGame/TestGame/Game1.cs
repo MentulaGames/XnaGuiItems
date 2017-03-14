@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace TestGame
 {
@@ -20,6 +21,12 @@ namespace TestGame
             Components.Add(menu = new MainMenu(this));
             menu.Show();
             base.Initialize();
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
+            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
