@@ -503,11 +503,6 @@
       <param name="tab"> The tab name. </param>
       <param name="items"> The items to add to the tabs. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.Refresh">
-      <summary>
-            Refreshes the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />, recalculating the <see cref="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" /> and the underlying texture.
-            </summary>
-    </member>
     <member name="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)">
       <summary>
             Updates the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
@@ -519,6 +514,23 @@
             Draws the <see cref="T:Mentula.GuiItems.Containers.TabContainer" /> and its childs.
             </summary>
       <param name="spriteBatch"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.Refresh">
+      <summary>
+            Refreshes the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />, recalculating the <see cref="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" /> and the underlying texture.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+      <summary>
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            </summary>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="e"> The new position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture">
+      <summary>
+            Sets the background texture for the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
+            </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1">
       <summary> Base class for all drawable Mentula game components. </summary>

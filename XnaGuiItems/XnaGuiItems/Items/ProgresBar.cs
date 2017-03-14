@@ -86,9 +86,17 @@ namespace Mentula.GuiItems.Items
         public ProgressBar(ref SpriteBatch sb, Rectangle bounds)
              : base(ref sb, bounds)
         {
+#if DEBUG
+            ctorCall = true;
+#endif
+
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
+
+#if DEBUG
+            ctorCall = false;
+#endif
         }
 
         /// <summary>

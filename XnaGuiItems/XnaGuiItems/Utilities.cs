@@ -34,10 +34,14 @@ namespace Mentula.GuiItems
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
 
+#if DEBUG
+        internal static bool ctorCall;
+#endif
+
         internal const int HASH_BASE = unchecked((int)2166136261);
         private const int HASH_MODIFIER = 16777619;
 
-        internal const string 
+        internal const string
             CAT_DESIGN = "Microsoft.Design",
             CAT_USAGE = "Microsoft.Usage",
             CHECKID_EVENT = "CA1009:DeclareEventHandlersCorrectly",
@@ -184,7 +188,7 @@ namespace Mentula.GuiItems
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogBase(string sender, string msg)
         {
-            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems] {sender} {msg}.");
+            if (!ctorCall) Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems] {sender} {msg}.");
         }
 #endif
     }

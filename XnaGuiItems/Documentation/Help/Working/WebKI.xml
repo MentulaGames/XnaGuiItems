@@ -765,6 +765,7 @@
     <HelpKINode Title="DropDown.OnMove Method " Url="html/79728fb6-57c5-2224-3ce8-041a393bea5e.htm" />
     <HelpKINode Title="GuiItem.OnMove Method " Url="html/9536f29c-20cf-2430-71a0-c43a07273ff9.htm" />
     <HelpKINode Title="Label.OnMove Method " Url="html/7c686fa8-f8f3-c36f-26a8-50056746eb35.htm" />
+    <HelpKINode Title="TabContainer.OnMove Method " Url="html/9c78d388-67cb-c4c8-831c-cd39eeeba234.htm" />
   </HelpKINode>
   <HelpKINode Title="OnNameChange method" Url="html/0e22a1d0-7eff-4c75-e644-523affe5e81d.htm" />
   <HelpKINode Title="OnResize method" Url="html/d839c8d3-6421-b9b1-ae7e-6e67684227d7.htm" />
@@ -899,6 +900,7 @@
     <HelpKINode Title="Label.SetBackgroundTexture Method " Url="html/812998c9-f3b8-878c-7b9c-5309da7cea35.htm" />
     <HelpKINode Title="ProgressBar.SetBackgroundTexture Method " Url="html/c9997e52-9abd-06bc-b4d6-04e607bea8a2.htm" />
     <HelpKINode Title="Slider.SetBackgroundTexture Method " Url="html/e7f5f639-eb2f-4712-5d77-175e95ce6ce1.htm" />
+    <HelpKINode Title="TabContainer.SetBackgroundTexture Method " Url="html/ef756ce1-754a-744c-b3c9-2d752f8c1172.htm" />
   </HelpKINode>
   <HelpKINode Title="SetDefaultFont method" Url="html/1a1fd36e-dc98-602d-a77a-3cc372310b14.htm" />
   <HelpKINode Title="SetForegroundTexture method">
@@ -1011,8 +1013,10 @@
   <HelpKINode Title="TabContainer.AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
   <HelpKINode Title="TabContainer.DefaultTabSize property" Url="html/042159c9-8677-b62b-e79b-cda803bcc10d.htm" />
   <HelpKINode Title="TabContainer.Draw method" Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
+  <HelpKINode Title="TabContainer.OnMove method" Url="html/9c78d388-67cb-c4c8-831c-cd39eeeba234.htm" />
   <HelpKINode Title="TabContainer.Refresh method" Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
   <HelpKINode Title="TabContainer.SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
+  <HelpKINode Title="TabContainer.SetBackgroundTexture method" Url="html/ef756ce1-754a-744c-b3c9-2d752f8c1172.htm" />
   <HelpKINode Title="TabContainer.TabContainer constructor" Url="html/2ac504ab-fc0d-69ba-cd65-f4602150c4a0.htm" />
   <HelpKINode Title="TabContainer.TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
   <HelpKINode Title="TabContainer.Update method" Url="html/48208074-23af-fc20-eff2-abc1491fa9e5.htm" />

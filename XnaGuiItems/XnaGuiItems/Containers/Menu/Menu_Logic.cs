@@ -289,12 +289,8 @@ namespace Mentula.GuiItems.Containers
             {
                 for (int i = 0; i < controlls.Count; i++)
                 {
-                    TextBox txt;
-                    if ((txt = controlls[i] as TextBox) != null)
-                    {
-                        if (txt.Name == sender.Name && !txt.Focused) txt.Focused = true;
-                        else if (txt.Name != sender.Name && txt.Focused) txt.Focused = false;
-                    }
+                    TextBox txt = controlls[i] as TextBox;
+                    if (txt != null) txt.Focused = txt.Name == sender.Name;
                 }
             }
         }

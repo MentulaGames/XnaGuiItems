@@ -76,8 +76,10 @@
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" type="API" />

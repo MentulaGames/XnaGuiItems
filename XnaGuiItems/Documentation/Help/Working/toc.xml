@@ -92,7 +92,9 @@
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="a14a0999-db0e-d8a2-1afb-414a280ec6cb" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="b6826ef7-1184-d5b6-caf2-93352e840cef" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" project="XnaGuiItems" file="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="9c78d388-67cb-c4c8-831c-cd39eeeba234" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" project="XnaGuiItems" file="9ca9e1d6-fe43-5685-b909-f4642b89d964" />
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" project="XnaGuiItems" file="ef756ce1-754a-744c-b3c9-2d752f8c1172" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" project="XnaGuiItems" file="48208074-23af-fc20-eff2-abc1491fa9e5" />
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="38b19270-620e-21d5-ecb0-161799a951fd" />

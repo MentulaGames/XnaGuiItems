@@ -3473,8 +3473,10 @@
         <element api="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Refresh" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" />
@@ -3509,7 +3511,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Rectangle})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})" />
@@ -3522,7 +3523,6 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.SetForegroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.SetTextureHandler" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -3610,7 +3610,9 @@
         <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Refresh" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" />
         <element api="Overload:Mentula.GuiItems.Containers.TabContainer.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
@@ -3625,13 +3627,11 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Rectangle})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.SetForegroundTexture" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.SetTextureHandler" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Show" />
@@ -3876,6 +3876,38 @@
       </containers>
       <file name="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
     </api>
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+      <topicdata group="api" />
+      <apidata name="OnMove" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="sender">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </parameter>
+        <parameter name="e">
+          <type api="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" ref="true">
+            <specialization>
+              <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="9c78d388-67cb-c4c8-831c-cd39eeeba234" />
+    </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.Refresh">
       <topicdata group="api" />
       <apidata name="Refresh" group="member" subgroup="method" />
@@ -3916,6 +3948,26 @@
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
       <file name="68d71fb6-7a2b-0718-3ffb-05468077eb7a" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture">
+      <topicdata group="api" />
+      <apidata name="SetBackgroundTexture" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.SetBackgroundTexture">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="ef756ce1-754a-744c-b3c9-2d752f8c1172" />
     </api>
     <api id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle">
       <topicdata group="api" />

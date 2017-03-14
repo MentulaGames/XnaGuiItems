@@ -95,9 +95,17 @@ namespace Mentula.GuiItems.Items
         public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
              : base(ref sb, bounds)
         {
+#if DEBUG
+            ctorCall = true;
+#endif
+
             ForegroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
+
+#if DEBUG
+            ctorCall = false;
+#endif
         }
 
         /// <summary>

@@ -205,6 +205,9 @@ namespace Mentula.GuiItems.Core
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public GuiItem(ref SpriteBatch sb, Rectangle bounds)
         {
+#if DEBUG
+            ctorCall = true;
+#endif
             CheckBounds(bounds);
 
             InitEvents();
@@ -216,6 +219,10 @@ namespace Mentula.GuiItems.Core
             ForeColor = DefaultForeColor;
 
             Show();
+
+#if DEBUG
+            ctorCall = false;
+#endif
         }
 
         /// <summary>

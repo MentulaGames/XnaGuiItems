@@ -27,7 +27,14 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         new public static readonly ValueChangedEventArgs<TVal> Empty = new ValueChangedEventArgs<TVal>();
 
-        internal bool NoChange { get { return OldValue.Equals(NewValue); } }
+        internal bool NoChange
+        {
+            get
+            {
+                if (OldValue != null) return OldValue.Equals(NewValue);
+                else return NewValue == null;
+            }
+        }
 
         /// <summary>
         /// The old value.

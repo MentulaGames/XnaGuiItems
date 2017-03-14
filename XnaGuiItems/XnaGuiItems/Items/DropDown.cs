@@ -97,6 +97,10 @@ namespace Mentula.GuiItems.Items
         public DropDown(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
             : base(ref sb, bounds)
         {
+#if DEBUG
+            ctorCall = true;
+#endif
+
             this.font = font;
             HeaderText = DefaultHeaderText;
             labels = new Pair[0][];
@@ -105,6 +109,10 @@ namespace Mentula.GuiItems.Items
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             HeaderBackgroundColor = DefaultHeaderBackColor;
+
+#if DEBUG
+            ctorCall = false;
+#endif
         }
 
         /// <summary>

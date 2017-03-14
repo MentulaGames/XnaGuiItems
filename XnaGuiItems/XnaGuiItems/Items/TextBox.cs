@@ -111,11 +111,19 @@ namespace Mentula.GuiItems.Items
         public TextBox(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
             : base(ref sb, bounds, font)
         {
+#if DEBUG
+            ctorCall = true;
+#endif
+
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
             MaximumSize = batch.GraphicsDevice.Viewport.Bounds.Size();
             MaxLength = -1;
+
+#if DEBUG
+            ctorCall = false;
+#endif
         }
 
         /// <summary>
