@@ -118,7 +118,7 @@ namespace Mentula.GuiItems.Items
             : base(ref sb, bounds, font)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             inputHandler = new KeyInputHandler();
@@ -129,7 +129,7 @@ namespace Mentula.GuiItems.Items
             AutoRefresh = true;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 

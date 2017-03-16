@@ -99,7 +99,7 @@ namespace Mentula.GuiItems.Items
              : base(ref sb, bounds)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             SliderBarDimentions = new Rect(bounds.X, bounds.Y, Width / 10, Height);
@@ -108,7 +108,7 @@ namespace Mentula.GuiItems.Items
             ForeColor = DefaultForeColor;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 
@@ -150,7 +150,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// This method is called when the <see cref="GuiItem.Click"/> event is raised.
+        /// This method is called when the <see cref="GuiItem.Clicked"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The current <see cref="MouseState"/>. </param>
@@ -230,7 +230,7 @@ namespace Mentula.GuiItems.Items
         {
             base.InitEvents();
             ValueChanged += OnValueChanged;
-            Click += OnClick;
+            Clicked += OnClick;
             MouseDown += OnMouseDown;
         }
 

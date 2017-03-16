@@ -76,7 +76,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Design" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>

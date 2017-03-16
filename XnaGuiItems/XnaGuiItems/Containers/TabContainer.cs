@@ -70,7 +70,7 @@ namespace Mentula.GuiItems.Containers
             : base(ref sb)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             this.font = font;
@@ -78,7 +78,7 @@ namespace Mentula.GuiItems.Containers
             TabRectangle = DefaultTabSize;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 
@@ -96,7 +96,7 @@ namespace Mentula.GuiItems.Containers
             lbl.AutoSize = true;
             lbl.Text = $" {name} ";
             lbl.BorderStyle = BorderStyle.FixedSingle;
-            lbl.Click += TabContainer_TabSelect;
+            lbl.Clicked += TabContainer_TabSelect;
             if (color.HasValue) lbl.BackColor = color.Value;
 
             tabs[index] = new KeyValuePair<Label, GuiItemCollection>(lbl, new GuiItemCollection(this));
@@ -117,8 +117,8 @@ namespace Mentula.GuiItems.Containers
                     for (int j = 0; j < items.Length; j++)
                     {
                         TextBox txt;
-                        if ((txt = items[j] as TextBox) != null) txt.Click += TabContainer_TextBox_Click;
-                        items[j].Move += TabContainer_GuiItem_Move;
+                        if ((txt = items[j] as TextBox) != null) txt.Clicked += TabContainer_TextBox_Click;
+                        items[j].Moved += TabContainer_GuiItem_Move;
 
                         items[j].Refresh();
                         cur.Value.Add(items[j]);
@@ -210,7 +210,7 @@ namespace Mentula.GuiItems.Containers
         }
 
         /// <summary>
-        /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
+        /// This method is called when the <see cref="GuiItem.Moved"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new position of the <see cref="GuiItem"/>. </param>

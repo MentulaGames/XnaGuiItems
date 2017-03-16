@@ -175,4 +175,14 @@
         Hover,
         Click
     }
+
+#if DEBUG
+    internal enum LogMsgType : byte
+    {
+        Call,
+        Ctor,
+        Init,
+        Disp
+    }
+#endif
 }

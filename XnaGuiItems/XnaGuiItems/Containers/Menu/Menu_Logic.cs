@@ -160,6 +160,9 @@ namespace Mentula.GuiItems.Containers
         {
             suppressRefresh = false;
 
+#if DEBUG
+            LogInit("Menu", $"refreshing {controlls.Count} controll(s)");
+#endif
             for (int i = 0; i < controlls.Count; i++)
             {
                 controlls[i].Refresh();
@@ -179,10 +182,21 @@ namespace Mentula.GuiItems.Containers
         {
             if (disposing)
             {
+#if DEBUG
+                type = LogMsgType.Disp;
+                LogBase("Menu", $"disposing {controlls.Count} controll(s)");
+#endif
                 for (int i = 0; i < controlls.Count; i++)
                 {
+#if DEBUG
+                    LogBase("Menu", $"disposing {controlls[i]}");
+#endif
                     controlls[i].Dispose();
                 }
+
+#if DEBUG
+                type = LogMsgType.Call;
+#endif
             }
 
             controlls.Clear();

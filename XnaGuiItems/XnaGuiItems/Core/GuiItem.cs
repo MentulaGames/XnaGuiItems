@@ -92,11 +92,11 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the position of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Vector2 Position { get { return position; } set { Invoke(Move, this, new ValueChangedEventArgs<Vector2>(Position, value)); } }
+        public virtual Vector2 Position { get { return position; } set { Invoke(Moved, this, new ValueChangedEventArgs<Vector2>(Position, value)); } }
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/>.
         /// </summary>
-        public virtual Size Size { get { return size; } set { Invoke(Resize, this, new ValueChangedEventArgs<Size>(Size, value)); } }
+        public virtual Size Size { get { return size; } set { Invoke(Resized, this, new ValueChangedEventArgs<Size>(Size, value)); } }
         /// <summary>
         /// Gets or sets a value indicating whether a <see cref="Containers.Menu{T}"/> should call the <see cref="Update(float)"/> method.
         /// </summary>
@@ -156,7 +156,7 @@ namespace Mentula.GuiItems.Core
         /// Occurs when the <see cref="GuiItem"/> is clicked.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler Click;
+        public event MouseEventHandler Clicked;
         /// <summary>
         /// Occurs when the <see cref="Enabled"/> property changes.
         /// </summary>
@@ -186,7 +186,7 @@ namespace Mentula.GuiItems.Core
         /// Occurs when the <see cref="GuiItem"/> is moved.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Vector2> Move;
+        public event ValueChangedEventHandler<Vector2> Moved;
         /// <summary>
         /// Occurs when the <see cref="Name"/> proprty changes.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Mentula.GuiItems.Core
         /// Occurs when the <see cref="GuiItem"/> is resized.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Size> Resize;
+        public event ValueChangedEventHandler<Size> Resized;
         /// <summary>
         /// Occurs when the <see cref="Visible"/> property changes.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Mentula.GuiItems.Core
         public GuiItem(ref SpriteBatch sb, Rect bounds)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
             CheckBounds(bounds.Size);
 
@@ -240,7 +240,7 @@ namespace Mentula.GuiItems.Core
             Show();
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 
@@ -282,7 +282,7 @@ namespace Mentula.GuiItems.Core
         /// </summary>
         public void PerformClick()
         {
-            Invoke(Click, this, GetMouseEventArgs());
+            Invoke(Clicked, this, GetMouseEventArgs());
         }
 
         /// <summary>
@@ -306,12 +306,12 @@ namespace Mentula.GuiItems.Core
                     if (!down && !(leftDown || rightDown)) Invoke(Hover, this, GetMouseEventArgs());
                     else if (mState.LeftButton == ButtonState.Pressed && !(leftDown || rightDown))
                     {
-                        Invoke(Click, this, GetMouseEventArgs());
+                        Invoke(Clicked, this, GetMouseEventArgs());
                         leftDown = true;
                     }
                     else if (mState.RightButton == ButtonState.Pressed && !(rightDown || leftDown))
                     {
-                        Invoke(Click, this, GetMouseEventArgs());
+                        Invoke(Clicked, this, GetMouseEventArgs());
                         rightDown = true;
                     }
                 }
@@ -410,7 +410,7 @@ namespace Mentula.GuiItems.Core
         /// <returns> A string that represents the current GuiItem. </returns>
         public override string ToString()
         {
-            return string.Format("{0}{1}", GetType().Name, string.IsNullOrEmpty(Name) ? ":" : $"({Name}):");
+            return string.Format("{0}{1}", GetType().Name, string.IsNullOrEmpty(Name) ? string.Empty : $"({Name})");
         }
 
         /// <summary>
@@ -491,7 +491,7 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
-        /// This method is called when the <see cref="Move"/> event is raised.
+        /// This method is called when the <see cref="Moved"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new position of the <see cref="GuiItem"/>. </param>
@@ -521,7 +521,7 @@ namespace Mentula.GuiItems.Core
         }
 
         /// <summary>
-        /// This method is called when the <see cref="Resize"/> event is raised.
+        /// This method is called when the <see cref="Resized"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new size of the <see cref="GuiItem"/>. </param>
@@ -574,10 +574,10 @@ namespace Mentula.GuiItems.Core
             BackgroundImageChanged += OnBackgroundImageChanged;
             EnabledChanged += OnEnabledChanged;
             ForeColorChanged += OnForeColorChanged;
-            Move += OnMove;
+            Moved += OnMove;
             NameChanged += OnNameChange;
             Rotated += OnRotationChanged;
-            Resize += OnResize;
+            Resized += OnResize;
             VisibilityChanged += OnVisibilityChanged;
         }
 

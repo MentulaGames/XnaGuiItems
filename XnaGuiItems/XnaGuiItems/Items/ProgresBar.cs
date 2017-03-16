@@ -89,7 +89,7 @@ namespace Mentula.GuiItems.Items
              : base(ref sb, bounds)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             data = new ProgressData(0);
@@ -97,7 +97,7 @@ namespace Mentula.GuiItems.Items
             ForeColor = DefaultForeColor;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 

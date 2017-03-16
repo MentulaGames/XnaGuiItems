@@ -12,6 +12,7 @@ namespace TestGame
         public static void Main(string[] args)
         {
             Console.WindowWidth = Console.LargestWindowWidth;
+            Console.BufferHeight = short.MaxValue - 1;
 
             using (Game1 game = new Game1())
             {

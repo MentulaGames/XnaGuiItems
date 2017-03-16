@@ -99,7 +99,7 @@ namespace Mentula.GuiItems.Items
              : base(ref sb, bounds)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             ForegroundRectangle = bounds;
@@ -107,7 +107,7 @@ namespace Mentula.GuiItems.Items
             text = string.Empty;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 
@@ -191,7 +191,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
+        /// This method is called when the <see cref="GuiItem.Moved"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new position for the <see cref="Label"/>. </param>
@@ -203,7 +203,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// This method is called when the <see cref="GuiItem.Resize"/> event is raised.
+        /// This method is called when the <see cref="GuiItem.Resized"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new size of the <see cref="GuiItem"/>. </param>

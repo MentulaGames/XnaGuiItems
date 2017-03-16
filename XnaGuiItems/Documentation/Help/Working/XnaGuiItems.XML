@@ -522,7 +522,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Moved" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
@@ -634,7 +634,7 @@
     </member>
     <member name="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler">
       <summary>
-            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
+            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Clicked" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
             </summary>
       <param name="sender"> The GuiItem that raised the event. </param>
       <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>
@@ -901,7 +901,7 @@
             Occurs when the value of the <see cref="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" /> property changes.
             </summary>
     </member>
-    <member name="E:Mentula.GuiItems.Core.GuiItem.Click">
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Clicked">
       <summary>
             Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is clicked.
             </summary>
@@ -931,7 +931,7 @@
             Occurs when the mouse pointer leaves the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="E:Mentula.GuiItems.Core.GuiItem.Move">
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Moved">
       <summary>
             Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is moved.
             </summary>
@@ -946,7 +946,7 @@
             Occurs when the <see cref="P:Mentula.GuiItems.Core.GuiItem.Rotation" /> propery changes.
             </summary>
     </member>
-    <member name="E:Mentula.GuiItems.Core.GuiItem.Resize">
+    <member name="E:Mentula.GuiItems.Core.GuiItem.Resized">
       <summary>
             Occurs when the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> is resized.
             </summary>
@@ -1094,7 +1094,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Moved" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
@@ -1115,7 +1115,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resize" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resized" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
@@ -2333,7 +2333,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Moved" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
@@ -2477,14 +2477,14 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Moved" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resize" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resized" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
@@ -2669,7 +2669,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)">
       <summary>
-            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> event is raised.
+            This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Clicked" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>

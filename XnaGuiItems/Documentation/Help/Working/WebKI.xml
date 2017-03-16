@@ -100,8 +100,8 @@
   <HelpKINode Title="ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
   <HelpKINode Title="Clamp method" Url="html/d56938b0-3c2d-5ce7-a53a-3daf30aa7988.htm" />
   <HelpKINode Title="Clear method" Url="html/d666920b-7b11-c489-4c63-9f134811b66a.htm" />
-  <HelpKINode Title="Click event" Url="html/ca73ba8a-0f77-b762-0b1d-a9800c2b5a86.htm" />
   <HelpKINode Title="Click property" Url="html/d9487531-bed7-bc71-acef-f094cd45cc49.htm" />
+  <HelpKINode Title="Clicked event" Url="html/86343704-37b0-8608-0714-57ed880e951b.htm" />
   <HelpKINode Title="Color field" Url="html/3a9904d7-16e3-a036-f42d-d2d4cacef77c.htm" />
   <HelpKINode Title="Confirmed event" Url="html/7b9a3fb0-0972-c6a4-b424-de9a7fc88197.htm" />
   <HelpKINode Title="Contains method">
@@ -311,7 +311,7 @@
   <HelpKINode Title="GuiItem.BackgroundImageChanged event" Url="html/3873ff1c-38d2-a2a1-0cb4-311d5bc932a8.htm" />
   <HelpKINode Title="GuiItem.batch field" Url="html/cad82e85-9799-45ab-448f-42361287d113.htm" />
   <HelpKINode Title="GuiItem.Bounds property" Url="html/5369e391-6953-b70d-6b62-98f98c5a34bf.htm" />
-  <HelpKINode Title="GuiItem.Click event" Url="html/ca73ba8a-0f77-b762-0b1d-a9800c2b5a86.htm" />
+  <HelpKINode Title="GuiItem.Clicked event" Url="html/86343704-37b0-8608-0714-57ed880e951b.htm" />
   <HelpKINode Title="GuiItem.DefaultBackColor property" Url="html/5970779b-58f2-6b2f-4ba1-d263a7290b7a.htm" />
   <HelpKINode Title="GuiItem.DefaultBounds property" Url="html/39e0f7d4-3dcf-125f-62f9-4b7295eac26a.htm" />
   <HelpKINode Title="GuiItem.DefaultForeColor property" Url="html/7d21e206-b4ac-3b2a-f36c-3de6dceecc9b.htm" />
@@ -354,7 +354,7 @@
   <HelpKINode Title="GuiItem.InitEvents method" Url="html/518e0866-583d-1e47-ef3c-bed961c99509.htm" />
   <HelpKINode Title="GuiItem.IsDisposed property" Url="html/15e46759-39bb-b307-9392-4eb08de9bc3c.htm" />
   <HelpKINode Title="GuiItem.leftDown field" Url="html/02582668-d7e1-fc8e-e355-e78a3dc16869.htm" />
-  <HelpKINode Title="GuiItem.Move event" Url="html/47afbda2-cde7-0fea-5c84-cbd844305cc6.htm" />
+  <HelpKINode Title="GuiItem.Moved event" Url="html/82f68df9-8847-f383-552b-e83f2667e11a.htm" />
   <HelpKINode Title="GuiItem.MoveRelative method" Url="html/a4be0390-d937-7e41-9343-633e3315044e.htm" />
   <HelpKINode Title="GuiItem.Name property" Url="html/a7bafef5-7820-1ca0-4805-dd323a9a0231.htm" />
   <HelpKINode Title="GuiItem.NameChanged event" Url="html/e1fc0daf-2200-8230-29b7-73492dca4f70.htm" />
@@ -372,7 +372,7 @@
   <HelpKINode Title="GuiItem.PerformClick method" Url="html/d71b5c5c-1422-1b9f-87a0-3f86e81eaf5f.htm" />
   <HelpKINode Title="GuiItem.Position property" Url="html/e4568516-1a67-980c-3eac-072ec298d967.htm" />
   <HelpKINode Title="GuiItem.Refresh method" Url="html/7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2.htm" />
-  <HelpKINode Title="GuiItem.Resize event" Url="html/a22e64af-a516-390e-a567-2e0a79b99d43.htm" />
+  <HelpKINode Title="GuiItem.Resized event" Url="html/acb59763-4992-b0d0-6381-4d07530fde3e.htm" />
   <HelpKINode Title="GuiItem.rightDown field" Url="html/b3a05e42-1b18-3115-8c79-cb5fa3cdda84.htm" />
   <HelpKINode Title="GuiItem.Rotated event" Url="html/cf40cffe-979a-8615-8d62-717b1d7079e9.htm" />
   <HelpKINode Title="GuiItem.Rotation property" Url="html/486c2e0d-bac0-ec5a-99d8-236fa07dea81.htm" />
@@ -762,7 +762,7 @@
   <HelpKINode Title="MouseEventArgs.MouseEventArgs constructor" Url="html/3fef640a-c80f-7b12-3e85-61a89c776d40.htm" />
   <HelpKINode Title="MouseEventArgs.State field" Url="html/52b3a3eb-5f55-3d14-dbfb-2e58c1e015ab.htm" />
   <HelpKINode Title="MouseEventHandler delegate" Url="html/c087788c-bcf3-c92e-37ea-04b13c2d70fd.htm" />
-  <HelpKINode Title="Move event" Url="html/47afbda2-cde7-0fea-5c84-cbd844305cc6.htm" />
+  <HelpKINode Title="Moved event" Url="html/82f68df9-8847-f383-552b-e83f2667e11a.htm" />
   <HelpKINode Title="MoveRelative method" Url="html/a4be0390-d937-7e41-9343-633e3315044e.htm" />
   <HelpKINode Title="MultiLine property" Url="html/78ac46b8-1400-a85d-38e9-cd2027b5c894.htm" />
   <HelpKINode Title="Multiply method" Url="html/7eb1f458-11fe-55e9-2346-07c6fdfba0ff.htm" />
@@ -953,7 +953,7 @@
   </HelpKINode>
   <HelpKINode Title="Remove method" Url="html/e7023442-515b-9d44-a61b-f26e7346d088.htm" />
   <HelpKINode Title="RemoveAt method" Url="html/26eac6a4-b546-fea2-0dc8-373cefd23b3f.htm" />
-  <HelpKINode Title="Resize event" Url="html/a22e64af-a516-390e-a567-2e0a79b99d43.htm" />
+  <HelpKINode Title="Resized event" Url="html/acb59763-4992-b0d0-6381-4d07530fde3e.htm" />
   <HelpKINode Title="ResizeMode enumeration" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="RGB method" Url="html/56aca508-28f6-1b27-a334-7ea742caf130.htm" />
   <HelpKINode Title="RGBA method" Url="html/7a0568fa-eb63-3ed0-aaf1-656589ccb9d3.htm" />

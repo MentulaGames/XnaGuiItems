@@ -142,7 +142,7 @@
   <topic id="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.batch" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Bounds" type="API" />
-  <topic id="E:Mentula.GuiItems.Core.GuiItem.Click" type="API" />
+  <topic id="E:Mentula.GuiItems.Core.GuiItem.Clicked" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.DefaultBackColor" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.DefaultBounds" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.DefaultForeColor" type="API" />
@@ -165,7 +165,7 @@
   <topic id="M:Mentula.GuiItems.Core.GuiItem.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.leftDown" type="API" />
-  <topic id="E:Mentula.GuiItems.Core.GuiItem.Move" type="API" />
+  <topic id="E:Mentula.GuiItems.Core.GuiItem.Moved" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Name" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.NameChanged" type="API" />
@@ -183,7 +183,7 @@
   <topic id="M:Mentula.GuiItems.Core.GuiItem.PerformClick" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Position" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.Refresh" type="API" />
-  <topic id="E:Mentula.GuiItems.Core.GuiItem.Resize" type="API" />
+  <topic id="E:Mentula.GuiItems.Core.GuiItem.Resized" type="API" />
   <topic id="F:Mentula.GuiItems.Core.GuiItem.rightDown" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.Rotated" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Rotation" type="API" />

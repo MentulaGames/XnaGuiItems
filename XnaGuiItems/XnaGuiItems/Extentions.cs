@@ -17,7 +17,6 @@ namespace Mentula.GuiItems
 #endif
     using Core;
     using Core.Structs;
-    using System;
     using System.Runtime.CompilerServices;
     using System.Collections.Generic;
 
@@ -208,12 +207,6 @@ namespace Mentula.GuiItems
             return new Vector2(state.X, state.Y);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Point ToPoint(this Vector2 vect)
-        {
-            return new Point((int)vect.X, (int)vect.Y);
-        }
-
         public static float GetHeight(this SpriteFont font)
         {
             return font.MeasureString("Y").Y;
@@ -223,16 +216,6 @@ namespace Mentula.GuiItems
         {
             if (dict.ContainsKey(key)) dict[key] = val;
             else dict.Add(key, val);
-        }
-
-        public static TKey[] GetKeys<TKey, TValue>(this KeyValuePair<TKey, TValue>[] kvp)
-        {
-            TKey[] result = new TKey[kvp.Length];
-            for (int i = 0; i < kvp.Length; i++)
-            {
-                result[i] = kvp[i].Key;
-            }
-            return result;
         }
     }
 }

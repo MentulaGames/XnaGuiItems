@@ -100,7 +100,7 @@ namespace Mentula.GuiItems.Items
             : base(ref sb, bounds)
         {
 #if DEBUG
-            ctorCall = true;
+            type = LogMsgType.Ctor;
 #endif
 
             this.font = font;
@@ -113,7 +113,7 @@ namespace Mentula.GuiItems.Items
             HeaderBackgroundColor = DefaultHeaderBackColor;
 
 #if DEBUG
-            ctorCall = false;
+            type = LogMsgType.Call;
 #endif
         }
 
@@ -238,7 +238,7 @@ namespace Mentula.GuiItems.Items
         }
 
         /// <summary>
-        /// This method is called when the <see cref="GuiItem.Move"/> event is raised.
+        /// This method is called when the <see cref="GuiItem.Moved"/> event is raised.
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new position for the <see cref="Label"/>. </param>
@@ -280,7 +280,7 @@ namespace Mentula.GuiItems.Items
         protected override void InitEvents()
         {
             base.InitEvents();
-            Click += OnClick;
+            Clicked += OnClick;
         }
 
         private void OnClick(GuiItem sender, MouseEventArgs e)

@@ -13,6 +13,9 @@ namespace Mentula.GuiItems.Containers
     using Xna::Microsoft.Xna.Framework;
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
+#if DEBUG
+    using static Utilities;
+#endif
     using Core;
     using System.Runtime.CompilerServices;
 
@@ -42,14 +45,26 @@ namespace Mentula.GuiItems.Containers
         /// <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
         /// <returns> The specified <see cref="SpriteFont"/>. </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public SpriteFont LoadFont(string assetName) => Game.Content.Load<SpriteFont>(assetName);
+        public SpriteFont LoadFont(string assetName)
+        {
+#if DEBUG
+            LogBase("Menu", $"loading font {assetName}");
+#endif
+            return Game.Content.Load<SpriteFont>(assetName);
+        }
 
         /// <summary>
         /// Sets the default <see cref="SpriteFont"/>.
         /// </summary>
         /// <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SetDefaultFont(string assetName) => font = LoadFont(assetName);
+        public void SetDefaultFont(string assetName)
+        {
+            font = LoadFont(assetName);
+#if DEBUG
+            LogBase("Menu", $"default font set to {assetName}");
+#endif
+        }
 
         /// <summary>
         /// Loads a specified <see cref="Texture2D"/> from <see cref="Game.Content"/>.
@@ -57,7 +72,13 @@ namespace Mentula.GuiItems.Containers
         /// <param name="assetName"> Asset name, relative to the loader root directory, and not including the .xnb extension. </param>
         /// <returns> The specified <see cref="Texture2D"/>. </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Texture2D LoadTexture(string assetName) => Game.Content.Load<Texture2D>(assetName);
+        public Texture2D LoadTexture(string assetName)
+        {
+#if DEBUG
+            LogBase("Menu", $"loading texture {assetName}");
+#endif
+            return Game.Content.Load<Texture2D>(assetName);
+        }
 
         /// <summary>
         /// Draws the specified string with the default font.

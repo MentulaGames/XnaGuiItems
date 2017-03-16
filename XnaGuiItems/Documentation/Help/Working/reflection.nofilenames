@@ -3421,7 +3421,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Containers.TabContainer.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -3442,7 +3442,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.InitEvents" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -3458,7 +3458,7 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -3629,15 +3629,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
       </elements>
@@ -5550,7 +5550,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.DefaultBackColor" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.DefaultBounds" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.DefaultForeColor" />
@@ -5575,7 +5575,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.InitEvents" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -5593,7 +5593,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Refresh" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -5762,15 +5762,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
       </elements>
@@ -5999,14 +5999,14 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="E:Mentula.GuiItems.Core.GuiItem.Click">
+    <api id="E:Mentula.GuiItems.Core.GuiItem.Clicked">
       <topicdata group="api" />
-      <apidata name="Click" group="member" subgroup="event" />
+      <apidata name="Clicked" group="member" subgroup="event" />
       <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <eventdata add="true" remove="true" />
-      <adder name="add_Click" />
-      <remover name="remove_Click" />
+      <adder name="add_Clicked" />
+      <remover name="remove_Clicked" />
       <eventhandler>
         <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
       </eventhandler>
@@ -6454,14 +6454,14 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="E:Mentula.GuiItems.Core.GuiItem.Move">
+    <api id="E:Mentula.GuiItems.Core.GuiItem.Moved">
       <topicdata group="api" />
-      <apidata name="Move" group="member" subgroup="event" />
+      <apidata name="Moved" group="member" subgroup="event" />
       <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <eventdata add="true" remove="true" />
-      <adder name="add_Move" />
-      <remover name="remove_Move" />
+      <adder name="add_Moved" />
+      <remover name="remove_Moved" />
       <eventhandler>
         <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
           <specialization>
@@ -6882,14 +6882,14 @@
         <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
       </containers>
     </api>
-    <api id="E:Mentula.GuiItems.Core.GuiItem.Resize">
+    <api id="E:Mentula.GuiItems.Core.GuiItem.Resized">
       <topicdata group="api" />
-      <apidata name="Resize" group="member" subgroup="event" />
+      <apidata name="Resized" group="member" subgroup="event" />
       <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <eventdata add="true" remove="true" />
-      <adder name="add_Resize" />
-      <remover name="remove_Resize" />
+      <adder name="add_Resized" />
+      <remover name="remove_Resized" />
       <eventhandler>
         <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
           <specialization>
@@ -15356,7 +15356,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.Button.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -15376,7 +15376,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -15393,7 +15393,7 @@
           <element api="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" />
         </element>
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -15658,15 +15658,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.Button.DoubleClick" />
@@ -15971,7 +15971,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.DropDown.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -15991,7 +15991,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -16007,7 +16007,7 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -16268,15 +16268,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.DropDown.IndexClick" />
@@ -16872,7 +16872,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.Label.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -16893,7 +16893,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -16907,7 +16907,7 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -17165,15 +17165,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.Label.FontChanged" />
@@ -17782,7 +17782,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.PictureBox.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -17803,7 +17803,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -17820,7 +17820,7 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -18056,15 +18056,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" />
@@ -18318,7 +18318,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.ProgressBar.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -18339,7 +18339,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -18357,7 +18357,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Refresh" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -18603,15 +18603,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" />
@@ -18998,7 +18998,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.Slider.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -19018,7 +19018,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -19036,7 +19036,7 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Refresh" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -19288,15 +19288,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.Slider.MouseDown" />
@@ -19799,7 +19799,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Bounds" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="Overload:Mentula.GuiItems.Items.TextBox.Dispose">
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose" />
           <element api="M:Mentula.GuiItems.Core.GuiItem.Dispose(System.Boolean)" />
@@ -19819,7 +19819,7 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Name" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
@@ -19833,7 +19833,7 @@
         <element api="F:Mentula.GuiItems.Core.GuiItem.over" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.PerformClick" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Position" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.rightDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Rotation" />
@@ -20116,15 +20116,15 @@
       <elements>
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Click" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Move" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.NameChanged" />
-        <element api="E:Mentula.GuiItems.Core.GuiItem.Resize" />
+        <element api="E:Mentula.GuiItems.Core.GuiItem.Resized" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Rotated" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" />
         <element api="E:Mentula.GuiItems.Items.Label.FontChanged" />

@@ -22,7 +22,7 @@
     public delegate void IndexedClickEventHandler(GuiItem sender, IndexedClickEventArgs e);
 
     /// <summary>
-    /// Represents the method that will handle the <see cref="GuiItem.Click"/> and <see cref="GuiItem.Hover"/> events.
+    /// Represents the method that will handle the <see cref="GuiItem.Clicked"/> and <see cref="GuiItem.Hover"/> events.
     /// </summary>
     /// <param name="sender"> The GuiItem that raised the event. </param>
     /// <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>

@@ -175,15 +175,15 @@
       <topic id="Events.T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="473c1bfa-9f2c-0191-1728-2c63cee67a63">
         <topic id="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" project="XnaGuiItems" file="75cd8a5b-3224-4ac0-1d4b-274beab996fd" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" project="XnaGuiItems" file="3873ff1c-38d2-a2a1-0cb4-311d5bc932a8" />
-        <topic id="E:Mentula.GuiItems.Core.GuiItem.Click" project="XnaGuiItems" file="ca73ba8a-0f77-b762-0b1d-a9800c2b5a86" />
+        <topic id="E:Mentula.GuiItems.Core.GuiItem.Clicked" project="XnaGuiItems" file="86343704-37b0-8608-0714-57ed880e951b" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" project="XnaGuiItems" file="aae3591d-0a01-5d9b-28aa-e09cf7a70856" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" project="XnaGuiItems" file="669c7c47-41ea-ce68-4582-3fa55081eb27" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.Hover" project="XnaGuiItems" file="280ccfb5-c240-aed8-7526-4b5fe93eba71" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" project="XnaGuiItems" file="9d0d4132-e48a-26c9-ebc1-35370a69b5aa" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" project="XnaGuiItems" file="0ca3a3ee-3212-6e28-f2ad-265a71757878" />
-        <topic id="E:Mentula.GuiItems.Core.GuiItem.Move" project="XnaGuiItems" file="47afbda2-cde7-0fea-5c84-cbd844305cc6" />
+        <topic id="E:Mentula.GuiItems.Core.GuiItem.Moved" project="XnaGuiItems" file="82f68df9-8847-f383-552b-e83f2667e11a" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.NameChanged" project="XnaGuiItems" file="e1fc0daf-2200-8230-29b7-73492dca4f70" />
-        <topic id="E:Mentula.GuiItems.Core.GuiItem.Resize" project="XnaGuiItems" file="a22e64af-a516-390e-a567-2e0a79b99d43" />
+        <topic id="E:Mentula.GuiItems.Core.GuiItem.Resized" project="XnaGuiItems" file="acb59763-4992-b0d0-6381-4d07530fde3e" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.Rotated" project="XnaGuiItems" file="cf40cffe-979a-8615-8d62-717b1d7079e9" />
         <topic id="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" project="XnaGuiItems" file="172fe70f-4b17-b4df-f958-cb778510a137" />
       </topic>

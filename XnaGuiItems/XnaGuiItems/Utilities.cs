@@ -32,7 +32,7 @@ namespace Mentula.GuiItems
         internal static bool suppressRefresh;
 
 #if DEBUG
-        internal static bool ctorCall;
+        internal static LogMsgType type;
 #endif
 
         internal const int HASH_BASE = unchecked((int)2166136261);
@@ -183,9 +183,17 @@ namespace Mentula.GuiItems
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static void LogInit(string sender, string msg)
+        {
+            type = LogMsgType.Init;
+            LogBase(sender, msg);
+            type = LogMsgType.Call;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogBase(string sender, string msg)
         {
-            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{(ctorCall ? "Ctor" : "Call")}] {sender} {msg}.");
+            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{type}] {sender}: {msg}.");
         }
 #endif
     }
