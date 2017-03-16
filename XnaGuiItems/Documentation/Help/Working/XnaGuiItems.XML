@@ -520,7 +520,7 @@
             Refreshes the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />, recalculating the <see cref="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" /> and the underlying texture.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
             </summary>
@@ -543,75 +543,109 @@
       <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" /> class. </summary>
       <param name="game"> The game associated with this component. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1">
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs">
+      <summary>
+            Represents a class for classes that contain indexed click related event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.Empty">
+      <summary>
+            Provides a value to use with events that do not have event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.Index">
+      <summary>
+            The index of the value clicked.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.#ctor(System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" /> class with a specified index.
+            </summary>
+      <param name="index"> The index of the value clicked. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs">
+      <summary>
+            Represents a class for classes that contain mouse related event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.Empty">
+      <summary>
+            Provides a value to use with events that do not have event data.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.State">
+      <summary>
+            The current state of the mouse that was used for invoking the event.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.#ctor(Microsoft.Xna.Framework.Input.MouseState)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" /> class with a specified <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />.
+            </summary>
+      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1">
       <summary>
             Represents a class for classes that contain value changing event data.
             </summary>
       <typeparam name="TVal"> The specified value type to change. </typeparam>
     </member>
-    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.Empty">
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.Empty">
       <summary>
             Provides a value to use with events that do not have event data.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.OldValue">
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.OldValue">
       <summary>
             The old value.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.ValueChangedEventArgs`1.NewValue">
+    <member name="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.NewValue">
       <summary>
             The new value.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.ValueChangedEventArgs`1.#ctor(`0,`0)">
+    <member name="M:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.#ctor(`0,`0)">
       <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ValueChangedEventArgs`1" /> class with specified parameters.
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" /> class with specified parameters.
             </summary>
       <param name="oldVal"> The old value of the field. </param>
       <param name="newVal"> The new value of the field. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.MouseEventArgs">
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler">
       <summary>
-            Represents a class for classes that contain mouse related event data.
+            Represents the method that will handle the default <see cref="T:Mentula.GuiItems.Core.GuiItem" /> events.
             </summary>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised. </param>
+      <remarks>
+            The <see cref="T:System.EventArgs" /> will almost always be empty if the call is internal.
+            The reason this parameter is required if for the option of extra data given by classes that modify functions in this framework.
+            This makes sure that modifications on this framework do not need to hack in additional data for events.
+            </remarks>
     </member>
-    <member name="F:Mentula.GuiItems.Core.MouseEventArgs.Empty">
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler">
       <summary>
-            Provides a value to use with events that do not have event data.
+            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
             </summary>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this contains the index clicked. </param>
     </member>
-    <member name="F:Mentula.GuiItems.Core.MouseEventArgs.State">
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler">
       <summary>
-            The current state of the mouse that was used for invoking the event.
+            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
             </summary>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.MouseEventArgs.#ctor(Microsoft.Xna.Framework.Input.MouseState)">
+    <member name="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1">
       <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.MouseEventArgs" /> class with a specified <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />.
+            Represent the method that will handle the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event.
             </summary>
-      <param name="state"> The current state of the <see cref="T:Microsoft.Xna.Framework.Input.Mouse" />. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.IndexedClickEventArgs">
-      <summary>
-            Represents a class for classes that contain indexed click related event data.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Empty">
-      <summary>
-            Provides a value to use with events that do not have event data.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.IndexedClickEventArgs.Index">
-      <summary>
-            The index of the value clicked.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.IndexedClickEventArgs.#ctor(System.Int32)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.IndexedClickEventArgs" /> class with a specified index.
-            </summary>
-      <param name="index"> The index of the value clicked. </param>
+      <typeparam name="T"> The type of the value. </typeparam>
+      <param name="sender"> The GuiItem that raised the event. </param>
+      <param name="e"> Additional information about the event raised, this will contain the old and new value of the changed field. </param>
     </member>
     <member name="T:Mentula.GuiItems.Core.GuiItem">
       <summary>
@@ -928,7 +962,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with specific size.
             </summary>
@@ -1026,67 +1060,67 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs">
       <summary>
-            Gets the mouse state as a <see cref="T:Mentula.GuiItems.Core.MouseEventArgs" /> object.
+            Gets the mouse state as a <see cref="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" /> object.
             </summary>
       <returns> The current mouse state. </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the background. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> to use as background. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnEnabledChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnEnabledChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.EnabledChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new enabled value of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the foreground. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.NameChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new name for the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Single})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Single})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Rotated" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new rotation (in radians). </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resize" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new size of the <see cref="T:Mentula.GuiItems.Core.GuiItem" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.VisibilityChanged" /> event is raised.
             </summary>
@@ -1105,7 +1139,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Core.GuiItem.InitEvents">
@@ -1113,114 +1147,114 @@
             Handles the initializing of the events.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Button" />.
             </summary>
       <remarks>
-            The <see cref="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
+            The <see cref="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
             </remarks>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.DrawTexture">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture">
       <summary>
             The texture that needs to be drawn in the current state.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Hover">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover">
       <summary>
             The button hover texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Click">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click">
       <summary>
             The button click texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler.Dispose(System.Boolean)">
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose(System.Boolean)">
       <summary>
-            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.ButtonTextureHandler" />.
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" />.
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.DropDownButtonTextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" /> buttons.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" />.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.DropDownTextureHandler.Buttons">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Buttons">
       <summary>
             The textures for the underlying buttons.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.LabelTextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Label" />.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler">
       <summary>
             The class that handles the textures of a <see cref="T:Mentula.GuiItems.Items.TextBox" />.
             </summary>
       <remarks>
-            The <see cref="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet" /> flag for the focused texture is 4.
+            The <see cref="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" /> flag for the focused texture is 4.
             </remarks>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Focused">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Focused">
       <summary>
             The textbox focused texture for a <see cref="T:Mentula.GuiItems.Items.TextBox" />. 
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler.Dispose(System.Boolean)">
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Dispose(System.Boolean)">
       <summary>
-            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.TextboxTextureHandler" />.
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" />.
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Handlers.TextureHandler">
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler">
       <summary>
             A class that handles texture settings.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.IsDisposed">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed">
       <summary>
-            Gets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" /> has been disposed.
+            Gets a value indicating whether the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" /> has been disposed.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Background">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background">
       <summary>
             The background texture for a <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Handlers.TextureHandler.Foreground">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground">
       <summary>
             The foreground texture for a <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.Handlers.TextureHandler.userSet">
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet">
       <summary>
             A <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> that contains if the user has set specified textures.
             1 if for the background,
             2 if for the foreground.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Finalize">
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize">
       <summary>
             Disposes the unmanaged resources.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose">
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose">
       <summary>
             Releases the managed and unmanaged resources used by the <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Handlers.TextureHandler.Dispose(System.Boolean)">
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)">
       <summary>
-            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
@@ -1240,7 +1274,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)">
       <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> are not equal.
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> are different.
             </summary>
       <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" />. </param>
       <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> to compare with the current instance. </param>
@@ -1454,6 +1488,227 @@
             Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure.
             </summary>
       <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Structs.Rect">
+      <summary> Defines a rectangle. </summary>
+      <remarks>
+            This object is a copy of the System.Drawing.Rectangle with minor changes.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.X">
+      <summary> Specifies the x-coordinate of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Y">
+      <summary> Specifies the y-coordinate of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Width">
+      <summary> Specifies the width of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Height">
+      <summary> Specifies the height of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Bottom">
+      <summary> Returns the y-coordinate of the bottom of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Center">
+      <summary> Returns a <see cref="T:Microsoft.Xna.Framework.Vector2" /> that specifies the center of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.IsEmpty">
+      <summary> Gets a value that indicates whether the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> is empty. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Left">
+      <summary> Returns the x-coordinate of the left side of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Position">
+      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Structs.Rect.X" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Y" /> values of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Right">
+      <summary> Returns the x-coordinate of the right side of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Size">
+      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Height" /> values of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Top">
+      <summary> Returns the x-coordinate of the top of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Structs.Rect.Empty">
+      <summary>
+            Gets a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure that has its <see cref="P:Mentula.GuiItems.Core.Structs.Rect.X" />, <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Y" />, <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Height" /> set to 0. 
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structures are equal.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structures are different.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Tests whether two rectangles are equal.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Tests whether two rectangles are different.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Tests whether two rectangles are equal.
+            </summary>
+      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Tests whether two rectangles are different.
+            </summary>
+      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct with specified parameters.
+            </summary>
+      <param name="x"> The x-coordinate of the rectangle. </param>
+      <param name="y"> The y-coordinate of the rectangle. </param>
+      <param name="width"> The width of the rectangle. </param>
+      <param name="height"> The height of the rectangle. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Structs.Size)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct width a specified position and size. 
+            </summary>
+      <param name="position"> The coordiantes of the rectangle. </param>
+      <param name="size"> The size of the rectangle. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct from a xna <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
+            </summary>
+      <param name="rectangle"> The xna style rectangle that contains the values. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> entirely contains a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
+            </summary>
+      <param name="value"> The rectangle to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value is fully inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Microsoft.Xna.Framework.Vector2)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> contains a specified <see cref="T:Microsoft.Xna.Framework.Vector2" />.
+            </summary>
+      <param name="value"> the coordinate to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value is inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(System.Single,System.Single)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> contains a specified coordinate.
+            </summary>
+      <param name="x"> The x-coordinate. </param>
+      <param name="y"> The y-coordinate. </param>
+      <returns>
+        <see langword="true" /> if the coordinate is inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(System.Object)">
+      <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+      <param name="obj"> The object to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and respresent the same value; othersize, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> are equal.
+            </summary>
+      <param name="other"> The rectangle to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Microsoft.Xna.Framework.Rectangle" /> are equal.
+            </summary>
+      <param name="other"> The rectangle to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.GetHashCode">
+      <summary>
+            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Inflate(System.Int32,System.Int32)">
+      <summary>
+            Pushes the edges of the rectangle out by the horizontal and vertical values specified.
+            </summary>
+      <param name="horizontal"> Value to push the sides out by. </param>
+      <param name="vertical"> Value to push the top and bottom out by. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Intersection(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Creates a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> defining the area where one <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> overlaps with another <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
+            </summary>
+      <param name="rect1"> The first rectangle to compare. </param>
+      <param name="rect2"> The second rectangle to compare. </param>
+      <returns> A <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> that represents the overlap between rect1 and rect2. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Intersects(Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Determines whether a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> intersects with this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
+            </summary>
+      <param name="value"> The rectangle to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value intersect the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.ToString">
+      <summary>
+            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.ToXnaRectangle">
+      <summary>
+            Converts this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> to a <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
+            </summary>
+      <returns> A <see cref="T:Microsoft.Xna.Framework.Rectangle" /> representing this instance. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Union(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
+      <summary>
+            Creates a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> that exactly contains two other <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
+            </summary>
+      <param name="rect1"> The first rectangle to contain. </param>
+      <param name="rect2"> The second rectangle to contain. </param>
+      <returns> A rectangle that contains both input rectangles. </returns>
     </member>
     <member name="T:Mentula.GuiItems.Core.Structs.Size">
       <summary>
@@ -1861,40 +2116,6 @@
             Only numbers may be added.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.GuiItemEventHandler">
-      <summary>
-            Represents the method that will handle the default <see cref="T:Mentula.GuiItems.Core.GuiItem" /> events.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised. </param>
-      <remarks>
-            The <see cref="T:System.EventArgs" /> will almost always be empty if the call is internal.
-            The reason this parameter is required if for the option of extra data given by classes that modify functions in this framework.
-            This makes sure that modifications on this framework do not need to hack in additional data for events.
-            </remarks>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.IndexedClickEventHandler">
-      <summary>
-            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this contains the index clicked. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.MouseEventHandler">
-      <summary>
-            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.ValueChangedEventHandler`1">
-      <summary>
-            Represent the method that will handle the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event.
-            </summary>
-      <typeparam name="T"> The type of the value. </typeparam>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this will contain the old and new value of the changed field. </param>
-    </member>
     <member name="T:Mentula.GuiItems.Core.Interfaces.IToggleable">
       <summary>
             Defines an interface for components that can be shown or hiden.
@@ -1965,7 +2186,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with a specified size.
             </summary>
@@ -1998,7 +2219,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.Button.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="T:Mentula.GuiItems.Items.DropDown">
@@ -2068,7 +2289,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with a specific size.
             </summary>
@@ -2110,7 +2331,7 @@
             Handles the <see cref="P:Mentula.GuiItems.Items.DropDown.AutoSize" /> functionality.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+    <member name="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
             </summary>
@@ -2200,7 +2421,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with a specific size.
             </summary>
@@ -2233,35 +2454,35 @@
             Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.Label" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new text of the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.FontChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.ForeColorChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Color" /> for the foreground. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Move" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resize" /> event is raised.
             </summary>
@@ -2270,7 +2491,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.InitEvents">
@@ -2333,14 +2554,14 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with a specified size.
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" /> event is raised.
             </summary>
@@ -2359,7 +2580,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.InitEvents">
@@ -2427,7 +2648,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with a specified size.
             </summary>
@@ -2446,21 +2667,21 @@
             </summary>
       <param name="spriteBatch"> The spritebatch to use. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.MouseEventArgs)">
+    <member name="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Click" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Int32})">
+    <member name="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new value of the slider. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.MouseEventArgs)">
+    <member name="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.MouseDown" /> event is raised.
             </summary>
@@ -2479,7 +2700,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.InitEvents">
@@ -2563,7 +2784,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with a specific size.
             </summary>
@@ -2589,14 +2810,14 @@
             Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.String})">
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
       <summary>
             This method gets called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new text for the sender. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{System.Boolean})">
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})">
       <summary>
             This method gets called when the <see cref="E:Mentula.GuiItems.Items.TextBox.FocusChanged" /> event is raised.
             </summary>
@@ -2610,7 +2831,7 @@
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.SetTextureHandler">
       <summary>
-            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.Handlers.TextureHandler" />.
+            Sets <see cref="F:Mentula.GuiItems.Core.GuiItem.textures" /> to the required <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.InitEvents">
@@ -2644,7 +2865,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Rectangle)">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> class with specific size.
             </summary>
@@ -2656,7 +2877,7 @@
             Refreshes the image display size.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" /> event is raised.
             </summary>
@@ -2741,14 +2962,17 @@
     <member name="N:Mentula.GuiItems.Core">
       <summary>The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</summary>
     </member>
-    <member name="N:Mentula.GuiItems.Core.Handlers">
-      <summary>The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</summary>
+    <member name="N:Mentula.GuiItems.Core.EventHandlers">
+      <summary>The Mentula.GuiItems.Core.EventHandlers namespace contains classes and delegates for event based logic in the library.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Core.Interfaces">
       <summary>The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the library.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Core.Structs">
       <summary>The Mentula.GuiItems.Core.Structs namespace contains structs which are used in the core part of the library.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core.TextureHandlers">
+      <summary>The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Items">
       <summary>The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</summary>

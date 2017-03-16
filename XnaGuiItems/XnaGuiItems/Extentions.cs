@@ -7,13 +7,13 @@ extern alias Xna;
 namespace Mentula.GuiItems
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
     using Core.Structs;
@@ -209,32 +209,9 @@ namespace Mentula.GuiItems
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Clamp(this int value, int max, int min)
-        {
-            return Math.Min(max, Math.Max(min, value));
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2 Position(this Rectangle rect)
-        {
-            return new Vector2(rect.X, rect.Y);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Size Size(this Rectangle rect)
-        {
-            return new Size(rect.Width, rect.Height);
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Point ToPoint(this Vector2 vect)
         {
             return new Point((int)vect.X, (int)vect.Y);
-        }
-
-        public static Rectangle Add(this Rectangle rect, Vector2 position)
-        {
-            return new Rectangle(rect.X + (int)position.X, rect.Y + (int)position.Y, rect.Width, rect.Height);
         }
 
         public static float GetHeight(this SpriteFont font)

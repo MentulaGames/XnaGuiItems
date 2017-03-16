@@ -43,8 +43,9 @@
 <NamespaceSummaryItem name="Mentula.GuiItems.Core" isDocumented="True">The Mentula.GuiItems.Core namespace contains fundamental classes and base classes that define commonly-used user interface items, data types and delegates.</NamespaceSummaryItem>
 <NamespaceSummaryItem name="Mentula.GuiItems.Items" isDocumented="True">The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</NamespaceSummaryItem>
 <NamespaceSummaryItem name="Mentula.GuiItems.Core.Interfaces" isDocumented="True">The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the library.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Core.Handlers" isDocumented="True">The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="Mentula.GuiItems.Core.Structs" isDocumented="True">The Mentula.GuiItems.Core.Structs namespace contains structs which are used in the core part of the library.</NamespaceSummaryItem></NamespaceSummaries>
+<NamespaceSummaryItem name="Mentula.GuiItems.Core.Structs" isDocumented="True">The Mentula.GuiItems.Core.Structs namespace contains structs which are used in the core part of the library.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Mentula.GuiItems.Core.EventHandlers" isDocumented="True">The Mentula.GuiItems.Core.EventHandlers namespace contains classes and delegates for event based logic in the library.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="Mentula.GuiItems.Core.TextureHandlers" isDocumented="True">The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</NamespaceSummaryItem></NamespaceSummaries>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>

@@ -7,16 +7,13 @@ extern alias Xna;
 namespace Mentula.GuiItems
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
 #endif
     using Core;
-    using Core.Interfaces;
+    using Core.EventHandlers;
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Reflection;
     using System.Runtime.CompilerServices;
@@ -159,7 +156,7 @@ namespace Mentula.GuiItems
             }
         }
 
-        internal static void Invoke(Core.MouseEventHandler function, GuiItem sender, Core.MouseEventArgs args)
+        internal static void Invoke(Core.EventHandlers.MouseEventHandler function, GuiItem sender, Core.EventHandlers.MouseEventArgs args)
         {
             if (function != null)
             {
@@ -188,7 +185,7 @@ namespace Mentula.GuiItems
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogBase(string sender, string msg)
         {
-            if (!ctorCall) Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems] {sender} {msg}.");
+            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{(ctorCall ? "Ctor" : "Call")}] {sender} {msg}.");
         }
 #endif
     }

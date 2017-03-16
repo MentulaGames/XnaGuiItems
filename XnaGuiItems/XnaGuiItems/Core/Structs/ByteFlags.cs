@@ -26,7 +26,7 @@
         /// <returns> <see langword="true"/> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false"/>. </returns>
         public static bool operator ==(ByteFlags left, ByteFlags right) { return left.Equals(right); }
         /// <summary>
-        /// Indicates whether this instance and a specified <see cref="ByteFlags"/> are not equal.
+        /// Indicates whether this instance and a specified <see cref="ByteFlags"/> are different.
         /// </summary>
         /// <param name="left"> The current instance of <see cref="ByteFlags"/>. </param>
         /// <param name="right"> The <see cref="ByteFlags"/> to compare with the current instance. </param>

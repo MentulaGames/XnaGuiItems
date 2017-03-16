@@ -7,18 +7,19 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
+    using Core.EventHandlers;
     using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
-    using Args = Core.ValueChangedEventArgs<Core.ResizeMode>;
+    using Args = Core.EventHandlers.ValueChangedEventArgs<Core.ResizeMode>;
 
     /// <summary>
     /// A Image displayer base class.
@@ -58,7 +59,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="PictureBox"/> in pixels. </param>
-        public PictureBox(ref SpriteBatch sb, Rectangle bounds)
+        public PictureBox(ref SpriteBatch sb, Rect bounds)
             : base(ref sb, bounds)
         { }
 
@@ -101,7 +102,7 @@ namespace Mentula.GuiItems.Items
                     textures.Foreground = Image;
                     break;
                 case ResizeMode.CenterImage:
-                    Size offset = (Size >> 1) - (Image.Bounds.Size() >> 1);
+                    Size offset = (Size >> 1) - (new Rect(Image.Bounds).Size >> 1);
                     textures.Foreground = Image.RenderOnto(batch, Size, position: offset.ToVector2());
                     break;
                 case ResizeMode.Normal:

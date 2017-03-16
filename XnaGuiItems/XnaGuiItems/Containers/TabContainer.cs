@@ -7,20 +7,22 @@ extern alias Xna;
 namespace Mentula.GuiItems.Containers
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
+    using Core.EventHandlers;
     using Items;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using static Utilities;
+    using Core.Structs;
 
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
@@ -37,7 +39,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Gets or sets a <see cref="Rectangle"/> indicating the size of the tab.
         /// </summary>
-        public virtual Rectangle TabRectangle { get; set; }
+        public virtual Rect TabRectangle { get; set; }
         /// <summary>
         /// Gets or sets a selected tab.
         /// </summary>
@@ -53,7 +55,7 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Gets the default tab size of the <see cref="TabContainer"/>
         /// </summary>
-        public static Rectangle DefaultTabSize { get { return new Rectangle(0, 0, 250, 150); } }
+        public static Rect DefaultTabSize { get { return new Rect(0, 0, 250, 150); } }
 
         private const string TAB_PREFIX = "Lbl";
         private KeyValuePair<Label, GuiItemCollection>[] tabs;
@@ -201,7 +203,7 @@ namespace Mentula.GuiItems.Containers
                 }
 
                 int length = GetHeaderWidth();
-                if (length != TabRectangle.Width) TabRectangle = new Rectangle(TabRectangle.X, TabRectangle.Y, length, TabRectangle.Height);
+                if (length != TabRectangle.Width) TabRectangle = new Rect(TabRectangle.X, TabRectangle.Y, length, TabRectangle.Height);
             }
 
             base.Refresh();
@@ -232,7 +234,7 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         protected override void SetBackgroundTexture()
         {
-            textures.SetBackFromClr(BackColor, TabRectangle.Size(), batch.GraphicsDevice);
+            textures.SetBackFromClr(BackColor, TabRectangle.Size, batch.GraphicsDevice);
         }
 
         private int GetHeaderWidth()
@@ -280,7 +282,7 @@ namespace Mentula.GuiItems.Containers
             if (!UseAbsolutePosition)
             {
                 Label tab = tabs.FirstOrDefault(t => t.Value.Contains(sender)).Key;
-                sender.Bounds = new Rectangle((int)sender.Position.X, (int)sender.Position.Y + tab.Height, sender.Width, sender.Height);
+                sender.Bounds = new Rect((int)sender.Position.X, (int)sender.Position.Y + tab.Height, sender.Width, sender.Height);
             }
         }
     }

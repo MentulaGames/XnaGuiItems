@@ -7,11 +7,11 @@ extern alias Xna;
 namespace Mentula.GuiItems.Containers
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
     using Items;

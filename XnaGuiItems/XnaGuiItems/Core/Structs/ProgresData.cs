@@ -1,5 +1,16 @@
-﻿namespace Mentula.GuiItems.Core.Structs
+﻿#if MONO
+extern alias Mono;
+#else
+extern alias Xna;
+#endif
+
+namespace Mentula.GuiItems.Core.Structs
 {
+#if MONO
+    using Mono::Microsoft.Xna.Framework;
+#else
+    using Xna::Microsoft.Xna.Framework;
+#endif
     using System;
     using System.Diagnostics;
     using static Utilities;
@@ -18,7 +29,7 @@
         /// <exception cref="ArgumentException"> The maximum is lesser than the current <see cref="Minimum"/>. </exception>
         public int Maximum { get { return max; } set { if (value > min) max = value; else throw new ArgumentException("The maximum must be higher than the minimum!"); } }
         /// <summary> Gets or sets a value indicating the current progress position. Value will be clamped. </summary>
-        public int Value { get { return val; } set { val = value.Clamp(max, min); } }
+        public int Value { get { return val; } set { val = (int)MathHelper.Clamp(value, min, max); } }
         /// <summary> Gets the default maximum of the <see cref="ProgressData"/>. </summary>
         public static int DefaultMaximum { get { return 100; } }
         /// <summary> Gets the default minimum of the <see cref="ProgressData"/>. </summary>
@@ -65,15 +76,14 @@
         {
             min = minimum;
             max = maximum;
-            val = value.Clamp(min, max);
+            val = (int)MathHelper.Clamp(value, min, max);
         }
 
         /// <summary> Changes the current <see cref="Value"/> to a specified percentage. Value will be clamped. </summary>
         /// <param name="percent"> The percentage to change to. </param>
         public void ChangeValue(int percent)
         {
-            int newValue = (int)(percent * OnePercent);
-            val = newValue.Clamp(max, min);
+            val = (int)MathHelper.Clamp(percent * OnePercent, min, max);
         }
 
         /// <summary>

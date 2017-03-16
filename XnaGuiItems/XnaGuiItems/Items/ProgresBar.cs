@@ -7,18 +7,19 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
+    using Core.EventHandlers;
     using Core.Structs;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
-    using Args = Core.ValueChangedEventArgs<int>;
-    using Core.Handlers;
+    using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
+    using Core.TextureHandlers;
 
     /// <summary>
     /// A progress bar used for displaying progress.
@@ -41,7 +42,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default size of the <see cref="ProgressBar"/>
         /// </summary>
-        new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
+        new public static Rect DefaultBounds { get { return new Rect(0, 0, 100, 25); } }
         /// <summary>
         /// Gets the default foreground color of the <see cref="ProgressBar"/>.
         /// </summary>
@@ -84,7 +85,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="ProgressBar"/> in pixels. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public ProgressBar(ref SpriteBatch sb, Rectangle bounds)
+        public ProgressBar(ref SpriteBatch sb, Rect bounds)
              : base(ref sb, bounds)
         {
 #if DEBUG
@@ -124,7 +125,7 @@ namespace Mentula.GuiItems.Items
         protected override void SetForegroundTexture()
         {
             int width = (int)(Bounds.Width / 100.0f * data.Value);
-            Rectangle destination = Inverted ? new Rectangle(Width - width - 1, 1, width - 1, Height - 2) : new Rectangle(1, 1, width - 2, Height - 2);
+            Rect destination = Inverted ? new Rect(Width - width - 1, 1, width - 1, Height - 2) : new Rect(1, 1, width - 2, Height - 2);
 
             textures.SetForeFromClr(ForeColor, Size, destination, batch.GraphicsDevice);
         }

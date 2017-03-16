@@ -7,15 +7,16 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
-    using Handlers;
+    using TextureHandlers;
+    using EventHandlers;
     using Interfaces;
     using Structs;
     using System;
@@ -43,18 +44,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets or sets the size of the <see cref="GuiItem"/> including its nonclient elements in pixels.
         /// </summary>
-        public virtual Rectangle Bounds
-        {
-            get
-            {
-                return new Rectangle((int)position.X, (int)position.Y, size.Width, size.Height);
-            }
-            set
-            {
-                Size = new Size(value.Width, value.Height);
-                Position = new Vector2(value.X, value.Y);
-            }
-        }
+        public virtual Rect Bounds { get { return new Rect(Position, Size); } set { Size = value.Size; Position = value.Position; } }
         /// <summary>
         /// Gets the default background color of the <see cref="GuiItem"/>.
         /// </summary>
@@ -66,7 +56,7 @@ namespace Mentula.GuiItems.Core
         /// <summary>
         /// Gets the default size of the <see cref="GuiItem"/>
         /// </summary>
-        public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 50); } }
+        public static Rect DefaultBounds { get { return new Rect(0, 0, 100, 50); } }
         /// <summary>
         /// Gets a value indicating wether the base <see cref="GuiItem"/> class is in the process of disposing.
         /// </summary>
@@ -232,12 +222,12 @@ namespace Mentula.GuiItems.Core
         /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="GuiItem"/> in pixels. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public GuiItem(ref SpriteBatch sb, Rectangle bounds)
+        public GuiItem(ref SpriteBatch sb, Rect bounds)
         {
 #if DEBUG
             ctorCall = true;
 #endif
-            CheckBounds(bounds.Size());
+            CheckBounds(bounds.Size);
 
             InitEvents();
             SetTextureHandler();
@@ -305,7 +295,7 @@ namespace Mentula.GuiItems.Core
             {
                 MouseState mState = Mouse.GetState();
 
-                bool newOver = Bounds.Contains(GetRotatedMouse(mState).ToPoint());
+                bool newOver = Bounds.Contains(GetRotatedMouse(mState));
                 if (!over && newOver) Invoke(HoverEnter, this, GetMouseEventArgs());
                 else if (over && !newOver) Invoke(HoverLeave, this, GetMouseEventArgs());
 
@@ -402,11 +392,15 @@ namespace Mentula.GuiItems.Core
         {
             if (suppressRefresh) return;
 
+#if DEBUG
+            Stopwatch sw = Stopwatch.StartNew();
+#endif
             SetBackgroundTexture();
             SetForegroundTexture();
 
 #if DEBUG
-            LogBase(ToString(), "refreshed");
+            sw.Stop();
+            LogBase(ToString(), $"refreshed, texture creation took {sw.ElapsedMilliseconds} milliseconds");
 #endif
         }
 

@@ -7,19 +7,20 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
+    using Core.EventHandlers;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
-    using Args = Core.ValueChangedEventArgs<int>;
-    using Core.Handlers;
+    using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
+    using Core.TextureHandlers;
     using Core.Structs;
 
     /// <summary>
@@ -38,7 +39,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets the default size of the <see cref="Slider"/>
         /// </summary>
-        new public static Rectangle DefaultBounds { get { return new Rectangle(0, 0, 100, 25); } }
+        new public static Rect DefaultBounds { get { return new Rect(0, 0, 100, 25); } }
         /// <summary>
         /// Gets the default foreground color of the <see cref="Slider"/>.
         /// </summary>
@@ -46,7 +47,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the dimentions of the <see cref="Slider"/> object.
         /// </summary>
-        public virtual Rectangle SliderBarDimentions { get; set; }
+        public virtual Rect SliderBarDimentions { get; set; }
         /// <summary>
         /// Gets or sets the maximum value of the <see cref="Slider"/>.
         /// </summary>
@@ -94,14 +95,14 @@ namespace Mentula.GuiItems.Items
         /// <param name="sb"> The <see cref="SpriteBatch"/> used for generating underlying <see cref="Texture2D"/>. </param>
         /// <param name="bounds"> The size of the <see cref="Slider"/>. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public Slider(ref SpriteBatch sb, Rectangle bounds)
+        public Slider(ref SpriteBatch sb, Rect bounds)
              : base(ref sb, bounds)
         {
 #if DEBUG
             ctorCall = true;
 #endif
 
-            SliderBarDimentions = new Rectangle(bounds.X, bounds.Y, Width / 10, Height);
+            SliderBarDimentions = new Rect(bounds.X, bounds.Y, Width / 10, Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
@@ -144,7 +145,7 @@ namespace Mentula.GuiItems.Items
             if (Visible)
             {
                 spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                spriteBatch.Draw(textures.Foreground, Position + SliderBarDimentions.Position(), null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.Foreground, Position + SliderBarDimentions.Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -175,15 +176,16 @@ namespace Mentula.GuiItems.Items
         /// <param name="e"> The current <see cref="MouseState"/>. </param>
         protected void OnMouseDown(object sender, MouseEventArgs e)
         {
-            Vector2 offset = SliderBarDimentions.Position() + Position - GetRotatedMouse(e.State);
+            Vector2 offset = SliderBarDimentions.Position + Position - GetRotatedMouse(e.State);
             if (oldOffset == Vector2.Zero) oldOffset = offset;
             else if (offset != oldOffset)
             {
-                Rectangle newDim = SliderBarDimentions.Add(new Vector2(-offset.X - (SliderBarDimentions.Width >> 1), 0));
+                Rect newDim = SliderBarDimentions;
+                newDim.Position += new Vector2(-offset.X - (SliderBarDimentions.Width >> 1), 0);
 
                 if (newDim.X + Position.X > Bounds.X && newDim.X + SliderBarDimentions.Width <= Bounds.Width) SliderBarDimentions = newDim;
-                else if (newDim.X + Position.X > Bounds.X) SliderBarDimentions = new Rectangle(Bounds.Width - SliderBarDimentions.Width, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
-                else SliderBarDimentions = new Rectangle(0, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
+                else if (newDim.X + Position.X > Bounds.X) SliderBarDimentions = new Rect(Bounds.Width - SliderBarDimentions.Width, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
+                else SliderBarDimentions = new Rect(0, 0, SliderBarDimentions.Width, SliderBarDimentions.Height);
 
                 oldOffset = offset;
 
@@ -234,7 +236,9 @@ namespace Mentula.GuiItems.Items
 
         private bool IsSliding(Vector2 mousePosition)
         {
-            return SliderBarDimentions.Add(Position).Contains(mousePosition.ToPoint());
+            Rect absBarPos = SliderBarDimentions;
+            absBarPos.Position += Position;
+            return absBarPos.Contains(mousePosition);
         }
     }
 }

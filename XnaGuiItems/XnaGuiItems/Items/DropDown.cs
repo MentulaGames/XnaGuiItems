@@ -7,19 +7,20 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
+    using Core.EventHandlers;
     using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using Core.Handlers;
+    using Core.TextureHandlers;
     using static Utilities;
 
     /// <summary>
@@ -75,7 +76,7 @@ namespace Mentula.GuiItems.Items
         /// <summary> The underlying labels for the <see cref="DropDown"/>. </summary>
         protected Pair[][] labels;
         /// <summary> The rectangle used in the foreground. </summary>
-        protected Rectangle foregroundRectangle;
+        protected Rect foregroundRectangle;
 
         new private DropDownTextureHandler textures { get { return (DropDownTextureHandler)base.textures; } set { base.textures = value; } }
 
@@ -95,7 +96,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="bounds"> The size of the <see cref="DropDown"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public DropDown(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+        public DropDown(ref SpriteBatch sb, Rect bounds, SpriteFont font)
             : base(ref sb, bounds)
         {
 #if DEBUG

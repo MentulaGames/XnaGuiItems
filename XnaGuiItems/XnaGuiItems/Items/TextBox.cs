@@ -7,23 +7,24 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
-    using Core.Handlers;
+    using Core.EventHandlers;
+    using Core.TextureHandlers;
     using Core.Input;
     using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using static Utilities;
-    using Args = Core.ValueChangedEventArgs<bool>;
+    using Args = Core.EventHandlers.ValueChangedEventArgs<bool>;
 
     /// <summary>
     /// A textbox used for displaying and accepting text.
@@ -113,7 +114,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="bounds"> The size of the <see cref="TextBox"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public TextBox(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+        public TextBox(ref SpriteBatch sb, Rect bounds, SpriteFont font)
             : base(ref sb, bounds, font)
         {
 #if DEBUG
@@ -123,7 +124,7 @@ namespace Mentula.GuiItems.Items
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;
-            MaximumSize = batch.GraphicsDevice.Viewport.Bounds.Size();
+            MaximumSize = new Rect(batch.GraphicsDevice.Viewport.Bounds).Size;
             MaxLength = -1;
             AutoRefresh = true;
 
@@ -209,7 +210,6 @@ namespace Mentula.GuiItems.Items
         {
             inputHandler.keyboadString = e.NewValue;
             base.OnTextChanged(sender, e);
-            Refresh();
         }
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         protected override void SetForegroundTexture()
         {
-            textures.SetFocusText(VisisbleText, font, ForeColor, foregroundRectangle.Size(), MultiLine, LineStart, batch);
+            textures.SetFocusText(VisisbleText, font, ForeColor, ForegroundRectangle.Size, MultiLine, LineStart, batch);
         }
 
         /// <summary>

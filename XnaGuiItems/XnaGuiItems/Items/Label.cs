@@ -7,14 +7,15 @@ extern alias Xna;
 namespace Mentula.GuiItems.Items
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
-    using Core.Handlers;
+    using Core.EventHandlers;
+    using Core.TextureHandlers;
     using Core.Structs;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -51,7 +52,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Gets or sets the <see cref="Rectangle"/> used to draw the text.
         /// </summary>
-        public virtual Rectangle ForegroundRectangle { get { return foregroundRectangle; } set { foregroundRectangle = value; } }
+        public virtual Rect ForegroundRectangle { get { return foregroundRectangle; } set { foregroundRectangle = value; } }
         /// <summary>
         /// Gets or sets a value indicating from what line the <see cref="Label"/> should be shown.
         /// </summary>
@@ -62,7 +63,7 @@ namespace Mentula.GuiItems.Items
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
         /// <summary> The rectangle used in the foreground. </summary>
-        protected Rectangle foregroundRectangle;
+        protected Rect foregroundRectangle;
 
         private int lineStart;
         private string text;
@@ -94,7 +95,7 @@ namespace Mentula.GuiItems.Items
         /// <param name="bounds"> The size of the <see cref="Label"/> in pixels. </param>
         /// <param name="font"> The <see cref="SpriteFont"/> to use while drawing the text. </param>
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
-        public Label(ref SpriteBatch sb, Rectangle bounds, SpriteFont font)
+        public Label(ref SpriteBatch sb, Rect bounds, SpriteFont font)
              : base(ref sb, bounds)
         {
 #if DEBUG
@@ -155,7 +156,7 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         protected override void SetForegroundTexture()
         {
-            textures.SetText(text, font, ForeColor, foregroundRectangle.Size(), true, LineStart, batch);
+            textures.SetText(text, font, ForeColor, ForegroundRectangle.Size, true, LineStart, batch);
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Mentula.GuiItems.Items
         protected override void OnResize(GuiItem sender, ValueChangedEventArgs<Size> e)
         {
             base.OnResize(sender, e);
-            ForegroundRectangle = new Rectangle(ForegroundRectangle.X, ForegroundRectangle.Y, e.NewValue.Width, e.NewValue.Height);
+            foregroundRectangle.Size = e.NewValue;
         }
 
         /// <summary>

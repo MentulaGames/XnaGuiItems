@@ -7,9 +7,9 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework;
 #else
-    using Xna.Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework;
 #endif
 
     /// <summary> Base class for all drawable Mentula game components. </summary>

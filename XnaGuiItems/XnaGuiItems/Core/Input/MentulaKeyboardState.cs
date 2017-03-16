@@ -7,9 +7,9 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core.Input
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework.Input;
+    using Mono::Microsoft.Xna.Framework.Input;
 #else
-    using Xna.Microsoft.Xna.Framework.Input;
+    using Xna::Microsoft.Xna.Framework.Input;
 #endif
 
 #if !DEBUG

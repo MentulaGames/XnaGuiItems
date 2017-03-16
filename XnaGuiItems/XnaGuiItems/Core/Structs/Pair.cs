@@ -7,9 +7,9 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core.Structs
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework;
 #else
-    using Xna.Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework;
 #endif
     using System;
     using System.Diagnostics;

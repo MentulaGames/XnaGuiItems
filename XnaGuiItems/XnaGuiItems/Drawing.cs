@@ -7,11 +7,11 @@ extern alias Xna;
 namespace Mentula.GuiItems
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
-    using Mono.Microsoft.Xna.Framework.Graphics;
+    using Mono::Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework.Graphics;
 #else
-    using Xna.Microsoft.Xna.Framework;
-    using Xna.Microsoft.Xna.Framework.Graphics;
+    using Xna::Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core.Structs;
     using System;
@@ -35,7 +35,7 @@ namespace Mentula.GuiItems
             return result;
         }
 
-        public static Texture2D FromColor(Color color, Size size, Rectangle destinationRectangle, GraphicsDevice device)
+        public static Texture2D FromColor(Color color, Size size, Rect destinationRectangle, GraphicsDevice device)
         {
             Texture2D result = new Texture2D(device, size.Width, size.Height);
             Color[] data = new Color[size.Width * size.Height];

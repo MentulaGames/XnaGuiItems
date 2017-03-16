@@ -7,9 +7,9 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core.Structs
 {
 #if MONO
-    using Mono.Microsoft.Xna.Framework;
+    using Mono::Microsoft.Xna.Framework;
 #else
-    using Xna.Microsoft.Xna.Framework;
+    using Xna::Microsoft.Xna.Framework;
 #endif
     using System;
     using System.Diagnostics;
@@ -166,8 +166,8 @@ namespace Mentula.GuiItems.Core.Structs
         /// <param name="max"> The maximum <see cref="Size"/>. </param>
         public void Clamp(Size min, Size max)
         {
-            Width = Width.Clamp(max.Width, min.Width);
-            Height = Height.Clamp(max.Height, min.Height);
+            Width = (int)MathHelper.Clamp(Width, min.Width, max.Width);
+            Height = (int)MathHelper.Clamp(Height, min.Height, max.Height);
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace Mentula.GuiItems.Core.Structs
         /// <returns> A string that represents this <see cref="Size"/>. </returns>
         public override string ToString()
         {
-            return $"Width:{Width} Height:{Height}";
+            return $"{{Width:{Width} Height:{Height}}}";
         }
 
         /// <summary>
