@@ -14,10 +14,6 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            TextBox txt = AddTextBox();
-            txt.AutoSize = true;
-            txt.MoveRelative(Anchor.Center);
-
             base.Initialize(); 
         }
     }

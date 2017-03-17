@@ -544,6 +544,7 @@
   <topic id="Overload:Mentula.GuiItems.Items.ProgressBar.#ctor" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" type="API" />
   <topic id="F:Mentula.GuiItems.Items.ProgressBar.data" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" type="API" />

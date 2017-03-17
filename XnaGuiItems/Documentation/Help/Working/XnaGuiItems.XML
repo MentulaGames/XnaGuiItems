@@ -2504,6 +2504,11 @@
             A progress bar used for displaying progress.
             </summary>
     </member>
+    <member name="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh">
+      <summary>
+            Gets or sets a value indicating if the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> will call <see cref="M:Mentula.GuiItems.Core.GuiItem.Refresh" /> on a <see cref="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" /> event.
+            </summary>
+    </member>
     <member name="P:Mentula.GuiItems.Items.ProgressBar.Inverted">
       <summary>
             Gets or sets the direction of the bar.
