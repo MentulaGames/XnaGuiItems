@@ -1,13 +1,13 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- Sandcastle Tools MSBuild Tasks.  https://GitHub.com/EWSoftware/SHFB -->
 	<UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.BuildAssembler"
-    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\BuildAssembler.exe" />
+    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\BuildAssembler.exe" />
 
 	<!-- Task properties -->
 	<PropertyGroup>
 		<ConfigurationFile>sandcastle.config</ConfigurationFile>
 		<ManifestFile>manifest.xml</ManifestFile>
-		<WorkingFolder>D:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
+		<WorkingFolder>C:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
 	</PropertyGroup>
 
 	<!-- This defines the dependencies for the Build target -->

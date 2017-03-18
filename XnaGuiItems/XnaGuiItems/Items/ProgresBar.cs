@@ -30,6 +30,10 @@ namespace Mentula.GuiItems.Items
     public class ProgressBar : GuiItem
     {
         /// <summary>
+        /// Gets or sets a value indicating if the <see cref="ProgressBar"/> will call <see cref="GuiItem.Refresh"/> on a <see cref="ValueChanged"/> event.
+        /// </summary>
+        public virtual bool AutoRefresh { get; set; }
+        /// <summary>
         /// Gets or sets the direction of the bar.
         /// <see cref="GuiItem.Refresh"/> required after change!
         /// </summary>
@@ -109,6 +113,7 @@ namespace Mentula.GuiItems.Items
         protected virtual void OnValueChanged(GuiItem sender, Args args)
         {
             data.Value = args.NewValue;
+            if (AutoRefresh) Refresh();
         }
 
         /// <summary>

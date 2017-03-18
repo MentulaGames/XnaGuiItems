@@ -11891,6 +11891,7 @@
         <element api="M:Mentula.GuiItems.Items.ProgressBar.SetForegroundTexture" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.SetTextureHandler" />
         <element api="M:Mentula.GuiItems.Items.ProgressBar.InitEvents" />
+        <element api="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.Inverted" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" />
@@ -12050,6 +12051,22 @@
           <type api="T:Mentula.GuiItems.Core.Structs.Rect" ref="false" />
         </parameter>
       </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh">
+      <apidata name="AutoRefresh" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_AutoRefresh" />
+      <setter name="set_AutoRefresh" />
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Items" />

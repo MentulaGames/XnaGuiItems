@@ -23,7 +23,10 @@
   <HelpKINode Title="AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
   <HelpKINode Title="autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
   <HelpKINode Title="autoFocusTextbox field" Url="html/d1bddaff-2ae9-4599-23bc-81038a69fd6e.htm" />
-  <HelpKINode Title="AutoRefresh property" Url="html/3b492b1f-ce03-c41b-c88a-de5f2f7a1e5a.htm" />
+  <HelpKINode Title="AutoRefresh property">
+    <HelpKINode Title="Label.AutoRefresh Property " Url="html/3b492b1f-ce03-c41b-c88a-de5f2f7a1e5a.htm" />
+    <HelpKINode Title="ProgressBar.AutoRefresh Property " Url="html/f3b97c76-b50c-658d-8541-ab19c598eae2.htm" />
+  </HelpKINode>
   <HelpKINode Title="AutoSize enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="AutoSize property">
     <HelpKINode Title="DropDown.AutoSize Property " Url="html/5797d0ce-1ad4-013d-5115-bf80c2c61977.htm" />
@@ -880,6 +883,7 @@
     <HelpKINode Title="methods" Url="html/0d6ea911-2b48-4689-de17-41bf6f442694.htm" />
     <HelpKINode Title="properties" Url="html/3e0c26bf-93aa-a088-5d2c-d3b68d1c14c3.htm" />
   </HelpKINode>
+  <HelpKINode Title="ProgressBar.AutoRefresh property" Url="html/f3b97c76-b50c-658d-8541-ab19c598eae2.htm" />
   <HelpKINode Title="ProgressBar.BorderStyle property" Url="html/68fa1c2e-044d-1eb6-16ee-23b6006466fb.htm" />
   <HelpKINode Title="ProgressBar.data field" Url="html/3288bf01-28c8-3379-f52c-3491cdaa491f.htm" />
   <HelpKINode Title="ProgressBar.DefaultBounds property" Url="html/e052631e-0f3d-7593-efaf-9249562fc760.htm" />

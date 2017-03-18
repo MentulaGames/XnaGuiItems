@@ -20275,6 +20275,7 @@
           <element api="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" />
           <element api="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" />
         </element>
+        <element api="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" />
         <element api="F:Mentula.GuiItems.Items.ProgressBar.data" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" />
@@ -20423,6 +20424,7 @@
         <element api="P:Mentula.GuiItems.Core.GuiItem.Width" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.X" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.Y" />
+        <element api="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" />
         <element api="P:Mentula.GuiItems.Items.ProgressBar.DefaultForeColor" />
@@ -20550,6 +20552,27 @@
         <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
       </containers>
       <file name="414ac562-592e-8279-f4f3-cf3c5a92c514" />
+    </api>
+    <api id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh">
+      <topicdata group="api" />
+      <apidata name="AutoRefresh" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" set="true" />
+      <getter name="get_AutoRefresh" />
+      <setter name="set_AutoRefresh" />
+      <returns>
+        <type api="T:System.Boolean" ref="false" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
+      </containers>
+      <file name="f3b97c76-b50c-658d-8541-ab19c598eae2" />
     </api>
     <api id="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle">
       <topicdata group="api" />

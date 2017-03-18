@@ -652,6 +652,7 @@
         <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="414ac562-592e-8279-f4f3-cf3c5a92c514" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.ProgressBar" project="XnaGuiItems" file="3e0c26bf-93aa-a088-5d2c-d3b68d1c14c3">
+        <topic id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" project="XnaGuiItems" file="f3b97c76-b50c-658d-8541-ab19c598eae2" />
         <topic id="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" project="XnaGuiItems" file="68fa1c2e-044d-1eb6-16ee-23b6006466fb" />
         <topic id="P:Mentula.GuiItems.Items.ProgressBar.DefaultBounds" project="XnaGuiItems" file="e052631e-0f3d-7593-efaf-9249562fc760" />
         <topic id="P:Mentula.GuiItems.Items.ProgressBar.DefaultForeColor" project="XnaGuiItems" file="5095cf6e-ef46-44b9-f4d3-ec27bb21a1c3" />
