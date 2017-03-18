@@ -14,6 +14,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Structs;
+    using System;
 
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.Button"/>.
@@ -29,11 +30,11 @@ namespace Mentula.GuiItems.Core.TextureHandlers
         /// <summary>
         /// The texture that needs to be drawn in the current state.
         /// </summary>
-        public Texture2D DrawTexture
+        public int DrawId
         {
             get
             {
-                return state == ButtonStyle.Default ? Background : (state == ButtonStyle.Hover ? Hover : Click);
+                return state == ButtonStyle.Default ? 0 : (state == ButtonStyle.Hover ? 2 : 3);
             }
         }
 
@@ -90,6 +91,23 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover, true);
             if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click, true);
             internCall = false;
+        }
+
+        /// <summary>
+        /// Refreshes the <see cref="TextureHandler.DrawTexture"/>.
+        /// </summary>
+        /// <param name="sb"> The spritebatch used for the underlying rendering. </param>
+        public override void Refresh(SpriteBatch sb)
+        {
+            ApplyBorders();
+
+            DrawTexture.Dispose();
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height * 3 + Foreground.Height));
+            DrawTexture.DrawAt(0, Background, Background.Bounds);
+            DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
+            DrawTexture.DrawAt(2, Hover, new Rectangle(0, Background.Height + Foreground.Height, Hover.Width, Hover.Height));
+            DrawTexture.DrawAt(3, Click, new Rectangle(0, Background.Height * 2 + Foreground.Height, Click.Width, Click.Height));
+            DrawTexture.End();
         }
 
         /// <summary>

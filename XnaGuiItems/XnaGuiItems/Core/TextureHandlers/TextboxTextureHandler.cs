@@ -14,6 +14,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Structs;
+    using System;
 
     /// <summary>
     /// The class that handles the textures of a <see cref="Items.TextBox"/>.
@@ -46,20 +47,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             focus = null;
         }
 
-        internal void Swap()
-        {
-            internCall = true;
-            Foreground = Focused;
-            internCall = false;
-        }
-
-        internal void SetBack(Texture2D saved)
-        {
-            internCall = true;
-            Foreground = saved;
-            internCall = false;
-        }
-
         internal void SetFocusText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             SetText(text, font, color, size, multiLine, lineStart, sb);
@@ -67,6 +54,20 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             internCall = true;
             if (!userSet[2]) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, sb);
             internCall = false;
+        }
+
+        /// <summary>
+        /// Refreshes the <see cref="TextureHandler.DrawTexture"/>.
+        /// </summary>
+        /// <param name="sb"> The spritebatch used for the underlying rendering. </param>
+        public override void Refresh(SpriteBatch sb)
+        {
+            DrawTexture.Dispose();
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height + Foreground.Height * 2));
+            DrawTexture.DrawAt(0, Background, Foreground.Bounds);
+            DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
+            DrawTexture.DrawAt(2, Focused, new Rectangle(0, Background.Height + Foreground.Height, Focused.Width, Focused.Height));
+            DrawTexture.End();
         }
 
         /// <summary>

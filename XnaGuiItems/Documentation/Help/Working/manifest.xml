@@ -410,15 +410,18 @@
   <topic id="Overload:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose(System.Boolean)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Buttons" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler" type="API" />
@@ -428,6 +431,7 @@
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Focused" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" type="API" />
@@ -436,10 +440,19 @@
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" type="API" />
+  <topic id="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.#ctor" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Dispose" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture" type="API" />
   <topic id="N:Mentula.GuiItems.Items" type="API" />
   <topic id="T:Mentula.GuiItems.Items.Button" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Items.Button" type="API" />
@@ -454,7 +467,6 @@
   <topic id="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.LeftClick" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Button.Refresh" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.RightClick" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.SetTextureHandler" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.Update(System.Single)" type="API" />

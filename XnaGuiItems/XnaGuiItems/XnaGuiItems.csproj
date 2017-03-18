@@ -91,6 +91,7 @@
     <Compile Include="Core\TextureHandlers\DropDownButtonTextureHandler.cs" />
     <Compile Include="Core\TextureHandlers\DropDownTextureHandler.cs" />
     <Compile Include="Core\TextureHandlers\LabelTextureHandler.cs" />
+    <Compile Include="Core\TextureHandlers\Stitching\StitchedTexture2D.cs" />
     <Compile Include="Core\TextureHandlers\TextboxTextureHandler.cs" />
     <Compile Include="Core\TextureHandlers\TextureHandler.cs" />
     <Compile Include="Core\Input\MentulaKeyboardState.cs" />

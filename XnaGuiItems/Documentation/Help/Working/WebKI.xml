@@ -62,7 +62,6 @@
   <HelpKINode Title="Button.Draw method" Url="html/0d3a90b3-78df-d26d-91d9-fd6259dae344.htm" />
   <HelpKINode Title="Button.LeftClick event" Url="html/576538ba-a573-3f6c-b479-0746ba8e30d5.htm" />
   <HelpKINode Title="Button.PerformClick method" Url="html/843bc224-c459-3ebf-608d-dfc8ca925989.htm" />
-  <HelpKINode Title="Button.Refresh method" Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
   <HelpKINode Title="Button.RightClick event" Url="html/84a7507e-0d22-41c9-f8f6-8c41861c9bd5.htm" />
   <HelpKINode Title="Button.SetTextureHandler method" Url="html/c75f9b3c-eeb9-a3a9-1dfe-aa95a9136ccd.htm" />
   <HelpKINode Title="Button.Update method" Url="html/ea0ae772-ee20-6b79-497a-9e47788a515b.htm" />
@@ -76,8 +75,9 @@
   </HelpKINode>
   <HelpKINode Title="ButtonTextureHandler.Click property" Url="html/d9487531-bed7-bc71-acef-f094cd45cc49.htm" />
   <HelpKINode Title="ButtonTextureHandler.Dispose method" Url="html/d13bc0e3-a688-a6c4-aba7-cf50d352ff2e.htm" />
-  <HelpKINode Title="ButtonTextureHandler.DrawTexture property" Url="html/37c0ef14-d446-888c-a077-e29a45ec6e20.htm" />
+  <HelpKINode Title="ButtonTextureHandler.DrawId property" Url="html/d25dd67f-eb12-6c8d-327c-1e0c71d2c628.htm" />
   <HelpKINode Title="ButtonTextureHandler.Hover property" Url="html/b2ea67d1-8418-aba8-9954-811265ad76e3.htm" />
+  <HelpKINode Title="ButtonTextureHandler.Refresh method" Url="html/1942a040-702b-52bc-4759-48e8665bb758.htm" />
   <HelpKINode Title="ByteFlags structure">
     <HelpKINode Title="ByteFlags Structure" Url="html/5b7a4268-a4f0-1615-0399-9687e6300ab9.htm" />
     <HelpKINode Title="about ByteFlags structure" Url="html/5b7a4268-a4f0-1615-0399-9687e6300ab9.htm" />
@@ -141,6 +141,7 @@
     <HelpKINode Title="ButtonTextureHandler.Dispose Method " Url="html/d13bc0e3-a688-a6c4-aba7-cf50d352ff2e.htm" />
     <HelpKINode Title="GuiItem.Dispose Method " Url="html/565d5482-c2b2-aa9a-89ae-896ffa6759cb.htm" />
     <HelpKINode Title="Menu(T).Dispose Method " Url="html/75174064-11bf-6d30-a120-b8eedbd58fe0.htm" />
+    <HelpKINode Title="StitchedTexture2D.Dispose Method " Url="html/3733f550-9537-85d0-41c1-b1480ccf516a.htm" />
     <HelpKINode Title="TextureHandler.Dispose Method " Url="html/9c62eb64-a431-167e-d9a5-e45a6d5abdac.htm" />
   </HelpKINode>
   <HelpKINode Title="Disposing property" Url="html/82e09595-8ae1-f4cd-0b1c-d07739f7feb2.htm" />
@@ -178,8 +179,9 @@
   </HelpKINode>
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.DrawableMentulaGameComponent constructor" Url="html/01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d.htm" />
   <HelpKINode Title="DrawableMentulaGameComponent&lt;TGame&gt;.Game property" Url="html/9e548efe-a2b7-d891-16df-6796d16580c2.htm" />
+  <HelpKINode Title="DrawId property" Url="html/d25dd67f-eb12-6c8d-327c-1e0c71d2c628.htm" />
   <HelpKINode Title="DrawString method" Url="html/3fd78035-1ac0-a0e2-3cfb-4b91e8a67187.htm" />
-  <HelpKINode Title="DrawTexture property" Url="html/37c0ef14-d446-888c-a077-e29a45ec6e20.htm" />
+  <HelpKINode Title="DrawTexture property" Url="html/cbb1525b-2d66-7d0e-bba0-77dd2bcca8ce.htm" />
   <HelpKINode Title="DropDown class">
     <HelpKINode Title="DropDown Class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
     <HelpKINode Title="about DropDown class" Url="html/f32ac208-a428-2c46-bccb-48cc77db32ac.htm" />
@@ -218,6 +220,7 @@
     <HelpKINode Title="methods" Url="html/0feb2e10-2c67-579a-baab-8aeaafefa8c4.htm" />
     <HelpKINode Title="properties" Url="html/1dbfa7b9-aba3-4a7e-3223-1132d33dbb0b.htm" />
   </HelpKINode>
+  <HelpKINode Title="DropDownButtonTextureHandler.Refresh method" Url="html/feecd1e4-7230-0f77-e11d-784b4732a80e.htm" />
   <HelpKINode Title="DropDownTextureHandler class">
     <HelpKINode Title="DropDownTextureHandler Class" Url="html/6e780d31-d02c-3708-3d4d-1341835f3076.htm" />
     <HelpKINode Title="about DropDownTextureHandler class" Url="html/6e780d31-d02c-3708-3d4d-1341835f3076.htm" />
@@ -225,6 +228,7 @@
     <HelpKINode Title="properties" Url="html/c2aa61cb-64e8-1a76-071d-43be8ca22b7a.htm" />
   </HelpKINode>
   <HelpKINode Title="DropDownTextureHandler.Buttons property" Url="html/f559a60a-5e67-f647-b521-e3762b365d0b.htm" />
+  <HelpKINode Title="DropDownTextureHandler.Refresh method" Url="html/3f2925f8-ca7d-0a0b-83d3-82adb3b30125.htm" />
   <HelpKINode Title="Empty field">
     <HelpKINode Title="IndexedClickEventArgs.Empty Field" Url="html/ebabda49-8c31-9ce9-0939-bc4520cac005.htm" />
     <HelpKINode Title="MouseEventArgs.Empty Field" Url="html/0293c743-7f74-5454-e6b4-e4cae2543394.htm" />
@@ -594,6 +598,8 @@
   <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler class" Url="html/9261aa19-5dd6-a6da-558e-a7ffbdca4cf7.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler class" Url="html/6e780d31-d02c-3708-3d4d-1341835f3076.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler class" Url="html/2b6df092-b199-5b55-9f4d-8060e7afaa33.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.Stitching namespace" Url="html/d6666f14-c3a7-2116-9290-f841b6788b46.htm" />
+  <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D class" Url="html/69505f70-237c-e2ed-4654-b6e0d782fd7f.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler class" Url="html/61b454c1-ddf9-8c57-21c2-997729a13d3c.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.TextureHandlers.TextureHandler class" Url="html/ba4312ac-9ab1-c10f-dfc0-84fcf5b93826.htm" />
   <HelpKINode Title="Mentula.GuiItems.Items namespace" Url="html/ffbe3cf9-9804-efbc-3f6a-895be5de3d4e.htm" />
@@ -944,12 +950,16 @@
   <HelpKINode Title="Rect.X property" Url="html/e18ffec0-d420-fc1c-040e-c7bf6389920d.htm" />
   <HelpKINode Title="Rect.Y property" Url="html/8fc7611c-b977-8370-a0f4-8b842db75dfd.htm" />
   <HelpKINode Title="Refresh method">
-    <HelpKINode Title="Button.Refresh Method " Url="html/b43f913d-c500-d3bb-dd81-ad5483965721.htm" />
+    <HelpKINode Title="ButtonTextureHandler.Refresh Method " Url="html/1942a040-702b-52bc-4759-48e8665bb758.htm" />
     <HelpKINode Title="DropDown.Refresh Method " Url="html/63782362-5c20-dfa5-66b1-08a0b783e255.htm" />
+    <HelpKINode Title="DropDownButtonTextureHandler.Refresh Method " Url="html/feecd1e4-7230-0f77-e11d-784b4732a80e.htm" />
+    <HelpKINode Title="DropDownTextureHandler.Refresh Method " Url="html/3f2925f8-ca7d-0a0b-83d3-82adb3b30125.htm" />
     <HelpKINode Title="GuiItem.Refresh Method " Url="html/7c68a1c7-3beb-e2af-8fd6-2fe972ab7ff2.htm" />
     <HelpKINode Title="Label.Refresh Method " Url="html/66ca4e66-4316-ca82-2b44-ec2f7a0a5de7.htm" />
     <HelpKINode Title="PictureBox.Refresh Method " Url="html/6c18240f-1d44-d681-1895-bc586c90eb99.htm" />
     <HelpKINode Title="TabContainer.Refresh Method " Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
+    <HelpKINode Title="TextboxTextureHandler.Refresh Method " Url="html/6d543df0-f852-f779-1256-a00c02dab899.htm" />
+    <HelpKINode Title="TextureHandler.Refresh Method " Url="html/415fb27b-cd5e-0547-0092-2f03e1f148df.htm" />
   </HelpKINode>
   <HelpKINode Title="Remove method" Url="html/e7023442-515b-9d44-a61b-f26e7346d088.htm" />
   <HelpKINode Title="RemoveAt method" Url="html/26eac6a4-b546-fea2-0dc8-373cefd23b3f.htm" />
@@ -1077,6 +1087,16 @@
   <HelpKINode Title="Slow enumeration member" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="StackTrace property" Url="html/d9f17d96-df21-af24-81ae-0a722a0ad6ff.htm" />
   <HelpKINode Title="State field" Url="html/52b3a3eb-5f55-3d14-dbfb-2e58c1e015ab.htm" />
+  <HelpKINode Title="StitchedTexture2D class">
+    <HelpKINode Title="StitchedTexture2D Class" Url="html/69505f70-237c-e2ed-4654-b6e0d782fd7f.htm" />
+    <HelpKINode Title="about StitchedTexture2D class" Url="html/69505f70-237c-e2ed-4654-b6e0d782fd7f.htm" />
+    <HelpKINode Title="constructor" Url="html/b211174a-6efd-cb13-8f2d-8a3a0d371dca.htm" />
+    <HelpKINode Title="methods" Url="html/f5970328-3767-7f08-c4bc-f0721460825e.htm" />
+    <HelpKINode Title="properties" Url="html/0b3a3f9e-67d6-1777-0e67-15bc238fd5c2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StitchedTexture2D.Dispose method" Url="html/3733f550-9537-85d0-41c1-b1480ccf516a.htm" />
+  <HelpKINode Title="StitchedTexture2D.StitchedTexture2D constructor" Url="html/b211174a-6efd-cb13-8f2d-8a3a0d371dca.htm" />
+  <HelpKINode Title="StitchedTexture2D.Texture property" Url="html/c4228f03-0cd9-c7df-2dc7-22d653758a62.htm" />
   <HelpKINode Title="StretchImage enumeration member" Url="html/bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc.htm" />
   <HelpKINode Title="Subtract method" Url="html/a39b4971-1375-22ff-25c1-f6ca50308fe3.htm" />
   <HelpKINode Title="Subtraction operator" Url="html/29c49299-6123-8d0e-82a2-a738b752bf5c.htm" />
@@ -1145,7 +1165,9 @@
     <HelpKINode Title="properties" Url="html/219721b6-8ab7-54bc-03a6-ab93d3fbaf4c.htm" />
   </HelpKINode>
   <HelpKINode Title="TextboxTextureHandler.Focused property" Url="html/b3b92cfd-ab0c-0845-7943-fca93cbd732a.htm" />
+  <HelpKINode Title="TextboxTextureHandler.Refresh method" Url="html/6d543df0-f852-f779-1256-a00c02dab899.htm" />
   <HelpKINode Title="TextChanged event" Url="html/6632fb63-abbb-d9eb-67ce-c3015862d5cf.htm" />
+  <HelpKINode Title="Texture property" Url="html/c4228f03-0cd9-c7df-2dc7-22d653758a62.htm" />
   <HelpKINode Title="TextureHandler class">
     <HelpKINode Title="TextureHandler Class" Url="html/ba4312ac-9ab1-c10f-dfc0-84fcf5b93826.htm" />
     <HelpKINode Title="about TextureHandler class" Url="html/ba4312ac-9ab1-c10f-dfc0-84fcf5b93826.htm" />
@@ -1155,9 +1177,11 @@
   </HelpKINode>
   <HelpKINode Title="TextureHandler.Background property" Url="html/1a9d0158-5c04-4293-2fb2-53bc35b2e1c3.htm" />
   <HelpKINode Title="TextureHandler.Dispose method" Url="html/9c62eb64-a431-167e-d9a5-e45a6d5abdac.htm" />
+  <HelpKINode Title="TextureHandler.DrawTexture property" Url="html/cbb1525b-2d66-7d0e-bba0-77dd2bcca8ce.htm" />
   <HelpKINode Title="TextureHandler.Finalize method" Url="html/de9cfdb7-288f-0bd7-96dd-7ec5bb30c190.htm" />
   <HelpKINode Title="TextureHandler.Foreground property" Url="html/07c31da3-b99d-8743-771e-bc178683b19b.htm" />
   <HelpKINode Title="TextureHandler.IsDisposed property" Url="html/d7117945-a084-ffe9-b0ce-967573454017.htm" />
+  <HelpKINode Title="TextureHandler.Refresh method" Url="html/415fb27b-cd5e-0547-0092-2f03e1f148df.htm" />
   <HelpKINode Title="TextureHandler.userSet field" Url="html/a5028480-9216-3e96-f607-c28fc24f71e6.htm" />
   <HelpKINode Title="textures field" Url="html/bd3bfbc6-3331-4bc6-37d3-69c9aa4d44f2.htm" />
   <HelpKINode Title="Top enumeration member" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />

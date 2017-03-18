@@ -14,6 +14,8 @@ namespace Mentula.GuiItems.Core.TextureHandlers
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Structs;
+    using Stitching;
+    using System;
 
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.DropDown"/>.
@@ -54,6 +56,31 @@ namespace Mentula.GuiItems.Core.TextureHandlers
                 Buttons[i].SetBackFromLabels(labels[i], size, font, sb);
                 Buttons[i].ApplyBorders();
             }
+        }
+
+        /// <summary>
+        /// Refreshes the <see cref="TextureHandler.DrawTexture"/>.
+        /// </summary>
+        /// <param name="sb"> The spritebatch used for the underlying rendering. </param>
+        public override void Refresh(SpriteBatch sb)
+        {
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                Buttons[i].Refresh(sb);
+            }
+
+            DrawTexture.Dispose();
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height * Buttons.Length + Foreground.Height));
+            DrawTexture.DrawAt(0, Background, Background.Bounds);
+            DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
+
+            Vector2 pos = new Vector2(0, Background.Height + Foreground.Height);
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                DrawTexture.DrawRangeAt(8 << i, Buttons[i].DrawTexture, pos);
+                pos.Y += Buttons[i].DrawTexture.Texture.Height;
+            }
+            DrawTexture.End();
         }
     }
 }

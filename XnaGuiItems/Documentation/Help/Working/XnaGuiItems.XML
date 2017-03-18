@@ -1155,7 +1155,7 @@
             The <see cref="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
             </remarks>
     </member>
-    <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture">
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId">
       <summary>
             The texture that needs to be drawn in the current state.
             </summary>
@@ -1170,6 +1170,12 @@
             The button click texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Refreshes the <see cref="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />.
+            </summary>
+      <param name="sb"> The spritebatch used for the underlying rendering. </param>
+    </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose(System.Boolean)">
       <summary>
             Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" />.
@@ -1181,6 +1187,12 @@
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" /> buttons.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Refreshes the <see cref="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />.
+            </summary>
+      <param name="sb"> The spritebatch used for the underlying rendering. </param>
+    </member>
     <member name="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.DropDown" />.
@@ -1191,10 +1203,30 @@
             The textures for the underlying buttons.
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Refreshes the <see cref="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />.
+            </summary>
+      <param name="sb"> The spritebatch used for the underlying rendering. </param>
+    </member>
     <member name="T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler">
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Label" />.
             </summary>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D">
+      <summary>
+            A container for multiple <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> stitched into one <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />.
+            </summary>
+      <remarks>
+            To use this simple use <see cref="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture" /> for the texture and a rectangle with a specified id for the source in a <see cref="M:Microsoft.Xna.Framework.Graphics.SpriteBatch.Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable{Microsoft.Xna.Framework.Rectangle},Microsoft.Xna.Framework.Color)" />.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture">
+      <summary> The texture that encapsulates the underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Dispose">
+      <summary> Resets the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" /> and disposes its content. </summary>
     </member>
     <member name="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler">
       <summary>
@@ -1209,6 +1241,12 @@
             The textbox focused texture for a <see cref="T:Mentula.GuiItems.Items.TextBox" />. 
             </summary>
     </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Refreshes the <see cref="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />.
+            </summary>
+      <param name="sb"> The spritebatch used for the underlying rendering. </param>
+    </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Dispose(System.Boolean)">
       <summary>
             Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" />.
@@ -1219,6 +1257,9 @@
       <summary>
             A class that handles texture settings.
             </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture">
+      <summary> The <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" /> used for drawing. </summary>
     </member>
     <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed">
       <summary>
@@ -1246,6 +1287,12 @@
       <summary>
             Disposes the unmanaged resources.
             </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <summary>
+            Refreshes the <see cref="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />.
+            </summary>
+      <param name="sb"> The spritebatch used for the underlying rendering. </param>
     </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose">
       <summary>
@@ -2206,11 +2253,6 @@
             </summary>
       <param name="spriteBatch"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> to use. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.Refresh">
-      <summary>
-            Recalculates the background and the foreground.
-            </summary>
-    </member>
     <member name="M:Mentula.GuiItems.Items.Button.PerformClick(Mentula.GuiItems.Core.MouseClick)">
       <summary>
             Perfoms a specified button click.
@@ -2972,7 +3014,10 @@
       <summary>The Mentula.GuiItems.Core.Structs namespace contains structs which are used in the core part of the library.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Core.TextureHandlers">
-      <summary>The Mentula.GuiItems.Core.Handlers namespace contains classes that define containers for user defined or generated textures.</summary>
+      <summary>The Mentula.GuiItems.Core.TextureHandlers namespace contains classes that define containers for user defined or generated textures.</summary>
+    </member>
+    <member name="N:Mentula.GuiItems.Core.TextureHandlers.Stitching">
+      <summary>The Mentula.GuiItems.Core.TextureHandlers.Stitching namespace contains classes that implement functionality for texture stitching.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Items">
       <summary>The Mentula.GuiItems.Items namespace contains classes that define commonly-used user interface controls.</summary>

@@ -327,10 +327,10 @@ namespace Mentula.GuiItems.Core
         /// <param name="spriteBatch"> The spritebatch to use. </param>
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (visible)
+            if (Visible)
             {
-                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                spriteBatch.Draw(textures.Foreground, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[1], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
 
@@ -397,6 +397,7 @@ namespace Mentula.GuiItems.Core
 #endif
             SetBackgroundTexture();
             SetForegroundTexture();
+            textures.Refresh(batch);
 
 #if DEBUG
             sw.Stop();

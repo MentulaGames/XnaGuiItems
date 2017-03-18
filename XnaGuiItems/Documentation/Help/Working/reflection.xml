@@ -14311,9 +14311,11 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose(System.Boolean)" />
         </element>
-        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
@@ -14406,6 +14408,7 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Dispose(System.Boolean)" />
         </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
       </elements>
       <containers>
@@ -14423,9 +14426,10 @@
       <typedata visibility="public" serializable="false" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click" />
-        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -14516,15 +14520,15 @@
       </containers>
       <file name="8f246452-575f-ac80-478e-4eca012a25dc" />
     </api>
-    <api id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture">
+    <api id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId">
       <topicdata group="api" />
-      <apidata name="DrawTexture" group="member" subgroup="property" />
+      <apidata name="DrawId" group="member" subgroup="property" />
       <memberdata visibility="public" />
       <proceduredata virtual="false" />
       <propertydata get="true" />
-      <getter name="get_DrawTexture" />
+      <getter name="get_DrawId" />
       <returns>
-        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+        <type api="T:System.Int32" ref="false" />
       </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -14534,7 +14538,7 @@
         <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
         <type api="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" ref="true" />
       </containers>
-      <file name="37c0ef14-d446-888c-a077-e29a45ec6e20" />
+      <file name="d25dd67f-eb12-6c8d-327c-1e0c71d2c628" />
     </api>
     <api id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover">
       <topicdata group="api" />
@@ -14557,6 +14561,31 @@
       </containers>
       <file name="b2ea67d1-8418-aba8-9954-811265ad76e3" />
     </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="sb">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" ref="true" />
+      </containers>
+      <file name="1942a040-702b-52bc-4759-48e8665bb758" />
+    </api>
     <api id="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler">
       <topicdata group="api" />
       <apidata name="DropDownButtonTextureHandler" group="type" subgroup="class" />
@@ -14571,7 +14600,7 @@
       </family>
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click" />
-        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" />
         <element api="M:System.Object.ToString">
           <apidata name="ToString" group="member" subgroup="method" />
@@ -14630,8 +14659,10 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -14705,6 +14736,7 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
       </elements>
       <containers>
@@ -14722,9 +14754,10 @@
       <typedata visibility="public" sealed="true" serializable="false" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click" />
-        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawTexture" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -14736,6 +14769,31 @@
         <type api="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" />
       </containers>
       <file name="1dbfa7b9-aba3-4a7e-3223-1132d33dbb0b" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="sb">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" ref="true" />
+      </containers>
+      <file name="feecd1e4-7230-0f77-e11d-784b4732a80e" />
     </api>
     <api id="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler">
       <topicdata group="api" />
@@ -14806,8 +14864,10 @@
           </containers>
         </element>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Buttons" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -14881,6 +14941,7 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
       </elements>
       <containers>
@@ -14899,6 +14960,7 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Buttons" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -14933,6 +14995,31 @@
         <type api="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler" ref="true" />
       </containers>
       <file name="f559a60a-5e67-f647-b521-e3762b365d0b" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="sb">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.DropDownTextureHandler" ref="true" />
+      </containers>
+      <file name="3f2925f8-ca7d-0a0b-83d3-82adb3b30125" />
     </api>
     <api id="T:Mentula.GuiItems.Core.TextureHandlers.LabelTextureHandler">
       <topicdata group="api" />
@@ -15025,9 +15112,11 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)" />
         </element>
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" />
       </elements>
       <containers>
@@ -15118,6 +15207,7 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)" />
         </element>
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -15134,6 +15224,7 @@
       <typedata visibility="public" serializable="false" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -15246,8 +15337,10 @@
           </containers>
         </element>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Focused" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -15321,6 +15414,7 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
       </elements>
       <containers>
@@ -15339,6 +15433,7 @@
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Focused" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -15371,6 +15466,31 @@
         <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" ref="true" />
       </containers>
       <file name="b3b92cfd-ab0c-0845-7943-fca93cbd732a" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+          <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
+        </member>
+      </overrides>
+      <parameters>
+        <parameter name="sb">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler" ref="true" />
+      </containers>
+      <file name="6d543df0-f852-f779-1256-a00c02dab899" />
     </api>
     <api id="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler">
       <topicdata group="api" />
@@ -15464,9 +15584,11 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose" />
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)" />
         </element>
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" />
       </elements>
       <containers>
@@ -15557,6 +15679,7 @@
           <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Dispose(System.Boolean)" />
         </element>
         <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -15573,6 +15696,7 @@
       <typedata visibility="public" serializable="false" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Background" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" />
         <element api="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" />
       </elements>
@@ -15678,6 +15802,27 @@
       </containers>
       <file name="4f107a73-03f4-dad1-7be8-d2a2a5782f8c" />
     </api>
+    <api id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.DrawTexture">
+      <topicdata group="api" />
+      <apidata name="DrawTexture" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" set="true" set-visibility="family" />
+      <getter name="get_DrawTexture" />
+      <setter name="set_DrawTexture" />
+      <returns>
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
+      </containers>
+      <file name="cbb1525b-2d66-7d0e-bba0-77dd2bcca8ce" />
+    </api>
     <api id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize">
       <topicdata group="api" />
       <apidata name="Finalize" group="member" subgroup="method" />
@@ -15744,6 +15889,26 @@
       </containers>
       <file name="d7117945-a084-ffe9-b0ce-967573454017" />
     </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+      <topicdata group="api" />
+      <apidata name="Refresh" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <parameters>
+        <parameter name="sb">
+          <type api="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" ref="true" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
+      </containers>
+      <file name="415fb27b-cd5e-0547-0092-2f03e1f148df" />
+    </api>
     <api id="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet">
       <topicdata group="api" />
       <apidata name="userSet" group="member" subgroup="field" />
@@ -15761,6 +15926,1169 @@
         <type api="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" ref="true" />
       </containers>
       <file name="a5028480-9216-3e96-f607-c28fc24f71e6" />
+    </api>
+    <api id="N:Mentula.GuiItems.Core.TextureHandlers.Stitching">
+      <topicdata group="api" />
+      <apidata name="Mentula.GuiItems.Core.TextureHandlers.Stitching" group="namespace" />
+      <elements>
+        <element api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" />
+      </elements>
+      <file name="d6666f14-c3a7-2116-9290-f841b6788b46" />
+    </api>
+    <api id="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D">
+      <topicdata group="api" />
+      <apidata name="StitchedTexture2D" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <family>
+        <ancestors>
+          <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+            <specialization>
+              <type api="T:System.Int32" ref="false" />
+              <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+            </specialization>
+          </type>
+          <type api="T:System.Object" ref="true" />
+        </ancestors>
+      </family>
+      <implements>
+        <type api="T:System.IDisposable" ref="true" />
+      </implements>
+      <elements>
+        <element api="M:System.Collections.Generic.Dictionary`2.Add(`0,`1)">
+          <apidata name="Add" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+            <parameter name="value">
+              <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.Add(`0,`1)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.Clear">
+          <apidata name="Clear" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <implements>
+            <member api="M:System.Collections.Generic.ICollection`1.Clear">
+              <type api="T:System.Collections.Generic.ICollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.IDictionary.Clear">
+              <type api="T:System.Collections.IDictionary" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.ContainsKey(`0)">
+          <apidata name="ContainsKey" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.ContainsKey(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.Generic.IReadOnlyDictionary`2.ContainsKey(`0)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.ContainsValue(`1)">
+          <apidata name="ContainsValue" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="value">
+              <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.GetEnumerator">
+          <apidata name="GetEnumerator" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.Enumerator" ref="false">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+          <apidata name="GetObjectData" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="info">
+              <type api="T:System.Runtime.Serialization.SerializationInfo" ref="true" />
+            </parameter>
+            <parameter name="context">
+              <type api="T:System.Runtime.Serialization.StreamingContext" ref="false" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+              <type api="T:System.Runtime.Serialization.ISerializable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+          <attributes>
+            <attribute>
+              <type api="T:System.Security.SecurityCriticalAttribute" ref="true" />
+            </attribute>
+          </attributes>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.OnDeserialization(System.Object)">
+          <apidata name="OnDeserialization" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(System.Object)">
+              <type api="T:System.Runtime.Serialization.IDeserializationCallback" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.Remove(`0)">
+          <apidata name="Remove" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.Remove(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.TryGetValue(`0,`1@)">
+          <apidata name="TryGetValue" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+            <parameter name="value" out="true">
+              <referenceTo>
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </referenceTo>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.Generic.IReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Comparer">
+          <apidata name="Comparer" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Comparer" />
+          <returns>
+            <type api="T:System.Collections.Generic.IEqualityComparer`1" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Count">
+          <apidata name="Count" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" />
+          <getter name="get_Count" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:System.Collections.Generic.ICollection`1.Count">
+              <type api="T:System.Collections.Generic.ICollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+            <member api="P:System.Collections.ICollection.Count">
+              <type api="T:System.Collections.ICollection" ref="true" />
+            </member>
+            <member api="P:System.Collections.Generic.IReadOnlyCollection`1.Count">
+              <type api="T:System.Collections.Generic.IReadOnlyCollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Keys">
+          <apidata name="Keys" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Keys" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.KeyCollection" ref="true">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Values">
+          <apidata name="Values" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Values" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.ValueCollection" ref="true">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Item(`0)">
+          <apidata name="Item" group="member" subgroup="property" />
+          <memberdata visibility="public" default="true" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_Item" />
+          <setter name="set_Item" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:System.Collections.Generic.IDictionary`2.Item(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="P:System.Collections.Generic.IReadOnlyDictionary`2.Item(`0)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.#ctor" />
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Dispose" />
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+      </containers>
+      <file name="69505f70-237c-e2ed-4654-b6e0d782fd7f" />
+    </api>
+    <api id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D">
+      <topicdata name="StitchedTexture2D" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" />
+      <apidata name="StitchedTexture2D" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="M:System.Collections.Generic.Dictionary`2.Add(`0,`1)">
+          <apidata name="Add" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+            <parameter name="value">
+              <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.Add(`0,`1)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.Clear">
+          <apidata name="Clear" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <implements>
+            <member api="M:System.Collections.Generic.ICollection`1.Clear">
+              <type api="T:System.Collections.Generic.ICollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.IDictionary.Clear">
+              <type api="T:System.Collections.IDictionary" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.ContainsKey(`0)">
+          <apidata name="ContainsKey" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.ContainsKey(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.Generic.IReadOnlyDictionary`2.ContainsKey(`0)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.ContainsValue(`1)">
+          <apidata name="ContainsValue" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <parameters>
+            <parameter name="value">
+              <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.GetEnumerator">
+          <apidata name="GetEnumerator" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.Enumerator" ref="false">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+          <apidata name="GetObjectData" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="info">
+              <type api="T:System.Runtime.Serialization.SerializationInfo" ref="true" />
+            </parameter>
+            <parameter name="context">
+              <type api="T:System.Runtime.Serialization.StreamingContext" ref="false" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+              <type api="T:System.Runtime.Serialization.ISerializable" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+          <attributes>
+            <attribute>
+              <type api="T:System.Security.SecurityCriticalAttribute" ref="true" />
+            </attribute>
+          </attributes>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.OnDeserialization(System.Object)">
+          <apidata name="OnDeserialization" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="sender">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <implements>
+            <member api="M:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(System.Object)">
+              <type api="T:System.Runtime.Serialization.IDeserializationCallback" ref="true" />
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.Remove(`0)">
+          <apidata name="Remove" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.Remove(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Collections.Generic.Dictionary`2.TryGetValue(`0,`1@)">
+          <apidata name="TryGetValue" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+            <parameter name="value" out="true">
+              <referenceTo>
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </referenceTo>
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <implements>
+            <member api="M:System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="M:System.Collections.Generic.IReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="M:System.Object.ToString">
+          <apidata name="ToString" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.String" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.Equals(System.Object)">
+          <apidata name="Equals" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <parameters>
+            <parameter name="obj">
+              <type api="T:System.Object" ref="true" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:System.Boolean" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetHashCode">
+          <apidata name="GetHashCode" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:System.Object.GetType">
+          <apidata name="GetType" group="member" subgroup="method" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <returns>
+            <type api="T:System.Type" ref="true" />
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System" />
+            <type api="T:System.Object" ref="true" />
+          </containers>
+        </element>
+        <element api="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Dispose" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" />
+      </containers>
+      <file name="f5970328-3767-7f08-c4bc-f0721460825e" />
+    </api>
+    <api id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D">
+      <topicdata name="StitchedTexture2D" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" />
+      <apidata name="StitchedTexture2D" group="type" subgroup="class" />
+      <typedata visibility="public" sealed="true" serializable="false" />
+      <elements>
+        <element api="P:System.Collections.Generic.Dictionary`2.Comparer">
+          <apidata name="Comparer" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Comparer" />
+          <returns>
+            <type api="T:System.Collections.Generic.IEqualityComparer`1" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+              </specialization>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Count">
+          <apidata name="Count" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" />
+          <getter name="get_Count" />
+          <returns>
+            <type api="T:System.Int32" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:System.Collections.Generic.ICollection`1.Count">
+              <type api="T:System.Collections.Generic.ICollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+            <member api="P:System.Collections.ICollection.Count">
+              <type api="T:System.Collections.ICollection" ref="true" />
+            </member>
+            <member api="P:System.Collections.Generic.IReadOnlyCollection`1.Count">
+              <type api="T:System.Collections.Generic.IReadOnlyCollection`1" ref="true">
+                <specialization>
+                  <type api="T:System.Collections.Generic.KeyValuePair`2" ref="false">
+                    <specialization>
+                      <type api="T:System.Int32" ref="false" />
+                      <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                    </specialization>
+                  </type>
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Keys">
+          <apidata name="Keys" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Keys" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.KeyCollection" ref="true">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Values">
+          <apidata name="Values" group="member" subgroup="property" />
+          <memberdata visibility="public" />
+          <proceduredata virtual="false" />
+          <propertydata get="true" />
+          <getter name="get_Values" />
+          <returns>
+            <type api="T:System.Collections.Generic.Dictionary`2.ValueCollection" ref="true">
+              <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </type>
+          </returns>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:System.Collections.Generic.Dictionary`2.Item(`0)">
+          <apidata name="Item" group="member" subgroup="property" />
+          <memberdata visibility="public" default="true" />
+          <proceduredata virtual="true" final="true" />
+          <propertydata get="true" set="true" />
+          <getter name="get_Item" />
+          <setter name="set_Item" />
+          <parameters>
+            <parameter name="key">
+              <type api="T:System.Int32" ref="false" />
+            </parameter>
+          </parameters>
+          <returns>
+            <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+          </returns>
+          <implements>
+            <member api="P:System.Collections.Generic.IDictionary`2.Item(`0)">
+              <type api="T:System.Collections.Generic.IDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+            <member api="P:System.Collections.Generic.IReadOnlyDictionary`2.Item(`0)">
+              <type api="T:System.Collections.Generic.IReadOnlyDictionary`2" ref="true">
+                <specialization>
+                  <type api="T:System.Int32" ref="false" />
+                  <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+                </specialization>
+              </type>
+            </member>
+          </implements>
+          <containers>
+            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
+            <namespace api="N:System.Collections.Generic" />
+            <type api="T:System.Collections.Generic.Dictionary`2" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+                <type api="T:Microsoft.Xna.Framework.Rectangle" ref="false" />
+              </specialization>
+            </type>
+          </containers>
+        </element>
+        <element api="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" />
+      </containers>
+      <file name="0b3a3f9e-67d6-1777-0e67-15bc238fd5c2" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.#ctor">
+      <topicdata group="api" />
+      <apidata name=".ctor" group="member" subgroup="constructor" />
+      <memberdata visibility="public" special="true" />
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" ref="true" />
+      </containers>
+      <file name="b211174a-6efd-cb13-8f2d-8a3a0d371dca" />
+    </api>
+    <api id="M:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Dispose">
+      <topicdata group="api" />
+      <apidata name="Dispose" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" final="true" />
+      <implements>
+        <member api="M:System.IDisposable.Dispose">
+          <type api="T:System.IDisposable" ref="true" />
+        </member>
+      </implements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" ref="true" />
+      </containers>
+      <file name="3733f550-9537-85d0-41c1-b1480ccf516a" />
+    </api>
+    <api id="P:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D.Texture">
+      <topicdata group="api" />
+      <apidata name="Texture" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <propertydata get="true" />
+      <getter name="get_Texture" />
+      <returns>
+        <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+      </returns>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" />
+        <type api="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" ref="true" />
+      </containers>
+      <file name="c4228f03-0cd9-c7df-2dc7-22d653758a62" />
     </api>
     <api id="N:Mentula.GuiItems.Items">
       <topicdata group="api" />
@@ -15910,7 +17238,6 @@
         <element api="E:Mentula.GuiItems.Items.Button.DoubleClick" />
         <element api="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
         <element api="E:Mentula.GuiItems.Items.Button.LeftClick" />
-        <element api="M:Mentula.GuiItems.Items.Button.Refresh" />
         <element api="E:Mentula.GuiItems.Items.Button.RightClick" />
         <element api="M:Mentula.GuiItems.Items.Button.SetTextureHandler" />
         <element api="M:Mentula.GuiItems.Items.Button.Update(System.Single)" />
@@ -15931,6 +17258,7 @@
         <element api="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" />
+        <element api="M:Mentula.GuiItems.Items.Label.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Items.Label.SetForegroundTexture" />
         <element api="P:Mentula.GuiItems.Items.Label.Text" />
@@ -16028,7 +17356,6 @@
           </containers>
         </element>
         <element api="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
-        <element api="M:Mentula.GuiItems.Items.Button.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Button.SetTextureHandler" />
         <element api="M:Mentula.GuiItems.Items.Button.Update(System.Single)" />
         <element api="M:Mentula.GuiItems.Items.Label.GetLineCount" />
@@ -16039,6 +17366,7 @@
         <element api="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" />
         <element api="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" />
+        <element api="M:Mentula.GuiItems.Items.Label.Refresh" />
         <element api="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Items.Label.SetForegroundTexture" />
       </elements>
@@ -16322,26 +17650,6 @@
         <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
       </containers>
       <file name="e7078551-f554-d260-0406-cc2a2b09a53a" />
-    </api>
-    <api id="M:Mentula.GuiItems.Items.Button.Refresh">
-      <topicdata group="api" />
-      <apidata name="Refresh" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:Mentula.GuiItems.Items.Label.Refresh">
-          <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
-        </member>
-      </overrides>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Items" />
-        <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
-      </containers>
-      <file name="b43f913d-c500-d3bb-dd81-ad5483965721" />
     </api>
     <api id="E:Mentula.GuiItems.Items.Button.RightClick">
       <topicdata group="api" />

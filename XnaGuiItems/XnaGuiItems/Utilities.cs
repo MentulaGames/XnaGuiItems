@@ -191,6 +191,14 @@ namespace Mentula.GuiItems
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static void LogGphx(string sender, string msg)
+        {
+            type = LogMsgType.Gphx;
+            LogBase(sender, msg);
+            type = LogMsgType.Gphx;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogBase(string sender, string msg)
         {
             Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{type}] {sender}: {msg}.");

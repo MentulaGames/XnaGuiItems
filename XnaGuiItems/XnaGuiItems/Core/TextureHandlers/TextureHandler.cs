@@ -15,6 +15,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
 #endif
     using System;
     using Structs;
+    using Stitching;
 
     /// <summary>
     /// A class that handles texture settings.
@@ -24,6 +25,9 @@ namespace Mentula.GuiItems.Core.TextureHandlers
 #endif
     public class TextureHandler : IDisposable
     {
+        /// <summary> The <see cref="Texture2D"/> used for drawing. </summary>
+        public StitchedTexture2D DrawTexture { get; protected set; }
+
         /// <summary>
         /// Gets a value indicating whether the <see cref="TextureHandler"/> has been disposed.
         /// </summary>
@@ -70,6 +74,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             userSet = new ByteFlags();
             back = null;
             fore = null;
+            DrawTexture = new StitchedTexture2D();
         }
 
         /// <summary>
@@ -106,6 +111,19 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             internCall = true;
             if (!userSet[1]) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, sb);
             internCall = false;
+        }
+
+        /// <summary>
+        /// Refreshes the <see cref="DrawTexture"/>.
+        /// </summary>
+        /// <param name="sb"> The spritebatch used for the underlying rendering. </param>
+        public virtual void Refresh(SpriteBatch sb)
+        {
+            DrawTexture.Dispose();
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height + Foreground.Height));
+            DrawTexture.DrawAt(0, Background, Background.Bounds);
+            DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
+            DrawTexture.End();
         }
 
         internal bool BackgroundSet() => userSet[0];

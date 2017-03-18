@@ -174,16 +174,11 @@ namespace Mentula.GuiItems.Items
         /// <param name="spriteBatch"> The specified <see cref="SpriteBatch"/>. </param>
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Texture2D temp = null;
-            if (showLine)
+            if (Visible)
             {
-                temp = textures.Foreground;
-                textures.Swap();
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[showLine ? 2 : 1], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
-
-            base.Draw(spriteBatch);
-
-            if (temp != null) textures.SetBack(temp);
         }
 
         /// <summary>

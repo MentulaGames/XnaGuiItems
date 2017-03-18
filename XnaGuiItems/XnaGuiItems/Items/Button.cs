@@ -123,20 +123,9 @@ namespace Mentula.GuiItems.Items
         {
             if (Visible)
             {
-                spriteBatch.Draw(textures.DrawTexture, Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
-                spriteBatch.Draw(textures.Foreground, ForegroundRectangle.Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[textures.DrawId], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, ForegroundRectangle.Position, textures.DrawTexture[1], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
-        }
-
-        /// <summary>
-        /// Recalculates the background and the foreground.
-        /// </summary>
-        public override void Refresh()
-        {
-            base.Refresh();
-            if (suppressRefresh) return;
-
-            textures.ApplyBorders();
         }
 
         /// <summary>

@@ -201,9 +201,9 @@ namespace Mentula.GuiItems.Items
                 for (int i = 0; i < textures.Buttons.Length; i++)
                 {
                     spriteBatch.Draw(
-                        textures.Buttons[i].DrawTexture,
+                        textures.DrawTexture.Texture,
                         new Vector2(Position.X, Position.Y + (fontHeight * (i + 1))),
-                        null,
+                        textures.DrawTexture[(8 << i) | textures.Buttons[i].DrawId],
                         Color.White,
                         Rotation,
                         Origin,

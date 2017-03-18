@@ -7,11 +7,14 @@ extern alias Xna;
 namespace Mentula.GuiItems.Core.TextureHandlers
 {
 #if MONO
+    using Mono::Microsoft.Xna.Framework;
     using Mono::Microsoft.Xna.Framework.Graphics;
 #else
+    using Xna::Microsoft.Xna.Framework;
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Structs;
+    using System;
 
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.DropDown"/> buttons.
@@ -41,6 +44,20 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover, false);
             if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click, false);
             internCall = false;
+        }
+
+        /// <summary>
+        /// Refreshes the <see cref="TextureHandler.DrawTexture"/>.
+        /// </summary>
+        /// <param name="sb"> The spritebatch used for the underlying rendering. </param>
+        public override void Refresh(SpriteBatch sb)
+        {
+            DrawTexture.Dispose();
+            DrawTexture.Start(sb, new Size(Background.Width, Background.Height * 3));
+            DrawTexture.DrawAt(0, Background, Background.Bounds);
+            DrawTexture.DrawAt(2, Hover, new Rectangle(0, Background.Height, Hover.Width, Hover.Height));
+            DrawTexture.DrawAt(3, Click, new Rectangle(0, Background.Height * 2, Click.Width, Click.Height));
+            DrawTexture.End();
         }
     }
 }

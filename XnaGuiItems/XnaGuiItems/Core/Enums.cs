@@ -182,7 +182,8 @@
         Call,
         Ctor,
         Init,
-        Disp
+        Disp,
+        Gphx
     }
 #endif
 }
