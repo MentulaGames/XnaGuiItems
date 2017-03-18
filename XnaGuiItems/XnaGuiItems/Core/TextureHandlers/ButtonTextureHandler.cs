@@ -102,11 +102,11 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             ApplyBorders();
 
             DrawTexture.Dispose();
-            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height * 3 + Foreground.Height));
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height + Foreground.Height + Hover.Height + Click.Height));
             DrawTexture.DrawAt(0, Background, Background.Bounds);
             DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
             DrawTexture.DrawAt(2, Hover, new Rectangle(0, Background.Height + Foreground.Height, Hover.Width, Hover.Height));
-            DrawTexture.DrawAt(3, Click, new Rectangle(0, Background.Height * 2 + Foreground.Height, Click.Width, Click.Height));
+            DrawTexture.DrawAt(3, Click, new Rectangle(0, Background.Height + Foreground.Height + Hover.Height, Click.Width, Click.Height));
             DrawTexture.End();
         }
 

@@ -17,7 +17,6 @@ namespace Mentula.GuiItems
     using System.Diagnostics;
     using System.Reflection;
     using System.Runtime.CompilerServices;
-    using System.Threading;
     using System.Windows.Forms;
 
     /// <summary>
@@ -26,14 +25,10 @@ namespace Mentula.GuiItems
 #if !DEBUG
     [DebuggerStepThrough]
 #endif
-    public static class Utilities
+    public static partial class Utilities
     {
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
-
-#if DEBUG
-        internal static LogMsgType type;
-#endif
 
         internal const int HASH_BASE = unchecked((int)2166136261);
         private const int HASH_MODIFIER = 16777619;
@@ -103,22 +98,6 @@ namespace Mentula.GuiItems
             window.FindForm().FormBorderStyle = n;
         }
 
-        /// <summary> Runs a specified <see cref="ThreadStart"/> on a background STA thread. </summary>
-        /// <param name="function"> The specified function to run. </param>
-        public static void RunInSTAThread(ThreadStart function)
-        {
-            Thread t = CreateBackgroundThread(function);
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
-        }
-
-        /// <summary> Runs a specified <see cref="ThreadStart"/> on a background thread. </summary>
-        /// <param name="function"> The specified function to run. </param>
-        public static void RunInBackground(ThreadStart function)
-        {
-            CreateBackgroundThread(function).Start();
-        }
-
         /* Computes the hash value of a object's field. */
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static int ComputeHash<T>(int hash, T obj)
@@ -168,41 +147,5 @@ namespace Mentula.GuiItems
                 catch (TargetInvocationException e) { throw new InvokeException(e); }
             }
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static Thread CreateBackgroundThread(ThreadStart func)
-        {
-            return new Thread(func) { IsBackground = true };
-        }
-
-#if DEBUG
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static void LogInvokeCall(string sender, string func)
-        {
-            LogBase(sender, $"called Invoke for {func}");
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static void LogInit(string sender, string msg)
-        {
-            type = LogMsgType.Init;
-            LogBase(sender, msg);
-            type = LogMsgType.Call;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static void LogGphx(string sender, string msg)
-        {
-            type = LogMsgType.Gphx;
-            LogBase(sender, msg);
-            type = LogMsgType.Gphx;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static void LogBase(string sender, string msg)
-        {
-            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{type}] {sender}: {msg}.");
-        }
-#endif
     }
 }

@@ -63,7 +63,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
         public override void Refresh(SpriteBatch sb)
         {
             DrawTexture.Dispose();
-            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height + Foreground.Height * 2));
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height + Foreground.Height + Focused.Height));
             DrawTexture.DrawAt(0, Background, Foreground.Bounds);
             DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
             DrawTexture.DrawAt(2, Focused, new Rectangle(0, Background.Height + Foreground.Height, Focused.Width, Focused.Height));
