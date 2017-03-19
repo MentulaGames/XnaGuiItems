@@ -239,7 +239,7 @@ namespace Mentula.GuiItems.Items
 
         private void CheckTextSet()
         {
-            if (string.IsNullOrEmpty(Text)) throw new ApplicationException($"{this} must have text set!");
+            if (AutoSize && string.IsNullOrEmpty(Text)) throw new ApplicationException($"{this} must have text set!");
         }
     }
 }
