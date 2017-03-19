@@ -121,6 +121,7 @@ namespace Mentula.GuiItems.Items
             type = LogMsgType.Ctor;
 #endif
 
+            suppressChecking = true;
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
             MinimumSize = DefaultMinimumSize;

@@ -68,6 +68,7 @@ namespace Mentula.GuiItems.Items
 
         private int lineStart;
         private string text;
+        internal bool suppressChecking;
 
         /// <summary>
         /// Occurs when the value of the <see cref="Text"/> propery is changed.
@@ -119,7 +120,7 @@ namespace Mentula.GuiItems.Items
         {
             if (!suppressRefresh)
             {
-                CheckTextSet();
+                if (!suppressChecking) CheckTextSet();
                 HandleAutoSize();
             }
             base.Refresh();
