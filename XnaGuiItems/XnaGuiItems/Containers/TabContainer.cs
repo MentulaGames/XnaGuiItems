@@ -174,7 +174,8 @@ namespace Mentula.GuiItems.Containers
                     tabs[i].Key.Refresh();
                 }
 
-                Width = GetHeaderWidth(tabs.Length);
+                int minWidth = GetHeaderWidth(tabs.Length);
+                if (Width < minWidth) Width = GetHeaderWidth(tabs.Length);
             }
 
             base.Refresh();
@@ -185,7 +186,7 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         protected override void SetBackgroundTexture()
         {
-            textures.SetBackFromClr(BackColor, new Size(Size.Width, Size.Height - tabs[0].Key.Height), batch.GraphicsDevice);
+            textures.SetBackFromClr(BackColor, new Size(Width, Height - tabs[0].Key.Height), batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -254,6 +255,7 @@ namespace Mentula.GuiItems.Containers
                 {
                     SelectedTab = i;
                     tab.Key.BorderStyle = BorderStyle.FixedSingle;
+                    tab.Key.Refresh();
 
                     for (int j = 0; j < tab.Value.Count; j++) tab.Value[j].Show();
                 }

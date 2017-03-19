@@ -15,6 +15,10 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
+            TabContainer tc = AddTabContainer();
+            tc.Size = new Size(ScreenWidth / 4, 100);
+            tc.AddTab(new Pair("First"));
+
             base.Initialize(); 
         }
     }
