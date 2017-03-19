@@ -255,7 +255,6 @@ namespace Mentula.GuiItems.Containers
                 {
                     SelectedTab = i;
                     tab.Key.BorderStyle = BorderStyle.FixedSingle;
-                    tab.Key.Refresh();
 
                     for (int j = 0; j < tab.Value.Count; j++) tab.Value[j].Show();
                 }
@@ -264,6 +263,8 @@ namespace Mentula.GuiItems.Containers
                     tab.Key.BorderStyle = BorderStyle.None;
                     for (int j = 0; j < tab.Value.Count; j++) tab.Value[j].Hide();
                 }
+
+                tab.Key.Refresh();
             }
         }
 
