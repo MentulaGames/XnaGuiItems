@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Containers\MenuCollection.cs" />
     <Compile Include="Containers\Menu\Menu_Extra.cs" />
+    <Compile Include="Containers\TabContainer.cs" />
     <Compile Include="Core\Components\DrawableMentulaGameComponent.cs" />
     <Compile Include="Core\EventHandlers\IndexClickEventArgs.cs" />
     <Compile Include="Core\EventHandlers\MouseEventArgs.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Core\Input\NativeMethods.cs" />
     <Compile Include="Containers\Menu\Menu_Add.cs" />
     <Compile Include="Containers\Menu\Menu_Logic.cs" />
-    <Compile Include="Containers\TabContainer.cs" />
     <Compile Include="Core\Enums.cs" />
     <Compile Include="Core\EventHandlers\Delegates.cs" />
     <Compile Include="Core\Input\EmptyInput.cs" />

@@ -9,20 +9,18 @@ namespace Mentula.GuiItems.Containers
 #if MONO
     using Mono::Microsoft.Xna.Framework;
     using Mono::Microsoft.Xna.Framework.Graphics;
-    using Mono::Microsoft.Xna.Framework.Input;
 #else
     using Xna::Microsoft.Xna.Framework;
     using Xna::Microsoft.Xna.Framework.Graphics;
-    using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using Core;
-    using Core.EventHandlers;
-    using Items;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using static Utilities;
     using Core.Structs;
+    using System.Collections.Generic;
+    using Items;
+    using Core.EventHandlers;
+    using static Utilities;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
@@ -37,29 +35,34 @@ namespace Mentula.GuiItems.Containers
     public class TabContainer : GuiItem
     {
         /// <summary>
-        /// Gets or sets a <see cref="Rectangle"/> indicating the size of the tab.
-        /// </summary>
-        public virtual Rect TabRectangle { get; set; }
-        /// <summary>
-        /// Gets or sets a selected tab.
-        /// </summary>
-        public virtual int SelectedTab { get; set; }
-        /// <summary>
         /// Gets or sets a value indicating if the <see cref="TabContainer"/> should handle <see cref="TextBox"/> focusing.
         /// </summary>
         public virtual bool AutoFocus { get; set; }
         /// <summary>
+        /// Gets the default tab size of the <see cref="TabContainer"/>
+        /// </summary>
+        new public static Rect DefaultBounds { get { return new Rect(0, 0, 250, 150); } }
+        /// <summary>
+        /// Gets or sets a selected tab.
+        /// </summary>
+        public virtual int SelectedTab { get { return selectedTab; } set { Invoke(TabSwitch, this, new ValueChangedEventArgs<int>(selectedTab, value)); } }
+        /// <summary>
         /// Gets or sets a value indicating if the <see cref="TabContainer"/> should not atler the position of added tab items to the position of the <see cref="TabContainer"/>.
         /// </summary>
         public virtual bool UseAbsolutePosition { get; set; }
-        /// <summary>
-        /// Gets the default tab size of the <see cref="TabContainer"/>
-        /// </summary>
-        public static Rect DefaultTabSize { get { return new Rect(0, 0, 250, 150); } }
 
-        private const string TAB_PREFIX = "Lbl";
+        /// <summary>
+        /// Occurs when the value of the <see cref="SelectedTab"/> property changes.
+        /// </summary>
+        [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
+        public event ValueChangedEventHandler<int> TabSwitch;
+
+        private const string TAB_PREFIX = "TabHLbl_";
         private KeyValuePair<Label, GuiItemCollection>[] tabs;
         private SpriteFont font;
+        private int selectedTab;
+        private bool isAbsPosCall;
+        private Vector2 oldPos;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TabContainer"/> class with default settings.
@@ -75,7 +78,8 @@ namespace Mentula.GuiItems.Containers
 
             this.font = font;
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
-            TabRectangle = DefaultTabSize;
+            Bounds = DefaultBounds;
+            BackColor = Color.White;
 
 #if DEBUG
             type = LogMsgType.Call;
@@ -85,21 +89,12 @@ namespace Mentula.GuiItems.Containers
         /// <summary>
         /// Adds a tab with a specified name to the <see cref="TabContainer"/>.
         /// </summary>
-        /// <param name="name"> The name for the tab. </param>
-        /// <param name="color"> The background color for the tab. </param>
-        public void AddTab(string name, Color? color = null)
+        /// <param name="args"> The name and background color of the tab. </param>
+        public void AddTab(Pair args)
         {
             int index = tabs.Length;
             Array.Resize(ref tabs, index + 1);
-
-            Label lbl = new Label(ref batch, font) { Name = $"{TAB_PREFIX}{name}" };
-            lbl.AutoSize = true;
-            lbl.Text = $" {name} ";
-            lbl.BorderStyle = BorderStyle.FixedSingle;
-            lbl.Clicked += TabContainer_TabSelect;
-            if (color.HasValue) lbl.BackColor = color.Value;
-
-            tabs[index] = new KeyValuePair<Label, GuiItemCollection>(lbl, new GuiItemCollection(this));
+            tabs[index] = new KeyValuePair<Label, GuiItemCollection>(CreateHeaderLabel(args), new GuiItemCollection(this));
         }
 
         /// <summary>
@@ -107,54 +102,45 @@ namespace Mentula.GuiItems.Containers
         /// </summary>
         /// <param name="tab"> The tab name. </param>
         /// <param name="items"> The items to add to the tabs. </param>
-        public void AddToTab(string tab, params GuiItem[] items)
+        public void AddControll(string tab, params GuiItem[] items)
         {
             for (int i = 0; i < tabs.Length; i++)
             {
-                KeyValuePair<Label, GuiItemCollection> cur = tabs[i];
-                if (cur.Key.Name == $"{TAB_PREFIX}{tab}")
-                {
-                    for (int j = 0; j < items.Length; j++)
-                    {
-                        TextBox txt;
-                        if ((txt = items[j] as TextBox) != null) txt.Clicked += TabContainer_TextBox_Click;
-                        items[j].Moved += TabContainer_GuiItem_Move;
+                if (tabs[i].Key.Name != $"{TAB_PREFIX}{tab}") continue;
+                AddControll(i, items);
+                break;
+            }
+        }
 
-                        items[j].Refresh();
-                        cur.Value.Add(items[j]);
-                        TabContainer_GuiItem_Move(items[j], ValueChangedEventArgs<Vector2>.Empty);
-                    }
-                }
+        /// <summary>
+        /// Adds one or more <see cref="GuiItem"/> to a specified tab.
+        /// </summary>
+        /// <param name="tab"> The tab index. </param>
+        /// <param name="items"> The items to add to the tabs. </param>
+        public void AddControll(int tab, params GuiItem[] items)
+        {
+            GuiItemCollection controlls = tabs[tab].Value;
+            for (int i = 0; i < items.Length; i++)
+            {
+                TextBox txt = items[i] as TextBox;
+                if (txt != null) txt.Clicked += OnTabTextboxClick;
+                items[i].Moved += OnTabControllMove;
+                controlls.Add(items[i]);
+                OnTabControllMove(items[i], ValueChangedEventArgs<Vector2>.Empty);
             }
         }
 
         /// <summary>
         /// Updates the <see cref="TabContainer"/>.
         /// </summary>
-        /// <param name="delta"> The deltaTime. </param>
-        public override void Update(float delta)
+        /// <param name="deltaTime"> The deltaTime. </param>
+        public override void Update(float deltaTime)
         {
-            base.Update(delta);
+            base.Update(deltaTime);
 
             if (Enabled)
             {
-                MouseState mState = Mouse.GetState();
-                KeyboardState kState = Keyboard.GetState();
-
-                for (int i = 0; i < tabs.Length; i++)
-                {
-                    tabs[i].Key.Update(delta);
-                    GuiItemCollection controlls = tabs[i].Value;
-                    if (i != SelectedTab) continue;
-
-                    for (int j = 0; j < controlls.Count; j++)
-                    {
-                        GuiItem control = controlls[j];
-                        control.Update(delta);
-
-                        control.SuppressUpdate = true;
-                    }
-                }
+                for (int i = 0; i < tabs.Length; i++) tabs[i].Key.Update(deltaTime);
             }
         }
 
@@ -166,47 +152,40 @@ namespace Mentula.GuiItems.Containers
         {
             if (Visible)
             {
-                for (int i = 0; i < tabs.Length; i++)
-                {
-                    KeyValuePair<Label, GuiItemCollection> tab = tabs[i];
-                    if (i == SelectedTab)
-                    {
-                        spriteBatch.Draw(textures.Background, Position + new Vector2(0, tab.Key.Height), null, tab.Key.BackColor, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
+                Label hdr = tabs[SelectedTab].Key;
 
-                        for (int j = 0; j < tab.Value.Count; j++)
-                        {
-                            tab.Value[j].Draw(spriteBatch);
-                        }
-                    }
-
-                    tab.Key.Draw(spriteBatch);
-
-                    for (int j = 0; j < tab.Value.Count; j++)
-                    {
-                        tab.Value[j].SuppressDraw = true;
-                    }
-                }
+                spriteBatch.Draw(textures.DrawTexture.Texture, new Vector2(Position.X, Position.Y + hdr.Height), textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : hdr.BackColor, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                for (int i = 0; i < tabs.Length; i++) tabs[i].Key.Draw(spriteBatch);
             }
         }
 
         /// <summary>
-        /// Refreshes the <see cref="TabContainer"/>, recalculating the <see cref="TabRectangle"/> and the underlying texture.
+        /// Refreshes the <see cref="TabContainer"/>, recalculating the <see cref="GuiItem.Width"/> and the underlying texture.
         /// </summary>
         public override void Refresh()
         {
             if (!suppressRefresh)
             {
+                CheckTabCount();
+                OnTabHeaderClick(tabs[0].Key, MouseEventArgs.Empty);
+
                 for (int i = 0; i < tabs.Length; i++)
                 {
                     tabs[i].Key.Refresh();
-                    tabs[i].Key.Position = Position + new Vector2(GetHeaderWidth(i), 0);
                 }
 
-                int length = GetHeaderWidth();
-                if (length != TabRectangle.Width) TabRectangle = new Rect(TabRectangle.X, TabRectangle.Y, length, TabRectangle.Height);
+                Width = GetHeaderWidth(tabs.Length);
             }
 
             base.Refresh();
+        }
+
+        /// <summary>
+        /// Sets the background texture for the <see cref="TabContainer"/>.
+        /// </summary>
+        protected override void SetBackgroundTexture()
+        {
+            textures.SetBackFromClr(BackColor, new Size(Size.Width, Size.Height - tabs[0].Key.Height), batch.GraphicsDevice);
         }
 
         /// <summary>
@@ -216,30 +195,35 @@ namespace Mentula.GuiItems.Containers
         /// <param name="e"> The new position of the <see cref="GuiItem"/>. </param>
         protected override void OnMove(GuiItem sender, ValueChangedEventArgs<Vector2> e)
         {
+            oldPos = Position;
             base.OnMove(sender, e);
+
             for (int i = 0; i < tabs.Length; i++)
             {
-                KeyValuePair<Label, GuiItemCollection> tab = tabs[i];
-                tab.Key.Position = Position + new Vector2(GetHeaderWidth(i), 0);
+                tabs[i].Key.Position = Position + new Vector2(GetHeaderWidth(i), 0);
 
-                for (int j = 0; j < tab.Value.Count; j++)
-                {
-                    TabContainer_GuiItem_Move(tab.Value[j], ValueChangedEventArgs<Vector2>.Empty);
-                }
+                GuiItemCollection controlls = tabs[i].Value;
+                for (int j = 0; j < controlls.Count; j++) OnTabControllMove(controlls[j], ValueChangedEventArgs<Vector2>.Empty);
             }
         }
 
         /// <summary>
-        /// Sets the background texture for the <see cref="TabContainer"/>.
+        /// Handles the initializing of the events.
         /// </summary>
-        protected override void SetBackgroundTexture()
+        protected override void InitEvents()
         {
-            textures.SetBackFromClr(BackColor, TabRectangle.Size, batch.GraphicsDevice);
+            base.InitEvents();
+            TabSwitch += OnTabSwitch;
         }
 
-        private int GetHeaderWidth()
+        /// <summary>
+        /// This method is called when the <see cref="TabSwitch"/> event is raised.
+        /// </summary>
+        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="e"> The new selected tab. </param>
+        protected void OnTabSwitch(GuiItem sender, ValueChangedEventArgs<int> e)
         {
-            return GetHeaderWidth(tabs.Length);
+            selectedTab = e.NewValue;
         }
 
         private int GetHeaderWidth(int stopIndex)
@@ -249,22 +233,50 @@ namespace Mentula.GuiItems.Containers
             return result;
         }
 
-        private void TabContainer_TabSelect(GuiItem sender, MouseEventArgs e)
+        private Label CreateHeaderLabel(Pair args)
+        {
+            Label hdr = new Label(ref batch, font) { Name = $"{TAB_PREFIX}{args.Text}" };
+            hdr.AutoSize = true;
+            hdr.Text = $" {args.Text} ";
+            hdr.Clicked += OnTabHeaderClick;
+            hdr.Position = Position + new Vector2(GetHeaderWidth(tabs.Length - 1), 0);
+            if (args.Color.HasValue) hdr.BackColor = args.Color.Value;
+            hdr.HandleAutoSize();
+            return hdr;
+        }
+
+        private void OnTabHeaderClick(GuiItem sender, MouseEventArgs e)
         {
             for (int i = 0; i < tabs.Length; i++)
             {
                 KeyValuePair<Label, GuiItemCollection> tab = tabs[i];
-
                 if (tab.Key.Name == sender.Name)
                 {
                     SelectedTab = i;
                     tab.Key.BorderStyle = BorderStyle.FixedSingle;
+
+                    for (int j = 0; j < tab.Value.Count; j++) tab.Value[j].Show();
                 }
-                else tab.Key.BorderStyle = BorderStyle.None;
+                else
+                {
+                    tab.Key.BorderStyle = BorderStyle.None;
+                    for (int j = 0; j < tab.Value.Count; j++) tab.Value[j].Hide();
+                }
             }
         }
 
-        private void TabContainer_TextBox_Click(GuiItem sender, MouseEventArgs e)
+        private void OnTabControllMove(GuiItem sender, ValueChangedEventArgs<Vector2> e)
+        {
+            if (!(UseAbsolutePosition || isAbsPosCall))
+            {
+                isAbsPosCall = true;
+                sender.Position += -oldPos + Position;
+                if (oldPos == Vector2.Zero) sender.Position += new Vector2(0, tabs[0].Key.Height);
+                isAbsPosCall = false;
+            }
+        }
+
+        private void OnTabTextboxClick(GuiItem sender, MouseEventArgs e)
         {
             if (AutoFocus)
             {
@@ -277,13 +289,9 @@ namespace Mentula.GuiItems.Containers
             }
         }
 
-        private void TabContainer_GuiItem_Move(GuiItem sender, ValueChangedEventArgs<Vector2> e)
+        private void CheckTabCount()
         {
-            if (!UseAbsolutePosition)
-            {
-                Label tab = tabs.FirstOrDefault(t => t.Value.Contains(sender)).Key;
-                sender.Bounds = new Rect((int)sender.Position.X, (int)sender.Position.Y + tab.Height, sender.Width, sender.Height);
-            }
+            if (tabs.Length < 1) throw new ApplicationException($"{this} must have at least 1 tab!");
         }
     }
 }

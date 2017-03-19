@@ -3468,16 +3468,21 @@
           </containers>
         </element>
         <element api="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" />
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" />
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" />
+        <element api="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll">
+          <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" />
+          <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" />
+        </element>
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" />
-        <element api="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" />
+        <element api="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.InitEvents" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.OnTabSwitch(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Refresh" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" />
-        <element api="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" />
+        <element api="E:Mentula.GuiItems.Containers.TabContainer.TabSwitch" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
@@ -3504,7 +3509,6 @@
         <element api="E:Mentula.GuiItems.Core.GuiItem.Hover" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverEnter" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.HoverLeave" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.InitEvents" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.IsDisposed" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.leftDown" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Moved" />
@@ -3611,10 +3615,15 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" />
-        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" />
+        <element api="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll">
+          <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" />
+          <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" />
+        </element>
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.InitEvents" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.OnTabSwitch(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Refresh" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" />
@@ -3626,7 +3635,6 @@
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetMouseEventArgs" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.GetRotatedMouse(Microsoft.Xna.Framework.Input.MouseState)" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.Hide" />
-        <element api="M:Mentula.GuiItems.Core.GuiItem.InitEvents" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.MoveRelative(Mentula.GuiItems.Core.Anchor,System.Nullable{System.Single},System.Nullable{System.Single})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" />
         <element api="M:Mentula.GuiItems.Core.GuiItem.OnBackgroundImageChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.Texture2D})" />
@@ -3657,9 +3665,8 @@
       <typedata visibility="public" serializable="false" />
       <elements>
         <element api="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" />
-        <element api="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" />
+        <element api="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" />
-        <element api="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" />
         <element api="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackColor" />
         <element api="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" />
@@ -3695,6 +3702,7 @@
       <apidata name="TabContainer" group="type" subgroup="class" />
       <typedata visibility="public" serializable="false" />
       <elements>
+        <element api="E:Mentula.GuiItems.Containers.TabContainer.TabSwitch" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.BackgroundImageChanged" />
         <element api="E:Mentula.GuiItems.Core.GuiItem.Clicked" />
@@ -3738,6 +3746,22 @@
       </containers>
       <file name="4a31df45-89a9-16bf-f18e-376394cece8d" />
     </api>
+    <api id="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll">
+      <topicdata name="AddControll" group="list" subgroup="overload" memberSubgroup="method" pseudo="true" allMembersTopicId="" />
+      <apidata name="AddControll" group="member" subgroup="method" />
+      <elements>
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" />
+        <element api="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" />
+      </elements>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="3b7ecb60-0499-5b7c-620a-4c7d38882383" />
+    </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <topicdata group="api" />
       <apidata name=".ctor" group="member" subgroup="constructor" />
@@ -3762,25 +3786,19 @@
       </containers>
       <file name="2ac504ab-fc0d-69ba-cd65-f4602150c4a0" />
     </api>
-    <api id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})">
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])">
       <topicdata group="api" />
-      <apidata name="AddTab" group="member" subgroup="method" />
-      <memberdata visibility="public" />
+      <apidata name="AddControll" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll" />
       <proceduredata virtual="false" />
       <parameters>
-        <parameter name="name">
-          <type api="T:System.String" ref="true" />
+        <parameter name="tab">
+          <type api="T:System.Int32" ref="false" />
         </parameter>
-        <parameter name="color" optional="true">
-          <type api="T:System.Nullable`1" ref="false">
-            <specialization>
-              <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
-            </specialization>
-          </type>
-          <argument>
-            <type api="T:System.Object" ref="true" />
-            <nullValue />
-          </argument>
+        <parameter name="items" params="true">
+          <arrayOf rank="1">
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+          </arrayOf>
         </parameter>
       </parameters>
       <containers>
@@ -3791,12 +3809,12 @@
         <namespace api="N:Mentula.GuiItems.Containers" />
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
-      <file name="a14a0999-db0e-d8a2-1afb-414a280ec6cb" />
+      <file name="fbc9f9a5-f2ce-39d5-61cd-40f9b7fcecc2" />
     </api>
-    <api id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])">
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])">
       <topicdata group="api" />
-      <apidata name="AddToTab" group="member" subgroup="method" />
-      <memberdata visibility="public" />
+      <apidata name="AddControll" group="member" subgroup="method" />
+      <memberdata visibility="public" overload="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll" />
       <proceduredata virtual="false" />
       <parameters>
         <parameter name="tab">
@@ -3816,7 +3834,27 @@
         <namespace api="N:Mentula.GuiItems.Containers" />
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
-      <file name="b6826ef7-1184-d5b6-caf2-93352e840cef" />
+      <file name="a521bda3-7bbd-9a25-8f98-3d1c2f776d68" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)">
+      <topicdata group="api" />
+      <apidata name="AddTab" group="member" subgroup="method" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="args">
+          <type api="T:Mentula.GuiItems.Core.Structs.Pair" ref="false" />
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="f7b7712d-cee0-160f-baf6-9308b93a025a" />
     </api>
     <api id="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus">
       <topicdata group="api" />
@@ -3839,13 +3877,13 @@
       </containers>
       <file name="abeafc4a-f2b5-e34e-c185-7254c51fa2a5" />
     </api>
-    <api id="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize">
+    <api id="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds">
       <topicdata group="api" />
-      <apidata name="DefaultTabSize" group="member" subgroup="property" />
+      <apidata name="DefaultBounds" group="member" subgroup="property" />
       <memberdata visibility="public" static="true" />
       <proceduredata virtual="false" />
       <propertydata get="true" />
-      <getter name="get_DefaultTabSize" />
+      <getter name="get_DefaultBounds" />
       <returns>
         <type api="T:Mentula.GuiItems.Core.Structs.Rect" ref="false" />
       </returns>
@@ -3857,7 +3895,7 @@
         <namespace api="N:Mentula.GuiItems.Containers" />
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
-      <file name="042159c9-8677-b62b-e79b-cda803bcc10d" />
+      <file name="d926c388-c975-fd58-8421-c09724faedac" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
       <topicdata group="api" />
@@ -3883,6 +3921,26 @@
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
       <file name="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.InitEvents">
+      <topicdata group="api" />
+      <apidata name="InitEvents" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="true" />
+      <overrides>
+        <member api="M:Mentula.GuiItems.Core.GuiItem.InitEvents">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </member>
+      </overrides>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="cd643430-8820-86b0-abc3-75be941cdf55" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})">
       <topicdata group="api" />
@@ -3915,6 +3973,33 @@
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
       <file name="c4f458d8-497a-86ae-90a8-0e48b8dba173" />
+    </api>
+    <api id="M:Mentula.GuiItems.Containers.TabContainer.OnTabSwitch(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
+      <topicdata group="api" />
+      <apidata name="OnTabSwitch" group="member" subgroup="method" />
+      <memberdata visibility="family" />
+      <proceduredata virtual="false" />
+      <parameters>
+        <parameter name="sender">
+          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+        </parameter>
+        <parameter name="e">
+          <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+            <specialization>
+              <type api="T:System.Int32" ref="false" />
+            </specialization>
+          </type>
+        </parameter>
+      </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Containers" />
+        <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+      </containers>
+      <file name="71cd651e-f30d-de33-98f7-e46c629dd9f9" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.Refresh">
       <topicdata group="api" />
@@ -3977,17 +4062,21 @@
       </containers>
       <file name="ef756ce1-754a-744c-b3c9-2d752f8c1172" />
     </api>
-    <api id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle">
+    <api id="E:Mentula.GuiItems.Containers.TabContainer.TabSwitch">
       <topicdata group="api" />
-      <apidata name="TabRectangle" group="member" subgroup="property" />
+      <apidata name="TabSwitch" group="member" subgroup="event" />
       <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <propertydata get="true" set="true" />
-      <getter name="get_TabRectangle" />
-      <setter name="set_TabRectangle" />
-      <returns>
-        <type api="T:Mentula.GuiItems.Core.Structs.Rect" ref="false" />
-      </returns>
+      <proceduredata virtual="false" />
+      <eventdata add="true" remove="true" />
+      <adder name="add_TabSwitch" />
+      <remover name="remove_TabSwitch" />
+      <eventhandler>
+        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+          <specialization>
+            <type api="T:System.Int32" ref="false" />
+          </specialization>
+        </type>
+      </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />
@@ -3996,7 +4085,7 @@
         <namespace api="N:Mentula.GuiItems.Containers" />
         <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
       </containers>
-      <file name="60980d5b-13d8-5156-f8c4-92f6b251825e" />
+      <file name="76f71bf7-56d1-afe1-db6e-2ade54872fa0" />
     </api>
     <api id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)">
       <topicdata group="api" />
@@ -4009,7 +4098,7 @@
         </member>
       </overrides>
       <parameters>
-        <parameter name="delta">
+        <parameter name="deltaTime">
           <type api="T:System.Single" ref="false" />
         </parameter>
       </parameters>
@@ -10899,7 +10988,7 @@
     <api id="T:Mentula.GuiItems.Core.Structs.ByteFlags">
       <topicdata group="api" />
       <apidata name="ByteFlags" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <implements>
         <type api="T:System.IEquatable`1" ref="true">
           <specialization>
@@ -10942,7 +11031,7 @@
     <api id="Methods.T:Mentula.GuiItems.Core.Structs.ByteFlags">
       <topicdata name="ByteFlags" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Structs.ByteFlags" />
       <apidata name="ByteFlags" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="M:System.Object.GetType">
           <apidata name="GetType" group="member" subgroup="method" />
@@ -10976,7 +11065,7 @@
     <api id="Operators.T:Mentula.GuiItems.Core.Structs.ByteFlags">
       <topicdata name="ByteFlags" group="list" subgroup="Operators" subsubgroup="Operators" typeTopicId="T:Mentula.GuiItems.Core.Structs.ByteFlags" />
       <apidata name="ByteFlags" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Equality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" />
         <element api="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" />
@@ -10993,7 +11082,7 @@
     <api id="Properties.T:Mentula.GuiItems.Core.Structs.ByteFlags">
       <topicdata name="ByteFlags" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Structs.ByteFlags" />
       <apidata name="ByteFlags" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.Structs.ByteFlags.Item(System.Int32)" />
       </elements>
@@ -12130,7 +12219,7 @@
     <api id="T:Mentula.GuiItems.Core.Structs.Rect">
       <topicdata group="api" />
       <apidata name="Rect" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <implements>
         <type api="T:System.IEquatable`1" ref="true">
           <specialization>
@@ -12214,7 +12303,7 @@
     <api id="Methods.T:Mentula.GuiItems.Core.Structs.Rect">
       <topicdata name="Rect" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Structs.Rect" />
       <apidata name="Rect" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="M:System.Object.GetType">
           <apidata name="GetType" group="member" subgroup="method" />
@@ -12259,7 +12348,7 @@
     <api id="Operators.T:Mentula.GuiItems.Core.Structs.Rect">
       <topicdata name="Rect" group="list" subgroup="Operators" subsubgroup="Operators" typeTopicId="T:Mentula.GuiItems.Core.Structs.Rect" />
       <apidata name="Rect" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="Overload:Mentula.GuiItems.Core.Structs.Rect.op_Equality">
           <element api="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)" />
@@ -12284,7 +12373,7 @@
     <api id="Properties.T:Mentula.GuiItems.Core.Structs.Rect">
       <topicdata name="Rect" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Structs.Rect" />
       <apidata name="Rect" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.Structs.Rect.Bottom" />
         <element api="P:Mentula.GuiItems.Core.Structs.Rect.Center" />
@@ -12311,7 +12400,7 @@
     <api id="Fields.T:Mentula.GuiItems.Core.Structs.Rect">
       <topicdata name="Rect" group="list" subgroup="Fields" typeTopicId="T:Mentula.GuiItems.Core.Structs.Rect" />
       <apidata name="Rect" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="F:Mentula.GuiItems.Core.Structs.Rect.Empty" />
       </elements>
@@ -13227,7 +13316,7 @@
     <api id="T:Mentula.GuiItems.Core.Structs.Size">
       <topicdata group="api" />
       <apidata name="Size" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <implements>
         <type api="T:System.IEquatable`1" ref="true">
           <specialization>
@@ -13302,7 +13391,7 @@
     <api id="Methods.T:Mentula.GuiItems.Core.Structs.Size">
       <topicdata name="Size" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.Structs.Size" />
       <apidata name="Size" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="M:System.Object.GetType">
           <apidata name="GetType" group="member" subgroup="method" />
@@ -13348,7 +13437,7 @@
     <api id="Operators.T:Mentula.GuiItems.Core.Structs.Size">
       <topicdata name="Size" group="list" subgroup="Operators" subsubgroup="Operators" typeTopicId="T:Mentula.GuiItems.Core.Structs.Size" />
       <apidata name="Size" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="M:Mentula.GuiItems.Core.Structs.Size.op_Addition(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" />
         <element api="Overload:Mentula.GuiItems.Core.Structs.Size.op_Division">
@@ -13377,7 +13466,7 @@
     <api id="Properties.T:Mentula.GuiItems.Core.Structs.Size">
       <topicdata name="Size" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.Structs.Size" />
       <apidata name="Size" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="P:Mentula.GuiItems.Core.Structs.Size.Height" />
         <element api="P:Mentula.GuiItems.Core.Structs.Size.IsEmpty" />
@@ -13395,7 +13484,7 @@
     <api id="Fields.T:Mentula.GuiItems.Core.Structs.Size">
       <topicdata name="Size" group="list" subgroup="Fields" typeTopicId="T:Mentula.GuiItems.Core.Structs.Size" />
       <apidata name="Size" group="type" subgroup="structure" />
-      <typedata visibility="public" sealed="true" serializable="false" />
+      <typedata visibility="public" sealed="true" serializable="true" />
       <elements>
         <element api="F:Mentula.GuiItems.Core.Structs.Size.Empty" />
       </elements>

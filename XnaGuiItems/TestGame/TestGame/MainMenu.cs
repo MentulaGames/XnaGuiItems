@@ -1,6 +1,8 @@
 ﻿using Mentula.GuiItems.Containers;
 using Mentula.GuiItems.Core;
+using Mentula.GuiItems.Core.Structs;
 using Mentula.GuiItems.Items;
+using Microsoft.Xna.Framework;
 
 namespace TestGame
 {
@@ -12,14 +14,6 @@ namespace TestGame
         public override void Initialize()
         {
             SetDefaultFont("GuiFont");
-
-            DropDown dd = AddDropDown();
-            dd.AutoSize = true;
-            dd.MoveRelative(Anchor.Center);
-            dd.AddOption("Pickup", "Item");
-            dd.AddOption("Examine", "Item");
-            dd.AddOption("Walk here");
-            dd.AddOption("Cancel");
 
             base.Initialize(); 
         }

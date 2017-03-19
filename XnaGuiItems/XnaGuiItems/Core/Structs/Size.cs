@@ -26,6 +26,7 @@ namespace Mentula.GuiItems.Core.Structs
     [DebuggerStepThrough]  
 #endif
     [DebuggerDisplay("{ToString()}")]
+    [Serializable]
     public struct Size : IEquatable<Size>
     {
         /// <summary>

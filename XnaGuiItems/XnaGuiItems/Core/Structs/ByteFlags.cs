@@ -14,6 +14,7 @@
 #endif
     [DebuggerDisplay("{ToString()}")]
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [Serializable]
     public struct ByteFlags : IEquatable<ByteFlags>
     {
         private byte underlying;

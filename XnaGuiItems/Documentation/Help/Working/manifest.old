@@ -70,17 +70,21 @@
   <topic id="Properties.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Containers.TabContainer" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" type="API" />
+  <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.InitEvents" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnTabSwitch(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" type="API" />
-  <topic id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" type="API" />
+  <topic id="E:Mentula.GuiItems.Containers.TabContainer.TabSwitch" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" type="API" />
   <topic id="N:Mentula.GuiItems.Core" type="API" />

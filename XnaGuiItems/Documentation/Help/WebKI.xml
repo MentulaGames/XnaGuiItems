@@ -6,6 +6,7 @@
     <HelpKINode Title="Size.Add Method " Url="html/c75e89b5-1a1a-177d-de7b-83354b5ddd67.htm" />
   </HelpKINode>
   <HelpKINode Title="AddButton method" Url="html/09abc327-de1b-1915-80f0-b4ee18f2fe7a.htm" />
+  <HelpKINode Title="AddControll method" Url="html/3b7ecb60-0499-5b7c-620a-4c7d38882383.htm" />
   <HelpKINode Title="AddDropDown method" Url="html/7f4aefa8-3968-8b17-98c2-33b17c9fd6de.htm" />
   <HelpKINode Title="AddGuiItem method" Url="html/21c0ecba-88b6-bb21-d1b1-0a3f9194c158.htm" />
   <HelpKINode Title="Addition operator" Url="html/e2251834-7a53-a5d4-d3d1-d4bb6ea75c69.htm" />
@@ -15,10 +16,9 @@
   <HelpKINode Title="AddProgresBar method" Url="html/a38ba627-40d4-60d3-385d-af5d80f6b7ae.htm" />
   <HelpKINode Title="AddRange method" Url="html/a9f612d8-f29d-b064-5c15-7adeed8c2809.htm" />
   <HelpKINode Title="AddSlider method" Url="html/b2495070-cf74-cdac-1141-d801d3667fd0.htm" />
-  <HelpKINode Title="AddTab method" Url="html/a14a0999-db0e-d8a2-1afb-414a280ec6cb.htm" />
+  <HelpKINode Title="AddTab method" Url="html/f7b7712d-cee0-160f-baf6-9308b93a025a.htm" />
   <HelpKINode Title="AddTabContainer method" Url="html/742607c6-b5ef-caf1-f886-a6b9a7af7bcf.htm" />
   <HelpKINode Title="AddTextBox method" Url="html/8178b76b-9e18-4350-e0cb-242d3cfd83ec.htm" />
-  <HelpKINode Title="AddToTab method" Url="html/b6826ef7-1184-d5b6-caf2-93352e840cef.htm" />
   <HelpKINode Title="Anchor enumeration" Url="html/4365752c-5f67-a119-14f6-4560290a80a1.htm" />
   <HelpKINode Title="AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
   <HelpKINode Title="autoFocusDropDown field" Url="html/a3237412-965a-ae68-e0d2-b6e639f50241.htm" />
@@ -127,6 +127,7 @@
     <HelpKINode Title="GuiItem.DefaultBounds Property " Url="html/39e0f7d4-3dcf-125f-62f9-4b7295eac26a.htm" />
     <HelpKINode Title="ProgressBar.DefaultBounds Property " Url="html/e052631e-0f3d-7593-efaf-9249562fc760.htm" />
     <HelpKINode Title="Slider.DefaultBounds Property " Url="html/c73b6f1f-29fa-0a38-3ffa-67bfdf8ed4e2.htm" />
+    <HelpKINode Title="TabContainer.DefaultBounds Property " Url="html/d926c388-c975-fd58-8421-c09724faedac.htm" />
   </HelpKINode>
   <HelpKINode Title="DefaultForeColor property">
     <HelpKINode Title="DropDown.DefaultForeColor Property " Url="html/6c319c90-8dec-6a73-8f3b-966989de918d.htm" />
@@ -139,7 +140,6 @@
   <HelpKINode Title="DefaultMaximum property" Url="html/77e5e981-74fb-b3e2-4635-085e8de0715e.htm" />
   <HelpKINode Title="DefaultMinimum property" Url="html/ae0ddb08-00db-e185-1634-8ab51fca609f.htm" />
   <HelpKINode Title="DefaultMinimumSize property" Url="html/03f3a0a9-5c2b-a750-c55a-bb42fbff10e7.htm" />
-  <HelpKINode Title="DefaultTabSize property" Url="html/042159c9-8677-b62b-e79b-cda803bcc10d.htm" />
   <HelpKINode Title="Dispose method">
     <HelpKINode Title="ButtonTextureHandler.Dispose Method " Url="html/d13bc0e3-a688-a6c4-aba7-cf50d352ff2e.htm" />
     <HelpKINode Title="GuiItem.Dispose Method " Url="html/565d5482-c2b2-aa9a-89ae-896ffa6759cb.htm" />
@@ -455,6 +455,7 @@
     <HelpKINode Title="PictureBox.InitEvents Method " Url="html/7d0c5826-ccba-b1f7-74f0-7f2466fc62b7.htm" />
     <HelpKINode Title="ProgressBar.InitEvents Method " Url="html/d91a458f-fbd9-133c-02be-fc82f7e67862.htm" />
     <HelpKINode Title="Slider.InitEvents Method " Url="html/67bfe112-a2f1-a026-bf3b-70415f5766eb.htm" />
+    <HelpKINode Title="TabContainer.InitEvents Method " Url="html/cd643430-8820-86b0-abc3-75be941cdf55.htm" />
     <HelpKINode Title="TextBox.InitEvents Method " Url="html/38661b8b-cd66-542c-f779-605ed2aff18c.htm" />
   </HelpKINode>
   <HelpKINode Title="Initialize method">
@@ -819,6 +820,7 @@
   </HelpKINode>
   <HelpKINode Title="OnRotationChanged method" Url="html/72bed597-b981-3ee3-3b3b-f07b8458fe73.htm" />
   <HelpKINode Title="OnSizeModeChanged method" Url="html/01acdc09-8e72-a802-32bc-beb7092700b1.htm" />
+  <HelpKINode Title="OnTabSwitch method" Url="html/71cd651e-f30d-de33-98f7-e46c629dd9f9.htm" />
   <HelpKINode Title="OnTextChanged method">
     <HelpKINode Title="Label.OnTextChanged Method " Url="html/42432106-1526-25ec-0d75-727c3978b5db.htm" />
     <HelpKINode Title="TextBox.OnTextChanged Method " Url="html/fdb22a2d-d52a-88a9-7c35-91efa6e28214.htm" />
@@ -1115,20 +1117,22 @@
     <HelpKINode Title="methods" Url="html/68ac23ad-325e-72af-5ed6-ba2e655497d0.htm" />
     <HelpKINode Title="properties" Url="html/94105243-841f-fa91-319f-7089e0d635e5.htm" />
   </HelpKINode>
-  <HelpKINode Title="TabContainer.AddTab method" Url="html/a14a0999-db0e-d8a2-1afb-414a280ec6cb.htm" />
-  <HelpKINode Title="TabContainer.AddToTab method" Url="html/b6826ef7-1184-d5b6-caf2-93352e840cef.htm" />
+  <HelpKINode Title="TabContainer.AddControll method" Url="html/3b7ecb60-0499-5b7c-620a-4c7d38882383.htm" />
+  <HelpKINode Title="TabContainer.AddTab method" Url="html/f7b7712d-cee0-160f-baf6-9308b93a025a.htm" />
   <HelpKINode Title="TabContainer.AutoFocus property" Url="html/abeafc4a-f2b5-e34e-c185-7254c51fa2a5.htm" />
-  <HelpKINode Title="TabContainer.DefaultTabSize property" Url="html/042159c9-8677-b62b-e79b-cda803bcc10d.htm" />
+  <HelpKINode Title="TabContainer.DefaultBounds property" Url="html/d926c388-c975-fd58-8421-c09724faedac.htm" />
   <HelpKINode Title="TabContainer.Draw method" Url="html/08d6fc25-1c4d-8b8d-5c54-64d418157e93.htm" />
+  <HelpKINode Title="TabContainer.InitEvents method" Url="html/cd643430-8820-86b0-abc3-75be941cdf55.htm" />
   <HelpKINode Title="TabContainer.OnMove method" Url="html/c4f458d8-497a-86ae-90a8-0e48b8dba173.htm" />
+  <HelpKINode Title="TabContainer.OnTabSwitch method" Url="html/71cd651e-f30d-de33-98f7-e46c629dd9f9.htm" />
   <HelpKINode Title="TabContainer.Refresh method" Url="html/9ca9e1d6-fe43-5685-b909-f4642b89d964.htm" />
   <HelpKINode Title="TabContainer.SelectedTab property" Url="html/68d71fb6-7a2b-0718-3ffb-05468077eb7a.htm" />
   <HelpKINode Title="TabContainer.SetBackgroundTexture method" Url="html/ef756ce1-754a-744c-b3c9-2d752f8c1172.htm" />
   <HelpKINode Title="TabContainer.TabContainer constructor" Url="html/2ac504ab-fc0d-69ba-cd65-f4602150c4a0.htm" />
-  <HelpKINode Title="TabContainer.TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
+  <HelpKINode Title="TabContainer.TabSwitch event" Url="html/76f71bf7-56d1-afe1-db6e-2ade54872fa0.htm" />
   <HelpKINode Title="TabContainer.Update method" Url="html/48208074-23af-fc20-eff2-abc1491fa9e5.htm" />
   <HelpKINode Title="TabContainer.UseAbsolutePosition property" Url="html/b837c955-0aa6-3135-0b6b-4e6859dbf965.htm" />
-  <HelpKINode Title="TabRectangle property" Url="html/60980d5b-13d8-5156-f8c4-92f6b251825e.htm" />
+  <HelpKINode Title="TabSwitch event" Url="html/76f71bf7-56d1-afe1-db6e-2ade54872fa0.htm" />
   <HelpKINode Title="TEXT enumeration member" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
   <HelpKINode Title="Text field" Url="html/be582383-8e48-a995-e58b-3ae670a7bae9.htm" />
   <HelpKINode Title="Text property" Url="html/cf673006-bbc2-63ca-3c10-b0ddec1cff7a.htm" />

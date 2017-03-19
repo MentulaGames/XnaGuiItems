@@ -24,6 +24,7 @@ namespace Mentula.GuiItems.Core.Structs
     [DebuggerStepThrough]
 #endif
     [DebuggerDisplay("{ToString()}")]
+    [Serializable]
     public struct Rect : IEquatable<Rect>, IEquatable<Rectangle>
     {
         /// <summary> Specifies the x-coordinate of the <see cref="Rect"/>. </summary>

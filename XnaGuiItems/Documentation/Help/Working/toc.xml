@@ -83,21 +83,27 @@
       <topic id="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="2ac504ab-fc0d-69ba-cd65-f4602150c4a0" />
       <topic id="Properties.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="94105243-841f-fa91-319f-7089e0d635e5">
         <topic id="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" project="XnaGuiItems" file="abeafc4a-f2b5-e34e-c185-7254c51fa2a5" />
-        <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultTabSize" project="XnaGuiItems" file="042159c9-8677-b62b-e79b-cda803bcc10d" />
+        <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds" project="XnaGuiItems" file="d926c388-c975-fd58-8421-c09724faedac" />
         <topic id="P:Mentula.GuiItems.Containers.TabContainer.SelectedTab" project="XnaGuiItems" file="68d71fb6-7a2b-0718-3ffb-05468077eb7a" />
-        <topic id="P:Mentula.GuiItems.Containers.TabContainer.TabRectangle" project="XnaGuiItems" file="60980d5b-13d8-5156-f8c4-92f6b251825e" />
         <topic id="P:Mentula.GuiItems.Containers.TabContainer.UseAbsolutePosition" project="XnaGuiItems" file="b837c955-0aa6-3135-0b6b-4e6859dbf965" />
       </topic>
       <topic id="Methods.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="68ac23ad-325e-72af-5ed6-ba2e655497d0">
-        <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(System.String,System.Nullable{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="a14a0999-db0e-d8a2-1afb-414a280ec6cb" />
-        <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddToTab(System.String,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="b6826ef7-1184-d5b6-caf2-93352e840cef" />
+        <topic id="Overload:Mentula.GuiItems.Containers.TabContainer.AddControll" project="XnaGuiItems" file="3b7ecb60-0499-5b7c-620a-4c7d38882383">
+          <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="fbc9f9a5-f2ce-39d5-61cd-40f9b7fcecc2" />
+          <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="a521bda3-7bbd-9a25-8f98-3d1c2f776d68" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" project="XnaGuiItems" file="f7b7712d-cee0-160f-baf6-9308b93a025a" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" project="XnaGuiItems" file="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.InitEvents" project="XnaGuiItems" file="cd643430-8820-86b0-abc3-75be941cdf55" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="c4f458d8-497a-86ae-90a8-0e48b8dba173" />
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnTabSwitch(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" project="XnaGuiItems" file="71cd651e-f30d-de33-98f7-e46c629dd9f9" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Refresh" project="XnaGuiItems" file="9ca9e1d6-fe43-5685-b909-f4642b89d964" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.SetBackgroundTexture" project="XnaGuiItems" file="ef756ce1-754a-744c-b3c9-2d752f8c1172" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Update(System.Single)" project="XnaGuiItems" file="48208074-23af-fc20-eff2-abc1491fa9e5" />
       </topic>
-      <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="38b19270-620e-21d5-ecb0-161799a951fd" />
+      <topic id="Events.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="38b19270-620e-21d5-ecb0-161799a951fd">
+        <topic id="E:Mentula.GuiItems.Containers.TabContainer.TabSwitch" project="XnaGuiItems" file="76f71bf7-56d1-afe1-db6e-2ade54872fa0" />
+      </topic>
       <topic id="Fields.T:Mentula.GuiItems.Containers.TabContainer" project="XnaGuiItems" file="4a31df45-89a9-16bf-f18e-376394cece8d" />
     </topic>
   </topic>

@@ -184,7 +184,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Handles the <see cref="Label.AutoSize"/> functionality.
         /// </summary>
-        protected override void HandleAutoSize()
+        protected internal override void HandleAutoSize()
         {
             if (AutoSize)
             {

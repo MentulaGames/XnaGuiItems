@@ -20,6 +20,7 @@ namespace Mentula.GuiItems.Items
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using static Utilities;
+    using System;
 
     /// <summary>
     /// A label used for displaying text.
@@ -116,7 +117,11 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         public override void Refresh()
         {
-            if (!suppressRefresh) HandleAutoSize();
+            if (!suppressRefresh)
+            {
+                CheckTextSet();
+                HandleAutoSize();
+            }
             base.Refresh();
         }
 
@@ -132,7 +137,7 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// Handles the <see cref="AutoSize"/> functionality.
         /// </summary>
-        protected virtual void HandleAutoSize()
+        protected internal virtual void HandleAutoSize()
         {
             if (AutoSize)
             {
@@ -229,6 +234,11 @@ namespace Mentula.GuiItems.Items
             base.InitEvents();
             TextChanged += OnTextChanged;
             FontChanged += OnFontChanged;
+        }
+
+        private void CheckTextSet()
+        {
+            if (string.IsNullOrEmpty(Text)) throw new ApplicationException($"{this} must have text set!");
         }
     }
 }
