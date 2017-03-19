@@ -15,11 +15,14 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            TabContainer tc = AddTabContainer();
-            tc.Size = new Size(ScreenWidth / 4, 100);
-            tc.AddTab(new Pair("First"));
+            DropDown dd = AddDropDown();
+            dd.Name = $"id{1}";
+            dd.AutoSize = true;
+            dd.AddOption(
+                new Pair("Pick up", Color.Red),
+                new Pair($"{"TestName"}", Color.Blue));
 
-            base.Initialize(); 
+            base.Initialize();
         }
     }
 }

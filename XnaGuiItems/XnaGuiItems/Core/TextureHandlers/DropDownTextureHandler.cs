@@ -70,7 +70,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             }
 
             DrawTexture.Dispose();
-            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height * Buttons.Length + Foreground.Height));
+            DrawTexture.Start(sb, new Size(Math.Max(Background.Width, Foreground.Width), Background.Height * (Buttons.Length + 1) + Foreground.Height));
             DrawTexture.DrawAt(0, Background, Background.Bounds);
             DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
 
