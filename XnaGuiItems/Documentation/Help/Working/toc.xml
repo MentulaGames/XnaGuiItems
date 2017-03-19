@@ -570,6 +570,7 @@
         <topic id="P:Mentula.GuiItems.Items.DropDown.DefaultHeaderText" project="XnaGuiItems" file="a4ed8838-bbe2-fb75-6c9d-7d00695f9c9c" />
         <topic id="P:Mentula.GuiItems.Items.DropDown.HeaderBackgroundColor" project="XnaGuiItems" file="5c83c3ba-16bd-b6f2-6e0c-3480f2f7ee74" />
         <topic id="P:Mentula.GuiItems.Items.DropDown.HeaderText" project="XnaGuiItems" file="c9a3e4e0-66f7-dd5c-9d10-51f67f01016d" />
+        <topic id="P:Mentula.GuiItems.Items.DropDown.OptionsCount" project="XnaGuiItems" file="25e73898-311c-9e2a-4ee5-90371076139c" />
       </topic>
       <topic id="Methods.T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="b30bf0e4-1f64-a5f5-2c34-c6cb0b0e6cd7">
         <topic id="Overload:Mentula.GuiItems.Items.DropDown.AddOption" project="XnaGuiItems" file="54f9c158-5013-bfe0-46f1-99fbf26fd9ac">

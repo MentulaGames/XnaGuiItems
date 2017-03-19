@@ -17484,6 +17484,7 @@
         <element api="M:Mentula.GuiItems.Items.DropDown.InitEvents" />
         <element api="F:Mentula.GuiItems.Items.DropDown.labels" />
         <element api="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" />
+        <element api="P:Mentula.GuiItems.Items.DropDown.OptionsCount" />
         <element api="M:Mentula.GuiItems.Items.DropDown.Refresh" />
         <element api="M:Mentula.GuiItems.Items.DropDown.SetBackgroundTexture" />
         <element api="M:Mentula.GuiItems.Items.DropDown.SetForegroundTexture" />
@@ -17633,6 +17634,7 @@
         <element api="P:Mentula.GuiItems.Items.DropDown.DefaultHeaderText" />
         <element api="P:Mentula.GuiItems.Items.DropDown.HeaderBackgroundColor" />
         <element api="P:Mentula.GuiItems.Items.DropDown.HeaderText" />
+        <element api="P:Mentula.GuiItems.Items.DropDown.OptionsCount" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -18123,6 +18125,25 @@
           </type>
         </parameter>
       </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
+          <assemblydata version="1.0.0.0" />
+          <noAptca />
+        </library>
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.DropDown" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Items.DropDown.OptionsCount">
+      <topicdata group="api" />
+      <apidata name="OptionsCount" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" />
+      <getter name="get_OptionsCount" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />

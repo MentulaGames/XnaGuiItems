@@ -2328,6 +2328,11 @@
             Gets or sets the background color for the <see cref="T:Mentula.GuiItems.Items.DropDown" /> header.
             </summary>
     </member>
+    <member name="P:Mentula.GuiItems.Items.DropDown.OptionsCount">
+      <summary>
+            Gets the amount of options available.
+            </summary>
+    </member>
     <member name="E:Mentula.GuiItems.Items.DropDown.IndexClick">
       <summary>
             Occurs when a <see cref="T:Mentula.GuiItems.Items.DropDown" /> option is clicked.

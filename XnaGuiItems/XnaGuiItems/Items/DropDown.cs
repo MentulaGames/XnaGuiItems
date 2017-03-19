@@ -64,6 +64,10 @@ namespace Mentula.GuiItems.Items
         /// Gets or sets the background color for the <see cref="DropDown"/> header.
         /// </summary>
         public virtual Color HeaderBackgroundColor { get; set; }
+        /// <summary>
+        /// Gets the amount of options available.
+        /// </summary>
+        public virtual int OptionsCount { get { return labels.Length; } }
 
         /// <summary>
         /// Occurs when a <see cref="DropDown"/> option is clicked.

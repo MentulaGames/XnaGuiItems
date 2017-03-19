@@ -501,6 +501,7 @@
   <topic id="M:Mentula.GuiItems.Items.DropDown.InitEvents" type="API" />
   <topic id="F:Mentula.GuiItems.Items.DropDown.labels" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
+  <topic id="P:Mentula.GuiItems.Items.DropDown.OptionsCount" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.Refresh" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.SetBackgroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.SetForegroundTexture" type="API" />

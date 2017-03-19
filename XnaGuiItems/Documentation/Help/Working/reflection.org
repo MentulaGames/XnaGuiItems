@@ -10501,6 +10501,7 @@
         <element api="P:Mentula.GuiItems.Items.DropDown.DefaultHeaderText" />
         <element api="P:Mentula.GuiItems.Items.DropDown.HeaderText" />
         <element api="P:Mentula.GuiItems.Items.DropDown.HeaderBackgroundColor" />
+        <element api="P:Mentula.GuiItems.Items.DropDown.OptionsCount" />
         <element api="E:Mentula.GuiItems.Items.DropDown.IndexClick" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.batch" />
         <element api="F:Mentula.GuiItems.Core.GuiItem.textures" />
@@ -10944,6 +10945,21 @@
           </type>
         </parameter>
       </parameters>
+      <containers>
+        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
+        <namespace api="N:Mentula.GuiItems.Items" />
+        <type api="T:Mentula.GuiItems.Items.DropDown" ref="true" />
+      </containers>
+    </api>
+    <api id="P:Mentula.GuiItems.Items.DropDown.OptionsCount">
+      <apidata name="OptionsCount" group="member" subgroup="property" />
+      <memberdata visibility="public" />
+      <proceduredata virtual="true" />
+      <propertydata get="true" />
+      <getter name="get_OptionsCount" />
+      <returns>
+        <type api="T:System.Int32" ref="false" />
+      </returns>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:Mentula.GuiItems.Items" />
