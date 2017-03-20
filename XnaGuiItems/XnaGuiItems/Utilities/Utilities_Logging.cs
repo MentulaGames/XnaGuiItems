@@ -34,7 +34,12 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void LogBase(string sender, string msg)
         {
-            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][XnaGuiItems][{type}] {sender}: {msg}.");
+            LogMsg("XnaGuiItems", sender, type.ToString(), msg);
+        }
+
+        public static void LogMsg(string lib, string sender, string type, string msg)
+        {
+            Console.WriteLine($"[{DateTime.Now:yyyy-MM-dd H:mm:ss}][{lib}][{type}] {sender}: {msg}.");
         }
     }
 #endif
