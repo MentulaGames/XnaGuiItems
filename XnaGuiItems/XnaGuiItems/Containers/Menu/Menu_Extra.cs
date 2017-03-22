@@ -48,7 +48,7 @@ namespace Mentula.GuiItems.Containers
         public SpriteFont LoadFont(string assetName)
         {
 #if DEBUG
-            LogBase("Menu", $"loading font {assetName}");
+            LogXna("Menu", $"loading font {assetName}");
 #endif
             return Game.Content.Load<SpriteFont>(assetName);
         }
@@ -62,7 +62,7 @@ namespace Mentula.GuiItems.Containers
         {
             font = LoadFont(assetName);
 #if DEBUG
-            LogBase("Menu", $"default font set to {assetName}");
+            LogXna("Menu", $"default font set to {assetName}");
 #endif
         }
 
@@ -75,7 +75,7 @@ namespace Mentula.GuiItems.Containers
         public Texture2D LoadTexture(string assetName)
         {
 #if DEBUG
-            LogBase("Menu", $"loading texture {assetName}");
+            LogXna("Menu", $"loading texture {assetName}");
 #endif
             return Game.Content.Load<Texture2D>(assetName);
         }

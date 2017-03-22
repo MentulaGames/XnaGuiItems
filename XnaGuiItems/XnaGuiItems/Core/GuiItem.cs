@@ -401,7 +401,7 @@ namespace Mentula.GuiItems.Core
 
 #if DEBUG
             sw.Stop();
-            LogBase(ToString(), $"refreshed, texture creation took {sw.ElapsedMilliseconds} milliseconds");
+            LogXna(ToString(), $"refreshed, texture creation took {sw.ElapsedMilliseconds} milliseconds");
 #endif
         }
 
