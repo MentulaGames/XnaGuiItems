@@ -4,7 +4,7 @@ extern alias Mono;
 extern alias Xna;
 #endif
 
-namespace Mentula.GuiItems.Core.Structs
+namespace Mentula.GuiItems.Core
 {
 #if MONO
     using Mono::Microsoft.Xna.Framework;

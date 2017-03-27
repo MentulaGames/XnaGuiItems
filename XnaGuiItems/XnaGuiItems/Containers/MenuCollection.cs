@@ -11,11 +11,9 @@ namespace Mentula.GuiItems.Containers
 #else
     using Xna::Microsoft.Xna.Framework;
 #endif
-    using Core.Interfaces;
     using Core;
     using System;
     using System.Collections.Generic;
-    using static Utilities;
 
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.

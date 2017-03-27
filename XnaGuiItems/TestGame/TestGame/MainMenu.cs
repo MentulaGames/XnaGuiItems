@@ -1,6 +1,5 @@
 ﻿using Mentula.GuiItems.Containers;
 using Mentula.GuiItems.Core;
-using Mentula.GuiItems.Core.Structs;
 using Mentula.GuiItems.Items;
 using Microsoft.Xna.Framework;
 

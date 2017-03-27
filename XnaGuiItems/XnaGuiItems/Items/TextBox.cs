@@ -19,7 +19,6 @@ namespace Mentula.GuiItems.Items
     using Core.EventHandlers;
     using Core.TextureHandlers;
     using Core.Input;
-    using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;

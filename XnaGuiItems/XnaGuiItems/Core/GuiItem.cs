@@ -17,8 +17,6 @@ namespace Mentula.GuiItems.Core
 #endif
     using TextureHandlers;
     using EventHandlers;
-    using Interfaces;
-    using Structs;
     using System;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;

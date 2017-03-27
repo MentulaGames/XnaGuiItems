@@ -92,7 +92,7 @@
           <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="fbc9f9a5-f2ce-39d5-61cd-40f9b7fcecc2" />
           <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" project="XnaGuiItems" file="a521bda3-7bbd-9a25-8f98-3d1c2f776d68" />
         </topic>
-        <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" project="XnaGuiItems" file="f7b7712d-cee0-160f-baf6-9308b93a025a" />
+        <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="f5192ce8-f73b-3bf1-177e-5302042e69f0" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" project="XnaGuiItems" file="08d6fc25-1c4d-8b8d-5c54-64d418157e93" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.InitEvents" project="XnaGuiItems" file="cd643430-8820-86b0-abc3-75be941cdf55" />
         <topic id="M:Mentula.GuiItems.Containers.TabContainer.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="c4f458d8-497a-86ae-90a8-0e48b8dba173" />
@@ -110,6 +110,23 @@
   <topic id="N:Mentula.GuiItems.Core" project="_Namespaces" file="eb0543e3-bab8-348e-cda0-29f2e70219b4">
     <topic id="T:Mentula.GuiItems.Core.Anchor" project="XnaGuiItems" file="4365752c-5f67-a119-14f6-4560290a80a1" />
     <topic id="T:Mentula.GuiItems.Core.BorderStyle" project="XnaGuiItems" file="09d5090e-49b1-144f-af5e-1fa31c1dd7b1" />
+    <topic id="T:Mentula.GuiItems.Core.ByteFlags" project="XnaGuiItems" file="6866aeeb-c54f-07c5-9d0b-3e7e301080c3">
+      <topic id="Properties.T:Mentula.GuiItems.Core.ByteFlags" project="XnaGuiItems" file="4b2f40fa-6651-a6d2-4574-6b39d6a22f61">
+        <topic id="P:Mentula.GuiItems.Core.ByteFlags.Item(System.Int32)" project="XnaGuiItems" file="7dbd24a7-4fd7-e87c-17be-24bd9b94dd4c" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.ByteFlags" project="XnaGuiItems" file="895b7a19-68be-5ade-cbe5-aa52b2cf90c0">
+        <topic id="Overload:Mentula.GuiItems.Core.ByteFlags.Equals" project="XnaGuiItems" file="3d94a45a-def0-b5d4-9a97-8ce4109b5ee1">
+          <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(System.Object)" project="XnaGuiItems" file="7bda22a5-414b-cb77-686f-0457d1e23d83" />
+          <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(Mentula.GuiItems.Core.ByteFlags)" project="XnaGuiItems" file="9dc299b4-fed1-8788-c0db-5e7b0ebe9af4" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.ByteFlags.GetHashCode" project="XnaGuiItems" file="d449359b-d72c-c237-19ec-21d0c556e970" />
+        <topic id="M:Mentula.GuiItems.Core.ByteFlags.ToString" project="XnaGuiItems" file="b5181441-5ce2-dd75-81e3-0acb91c262bd" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.ByteFlags" project="XnaGuiItems" file="63f95180-af22-146c-59e9-3eba8d2d4596">
+        <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Equality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" project="XnaGuiItems" file="e77e8ed8-be40-af59-5c4a-93e2d31633d0" />
+        <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Inequality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" project="XnaGuiItems" file="f4292467-a309-1315-c23f-2fb8b8849704" />
+      </topic>
+    </topic>
     <topic id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="e134ae0c-0cb7-9867-e990-58d9f8f2364c">
       <topic id="M:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1.#ctor(`0)" project="XnaGuiItems" file="01a9c3c6-0cf4-3fd3-f8f2-3f4cb944728d" />
       <topic id="Properties.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" project="XnaGuiItems" file="30a74214-4a07-cf6e-8970-8079de6eb4a9">
@@ -122,7 +139,7 @@
     <topic id="T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="4288f473-0e01-8716-de8c-dec4dcd420a8">
       <topic id="Overload:Mentula.GuiItems.Core.GuiItem.#ctor" project="XnaGuiItems" file="b4e2c0af-27e0-5200-a9d5-194733d8a577">
         <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" project="XnaGuiItems" file="8e794196-25ea-72c9-9846-0a6f3b2e0770" />
-        <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="d5fcff9b-b62b-a841-85ca-980519608b80" />
+        <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="f8d87a45-bc8a-aa32-a338-374871fc377d" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Core.GuiItem" project="XnaGuiItems" file="77cc6a2e-3271-3fc0-5292-d99bba5bcd0b">
         <topic id="P:Mentula.GuiItems.Core.GuiItem.BackColor" project="XnaGuiItems" file="53fa52ee-eb1b-20f5-d279-2f4b9b21930c" />
@@ -166,7 +183,7 @@
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="289b7bb8-1402-0151-37ec-cf2581d89c77" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="cb57cb77-e886-2532-04a7-f225eb1277a8" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" project="XnaGuiItems" file="a6c9c542-59b3-6221-37be-2365451217db" />
-        <topic id="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" project="XnaGuiItems" file="96900c35-9f06-1840-0881-ba747ea36749" />
+        <topic id="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})" project="XnaGuiItems" file="1eb4f115-9236-5bf0-175e-eef9480c2842" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Single})" project="XnaGuiItems" file="72bed597-b981-3ee3-3b3b-f07b8458fe73" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})" project="XnaGuiItems" file="31f17bc8-a84e-897e-2a76-f2e654f27825" />
         <topic id="M:Mentula.GuiItems.Core.GuiItem.PerformClick" project="XnaGuiItems" file="d71b5c5c-1422-1b9f-87a0-3f86e81eaf5f" />
@@ -235,6 +252,12 @@
       </topic>
       <topic id="Events.T:Mentula.GuiItems.Core.InvokeException" project="XnaGuiItems" file="d3b02fd2-0381-7da9-e886-dba325983cd1" />
     </topic>
+    <topic id="T:Mentula.GuiItems.Core.IToggleable" project="XnaGuiItems" file="4a19b396-375f-63a1-67c5-91b066080830">
+      <topic id="Methods.T:Mentula.GuiItems.Core.IToggleable" project="XnaGuiItems" file="1aeb50b7-5a23-631d-b66d-5d4becb08452">
+        <topic id="M:Mentula.GuiItems.Core.IToggleable.Hide" project="XnaGuiItems" file="77684ffa-20e7-6978-8f49-9988832003c3" />
+        <topic id="M:Mentula.GuiItems.Core.IToggleable.Show" project="XnaGuiItems" file="dc026f7b-2028-7671-666a-3d8de490479a" />
+      </topic>
+    </topic>
     <topic id="T:Mentula.GuiItems.Core.MentulaGameComponent`1" project="XnaGuiItems" file="5f9f2251-c2c1-90da-9c7b-7a76b078d243">
       <topic id="M:Mentula.GuiItems.Core.MentulaGameComponent`1.#ctor(`0)" project="XnaGuiItems" file="495bd63b-2a98-d2cb-fe37-1edec354cdc1" />
       <topic id="Properties.T:Mentula.GuiItems.Core.MentulaGameComponent`1" project="XnaGuiItems" file="0b6be86b-9338-f5b5-c752-ef73deaaa1d1">
@@ -244,7 +267,163 @@
       <topic id="Events.T:Mentula.GuiItems.Core.MentulaGameComponent`1" project="XnaGuiItems" file="88894c5f-1869-dd02-5d23-57f603d2121f" />
     </topic>
     <topic id="T:Mentula.GuiItems.Core.MouseClick" project="XnaGuiItems" file="4c3c31ac-70d2-1278-4a4a-763ac1fa1695" />
+    <topic id="T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="66afb1e8-beb1-8e45-b917-b8f51c082bdb">
+      <topic id="Overload:Mentula.GuiItems.Core.Pair.#ctor" project="XnaGuiItems" file="ff43c91f-9011-fc9d-ba4a-e1cb3f982216">
+        <topic id="M:Mentula.GuiItems.Core.Pair.#ctor(System.String)" project="XnaGuiItems" file="72c50217-2c9b-fe7e-d7dc-fb6a17254a5c" />
+        <topic id="M:Mentula.GuiItems.Core.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)" project="XnaGuiItems" file="5d880b2e-e187-ac10-c2d9-69c5c628dfb9" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="db2adbd8-8303-0cc6-8b20-6eed6b01124f">
+        <topic id="Overload:Mentula.GuiItems.Core.Pair.Equals" project="XnaGuiItems" file="a61dc468-3103-9bd7-cf59-88df01179aa6">
+          <topic id="M:Mentula.GuiItems.Core.Pair.Equals(System.Object)" project="XnaGuiItems" file="ad373e1e-9bfb-3fb8-187f-804e2af26db1" />
+          <topic id="M:Mentula.GuiItems.Core.Pair.Equals(Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="5df75d75-5674-6e1e-9f28-1573b8a90fd2" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Pair.GetHashCode" project="XnaGuiItems" file="68ca8d30-3a7f-b319-54ee-3903e933aab1" />
+        <topic id="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" project="XnaGuiItems" file="178e54a4-db90-0977-ed1d-6d18b1a5207f" />
+        <topic id="M:Mentula.GuiItems.Core.Pair.ToString" project="XnaGuiItems" file="7581f803-9b41-c920-de91-949e2aaa1d67" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="d0c88ea9-a481-0a82-08d3-5e34734b247e">
+        <topic id="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="67fb4dbe-5fe5-a3dc-2ded-9efe7d55cf8f" />
+        <topic id="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" project="XnaGuiItems" file="d753da4d-b475-6d8b-44c0-74e26a4a25df" />
+      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Core.Pair" project="XnaGuiItems" file="e90760ce-610e-ddc3-5d80-fa6416fe6832">
+        <topic id="F:Mentula.GuiItems.Core.Pair.Color" project="XnaGuiItems" file="275e01ab-4756-7d95-0947-2f79276affa0" />
+        <topic id="F:Mentula.GuiItems.Core.Pair.Text" project="XnaGuiItems" file="93d2ddbb-3d7b-e8f1-dca6-e35f57c03994" />
+      </topic>
+    </topic>
+    <topic id="T:Mentula.GuiItems.Core.ProgressData" project="XnaGuiItems" file="d8cf97a3-b122-7016-289f-87e127842c37">
+      <topic id="Overload:Mentula.GuiItems.Core.ProgressData.#ctor" project="XnaGuiItems" file="4096af88-1652-d321-f7b1-cffb352dc2f7">
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32)" project="XnaGuiItems" file="ce99bb5a-02b3-eb46-5445-a7dc0fdcb44a" />
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32)" project="XnaGuiItems" file="576e4da3-3f1f-3d64-b746-240f0831a4e8" />
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)" project="XnaGuiItems" file="351fad20-4c05-6739-c724-bc717925291b" />
+      </topic>
+      <topic id="Properties.T:Mentula.GuiItems.Core.ProgressData" project="XnaGuiItems" file="28d5419e-dad7-39b6-f978-eb58b03ab4c7">
+        <topic id="P:Mentula.GuiItems.Core.ProgressData.DefaultMaximum" project="XnaGuiItems" file="3ad1c6f4-6605-1808-2a6c-ea4bf5967979" />
+        <topic id="P:Mentula.GuiItems.Core.ProgressData.DefaultMinimum" project="XnaGuiItems" file="750c5ae9-ce93-6ffa-87e4-72e8f94a76ea" />
+        <topic id="P:Mentula.GuiItems.Core.ProgressData.Maximum" project="XnaGuiItems" file="423ebf75-ac68-4565-dae8-359d84d127a7" />
+        <topic id="P:Mentula.GuiItems.Core.ProgressData.Minimum" project="XnaGuiItems" file="93389748-622f-c275-0366-e4dcc6bb0448" />
+        <topic id="P:Mentula.GuiItems.Core.ProgressData.Value" project="XnaGuiItems" file="7a19a5e2-8c97-2a5a-f568-3f69ec4eff72" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.ProgressData" project="XnaGuiItems" file="17b65303-b591-d417-7ff8-4574eb565ae2">
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.ChangeValue(System.Int32)" project="XnaGuiItems" file="3e1d26c0-8832-5d44-9d22-b173a44cb0ab" />
+        <topic id="Overload:Mentula.GuiItems.Core.ProgressData.Equals" project="XnaGuiItems" file="fcdcd1af-63c5-d939-3a98-6bde756b7a3a">
+          <topic id="M:Mentula.GuiItems.Core.ProgressData.Equals(System.Object)" project="XnaGuiItems" file="47d6517e-7eeb-d6c8-1fe8-9819b7007e2a" />
+          <topic id="M:Mentula.GuiItems.Core.ProgressData.Equals(Mentula.GuiItems.Core.ProgressData)" project="XnaGuiItems" file="d8660968-4c4f-ed94-88ea-fe8ce1e45972" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.GetHashCode" project="XnaGuiItems" file="3d9f4e5c-8c1b-84e1-1d5f-efc69163970d" />
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.ToString" project="XnaGuiItems" file="67127cc1-5cf5-aa8e-dcc3-d2c4c7ef8729" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.ProgressData" project="XnaGuiItems" file="8bcfe05c-0262-f1fa-79e6-fc368fd1ffc0">
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.op_Equality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)" project="XnaGuiItems" file="44aaaf9c-de87-5a55-79c2-df0600716e84" />
+        <topic id="M:Mentula.GuiItems.Core.ProgressData.op_Inequality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)" project="XnaGuiItems" file="169d509f-c4d7-62c2-4d69-516e4826cd85" />
+      </topic>
+    </topic>
+    <topic id="T:Mentula.GuiItems.Core.Rect" project="XnaGuiItems" file="59dce0e1-e592-ec5e-9b63-c00fe830aadf">
+      <topic id="Overload:Mentula.GuiItems.Core.Rect.#ctor" project="XnaGuiItems" file="033df444-2e26-be4f-5c6c-0da6a433206f">
+        <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="b1f74336-988d-cd47-9fda-b5b8a21548ed" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="059276c8-edeb-219a-5a3a-8dbf7b10de21" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)" project="XnaGuiItems" file="5cd9b603-dbda-44da-0641-de569468e727" />
+      </topic>
+      <topic id="Properties.T:Mentula.GuiItems.Core.Rect" project="XnaGuiItems" file="4ea84af7-64db-9f94-ebae-d757b0c718cc">
+        <topic id="P:Mentula.GuiItems.Core.Rect.Bottom" project="XnaGuiItems" file="0acc0d65-1fac-ee44-43eb-e87f8a7c1aca" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Center" project="XnaGuiItems" file="b0112042-43a5-d987-f6b8-79c88071eef9" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Height" project="XnaGuiItems" file="eda510fa-c176-b683-ecd1-2094f6a31e0d" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.IsEmpty" project="XnaGuiItems" file="e99436c4-df1e-5ba8-1bab-2c20ce138df3" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Left" project="XnaGuiItems" file="52e73a52-d2fd-65fb-0f45-039d519bc51c" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Position" project="XnaGuiItems" file="a741afbe-6ac7-d4d1-c284-798e2f29b202" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Right" project="XnaGuiItems" file="131c4e87-6891-4588-574a-880cfee8400c" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Size" project="XnaGuiItems" file="8f75757f-0077-b534-567c-d4fee1af8d3f" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Top" project="XnaGuiItems" file="a055b6c8-cab8-80a1-25b1-8e50bc664d19" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Width" project="XnaGuiItems" file="ea0461ca-c223-9589-9993-58c5d86fd2a9" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.X" project="XnaGuiItems" file="a6e5db06-ebd4-ba34-06b5-7bbcf94eee2f" />
+        <topic id="P:Mentula.GuiItems.Core.Rect.Y" project="XnaGuiItems" file="5e45207e-3f04-763f-ef4b-3666d7f4a7ba" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Rect" project="XnaGuiItems" file="d249a1dc-1bba-7f39-1116-3be6bd96d898">
+        <topic id="Overload:Mentula.GuiItems.Core.Rect.Contains" project="XnaGuiItems" file="d80cc127-da4e-2834-5d79-1b36669886fe">
+          <topic id="M:Mentula.GuiItems.Core.Rect.Contains(Microsoft.Xna.Framework.Vector2)" project="XnaGuiItems" file="e0967aed-8746-5279-262e-1511bb4be6cb" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.Contains(Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="5b97d000-3f5b-50cf-a6b7-27368107d322" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.Contains(System.Single,System.Single)" project="XnaGuiItems" file="abc9b014-2370-a6b3-257e-1a625c898fb0" />
+        </topic>
+        <topic id="Overload:Mentula.GuiItems.Core.Rect.Equals" project="XnaGuiItems" file="722e89fc-1555-fcf1-b7d3-c8d906f729f1">
+          <topic id="M:Mentula.GuiItems.Core.Rect.Equals(Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="0252f71a-601c-3443-60af-cee22649f678" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.Equals(System.Object)" project="XnaGuiItems" file="f989cf6d-1086-dba4-b36a-495c9fc41a50" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.Equals(Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="4a8b4a80-f727-425f-d329-f09e83b5ada1" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Rect.GetHashCode" project="XnaGuiItems" file="afba4c24-f6aa-abc7-1794-6ae5265e465c" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.Inflate(System.Int32,System.Int32)" project="XnaGuiItems" file="88cc0e04-86d9-2058-e4cd-7844efeb6b23" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.Intersection(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="cea7f920-d41a-29b3-203d-3abf672b130e" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.Intersects(Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="e1d7174a-4917-0c9c-7802-f2e9af06e32f" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.ToString" project="XnaGuiItems" file="5aff028a-deba-1049-0faa-9b58b95ed8ec" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.ToXnaRectangle" project="XnaGuiItems" file="07e747db-f50a-e1b5-9192-15e2a38996e3" />
+        <topic id="M:Mentula.GuiItems.Core.Rect.Union(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="79415b99-fb03-11af-d13e-45ad064a10bc" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.Rect" project="XnaGuiItems" file="c4b5dcf8-f49d-7eb3-f577-4d56aa04a45d">
+        <topic id="Overload:Mentula.GuiItems.Core.Rect.op_Equality" project="XnaGuiItems" file="2a0a0fe5-661e-3551-7a57-15b05d920071">
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="630ffb15-7890-5021-23be-ed99cffc6379" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="efb23a23-bed5-9706-e036-436ad445b7aa" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="abbfa1d0-92e3-1fca-123a-a8179fad1982" />
+        </topic>
+        <topic id="Overload:Mentula.GuiItems.Core.Rect.op_Inequality" project="XnaGuiItems" file="c0440bbb-37f5-36e5-fd70-fbfa05fb8b0e">
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="6943b8c0-86de-6f7e-44a3-e371711d805b" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="2824f7fb-6cbf-4188-8e07-e1e13a1b79e1" />
+          <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="3e4f543a-4781-9e51-481a-a9bba2c7ab20" />
+        </topic>
+      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Core.Rect" project="XnaGuiItems" file="87d9ea38-72f9-6853-fb74-bcbd6137b78e">
+        <topic id="F:Mentula.GuiItems.Core.Rect.Empty" project="XnaGuiItems" file="0215acc7-cd46-2f1b-5f97-dd89cf97a6e7" />
+      </topic>
+    </topic>
     <topic id="T:Mentula.GuiItems.Core.ResizeMode" project="XnaGuiItems" file="bf54270a-89a7-5d0d-4f5e-ac6d8e3357cc" />
+    <topic id="T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="2ab041ca-09c1-1651-8be0-760299e0ad2d">
+      <topic id="Overload:Mentula.GuiItems.Core.Size.#ctor" project="XnaGuiItems" file="c1040fc8-4623-91c5-8f1b-6d28d3ebd4aa">
+        <topic id="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" project="XnaGuiItems" file="e9860afe-b210-462c-da78-f89d8fdefe96" />
+        <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" project="XnaGuiItems" file="c9fa6185-e27d-c0a1-5c17-740bf9ae1da5" />
+        <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" project="XnaGuiItems" file="389bf931-532e-ef2c-3a04-81a04380e3bc" />
+      </topic>
+      <topic id="Properties.T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="f166d24b-6a2f-b37e-bdc7-66f6a5c71406">
+        <topic id="P:Mentula.GuiItems.Core.Size.Height" project="XnaGuiItems" file="a006b45c-d868-35d8-2c1a-12243cb52821" />
+        <topic id="P:Mentula.GuiItems.Core.Size.IsEmpty" project="XnaGuiItems" file="543906f5-9b2d-38a1-6fee-35c7f27f8441" />
+        <topic id="P:Mentula.GuiItems.Core.Size.Width" project="XnaGuiItems" file="c9a38c9f-bbb5-c8d7-7467-8b18b16af08e" />
+      </topic>
+      <topic id="Methods.T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="a4c75425-4b3f-4990-a581-089315520e9c">
+        <topic id="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="9270f661-16ef-620b-d897-3f522a0176d4" />
+        <topic id="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="ef34d72f-d695-9693-ac9f-5b7be75909cd" />
+        <topic id="Overload:Mentula.GuiItems.Core.Size.Divide" project="XnaGuiItems" file="8d311e68-6924-3179-41d6-ba3215a572e5">
+          <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="80bcb894-922c-cbc4-77ca-c11c3a3e810a" />
+          <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="5cf4ffa4-deaf-d828-c1b4-a31b864af57e" />
+        </topic>
+        <topic id="Overload:Mentula.GuiItems.Core.Size.Equals" project="XnaGuiItems" file="98d4a887-61bd-6cbe-462e-5e43fa246a44">
+          <topic id="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" project="XnaGuiItems" file="7a24c81b-8cfc-0d23-4285-82a160e82095" />
+          <topic id="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="a81ef373-7a19-0e32-d2a6-7051ca5940e9" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Size.GetHashCode" project="XnaGuiItems" file="d2116685-8893-0bbf-4c86-410da74a802d" />
+        <topic id="Overload:Mentula.GuiItems.Core.Size.Multiply" project="XnaGuiItems" file="78bda73a-ee99-a81f-4c7f-d6b1f17f09a0">
+          <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="e0321e12-d2a8-6dad-d317-31cc2eb6fda5" />
+          <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="e20e2bcb-0da1-e9a5-d1d6-18b918a7feeb" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="62309a68-9673-fab0-56de-cf62edb70645" />
+        <topic id="M:Mentula.GuiItems.Core.Size.ToString" project="XnaGuiItems" file="7526c131-cc98-3a07-22ed-012848e2adc9" />
+        <topic id="M:Mentula.GuiItems.Core.Size.ToVector2" project="XnaGuiItems" file="f40a49c5-8366-fa0a-b768-a29b67ed866b" />
+      </topic>
+      <topic id="Operators.T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="cd65119e-d9c4-1d50-e943-566a0e73b895">
+        <topic id="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="be77aef0-b253-9ea2-00eb-9e0397f3c3db" />
+        <topic id="Overload:Mentula.GuiItems.Core.Size.op_Division" project="XnaGuiItems" file="b17826a7-4d84-039a-3362-4ee415bc6fbd">
+          <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="9d1ab7cb-3921-67a1-262f-463c58e63c32" />
+          <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="87fd10b4-a41a-86f5-2538-f5c347c4810d" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="1858d90d-b25d-7d98-23de-49c6d8ffcc5f" />
+        <topic id="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="3ab9bacf-968e-d587-7934-66a27dc708be" />
+        <topic id="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="d31a7068-2aac-25b3-7d01-d18c1a786ede" />
+        <topic id="Overload:Mentula.GuiItems.Core.Size.op_Multiply" project="XnaGuiItems" file="4d9a14aa-18de-2b8c-3a64-825be09dfe3f">
+          <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="d277119d-3139-cf05-45f6-dfa5ddcf4839" />
+          <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="874821c9-17c3-0589-edee-6ec4d7c6d178" />
+        </topic>
+        <topic id="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)" project="XnaGuiItems" file="ee45010e-36d0-8b25-3a96-04860f97a3e3" />
+        <topic id="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" project="XnaGuiItems" file="85bc3d11-9aa3-6ac9-f00b-8ce408eaf35a" />
+      </topic>
+      <topic id="Fields.T:Mentula.GuiItems.Core.Size" project="XnaGuiItems" file="ee138751-89b0-2a2c-82a0-369a0fc58559">
+        <topic id="F:Mentula.GuiItems.Core.Size.Empty" project="XnaGuiItems" file="9fb37c99-3736-b1ee-c153-eded6c292959" />
+      </topic>
+    </topic>
   </topic>
   <topic id="N:Mentula.GuiItems.Core.EventHandlers" project="_Namespaces" file="74bdc617-4644-2142-5b0d-4a2f36957927">
     <topic id="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler" project="XnaGuiItems" file="1f1365e2-cdf5-33fe-d207-e7a315517538" />
@@ -276,189 +455,6 @@
       </topic>
     </topic>
     <topic id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" project="XnaGuiItems" file="9d7f0306-a10e-7f54-a378-782b17aa7224" />
-  </topic>
-  <topic id="N:Mentula.GuiItems.Core.Interfaces" project="_Namespaces" file="95ec2fca-db98-81a3-5664-204677ac3caf">
-    <topic id="T:Mentula.GuiItems.Core.Interfaces.IToggleable" project="XnaGuiItems" file="b0f7ce89-8f28-e16e-4e99-3a9d2a04f351">
-      <topic id="Methods.T:Mentula.GuiItems.Core.Interfaces.IToggleable" project="XnaGuiItems" file="5be3ab74-aa02-e8d2-c226-e3013e941f89">
-        <topic id="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide" project="XnaGuiItems" file="98c42594-07fd-f337-70e2-5ad33ae5d22d" />
-        <topic id="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show" project="XnaGuiItems" file="d8671280-0f39-84c7-0030-61217a05dc22" />
-      </topic>
-    </topic>
-  </topic>
-  <topic id="N:Mentula.GuiItems.Core.Structs" project="_Namespaces" file="ab19c65c-a706-48fb-d622-06bb952b291f">
-    <topic id="T:Mentula.GuiItems.Core.Structs.ByteFlags" project="XnaGuiItems" file="5b7a4268-a4f0-1615-0399-9687e6300ab9">
-      <topic id="Properties.T:Mentula.GuiItems.Core.Structs.ByteFlags" project="XnaGuiItems" file="f6d11c5f-f897-5a17-05a1-fe9a0203e37d">
-        <topic id="P:Mentula.GuiItems.Core.Structs.ByteFlags.Item(System.Int32)" project="XnaGuiItems" file="2d79a77e-d95e-0165-a8d7-6288b5ae495b" />
-      </topic>
-      <topic id="Methods.T:Mentula.GuiItems.Core.Structs.ByteFlags" project="XnaGuiItems" file="3e739365-506a-02db-6fdf-82a8fcaccd32">
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.ByteFlags.Equals" project="XnaGuiItems" file="a530709a-3cb2-3788-9475-080e3f8bfcab">
-          <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(System.Object)" project="XnaGuiItems" file="d3ce4e27-ba8c-e114-589d-6e89bbab3656" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(Mentula.GuiItems.Core.Structs.ByteFlags)" project="XnaGuiItems" file="8ff868e4-904a-ff50-f348-3989238e034d" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.GetHashCode" project="XnaGuiItems" file="4d79670b-a7e7-73ab-4fc4-050b5ad5808a" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.ToString" project="XnaGuiItems" file="6d3cfe78-4a68-6466-0897-b340a97145e3" />
-      </topic>
-      <topic id="Operators.T:Mentula.GuiItems.Core.Structs.ByteFlags" project="XnaGuiItems" file="90d057dd-e5db-ae11-e542-c753f82cd7b0">
-        <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Equality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" project="XnaGuiItems" file="e3df20e9-8012-268d-335e-8d6d310fb7d1" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" project="XnaGuiItems" file="50ed2d64-8686-e07e-1fd2-ddfed277c6eb" />
-      </topic>
-    </topic>
-    <topic id="T:Mentula.GuiItems.Core.Structs.Pair" project="XnaGuiItems" file="28029934-e54f-3f5f-9c11-93b5f4aac588">
-      <topic id="Overload:Mentula.GuiItems.Core.Structs.Pair.#ctor" project="XnaGuiItems" file="85757ccb-7861-a0ac-64f6-9444c76d3b0b">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String)" project="XnaGuiItems" file="e1816fad-ea89-8801-bc0e-a6b7dfb46296" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)" project="XnaGuiItems" file="da5cebfc-534d-2124-dba2-1da1bba9e6a9" />
-      </topic>
-      <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Pair" project="XnaGuiItems" file="9bf364a8-3621-af8c-3f4e-b039602dc58b">
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Pair.Equals" project="XnaGuiItems" file="8c98aca5-9475-e279-0708-8952e1fd2b21">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Pair.Equals(System.Object)" project="XnaGuiItems" file="b91f90d6-bbb6-0987-842b-6d0ba5fd03d7" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Pair.Equals(Mentula.GuiItems.Core.Structs.Pair)" project="XnaGuiItems" file="73790270-84b9-bd6b-6eca-e915328e4be5" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.GetHashCode" project="XnaGuiItems" file="25024ee3-76a6-e07b-8215-1732a4e0266a" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.GetKeys(Mentula.GuiItems.Core.Structs.Pair[])" project="XnaGuiItems" file="c1b859ee-1e7c-7acc-e3fd-39a0fae19cb4" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.ToString" project="XnaGuiItems" file="8cebdacc-637a-d094-1348-a40a45efa4ef" />
-      </topic>
-      <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Pair" project="XnaGuiItems" file="53e86646-9626-82e8-32bd-27bf500e2126">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.op_Equality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)" project="XnaGuiItems" file="014dfd4c-1d63-d48c-9e75-0d6db6490408" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Pair.op_Inequality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)" project="XnaGuiItems" file="9c51ee60-544c-6576-5b98-29dd1a78ee5b" />
-      </topic>
-      <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Pair" project="XnaGuiItems" file="4d9be326-c0a3-406a-4eb0-c80738d691c5">
-        <topic id="F:Mentula.GuiItems.Core.Structs.Pair.Color" project="XnaGuiItems" file="3a9904d7-16e3-a036-f42d-d2d4cacef77c" />
-        <topic id="F:Mentula.GuiItems.Core.Structs.Pair.Text" project="XnaGuiItems" file="be582383-8e48-a995-e58b-3ae670a7bae9" />
-      </topic>
-    </topic>
-    <topic id="T:Mentula.GuiItems.Core.Structs.ProgressData" project="XnaGuiItems" file="03a316d3-4784-d920-47bf-ba4aa47d296e">
-      <topic id="Overload:Mentula.GuiItems.Core.Structs.ProgressData.#ctor" project="XnaGuiItems" file="cf11948a-fcf5-aa4b-58be-4d6eb3b3d18f">
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32)" project="XnaGuiItems" file="5783e40d-38cf-8060-3af5-5f9a29370654" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32)" project="XnaGuiItems" file="1fe6a5cf-2d97-0a59-2754-a66a2a149fe7" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)" project="XnaGuiItems" file="7e667957-b701-5323-186f-92f2dc33e362" />
-      </topic>
-      <topic id="Properties.T:Mentula.GuiItems.Core.Structs.ProgressData" project="XnaGuiItems" file="34964aec-0dac-d90e-d3b1-d5a5a886cab6">
-        <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMaximum" project="XnaGuiItems" file="77e5e981-74fb-b3e2-4635-085e8de0715e" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMinimum" project="XnaGuiItems" file="ae0ddb08-00db-e185-1634-8ab51fca609f" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Maximum" project="XnaGuiItems" file="b00ad3f5-449b-c6c9-9690-8d984e254dba" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Minimum" project="XnaGuiItems" file="c6b1fe3b-8633-caca-054d-98e225b23fa2" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Value" project="XnaGuiItems" file="eb150b17-1f4f-9bfb-f54d-a1670aec6687" />
-      </topic>
-      <topic id="Methods.T:Mentula.GuiItems.Core.Structs.ProgressData" project="XnaGuiItems" file="f066e364-34d1-c337-296e-f9de6314bfc9">
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.ChangeValue(System.Int32)" project="XnaGuiItems" file="862307c3-f927-3f26-d9bf-0f23849435fa" />
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.ProgressData.Equals" project="XnaGuiItems" file="6c4c0af9-eb25-43c3-a01b-8fbf5730810f">
-          <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(System.Object)" project="XnaGuiItems" file="f010e908-301c-e848-bef0-1b90e202c9c8" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(Mentula.GuiItems.Core.Structs.ProgressData)" project="XnaGuiItems" file="d4887daf-5b89-6684-01f3-8ce32cc68746" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.GetHashCode" project="XnaGuiItems" file="e04bfc04-de81-e778-2f4e-93c20740e93b" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.ToString" project="XnaGuiItems" file="aabe3ff7-577e-1b41-ae95-e0b7a0bd918a" />
-      </topic>
-      <topic id="Operators.T:Mentula.GuiItems.Core.Structs.ProgressData" project="XnaGuiItems" file="f55613a4-a571-dd2b-a07d-e9ab1d240366">
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Equality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)" project="XnaGuiItems" file="c9ebb371-9a83-4b1d-9b11-3be6f2b38676" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Inequality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)" project="XnaGuiItems" file="6cb61213-37f2-bf59-6717-ddc4d60ba72d" />
-      </topic>
-    </topic>
-    <topic id="T:Mentula.GuiItems.Core.Structs.Rect" project="XnaGuiItems" file="d930820b-2194-89e7-0d41-3f926a20d9f6">
-      <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.#ctor" project="XnaGuiItems" file="ceb089a0-b226-285a-47e0-84e8ab77f4d8">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="f39c626b-7ad7-f271-023b-c77185b20cdf" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="4bb54951-beac-9c26-ac6d-18cade029b0c" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)" project="XnaGuiItems" file="1b446369-69f3-d4f6-b59f-104fe603eff7" />
-      </topic>
-      <topic id="Properties.T:Mentula.GuiItems.Core.Structs.Rect" project="XnaGuiItems" file="66584e8a-2aff-f802-b967-1525f590ec20">
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Bottom" project="XnaGuiItems" file="0d6ca2b9-5337-1850-959d-5abaabadd14a" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Center" project="XnaGuiItems" file="7c8d2aa6-d0c4-1636-a897-545c04dc41cd" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Height" project="XnaGuiItems" file="d5cdbe9b-8f6b-7129-4f0c-881a0068923e" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.IsEmpty" project="XnaGuiItems" file="5c31175c-4f1e-c4c5-8cb6-c48e13acce6e" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Left" project="XnaGuiItems" file="989d28af-0250-3d58-9a38-ca480c0152e4" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Position" project="XnaGuiItems" file="8caa058f-6442-5573-c65a-09ea8b0c8884" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Right" project="XnaGuiItems" file="27de2ae0-414f-7450-6114-afe0c94c589f" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Size" project="XnaGuiItems" file="e0f66ef4-4034-2958-661e-180a01446e90" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Top" project="XnaGuiItems" file="f6c1f0f0-ecf2-4743-a2b3-aea72ed877fd" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Width" project="XnaGuiItems" file="d87bffaf-81b6-85f9-95e5-bec12b2cffbb" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.X" project="XnaGuiItems" file="e18ffec0-d420-fc1c-040e-c7bf6389920d" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Y" project="XnaGuiItems" file="8fc7611c-b977-8370-a0f4-8b842db75dfd" />
-      </topic>
-      <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Rect" project="XnaGuiItems" file="0df12937-3d85-605e-5115-83a02b3faf21">
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.Contains" project="XnaGuiItems" file="3157a97f-b6a1-7fb1-c958-654969e9e56d">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Microsoft.Xna.Framework.Vector2)" project="XnaGuiItems" file="c17135b0-b1ff-8bdc-a6d6-812dc8f22ff9" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="66b28d05-57f9-349d-c9cd-94e4d6ad6fed" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(System.Single,System.Single)" project="XnaGuiItems" file="2ac48ed1-793b-d46f-a910-006056144088" />
-        </topic>
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.Equals" project="XnaGuiItems" file="e9e6ee2d-37dc-97fe-b32b-192bc01a35fe">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="19e10781-e620-e1b3-8f62-a3238c438c74" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(System.Object)" project="XnaGuiItems" file="ec52ef99-30a8-ae08-23e8-00e27507fa40" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="ced9d2fe-345c-aec2-4938-7dcbe62a0945" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.GetHashCode" project="XnaGuiItems" file="7d064a52-a471-ac4a-eaae-668e14f1de49" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Inflate(System.Int32,System.Int32)" project="XnaGuiItems" file="c77a4411-46d3-f9b4-aa76-de0d615e9422" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Intersection(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="8eb1b4ff-1ead-61ad-4e3a-e7e337115ff3" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Intersects(Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="50473f93-7ed3-bdad-107e-3ac55dbde7e1" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.ToString" project="XnaGuiItems" file="1aa947c1-4fce-abdf-c401-b45976d7d237" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.ToXnaRectangle" project="XnaGuiItems" file="5e82bede-7b50-10f4-a806-297011fc9487" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Union(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="9a16af90-f917-9992-157b-ed58979fef00" />
-      </topic>
-      <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Rect" project="XnaGuiItems" file="2dacabbf-fb60-27db-ff44-2c1cf7c18d61">
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.op_Equality" project="XnaGuiItems" file="4354cb17-b44d-c5f4-7db6-ccd7813b9de6">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="6527c90d-2749-62ba-6724-89c5c8c06c1e" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="795efc42-82ec-55eb-2a9d-99d6708f0f1b" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="a7b710a3-61e8-d4d4-e2a2-95c03a491363" />
-        </topic>
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.op_Inequality" project="XnaGuiItems" file="17fe5abc-f90b-5ca2-7220-dee9462969a4">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="c71f92e7-5743-5f74-3451-54a68b07b645" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="bf6342be-70d0-7d06-2a0b-0b328c1c75e8" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)" project="XnaGuiItems" file="98c4ef1a-6d13-03e1-12ba-ae52ebf20705" />
-        </topic>
-      </topic>
-      <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Rect" project="XnaGuiItems" file="ecf64cfc-7130-c7b2-1244-4f5ffb227024">
-        <topic id="F:Mentula.GuiItems.Core.Structs.Rect.Empty" project="XnaGuiItems" file="cbb43462-4a6a-9436-fbc1-ffb1e2dae411" />
-      </topic>
-    </topic>
-    <topic id="T:Mentula.GuiItems.Core.Structs.Size" project="XnaGuiItems" file="83da8f23-130d-0994-d9a0-c98d87a51b78">
-      <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.#ctor" project="XnaGuiItems" file="3deb8bc5-5d6d-cd3a-0495-60c020c66ca2">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(Microsoft.Xna.Framework.Vector2)" project="XnaGuiItems" file="6f66c4b3-633d-9be0-6548-867b3571299c" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32)" project="XnaGuiItems" file="5149876b-8715-c93a-eb96-b2533ed163d7" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32,System.Int32)" project="XnaGuiItems" file="9d3db6f3-e59a-64d2-4ee0-67e091ca2267" />
-      </topic>
-      <topic id="Properties.T:Mentula.GuiItems.Core.Structs.Size" project="XnaGuiItems" file="28d22daf-c836-4c9e-48b7-ed6dbfc91964">
-        <topic id="P:Mentula.GuiItems.Core.Structs.Size.Height" project="XnaGuiItems" file="64bd6e21-3d1a-9972-e47c-738bb539a660" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Size.IsEmpty" project="XnaGuiItems" file="2357ddcd-c180-8b17-f915-5bf6c3af90ad" />
-        <topic id="P:Mentula.GuiItems.Core.Structs.Size.Width" project="XnaGuiItems" file="4a27595e-7dc5-1ace-11c7-5e88948c3344" />
-      </topic>
-      <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Size" project="XnaGuiItems" file="edbf929a-260b-ee5b-a37c-f9f2d1b57c72">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.Add(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="c75e89b5-1a1a-177d-de7b-83354b5ddd67" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.Clamp(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="d56938b0-3c2d-5ce7-a53a-3daf30aa7988" />
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Divide" project="XnaGuiItems" file="3239e37c-57cc-01c9-b9dd-e044cd9ac87d">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="3483f475-eee2-88db-da0d-83ee0eff0949" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="3433d1cf-df10-91d3-bce5-b73fd89267f2" />
-        </topic>
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Equals" project="XnaGuiItems" file="1680100b-d2a1-7778-54cf-2a79dda5659a">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Equals(System.Object)" project="XnaGuiItems" file="3ef48d8e-2ee4-8747-750e-a8381a637606" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Equals(Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="1fd8c762-3b90-4e26-11fc-2d863c22ba2d" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.GetHashCode" project="XnaGuiItems" file="49b4dc26-9cb4-df8c-8d10-8e873ef353b0" />
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Multiply" project="XnaGuiItems" file="7eb1f458-11fe-55e9-2346-07c6fdfba0ff">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="0bc84cab-cbd5-2fbd-2786-3c8f75851a17" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="bbab7a2a-8846-6314-2ec2-21f03e65b1be" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.Subtract(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="a39b4971-1375-22ff-25c1-f6ca50308fe3" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.ToString" project="XnaGuiItems" file="538e62d3-494e-d3a0-585b-06bcfb378db6" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.ToVector2" project="XnaGuiItems" file="09c1ef6d-b8df-3244-a27d-6b494c04fdb5" />
-      </topic>
-      <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Size" project="XnaGuiItems" file="62cec7ef-dd9c-56c2-1a67-14cfd3c4da2b">
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Addition(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="e2251834-7a53-a5d4-d3d1-d4bb6ea75c69" />
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.op_Division" project="XnaGuiItems" file="6d9442fc-da93-3260-d40c-7537ba5e9118">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="8626b029-6488-5d88-9af7-3beec0192c13" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="be5330b5-35da-1daf-e176-b1dbf02a1194" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Equality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="2b97c542-8c61-bb81-14de-e0507d06c677" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Inequality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="6a093204-8fa9-91ac-f1e9-d273f4273331" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_LeftShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="8e8ea90c-09e6-45d8-4f7f-4c01f18d48a8" />
-        <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.op_Multiply" project="XnaGuiItems" file="b02d6a29-bca1-7bc6-03be-e3bf9db51de3">
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="77a07ac9-d455-c3c3-45de-a9ca0b453500" />
-          <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="c4c12110-8050-3fe4-b629-92196883bed9" />
-        </topic>
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_RightShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)" project="XnaGuiItems" file="8f877f7a-1b6d-e48e-7d73-6c99c93f3323" />
-        <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Subtraction(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" project="XnaGuiItems" file="29c49299-6123-8d0e-82a2-a738b752bf5c" />
-      </topic>
-      <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Size" project="XnaGuiItems" file="296f2632-4e0a-669b-a997-5954b4defe5d">
-        <topic id="F:Mentula.GuiItems.Core.Structs.Size.Empty" project="XnaGuiItems" file="33fbac6b-bddc-f9b8-850f-23dd8db065c3" />
-      </topic>
-    </topic>
   </topic>
   <topic id="N:Mentula.GuiItems.Core.TextureHandlers" project="_Namespaces" file="7b301d04-0e8a-2ffd-da61-e6d92ab1bd3a">
     <topic id="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" project="XnaGuiItems" file="f9b62142-81f2-04e5-50ea-93852646df8f">
@@ -538,7 +534,7 @@
     <topic id="T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="4278b1d0-5a1a-7e6e-082a-a43a011135cc">
       <topic id="Overload:Mentula.GuiItems.Items.Button.#ctor" project="XnaGuiItems" file="7babcc66-cb34-f31d-744b-ad4c5678df28">
         <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="05dd2926-3345-b45f-72ae-5e45bb177bf4" />
-        <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="25560c6b-6578-fe58-cf1f-4d27b6ae64af" />
+        <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="7263de3e-e73b-eb5e-d1ab-f06503ddced7" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="5162094b-af93-e52c-14bd-6742f0088b9f" />
       <topic id="Methods.T:Mentula.GuiItems.Items.Button" project="XnaGuiItems" file="1ed20fc8-72a5-5978-f9d6-cac275aa944a">
@@ -559,7 +555,7 @@
     <topic id="T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="f32ac208-a428-2c46-bccb-48cc77db32ac">
       <topic id="Overload:Mentula.GuiItems.Items.DropDown.#ctor" project="XnaGuiItems" file="38e76727-787e-dab7-e0a5-111281a41c17">
         <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="58e407ee-0502-bd4f-dfaa-978d19b2a603" />
-        <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="2804d309-8f95-93b7-c789-b05bacf92ad3" />
+        <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="610247a8-38a8-9dc7-e2fa-c80ecebfa604" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="b77f97b8-3ef5-9a0c-5981-e498fcaee7b8">
         <topic id="P:Mentula.GuiItems.Items.DropDown.AutoSize" project="XnaGuiItems" file="5797d0ce-1ad4-013d-5115-bf80c2c61977" />
@@ -575,7 +571,7 @@
       <topic id="Methods.T:Mentula.GuiItems.Items.DropDown" project="XnaGuiItems" file="b30bf0e4-1f64-a5f5-2c34-c6cb0b0e6cd7">
         <topic id="Overload:Mentula.GuiItems.Items.DropDown.AddOption" project="XnaGuiItems" file="54f9c158-5013-bfe0-46f1-99fbf26fd9ac">
           <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(System.String[])" project="XnaGuiItems" file="6122380e-f009-693c-edee-280da6a53f74" />
-          <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Structs.Pair[])" project="XnaGuiItems" file="03f547b6-7b4f-a1af-931f-8666c9a31381" />
+          <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Pair[])" project="XnaGuiItems" file="4be0bc0f-8e80-5d7e-1a53-baecb7dcaea1" />
         </topic>
         <topic id="M:Mentula.GuiItems.Items.DropDown.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" project="XnaGuiItems" file="83817f33-b3fb-6ecf-27ec-3581d2f9ebfb" />
         <topic id="M:Mentula.GuiItems.Items.DropDown.HandleAutoSize" project="XnaGuiItems" file="ce0d30f1-ea8a-58fd-5ccd-73a64193fb11" />
@@ -599,7 +595,7 @@
     <topic id="T:Mentula.GuiItems.Items.Label" project="XnaGuiItems" file="d53751b0-5ec8-c0d0-4297-55a765efc00d">
       <topic id="Overload:Mentula.GuiItems.Items.Label.#ctor" project="XnaGuiItems" file="7a2981cd-51d4-ed12-9488-133dd28ef49b">
         <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="ad3c916d-8b09-dcd8-3d75-637eabfc7850" />
-        <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="1633395d-8c80-e895-8e37-e7068c2a2b26" />
+        <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="46d38d54-5184-41ac-db24-9d1508a5c57a" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.Label" project="XnaGuiItems" file="c5130895-0d50-2a5b-7a96-83845c290600">
         <topic id="P:Mentula.GuiItems.Items.Label.AutoRefresh" project="XnaGuiItems" file="3b492b1f-ce03-c41b-c88a-de5f2f7a1e5a" />
@@ -617,7 +613,7 @@
         <topic id="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" project="XnaGuiItems" file="584c2a6b-349f-b256-d6e5-a66828c05bba" />
         <topic id="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" project="XnaGuiItems" file="255b7b8a-da98-747f-6945-d6c628e22d1d" />
         <topic id="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" project="XnaGuiItems" file="1d2c6e86-f2d1-2b00-634f-7ace82b5ab03" />
-        <topic id="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" project="XnaGuiItems" file="865924b2-5fe9-4403-811a-73b0c66dac5b" />
+        <topic id="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})" project="XnaGuiItems" file="2dc678fc-da67-6a01-70b1-2765eb8b2102" />
         <topic id="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" project="XnaGuiItems" file="42432106-1526-25ec-0d75-727c3978b5db" />
         <topic id="M:Mentula.GuiItems.Items.Label.Refresh" project="XnaGuiItems" file="66ca4e66-4316-ca82-2b44-ec2f7a0a5de7" />
         <topic id="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture" project="XnaGuiItems" file="812998c9-f3b8-878c-7b9c-5309da7cea35" />
@@ -636,7 +632,7 @@
     <topic id="T:Mentula.GuiItems.Items.PictureBox" project="XnaGuiItems" file="ddcfa394-400d-7674-1e23-b03fec675540">
       <topic id="Overload:Mentula.GuiItems.Items.PictureBox.#ctor" project="XnaGuiItems" file="d36e6e96-e357-a83e-c1de-b1a6cd6ae50f">
         <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" project="XnaGuiItems" file="c344c404-3698-3121-a256-e4bcba2fc33a" />
-        <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="9c3a22fc-6462-72ed-7702-34a26b64410f" />
+        <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="b80cdc00-e554-cdf1-cfa4-4291a6c748c0" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.PictureBox" project="XnaGuiItems" file="1bb343da-9bdd-4bc9-ab9e-bb4f2265db0f">
         <topic id="P:Mentula.GuiItems.Items.PictureBox.Image" project="XnaGuiItems" file="14a90d93-5234-0377-a331-29b8ff36ada9" />
@@ -656,7 +652,7 @@
     <topic id="T:Mentula.GuiItems.Items.ProgressBar" project="XnaGuiItems" file="c45c8486-3492-6fe0-bb1b-ebdd51c88088">
       <topic id="Overload:Mentula.GuiItems.Items.ProgressBar.#ctor" project="XnaGuiItems" file="eb7d5030-b888-a3ec-d305-f40dc1d08984">
         <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" project="XnaGuiItems" file="9eec4bcb-22fb-3b4b-0781-a9386f40477b" />
-        <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="414ac562-592e-8279-f4f3-cf3c5a92c514" />
+        <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="ea6e6f43-6bbe-0ca6-71e2-b188fc30b6ca" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.ProgressBar" project="XnaGuiItems" file="3e0c26bf-93aa-a088-5d2c-d3b68d1c14c3">
         <topic id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" project="XnaGuiItems" file="f3b97c76-b50c-658d-8541-ab19c598eae2" />
@@ -685,7 +681,7 @@
     <topic id="T:Mentula.GuiItems.Items.Slider" project="XnaGuiItems" file="40bdda9b-8900-7e7a-f1ae-018f9465923f">
       <topic id="Overload:Mentula.GuiItems.Items.Slider.#ctor" project="XnaGuiItems" file="db74ba78-39cd-460e-a9ef-7fb852ddb1e4">
         <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" project="XnaGuiItems" file="7062d7ee-730c-231c-c2d5-2be0263efe08" />
-        <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" project="XnaGuiItems" file="7b7fd3f7-544b-2c9e-98fb-c5409ab5e0bf" />
+        <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" project="XnaGuiItems" file="b59e067e-2160-3d65-6afd-c070d12f42ec" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.Slider" project="XnaGuiItems" file="2e98e50f-42a3-65c8-e43d-bdbbf93f96a8">
         <topic id="P:Mentula.GuiItems.Items.Slider.BorderStyle" project="XnaGuiItems" file="a2aac4be-589d-f70b-caad-ac0406ad44b8" />
@@ -718,7 +714,7 @@
     <topic id="T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="e2b73be8-64e0-cbc9-d324-cc605cdbf79f">
       <topic id="Overload:Mentula.GuiItems.Items.TextBox.#ctor" project="XnaGuiItems" file="6376d5d7-9eb4-336f-2b60-791bc8b5d931">
         <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="4d7d2154-0674-8ce2-041a-36fc103e81a9" />
-        <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="bfddea92-a617-cdf8-015a-29df86245006" />
+        <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" project="XnaGuiItems" file="0b8241bf-0125-3d57-4429-a3732ab358c1" />
       </topic>
       <topic id="Properties.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="e22c3ae1-9a95-3b98-a082-f79304a908f5">
         <topic id="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize" project="XnaGuiItems" file="03f3a0a9-5c2b-a750-c55a-bb42fbff10e7" />
@@ -749,7 +745,7 @@
       <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" project="XnaGuiItems" file="ee23dc99-2728-f5cb-4f2a-5ae65b5801f9" />
     </topic>
   </topic>
-  <topic id="7a47457b-7aa6-4cd6-866a-7b4f91be8620" file="7a47457b-7aa6-4cd6-866a-7b4f91be8620" sortOrder="9" />
+  <topic id="7a47457b-7aa6-4cd6-866a-7b4f91be8620" file="7a47457b-7aa6-4cd6-866a-7b4f91be8620" sortOrder="7" />
   <topic id="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2" file="de6ea60d-663e-4ad6-b2d6-b7b34d4074d2">
     <topic id="10daa5f5-5737-4544-92c6-37972633b5d3" file="10daa5f5-5737-4544-92c6-37972633b5d3" />
     <topic id="b5ce2217-55de-44b0-aa3a-bfe049f2df07" file="b5ce2217-55de-44b0-aa3a-bfe049f2df07" />

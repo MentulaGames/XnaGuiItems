@@ -108,7 +108,7 @@
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.Int32,Mentula.GuiItems.Core.GuiItem[])" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddControll(System.String,Mentula.GuiItems.Core.GuiItem[])" type="API" />
-  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)" type="API" />
+  <topic id="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Pair)" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.AutoFocus" type="API" />
   <topic id="P:Mentula.GuiItems.Containers.TabContainer.DefaultBounds" type="API" />
   <topic id="M:Mentula.GuiItems.Containers.TabContainer.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
@@ -124,6 +124,18 @@
   <topic id="N:Mentula.GuiItems.Core" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Anchor" type="API" />
   <topic id="T:Mentula.GuiItems.Core.BorderStyle" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.ByteFlags" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.ByteFlags.Equals" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(Mentula.GuiItems.Core.ByteFlags)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(System.Object)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.GetHashCode" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ByteFlags.Item(System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Equality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Inequality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ByteFlags.ToString" type="API" />
   <topic id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
@@ -139,7 +151,7 @@
   <topic id="Overload:Mentula.GuiItems.Core.GuiItem.#ctor" type="API" />
   <topic id="Overload:Mentula.GuiItems.Core.GuiItem.Dispose" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.BackColor" type="API" />
   <topic id="E:Mentula.GuiItems.Core.GuiItem.BackColorChanged" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.BackgroundImage" type="API" />
@@ -179,7 +191,7 @@
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnNameChange(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnRotationChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Single})" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.OnVisibilityChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})" type="API" />
   <topic id="P:Mentula.GuiItems.Core.GuiItem.Origin" type="API" />
@@ -233,6 +245,10 @@
   <topic id="Events.T:Mentula.GuiItems.Core.InvokeException" type="API" />
   <topic id="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" type="API" />
   <topic id="P:Mentula.GuiItems.Core.InvokeException.StackTrace" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.IToggleable" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.IToggleable" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.IToggleable.Hide" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.IToggleable.Show" type="API" />
   <topic id="T:Mentula.GuiItems.Core.MentulaGameComponent`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.MentulaGameComponent`1" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.MentulaGameComponent`1" type="API" />
@@ -240,7 +256,130 @@
   <topic id="M:Mentula.GuiItems.Core.MentulaGameComponent`1.#ctor(`0)" type="API" />
   <topic id="P:Mentula.GuiItems.Core.MentulaGameComponent`1.Game" type="API" />
   <topic id="T:Mentula.GuiItems.Core.MouseClick" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Pair" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Pair" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.Pair" type="API" />
+  <topic id="Fields.T:Mentula.GuiItems.Core.Pair" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Pair.#ctor" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Pair.Equals" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.#ctor(System.String)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.Pair.Color" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.Equals(Mentula.GuiItems.Core.Pair)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.Equals(System.Object)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.GetHashCode" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.Pair.Text" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Pair.ToString" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.ProgressData" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.ProgressData" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.ProgressData" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.ProgressData" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.ProgressData.#ctor" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.ProgressData.Equals" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.ChangeValue(System.Int32)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ProgressData.DefaultMaximum" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ProgressData.DefaultMinimum" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.Equals(Mentula.GuiItems.Core.ProgressData)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.Equals(System.Object)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.GetHashCode" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ProgressData.Maximum" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ProgressData.Minimum" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.op_Equality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.op_Inequality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.ProgressData.ToString" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.ProgressData.Value" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Rect" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Rect" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.Rect" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Rect" type="API" />
+  <topic id="Fields.T:Mentula.GuiItems.Core.Rect" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Rect.#ctor" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Rect.Contains" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Rect.Equals" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Rect.op_Equality" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Rect.op_Inequality" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Bottom" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Center" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Contains(Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Contains(Microsoft.Xna.Framework.Vector2)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Contains(System.Single,System.Single)" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.Rect.Empty" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Equals(Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Equals(Microsoft.Xna.Framework.Rectangle)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Equals(System.Object)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.GetHashCode" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Height" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Inflate(System.Int32,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Intersection(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Intersects(Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.IsEmpty" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Left" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Position" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Right" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Size" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Top" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.ToString" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.ToXnaRectangle" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Rect.Union(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Width" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.X" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Rect.Y" type="API" />
   <topic id="T:Mentula.GuiItems.Core.ResizeMode" type="API" />
+  <topic id="T:Mentula.GuiItems.Core.Size" type="API" />
+  <topic id="Methods.T:Mentula.GuiItems.Core.Size" type="API" />
+  <topic id="Operators.T:Mentula.GuiItems.Core.Size" type="API" />
+  <topic id="Properties.T:Mentula.GuiItems.Core.Size" type="API" />
+  <topic id="Fields.T:Mentula.GuiItems.Core.Size" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.#ctor" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.Divide" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.Equals" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.Multiply" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.op_Division" type="API" />
+  <topic id="Overload:Mentula.GuiItems.Core.Size.op_Multiply" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.Size.Empty" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Equals(System.Object)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.GetHashCode" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Size.Height" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Size.IsEmpty" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.ToString" type="API" />
+  <topic id="M:Mentula.GuiItems.Core.Size.ToVector2" type="API" />
+  <topic id="P:Mentula.GuiItems.Core.Size.Width" type="API" />
   <topic id="N:Mentula.GuiItems.Core.EventHandlers" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" type="API" />
@@ -265,147 +404,6 @@
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.NewValue" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.OldValue" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" type="API" />
-  <topic id="N:Mentula.GuiItems.Core.Interfaces" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Interfaces.IToggleable" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Interfaces.IToggleable" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show" type="API" />
-  <topic id="N:Mentula.GuiItems.Core.Structs" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Structs.ByteFlags" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Structs.ByteFlags" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.Structs.ByteFlags" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.Structs.ByteFlags" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.ByteFlags.Equals" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(Mentula.GuiItems.Core.Structs.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.GetHashCode" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ByteFlags.Item(System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Equality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ByteFlags.ToString" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Structs.Pair" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Pair" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Pair" type="API" />
-  <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Pair" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Pair.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Pair.Equals" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.Structs.Pair.Color" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.Equals(Mentula.GuiItems.Core.Structs.Pair)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.GetHashCode" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.GetKeys(Mentula.GuiItems.Core.Structs.Pair[])" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.op_Equality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.op_Inequality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.Structs.Pair.Text" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Pair.ToString" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Structs.ProgressData" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Structs.ProgressData" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.Structs.ProgressData" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.Structs.ProgressData" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.ProgressData.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.ProgressData.Equals" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.ChangeValue(System.Int32)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMaximum" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMinimum" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(Mentula.GuiItems.Core.Structs.ProgressData)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.GetHashCode" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Maximum" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Minimum" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Equality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Inequality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.ProgressData.ToString" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.ProgressData.Value" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Structs.Rect" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Rect" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Rect" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.Structs.Rect" type="API" />
-  <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Rect" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.Contains" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.Equals" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.op_Equality" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Rect.op_Inequality" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Bottom" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Center" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Microsoft.Xna.Framework.Vector2)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Contains(System.Single,System.Single)" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.Structs.Rect.Empty" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Microsoft.Xna.Framework.Rectangle)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.GetHashCode" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Height" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Inflate(System.Int32,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Intersection(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Intersects(Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.IsEmpty" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Left" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Position" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Right" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Size" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Top" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.ToString" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.ToXnaRectangle" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Rect.Union(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Width" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.X" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Rect.Y" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.Structs.Size" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.Structs.Size" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.Structs.Size" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.Structs.Size" type="API" />
-  <topic id="Fields.T:Mentula.GuiItems.Core.Structs.Size" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.#ctor" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Divide" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Equals" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.Multiply" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.op_Division" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.Structs.Size.op_Multiply" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(Microsoft.Xna.Framework.Vector2)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Add(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Clamp(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.Structs.Size.Empty" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Equals(Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.GetHashCode" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Size.Height" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Size.IsEmpty" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Addition(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Equality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Inequality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_LeftShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_RightShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.op_Subtraction(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.Subtract(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.ToString" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.Structs.Size.ToVector2" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.Structs.Size.Width" type="API" />
   <topic id="N:Mentula.GuiItems.Core.TextureHandlers" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" type="API" />
@@ -465,7 +463,7 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.Button" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Button.PerformClick" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Button.#ctor" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Button.DoubleClick" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Button.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
@@ -481,9 +479,9 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.DropDown" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.DropDown.#ctor" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.DropDown.AddOption" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Structs.Pair[])" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Pair[])" type="API" />
   <topic id="M:Mentula.GuiItems.Items.DropDown.AddOption(System.String[])" type="API" />
   <topic id="P:Mentula.GuiItems.Items.DropDown.AutoSize" type="API" />
   <topic id="P:Mentula.GuiItems.Items.DropDown.BorderStyle" type="API" />
@@ -513,7 +511,7 @@
   <topic id="Events.T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Items.Label" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Label.#ctor" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Label.AutoRefresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Label.AutoSize" type="API" />
@@ -530,7 +528,7 @@
   <topic id="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.Refresh" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture" type="API" />
@@ -545,7 +543,7 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.PictureBox" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.PictureBox.#ctor" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.PictureBox.Image" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.InitEvents" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" type="API" />
@@ -560,7 +558,7 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.ProgressBar" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.ProgressBar.#ctor" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.AutoRefresh" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.BorderStyle" type="API" />
   <topic id="F:Mentula.GuiItems.Items.ProgressBar.data" type="API" />
@@ -583,7 +581,7 @@
   <topic id="Fields.T:Mentula.GuiItems.Items.Slider" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.Slider.#ctor" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.BorderStyle" type="API" />
   <topic id="F:Mentula.GuiItems.Items.Slider.data" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Slider.DefaultBounds" type="API" />
@@ -609,7 +607,7 @@
   <topic id="Events.T:Mentula.GuiItems.Items.TextBox" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Items.TextBox" type="API" />
   <topic id="Overload:Mentula.GuiItems.Items.TextBox.#ctor" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Microsoft.Xna.Framework.Graphics.SpriteFont)" type="API" />
   <topic id="E:Mentula.GuiItems.Items.TextBox.Confirmed" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.DefaultMinimumSize" type="API" />

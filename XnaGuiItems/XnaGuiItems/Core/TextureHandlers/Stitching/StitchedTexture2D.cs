@@ -14,7 +14,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using System.Collections.Generic;
-    using Structs;
     using System;
     using static Utilities;
 

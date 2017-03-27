@@ -15,7 +15,6 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using Core.EventHandlers;
-    using Core.Structs;
     using System;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;

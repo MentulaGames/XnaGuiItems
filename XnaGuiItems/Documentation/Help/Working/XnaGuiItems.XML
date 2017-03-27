@@ -489,7 +489,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Structs.Pair)">
+    <member name="M:Mentula.GuiItems.Containers.TabContainer.AddTab(Mentula.GuiItems.Core.Pair)">
       <summary>
             Adds a tab with a specified name to the <see cref="T:Mentula.GuiItems.Containers.TabContainer" />.
             </summary>
@@ -980,7 +980,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.GuiItem" /> class with specific size.
             </summary>
@@ -1131,7 +1131,7 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new rotation (in radians). </param>
     </member>
-    <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
+    <member name="M:Mentula.GuiItems.Core.GuiItem.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resized" /> event is raised.
             </summary>
@@ -1296,7 +1296,7 @@
     </member>
     <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet">
       <summary>
-            A <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> that contains if the user has set specified textures.
+            A <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> that contains if the user has set specified textures.
             1 if for the background,
             2 if for the foreground.
             </summary>
@@ -1323,30 +1323,30 @@
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Structs.ByteFlags">
+    <member name="T:Mentula.GuiItems.Core.ByteFlags">
       <summary>
             Contains 8 <see cref="T:System.Boolean" /> values stored as 1 <see cref="T:System.Byte" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Equality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.op_Equality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)">
       <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> are equal.
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are equal.
             </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> to compare with the current instance. </param>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.ByteFlags" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
       <returns>
         <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.op_Inequality(Mentula.GuiItems.Core.Structs.ByteFlags,Mentula.GuiItems.Core.Structs.ByteFlags)">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.op_Inequality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)">
       <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> are different.
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are different.
             </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> to compare with the current instance. </param>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.ByteFlags" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
       <returns>
         <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
     </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ByteFlags.Item(System.Int32)">
+    <member name="P:Mentula.GuiItems.Core.ByteFlags.Item(System.Int32)">
       <summary>
             Gets or sets the value at index i.
             </summary>
@@ -1354,15 +1354,15 @@
       <returns> The value of the bool. </returns>
       <exception cref="T:System.IndexOutOfRangeException"> This exception is thrown if the index i if smaller than 0 or greater than 7. </exception>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(Mentula.GuiItems.Core.Structs.ByteFlags)">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.Equals(Mentula.GuiItems.Core.ByteFlags)">
       <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> are equal.
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are equal.
             </summary>
-      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" /> to compare with the current instance. </param>
+      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
       <returns>
         <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.Equals(System.Object)">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.Equals(System.Object)">
       <summary>
             Indicates whether this instance and a specified object are equal.
             </summary>
@@ -1371,628 +1371,17 @@
         <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
             </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.GetHashCode">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.GetHashCode">
       <summary>
             Returns the hash code for this instance.
             </summary>
       <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ByteFlags.ToString">
+    <member name="M:Mentula.GuiItems.Core.ByteFlags.ToString">
       <summary>
-            Returns a visual representation of the <see cref="T:Mentula.GuiItems.Core.Structs.ByteFlags" />.
+            Returns a visual representation of the <see cref="T:Mentula.GuiItems.Core.ByteFlags" />.
             </summary>
       <returns> A string version of the underlying byte. </returns>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.Structs.Pair">
-      <summary>
-            Stores pairs of <see cref="T:System.String" /> and <see cref="T:Microsoft.Xna.Framework.Color" />.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.Structs.Pair.Text">
-      <summary>
-            The text of the pair label.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.Structs.Pair.Color">
-      <summary>
-            The color of the pair label.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.op_Equality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> are equal.
-            </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Structs.Pair" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.op_Inequality(Mentula.GuiItems.Core.Structs.Pair,Mentula.GuiItems.Core.Structs.Pair)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> are not equal.
-            </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Structs.Pair" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> struct with a specified text.
-            </summary>
-      <param name="txt"> The specified text. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> struct with 
-            a specified text and a specified color.
-            </summary>
-      <param name="txt"> The specified text. </param>
-      <param name="clr"> The specified color. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.Equals(Mentula.GuiItems.Core.Structs.Pair)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> are equal.
-            </summary>
-      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.Structs.Pair" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.Equals(System.Object)">
-      <summary>
-            Indicates whether this instance and a specified object are equal.
-            </summary>
-      <param name="obj"> The object to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
-            </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.GetKeys(Mentula.GuiItems.Core.Structs.Pair[])">
-      <summary>
-            Gets the text from multiple <see cref="T:Mentula.GuiItems.Core.Structs.Pair" />.
-            </summary>
-      <param name="labels"> The pairs to get the text from. </param>
-      <returns> An <see cref="T:System.String" /> array with the text from all <see cref="T:Mentula.GuiItems.Core.Structs.Pair" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.GetHashCode">
-      <summary>
-            Returns the hash code for this instance.
-            </summary>
-      <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Pair.ToString">
-      <summary>
-            Returns <see cref="F:Mentula.GuiItems.Core.Structs.Pair.Text" />.
-            </summary>
-      <returns>
-        <see cref="F:Mentula.GuiItems.Core.Structs.Pair.Text" />. </returns>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.Structs.ProgressData">
-      <summary> A container for progress data (100% base). </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ProgressData.Minimum">
-      <summary> Gets or sets the minimum of the progress data, must be smaller than the <see cref="P:Mentula.GuiItems.Core.Structs.ProgressData.Maximum" />. </summary>
-      <exception cref="T:System.ArgumentException"> The minimum is greater than the current <see cref="P:Mentula.GuiItems.Core.Structs.ProgressData.Maximum" />. </exception>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ProgressData.Maximum">
-      <summary> Gets or sets the maximum of the progress data, must be greater than the <see cref="P:Mentula.GuiItems.Core.Structs.ProgressData.Minimum" />. </summary>
-      <exception cref="T:System.ArgumentException"> The maximum is lesser than the current <see cref="P:Mentula.GuiItems.Core.Structs.ProgressData.Minimum" />. </exception>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ProgressData.Value">
-      <summary> Gets or sets a value indicating the current progress position. Value will be clamped. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMaximum">
-      <summary> Gets the default maximum of the <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.ProgressData.DefaultMinimum">
-      <summary> Gets the default minimum of the <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Equality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structures are equal.
-            </summary>
-      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure on the left side of the equality operator. </param>
-      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if pgd1 and pgd2 have equal minimum, maximum and value; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.op_Inequality(Mentula.GuiItems.Core.Structs.ProgressData,Mentula.GuiItems.Core.Structs.ProgressData)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structures are different.
-            </summary>
-      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure on the left side of the inequality operator. </param>
-      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure on the right side of the inequality operator. </param>
-      <returns>
-        <see langword="true" /> if pgd1 and pgd2 differ eather in minimum, maximum or value; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32)">
-      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> struct with a specified starting value. </summary>
-      <param name="value"> The starting value (clamped). </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32)">
-      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> struct with a minimum and maximum specified. </summary>
-      <param name="minimum"> The starting minimum. </param>
-      <param name="maximum"> The starting maximum. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)">
-      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> struct with a minimum, maximum and starting value specified. </summary>
-      <param name="minimum"> The starting minimum. </param>
-      <param name="maximum"> The starting maximum. </param>
-      <param name="value"> The starting value (clamped). </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.ChangeValue(System.Int32)">
-      <summary> Changes the current <see cref="P:Mentula.GuiItems.Core.Structs.ProgressData.Value" /> to a specified percentage. Value will be clamped. </summary>
-      <param name="percent"> The percentage to change to. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(System.Object)">
-      <summary>
-            Tests to see whether the specified object is a <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure with the same dimentions as this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure.
-            </summary>
-      <param name="obj"> The Object to test. </param>
-      <returns>
-        <see langword="true" /> if obj is a <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> 
-            and has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />; otherwise, <see langword="false" />. 
-            </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.Equals(Mentula.GuiItems.Core.Structs.ProgressData)">
-      <summary>
-            Tests to see whether the specified <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> has the same dimentions as this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure.
-            </summary>
-      <param name="obj"> The <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> to test. </param>
-      <returns>
-        <see langword="true" /> if object has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.GetHashCode">
-      <summary>
-            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure.
-            </summary>
-      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.ProgressData.ToString">
-      <summary>
-            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" /> structure.
-            </summary>
-      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </returns>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.Structs.Rect">
-      <summary> Defines a rectangle. </summary>
-      <remarks>
-            This object is a copy of the System.Drawing.Rectangle with minor changes.
-            </remarks>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.X">
-      <summary> Specifies the x-coordinate of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Y">
-      <summary> Specifies the y-coordinate of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Width">
-      <summary> Specifies the width of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Height">
-      <summary> Specifies the height of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Bottom">
-      <summary> Returns the y-coordinate of the bottom of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Center">
-      <summary> Returns a <see cref="T:Microsoft.Xna.Framework.Vector2" /> that specifies the center of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.IsEmpty">
-      <summary> Gets a value that indicates whether the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> is empty. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Left">
-      <summary> Returns the x-coordinate of the left side of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Position">
-      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Structs.Rect.X" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Y" /> values of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Right">
-      <summary> Returns the x-coordinate of the right side of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Size">
-      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Height" /> values of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Rect.Top">
-      <summary> Returns the x-coordinate of the top of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.Structs.Rect.Empty">
-      <summary>
-            Gets a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure that has its <see cref="P:Mentula.GuiItems.Core.Structs.Rect.X" />, <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Y" />, <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Rect.Height" /> set to 0. 
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structures are equal.
-            </summary>
-      <param name="left"> The rect structure on the left side of the equality operator. </param>
-      <param name="right"> The rect structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structures are different.
-            </summary>
-      <param name="left"> The rect structure on the left side of the equality operator. </param>
-      <param name="right"> The rect structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)">
-      <summary>
-            Tests whether two rectangles are equal.
-            </summary>
-      <param name="left"> The rect structure on the left side of the equality operator. </param>
-      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Rectangle)">
-      <summary>
-            Tests whether two rectangles are different.
-            </summary>
-      <param name="left"> The rect structure on the left side of the equality operator. </param>
-      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Tests whether two rectangles are equal.
-            </summary>
-      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
-      <param name="right"> The rect structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Tests whether two rectangles are different.
-            </summary>
-      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
-      <param name="right"> The rect structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct with specified parameters.
-            </summary>
-      <param name="x"> The x-coordinate of the rectangle. </param>
-      <param name="y"> The y-coordinate of the rectangle. </param>
-      <param name="width"> The width of the rectangle. </param>
-      <param name="height"> The height of the rectangle. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct width a specified position and size. 
-            </summary>
-      <param name="position"> The coordiantes of the rectangle. </param>
-      <param name="size"> The size of the rectangle. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> struct from a xna <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
-            </summary>
-      <param name="rectangle"> The xna style rectangle that contains the values. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> entirely contains a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
-            </summary>
-      <param name="value"> The rectangle to evaluate. </param>
-      <returns>
-        <see langword="true" /> if value is fully inside the rectangle; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(Microsoft.Xna.Framework.Vector2)">
-      <summary>
-            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> contains a specified <see cref="T:Microsoft.Xna.Framework.Vector2" />.
-            </summary>
-      <param name="value"> the coordinate to evaluate. </param>
-      <returns>
-        <see langword="true" /> if value is inside the rectangle; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Contains(System.Single,System.Single)">
-      <summary>
-            Determines whether this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> contains a specified coordinate.
-            </summary>
-      <param name="x"> The x-coordinate. </param>
-      <param name="y"> The y-coordinate. </param>
-      <returns>
-        <see langword="true" /> if the coordinate is inside the rectangle; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(System.Object)">
-      <summary>
-            Indicates whether this instance and a specified object are equal.
-            </summary>
-      <param name="obj"> The object to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and respresent the same value; othersize, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> are equal.
-            </summary>
-      <param name="other"> The rectangle to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Equals(Microsoft.Xna.Framework.Rectangle)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Microsoft.Xna.Framework.Rectangle" /> are equal.
-            </summary>
-      <param name="other"> The rectangle to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.GetHashCode">
-      <summary>
-            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure.
-            </summary>
-      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Inflate(System.Int32,System.Int32)">
-      <summary>
-            Pushes the edges of the rectangle out by the horizontal and vertical values specified.
-            </summary>
-      <param name="horizontal"> Value to push the sides out by. </param>
-      <param name="vertical"> Value to push the top and bottom out by. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Intersection(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Creates a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> defining the area where one <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> overlaps with another <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
-            </summary>
-      <param name="rect1"> The first rectangle to compare. </param>
-      <param name="rect2"> The second rectangle to compare. </param>
-      <returns> A <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> that represents the overlap between rect1 and rect2. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Intersects(Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Determines whether a specified <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> intersects with this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
-            </summary>
-      <param name="value"> The rectangle to evaluate. </param>
-      <returns>
-        <see langword="true" /> if value intersect the rectangle; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.ToString">
-      <summary>
-            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> structure.
-            </summary>
-      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.ToXnaRectangle">
-      <summary>
-            Converts this <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> to a <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
-            </summary>
-      <returns> A <see cref="T:Microsoft.Xna.Framework.Rectangle" /> representing this instance. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Rect.Union(Mentula.GuiItems.Core.Structs.Rect,Mentula.GuiItems.Core.Structs.Rect)">
-      <summary>
-            Creates a <see cref="T:Mentula.GuiItems.Core.Structs.Rect" /> that exactly contains two other <see cref="T:Mentula.GuiItems.Core.Structs.Rect" />.
-            </summary>
-      <param name="rect1"> The first rectangle to contain. </param>
-      <param name="rect2"> The second rectangle to contain. </param>
-      <returns> A rectangle that contains both input rectangles. </returns>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.Structs.Size">
-      <summary>
-            Stores an ordered pair of integers, wich specify a Height and Width.
-            </summary>
-      <remarks>
-            This object is a copy of the System.Drawing.Size
-            and is only present in this library so a refrence to System.Drawing is not required.
-            </remarks>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Size.Height">
-      <summary>
-            Gets or sets the vertical component of this Size structure.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Size.Width">
-      <summary>
-            Gets or sets the horizontal component of this Size structure.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.Structs.Size.IsEmpty">
-      <summary>
-            Tests whether this Size structure has width and height of 0.
-            </summary>
-    </member>
-    <member name="F:Mentula.GuiItems.Core.Structs.Size.Empty">
-      <summary>
-            Gets a Size structure that has a <see cref="P:Mentula.GuiItems.Core.Structs.Size.Height" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Size.Width" /> value of 0.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Addition(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Adds the width and height of one Size structure to the width and height of another Size structure.
-            </summary>
-      <param name="sz1"> The first Size to add. </param>
-      <param name="sz2"> The second Size to add. </param>
-      <returns> A Size structure that is the result of the addition operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Subtraction(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Subtracts the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="sz1"> The first Size to subtract. </param>
-      <param name="sz2"> The second Size to subtract. </param>
-      <returns> A Size structure that is the result of the subtraction operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Divides the width and height from the Size structure to the specified value.
-            </summary>
-      <param name="sz"> The Size to divide. </param>
-      <param name="v"> The value to divide. </param>
-      <returns> A Size structure that is the result of the division operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Division(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Divides the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="sz1"> The first Size to divide. </param>
-      <param name="sz2"> The second Size to divide. </param>
-      <returns> A Size structure that is the result of the division operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Multiplies the width and height from the Size structure to the specified value.
-            </summary>
-      <param name="sz"> The Size to multiply. </param>
-      <param name="v"> The value to multiply. </param>
-      <returns> A Size structure that is the result of the multiplication operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Multiplies the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="sz1"> The first Size to multiply. </param>
-      <param name="sz2"> The second Size to multiply. </param>
-      <returns> A Size structure that is the result of the multiplication operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_LeftShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Bit shifts the width and height of the Size structure a specified value to the left.
-            </summary>
-      <param name="sz"> The Size to shift. </param>
-      <param name="v"> The value to shift by. </param>
-      <returns> A Size structure that is the result of the bitshift operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_RightShift(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Bit shifts the width and height of the Size structure a specified value to the right.
-            </summary>
-      <param name="sz"> The Size to shift. </param>
-      <param name="v"> The value to shift by. </param>
-      <returns> A Size structure that is the result of the bitshift operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Equality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structures are equal.
-            </summary>
-      <param name="sz1"> The Size structure on the left side of the equality operator. </param>
-      <param name="sz2"> The Size structure on the right side of the equality operator. </param>
-      <returns>
-        <see langword="true" /> if sz1 and sz2 have equal width and height; otherwise <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.op_Inequality(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Tests whether two <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structures are different.
-            </summary>
-      <param name="sz1"> The Size structure on the left side of the inequality operator. </param>
-      <param name="sz2"> The Size structure on the right side of the inequality operator. </param>
-      <returns>
-        <see langword="true" /> if sz1 and sz2 differ either in width or height; <see langword="false" /> if sz1 and sz2 are equal. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structure the specified dimension.
-            </summary>
-      <param name="value"> The value used for initializing the <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.#ctor(System.Int32,System.Int32)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structure from the specified dimensions.
-            </summary>
-      <param name="width"> The width component of the new <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </param>
-      <param name="height"> The height component of the new <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.#ctor(Microsoft.Xna.Framework.Vector2)">
-      <summary>
-            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structure from the specifie <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure.
-            </summary>
-      <param name="vect"> The <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure from which to initialize this <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> structure. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Add(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Adds the width and height of one Size structure to the width and height of another Size structure.
-            </summary>
-      <param name="size1"> The first Size to add. </param>
-      <param name="size2"> The second Size to add. </param>
-      <returns> A Size structure that is the result of the addition operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Clamp(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Clamps the <see cref="T:Mentula.GuiItems.Core.Structs.Size" /> between a minimum and a maximum.
-            </summary>
-      <param name="min"> The minimum <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </param>
-      <param name="max"> The maximum <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Divides the width and height from the Size structure to the specified value.
-            </summary>
-      <param name="size"> The Size to divide. </param>
-      <param name="value"> The value to divide. </param>
-      <returns> A Size structure that is the result of the division operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Divide(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Divides the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="size1"> The first Size to divide. </param>
-      <param name="size2"> The second Size to divide. </param>
-      <returns> A Size structure that is the result of the division operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Equals(System.Object)">
-      <summary>
-            Tests to see whether the specified object is a Size structure with the same dimentions as this Size structure.
-            </summary>
-      <param name="obj"> The Object to test. </param>
-      <returns>
-        <see langword="true" /> if obj is a Size and has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Equals(Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Tests to see whether the specified Size has the same dimentions as this Size structure.
-            </summary>
-      <param name="size"> The Size to test. </param>
-      <returns>
-        <see langword="true" /> if size has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,System.Int32)">
-      <summary>
-            Multiplies the width and height from the Size structure to the specified value.
-            </summary>
-      <param name="size"> The Size to multiply. </param>
-      <param name="value"> The value to multiply. </param>
-      <returns> A Size structure that is the result of the multiplication operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Multiply(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Multiplies the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="size1"> The first Size to multiply. </param>
-      <param name="size2"> The second Size to multiply. </param>
-      <returns> A Size structure that is the result of the multiplication operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.GetHashCode">
-      <summary>
-            Returns a hash code for this Size structure.
-            </summary>
-      <returns> An integer value that specifies a hash value for this Size structure. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.Subtract(Mentula.GuiItems.Core.Structs.Size,Mentula.GuiItems.Core.Structs.Size)">
-      <summary>
-            Subtracts the width and height of one Size structure from the width and height of another Size structure.
-            </summary>
-      <param name="size1"> The first Size to subtract. </param>
-      <param name="size2"> The second Size to subtract. </param>
-      <returns> A Size structure that is the result of the subtraction operation. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.ToString">
-      <summary>
-            Creates a human-readable string that represents this Size structure.
-            </summary>
-      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Structs.Size" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.Structs.Size.ToVector2">
-      <summary>
-            Creates a 2 dimentional vector that represents this Size structure.
-            </summary>
-      <returns> A <see cref="T:Microsoft.Xna.Framework.Vector2" /> with the <see cref="P:Mentula.GuiItems.Core.Structs.Size.Width" /> as <see cref="F:Microsoft.Xna.Framework.Vector2.X" /> and <see cref="P:Mentula.GuiItems.Core.Structs.Size.Height" /> as <see cref="F:Microsoft.Xna.Framework.Vector2.Y" />. </returns>
     </member>
     <member name="T:Mentula.GuiItems.Core.BorderStyle">
       <summary>
@@ -2181,7 +1570,7 @@
             Only numbers may be added.
             </summary>
     </member>
-    <member name="T:Mentula.GuiItems.Core.Interfaces.IToggleable">
+    <member name="T:Mentula.GuiItems.Core.IToggleable">
       <summary>
             Defines an interface for components that can be shown or hiden.
             </summary>
@@ -2190,12 +1579,12 @@
             In this framework it is used for all <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </remarks>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Show">
+    <member name="M:Mentula.GuiItems.Core.IToggleable.Show">
       <summary>
             Shows the component.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Core.Interfaces.IToggleable.Hide">
+    <member name="M:Mentula.GuiItems.Core.IToggleable.Hide">
       <summary>
             Hides the component.
             </summary>
@@ -2224,6 +1613,617 @@
       <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.MentulaGameComponent`1" /> class. </summary>
       <param name="game"> The game associated with this component. </param>
     </member>
+    <member name="T:Mentula.GuiItems.Core.Pair">
+      <summary>
+            Stores pairs of <see cref="T:System.String" /> and <see cref="T:Microsoft.Xna.Framework.Color" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Pair.Text">
+      <summary>
+            The text of the pair label.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Pair.Color">
+      <summary>
+            The color of the pair label.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.op_Equality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Pair" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.op_Inequality(Mentula.GuiItems.Core.Pair,Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are not equal.
+            </summary>
+      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.Pair" />. </param>
+      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Pair" /> struct with a specified text.
+            </summary>
+      <param name="txt"> The specified text. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.#ctor(System.String,Microsoft.Xna.Framework.Color)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Pair" /> struct with 
+            a specified text and a specified color.
+            </summary>
+      <param name="txt"> The specified text. </param>
+      <param name="clr"> The specified color. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.Equals(Mentula.GuiItems.Core.Pair)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Pair" /> are equal.
+            </summary>
+      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.Pair" /> to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.Equals(System.Object)">
+      <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+      <param name="obj"> The object to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.GetKeys(Mentula.GuiItems.Core.Pair[])">
+      <summary>
+            Gets the text from multiple <see cref="T:Mentula.GuiItems.Core.Pair" />.
+            </summary>
+      <param name="labels"> The pairs to get the text from. </param>
+      <returns> An <see cref="T:System.String" /> array with the text from all <see cref="T:Mentula.GuiItems.Core.Pair" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.GetHashCode">
+      <summary>
+            Returns the hash code for this instance.
+            </summary>
+      <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Pair.ToString">
+      <summary>
+            Returns <see cref="F:Mentula.GuiItems.Core.Pair.Text" />.
+            </summary>
+      <returns>
+        <see cref="F:Mentula.GuiItems.Core.Pair.Text" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.ProgressData">
+      <summary> A container for progress data (100% base). </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Minimum">
+      <summary> Gets or sets the minimum of the progress data, must be smaller than the <see cref="P:Mentula.GuiItems.Core.ProgressData.Maximum" />. </summary>
+      <exception cref="T:System.ArgumentException"> The minimum is greater than the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Maximum" />. </exception>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Maximum">
+      <summary> Gets or sets the maximum of the progress data, must be greater than the <see cref="P:Mentula.GuiItems.Core.ProgressData.Minimum" />. </summary>
+      <exception cref="T:System.ArgumentException"> The maximum is lesser than the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Minimum" />. </exception>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.Value">
+      <summary> Gets or sets a value indicating the current progress position. Value will be clamped. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.DefaultMaximum">
+      <summary> Gets the default maximum of the <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.ProgressData.DefaultMinimum">
+      <summary> Gets the default minimum of the <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.op_Equality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structures are equal.
+            </summary>
+      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the left side of the equality operator. </param>
+      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if pgd1 and pgd2 have equal minimum, maximum and value; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.op_Inequality(Mentula.GuiItems.Core.ProgressData,Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structures are different.
+            </summary>
+      <param name="pgd1"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the left side of the inequality operator. </param>
+      <param name="pgd2"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure on the right side of the inequality operator. </param>
+      <returns>
+        <see langword="true" /> if pgd1 and pgd2 differ eather in minimum, maximum or value; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a specified starting value. </summary>
+      <param name="value"> The starting value (clamped). </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a minimum and maximum specified. </summary>
+      <param name="minimum"> The starting minimum. </param>
+      <param name="maximum"> The starting maximum. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary> Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.ProgressData" /> struct with a minimum, maximum and starting value specified. </summary>
+      <param name="minimum"> The starting minimum. </param>
+      <param name="maximum"> The starting maximum. </param>
+      <param name="value"> The starting value (clamped). </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.ChangeValue(System.Int32)">
+      <summary> Changes the current <see cref="P:Mentula.GuiItems.Core.ProgressData.Value" /> to a specified percentage. Value will be clamped. </summary>
+      <param name="percent"> The percentage to change to. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.Equals(System.Object)">
+      <summary>
+            Tests to see whether the specified object is a <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure with the same dimentions as this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <param name="obj"> The Object to test. </param>
+      <returns>
+        <see langword="true" /> if obj is a <see cref="T:Mentula.GuiItems.Core.ProgressData" /> 
+            and has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.ProgressData" />; otherwise, <see langword="false" />. 
+            </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.Equals(Mentula.GuiItems.Core.ProgressData)">
+      <summary>
+            Tests to see whether the specified <see cref="T:Mentula.GuiItems.Core.ProgressData" /> has the same dimentions as this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <param name="obj"> The <see cref="T:Mentula.GuiItems.Core.ProgressData" /> to test. </param>
+      <returns>
+        <see langword="true" /> if object has the same minimum, maximum and value as this <see cref="T:Mentula.GuiItems.Core.ProgressData" />; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.GetHashCode">
+      <summary>
+            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.ProgressData.ToString">
+      <summary>
+            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.ProgressData" /> structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Rect">
+      <summary> Defines a rectangle. </summary>
+      <remarks>
+            This object is a copy of the System.Drawing.Rectangle with minor changes.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.X">
+      <summary> Specifies the x-coordinate of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Y">
+      <summary> Specifies the y-coordinate of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Width">
+      <summary> Specifies the width of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Height">
+      <summary> Specifies the height of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Bottom">
+      <summary> Returns the y-coordinate of the bottom of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Center">
+      <summary> Returns a <see cref="T:Microsoft.Xna.Framework.Vector2" /> that specifies the center of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.IsEmpty">
+      <summary> Gets a value that indicates whether the <see cref="T:Mentula.GuiItems.Core.Rect" /> is empty. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Left">
+      <summary> Returns the x-coordinate of the left side of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Position">
+      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Rect.X" /> and <see cref="P:Mentula.GuiItems.Core.Rect.Y" /> values of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Right">
+      <summary> Returns the x-coordinate of the right side of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Size">
+      <summary> Gets of sets the <see cref="P:Mentula.GuiItems.Core.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Rect.Height" /> values of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Rect.Top">
+      <summary> Returns the x-coordinate of the top of the <see cref="T:Mentula.GuiItems.Core.Rect" />. </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Rect.Empty">
+      <summary>
+            Gets a <see cref="T:Mentula.GuiItems.Core.Rect" /> structure that has its <see cref="P:Mentula.GuiItems.Core.Rect.X" />, <see cref="P:Mentula.GuiItems.Core.Rect.Y" />, <see cref="P:Mentula.GuiItems.Core.Rect.Width" /> and <see cref="P:Mentula.GuiItems.Core.Rect.Height" /> set to 0. 
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Rect" /> structures are equal.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Rect" /> structures are different.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Equality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Tests whether two rectangles are equal.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Inequality(Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Tests whether two rectangles are different.
+            </summary>
+      <param name="left"> The rect structure on the left side of the equality operator. </param>
+      <param name="right"> The rectangle structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Equality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Tests whether two rectangles are equal.
+            </summary>
+      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.op_Inequality(Microsoft.Xna.Framework.Rectangle,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Tests whether two rectangles are different.
+            </summary>
+      <param name="left"> The rectangle structure on the left side of the equality operator. </param>
+      <param name="right"> The rect structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if left and right have equal X, Y, width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.#ctor(System.Single,System.Single,System.Int32,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Rect" /> struct with specified parameters.
+            </summary>
+      <param name="x"> The x-coordinate of the rectangle. </param>
+      <param name="y"> The y-coordinate of the rectangle. </param>
+      <param name="width"> The width of the rectangle. </param>
+      <param name="height"> The height of the rectangle. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Vector2,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Rect" /> struct width a specified position and size. 
+            </summary>
+      <param name="position"> The coordiantes of the rectangle. </param>
+      <param name="size"> The size of the rectangle. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.#ctor(Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Rect" /> struct from a xna <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
+            </summary>
+      <param name="rectangle"> The xna style rectangle that contains the values. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Contains(Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Rect" /> entirely contains a specified <see cref="T:Mentula.GuiItems.Core.Rect" />.
+            </summary>
+      <param name="value"> The rectangle to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value is fully inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Contains(Microsoft.Xna.Framework.Vector2)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Rect" /> contains a specified <see cref="T:Microsoft.Xna.Framework.Vector2" />.
+            </summary>
+      <param name="value"> the coordinate to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value is inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Contains(System.Single,System.Single)">
+      <summary>
+            Determines whether this <see cref="T:Mentula.GuiItems.Core.Rect" /> contains a specified coordinate.
+            </summary>
+      <param name="x"> The x-coordinate. </param>
+      <param name="y"> The y-coordinate. </param>
+      <returns>
+        <see langword="true" /> if the coordinate is inside the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Equals(System.Object)">
+      <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+      <param name="obj"> The object to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if obj and this instance are the same type and respresent the same value; othersize, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Equals(Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.Rect" /> are equal.
+            </summary>
+      <param name="other"> The rectangle to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Equals(Microsoft.Xna.Framework.Rectangle)">
+      <summary>
+            Indicates whether this instance and a specified <see cref="T:Microsoft.Xna.Framework.Rectangle" /> are equal.
+            </summary>
+      <param name="other"> The rectangle to compare with the current instance. </param>
+      <returns>
+        <see langword="true" /> if other and this instance represent the same value; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.GetHashCode">
+      <summary>
+            Returns a hash code for this <see cref="T:Mentula.GuiItems.Core.Rect" /> structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this <see cref="T:Mentula.GuiItems.Core.Rect" /> structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Inflate(System.Int32,System.Int32)">
+      <summary>
+            Pushes the edges of the rectangle out by the horizontal and vertical values specified.
+            </summary>
+      <param name="horizontal"> Value to push the sides out by. </param>
+      <param name="vertical"> Value to push the top and bottom out by. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Intersection(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Creates a <see cref="T:Mentula.GuiItems.Core.Rect" /> defining the area where one <see cref="T:Mentula.GuiItems.Core.Rect" /> overlaps with another <see cref="T:Mentula.GuiItems.Core.Rect" />.
+            </summary>
+      <param name="rect1"> The first rectangle to compare. </param>
+      <param name="rect2"> The second rectangle to compare. </param>
+      <returns> A <see cref="T:Mentula.GuiItems.Core.Rect" /> that represents the overlap between rect1 and rect2. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Intersects(Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Determines whether a specified <see cref="T:Mentula.GuiItems.Core.Rect" /> intersects with this <see cref="T:Mentula.GuiItems.Core.Rect" />.
+            </summary>
+      <param name="value"> The rectangle to evaluate. </param>
+      <returns>
+        <see langword="true" /> if value intersect the rectangle; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.ToString">
+      <summary>
+            Creates a human-readable string that represents this <see cref="T:Mentula.GuiItems.Core.Rect" /> structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Rect" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.ToXnaRectangle">
+      <summary>
+            Converts this <see cref="T:Mentula.GuiItems.Core.Rect" /> to a <see cref="T:Microsoft.Xna.Framework.Rectangle" />.
+            </summary>
+      <returns> A <see cref="T:Microsoft.Xna.Framework.Rectangle" /> representing this instance. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Rect.Union(Mentula.GuiItems.Core.Rect,Mentula.GuiItems.Core.Rect)">
+      <summary>
+            Creates a <see cref="T:Mentula.GuiItems.Core.Rect" /> that exactly contains two other <see cref="T:Mentula.GuiItems.Core.Rect" />.
+            </summary>
+      <param name="rect1"> The first rectangle to contain. </param>
+      <param name="rect2"> The second rectangle to contain. </param>
+      <returns> A rectangle that contains both input rectangles. </returns>
+    </member>
+    <member name="T:Mentula.GuiItems.Core.Size">
+      <summary>
+            Stores an ordered pair of integers, wich specify a Height and Width.
+            </summary>
+      <remarks>
+            This object is a copy of the System.Drawing.Size
+            and is only present in this library so a refrence to System.Drawing is not required.
+            </remarks>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.Height">
+      <summary>
+            Gets or sets the vertical component of this Size structure.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.Width">
+      <summary>
+            Gets or sets the horizontal component of this Size structure.
+            </summary>
+    </member>
+    <member name="P:Mentula.GuiItems.Core.Size.IsEmpty">
+      <summary>
+            Tests whether this Size structure has width and height of 0.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.Size.Empty">
+      <summary>
+            Gets a Size structure that has a <see cref="P:Mentula.GuiItems.Core.Size.Height" /> and <see cref="P:Mentula.GuiItems.Core.Size.Width" /> value of 0.
+            </summary>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Addition(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Adds the width and height of one Size structure to the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to add. </param>
+      <param name="sz2"> The second Size to add. </param>
+      <returns> A Size structure that is the result of the addition operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Subtraction(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Subtracts the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to subtract. </param>
+      <param name="sz2"> The second Size to subtract. </param>
+      <returns> A Size structure that is the result of the subtraction operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Divides the width and height from the Size structure to the specified value.
+            </summary>
+      <param name="sz"> The Size to divide. </param>
+      <param name="v"> The value to divide. </param>
+      <returns> A Size structure that is the result of the division operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Division(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Divides the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to divide. </param>
+      <param name="sz2"> The second Size to divide. </param>
+      <returns> A Size structure that is the result of the division operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Multiplies the width and height from the Size structure to the specified value.
+            </summary>
+      <param name="sz"> The Size to multiply. </param>
+      <param name="v"> The value to multiply. </param>
+      <returns> A Size structure that is the result of the multiplication operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Multiplies the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="sz1"> The first Size to multiply. </param>
+      <param name="sz2"> The second Size to multiply. </param>
+      <returns> A Size structure that is the result of the multiplication operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_LeftShift(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Bit shifts the width and height of the Size structure a specified value to the left.
+            </summary>
+      <param name="sz"> The Size to shift. </param>
+      <param name="v"> The value to shift by. </param>
+      <returns> A Size structure that is the result of the bitshift operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_RightShift(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Bit shifts the width and height of the Size structure a specified value to the right.
+            </summary>
+      <param name="sz"> The Size to shift. </param>
+      <param name="v"> The value to shift by. </param>
+      <returns> A Size structure that is the result of the bitshift operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Equality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Size" /> structures are equal.
+            </summary>
+      <param name="sz1"> The Size structure on the left side of the equality operator. </param>
+      <param name="sz2"> The Size structure on the right side of the equality operator. </param>
+      <returns>
+        <see langword="true" /> if sz1 and sz2 have equal width and height; otherwise <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.op_Inequality(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests whether two <see cref="T:Mentula.GuiItems.Core.Size" /> structures are different.
+            </summary>
+      <param name="sz1"> The Size structure on the left side of the inequality operator. </param>
+      <param name="sz2"> The Size structure on the right side of the inequality operator. </param>
+      <returns>
+        <see langword="true" /> if sz1 and sz2 differ either in width or height; <see langword="false" /> if sz1 and sz2 are equal. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Size" /> structure the specified dimension.
+            </summary>
+      <param name="value"> The value used for initializing the <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.#ctor(System.Int32,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Size" /> structure from the specified dimensions.
+            </summary>
+      <param name="width"> The width component of the new <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+      <param name="height"> The height component of the new <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.#ctor(Microsoft.Xna.Framework.Vector2)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Mentula.GuiItems.Core.Size" /> structure from the specifie <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure.
+            </summary>
+      <param name="vect"> The <see cref="T:Microsoft.Xna.Framework.Vector2" /> structure from which to initialize this <see cref="T:Mentula.GuiItems.Core.Size" /> structure. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Add(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Adds the width and height of one Size structure to the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to add. </param>
+      <param name="size2"> The second Size to add. </param>
+      <returns> A Size structure that is the result of the addition operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Clamp(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Clamps the <see cref="T:Mentula.GuiItems.Core.Size" /> between a minimum and a maximum.
+            </summary>
+      <param name="min"> The minimum <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+      <param name="max"> The maximum <see cref="T:Mentula.GuiItems.Core.Size" />. </param>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Divides the width and height from the Size structure to the specified value.
+            </summary>
+      <param name="size"> The Size to divide. </param>
+      <param name="value"> The value to divide. </param>
+      <returns> A Size structure that is the result of the division operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Divide(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Divides the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to divide. </param>
+      <param name="size2"> The second Size to divide. </param>
+      <returns> A Size structure that is the result of the division operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Equals(System.Object)">
+      <summary>
+            Tests to see whether the specified object is a Size structure with the same dimentions as this Size structure.
+            </summary>
+      <param name="obj"> The Object to test. </param>
+      <returns>
+        <see langword="true" /> if obj is a Size and has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Equals(Mentula.GuiItems.Core.Size)">
+      <summary>
+            Tests to see whether the specified Size has the same dimentions as this Size structure.
+            </summary>
+      <param name="size"> The Size to test. </param>
+      <returns>
+        <see langword="true" /> if size has the same width and height as this Size; otherwise, <see langword="false" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,System.Int32)">
+      <summary>
+            Multiplies the width and height from the Size structure to the specified value.
+            </summary>
+      <param name="size"> The Size to multiply. </param>
+      <param name="value"> The value to multiply. </param>
+      <returns> A Size structure that is the result of the multiplication operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Multiply(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Multiplies the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to multiply. </param>
+      <param name="size2"> The second Size to multiply. </param>
+      <returns> A Size structure that is the result of the multiplication operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.GetHashCode">
+      <summary>
+            Returns a hash code for this Size structure.
+            </summary>
+      <returns> An integer value that specifies a hash value for this Size structure. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.Subtract(Mentula.GuiItems.Core.Size,Mentula.GuiItems.Core.Size)">
+      <summary>
+            Subtracts the width and height of one Size structure from the width and height of another Size structure.
+            </summary>
+      <param name="size1"> The first Size to subtract. </param>
+      <param name="size2"> The second Size to subtract. </param>
+      <returns> A Size structure that is the result of the subtraction operation. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.ToString">
+      <summary>
+            Creates a human-readable string that represents this Size structure.
+            </summary>
+      <returns> A string that represents this <see cref="T:Mentula.GuiItems.Core.Size" />. </returns>
+    </member>
+    <member name="M:Mentula.GuiItems.Core.Size.ToVector2">
+      <summary>
+            Creates a 2 dimentional vector that represents this Size structure.
+            </summary>
+      <returns> A <see cref="T:Microsoft.Xna.Framework.Vector2" /> with the <see cref="P:Mentula.GuiItems.Core.Size.Width" /> as <see cref="F:Microsoft.Xna.Framework.Vector2.X" /> and <see cref="P:Mentula.GuiItems.Core.Size.Height" /> as <see cref="F:Microsoft.Xna.Framework.Vector2.Y" />. </returns>
+    </member>
     <member name="T:Mentula.GuiItems.Items.Button">
       <summary>
             A button base class.
@@ -2251,7 +2251,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Button.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Button" /> class with a specified size.
             </summary>
@@ -2354,7 +2354,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.DropDown.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.DropDown" /> class with a specific size.
             </summary>
@@ -2368,7 +2368,7 @@
             </summary>
       <param name="parts"> The parts of the option, separated with a space. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Structs.Pair[])">
+    <member name="M:Mentula.GuiItems.Items.DropDown.AddOption(Mentula.GuiItems.Core.Pair[])">
       <summary>
             Adds a option to the <see cref="T:Mentula.GuiItems.Items.DropDown" /> with a specified color.
             </summary>
@@ -2486,7 +2486,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Label" /> class with a specific size.
             </summary>
@@ -2547,7 +2547,7 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new position for the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Structs.Size})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Core.GuiItem.Resized" /> event is raised.
             </summary>
@@ -2611,7 +2611,7 @@
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Items.ProgressBar.data">
-      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </summary>
+      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
     </member>
     <member name="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged">
       <summary>
@@ -2624,7 +2624,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice" /> to display the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> to. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> class with a specified size.
             </summary>
@@ -2700,7 +2700,7 @@
             </summary>
     </member>
     <member name="F:Mentula.GuiItems.Items.Slider.data">
-      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.Structs.ProgressData" />. </summary>
+      <summary> The underlying <see cref="T:Mentula.GuiItems.Core.ProgressData" />. </summary>
     </member>
     <member name="E:Mentula.GuiItems.Items.Slider.ValueChanged">
       <summary>
@@ -2718,7 +2718,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
+    <member name="M:Mentula.GuiItems.Items.Slider.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.Slider" /> class with a specified size.
             </summary>
@@ -2854,7 +2854,7 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="font"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" /> to use while drawing the text. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
+    <member name="M:Mentula.GuiItems.Items.TextBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect,Microsoft.Xna.Framework.Graphics.SpriteFont)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.TextBox" /> class with a specific size.
             </summary>
@@ -2935,7 +2935,7 @@
             </summary>
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Structs.Rect)">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)">
       <summary>
             Initializes a new instance of the <see cref="T:Mentula.GuiItems.Items.PictureBox" /> class with specific size.
             </summary>
@@ -3034,12 +3034,6 @@
     </member>
     <member name="N:Mentula.GuiItems.Core.EventHandlers">
       <summary>The Mentula.GuiItems.Core.EventHandlers namespace contains classes and delegates for event based logic in the library.</summary>
-    </member>
-    <member name="N:Mentula.GuiItems.Core.Interfaces">
-      <summary>The Mentula.GuiItems.Core.Interfaces namespace contains interfaces which are used in the core part of the library.</summary>
-    </member>
-    <member name="N:Mentula.GuiItems.Core.Structs">
-      <summary>The Mentula.GuiItems.Core.Structs namespace contains structs which are used in the core part of the library.</summary>
     </member>
     <member name="N:Mentula.GuiItems.Core.TextureHandlers">
       <summary>The Mentula.GuiItems.Core.TextureHandlers namespace contains classes that define containers for user defined or generated textures.</summary>

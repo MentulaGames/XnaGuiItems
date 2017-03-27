@@ -15,11 +15,10 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using Core.EventHandlers;
-    using Core.Structs;
+    using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
     using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
-    using Core.TextureHandlers;
 
     /// <summary>
     /// A progress bar used for displaying progress.

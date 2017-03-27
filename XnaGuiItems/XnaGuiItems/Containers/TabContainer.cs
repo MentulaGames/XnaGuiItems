@@ -14,13 +14,12 @@ namespace Mentula.GuiItems.Containers
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
-    using Core.Structs;
-    using System.Collections.Generic;
-    using Items;
     using Core.EventHandlers;
-    using static Utilities;
+    using Items;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using static Utilities;
 
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.

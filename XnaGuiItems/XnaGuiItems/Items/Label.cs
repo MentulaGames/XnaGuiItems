@@ -16,11 +16,10 @@ namespace Mentula.GuiItems.Items
     using Core;
     using Core.EventHandlers;
     using Core.TextureHandlers;
-    using Core.Structs;
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using static Utilities;
-    using System;
 
     /// <summary>
     /// A label used for displaying text.

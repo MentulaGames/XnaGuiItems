@@ -1,4 +1,4 @@
-﻿namespace Mentula.GuiItems.Core.Interfaces
+﻿namespace Mentula.GuiItems.Core
 {
     /// <summary>
     /// Defines an interface for components that can be shown or hiden.

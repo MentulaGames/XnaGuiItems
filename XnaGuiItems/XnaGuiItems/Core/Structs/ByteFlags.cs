@@ -1,4 +1,4 @@
-﻿namespace Mentula.GuiItems.Core.Structs
+﻿namespace Mentula.GuiItems.Core
 {
     using System;
     using System.Diagnostics;

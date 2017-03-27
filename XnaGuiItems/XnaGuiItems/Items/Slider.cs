@@ -17,11 +17,10 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using Core.EventHandlers;
+    using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
     using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
-    using Core.TextureHandlers;
-    using Core.Structs;
 
     /// <summary>
     /// A slider used for setting rough values like volume.

@@ -18,7 +18,6 @@ namespace Mentula.GuiItems.Items
     using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
-    using Core.Structs;
 
     /// <summary>
     /// A button base class.

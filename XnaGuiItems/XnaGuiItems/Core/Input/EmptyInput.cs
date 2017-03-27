@@ -11,7 +11,6 @@ namespace Mentula.GuiItems.Core.Input
 #else
     using Xna::Microsoft.Xna.Framework.Input;
 #endif
-    using Input;
     using System;
     using System.Collections.Generic;
 

@@ -17,10 +17,9 @@ namespace Mentula.GuiItems.Items
 #endif
     using Core;
     using Core.EventHandlers;
-    using Core.Structs;
+    using Core.TextureHandlers;
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using Core.TextureHandlers;
     using static Utilities;
 
     /// <summary>

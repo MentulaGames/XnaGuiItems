@@ -14,7 +14,6 @@ namespace Mentula.GuiItems
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
-    using Core.Structs;
     using System;
     using static Utilities;
 
