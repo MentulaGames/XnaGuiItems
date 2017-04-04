@@ -21,6 +21,9 @@ namespace Mentula.GuiItems.Core
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
+    using Mentula.Utilities.Core;
+    using Mentula.Utilities.Logging;
 
     /// <summary>
     /// The absolute base class for all <see cref="GuiItems"/>.
@@ -144,67 +147,67 @@ namespace Mentula.GuiItems.Core
         /// Occurs when the value of the <see cref="BackColor"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Color> BackColorChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<Color>> BackColorChanged;
         /// <summary>
         /// Occurs when the value of the <see cref="BackgroundImage"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Texture2D> BackgroundImageChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<Texture2D>> BackgroundImageChanged;
         /// <summary>
         /// Occurs when the <see cref="GuiItem"/> is clicked.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler Clicked;
+        public event StrongEventHandler<GuiItem, MouseEventArgs> Clicked;
         /// <summary>
         /// Occurs when the <see cref="Enabled"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<bool> EnabledChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<bool>> EnabledChanged;
         /// <summary>
         /// Occurs when the <see cref="ForeColor"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Color> ForeColorChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<Color>> ForeColorChanged;
         /// <summary>
         /// Occurs when the mouse pointer rests on the <see cref="GuiItem"/>.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler Hover;
+        public event StrongEventHandler<GuiItem, MouseEventArgs> Hover;
         /// <summary>
         /// Occurs when the mouse pointer enters the <see cref="GuiItem"/>.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler HoverEnter;
+        public event StrongEventHandler<GuiItem, MouseEventArgs> HoverEnter;
         /// <summary>
         /// Occurs when the mouse pointer leaves the <see cref="GuiItem"/>.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler HoverLeave;
+        public event StrongEventHandler<GuiItem, MouseEventArgs> HoverLeave;
         /// <summary>
         /// Occurs when the <see cref="GuiItem"/> is moved.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Vector2> Moved;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<Vector2>> Moved;
         /// <summary>
         /// Occurs when the <see cref="Name"/> proprty changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<string> NameChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<string>> NameChanged;
         /// <summary>
         /// Occurs when the <see cref="Rotation"/> propery changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<float> Rotated;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<float>> Rotated;
         /// <summary>
         /// Occurs when the <see cref="GuiItem"/> is resized.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<Size> Resized;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<Size>> Resized;
         /// <summary>
         /// Occurs when the <see cref="Visible"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<bool> VisibilityChanged;
+        public event StrongEventHandler<GuiItem, ValueChangedEventArgs<bool>> VisibilityChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GuiItem"/> class with default settings.
@@ -222,9 +225,6 @@ namespace Mentula.GuiItems.Core
         [SuppressMessage(CAT_USAGE, CHECKID_CALL, Justification = JUST_VIRT_FINE)]
         public GuiItem(ref SpriteBatch sb, Rect bounds)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
             CheckBounds(bounds.Size);
 
             InitEvents();
@@ -236,10 +236,6 @@ namespace Mentula.GuiItems.Core
             ForeColor = DefaultForeColor;
 
             Show();
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>
@@ -390,17 +386,14 @@ namespace Mentula.GuiItems.Core
         {
             if (suppressRefresh) return;
 
-#if DEBUG
             Stopwatch sw = Stopwatch.StartNew();
-#endif
+
             SetBackgroundTexture();
             SetForegroundTexture();
             textures.Refresh(batch);
 
-#if DEBUG
             sw.Stop();
-            LogXna(ToString(), $"refreshed, texture creation took {sw.ElapsedMilliseconds} milliseconds");
-#endif
+            Log.Info(ToString(), $"Refreshed, texture creation took {sw.ElapsedMilliseconds} milliseconds");
         }
 
         /// <summary>

@@ -22,7 +22,9 @@ namespace Mentula.GuiItems.Items
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
     using Args = Core.EventHandlers.ValueChangedEventArgs<bool>;
 
     /// <summary>
@@ -84,13 +86,13 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the value of the <see cref="Focused"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<bool> FocusChanged;
+        public event StrongEventHandler<TextBox, ValueChangedEventArgs<bool>> FocusChanged;
 
         /// <summary>
         /// Occures when return is pressed on a non <see cref="MultiLine"/> <see cref="TextBox"/>.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST)]
-        public event GuiItemEventHandler Confirmed;
+        public event StrongEventHandler<TextBox, EventArgs>  Confirmed;
 
         private KeyInputHandler inputHandler;
         private float time;
@@ -116,10 +118,6 @@ namespace Mentula.GuiItems.Items
         public TextBox(ref SpriteBatch sb, Rect bounds, SpriteFont font)
             : base(ref sb, bounds, font)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             suppressChecking = true;
             inputHandler = new KeyInputHandler();
             FlickerStyle = FlickerStyle.Normal;
@@ -127,10 +125,6 @@ namespace Mentula.GuiItems.Items
             MaximumSize = new Rect(batch.GraphicsDevice.Viewport.Bounds).Size;
             MaxLength = -1;
             AutoRefresh = true;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>

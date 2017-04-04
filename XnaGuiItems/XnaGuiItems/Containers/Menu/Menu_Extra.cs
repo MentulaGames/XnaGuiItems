@@ -13,11 +13,9 @@ namespace Mentula.GuiItems.Containers
     using Xna::Microsoft.Xna.Framework;
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
-#if DEBUG
-    using static Utilities;
-#endif
     using Core;
     using System.Runtime.CompilerServices;
+    using Mentula.Utilities.Logging;
 
     public partial class Menu<T> : DrawableMentulaGameComponent<T>
         where T : Game
@@ -47,9 +45,7 @@ namespace Mentula.GuiItems.Containers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public SpriteFont LoadFont(string assetName)
         {
-#if DEBUG
-            LogXna("Menu", $"loading font {assetName}");
-#endif
+            Log.Info(nameof(Menu<T>), $"Loading font: '{assetName}'");
             return Game.Content.Load<SpriteFont>(assetName);
         }
 
@@ -61,9 +57,7 @@ namespace Mentula.GuiItems.Containers
         public void SetDefaultFont(string assetName)
         {
             font = LoadFont(assetName);
-#if DEBUG
-            LogXna("Menu", $"default font set to {assetName}");
-#endif
+            Log.Info(nameof(Menu<T>), $"Default font set to: '{assetName}'");
         }
 
         /// <summary>
@@ -74,9 +68,7 @@ namespace Mentula.GuiItems.Containers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Texture2D LoadTexture(string assetName)
         {
-#if DEBUG
-            LogXna("Menu", $"loading texture {assetName}");
-#endif
+            Log.Info(nameof(Menu<T>), $"Loading texture: '{assetName}'");
             return Game.Content.Load<Texture2D>(assetName);
         }
 

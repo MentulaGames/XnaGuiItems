@@ -13,7 +13,7 @@ namespace Mentula.GuiItems.Core
 #endif
     using System;
     using System.Diagnostics;
-    using static Utilities;
+    using static Mentula.Utilities.Utils;
 
     /// <summary>
     /// Stores an ordered pair of integers, wich specify a Height and Width.

@@ -92,8 +92,6 @@
       </family>
       <elements>
         <element api="M:Mentula.GuiItems.Utilities.ChangeWindowBorder(Microsoft.Xna.Framework.Game,System.Byte)" />
-        <element api="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)" />
-        <element api="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -108,8 +106,6 @@
       <typedata visibility="public" abstract="true" sealed="true" serializable="false" />
       <elements>
         <element api="M:Mentula.GuiItems.Utilities.ChangeWindowBorder(Microsoft.Xna.Framework.Game,System.Byte)" />
-        <element api="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)" />
-        <element api="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)" />
       </elements>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -130,44 +126,6 @@
         </parameter>
         <parameter name="newType">
           <type api="T:System.Byte" ref="false" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems" />
-        <type api="T:Mentula.GuiItems.Utilities" ref="true" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)">
-      <topicdata group="api" />
-      <apidata name="RunInBackground" group="member" subgroup="method" />
-      <memberdata visibility="public" static="true" />
-      <proceduredata virtual="false" />
-      <parameters>
-        <parameter name="function">
-          <type api="T:System.Threading.ThreadStart" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems" />
-        <type api="T:Mentula.GuiItems.Utilities" ref="true" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)">
-      <topicdata group="api" />
-      <apidata name="RunInSTAThread" group="member" subgroup="method" />
-      <memberdata visibility="public" static="true" />
-      <proceduredata virtual="false" />
-      <parameters>
-        <parameter name="function">
-          <type api="T:System.Threading.ThreadStart" ref="true" />
         </parameter>
       </parameters>
       <containers>
@@ -3987,9 +3945,14 @@
       <adder name="add_TabSwitch" />
       <remover name="remove_TabSwitch" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Int32" ref="false" />
+            <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -4061,7 +4024,6 @@
         <element api="T:Mentula.GuiItems.Core.ResizeMode" />
         <element api="T:Mentula.GuiItems.Core.InputFlags" />
         <element api="T:Mentula.GuiItems.Core.IToggleable" />
-        <element api="T:Mentula.GuiItems.Core.InvokeException" />
         <element api="T:Mentula.GuiItems.Core.MentulaGameComponent`1" />
         <element api="T:Mentula.GuiItems.Core.Pair" />
         <element api="T:Mentula.GuiItems.Core.ProgressData" />
@@ -6292,9 +6254,14 @@
       <adder name="add_BackColorChanged" />
       <remover name="remove_BackColorChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -6336,9 +6303,14 @@
       <adder name="add_BackgroundImageChanged" />
       <remover name="remove_BackgroundImageChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Microsoft.Xna.Framework.Graphics.Texture2D" ref="true" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -6397,7 +6369,12 @@
       <adder name="add_Clicked" />
       <remover name="remove_Clicked" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -6571,9 +6548,14 @@
       <adder name="add_EnabledChanged" />
       <remover name="remove_EnabledChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Boolean" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -6639,9 +6621,14 @@
       <adder name="add_ForeColorChanged" />
       <remover name="remove_ForeColorChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Microsoft.Xna.Framework.Color" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -6741,7 +6728,12 @@
       <adder name="add_Hover" />
       <remover name="remove_Hover" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -6761,7 +6753,12 @@
       <adder name="add_HoverEnter" />
       <remover name="remove_HoverEnter" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -6781,7 +6778,12 @@
       <adder name="add_HoverLeave" />
       <remover name="remove_HoverLeave" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -6852,9 +6854,14 @@
       <adder name="add_Moved" />
       <remover name="remove_Moved" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Microsoft.Xna.Framework.Vector2" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -6937,9 +6944,14 @@
       <adder name="add_NameChanged" />
       <remover name="remove_NameChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.String" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.String" ref="true" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -7280,9 +7292,14 @@
       <adder name="add_Resized" />
       <remover name="remove_Resized" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Mentula.GuiItems.Core.Size" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -7321,9 +7338,14 @@
       <adder name="add_Rotated" />
       <remover name="remove_Rotated" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Single" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Single" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -7544,9 +7566,14 @@
       <adder name="add_VisibilityChanged" />
       <remover name="remove_VisibilityChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Boolean" ref="false" />
+            <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -8537,673 +8564,6 @@
         </library>
         <namespace api="N:Mentula.GuiItems.Core" />
         <type api="T:Mentula.GuiItems.Core.InputFlags" ref="false" />
-      </containers>
-    </api>
-    <api id="T:Mentula.GuiItems.Core.InvokeException">
-      <topicdata group="api" />
-      <apidata name="InvokeException" group="type" subgroup="class" />
-      <typedata visibility="public" serializable="true" />
-      <family>
-        <ancestors>
-          <type api="T:System.Exception" ref="true" />
-          <type api="T:System.Object" ref="true" />
-        </ancestors>
-      </family>
-      <elements>
-        <element api="M:System.Exception.GetBaseException">
-          <apidata name="GetBaseException" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.Exception" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.GetBaseException">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Exception.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <overrides>
-            <member api="M:System.Object.ToString">
-              <type api="T:System.Object" ref="true" />
-            </member>
-          </overrides>
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.ToString">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Exception.GetType">
-          <apidata name="GetType" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <returns>
-            <type api="T:System.Type" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.GetType">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.Message">
-          <apidata name="Message" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" />
-          <getter name="get_Message" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.Message">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.Data">
-          <apidata name="Data" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" />
-          <getter name="get_Data" />
-          <returns>
-            <type api="T:System.Collections.IDictionary" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.InnerException">
-          <apidata name="InnerException" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <propertydata get="true" />
-          <getter name="get_InnerException" />
-          <returns>
-            <type api="T:System.Exception" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.InnerException">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.TargetSite">
-          <apidata name="TargetSite" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <propertydata get="true" />
-          <getter name="get_TargetSite" />
-          <returns>
-            <type api="T:System.Reflection.MethodBase" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.TargetSite">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.HelpLink">
-          <apidata name="HelpLink" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" set="true" />
-          <getter name="get_HelpLink" />
-          <setter name="set_HelpLink" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.HelpLink">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.Source">
-          <apidata name="Source" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" set="true" />
-          <getter name="get_Source" />
-          <setter name="set_Source" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.Source">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.HResult">
-          <apidata name="HResult" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="false" />
-          <propertydata get="true" set="true" set-visibility="family" />
-          <getter name="get_HResult" />
-          <setter name="set_HResult" />
-          <returns>
-            <type api="T:System.Int32" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="E:System.Exception.SerializeObjectState">
-          <apidata name="SerializeObjectState" group="member" subgroup="event" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="false" />
-          <eventdata add="true" remove="true" />
-          <adder name="add_SerializeObjectState" />
-          <remover name="remove_SerializeObjectState" />
-          <eventhandler>
-            <type api="T:System.EventHandler`1" ref="true">
-              <specialization>
-                <type api="T:System.Runtime.Serialization.SafeSerializationEventArgs" ref="true" />
-              </specialization>
-            </type>
-          </eventhandler>
-          <eventargs>
-            <type api="T:System.Runtime.Serialization.SafeSerializationEventArgs" ref="true" />
-          </eventargs>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.Equals(System.Object)">
-          <apidata name="Equals" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <parameters>
-            <parameter name="obj">
-              <type api="T:System.Object" ref="true" />
-            </parameter>
-          </parameters>
-          <returns>
-            <type api="T:System.Boolean" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.GetHashCode">
-          <apidata name="GetHashCode" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.Int32" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.Finalize">
-          <apidata name="Finalize" group="member" subgroup="method" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="true" />
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.MemberwiseClone">
-          <apidata name="MemberwiseClone" group="member" subgroup="method" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="false" />
-          <returns>
-            <type api="T:System.Object" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
-        <element api="P:Mentula.GuiItems.Core.InvokeException.StackTrace" />
-      </elements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-      </containers>
-    </api>
-    <api id="Methods.T:Mentula.GuiItems.Core.InvokeException">
-      <topicdata name="InvokeException" group="list" subgroup="Methods" typeTopicId="T:Mentula.GuiItems.Core.InvokeException" />
-      <apidata name="InvokeException" group="type" subgroup="class" />
-      <typedata visibility="public" serializable="true" />
-      <elements>
-        <element api="M:System.Exception.GetBaseException">
-          <apidata name="GetBaseException" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.Exception" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.GetBaseException">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Exception.ToString">
-          <apidata name="ToString" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <overrides>
-            <member api="M:System.Object.ToString">
-              <type api="T:System.Object" ref="true" />
-            </member>
-          </overrides>
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.ToString">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Exception.GetType">
-          <apidata name="GetType" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <returns>
-            <type api="T:System.Type" ref="true" />
-          </returns>
-          <implements>
-            <member api="M:System.Runtime.InteropServices._Exception.GetType">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.Equals(System.Object)">
-          <apidata name="Equals" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <parameters>
-            <parameter name="obj">
-              <type api="T:System.Object" ref="true" />
-            </parameter>
-          </parameters>
-          <returns>
-            <type api="T:System.Boolean" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.GetHashCode">
-          <apidata name="GetHashCode" group="member" subgroup="method" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <returns>
-            <type api="T:System.Int32" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.Finalize">
-          <apidata name="Finalize" group="member" subgroup="method" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="true" />
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:System.Object.MemberwiseClone">
-          <apidata name="MemberwiseClone" group="member" subgroup="method" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="false" />
-          <returns>
-            <type api="T:System.Object" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Object" ref="true" />
-          </containers>
-        </element>
-        <element api="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
-      </elements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.InvokeException" />
-      </containers>
-    </api>
-    <api id="Properties.T:Mentula.GuiItems.Core.InvokeException">
-      <topicdata name="InvokeException" group="list" subgroup="Properties" typeTopicId="T:Mentula.GuiItems.Core.InvokeException" />
-      <apidata name="InvokeException" group="type" subgroup="class" />
-      <typedata visibility="public" serializable="true" />
-      <elements>
-        <element api="P:System.Exception.Message">
-          <apidata name="Message" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" />
-          <getter name="get_Message" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.Message">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.Data">
-          <apidata name="Data" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" />
-          <getter name="get_Data" />
-          <returns>
-            <type api="T:System.Collections.IDictionary" ref="true" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.InnerException">
-          <apidata name="InnerException" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <propertydata get="true" />
-          <getter name="get_InnerException" />
-          <returns>
-            <type api="T:System.Exception" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.InnerException">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.TargetSite">
-          <apidata name="TargetSite" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" final="true" />
-          <propertydata get="true" />
-          <getter name="get_TargetSite" />
-          <returns>
-            <type api="T:System.Reflection.MethodBase" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.TargetSite">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.HelpLink">
-          <apidata name="HelpLink" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" set="true" />
-          <getter name="get_HelpLink" />
-          <setter name="set_HelpLink" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.HelpLink">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.Source">
-          <apidata name="Source" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="true" />
-          <propertydata get="true" set="true" />
-          <getter name="get_Source" />
-          <setter name="set_Source" />
-          <returns>
-            <type api="T:System.String" ref="true" />
-          </returns>
-          <implements>
-            <member api="P:System.Runtime.InteropServices._Exception.Source">
-              <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-            </member>
-          </implements>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:System.Exception.HResult">
-          <apidata name="HResult" group="member" subgroup="property" />
-          <memberdata visibility="public" />
-          <proceduredata virtual="false" />
-          <propertydata get="true" set="true" set-visibility="family" />
-          <getter name="get_HResult" />
-          <setter name="set_HResult" />
-          <returns>
-            <type api="T:System.Int32" ref="false" />
-          </returns>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-        <element api="P:Mentula.GuiItems.Core.InvokeException.StackTrace" />
-      </elements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.InvokeException" />
-      </containers>
-    </api>
-    <api id="Events.T:Mentula.GuiItems.Core.InvokeException">
-      <topicdata name="InvokeException" group="list" subgroup="Events" typeTopicId="T:Mentula.GuiItems.Core.InvokeException" />
-      <apidata name="InvokeException" group="type" subgroup="class" />
-      <typedata visibility="public" serializable="true" />
-      <elements>
-        <element api="E:System.Exception.SerializeObjectState">
-          <apidata name="SerializeObjectState" group="member" subgroup="event" />
-          <memberdata visibility="family" />
-          <proceduredata virtual="false" />
-          <eventdata add="true" remove="true" />
-          <adder name="add_SerializeObjectState" />
-          <remover name="remove_SerializeObjectState" />
-          <eventhandler>
-            <type api="T:System.EventHandler`1" ref="true">
-              <specialization>
-                <type api="T:System.Runtime.Serialization.SafeSerializationEventArgs" ref="true" />
-              </specialization>
-            </type>
-          </eventhandler>
-          <eventargs>
-            <type api="T:System.Runtime.Serialization.SafeSerializationEventArgs" ref="true" />
-          </eventargs>
-          <containers>
-            <library assembly="mscorlib" module="mscorlib" kind="DynamicallyLinkedLibrary" />
-            <namespace api="N:System" />
-            <type api="T:System.Exception" ref="true" />
-          </containers>
-        </element>
-      </elements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.InvokeException" />
-      </containers>
-    </api>
-    <api id="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <topicdata group="api" />
-      <apidata name="GetObjectData" group="member" subgroup="method" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-          <type api="T:System.Exception" ref="true" />
-        </member>
-      </overrides>
-      <parameters>
-        <parameter name="info">
-          <type api="T:System.Runtime.Serialization.SerializationInfo" ref="true" />
-        </parameter>
-        <parameter name="context">
-          <type api="T:System.Runtime.Serialization.StreamingContext" ref="false" />
-        </parameter>
-      </parameters>
-      <implements>
-        <member api="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-          <type api="T:System.Runtime.Serialization.ISerializable" ref="true" />
-        </member>
-        <member api="M:System.Runtime.InteropServices._Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-          <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-        </member>
-      </implements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.InvokeException" ref="true" />
-      </containers>
-    </api>
-    <api id="P:Mentula.GuiItems.Core.InvokeException.StackTrace">
-      <topicdata group="api" />
-      <apidata name="StackTrace" group="member" subgroup="property" />
-      <memberdata visibility="public" />
-      <proceduredata virtual="true" />
-      <overrides>
-        <member api="P:System.Exception.StackTrace">
-          <type api="T:System.Exception" ref="true" />
-        </member>
-      </overrides>
-      <propertydata get="true" />
-      <getter name="get_StackTrace" />
-      <returns>
-        <type api="T:System.String" ref="true" />
-      </returns>
-      <implements>
-        <member api="P:System.Runtime.InteropServices._Exception.StackTrace">
-          <type api="T:System.Runtime.InteropServices._Exception" ref="true" />
-        </member>
-      </implements>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-          <noAptca />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core" />
-        <type api="T:Mentula.GuiItems.Core.InvokeException" ref="true" />
       </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.IToggleable">
@@ -13104,30 +12464,7 @@
         <element api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" />
         <element api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" />
         <element api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" />
-        <element api="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler" />
-        <element api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler" />
-        <element api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" />
-        <element api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" />
       </elements>
-    </api>
-    <api id="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler">
-      <topicdata group="api" />
-      <apidata name="GuiItemEventHandler" group="type" subgroup="delegate" />
-      <typedata visibility="public" sealed="true" serializable="false" />
-      <parameters>
-        <parameter name="sender">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </parameter>
-        <parameter name="e">
-          <type api="T:System.EventArgs" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
-      </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs">
       <topicdata group="api" />
@@ -13347,25 +12684,6 @@
         <type api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" ref="true" />
       </containers>
     </api>
-    <api id="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler">
-      <topicdata group="api" />
-      <apidata name="IndexedClickEventHandler" group="type" subgroup="delegate" />
-      <typedata visibility="public" sealed="true" serializable="false" />
-      <parameters>
-        <parameter name="sender">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </parameter>
-        <parameter name="e">
-          <type api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
-      </containers>
-    </api>
     <api id="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs">
       <topicdata group="api" />
       <apidata name="MouseEventArgs" group="type" subgroup="class" />
@@ -13582,25 +12900,6 @@
         </library>
         <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
         <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
-      </containers>
-    </api>
-    <api id="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler">
-      <topicdata group="api" />
-      <apidata name="MouseEventHandler" group="type" subgroup="delegate" />
-      <typedata visibility="public" sealed="true" serializable="false" />
-      <parameters>
-        <parameter name="sender">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </parameter>
-        <parameter name="e">
-          <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
       </containers>
     </api>
     <api id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1">
@@ -13854,32 +13153,6 @@
         </library>
         <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
         <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true" />
-      </containers>
-    </api>
-    <api id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1">
-      <topicdata group="api" />
-      <apidata name="ValueChangedEventHandler" group="type" subgroup="delegate" />
-      <typedata visibility="public" sealed="true" serializable="false" />
-      <templates>
-        <template name="T" />
-      </templates>
-      <parameters>
-        <parameter name="sender">
-          <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
-        </parameter>
-        <parameter name="e">
-          <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
-            <specialization>
-              <template name="T" index="0" api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" />
-            </specialization>
-          </type>
-        </parameter>
-      </parameters>
-      <containers>
-        <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
-          <assemblydata version="1.0.0.0" />
-        </library>
-        <namespace api="N:Mentula.GuiItems.Core.EventHandlers" />
       </containers>
     </api>
     <api id="N:Mentula.GuiItems.Core.TextureHandlers">
@@ -17180,7 +16453,12 @@
       <adder name="add_DoubleClick" />
       <remover name="remove_DoubleClick" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -17224,7 +16502,12 @@
       <adder name="add_LeftClick" />
       <remover name="remove_LeftClick" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -17269,7 +16552,12 @@
       <adder name="add_RightClick" />
       <remover name="remove_RightClick" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -18040,7 +17328,12 @@
       <adder name="add_IndexClick" />
       <remover name="remove_IndexClick" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.DropDown" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -18768,9 +18061,14 @@
       <adder name="add_FontChanged" />
       <remover name="remove_FontChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
+            <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Microsoft.Xna.Framework.Graphics.SpriteFont" ref="true" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -19140,9 +18438,14 @@
       <adder name="add_TextChanged" />
       <remover name="remove_TextChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.String" ref="true" />
+            <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.String" ref="true" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -19676,9 +18979,14 @@
       <adder name="add_SizeModeChanged" />
       <remover name="remove_SizeModeChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+            <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:Mentula.GuiItems.Core.ResizeMode" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -20378,9 +19686,14 @@
       <adder name="add_ValueChanged" />
       <remover name="remove_ValueChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Int32" ref="false" />
+            <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -20967,7 +20280,12 @@
       <adder name="add_MouseDown" />
       <remover name="remove_MouseDown" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -21178,9 +20496,14 @@
       <adder name="add_ValueChanged" />
       <remover name="remove_ValueChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Int32" ref="false" />
+            <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Int32" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>
@@ -21646,7 +20969,12 @@
       <adder name="add_Confirmed" />
       <remover name="remove_Confirmed" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler" ref="true" />
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+          <specialization>
+            <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
+            <type api="T:System.EventArgs" ref="true" />
+          </specialization>
+        </type>
       </eventhandler>
       <containers>
         <library assembly="XnaGuiItems" module="XnaGuiItems" kind="DynamicallyLinkedLibrary">
@@ -21729,9 +21057,14 @@
       <adder name="add_FocusChanged" />
       <remover name="remove_FocusChanged" />
       <eventhandler>
-        <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" ref="true">
+        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
-            <type api="T:System.Boolean" ref="false" />
+            <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
+            <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
+              <specialization>
+                <type api="T:System.Boolean" ref="false" />
+              </specialization>
+            </type>
           </specialization>
         </type>
       </eventhandler>

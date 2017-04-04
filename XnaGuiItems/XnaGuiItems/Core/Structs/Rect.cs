@@ -13,7 +13,7 @@ namespace Mentula.GuiItems.Core
 #endif
     using System;
     using System.Diagnostics;
-    using static Utilities;
+    using static Mentula.Utilities.Utils;
     using static System.Math;
 
     /// <summary> Defines a rectangle. </summary>

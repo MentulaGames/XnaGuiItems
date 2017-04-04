@@ -21,6 +21,7 @@ namespace Mentula.GuiItems.Containers
     using System.Linq;
     using static Core.GuiItem;
     using static Utilities;
+    using Mentula.Utilities.Logging;
 
     /// <summary>
     /// A class for grouping <see cref="GuiItems"/>.
@@ -159,10 +160,8 @@ namespace Mentula.GuiItems.Containers
         public override void Initialize()
         {
             suppressRefresh = false;
+            Log.Info(nameof(Menu<T>), $"Refreshing {controlls.Count} controll(s)");
 
-#if DEBUG
-            LogInit("Menu", $"refreshing {controlls.Count} controll(s)");
-#endif
             for (int i = 0; i < controlls.Count; i++)
             {
                 controlls[i].Refresh();
@@ -182,25 +181,15 @@ namespace Mentula.GuiItems.Containers
         {
             if (disposing)
             {
-#if DEBUG
-                type = LogMsgType.Disp;
-                LogXna("Menu", $"disposing {controlls.Count} controll(s)");
-#endif
+                Log.Verbose(nameof(Menu<T>), $"Disposing {controlls.Count} controll(s)");
                 for (int i = 0; i < controlls.Count; i++)
                 {
-#if DEBUG
-                    LogXna("Menu", $"disposing {controlls[i]}");
-#endif
+                    Log.Verbose(nameof(Menu<T>), $"Disposing: {controlls[i]}");
                     controlls[i].Dispose();
                 }
-
-#if DEBUG
-                type = LogMsgType.Call;
-#endif
             }
 
             controlls.Clear();
-
             base.Dispose(disposing);
         }
 

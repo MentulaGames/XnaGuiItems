@@ -13,10 +13,8 @@ namespace Mentula.GuiItems
 #endif
     using Core;
     using Core.EventHandlers;
-    using System;
     using System.Diagnostics;
     using System.Reflection;
-    using System.Runtime.CompilerServices;
     using System.Windows.Forms;
 
     /// <summary>
@@ -25,13 +23,10 @@ namespace Mentula.GuiItems
 #if !DEBUG
     [DebuggerStepThrough]
 #endif
-    public static partial class Utilities
+    public static class Utilities
     {
         /* When initializing the guiItems don't need to be refreshed 3 times so it is internaly suppressed. */
         internal static bool suppressRefresh;
-
-        internal const int HASH_BASE = unchecked((int)2166136261);
-        private const int HASH_MODIFIER = 16777619;
 
         internal const string
             CAT_DESIGN = "Microsoft.Design",
@@ -96,56 +91,6 @@ namespace Mentula.GuiItems
             FormBorderStyle n = (FormBorderStyle)newType;
             Control window = Control.FromHandle(game.Window.Handle);
             window.FindForm().FormBorderStyle = n;
-        }
-
-        /* Computes the hash value of a object's field. */
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static int ComputeHash<T>(int hash, T obj)
-        {
-            return hash * HASH_MODIFIER ^ obj.GetHashCode();
-        }
-
-        /*
-            Safely invokes the delegate (is not null) and throws an InvokerException if the delegate throws an exception
-        */
-        internal static void Invoke(Delegate function, object sender, EventArgs args)
-        {
-            if (function != null)
-            {
-#if DEBUG
-                LogInvokeCall(sender.ToString(), function.Method.Name);
-#endif
-
-                try { function.DynamicInvoke(new object[2] { sender, args }); }
-                catch (TargetInvocationException e) { throw new InvokeException(e); }
-            }
-        }
-
-        internal static void Invoke<T>(ValueChangedEventHandler<T> function, GuiItem sender, ValueChangedEventArgs<T> args)
-        {
-            if (function != null)
-            {
-                if (args.NoChange) return;
-#if DEBUG
-                LogInvokeCall(sender.ToString(), $"{function.Method.Name} ({args.OldValue} -> {args.NewValue})");
-#endif
-
-                try { function.Invoke(sender, args); }
-                catch (TargetInvocationException e) { throw new InvokeException(e); }
-            }
-        }
-
-        internal static void Invoke(Core.EventHandlers.MouseEventHandler function, GuiItem sender, Core.EventHandlers.MouseEventArgs args)
-        {
-            if (function != null)
-            {
-#if DEBUG
-                LogInvokeCall(sender.ToString(), function.Method.Name);
-#endif
-
-                try { function.Invoke(sender, args); }
-                catch (TargetInvocationException e) { throw new InvokeException(e); }
-            }
         }
     }
 }

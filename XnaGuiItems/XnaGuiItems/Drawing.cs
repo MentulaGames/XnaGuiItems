@@ -16,6 +16,7 @@ namespace Mentula.GuiItems
     using Core;
     using System;
     using static Utilities;
+    using Mentula.Utilities.Logging;
 
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
@@ -24,9 +25,7 @@ namespace Mentula.GuiItems
     {
         public static Texture2D FromColor(Color color, Size size, GraphicsDevice device)
         {
-#if DEBUG
-            LogGphx("Renderer", "created texture from color");
-#endif
+            Log.Debug(nameof(Drawing), "Created texture from color");
 
             Texture2D result = new Texture2D(device, size.Width, size.Height);
             Color[] data = new Color[size.Width * size.Height];
@@ -42,9 +41,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D FromColor(Color color, Size size, Rect destinationRectangle, GraphicsDevice device)
         {
-#if DEBUG
-            LogGphx("Renderer", "created texture from color");
-#endif
+            Log.Debug(nameof(Drawing), "Created texture from color");
 
             Texture2D result = new Texture2D(device, size.Width, size.Height);
             Color[] data = new Color[size.Width * size.Height];
@@ -63,9 +60,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D FromMultiColor(Color color0, Color color1, Rectangle destination0, Rectangle destination1, GraphicsDevice device)
         {
-#if DEBUG
-            LogGphx("Renderer", "created texture from multiple colors");
-#endif
+            Log.Debug(nameof(Drawing), "Created texture from multiple colors");
             
             Texture2D result = new Texture2D(device, Math.Max(destination0.Width, destination1.Width), Math.Max(destination0.Height, destination1.Height));
             Color[] data = new Color[result.Width * result.Height];
@@ -92,10 +87,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D FromText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
-#if DEBUG
-            LogGphx("Renderer", "created texture from string");
-#endif
-
+            Log.Debug(nameof(Drawing), "Created texture from string");
             Texture2D result = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
 
             using (RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height))
@@ -127,10 +119,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D FromLabels(Pair[] labels, SpriteFont font, Size size, SpriteBatch sb)
         {
-#if DEBUG
-            LogGphx("Renderer", "created texture from string|color labels");
-#endif
-
+            Log.Debug(nameof(Drawing), "Created texture from string|color labels");
             Texture2D result = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
 
             using (RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height))
@@ -160,10 +149,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D ApplyBorderLabel(this Texture2D texture, BorderStyle style)
         {
-#if DEBUG
-            LogGphx("Renderer", "applied borders to label");
-#endif
-
+            Log.Debug(nameof(Drawing), "Applied borders to label");
             Texture2D result = new Texture2D(texture.GraphicsDevice, texture.Width, texture.Height);
             Color[] data = texture.GetColorData();
 
@@ -200,10 +186,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D ApplyBorderButton(this Texture2D texture, ButtonStyle type, bool darkenOnClick)
         {
-#if DEBUG
-            LogGphx("Renderer", "applied borders to button");
-#endif
-
+            Log.Debug(nameof(Drawing), "Applied borders to button");
             Texture2D result = new Texture2D(texture.GraphicsDevice, texture.Width, texture.Height);
             Color[] data = texture.GetColorData();
 
@@ -255,10 +238,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D Clip(this Texture2D texture, Rectangle bounds)
         {
-#if DEBUG
-            LogGphx("Renderer", $"clipped texture");
-#endif
-
+            Log.Debug(nameof(Drawing), "Clipped texture");
             Texture2D result = new Texture2D(texture.GraphicsDevice, bounds.Width, bounds.Height);
             Color[] prevData = texture.GetColorData();
             Color[] newData = new Color[bounds.Width * bounds.Height];
@@ -277,10 +257,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D RenderOnto(this Texture2D texture, SpriteBatch sb, Size size, Vector2 position = default(Vector2), float rotation = 0, Vector2 scale = default(Vector2))
         {
-#if DEBUG
-            LogGphx("Renderer", $"renderer texture onto parent texture");
-#endif
-
+            Log.Debug(nameof(Drawing), "Rendering texture onto parent texture");
             Texture2D result = new Texture2D(sb.GraphicsDevice, size.Width, size.Height);
 
             using (RenderTarget2D target = new RenderTarget2D(sb.GraphicsDevice, size.Width, size.Height))
@@ -301,10 +278,7 @@ namespace Mentula.GuiItems
 
         public static Texture2D Stretch(this Texture2D texture, SpriteBatch sb, Size size)
         {
-#if DEBUG
-            LogGphx("Renderer", $"stretched texture");
-#endif
-
+            Log.Debug(nameof(Drawing), "Stretched texture");
             Texture2D result = new Texture2D(texture.GraphicsDevice, size.Width, size.Height);
 
             using (RenderTarget2D target = new RenderTarget2D(texture.GraphicsDevice, size.Width, size.Height))

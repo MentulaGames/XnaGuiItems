@@ -12,6 +12,7 @@ namespace Mentula.GuiItems.Core.Input
     using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using System;
+    using Mentula.Utilities.Threading;
 
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
@@ -170,7 +171,7 @@ namespace Mentula.GuiItems.Core.Input
 
         private void Ctrl_V()
         {
-            Utilities.RunInSTAThread(() =>
+            ThreadBuilder.RunInSTA(() =>
             {
                 keyboadString += System.Windows.Forms.Clipboard.GetText(System.Windows.Forms.TextDataFormat.UnicodeText);
             });

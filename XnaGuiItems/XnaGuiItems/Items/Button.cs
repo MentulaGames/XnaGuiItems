@@ -14,10 +14,12 @@ namespace Mentula.GuiItems.Items
     using Xna::Microsoft.Xna.Framework.Graphics;
 #endif
     using Core;
-    using Core.EventHandlers;
     using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
+    using Core.EventHandlers;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A button base class.
@@ -39,17 +41,17 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the <see cref="Button"/> is left clicked.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler LeftClick;
+        public event StrongEventHandler<Button, MouseEventArgs> LeftClick;
         /// <summary>
         /// Occurs when the <see cref="Button"/> is right clicked.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler RightClick;
+        public event StrongEventHandler<Button, MouseEventArgs> RightClick;
         /// <summary>
         /// Occurs when the <see cref="Button"/> is clicked twice in a short period of time.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler DoubleClick;
+        public event StrongEventHandler<Button, MouseEventArgs> DoubleClick;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Button"/> class with default settings.

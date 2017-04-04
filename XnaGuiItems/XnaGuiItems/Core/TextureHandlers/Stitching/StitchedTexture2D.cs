@@ -16,6 +16,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
     using System.Collections.Generic;
     using System;
     using static Utilities;
+    using Mentula.Utilities.Logging;
 
     /// <summary>
     /// A container for multiple <see cref="Texture2D"/> stitched into one <see cref="Texture2D"/>.
@@ -36,9 +37,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
 
         internal void Start(SpriteBatch sb, Size size)
         {
-#if DEBUG
-            LogGphx("TextureStitcher", $"starting stitching texture of size {size}");
-#endif
+            Log.Verbose(nameof(StitchedTexture2D), $"Started stitching texture of size: {size}");
 
             batch = sb;
             Texture = new Texture2D(batch.GraphicsDevice, size.Width, size.Height);
@@ -51,18 +50,14 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
 
         internal void DrawAt(int id, Texture2D texture, Rectangle destination)
         {
-#if DEBUG
-            LogGphx("TextureStitcher", $"added texture({id}) at {destination}");
-#endif
+            Log.Debug(nameof(StitchedTexture2D), $"Added texture({id}) at {destination}");
             Add(id, destination);
             batch.Draw(texture, destination, Color.White);
         }
 
         internal void DrawRangeAt(int id, StitchedTexture2D texture, Vector2 pos)
         {
-#if DEBUG
-            LogGphx("TextureStitcher", $"added texture base({id}) at {pos}");
-#endif
+            Log.Debug(nameof(StitchedTexture2D), $"Added texture base({id}) at {pos}");
 
             Enumerator enumarator = texture.GetEnumerator();
             while (enumarator.MoveNext())
@@ -71,9 +66,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
                 Rect destination = new Rect(cur.Value);
                 destination.Position += pos;
 
-#if DEBUG
-                LogGphx("TextureStitcher", $"added texture child({id | cur.Key}) at {destination}");
-#endif
+                Log.Debug(nameof(StitchedTexture2D), $"Added texture child({id | cur.Key}) at {destination}");
                 Add(id | cur.Key, destination.ToXnaRectangle());
                 batch.Draw(texture.Texture, destination.ToXnaRectangle(), texture[cur.Key], Color.White);
             }
@@ -81,9 +74,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
 
         internal void End()
         {
-#if DEBUG
-            LogGphx("TextureStitcher", "finished stitching");
-#endif
+            Log.Verbose(nameof(StitchedTexture2D), "Finished stitching");
 
             batch.End();
             batch.GraphicsDevice.SetRenderTarget(null);

@@ -19,7 +19,9 @@ namespace Mentula.GuiItems.Items
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A label used for displaying text.
@@ -73,12 +75,12 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the value of the <see cref="Text"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<string> TextChanged;
+        public event StrongEventHandler<Label, ValueChangedEventArgs<string>> TextChanged;
         /// <summary>
         /// Occurs when the value of the <see cref="Font"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<SpriteFont> FontChanged;
+        public event StrongEventHandler<Label, ValueChangedEventArgs<SpriteFont>> FontChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Label"/> class with default settings.
@@ -99,17 +101,9 @@ namespace Mentula.GuiItems.Items
         public Label(ref SpriteBatch sb, Rect bounds, SpriteFont font)
              : base(ref sb, bounds)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             ForegroundRectangle = bounds;
             this.font = font;
             text = string.Empty;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>

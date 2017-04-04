@@ -38,8 +38,6 @@
   <topic id="T:Mentula.GuiItems.Utilities" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Utilities" type="API" />
   <topic id="M:Mentula.GuiItems.Utilities.ChangeWindowBorder(Microsoft.Xna.Framework.Game,System.Byte)" type="API" />
-  <topic id="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)" type="API" />
-  <topic id="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)" type="API" />
   <topic id="N:Mentula.GuiItems.Containers" type="API" />
   <topic id="T:Mentula.GuiItems.Containers.Menu`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Containers.Menu`1" type="API" />
@@ -239,12 +237,6 @@
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.Remove(Mentula.GuiItems.Core.GuiItem)" type="API" />
   <topic id="M:Mentula.GuiItems.Core.GuiItem.GuiItemCollection.RemoveAt(System.Int32)" type="API" />
   <topic id="T:Mentula.GuiItems.Core.InputFlags" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.InvokeException" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.InvokeException" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.InvokeException" type="API" />
-  <topic id="Events.T:Mentula.GuiItems.Core.InvokeException" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.InvokeException.StackTrace" type="API" />
   <topic id="T:Mentula.GuiItems.Core.IToggleable" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.IToggleable" type="API" />
   <topic id="M:Mentula.GuiItems.Core.IToggleable.Hide" type="API" />
@@ -381,21 +373,18 @@
   <topic id="M:Mentula.GuiItems.Core.Size.ToVector2" type="API" />
   <topic id="P:Mentula.GuiItems.Core.Size.Width" type="API" />
   <topic id="N:Mentula.GuiItems.Core.EventHandlers" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" type="API" />
   <topic id="M:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.#ctor(System.Int32)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.Empty" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs.Index" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" type="API" />
   <topic id="M:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.#ctor(Microsoft.Xna.Framework.Input.MouseState)" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.Empty" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs.State" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler" type="API" />
   <topic id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" type="API" />
   <topic id="Fields.T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" type="API" />
@@ -403,7 +392,6 @@
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.Empty" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.NewValue" type="API" />
   <topic id="F:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1.OldValue" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1" type="API" />
   <topic id="N:Mentula.GuiItems.Core.TextureHandlers" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler" type="API" />

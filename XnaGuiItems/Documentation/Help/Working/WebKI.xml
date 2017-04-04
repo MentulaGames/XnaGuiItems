@@ -302,7 +302,6 @@
   <HelpKINode Title="GetKeys method" Url="html/178e54a4-db90-0977-ed1d-6d18b1a5207f.htm" />
   <HelpKINode Title="GetLineCount method" Url="html/478c4fb8-afa3-b38b-1102-04a38e8b4d76.htm" />
   <HelpKINode Title="GetMouseEventArgs method" Url="html/c53cb8eb-ef00-8053-e6f8-7609bcec55b5.htm" />
-  <HelpKINode Title="GetObjectData method" Url="html/1db013b8-55e8-d210-f129-739fff84a81e.htm" />
   <HelpKINode Title="GetRotatedMouse method" Url="html/4d09a082-c9dd-6544-75b3-bc3ac708a0e2.htm" />
   <HelpKINode Title="GuiItem class">
     <HelpKINode Title="GuiItem Class" Url="html/4288f473-0e01-8716-de8c-dec4dcd420a8.htm" />
@@ -403,7 +402,6 @@
     <HelpKINode Title="methods" Url="html/0b22c0f7-8144-d0ab-d500-a56b4565c6ed.htm" />
     <HelpKINode Title="properties" Url="html/3fa8dad7-5632-a7a4-f79e-671289152ab0.htm" />
   </HelpKINode>
-  <HelpKINode Title="GuiItemEventHandler delegate" Url="html/1f1365e2-cdf5-33fe-d207-e7a315517538.htm" />
   <HelpKINode Title="HandleAutoSize method">
     <HelpKINode Title="DropDown.HandleAutoSize Method " Url="html/ce0d30f1-ea8a-58fd-5ccd-73a64193fb11.htm" />
     <HelpKINode Title="Label.HandleAutoSize Method " Url="html/8fb4ad40-3546-e757-63eb-f3bdb3979d9c.htm" />
@@ -439,7 +437,6 @@
   <HelpKINode Title="IndexedClickEventArgs.Empty field" Url="html/ebabda49-8c31-9ce9-0939-bc4520cac005.htm" />
   <HelpKINode Title="IndexedClickEventArgs.Index field" Url="html/0f44470d-ca82-a27c-6107-083090e1ec5f.htm" />
   <HelpKINode Title="IndexedClickEventArgs.IndexedClickEventArgs constructor" Url="html/6fd32896-c3e3-9c49-6e98-534c45d1c6ed.htm" />
-  <HelpKINode Title="IndexedClickEventHandler delegate" Url="html/576a57e4-8419-94c1-428d-bba34c287616.htm" />
   <HelpKINode Title="IndexOf method" Url="html/d8a92b45-64ac-3eeb-b327-4b992772b49a.htm" />
   <HelpKINode Title="Inequality operator">
     <HelpKINode Title="ByteFlags.Inequality Operator " Url="html/f4292467-a309-1315-c23f-2fb8b8849704.htm" />
@@ -469,15 +466,6 @@
   <HelpKINode Title="Intersection method" Url="html/cea7f920-d41a-29b3-203d-3abf672b130e.htm" />
   <HelpKINode Title="Intersects method" Url="html/e1d7174a-4917-0c9c-7802-f2e9af06e32f.htm" />
   <HelpKINode Title="Inverted property" Url="html/43ef686b-c9a0-3225-66b4-a02449eb7fd2.htm" />
-  <HelpKINode Title="InvokeException class">
-    <HelpKINode Title="InvokeException Class" Url="html/b8da567a-e475-6739-a5f4-adb8430a2f22.htm" />
-    <HelpKINode Title="about InvokeException class" Url="html/b8da567a-e475-6739-a5f4-adb8430a2f22.htm" />
-    <HelpKINode Title="events" Url="html/d3b02fd2-0381-7da9-e886-dba325983cd1.htm" />
-    <HelpKINode Title="methods" Url="html/3fa3a731-4f5d-dfd7-a3b7-e5f3d9788cc1.htm" />
-    <HelpKINode Title="properties" Url="html/15287d8a-db96-07fb-dcbe-ec33c389d1bb.htm" />
-  </HelpKINode>
-  <HelpKINode Title="InvokeException.GetObjectData method" Url="html/1db013b8-55e8-d210-f129-739fff84a81e.htm" />
-  <HelpKINode Title="InvokeException.StackTrace property" Url="html/d9f17d96-df21-af24-81ae-0a722a0ad6ff.htm" />
   <HelpKINode Title="IsDisposed property">
     <HelpKINode Title="GuiItem.IsDisposed Property " Url="html/15e46759-39bb-b307-9392-4eb08de9bc3c.htm" />
     <HelpKINode Title="TextureHandler.IsDisposed Property " Url="html/d7117945-a084-ffe9-b0ce-967573454017.htm" />
@@ -573,20 +561,14 @@
   <HelpKINode Title="Mentula.GuiItems.Core.DrawableMentulaGameComponent(Of TGame) class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.DrawableMentulaGameComponent&lt;TGame&gt; class" Url="html/e134ae0c-0cb7-9867-e990-58d9f8f2364c.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers namespace" Url="html/74bdc617-4644-2142-5b0d-4a2f36957927.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler delegate" Url="html/1f1365e2-cdf5-33fe-d207-e7a315517538.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs class" Url="html/dae67411-2e54-1db1-4df5-2f782c51d15e.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler delegate" Url="html/576a57e4-8419-94c1-428d-bba34c287616.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.MouseEventArgs class" Url="html/005d187a-a5c5-8aab-0733-79632c44bebd.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.MouseEventHandler delegate" Url="html/c087788c-bcf3-c92e-37ea-04b13c2d70fd.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs(Of TVal) class" Url="html/722d92dc-326f-4d7f-ab95-05d0f095e8c1.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs&lt;TVal&gt; class" Url="html/722d92dc-326f-4d7f-ab95-05d0f095e8c1.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler(Of T) delegate" Url="html/9d7f0306-a10e-7f54-a378-782b17aa7224.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler&lt;T&gt; delegate" Url="html/9d7f0306-a10e-7f54-a378-782b17aa7224.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.FlickerStyle enumeration" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem class" Url="html/4288f473-0e01-8716-de8c-dec4dcd420a8.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.GuiItem.GuiItemCollection class" Url="html/6d7b7706-c897-63d9-9f6e-55773706f532.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.InputFlags enumeration" Url="html/634487b4-4636-24ee-e510-aa6378485cdb.htm" />
-  <HelpKINode Title="Mentula.GuiItems.Core.InvokeException class" Url="html/b8da567a-e475-6739-a5f4-adb8430a2f22.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.IToggleable interface" Url="html/4a19b396-375f-63a1-67c5-91b066080830.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.MentulaGameComponent(Of TGame) class" Url="html/5f9f2251-c2c1-90da-9c7b-7a76b078d243.htm" />
   <HelpKINode Title="Mentula.GuiItems.Core.MentulaGameComponent&lt;TGame&gt; class" Url="html/5f9f2251-c2c1-90da-9c7b-7a76b078d243.htm" />
@@ -770,7 +752,6 @@
   <HelpKINode Title="MouseEventArgs.Empty field" Url="html/0293c743-7f74-5454-e6b4-e4cae2543394.htm" />
   <HelpKINode Title="MouseEventArgs.MouseEventArgs constructor" Url="html/3fef640a-c80f-7b12-3e85-61a89c776d40.htm" />
   <HelpKINode Title="MouseEventArgs.State field" Url="html/52b3a3eb-5f55-3d14-dbfb-2e58c1e015ab.htm" />
-  <HelpKINode Title="MouseEventHandler delegate" Url="html/c087788c-bcf3-c92e-37ea-04b13c2d70fd.htm" />
   <HelpKINode Title="Moved event" Url="html/82f68df9-8847-f383-552b-e83f2667e11a.htm" />
   <HelpKINode Title="MoveRelative method" Url="html/a4be0390-d937-7e41-9343-633e3315044e.htm" />
   <HelpKINode Title="MultiLine property" Url="html/78ac46b8-1400-a85d-38e9-cd2027b5c894.htm" />
@@ -983,8 +964,6 @@
   <HelpKINode Title="RightShift operator" Url="html/ee45010e-36d0-8b25-3a96-04860f97a3e3.htm" />
   <HelpKINode Title="Rotated event" Url="html/cf40cffe-979a-8615-8d62-717b1d7079e9.htm" />
   <HelpKINode Title="Rotation property" Url="html/486c2e0d-bac0-ec5a-99d8-236fa07dea81.htm" />
-  <HelpKINode Title="RunInBackground method" Url="html/69fee82e-4340-4ff7-0ea9-070644325366.htm" />
-  <HelpKINode Title="RunInSTAThread method" Url="html/7b115621-0e91-71f2-0e0d-c7a23e375287.htm" />
   <HelpKINode Title="ScreenHeight property" Url="html/de000655-eb11-d041-e65f-e20679d45c72.htm" />
   <HelpKINode Title="ScreenHeightMiddle property" Url="html/de11267f-88de-749d-4279-c0ef041034fb.htm" />
   <HelpKINode Title="ScreenWidth property" Url="html/f1816d94-52a2-3346-ae2a-e14f5f1853c6.htm" />
@@ -1091,7 +1070,6 @@
   <HelpKINode Title="Slider.ValueChanged event" Url="html/9de4f2f6-88d8-69c4-6714-032bf0045cd6.htm" />
   <HelpKINode Title="SliderBarDimentions property" Url="html/4a0c8d6e-f98b-41fc-404f-f39ec4c3aa85.htm" />
   <HelpKINode Title="Slow enumeration member" Url="html/76fd9b0d-b4f3-bc98-5420-5ce998d1ad50.htm" />
-  <HelpKINode Title="StackTrace property" Url="html/d9f17d96-df21-af24-81ae-0a722a0ad6ff.htm" />
   <HelpKINode Title="State field" Url="html/52b3a3eb-5f55-3d14-dbfb-2e58c1e015ab.htm" />
   <HelpKINode Title="StitchedTexture2D class">
     <HelpKINode Title="StitchedTexture2D Class" Url="html/69505f70-237c-e2ed-4654-b6e0d782fd7f.htm" />
@@ -1223,8 +1201,6 @@
     <HelpKINode Title="methods" Url="html/6a0f878a-6232-f31e-9c6b-7aaa6eaa7597.htm" />
   </HelpKINode>
   <HelpKINode Title="Utilities.ChangeWindowBorder method" Url="html/80ea018e-2f07-4475-56fd-bef4ea1791e4.htm" />
-  <HelpKINode Title="Utilities.RunInBackground method" Url="html/69fee82e-4340-4ff7-0ea9-070644325366.htm" />
-  <HelpKINode Title="Utilities.RunInSTAThread method" Url="html/7b115621-0e91-71f2-0e0d-c7a23e375287.htm" />
   <HelpKINode Title="Value property">
     <HelpKINode Title="ProgressBar.Value Property " Url="html/504cf434-a956-b537-45b7-2302e7e7d550.htm" />
     <HelpKINode Title="ProgressData.Value Property " Url="html/7a19a5e2-8c97-2a5a-f568-3f69ec4eff72.htm" />
@@ -1256,8 +1232,6 @@
   <HelpKINode Title="ValueChangedEventArgs&lt;TVal&gt;.NewValue field" Url="html/877e0b78-1c65-a677-eecd-d5b17f363190.htm" />
   <HelpKINode Title="ValueChangedEventArgs&lt;TVal&gt;.OldValue field" Url="html/9497c599-9911-98fd-0a89-854ac5ab0102.htm" />
   <HelpKINode Title="ValueChangedEventArgs&lt;TVal&gt;.ValueChangedEventArgs constructor" Url="html/952952de-dfef-5284-6854-9d87b389463a.htm" />
-  <HelpKINode Title="ValueChangedEventHandler(Of T) delegate" Url="html/9d7f0306-a10e-7f54-a378-782b17aa7224.htm" />
-  <HelpKINode Title="ValueChangedEventHandler&lt;T&gt; delegate" Url="html/9d7f0306-a10e-7f54-a378-782b17aa7224.htm" />
   <HelpKINode Title="version">
     <HelpKINode Title="1.0.0.0" Url="html/10daa5f5-5737-4544-92c6-37972633b5d3.htm" />
     <HelpKINode Title="1.0.1.0" Url="html/b5ce2217-55de-44b0-aa3a-bfe049f2df07.htm" />

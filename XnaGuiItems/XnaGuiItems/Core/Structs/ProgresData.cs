@@ -13,7 +13,7 @@ namespace Mentula.GuiItems.Core
 #endif
     using System;
     using System.Diagnostics;
-    using static Utilities;
+    using static Mentula.Utilities.Utils;
 
     /// <summary> A container for progress data (100% base). </summary>
 #if !DEBUG

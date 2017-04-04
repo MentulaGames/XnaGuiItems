@@ -1,3 +1,5 @@
+using Mentula.Utilities;
+using Mentula.Utilities.Logging;
 using Microsoft.Xna.Framework;
 using System;
 
@@ -6,11 +8,11 @@ namespace TestGame
 #if WINDOWS || XBOX
     public static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        private static ConsoleLogger logger;
+
         public static void Main(string[] args)
         {
+            logger = new ConsoleLogger() { AutoUpdate = true };
             Console.WindowWidth = Console.LargestWindowWidth;
             Console.BufferHeight = short.MaxValue - 1;
 
@@ -19,8 +21,7 @@ namespace TestGame
                 game.Run();
             }
 
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
+            Utils.PressAnyKeyToContinue();
         }
     }
 #endif

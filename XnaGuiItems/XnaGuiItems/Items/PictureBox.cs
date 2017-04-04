@@ -17,7 +17,9 @@ namespace Mentula.GuiItems.Items
     using Core.EventHandlers;
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
     using Args = Core.EventHandlers.ValueChangedEventArgs<Core.ResizeMode>;
 
     /// <summary>
@@ -41,7 +43,7 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the value of the <see cref="SizeMode"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<ResizeMode> SizeModeChanged;
+        public event StrongEventHandler<PictureBox, ValueChangedEventArgs<ResizeMode>> SizeModeChanged;
 
         private ResizeMode sizeMode;
 

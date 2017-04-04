@@ -14,6 +14,7 @@ namespace Mentula.GuiItems.Containers
     using Core;
     using System;
     using System.Collections.Generic;
+    using Mentula.Utilities.Logging;
 
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.
@@ -121,6 +122,8 @@ namespace Mentula.GuiItems.Containers
         /// <param name="key"> The name of the <see cref="Menu{T}"/>. </param>
         public void Add(Menu<TGame> menu, string key)
         {
+            Log.Verbose(nameof(MenuCollection<TGame>), $"Adding menu: {key}");
+
             int i = underlying.Length;
             Array.Resize(ref underlying, i + 1);
             underlying[i] = new KeyValuePair<string, Menu<TGame>>(key.ToUpper(), menu);
@@ -132,12 +135,15 @@ namespace Mentula.GuiItems.Containers
         /// <param name="menus"> The <see cref="Menu{T}"/> to add with there given names. </param>
         public void AddRange(params KeyValuePair<string, Menu<TGame>>[] menus)
         {
+            Log.Verbose(nameof(MenuCollection<TGame>), $"Adding {menus.Length} menu's");
+
             int i = underlying.Length;
             Array.Resize(ref underlying, i + menus.Length);
 
             for (int j = 0; i < underlying.Length; i++, j++)
             {
                 KeyValuePair<string, Menu<TGame>> cur = menus[j];
+                Log.Verbose(nameof(MenuCollection<TGame>), $"Adding menu: {cur.Key}");
                 underlying[i] = new KeyValuePair<string, Menu<TGame>>(cur.Key.ToUpper(), cur.Value);
             }
         }

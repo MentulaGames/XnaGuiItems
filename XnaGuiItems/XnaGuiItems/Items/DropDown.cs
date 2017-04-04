@@ -20,7 +20,9 @@ namespace Mentula.GuiItems.Items
     using Core.TextureHandlers;
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A Dropdown with clickable childs.
@@ -72,7 +74,7 @@ namespace Mentula.GuiItems.Items
         /// Occurs when a <see cref="DropDown"/> option is clicked.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_INDEX)]
-        public event IndexedClickEventHandler IndexClick;
+        public event StrongEventHandler<DropDown, IndexedClickEventArgs> IndexClick;
 
         /// <summary> The specified <see cref="SpriteFont"/>. </summary>
         protected SpriteFont font;
@@ -102,10 +104,6 @@ namespace Mentula.GuiItems.Items
         public DropDown(ref SpriteBatch sb, Rect bounds, SpriteFont font)
             : base(ref sb, bounds)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             this.font = font;
             HeaderText = DefaultHeaderText;
             labels = new Pair[0][];
@@ -114,10 +112,6 @@ namespace Mentula.GuiItems.Items
             BackColor = DefaultBackColor;
             ForeColor = DefaultForeColor;
             HeaderBackgroundColor = DefaultHeaderBackColor;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>

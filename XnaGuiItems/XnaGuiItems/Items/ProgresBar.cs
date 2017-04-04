@@ -17,7 +17,9 @@ namespace Mentula.GuiItems.Items
     using Core.EventHandlers;
     using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
     using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
 
     /// <summary>
@@ -72,7 +74,7 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<int> ValueChanged;
+        public event StrongEventHandler<ProgressBar, ValueChangedEventArgs<int>> ValueChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProgressBar"/> class with default settings.
@@ -91,17 +93,9 @@ namespace Mentula.GuiItems.Items
         public ProgressBar(ref SpriteBatch sb, Rect bounds)
              : base(ref sb, bounds)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>

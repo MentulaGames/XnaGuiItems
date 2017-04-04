@@ -19,7 +19,9 @@ namespace Mentula.GuiItems.Items
     using Core.EventHandlers;
     using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
     using Args = Core.EventHandlers.ValueChangedEventArgs<int>;
 
     /// <summary>
@@ -73,12 +75,12 @@ namespace Mentula.GuiItems.Items
         /// Occurs when the value of the <see cref="Value"/> propery is changed.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<int> ValueChanged;
+        public event StrongEventHandler<Slider, ValueChangedEventArgs<int>> ValueChanged;
         /// <summary>
         /// Occurs when the mouse is pressed on the <see cref="Slider"/>.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_MOUSE)]
-        public event MouseEventHandler MouseDown;
+        public event StrongEventHandler<Slider, MouseEventArgs> MouseDown;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Slider"/> class with default settings.
@@ -97,18 +99,10 @@ namespace Mentula.GuiItems.Items
         public Slider(ref SpriteBatch sb, Rect bounds)
              : base(ref sb, bounds)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             SliderBarDimentions = new Rect(bounds.X, bounds.Y, Width / 10, Height);
             data = new ProgressData(0);
             BorderStyle = BorderStyle.FixedSingle;
             ForeColor = DefaultForeColor;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>

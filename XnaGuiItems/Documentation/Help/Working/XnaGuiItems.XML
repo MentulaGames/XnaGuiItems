@@ -631,40 +631,6 @@
       <param name="oldVal"> The old value of the field. </param>
       <param name="newVal"> The new value of the field. </param>
     </member>
-    <member name="T:Mentula.GuiItems.Core.EventHandlers.GuiItemEventHandler">
-      <summary>
-            Represents the method that will handle the default <see cref="T:Mentula.GuiItems.Core.GuiItem" /> events.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised. </param>
-      <remarks>
-            The <see cref="T:System.EventArgs" /> will almost always be empty if the call is internal.
-            The reason this parameter is required if for the option of extra data given by classes that modify functions in this framework.
-            This makes sure that modifications on this framework do not need to hack in additional data for events.
-            </remarks>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventHandler">
-      <summary>
-            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Items.DropDown.IndexClick" /> event.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this contains the index clicked. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.EventHandlers.MouseEventHandler">
-      <summary>
-            Represents the method that will handle the <see cref="E:Mentula.GuiItems.Core.GuiItem.Clicked" /> and <see cref="E:Mentula.GuiItems.Core.GuiItem.Hover" /> events.
-            </summary>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this will contain the state of the mouse at the time of the invokation of the event. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventHandler`1">
-      <summary>
-            Represent the method that will handle the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event.
-            </summary>
-      <typeparam name="T"> The type of the value. </typeparam>
-      <param name="sender"> The GuiItem that raised the event. </param>
-      <param name="e"> Additional information about the event raised, this will contain the old and new value of the changed field. </param>
-    </member>
     <member name="T:Mentula.GuiItems.Core.GuiItem">
       <summary>
             The absolute base class for all <see cref="N:Mentula.GuiItems" />.
@@ -1588,19 +1554,6 @@
       <summary>
             Hides the component.
             </summary>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.InvokeException">
-      <summary>
-            Represents errors that occur during event invoking.
-            </summary>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.InvokeException.StackTrace">
-      <summary>
-            Gets a string representation of the immediate frames on the call stack.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.InvokeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-      <inheritdoc />
     </member>
     <member name="T:Mentula.GuiItems.Core.MentulaGameComponent`1">
       <summary> Base class for all Mentula game components. </summary>
@@ -3014,14 +2967,6 @@
             A byte is used to represent the <see cref="T:System.Windows.Forms.FormBorderStyle" /> enumeraton 
             as not to require a refrence to the <see cref="N:System.Windows.Forms" /> namespace.
             </remarks>
-    </member>
-    <member name="M:Mentula.GuiItems.Utilities.RunInSTAThread(System.Threading.ThreadStart)">
-      <summary> Runs a specified <see cref="T:System.Threading.ThreadStart" /> on a background STA thread. </summary>
-      <param name="function"> The specified function to run. </param>
-    </member>
-    <member name="M:Mentula.GuiItems.Utilities.RunInBackground(System.Threading.ThreadStart)">
-      <summary> Runs a specified <see cref="T:System.Threading.ThreadStart" /> on a background thread. </summary>
-      <param name="function"> The specified function to run. </param>
     </member>
     <member name="N:Mentula.GuiItems">
       <summary>The Mentula.GuiItems namespace contains global functions to be used with XnaGuiItems.</summary>

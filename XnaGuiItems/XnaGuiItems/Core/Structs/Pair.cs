@@ -14,7 +14,7 @@ namespace Mentula.GuiItems.Core
     using System;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
-    using static Utilities;
+    using static Mentula.Utilities.Utils;
 
 #if MONO
     /// <summary>

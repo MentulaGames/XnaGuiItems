@@ -16,9 +16,7 @@ namespace Mentula.GuiItems.Containers
     using Core;
     using Items;
     using System;
-#if DEBUG
-    using static Utilities;
-#endif
+    using Mentula.Utilities.Logging;
 
     public partial class Menu<T> : DrawableMentulaGameComponent<T>
         where T : Game
@@ -29,9 +27,7 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="GuiItem"/> created. </returns>
         public GuiItem AddGuiItem()
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(GuiItem)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(GuiItem)})");
 
             GuiItem gI = new GuiItem(ref batch);
             controlls.Add(gI);
@@ -45,9 +41,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="Button"/> created. </returns>
         public Button AddButton(SpriteFont Font = null)
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(Button)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(Button)})");
+
             if (font == null && Font == null) ThrowNoFont();
             Button btn = new Button(ref batch, Font ?? font);
             controlls.Add(btn);
@@ -61,9 +56,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="DropDown"/> created. </returns>
         public DropDown AddDropDown(SpriteFont Font = null)
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(DropDown)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(DropDown)})");
+
             if (font == null && Font == null) ThrowNoFont();
             DropDown dd = new DropDown(ref batch, Font ?? font);
             controlls.Add(dd);
@@ -78,9 +72,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="Label"/> created. </returns>
         public Label AddLabel(SpriteFont Font = null)
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(Label)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(Label)})");
+
             if (font == null && Font == null) ThrowNoFont();
             Label lbl = new Label(ref batch, Font ?? font);
             controlls.Add(lbl);
@@ -93,9 +86,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="ProgressBar"/> created. </returns>
         public ProgressBar AddProgresBar()
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(ProgresBar)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(ProgressBar)})");
+
             ProgressBar prgBr = new ProgressBar(ref batch);
             controlls.Add(prgBr);
             return prgBr;
@@ -107,9 +99,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="Slider"/> created. </returns>
         public Slider AddSlider()
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(Slider)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(Slider)})");
+
             Slider sld = new Slider(ref batch);
             controlls.Add(sld);
             return sld;
@@ -122,9 +113,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="TextBox"/> created. </returns>
         public TextBox AddTextBox(SpriteFont Font = null)
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(TextBox)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(TextBox)})");
+
             if (font == null && Font == null) ThrowNoFont();
             TextBox txt = new TextBox(ref batch, Font ?? font);
             txt.Clicked += TextBox_Click;
@@ -139,9 +129,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="TabContainer"/> created. </returns>
         public TabContainer AddTabContainer(SpriteFont Font = null)
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(TabContainer)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(TabContainer)})");
+
             if (font == null && Font == null) ThrowNoFont();
             TabContainer tbC = new TabContainer(ref batch, Font ?? font);
             controlls.Add(tbC);
@@ -154,9 +143,8 @@ namespace Mentula.GuiItems.Containers
         /// <returns> The <see cref="PictureBox"/> created. </returns>
         public PictureBox AddPictureBox()
         {
-#if DEBUG
-            LogInit("Menu", "initialzing controll(PictureBox)");
-#endif
+            Log.Debug(nameof(Menu<T>), $"Initializing controll({nameof(PictureBox)})");
+
             PictureBox picBox = new PictureBox(ref batch);
             controlls.Add(picBox);
             return picBox;

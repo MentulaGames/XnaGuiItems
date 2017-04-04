@@ -19,7 +19,9 @@ namespace Mentula.GuiItems.Containers
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using Mentula.Utilities.Core;
     using static Utilities;
+    using static Mentula.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.
@@ -54,7 +56,7 @@ namespace Mentula.GuiItems.Containers
         /// Occurs when the value of the <see cref="SelectedTab"/> property changes.
         /// </summary>
         [SuppressMessage(CAT_DESIGN, CHECKID_EVENT, Justification = JUST_VALUE)]
-        public event ValueChangedEventHandler<int> TabSwitch;
+        public event StrongEventHandler<TabContainer, ValueChangedEventArgs<int>> TabSwitch;
 
         private const string TAB_PREFIX = "TabHLbl_";
         private KeyValuePair<Label, GuiItemCollection>[] tabs;
@@ -71,18 +73,10 @@ namespace Mentula.GuiItems.Containers
         public TabContainer(ref SpriteBatch sb, SpriteFont font)
             : base(ref sb)
         {
-#if DEBUG
-            type = LogMsgType.Ctor;
-#endif
-
             this.font = font;
             tabs = new KeyValuePair<Label, GuiItemCollection>[0];
             Bounds = DefaultBounds;
             BackColor = Color.White;
-
-#if DEBUG
-            type = LogMsgType.Call;
-#endif
         }
 
         /// <summary>
