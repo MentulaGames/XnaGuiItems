@@ -79,9 +79,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="SizeModeChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="PictureBox"/> that raised the event. </param>
         /// <param name="e"> The new <see cref="ResizeMode"/> for the foreground. </param>
-        protected virtual void OnSizeModeChanged(GuiItem sender, Args e)
+        protected virtual void OnSizeModeChanged(PictureBox sender, Args e)
         {
             sizeMode = e.NewValue;
         }

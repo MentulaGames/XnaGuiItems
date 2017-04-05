@@ -18,9 +18,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers
     /// <summary>
     /// The class that handles the textures for a <see cref="Items.Button"/>.
     /// </summary>
-    /// <remarks>
-    /// The <see cref="TextureHandler.userSet"/> flag for hover is 4 and click is 8.
-    /// </remarks>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
@@ -37,8 +34,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             }
         }
 
-        internal ButtonStyle state;
-
         /// <summary>
         /// The button hover texture for a <see cref="Items.Button"/>.
         /// </summary>
@@ -47,7 +42,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             get { return hover; }
             set
             {
-                if (!internCall) userSet[2] = true;
+                if (!internCall) userset_hover = true;
                 hover = value;
             }
         }
@@ -60,10 +55,23 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             get { return click; }
             set
             {
-                if (!internCall) userSet[3] = true;
+                if (!internCall) userset_click = true;
                 click = value;
             }
         }
+
+        internal ButtonStyle state;
+
+        /// <summary>
+        /// Gets or sets a value indicating if the user or XnaGuiItems has set the hover texture.
+        /// </summary>
+        protected bool userset_hover;
+        /// <summary>
+        /// Gets or sets a value indicating if the user or XnaGuiItems has set the click texture.
+        /// </summary>
+        protected bool userset_click;
+
+        private Texture2D hover, click;
 
         internal ButtonTextureHandler()
         {
@@ -71,24 +79,22 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             click = null;
         }
 
-        private Texture2D hover, click;
-
         internal override void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             base.SetBackFromClr(clr, size, device);
 
             internCall = true;
-            if (!userSet[2]) Hover = Drawing.FromColor(clr, size, device);
-            if (!userSet[3]) Click = Drawing.FromColor(clr, size, device);
+            if (!userset_hover) Hover = Drawing.FromColor(clr, size, device);
+            if (!userset_click) Click = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
         internal virtual void ApplyBorders()
         {
             internCall = true;
-            if (!userSet[0]) Background = Background.ApplyBorderButton(ButtonStyle.Default, true);
-            if (!userSet[2]) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover, true);
-            if (!userSet[3]) Click = Click.ApplyBorderButton(ButtonStyle.Click, true);
+            if (!userset_background) Background = Background.ApplyBorderButton(ButtonStyle.Default, true);
+            if (!userset_hover) Hover = Hover.ApplyBorderButton(ButtonStyle.Hover, true);
+            if (!userset_click) Click = Click.ApplyBorderButton(ButtonStyle.Click, true);
             internCall = false;
         }
 

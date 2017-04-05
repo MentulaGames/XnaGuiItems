@@ -122,18 +122,6 @@
   <topic id="N:Mentula.GuiItems.Core" type="API" />
   <topic id="T:Mentula.GuiItems.Core.Anchor" type="API" />
   <topic id="T:Mentula.GuiItems.Core.BorderStyle" type="API" />
-  <topic id="T:Mentula.GuiItems.Core.ByteFlags" type="API" />
-  <topic id="Methods.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
-  <topic id="Operators.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
-  <topic id="Properties.T:Mentula.GuiItems.Core.ByteFlags" type="API" />
-  <topic id="Overload:Mentula.GuiItems.Core.ByteFlags.Equals" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(Mentula.GuiItems.Core.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.Equals(System.Object)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.GetHashCode" type="API" />
-  <topic id="P:Mentula.GuiItems.Core.ByteFlags.Item(System.Int32)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Equality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.op_Inequality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)" type="API" />
-  <topic id="M:Mentula.GuiItems.Core.ByteFlags.ToString" type="API" />
   <topic id="T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.DrawableMentulaGameComponent`1" type="API" />
@@ -403,6 +391,8 @@
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Hover" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.userset_click" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.userset_hover" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
   <topic id="Properties.T:Mentula.GuiItems.Core.TextureHandlers.DropDownButtonTextureHandler" type="API" />
@@ -435,7 +425,8 @@
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Foreground" type="API" />
   <topic id="P:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.IsDisposed" type="API" />
   <topic id="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)" type="API" />
-  <topic id="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userset_background" type="API" />
+  <topic id="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userset_foreground" type="API" />
   <topic id="N:Mentula.GuiItems.Core.TextureHandlers.Stitching" type="API" />
   <topic id="T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" type="API" />
   <topic id="Methods.T:Mentula.GuiItems.Core.TextureHandlers.Stitching.StitchedTexture2D" type="API" />
@@ -513,11 +504,11 @@
   <topic id="M:Mentula.GuiItems.Items.Label.HandleAutoSize" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.InitEvents" type="API" />
   <topic id="P:Mentula.GuiItems.Items.Label.LineStart" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnMove(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Vector2})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.OnResize(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.Size})" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.Refresh" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.SetBackgroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Label.SetForegroundTexture" type="API" />
@@ -534,7 +525,7 @@
   <topic id="M:Mentula.GuiItems.Items.PictureBox.#ctor(Microsoft.Xna.Framework.Graphics.SpriteBatch@,Mentula.GuiItems.Core.Rect)" type="API" />
   <topic id="P:Mentula.GuiItems.Items.PictureBox.Image" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.InitEvents" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Items.PictureBox,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.Refresh" type="API" />
   <topic id="M:Mentula.GuiItems.Items.PictureBox.SetForegroundTexture" type="API" />
   <topic id="P:Mentula.GuiItems.Items.PictureBox.SizeMode" type="API" />
@@ -556,7 +547,7 @@
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.Inverted" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.MaxiumValue" type="API" />
   <topic id="P:Mentula.GuiItems.Items.ProgressBar.MinimumValue" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Items.ProgressBar,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.SetBackgroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.SetForegroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.ProgressBar.SetTextureHandler" type="API" />
@@ -580,8 +571,8 @@
   <topic id="P:Mentula.GuiItems.Items.Slider.MinimumValue" type="API" />
   <topic id="E:Mentula.GuiItems.Items.Slider.MouseDown" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.OnClick(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Slider.OnMouseDown(Mentula.GuiItems.Items.Slider,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.Slider.OnValueChanged(Mentula.GuiItems.Items.Slider,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.SetBackgroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.SetForegroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.Slider.SetTextureHandler" type="API" />
@@ -610,8 +601,8 @@
   <topic id="P:Mentula.GuiItems.Items.TextBox.MaxLength" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MinimumSize" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.MultiLine" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})" type="API" />
-  <topic id="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Items.TextBox,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})" type="API" />
+  <topic id="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})" type="API" />
   <topic id="P:Mentula.GuiItems.Items.TextBox.PasswordChar" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.SetForegroundTexture" type="API" />
   <topic id="M:Mentula.GuiItems.Items.TextBox.SetTextureHandler" type="API" />

@@ -36,7 +36,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
         internal void SetBackFromClr(Color back, Color header, Size size, Size headerSize, SpriteBatch sb, BorderStyle style)
         {
             internCall = true;
-            if (!userSet[0])
+            if (!userset_background)
             {
                 Rectangle backRect = new Rectangle(0, headerSize.Height, size.Width, size.Height);
                 Rectangle headerRect = new Rectangle(0, 0, headerSize.Width, headerSize.Height);

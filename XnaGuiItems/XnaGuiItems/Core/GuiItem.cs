@@ -323,7 +323,7 @@ namespace Mentula.GuiItems.Core
         {
             if (Visible)
             {
-                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.userset_background ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[1], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }

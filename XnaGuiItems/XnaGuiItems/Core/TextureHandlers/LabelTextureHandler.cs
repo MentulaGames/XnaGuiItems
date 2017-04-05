@@ -27,7 +27,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             SetBackFromClr(clr, size, device);
 
             internCall = true;
-            if (!userSet[0]) Background = Background.ApplyBorderLabel(style);
+            if (!userset_background) Background = Background.ApplyBorderLabel(style);
             internCall = false;
         }
     }

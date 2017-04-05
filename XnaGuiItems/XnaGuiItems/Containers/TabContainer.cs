@@ -147,7 +147,7 @@ namespace Mentula.GuiItems.Containers
             {
                 Label hdr = tabs[SelectedTab].Key;
 
-                spriteBatch.Draw(textures.DrawTexture.Texture, new Vector2(Position.X, Position.Y + hdr.Height), textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : hdr.BackColor, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, new Vector2(Position.X, Position.Y + hdr.Height), textures.DrawTexture[0], textures.userset_background ? BackColor : hdr.BackColor, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 for (int i = 0; i < tabs.Length; i++) tabs[i].Key.Draw(spriteBatch);
             }
         }

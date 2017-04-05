@@ -1135,9 +1135,6 @@
       <summary>
             The class that handles the textures for a <see cref="T:Mentula.GuiItems.Items.Button" />.
             </summary>
-      <remarks>
-            The <see cref="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" /> flag for hover is 4 and click is 8.
-            </remarks>
     </member>
     <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.DrawId">
       <summary>
@@ -1152,6 +1149,16 @@
     <member name="P:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Click">
       <summary>
             The button click texture for a <see cref="T:Mentula.GuiItems.Items.Button" />.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.userset_hover">
+      <summary>
+            Gets or sets a value indicating if the user or XnaGuiItems has set the hover texture.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.userset_click">
+      <summary>
+            Gets or sets a value indicating if the user or XnaGuiItems has set the click texture.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.ButtonTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
@@ -1216,13 +1223,15 @@
       <summary>
             The class that handles the textures of a <see cref="T:Mentula.GuiItems.Items.TextBox" />.
             </summary>
-      <remarks>
-            The <see cref="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet" /> flag for the focused texture is 4.
-            </remarks>
     </member>
     <member name="P:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Focused">
       <summary>
             The textbox focused texture for a <see cref="T:Mentula.GuiItems.Items.TextBox" />. 
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.userset_focused">
+      <summary>
+            Gets or sets a value indicating if the user or XnaGuiItems has set the focused texture.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextboxTextureHandler.Refresh(Microsoft.Xna.Framework.Graphics.SpriteBatch)">
@@ -1260,11 +1269,14 @@
             The foreground texture for a <see cref="T:Mentula.GuiItems.Core.GuiItem" />.
             </summary>
     </member>
-    <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userSet">
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userset_background">
       <summary>
-            A <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> that contains if the user has set specified textures.
-            1 if for the background,
-            2 if for the foreground.
+            Gets or sets a value indicating if the user or XnaGuiItems has set the background.
+            </summary>
+    </member>
+    <member name="F:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.userset_foreground">
+      <summary>
+            Gets or sets a value indicating if the user or XnaGuiItems has set the foreground.
             </summary>
     </member>
     <member name="M:Mentula.GuiItems.Core.TextureHandlers.TextureHandler.Finalize">
@@ -1288,66 +1300,6 @@
             Releases the unmanaged and managed resources used by the <see cref="T:Mentula.GuiItems.Core.TextureHandlers.TextureHandler" />.
             </summary>
       <param name="disposing"> Whether the managed resources should be disposed. </param>
-    </member>
-    <member name="T:Mentula.GuiItems.Core.ByteFlags">
-      <summary>
-            Contains 8 <see cref="T:System.Boolean" /> values stored as 1 <see cref="T:System.Byte" />.
-            </summary>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.op_Equality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are equal.
-            </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.ByteFlags" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.op_Inequality(Mentula.GuiItems.Core.ByteFlags,Mentula.GuiItems.Core.ByteFlags)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are different.
-            </summary>
-      <param name="left"> The current instance of <see cref="T:Mentula.GuiItems.Core.ByteFlags" />. </param>
-      <param name="right"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="false" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="true" />. </returns>
-    </member>
-    <member name="P:Mentula.GuiItems.Core.ByteFlags.Item(System.Int32)">
-      <summary>
-            Gets or sets the value at index i.
-            </summary>
-      <param name="i"> The specified index. </param>
-      <returns> The value of the bool. </returns>
-      <exception cref="T:System.IndexOutOfRangeException"> This exception is thrown if the index i if smaller than 0 or greater than 7. </exception>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.Equals(Mentula.GuiItems.Core.ByteFlags)">
-      <summary>
-            Indicates whether this instance and a specified <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> are equal.
-            </summary>
-      <param name="other"> The <see cref="T:Mentula.GuiItems.Core.ByteFlags" /> to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.Equals(System.Object)">
-      <summary>
-            Indicates whether this instance and a specified object are equal.
-            </summary>
-      <param name="obj"> The object to compare with the current instance. </param>
-      <returns>
-        <see langword="true" /> if obj and this instance are the same type and represent the same value; otherwise, <see langword="false" />.
-            </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.GetHashCode">
-      <summary>
-            Returns the hash code for this instance.
-            </summary>
-      <returns> A 32-bit signed integer that is the hash code for this instance. </returns>
-    </member>
-    <member name="M:Mentula.GuiItems.Core.ByteFlags.ToString">
-      <summary>
-            Returns a visual representation of the <see cref="T:Mentula.GuiItems.Core.ByteFlags" />.
-            </summary>
-      <returns> A string version of the underlying byte. </returns>
     </member>
     <member name="T:Mentula.GuiItems.Core.BorderStyle">
       <summary>
@@ -2472,18 +2424,18 @@
             Sets the foreground texture for the <see cref="T:Mentula.GuiItems.Items.Label" />.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnTextChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.Label" /> that raised the event. </param>
       <param name="e"> The new text of the <see cref="T:Mentula.GuiItems.Items.Label" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})">
+    <member name="M:Mentula.GuiItems.Items.Label.OnFontChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Graphics.SpriteFont})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Label.FontChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.Label" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteFont" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Label.OnForeColorChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Microsoft.Xna.Framework.Color})">
@@ -2584,11 +2536,11 @@
       <param name="sb"> The <see cref="T:Microsoft.Xna.Framework.Graphics.SpriteBatch" /> used for generating underlying <see cref="T:Microsoft.Xna.Framework.Graphics.Texture2D" />. </param>
       <param name="bounds"> The size of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> in pixels. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
+    <member name="M:Mentula.GuiItems.Items.ProgressBar.OnValueChanged(Mentula.GuiItems.Items.ProgressBar,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.ProgressBar.ValueChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.ProgressBar" /> that raised the event. </param>
       <param name="args"> The new value of the <see cref="T:Mentula.GuiItems.Items.ProgressBar" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.ProgressBar.SetBackgroundTexture">
@@ -2697,18 +2649,18 @@
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.OnValueChanged(System.Object,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
+    <member name="M:Mentula.GuiItems.Items.Slider.OnValueChanged(Mentula.GuiItems.Items.Slider,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Int32})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.ValueChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.Slider" /> that raised the event. </param>
       <param name="e"> The new value of the slider. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.Slider.OnMouseDown(System.Object,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)">
+    <member name="M:Mentula.GuiItems.Items.Slider.OnMouseDown(Mentula.GuiItems.Items.Slider,Mentula.GuiItems.Core.EventHandlers.MouseEventArgs)">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.Slider.MouseDown" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.Slider" /> that raised the event. </param>
       <param name="e"> The current <see cref="T:Microsoft.Xna.Framework.Input.MouseState" />. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.Slider.SetBackgroundTexture">
@@ -2833,18 +2785,18 @@
             Handles the <see cref="P:Mentula.GuiItems.Items.Label.AutoSize" /> functionality.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnTextChanged(Mentula.GuiItems.Items.Label,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.String})">
       <summary>
             This method gets called when the <see cref="E:Mentula.GuiItems.Items.Label.TextChanged" /> event is raised.
             </summary>
       <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
       <param name="e"> The new text for the sender. </param>
     </member>
-    <member name="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})">
+    <member name="M:Mentula.GuiItems.Items.TextBox.OnFocusChanged(Mentula.GuiItems.Items.TextBox,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{System.Boolean})">
       <summary>
             This method gets called when the <see cref="E:Mentula.GuiItems.Items.TextBox.FocusChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.TextBox" /> that raised the event. </param>
       <param name="e"> The new focus value for the sender. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.TextBox.SetForegroundTexture">
@@ -2900,11 +2852,11 @@
             Refreshes the image display size.
             </summary>
     </member>
-    <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Core.GuiItem,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
+    <member name="M:Mentula.GuiItems.Items.PictureBox.OnSizeModeChanged(Mentula.GuiItems.Items.PictureBox,Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs{Mentula.GuiItems.Core.ResizeMode})">
       <summary>
             This method is called when the <see cref="E:Mentula.GuiItems.Items.PictureBox.SizeModeChanged" /> event is raised.
             </summary>
-      <param name="sender"> The <see cref="T:Mentula.GuiItems.Core.GuiItem" /> that raised the event. </param>
+      <param name="sender"> The <see cref="T:Mentula.GuiItems.Items.PictureBox" /> that raised the event. </param>
       <param name="e"> The new <see cref="T:Mentula.GuiItems.Core.ResizeMode" /> for the foreground. </param>
     </member>
     <member name="M:Mentula.GuiItems.Items.PictureBox.SetForegroundTexture">

@@ -170,7 +170,7 @@ namespace Mentula.GuiItems.Items
         {
             if (Visible)
             {
-                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[0], textures.userset_background ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.DrawTexture.Texture, Position, textures.DrawTexture[showLine ? 2 : 1], Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
@@ -195,18 +195,18 @@ namespace Mentula.GuiItems.Items
         /// </summary>
         /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
         /// <param name="e"> The new text for the sender. </param>
-        protected override void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
+        protected override void OnTextChanged(Label sender, ValueChangedEventArgs<string> e)
         {
             inputHandler.keyboadString = e.NewValue;
             base.OnTextChanged(sender, e);
         }
 
         /// <summary>
-        /// This method gets called when the <see cref="TextBox.FocusChanged"/> event is raised.
+        /// This method gets called when the <see cref="FocusChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="TextBox"/> that raised the event. </param>
         /// <param name="e"> The new focus value for the sender. </param>
-        protected virtual void OnFocusChanged(GuiItem sender, Args e)
+        protected virtual void OnFocusChanged(TextBox sender, Args e)
         {
             focus = e.NewValue;
             if (!focus) showLine = false;

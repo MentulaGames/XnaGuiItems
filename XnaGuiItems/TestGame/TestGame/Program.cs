@@ -1,6 +1,5 @@
 using Mentula.Utilities;
 using Mentula.Utilities.Logging;
-using Microsoft.Xna.Framework;
 using System;
 
 namespace TestGame

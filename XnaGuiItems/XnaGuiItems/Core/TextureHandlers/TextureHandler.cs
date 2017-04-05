@@ -39,7 +39,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             get { return back; }
             set
             {
-                if (!internCall) userSet[0] = true;
+                if (!internCall) userset_background = true;
                 back = value;
             }
         }
@@ -52,7 +52,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             get { return fore; }
             set
             {
-                if (!internCall) userSet[1] = true;
+                if (!internCall) userset_foreground = true;
                 fore = value;
             }
         }
@@ -60,19 +60,18 @@ namespace Mentula.GuiItems.Core.TextureHandlers
         internal bool internCall;
 
         /// <summary>
-        /// A <see cref="ByteFlags"/> that contains if the user has set specified textures.
-        /// 1 if for the background,
-        /// 2 if for the foreground.
+        /// Gets or sets a value indicating if the user or XnaGuiItems has set the background.
         /// </summary>
-        protected ByteFlags userSet;
+        protected internal bool userset_background;
+        /// <summary>
+        /// Gets or sets a value indicating if the user or XnaGuiItems has set the foreground.
+        /// </summary>
+        protected bool userset_foreground;
+
         private Texture2D back, fore;
 
         internal TextureHandler()
         {
-            internCall = false;
-            userSet = new ByteFlags();
-            back = null;
-            fore = null;
             DrawTexture = new StitchedTexture2D();
         }
 
@@ -87,28 +86,28 @@ namespace Mentula.GuiItems.Core.TextureHandlers
         internal virtual void SetBackFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
-            if (!userSet[0]) Background = Drawing.FromColor(clr, size, device);
+            if (!userset_background) Background = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
         internal virtual void SetForeFromClr(Color clr, Size size, GraphicsDevice device)
         {
             internCall = true;
-            if (!userSet[1]) Foreground = Drawing.FromColor(clr, size, device);
+            if (!userset_foreground) Foreground = Drawing.FromColor(clr, size, device);
             internCall = false;
         }
 
         internal virtual void SetForeFromClr(Color clr, Size size, Rect destination, GraphicsDevice device)
         {
             internCall = true;
-            if (!userSet[1]) Foreground = Drawing.FromColor(clr, size, destination, device);
+            if (!userset_foreground) Foreground = Drawing.FromColor(clr, size, destination, device);
             internCall = false;
         }
 
         internal virtual void SetText(string text, SpriteFont font, Color color, Size size, bool multiLine, int lineStart, SpriteBatch sb)
         {
             internCall = true;
-            if (!userSet[1]) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, sb);
+            if (!userset_foreground) Foreground = Drawing.FromText(text, font, color, size, multiLine, lineStart, sb);
             internCall = false;
         }
 
@@ -124,8 +123,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             DrawTexture.DrawAt(1, Foreground, new Rectangle(0, Background.Height, Foreground.Width, Foreground.Height));
             DrawTexture.End();
         }
-
-        internal bool BackgroundSet() => userSet[0];
 
         /// <summary>
         /// Releases the managed and unmanaged resources used by the <see cref="GuiItem"/>.

@@ -137,7 +137,7 @@ namespace Mentula.GuiItems.Items
         {
             if (Visible)
             {
-                spriteBatch.Draw(textures.Background, Position, null, textures.BackgroundSet() ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
+                spriteBatch.Draw(textures.Background, Position, null, textures.userset_background ? BackColor : Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 1f);
                 spriteBatch.Draw(textures.Foreground, Position + SliderBarDimentions.Position, null, Color.White, Rotation, Origin, Vector2.One, SpriteEffects.None, 0f);
             }
         }
@@ -155,9 +155,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="ValueChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="Slider"/> that raised the event. </param>
         /// <param name="e"> The new value of the slider. </param>
-        protected void OnValueChanged(object sender, Args e)
+        protected void OnValueChanged(Slider sender, Args e)
         {
             data.Value = e.NewValue;
         }
@@ -165,9 +165,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="MouseDown"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="Slider"/> that raised the event. </param>
         /// <param name="e"> The current <see cref="MouseState"/>. </param>
-        protected void OnMouseDown(object sender, MouseEventArgs e)
+        protected void OnMouseDown(Slider sender, MouseEventArgs e)
         {
             Vector2 offset = SliderBarDimentions.Position + Position - GetRotatedMouse(e.State);
             if (oldOffset == Vector2.Zero) oldOffset = offset;

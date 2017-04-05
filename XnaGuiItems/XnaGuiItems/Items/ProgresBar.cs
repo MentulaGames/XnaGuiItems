@@ -101,9 +101,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="ValueChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="ProgressBar"/> that raised the event. </param>
         /// <param name="args"> The new value of the <see cref="ProgressBar"/>. </param>
-        protected virtual void OnValueChanged(GuiItem sender, Args args)
+        protected virtual void OnValueChanged(ProgressBar sender, Args args)
         {
             data.Value = args.NewValue;
             if (AutoRefresh) Refresh();

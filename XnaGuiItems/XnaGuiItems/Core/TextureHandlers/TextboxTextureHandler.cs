@@ -18,9 +18,6 @@ namespace Mentula.GuiItems.Core.TextureHandlers
     /// <summary>
     /// The class that handles the textures of a <see cref="Items.TextBox"/>.
     /// </summary>
-    /// <remarks>
-    /// The <see cref="TextureHandler.userSet"/> flag for the focused texture is 4.
-    /// </remarks>
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]
 #endif
@@ -34,11 +31,15 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             get { return focus; }
             set
             {
-                if (!internCall) userSet[2] = true;
+                if (!internCall) userset_focused = true;
                 focus = value;
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating if the user or XnaGuiItems has set the focused texture.
+        /// </summary>
+        private bool userset_focused;
         private Texture2D focus;
 
         internal TextboxTextureHandler()
@@ -51,7 +52,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers
             SetText(text, font, color, size, multiLine, lineStart, sb);
 
             internCall = true;
-            if (!userSet[2]) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, sb);
+            if (!userset_focused) Focused = Drawing.FromText(text + '|', font, color, size, multiLine, lineStart, sb);
             internCall = false;
         }
 

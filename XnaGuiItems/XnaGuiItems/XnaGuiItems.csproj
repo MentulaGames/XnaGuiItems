@@ -91,7 +91,6 @@
     <Compile Include="Core\EventHandlers\ValueChangesEventArgs.cs" />
     <Compile Include="Core\GuiItemCollection.cs" />
     <Compile Include="Core\TextureHandlers\ButtonTextureHandler.cs" />
-    <Compile Include="Core\Structs\ByteFlags.cs" />
     <Compile Include="Core\TextureHandlers\DropDownButtonTextureHandler.cs" />
     <Compile Include="Core\TextureHandlers\DropDownTextureHandler.cs" />
     <Compile Include="Core\TextureHandlers\LabelTextureHandler.cs" />

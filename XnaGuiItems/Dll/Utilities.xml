@@ -1263,6 +1263,12 @@
             Gets or sets whether the <see cref="T:Mentula.Utilities.Logging.ConsoleLogger"/> should automaticly update itself.
             </summary>
         </member>
+        <member name="P:Mentula.Utilities.Logging.ConsoleLogger.DynamicPadding">
+            <summary>
+            Gets or set a value indicating whether the <see cref="T:Mentula.Utilities.Logging.ConsoleLogger"/>
+            should dynamicaly pad the message header.
+            </summary>
+        </member>
         <member name="M:Mentula.Utilities.Logging.ConsoleLogger.#ctor(Mentula.Utilities.Logging.LogOutputType,System.Boolean)">
             <summary>
             Creates a new instance of the <see cref="T:Mentula.Utilities.Logging.ConsoleLogger"/> class with a specified output type.
@@ -1448,12 +1454,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Mentula.Utilities.Logging.LogMessage.GetLogHeaderLine(Mentula.Utilities.Logging.LogOutputType)">
+            <summary>
+            Gets the header line that should be printed with the specified output type.
+            </summary>
+            <param name="type"> The way the header should be represented. </param>
+            <returns> A string containing the header in the specified output format. </returns>
+        </member>
         <member name="M:Mentula.Utilities.Logging.LogMessage.GetLogLine(Mentula.Utilities.Logging.LogOutputType)">
             <summary>
             Gets the line that should be printed with the specified output type.
             </summary>
-            <param name="type"> The way the message should be represented. </param>
-            <returns> A string containing the message in the specified output format. </returns>
+            <param name="type"> The way the header should be represented. </param>
+            <returns> A string containing the header and the message in the specified output format. </returns>
         </member>
         <member name="T:Mentula.Utilities.Threading.StopableThread">
             <summary>

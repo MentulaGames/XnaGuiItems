@@ -161,9 +161,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="TextChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="Label"/> that raised the event. </param>
         /// <param name="e"> The new text of the <see cref="Label"/>. </param>
-        protected virtual void OnTextChanged(GuiItem sender, ValueChangedEventArgs<string> e)
+        protected virtual void OnTextChanged(Label sender, ValueChangedEventArgs<string> e)
         {
             text = e.NewValue;
             if (AutoRefresh) Refresh();
@@ -172,9 +172,9 @@ namespace Mentula.GuiItems.Items
         /// <summary>
         /// This method is called when the <see cref="FontChanged"/> event is raised.
         /// </summary>
-        /// <param name="sender"> The <see cref="GuiItem"/> that raised the event. </param>
+        /// <param name="sender"> The <see cref="Label"/> that raised the event. </param>
         /// <param name="e"> The new <see cref="SpriteFont"/>. </param>
-        protected virtual void OnFontChanged(GuiItem sender, ValueChangedEventArgs<SpriteFont> e)
+        protected virtual void OnFontChanged(Label sender, ValueChangedEventArgs<SpriteFont> e)
         {
             font = e.NewValue;
         }
