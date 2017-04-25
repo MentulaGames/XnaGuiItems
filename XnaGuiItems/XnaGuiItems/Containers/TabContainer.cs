@@ -59,7 +59,7 @@ namespace Mentula.GuiItems.Containers
         public event StrongEventHandler<TabContainer, ValueChangedEventArgs<int>> TabSwitch;
 
         private const string TAB_PREFIX = "TabHLbl_";
-        private KeyValuePair<Label, GuiItemCollection>[] tabs;
+        private KeyValuePair<Label, GuiItemCollection>[] tabs = new KeyValuePair<Label, GuiItemCollection>[0];
         private SpriteFont font;
         private int selectedTab;
         private bool isAbsPosCall;
@@ -74,7 +74,6 @@ namespace Mentula.GuiItems.Containers
             : base(ref sb)
         {
             this.font = font;
-            tabs = new KeyValuePair<Label, GuiItemCollection>[0];
             Bounds = DefaultBounds;
             BackColor = Color.White;
         }

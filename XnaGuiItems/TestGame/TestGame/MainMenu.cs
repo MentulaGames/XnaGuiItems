@@ -14,12 +14,7 @@ namespace TestGame
         {
             SetDefaultFont("GuiFont");
 
-            DropDown dd = AddDropDown();
-            dd.Name = $"id{1}";
-            dd.AutoSize = true;
-            dd.AddOption(
-                new Pair("Pick up", Color.Red),
-                new Pair($"{"TestName"}", Color.Blue));
+            TabContainer tc = AddTabContainer();
 
             base.Initialize();
         }
