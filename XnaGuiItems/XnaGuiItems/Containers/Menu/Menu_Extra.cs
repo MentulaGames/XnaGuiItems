@@ -15,7 +15,7 @@ namespace Mentula.GuiItems.Containers
 #endif
     using Core;
     using System.Runtime.CompilerServices;
-    using Mentula.Utilities.Logging;
+    using DeJong.Utilities.Logging;
 
     public partial class Menu<T> : DrawableMentulaGameComponent<T>
         where T : Game

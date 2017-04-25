@@ -15,8 +15,7 @@ namespace Mentula.GuiItems
 #endif
     using Core;
     using System;
-    using static Utilities;
-    using Mentula.Utilities.Logging;
+    using DeJong.Utilities.Logging;
 
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]

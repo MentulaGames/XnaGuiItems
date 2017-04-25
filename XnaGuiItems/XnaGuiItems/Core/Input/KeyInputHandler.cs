@@ -12,7 +12,7 @@ namespace Mentula.GuiItems.Core.Input
     using Xna::Microsoft.Xna.Framework.Input;
 #endif
     using System;
-    using Mentula.Utilities.Threading;
+    using DeJong.Utilities.Threading;
 
 #if !DEBUG
     [System.Diagnostics.DebuggerStepThrough]

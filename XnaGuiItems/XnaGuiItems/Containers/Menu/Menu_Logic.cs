@@ -21,7 +21,7 @@ namespace Mentula.GuiItems.Containers
     using System.Linq;
     using static Core.GuiItem;
     using static Utilities;
-    using Mentula.Utilities.Logging;
+    using DeJong.Utilities.Logging;
 
     /// <summary>
     /// A class for grouping <see cref="GuiItems"/>.

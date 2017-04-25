@@ -15,8 +15,7 @@ namespace Mentula.GuiItems.Core.TextureHandlers.Stitching
 #endif
     using System.Collections.Generic;
     using System;
-    using static Utilities;
-    using Mentula.Utilities.Logging;
+    using DeJong.Utilities.Logging;
 
     /// <summary>
     /// A container for multiple <see cref="Texture2D"/> stitched into one <see cref="Texture2D"/>.

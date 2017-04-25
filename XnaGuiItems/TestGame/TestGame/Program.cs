@@ -1,23 +1,19 @@
-using Mentula.Utilities;
-using Mentula.Utilities.Logging;
-using System;
+using DeJong.Utilities;
+using DeJong.Utilities.Logging;
 
 namespace TestGame
 {
 #if WINDOWS || XBOX
     public static class Program
     {
-        private static ConsoleLogger logger;
-
         public static void Main(string[] args)
         {
-            logger = new ConsoleLogger() { AutoUpdate = true };
-            Console.WindowWidth = Console.LargestWindowWidth;
-            Console.BufferHeight = short.MaxValue - 1;
-
-            using (Game1 game = new Game1())
+            using (ConsoleLogger logger = new ConsoleLogger { AutoUpdate = true })
             {
-                game.Run();
+                using (Game1 game = new Game1())
+                {
+                    game.Run();
+                }
             }
 
             Utils.PressAnyKeyToContinue();
@@ -25,4 +21,3 @@ namespace TestGame
     }
 #endif
 }
-

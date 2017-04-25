@@ -21,9 +21,9 @@ namespace Mentula.GuiItems.Core
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using static Utilities;
-    using static Mentula.Utilities.Core.EventInvoker;
-    using Mentula.Utilities.Core;
-    using Mentula.Utilities.Logging;
+    using static DeJong.Utilities.Core.EventInvoker;
+    using DeJong.Utilities.Core;
+    using DeJong.Utilities.Logging;
 
     /// <summary>
     /// The absolute base class for all <see cref="GuiItems"/>.

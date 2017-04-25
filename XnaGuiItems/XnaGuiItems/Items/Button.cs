@@ -16,10 +16,10 @@ namespace Mentula.GuiItems.Items
     using Core;
     using Core.TextureHandlers;
     using System.Diagnostics.CodeAnalysis;
-    using Mentula.Utilities.Core;
+    using DeJong.Utilities.Core;
     using Core.EventHandlers;
     using static Utilities;
-    using static Mentula.Utilities.Core.EventInvoker;
+    using static DeJong.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A button base class.

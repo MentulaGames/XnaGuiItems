@@ -14,7 +14,7 @@ namespace Mentula.GuiItems.Containers
     using Core;
     using System;
     using System.Collections.Generic;
-    using Mentula.Utilities.Logging;
+    using DeJong.Utilities.Logging;
 
     /// <summary>
     /// A class for grouping <see cref="Menu{T}"/>.

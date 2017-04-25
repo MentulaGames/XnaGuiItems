@@ -2316,7 +2316,7 @@
       <adder name="add_TabSwitch" />
       <remover name="remove_TabSwitch" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Containers.TabContainer" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3429,7 +3429,7 @@
       <adder name="add_BackColorChanged" />
       <remover name="remove_BackColorChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3470,7 +3470,7 @@
       <adder name="add_BackgroundImageChanged" />
       <remover name="remove_BackgroundImageChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3524,7 +3524,7 @@
       <adder name="add_Clicked" />
       <remover name="remove_Clicked" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -3667,7 +3667,7 @@
       <adder name="add_EnabledChanged" />
       <remover name="remove_EnabledChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3728,7 +3728,7 @@
       <adder name="add_ForeColorChanged" />
       <remover name="remove_ForeColorChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3815,7 +3815,7 @@
       <adder name="add_Hover" />
       <remover name="remove_Hover" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -3836,7 +3836,7 @@
       <adder name="add_HoverEnter" />
       <remover name="remove_HoverEnter" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -3857,7 +3857,7 @@
       <adder name="add_HoverLeave" />
       <remover name="remove_HoverLeave" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -3917,7 +3917,7 @@
       <adder name="add_Moved" />
       <remover name="remove_Moved" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -3995,7 +3995,7 @@
       <adder name="add_NameChanged" />
       <remover name="remove_NameChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -4283,7 +4283,7 @@
       <adder name="add_Resized" />
       <remover name="remove_Resized" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -4321,7 +4321,7 @@
       <adder name="add_Rotated" />
       <remover name="remove_Rotated" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -4501,7 +4501,7 @@
       <adder name="add_VisibilityChanged" />
       <remover name="remove_VisibilityChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Core.GuiItem" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -9817,7 +9817,7 @@
       <adder name="add_DoubleClick" />
       <remover name="remove_DoubleClick" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -9858,7 +9858,7 @@
       <adder name="add_LeftClick" />
       <remover name="remove_LeftClick" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -9900,7 +9900,7 @@
       <adder name="add_RightClick" />
       <remover name="remove_RightClick" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Button" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -10365,7 +10365,7 @@
       <adder name="add_IndexClick" />
       <remover name="remove_IndexClick" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.DropDown" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.IndexedClickEventArgs" ref="true" />
@@ -10815,7 +10815,7 @@
       <adder name="add_FontChanged" />
       <remover name="remove_FontChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -11124,7 +11124,7 @@
       <adder name="add_TextChanged" />
       <remover name="remove_TextChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Label" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -11425,7 +11425,7 @@
       <adder name="add_SizeModeChanged" />
       <remover name="remove_SizeModeChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.PictureBox" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -11853,7 +11853,7 @@
       <adder name="add_ValueChanged" />
       <remover name="remove_ValueChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.ProgressBar" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -12190,7 +12190,7 @@
       <adder name="add_MouseDown" />
       <remover name="remove_MouseDown" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.MouseEventArgs" ref="true" />
@@ -12366,7 +12366,7 @@
       <adder name="add_ValueChanged" />
       <remover name="remove_ValueChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.Slider" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">
@@ -12599,7 +12599,7 @@
       <adder name="add_Confirmed" />
       <remover name="remove_Confirmed" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
             <type api="T:System.EventArgs" ref="true" />
@@ -12671,7 +12671,7 @@
       <adder name="add_FocusChanged" />
       <remover name="remove_FocusChanged" />
       <eventhandler>
-        <type api="T:Mentula.Utilities.Core.StrongEventHandler`2" ref="true">
+        <type api="T:DeJong.Utilities.Core.StrongEventHandler`2" ref="true">
           <specialization>
             <type api="T:Mentula.GuiItems.Items.TextBox" ref="true" />
             <type api="T:Mentula.GuiItems.Core.EventHandlers.ValueChangedEventArgs`1" ref="true">

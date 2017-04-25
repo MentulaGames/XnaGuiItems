@@ -1,16 +1,16 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Transform" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- Sandcastle Tools MSBuild Tasks.  https://GitHub.com/EWSoftware/SHFB -->
 	<UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.AddNamespaceGroups"
-    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\AddNamespaceGroups.exe" />
+    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\AddNamespaceGroups.exe" />
 	<UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.XslTransform"
-    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
+    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
 	<UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.VersionBuilder"
-    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\VersionBuilder.exe" />
+    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\VersionBuilder.exe" />
 
 	<!-- Task properties -->
 	<PropertyGroup>
-		<WorkingFolder>C:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
-		<DocModelTransformation>C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl</DocModelTransformation>
+		<WorkingFolder>D:\Git\XnaGuiItems\XnaGuiItems\Documentation\Help\Working\</WorkingFolder>
+		<DocModelTransformation>D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl</DocModelTransformation>
 		<DocModelTransformationParameters>IncludeAllMembersTopic=false;project=</DocModelTransformationParameters>
 		<NamingMethod>Guid</NamingMethod>
 		<NamespaceGrouping>false</NamespaceGrouping>

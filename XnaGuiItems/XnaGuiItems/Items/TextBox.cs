@@ -22,9 +22,9 @@ namespace Mentula.GuiItems.Items
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using Mentula.Utilities.Core;
+    using DeJong.Utilities.Core;
     using static Utilities;
-    using static Mentula.Utilities.Core.EventInvoker;
+    using static DeJong.Utilities.Core.EventInvoker;
     using Args = Core.EventHandlers.ValueChangedEventArgs<bool>;
 
     /// <summary>

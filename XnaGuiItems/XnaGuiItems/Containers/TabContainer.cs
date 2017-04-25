@@ -19,9 +19,9 @@ namespace Mentula.GuiItems.Containers
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using Mentula.Utilities.Core;
+    using DeJong.Utilities.Core;
     using static Utilities;
-    using static Mentula.Utilities.Core.EventInvoker;
+    using static DeJong.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A <see cref="GuiItem"/> container with tabs.

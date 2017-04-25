@@ -20,9 +20,9 @@ namespace Mentula.GuiItems.Items
     using Core.TextureHandlers;
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using Mentula.Utilities.Core;
+    using DeJong.Utilities.Core;
     using static Utilities;
-    using static Mentula.Utilities.Core.EventInvoker;
+    using static DeJong.Utilities.Core.EventInvoker;
 
     /// <summary>
     /// A Dropdown with clickable childs.

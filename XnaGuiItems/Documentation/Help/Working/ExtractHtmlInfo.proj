@@ -1,7 +1,7 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Extract" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Sandcastle Help File Builder Tasks.  https://GitHub.com/EWSoftware/SHFB -->
   <UsingTask TaskName="SandcastleBuilder.HtmlExtract.SandcastleHtmlExtract"
-    AssemblyFile="C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\SandcastleHtmlExtract.exe" />
+    AssemblyFile="D:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\SandcastleHtmlExtract.exe" />
 
   <!-- Task properties -->
   <PropertyGroup>
